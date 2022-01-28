@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "lib",
+    "rootDir": "src",
+    "module": "commonjs",
+    "strict": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["DOM", "ESNext"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["__tests__/**/*.ts"]
+}
