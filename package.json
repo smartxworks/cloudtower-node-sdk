@@ -1,6 +1,6 @@
 {
   "name": "cloudtower-node-sdk",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "description": "cloudtower operation api",
   "main": "lib/index.js",
   "typings": "typings/index.d.ts",
