@@ -13,7 +13,12 @@ export interface NestedAlertRule {
   id: string;
 }
 
-export type SeverityEnum = "CRITICAL" | "INFO" | "NOTICE" | "SEVERITY_UNSPECIFIED";
+export enum SeverityEnum {
+  CRITICAL = "CRITICAL",
+  INFO = "INFO",
+  NOTICE = "NOTICE",
+  SEVERITY_UNSPECIFIED = "SEVERITY_UNSPECIFIED",
+}
 
 export interface NestedThresholds {
   /** @format int32 */
@@ -24,35 +29,37 @@ export interface NestedThresholds {
   value?: number | null;
 }
 
-export type AlertRuleObject =
-  | "BRICK"
-  | "CLUSTER"
-  | "DISK"
-  | "HYPERVISOR"
-  | "NETWORK"
-  | "NTP_SERVER"
-  | "PHYSICAL_HOST"
-  | "SCVM"
-  | "SNAPSHOT_PLAN"
-  | "STORAGE_CHUNK"
-  | "STORAGE_POOL"
-  | "SYSTEM_SERVICE"
-  | "TIME_MACHINE_PLAN"
-  | "VM"
-  | "WITNESS"
-  | "WITNESS_NETWORK"
-  | "ZBS_ZONE";
+export enum AlertRuleObject {
+  BRICK = "BRICK",
+  CLUSTER = "CLUSTER",
+  DISK = "DISK",
+  HYPERVISOR = "HYPERVISOR",
+  NETWORK = "NETWORK",
+  NTP_SERVER = "NTP_SERVER",
+  PHYSICAL_HOST = "PHYSICAL_HOST",
+  SCVM = "SCVM",
+  SNAPSHOT_PLAN = "SNAPSHOT_PLAN",
+  STORAGE_CHUNK = "STORAGE_CHUNK",
+  STORAGE_POOL = "STORAGE_POOL",
+  SYSTEM_SERVICE = "SYSTEM_SERVICE",
+  TIME_MACHINE_PLAN = "TIME_MACHINE_PLAN",
+  VM = "VM",
+  WITNESS = "WITNESS",
+  WITNESS_NETWORK = "WITNESS_NETWORK",
+  ZBS_ZONE = "ZBS_ZONE",
+}
 
-export type AlertRuleUnit =
-  | "BIT"
-  | "BYTE"
-  | "BYTE_PER_SECOND"
-  | "CELSIUS"
-  | "HERTZ"
-  | "NANOSECOND"
-  | "PERCENT"
-  | "SECOND"
-  | "UNIT_UNSPECIFIED";
+export enum AlertRuleUnit {
+  BIT = "BIT",
+  BYTE = "BYTE",
+  BYTE_PER_SECOND = "BYTE_PER_SECOND",
+  CELSIUS = "CELSIUS",
+  HERTZ = "HERTZ",
+  NANOSECOND = "NANOSECOND",
+  PERCENT = "PERCENT",
+  SECOND = "SECOND",
+  UNIT_UNSPECIFIED = "UNIT_UNSPECIFIED",
+}
 
 export interface GlobalAlertRule {
   alert_rules?: NestedAlertRule[] | null;
@@ -1182,18 +1189,21 @@ export interface ApplicationWhereInput {
   volume_size_not_in?: number[] | null;
 }
 
-export type ApplicationState =
-  | "DEPLOY_ERROR"
-  | "DEPLOYED"
-  | "DEPLOYING"
-  | "EDITING"
-  | "NOT_DEPLOYED"
-  | "STOP_ERROR"
-  | "STOPPED"
-  | "STOPPING"
-  | "UPGRADING";
+export enum ApplicationState {
+  DEPLOY_ERROR = "DEPLOY_ERROR",
+  DEPLOYED = "DEPLOYED",
+  DEPLOYING = "DEPLOYING",
+  EDITING = "EDITING",
+  NOT_DEPLOYED = "NOT_DEPLOYED",
+  STOP_ERROR = "STOP_ERROR",
+  STOPPED = "STOPPED",
+  STOPPING = "STOPPING",
+  UPGRADING = "UPGRADING",
+}
 
-export type ApplicationType = "MONITOR";
+export enum ApplicationType {
+  MONITOR = "MONITOR",
+}
 
 export interface VmWhereInput {
   AND?: VmWhereInput[] | null;
@@ -1745,7 +1755,10 @@ export interface VmWhereInput {
   win_opt_not?: boolean | null;
 }
 
-export type VmClockOffset = "LOCALTIME" | "UTC";
+export enum VmClockOffset {
+  LOCALTIME = "LOCALTIME",
+  UTC = "UTC",
+}
 
 export interface VmEntityFilterResultWhereInput {
   AND?: VmEntityFilterResultWhereInput[] | null;
@@ -1841,13 +1854,28 @@ export interface EntityFilterWhereInput {
   preset_starts_with?: string | null;
 }
 
-export type EntityType = "VM";
+export enum EntityType {
+  VM = "VM",
+}
 
-export type FilterStatus = "EXECUTING" | "FAILED" | "INITIALIZING" | "PARTIAL_SUCCESSED" | "SUCCESSED";
+export enum FilterStatus {
+  EXECUTING = "EXECUTING",
+  FAILED = "FAILED",
+  INITIALIZING = "INITIALIZING",
+  PARTIAL_SUCCESSED = "PARTIAL_SUCCESSED",
+  SUCCESSED = "SUCCESSED",
+}
 
-export type EntityAsyncStatus = "CREATING" | "DELETING" | "UPDATING";
+export enum EntityAsyncStatus {
+  CREATING = "CREATING",
+  DELETING = "DELETING",
+  UPDATING = "UPDATING",
+}
 
-export type VmFirmware = "BIOS" | "UEFI";
+export enum VmFirmware {
+  BIOS = "BIOS",
+  UEFI = "UEFI",
+}
 
 export interface VmFolderWhereInput {
   AND?: VmFolderWhereInput[] | null;
@@ -1921,7 +1949,11 @@ export interface VmFolderWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
-export type VmGuestsOperationSystem = "LINUX" | "UNKNOWN" | "WINDOWS";
+export enum VmGuestsOperationSystem {
+  LINUX = "LINUX",
+  UNKNOWN = "UNKNOWN",
+  WINDOWS = "WINDOWS",
+}
 
 export interface HostWhereInput {
   access_ip?: string | null;
@@ -2809,7 +2841,10 @@ export interface HostWhereInput {
   zone?: ZoneWhereInput | null;
 }
 
-export type CpuFanSpeedUnit = "PERCENT" | "RPM";
+export enum CpuFanSpeedUnit {
+  PERCENT = "PERCENT",
+  RPM = "RPM",
+}
 
 export interface DiskWhereInput {
   AND?: DiskWhereInput[] | null;
@@ -3050,9 +3085,18 @@ export interface DiskWhereInput {
   usage_status_not_in?: DiskUsageStatus[] | null;
 }
 
-export type DiskFunction = "CACHE" | "DATA" | "SMTX_SYSTEM";
+export enum DiskFunction {
+  CACHE = "CACHE",
+  DATA = "DATA",
+  SMTX_SYSTEM = "SMTX_SYSTEM",
+}
 
-export type DiskHealthStatus = "HEALTHY" | "SMART_FAILED" | "SUBHEALTHY" | "UNHEALTHY";
+export enum DiskHealthStatus {
+  HEALTHY = "HEALTHY",
+  SMART_FAILED = "SMART_FAILED",
+  SUBHEALTHY = "SUBHEALTHY",
+  UNHEALTHY = "UNHEALTHY",
+}
 
 export interface LabelWhereInput {
   AND?: LabelWhereInput[] | null;
@@ -6467,7 +6511,10 @@ export interface NvmfSubsystemWhereInput {
   thin_provision_not?: boolean | null;
 }
 
-export type NvmfSubsystemPolicyType = "BALANCE" | "INHERIT";
+export enum NvmfSubsystemPolicyType {
+  BALANCE = "BALANCE",
+  INHERIT = "INHERIT",
+}
 
 export interface IscsiLunSnapshotWhereInput {
   AND?: IscsiLunSnapshotWhereInput[] | null;
@@ -7095,9 +7142,16 @@ export interface VmDiskWhereInput {
   vm_volume?: VmVolumeWhereInput | null;
 }
 
-export type Bus = "IDE" | "SCSI" | "VIRTIO";
+export enum Bus {
+  IDE = "IDE",
+  SCSI = "SCSI",
+  VIRTIO = "VIRTIO",
+}
 
-export type VmDiskIoRestrictType = "DYNAMIC" | "FORCED";
+export enum VmDiskIoRestrictType {
+  DYNAMIC = "DYNAMIC",
+  FORCED = "FORCED",
+}
 
 export interface SvtImageWhereInput {
   AND?: SvtImageWhereInput[] | null;
@@ -7217,7 +7271,10 @@ export interface SvtImageWhereInput {
   vm_disks_some?: VmDiskWhereInput | null;
 }
 
-export type VmDiskType = "CD_ROM" | "DISK";
+export enum VmDiskType {
+  CD_ROM = "CD_ROM",
+  DISK = "DISK",
+}
 
 export interface VmVolumeWhereInput {
   AND?: VmVolumeWhereInput[] | null;
@@ -7399,13 +7456,14 @@ export interface VmVolumeWhereInput {
   vm_disks_some?: VmDiskWhereInput | null;
 }
 
-export type VmVolumeElfStoragePolicyType =
-  | "REPLICA_1_THICK_PROVISION"
-  | "REPLICA_1_THIN_PROVISION"
-  | "REPLICA_2_THICK_PROVISION"
-  | "REPLICA_2_THIN_PROVISION"
-  | "REPLICA_3_THICK_PROVISION"
-  | "REPLICA_3_THIN_PROVISION";
+export enum VmVolumeElfStoragePolicyType {
+  REPLICA1THICKPROVISION = "REPLICA_1_THICK_PROVISION",
+  REPLICA1THINPROVISION = "REPLICA_1_THIN_PROVISION",
+  REPLICA2THICKPROVISION = "REPLICA_2_THICK_PROVISION",
+  REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
+  REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
+  REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
+}
 
 export interface VmSnapshotWhereInput {
   AND?: VmSnapshotWhereInput[] | null;
@@ -7629,9 +7687,15 @@ export interface VmSnapshotWhereInput {
   win_opt_not?: boolean | null;
 }
 
-export type ConsistentType = "CRASH_CONSISTENT" | "FILE_SYSTEM_CONSISTENT";
+export enum ConsistentType {
+  CRASH_CONSISTENT = "CRASH_CONSISTENT",
+  FILE_SYSTEM_CONSISTENT = "FILE_SYSTEM_CONSISTENT",
+}
 
-export type VmDiskIoPolicy = "RESTRICT_EACH_DISK" | "RESTRICT_WHOLE_VM";
+export enum VmDiskIoPolicy {
+  RESTRICT_EACH_DISK = "RESTRICT_EACH_DISK",
+  RESTRICT_WHOLE_VM = "RESTRICT_WHOLE_VM",
+}
 
 export interface SnapshotGroupWhereInput {
   AND?: SnapshotGroupWhereInput[] | null;
@@ -8128,13 +8192,32 @@ export interface SnapshotPlanWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
-export type SnapshotPlanExecuteType = "DAY" | "HOUR" | "MONTH" | "WEEK";
+export enum SnapshotPlanExecuteType {
+  DAY = "DAY",
+  HOUR = "HOUR",
+  MONTH = "MONTH",
+  WEEK = "WEEK",
+}
 
-export type SnapshotPlanExecuteStatus = "CREATED" | "FAILED" | "IN_PROGRESS" | "SUCCEED" | "UNSPECIFIED";
+export enum SnapshotPlanExecuteStatus {
+  CREATED = "CREATED",
+  FAILED = "FAILED",
+  IN_PROGRESS = "IN_PROGRESS",
+  SUCCEED = "SUCCEED",
+  UNSPECIFIED = "UNSPECIFIED",
+}
 
-export type SnapshotPlanStatus = "NORMAL" | "STOPPED" | "SUSPENDED";
+export enum SnapshotPlanStatus {
+  NORMAL = "NORMAL",
+  STOPPED = "STOPPED",
+  SUSPENDED = "SUSPENDED",
+}
 
-export type SnapshotPlanTaskType = "TASK_TYPE_CLONE" | "TASK_TYPE_PROTECT" | "TASK_TYPE_ROLLBACK";
+export enum SnapshotPlanTaskType {
+  TASK_TYPE_CLONE = "TASK_TYPE_CLONE",
+  TASK_TYPE_PROTECT = "TASK_TYPE_PROTECT",
+  TASK_TYPE_ROLLBACK = "TASK_TYPE_ROLLBACK",
+}
 
 export interface VmTemplateWhereInput {
   AND?: VmTemplateWhereInput[] | null;
@@ -8518,7 +8601,10 @@ export interface ContentLibraryVmTemplateWhereInput {
   vm_templates_some?: VmTemplateWhereInput | null;
 }
 
-export type Architecture = "AARCH64" | "X86_64";
+export enum Architecture {
+  AARCH64 = "AARCH64",
+  X8664 = "X86_64",
+}
 
 export interface DatacenterWhereInput {
   AND?: DatacenterWhereInput[] | null;
@@ -9309,9 +9395,20 @@ export interface NicWhereInput {
   vds?: VdsWhereInput | null;
 }
 
-export type NicDriverState = "NEED_REBOOT" | "NO_DRIVER" | "NOT_READY" | "READY";
+export enum NicDriverState {
+  NEED_REBOOT = "NEED_REBOOT",
+  NO_DRIVER = "NO_DRIVER",
+  NOT_READY = "NOT_READY",
+  READY = "READY",
+}
 
-export type NetworkType = "ACCESS" | "MANAGEMENT" | "MIGRATION" | "STORAGE" | "VM";
+export enum NetworkType {
+  ACCESS = "ACCESS",
+  MANAGEMENT = "MANAGEMENT",
+  MIGRATION = "MIGRATION",
+  STORAGE = "STORAGE",
+  VM = "VM",
+}
 
 export interface VlanWhereInput {
   AND?: VlanWhereInput[] | null;
@@ -9573,20 +9670,31 @@ export interface VmNicWhereInput {
   vm?: VmWhereInput | null;
 }
 
-export type VmNicModel = "E1000" | "SRIOV" | "VIRTIO";
+export enum VmNicModel {
+  E1000 = "E1000",
+  SRIOV = "SRIOV",
+  VIRTIO = "VIRTIO",
+}
 
-export type GlobalPolicyAction = "ALLOW" | "DROP";
+export enum GlobalPolicyAction {
+  ALLOW = "ALLOW",
+  DROP = "DROP",
+}
 
-export type EverouteClusterPhase =
-  | "Associated"
-  | "Failed"
-  | "Init"
-  | "Running"
-  | "Terminating"
-  | "Updating"
-  | "Upgrading";
+export enum EverouteClusterPhase {
+  Associated = "Associated",
+  Failed = "Failed",
+  Init = "Init",
+  Running = "Running",
+  Terminating = "Terminating",
+  Updating = "Updating",
+  Upgrading = "Upgrading",
+}
 
-export type IsolationMode = "ALL" | "PARTIAL";
+export enum IsolationMode {
+  ALL = "ALL",
+  PARTIAL = "PARTIAL",
+}
 
 export interface NfsExportWhereInput {
   AND?: NfsExportWhereInput[] | null;
@@ -9926,7 +10034,10 @@ export interface SecurityPolicyWhereInput {
   policy_mode_not_in?: PolicyMode[] | null;
 }
 
-export type PolicyMode = "MONITOR" | "WORK";
+export enum PolicyMode {
+  MONITOR = "MONITOR",
+  WORK = "WORK",
+}
 
 export interface PmemDimmWhereInput {
   AND?: PmemDimmWhereInput[] | null;
@@ -10084,11 +10195,28 @@ export interface PmemDimmWhereInput {
   version_starts_with?: string | null;
 }
 
-export type DiskUsage = "BOOT" | "CACHE" | "CACHE_AND_META" | "DATA" | "DATA_AND_META";
+export enum DiskUsage {
+  BOOT = "BOOT",
+  CACHE = "CACHE",
+  CACHE_AND_META = "CACHE_AND_META",
+  DATA = "DATA",
+  DATA_AND_META = "DATA_AND_META",
+}
 
-export type DiskType = "HDD" | "PMem" | "SSD";
+export enum DiskType {
+  HDD = "HDD",
+  PMem = "PMem",
+  SSD = "SSD",
+}
 
-export type DiskUsageStatus = "ISOLATED" | "MOUNTED" | "MOUNTING" | "PARTIAL_MOUNTED" | "UNMOUNTED" | "UNMOUNTING";
+export enum DiskUsageStatus {
+  ISOLATED = "ISOLATED",
+  MOUNTED = "MOUNTED",
+  MOUNTING = "MOUNTING",
+  PARTIAL_MOUNTED = "PARTIAL_MOUNTED",
+  UNMOUNTED = "UNMOUNTED",
+  UNMOUNTING = "UNMOUNTING",
+}
 
 export interface IpmiWhereInput {
   AND?: IpmiWhereInput[] | null;
@@ -10155,15 +10283,20 @@ export interface IpmiWhereInput {
   valid_not?: boolean | null;
 }
 
-export type HostState = "IDLE" | "IN_USE" | "REMOVING";
+export enum HostState {
+  IDLE = "IDLE",
+  IN_USE = "IN_USE",
+  REMOVING = "REMOVING",
+}
 
-export type HostStatus =
-  | "CONNECTED_ERROR"
-  | "CONNECTED_HEALTHY"
-  | "CONNECTED_WARNING"
-  | "CONNECTING"
-  | "INITIALIZING"
-  | "SESSION_EXPIRED";
+export enum HostStatus {
+  CONNECTED_ERROR = "CONNECTED_ERROR",
+  CONNECTED_HEALTHY = "CONNECTED_HEALTHY",
+  CONNECTED_WARNING = "CONNECTED_WARNING",
+  CONNECTING = "CONNECTING",
+  INITIALIZING = "INITIALIZING",
+  SESSION_EXPIRED = "SESSION_EXPIRED",
+}
 
 export interface UsbDeviceWhereInput {
   AND?: UsbDeviceWhereInput[] | null;
@@ -10291,7 +10424,10 @@ export interface UsbDeviceWhereInput {
   vm?: VmWhereInput | null;
 }
 
-export type UsbDeviceStatus = "EJECTED" | "NORMAL";
+export enum UsbDeviceStatus {
+  EJECTED = "EJECTED",
+  NORMAL = "NORMAL",
+}
 
 export interface VsphereEsxiAccountWhereInput {
   AND?: VsphereEsxiAccountWhereInput[] | null;
@@ -10759,9 +10895,20 @@ export interface ZoneWhereInput {
   vm_num_not_in?: number[] | null;
 }
 
-export type VmStatus = "DELETED" | "RUNNING" | "STOPPED" | "SUSPENDED" | "UNKNOWN";
+export enum VmStatus {
+  DELETED = "DELETED",
+  RUNNING = "RUNNING",
+  STOPPED = "STOPPED",
+  SUSPENDED = "SUSPENDED",
+  UNKNOWN = "UNKNOWN",
+}
 
-export type VmVideoType = "CIRRUS" | "QXL" | "VGA" | "VIRTIO";
+export enum VmVideoType {
+  CIRRUS = "CIRRUS",
+  QXL = "QXL",
+  VGA = "VGA",
+  VIRTIO = "VIRTIO",
+}
 
 export interface VmPlacementGroupWhereInput {
   AND?: VmPlacementGroupWhereInput[] | null;
@@ -10871,26 +11018,56 @@ export interface VmPlacementGroupWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
-export type VmVmPolicy = "MUST_DIFFERENT" | "MUST_SAME" | "PREFER_DIFFERENT" | "PREFER_SAME";
+export enum VmVmPolicy {
+  MUST_DIFFERENT = "MUST_DIFFERENT",
+  MUST_SAME = "MUST_SAME",
+  PREFER_DIFFERENT = "PREFER_DIFFERENT",
+  PREFER_SAME = "PREFER_SAME",
+}
 
-export type VmToolsStatus = "NOT_INSTALLED" | "NOT_RUNNING" | "RESTRICTION" | "RUNNING";
+export enum VmToolsStatus {
+  NOT_INSTALLED = "NOT_INSTALLED",
+  NOT_RUNNING = "NOT_RUNNING",
+  RESTRICTION = "RESTRICTION",
+  RUNNING = "RUNNING",
+}
 
-export type VmUsage = "EVEROUTE_CONTROLLER";
+export enum VmUsage {
+  EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
+}
 
-export type ConnectState = "CONNECTED" | "DISCONNECTED" | "INITIALIZING" | "REMOVING";
+export enum ConnectState {
+  CONNECTED = "CONNECTED",
+  DISCONNECTED = "DISCONNECTED",
+  INITIALIZING = "INITIALIZING",
+  REMOVING = "REMOVING",
+}
 
-export type ClusterConnectorErrorCode =
-  | "LOAD_CLUSTER_FAILED"
-  | "LOAD_CLUSTER_NETWORK_ERROR"
-  | "LOAD_CLUSTER_NOT_FOUND"
-  | "LOAD_CLUSTER_UNAUTHORIZED"
-  | "LOAD_CLUSTER_UNHEALTHY";
+export enum ClusterConnectorErrorCode {
+  LOAD_CLUSTER_FAILED = "LOAD_CLUSTER_FAILED",
+  LOAD_CLUSTER_NETWORK_ERROR = "LOAD_CLUSTER_NETWORK_ERROR",
+  LOAD_CLUSTER_NOT_FOUND = "LOAD_CLUSTER_NOT_FOUND",
+  LOAD_CLUSTER_UNAUTHORIZED = "LOAD_CLUSTER_UNAUTHORIZED",
+  LOAD_CLUSTER_UNHEALTHY = "LOAD_CLUSTER_UNHEALTHY",
+}
 
-export type Hypervisor = "BLUESHARK" | "ELF" | "VMWARE" | "XENSERVER";
+export enum Hypervisor {
+  BLUESHARK = "BLUESHARK",
+  ELF = "ELF",
+  VMWARE = "VMWARE",
+  XENSERVER = "XENSERVER",
+}
 
-export type LicenseType = "PERPETUAL" | "SUBSCRIPTION" | "TRIAL";
+export enum LicenseType {
+  PERPETUAL = "PERPETUAL",
+  SUBSCRIPTION = "SUBSCRIPTION",
+  TRIAL = "TRIAL",
+}
 
-export type NtpMode = "EXTERNAL" | "INTERNAL";
+export enum NtpMode {
+  EXTERNAL = "EXTERNAL",
+  INTERNAL = "INTERNAL",
+}
 
 export interface ClusterSettingsWhereInput {
   AND?: ClusterSettingsWhereInput[] | null;
@@ -10917,9 +11094,19 @@ export interface ClusterSettingsWhereInput {
   OR?: ClusterSettingsWhereInput[] | null;
 }
 
-export type SoftwareEdition = "COMMUNITY" | "ENTERPRISE" | "ESSENTIAL" | "STANDARD" | "TRIAL";
+export enum SoftwareEdition {
+  COMMUNITY = "COMMUNITY",
+  ENTERPRISE = "ENTERPRISE",
+  ESSENTIAL = "ESSENTIAL",
+  STANDARD = "STANDARD",
+  TRIAL = "TRIAL",
+}
 
-export type ClusterType = "BLUESHARK" | "SMTX_OS" | "SMTX_ZBS";
+export enum ClusterType {
+  BLUESHARK = "BLUESHARK",
+  SMTX_OS = "SMTX_OS",
+  SMTX_ZBS = "SMTX_ZBS",
+}
 
 export interface VcenterAccountWhereInput {
   AND?: VcenterAccountWhereInput[] | null;
@@ -11605,9 +11792,15 @@ export interface NestedClusterTopo {
   name: string;
 }
 
-export type Direction = "HORIZONTAL" | "VERTICAL";
+export enum Direction {
+  HORIZONTAL = "HORIZONTAL",
+  VERTICAL = "VERTICAL",
+}
 
-export type BrickPhaseEnum = "BACKWARD" | "FORWARD";
+export enum BrickPhaseEnum {
+  BACKWARD = "BACKWARD",
+  FORWARD = "FORWARD",
+}
 
 export interface NestedBrickDiskLayout {
   /** @format int32 */
@@ -11624,7 +11817,11 @@ export interface NestedNodeTopo {
   name: string;
 }
 
-export type PowerPosition = "LEFT" | "MIDDLE" | "RIGHT";
+export enum PowerPosition {
+  LEFT = "LEFT",
+  MIDDLE = "MIDDLE",
+  RIGHT = "RIGHT",
+}
 
 export interface NestedBrickPower {
   id: string;
@@ -12078,7 +12275,12 @@ export interface NestedLabel {
   id: string;
 }
 
-export type MetroCheckStatusEnum = "CRITICAL" | "HEALTHY" | "INFO" | "NOTICE";
+export enum MetroCheckStatusEnum {
+  CRITICAL = "CRITICAL",
+  HEALTHY = "HEALTHY",
+  INFO = "INFO",
+  NOTICE = "NOTICE",
+}
 
 export interface NestedMetroCheckItem {
   critical: string[];
@@ -12458,17 +12660,24 @@ export interface ConsistencyGroupDeletionParams {
   where: ConsistencyGroupWhereInput;
 }
 
-export type UploadResourceType =
-  | "CLOUDTOWER_APPLICATION_PACKAGE"
-  | "CLUSTER_IMAGE"
-  | "CLUSTER_IMAGE_META"
-  | "CONTENT_LIBRARY_IMAGE"
-  | "ELF_IMAGE"
-  | "EVEROUTE_PACKAGE"
-  | "MONITOR_IMAGE"
-  | "SVT_IMAGE";
+export enum UploadResourceType {
+  CLOUDTOWER_APPLICATION_PACKAGE = "CLOUDTOWER_APPLICATION_PACKAGE",
+  CLUSTER_IMAGE = "CLUSTER_IMAGE",
+  CLUSTER_IMAGE_META = "CLUSTER_IMAGE_META",
+  CONTENT_LIBRARY_IMAGE = "CONTENT_LIBRARY_IMAGE",
+  ELF_IMAGE = "ELF_IMAGE",
+  EVEROUTE_PACKAGE = "EVEROUTE_PACKAGE",
+  MONITOR_IMAGE = "MONITOR_IMAGE",
+  SVT_IMAGE = "SVT_IMAGE",
+}
 
-export type UploadTaskStatus = "FAILED" | "INITIALIZING" | "PAUSED" | "SUCCESSED" | "UPLOADING";
+export enum UploadTaskStatus {
+  FAILED = "FAILED",
+  INITIALIZING = "INITIALIZING",
+  PAUSED = "PAUSED",
+  SUCCESSED = "SUCCESSED",
+  UPLOADING = "UPLOADING",
+}
 
 export interface UploadTask {
   args: object;
@@ -12719,17 +12928,18 @@ export interface NestedDiskFailureInformation {
   smart_check?: boolean | null;
 }
 
-export type PartitionUsage =
-  | "BOOT"
-  | "CACHE"
-  | "JOURNAL"
-  | "METAD"
-  | "PARTITION"
-  | "SWAP"
-  | "SYSTEM"
-  | "UNMOUNTED"
-  | "UNPARTED"
-  | "ZOOKEEPER";
+export enum PartitionUsage {
+  BOOT = "BOOT",
+  CACHE = "CACHE",
+  JOURNAL = "JOURNAL",
+  METAD = "METAD",
+  PARTITION = "PARTITION",
+  SWAP = "SWAP",
+  SYSTEM = "SYSTEM",
+  UNMOUNTED = "UNMOUNTED",
+  UNPARTED = "UNPARTED",
+  ZOOKEEPER = "ZOOKEEPER",
+}
 
 export interface NestedPartition {
   name?: string | null;
@@ -12800,16 +13010,28 @@ export interface DiskUnmountParams {
   where: DiskWhereInput;
 }
 
-export type FilterRuleAggregationEnum = "AVG" | "MAX" | "MIN" | "QUANTILE" | "SUM";
+export enum FilterRuleAggregationEnum {
+  AVG = "AVG",
+  MAX = "MAX",
+  MIN = "MIN",
+  QUANTILE = "QUANTILE",
+  SUM = "SUM",
+}
 
-export type FilterRuleMetricEnum =
-  | "VM_CPU_USAGE"
-  | "VM_MEMORY_USAGE"
-  | "VM_POWEROFF_DAYS"
-  | "VM_POWERON_DAYS"
-  | "VM_READWRITE_IO";
+export enum FilterRuleMetricEnum {
+  VM_CPU_USAGE = "VM_CPU_USAGE",
+  VM_MEMORY_USAGE = "VM_MEMORY_USAGE",
+  VM_POWEROFF_DAYS = "VM_POWEROFF_DAYS",
+  VM_POWERON_DAYS = "VM_POWERON_DAYS",
+  VM_READWRITE_IO = "VM_READWRITE_IO",
+}
 
-export type FilterRuleOpEnum = "GT" | "GTE" | "LT" | "LTE";
+export enum FilterRuleOpEnum {
+  GT = "GT",
+  GTE = "GTE",
+  LT = "LT",
+  LTE = "LTE",
+}
 
 export interface NestedFilterRule {
   aggregation: FilterRuleAggregationEnum;
@@ -12893,14 +13115,21 @@ export interface EntityFilterDeletionParams {
   where: EntityFilterWhereInput;
 }
 
-export type MetricType = "BOTTOMK" | "NORMAL" | "TOPK";
+export enum MetricType {
+  BOTTOMK = "BOTTOMK",
+  NORMAL = "NORMAL",
+  TOPK = "TOPK",
+}
 
 export interface NestedNic {
   id: string;
   name: string;
 }
 
-export type GraphType = "AREA" | "STACK";
+export enum GraphType {
+  AREA = "AREA",
+  STACK = "STACK",
+}
 
 export interface NestedView {
   id: string;
@@ -13206,7 +13435,11 @@ export interface ViewWhereInput {
   time_unit_not_in?: TimeUnit[] | null;
 }
 
-export type TimeUnit = "DAY" | "HOUR" | "MONTH";
+export enum TimeUnit {
+  DAY = "DAY",
+  HOUR = "HOUR",
+  MONTH = "MONTH",
+}
 
 export interface GraphUpdationParams {
   data?: {
@@ -13245,9 +13478,20 @@ export interface GraphDeletionParams {
   where: GraphWhereInput;
 }
 
-export type TaskStatus = "EXECUTING" | "FAILED" | "PAUSED" | "PENDING" | "SUCCESSED";
+export enum TaskStatus {
+  EXECUTING = "EXECUTING",
+  FAILED = "FAILED",
+  PAUSED = "PAUSED",
+  PENDING = "PENDING",
+  SUCCESSED = "SUCCESSED",
+}
 
-export type StepUnit = "BIT" | "BYTE" | "COUNT" | "PERCENT";
+export enum StepUnit {
+  BIT = "BIT",
+  BYTE = "BYTE",
+  COUNT = "COUNT",
+  PERCENT = "PERCENT",
+}
 
 export interface Step {
   unit?: StepUnit | null;
@@ -13265,7 +13509,11 @@ export interface Step {
   __typename?: "Step";
 }
 
-export type TaskType = "APPLICATION" | "BACKUP" | "RESOLVER";
+export enum TaskType {
+  APPLICATION = "APPLICATION",
+  BACKUP = "BACKUP",
+  RESOLVER = "RESOLVER",
+}
 
 export interface User {
   username: string;
@@ -13307,11 +13555,25 @@ export interface PasswordRecoverQa {
   __typename?: "PasswordRecoverQa";
 }
 
-export type UserRole = "ADMIN" | "READ_ONLY" | "ROOT";
+export enum UserRole {
+  ADMIN = "ADMIN",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+}
 
-export type UserRolePlatform = "MANAGEMENT" | "SELF_SERVICE";
+export enum UserRolePlatform {
+  MANAGEMENT = "MANAGEMENT",
+  SELF_SERVICE = "SELF_SERVICE",
+}
 
-export type UserRolePreset = "ADMIN" | "AUDITOR" | "READ_ONLY" | "ROOT" | "USER_ADMIN" | "VM_USER";
+export enum UserRolePreset {
+  ADMIN = "ADMIN",
+  AUDITOR = "AUDITOR",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+  USER_ADMIN = "USER_ADMIN",
+  VM_USER = "VM_USER",
+}
 
 export interface UserRoleNext {
   users?: User[] | null;
@@ -13323,7 +13585,10 @@ export interface UserRoleNext {
   __typename?: "UserRoleNext";
 }
 
-export type UserSource = "LDAP" | "LOCAL";
+export enum UserSource {
+  LDAP = "LDAP",
+  LOCAL = "LOCAL",
+}
 
 export interface Task {
   user?: User | null;
@@ -13378,7 +13643,12 @@ export interface HostBatchCreateDiskInput {
   drive: string;
 }
 
-export type HostBatchCreateIfaceFunction = "ACCESS" | "MANAGEMENT" | "STORAGE" | "VMWARE_ACCESS";
+export enum HostBatchCreateIfaceFunction {
+  ACCESS = "ACCESS",
+  MANAGEMENT = "MANAGEMENT",
+  STORAGE = "STORAGE",
+  VMWARE_ACCESS = "VMWARE_ACCESS",
+}
 
 export interface HostBatchCreateIfaceInput {
   netmask: string;
@@ -14288,7 +14558,12 @@ export interface LicenseUpdationParams {
   data: { license: string };
 }
 
-export type LogCollectionStatus = "EXECUTING" | "FAILED" | "STOPPING" | "SUCCESSED";
+export enum LogCollectionStatus {
+  EXECUTING = "EXECUTING",
+  FAILED = "FAILED",
+  STOPPING = "STOPPING",
+  SUCCESSED = "SUCCESSED",
+}
 
 export interface LogCollection {
   cluster: NestedCluster;
@@ -15187,9 +15462,17 @@ export interface RackTopoDeletionParams {
   where: RackTopoWhereInput;
 }
 
-export type AccessMode = "ALLOW" | "DENY" | "NONE";
+export enum AccessMode {
+  ALLOW = "ALLOW",
+  DENY = "DENY",
+  NONE = "NONE",
+}
 
-export type PasswordComplexity = "HIGH" | "LOW" | "MIDDLE";
+export enum PasswordComplexity {
+  HIGH = "HIGH",
+  LOW = "LOW",
+  MIDDLE = "MIDDLE",
+}
 
 export interface NestedAuthSettings {
   access_list?: string[] | null;
@@ -15280,21 +15563,22 @@ export interface NestedExecutePlan {
   start_at: string;
 }
 
-export type ReportResourceInputEnum =
-  | "ALERT"
-  | "ALL"
-  | "CLUSTER"
-  | "DATA_CENTER"
-  | "DISK"
-  | "ELF_IMAGE"
-  | "ENTITY_FILTERS"
-  | "GLOBAL_ALERT_RULE"
-  | "HOST"
-  | "TASK"
-  | "VDS"
-  | "VLAN"
-  | "VM"
-  | "VM_TEMPLATE";
+export enum ReportResourceInputEnum {
+  ALERT = "ALERT",
+  ALL = "ALL",
+  CLUSTER = "CLUSTER",
+  DATA_CENTER = "DATA_CENTER",
+  DISK = "DISK",
+  ELF_IMAGE = "ELF_IMAGE",
+  ENTITY_FILTERS = "ENTITY_FILTERS",
+  GLOBAL_ALERT_RULE = "GLOBAL_ALERT_RULE",
+  HOST = "HOST",
+  TASK = "TASK",
+  VDS = "VDS",
+  VLAN = "VLAN",
+  VM = "VM",
+  VM_TEMPLATE = "VM_TEMPLATE",
+}
 
 export interface NestedResourceMeta {
   fields: string[];
@@ -15556,88 +15840,89 @@ export interface WithTaskUserRoleNext {
   data: UserRoleNext;
 }
 
-export type ROLE_ACTION =
-  | "*"
-  | "MANAGE_DATA_CENTER"
-  | "MANAGE_CLUSTER_CONNECTION"
-  | "MANAGE_HOST"
-  | "MANAGE_NIC_MTU"
-  | "MANAGE_DISK"
-  | "MANAGE_HARDWARE_TOPO"
-  | "MANAGE_USB_DEVICE"
-  | "MANAGE_VDS"
-  | "MANAGE_VLAN"
-  | "MANAGE_SYSTEM_VLAN"
-  | "MANAGE_ISCSI_DATA_STORE"
-  | "MANAGE_NFS_DATA_STORE"
-  | "MANAGE_NVMF_DATA_STORE"
-  | "CREATE_VM"
-  | "UPDATE_VM"
-  | "DELETE_VM"
-  | "UPDATE_VM_ADVANCED_SETTING"
-  | "UPDATE_VM_GUEST"
-  | "VM_OPERATION_OPEN_TERMINAL"
-  | "VM_OPERATION_MIGRATE"
-  | "VM_OPERATION_VM_FOLDER"
-  | "VM_OPERATION_VM_POWER"
-  | "VM_OPERATION_CLONE"
-  | "VM_OPERATION_INSTALL_TOOLS"
-  | "MANAGE_VM_TEMPLATE"
-  | "MANAGE_VM_SNAPSHOT"
-  | "MANAGE_VM_VOLUME"
-  | "MANAGE_ISO"
-  | "QUERY_SENSITIVE_RESOURCE_LIST"
-  | "QUERY_SENSITIVE_RESOURCE"
-  | "MANAGE_SENSITIVE_RESOURCE"
-  | "MANAGE_VM_PLACEMENT_GROUP"
-  | "MANAGE_SNAPSHOT_PLAN"
-  | "MANAGE_ALERT"
-  | "MANAGE_MONITOR_VIEW"
-  | "MANAGE_ENTITY_FILTER"
-  | "MANAGE_CLUSTER_BASIC_INFO"
-  | "MANAGE_CLUSTER_LICENCE"
-  | "MANAGE_CLUSTER_SNMP"
-  | "MANAGE_CLUSTER_VIP"
-  | "MANAGE_CLUSTER_MANAGEMENT_IP"
-  | "MANAGE_DNS_SERVER"
-  | "MANAGE_NTP_SERVER"
-  | "MANAGE_IPMI"
-  | "MANAGE_CLUSTER_VM_CPU_MODEL"
-  | "MANAGE_CLUSTER_VM_TOOLS"
-  | "MANAGE_CLUSTER_HOT_MIGRATION"
-  | "MANAGE_CLUSTER_HA"
-  | "MANAGE_SSL_CERTIFICATE"
-  | "MANAGE_LOG_COLLECTION"
-  | "MANAGE_LABEL"
-  | "MANAGE_USER_AND_ROLE"
-  | "MANAGE_PASSWORD_SETTINGS"
-  | "MANAGE_ACCESS_CONTROL"
-  | "MANAGE_SESSION_EXPIRATION"
-  | "MANAGE_VCENTER_ASSOCIATION"
-  | "MANAGE_ESXI_ASSOCIATION"
-  | "MANAGE_AUDIT_LOG"
-  | "MANAGE_ALERT_EMAIL_SETTING"
-  | "MANAGE_SMTP_SERVER"
-  | "MANAGE_CLUSTER_UPGRADE"
-  | "MANAGE_VM_RECYCLE_BIN_SETTING"
-  | "MANAGE_REPORT"
-  | "MANAGE_SHARING_VM_TOOLS"
-  | "MANAGE_ADVANCED_MONITOR"
-  | "MANAGE_MIGRATE_TRANSMITTER"
-  | "MANAGE_THIRD_PARTY_DRIVER"
-  | "MANAGE_ORGANIZATION_NAME"
-  | "MANAGE_CLOUD_TOWER_LICENSE"
-  | "MANAGE_CONSISTENCY_GROUP"
-  | "MANAGE_SR_IOV_NIC"
-  | "MANAGE_CLUSTER_ISCSI"
-  | "MANAGE_BACKUP_LICENSE"
-  | "MANAGE_BACKUP_PACKAGE"
-  | "MANAGE_BACKUP_SERVICE"
-  | "MANAGE_BACKUP_STORE_REPOSITORY"
-  | "MANAGE_BACKUP_PLAN"
-  | "MANAGE_BACKUP_TASK"
-  | "MANAGE_BACKUP_RESTORE_POINT"
-  | "MANAGE_BACKUP_RESTORE_POINT_TASK";
+export enum ROLE_ACTION {
+  Type = "*",
+  MANAGE_DATA_CENTER = "MANAGE_DATA_CENTER",
+  MANAGE_CLUSTER_CONNECTION = "MANAGE_CLUSTER_CONNECTION",
+  MANAGE_HOST = "MANAGE_HOST",
+  MANAGE_NIC_MTU = "MANAGE_NIC_MTU",
+  MANAGE_DISK = "MANAGE_DISK",
+  MANAGE_HARDWARE_TOPO = "MANAGE_HARDWARE_TOPO",
+  MANAGE_USB_DEVICE = "MANAGE_USB_DEVICE",
+  MANAGE_VDS = "MANAGE_VDS",
+  MANAGE_VLAN = "MANAGE_VLAN",
+  MANAGE_SYSTEM_VLAN = "MANAGE_SYSTEM_VLAN",
+  MANAGE_ISCSI_DATA_STORE = "MANAGE_ISCSI_DATA_STORE",
+  MANAGE_NFS_DATA_STORE = "MANAGE_NFS_DATA_STORE",
+  MANAGE_NVMF_DATA_STORE = "MANAGE_NVMF_DATA_STORE",
+  CREATE_VM = "CREATE_VM",
+  UPDATE_VM = "UPDATE_VM",
+  DELETE_VM = "DELETE_VM",
+  UPDATE_VM_ADVANCED_SETTING = "UPDATE_VM_ADVANCED_SETTING",
+  UPDATE_VM_GUEST = "UPDATE_VM_GUEST",
+  VM_OPERATION_OPEN_TERMINAL = "VM_OPERATION_OPEN_TERMINAL",
+  VM_OPERATION_MIGRATE = "VM_OPERATION_MIGRATE",
+  VM_OPERATION_VM_FOLDER = "VM_OPERATION_VM_FOLDER",
+  VM_OPERATION_VM_POWER = "VM_OPERATION_VM_POWER",
+  VM_OPERATION_CLONE = "VM_OPERATION_CLONE",
+  VM_OPERATION_INSTALL_TOOLS = "VM_OPERATION_INSTALL_TOOLS",
+  MANAGE_VM_TEMPLATE = "MANAGE_VM_TEMPLATE",
+  MANAGE_VM_SNAPSHOT = "MANAGE_VM_SNAPSHOT",
+  MANAGE_VM_VOLUME = "MANAGE_VM_VOLUME",
+  MANAGE_ISO = "MANAGE_ISO",
+  QUERY_SENSITIVE_RESOURCE_LIST = "QUERY_SENSITIVE_RESOURCE_LIST",
+  QUERY_SENSITIVE_RESOURCE = "QUERY_SENSITIVE_RESOURCE",
+  MANAGE_SENSITIVE_RESOURCE = "MANAGE_SENSITIVE_RESOURCE",
+  MANAGE_VM_PLACEMENT_GROUP = "MANAGE_VM_PLACEMENT_GROUP",
+  MANAGE_SNAPSHOT_PLAN = "MANAGE_SNAPSHOT_PLAN",
+  MANAGE_ALERT = "MANAGE_ALERT",
+  MANAGE_MONITOR_VIEW = "MANAGE_MONITOR_VIEW",
+  MANAGE_ENTITY_FILTER = "MANAGE_ENTITY_FILTER",
+  MANAGE_CLUSTER_BASIC_INFO = "MANAGE_CLUSTER_BASIC_INFO",
+  MANAGE_CLUSTER_LICENCE = "MANAGE_CLUSTER_LICENCE",
+  MANAGE_CLUSTER_SNMP = "MANAGE_CLUSTER_SNMP",
+  MANAGE_CLUSTER_VIP = "MANAGE_CLUSTER_VIP",
+  MANAGE_CLUSTER_MANAGEMENT_IP = "MANAGE_CLUSTER_MANAGEMENT_IP",
+  MANAGE_DNS_SERVER = "MANAGE_DNS_SERVER",
+  MANAGE_NTP_SERVER = "MANAGE_NTP_SERVER",
+  MANAGE_IPMI = "MANAGE_IPMI",
+  MANAGE_CLUSTER_VM_CPU_MODEL = "MANAGE_CLUSTER_VM_CPU_MODEL",
+  MANAGE_CLUSTER_VM_TOOLS = "MANAGE_CLUSTER_VM_TOOLS",
+  MANAGE_CLUSTER_HOT_MIGRATION = "MANAGE_CLUSTER_HOT_MIGRATION",
+  MANAGE_CLUSTER_HA = "MANAGE_CLUSTER_HA",
+  MANAGE_SSL_CERTIFICATE = "MANAGE_SSL_CERTIFICATE",
+  MANAGE_LOG_COLLECTION = "MANAGE_LOG_COLLECTION",
+  MANAGE_LABEL = "MANAGE_LABEL",
+  MANAGE_USER_AND_ROLE = "MANAGE_USER_AND_ROLE",
+  MANAGE_PASSWORD_SETTINGS = "MANAGE_PASSWORD_SETTINGS",
+  MANAGE_ACCESS_CONTROL = "MANAGE_ACCESS_CONTROL",
+  MANAGE_SESSION_EXPIRATION = "MANAGE_SESSION_EXPIRATION",
+  MANAGE_VCENTER_ASSOCIATION = "MANAGE_VCENTER_ASSOCIATION",
+  MANAGE_ESXI_ASSOCIATION = "MANAGE_ESXI_ASSOCIATION",
+  MANAGE_AUDIT_LOG = "MANAGE_AUDIT_LOG",
+  MANAGE_ALERT_EMAIL_SETTING = "MANAGE_ALERT_EMAIL_SETTING",
+  MANAGE_SMTP_SERVER = "MANAGE_SMTP_SERVER",
+  MANAGE_CLUSTER_UPGRADE = "MANAGE_CLUSTER_UPGRADE",
+  MANAGE_VM_RECYCLE_BIN_SETTING = "MANAGE_VM_RECYCLE_BIN_SETTING",
+  MANAGE_REPORT = "MANAGE_REPORT",
+  MANAGE_SHARING_VM_TOOLS = "MANAGE_SHARING_VM_TOOLS",
+  MANAGE_ADVANCED_MONITOR = "MANAGE_ADVANCED_MONITOR",
+  MANAGE_MIGRATE_TRANSMITTER = "MANAGE_MIGRATE_TRANSMITTER",
+  MANAGE_THIRD_PARTY_DRIVER = "MANAGE_THIRD_PARTY_DRIVER",
+  MANAGE_ORGANIZATION_NAME = "MANAGE_ORGANIZATION_NAME",
+  MANAGE_CLOUD_TOWER_LICENSE = "MANAGE_CLOUD_TOWER_LICENSE",
+  MANAGE_CONSISTENCY_GROUP = "MANAGE_CONSISTENCY_GROUP",
+  MANAGE_SR_IOV_NIC = "MANAGE_SR_IOV_NIC",
+  MANAGE_CLUSTER_ISCSI = "MANAGE_CLUSTER_ISCSI",
+  MANAGE_BACKUP_LICENSE = "MANAGE_BACKUP_LICENSE",
+  MANAGE_BACKUP_PACKAGE = "MANAGE_BACKUP_PACKAGE",
+  MANAGE_BACKUP_SERVICE = "MANAGE_BACKUP_SERVICE",
+  MANAGE_BACKUP_STORE_REPOSITORY = "MANAGE_BACKUP_STORE_REPOSITORY",
+  MANAGE_BACKUP_PLAN = "MANAGE_BACKUP_PLAN",
+  MANAGE_BACKUP_TASK = "MANAGE_BACKUP_TASK",
+  MANAGE_BACKUP_RESTORE_POINT = "MANAGE_BACKUP_RESTORE_POINT",
+  MANAGE_BACKUP_RESTORE_POINT_TASK = "MANAGE_BACKUP_RESTORE_POINT_TASK",
+}
 
 export interface RoleCreationParams {
   actions: ROLE_ACTION[];
@@ -15824,11 +16109,12 @@ export interface NestedSnapshotPlanTask {
   id: string;
 }
 
-export type ProtectSnapshotStatus =
-  | "PROTECT_SNAPSHOT_STATUS_CREATED"
-  | "PROTECT_SNAPSHOT_STATUS_CREATING"
-  | "PROTECT_SNAPSHOT_STATUS_DELETED"
-  | "PROTECT_SNAPSHOT_STATUS_FAILED";
+export enum ProtectSnapshotStatus {
+  PROTECT_SNAPSHOT_STATUS_CREATED = "PROTECT_SNAPSHOT_STATUS_CREATED",
+  PROTECT_SNAPSHOT_STATUS_CREATING = "PROTECT_SNAPSHOT_STATUS_CREATING",
+  PROTECT_SNAPSHOT_STATUS_DELETED = "PROTECT_SNAPSHOT_STATUS_DELETED",
+  PROTECT_SNAPSHOT_STATUS_FAILED = "PROTECT_SNAPSHOT_STATUS_FAILED",
+}
 
 export interface NestedSnapshotGroupVmDiskInfo {
   disk_id: string;
@@ -16007,13 +16293,25 @@ export interface SnapshotPlanResumeParams {
   where: SnapshotPlanWhereInput;
 }
 
-export type SnmpAuthProtocol = "MD5" | "SHA";
+export enum SnmpAuthProtocol {
+  MD5 = "MD5",
+  SHA = "SHA",
+}
 
-export type SnmpPrivacyProtocol = "AES" | "DES";
+export enum SnmpPrivacyProtocol {
+  AES = "AES",
+  DES = "DES",
+}
 
-export type SnmpProtocol = "TCP" | "UDP";
+export enum SnmpProtocol {
+  TCP = "TCP",
+  UDP = "UDP",
+}
 
-export type SnmpVersion = "V2C" | "V3";
+export enum SnmpVersion {
+  V2C = "V2C",
+  V3 = "V3",
+}
 
 export interface SnmpTransport {
   auth_pass_phrase?: string | null;
@@ -16234,7 +16532,10 @@ export interface SnmpTransportDeletionParams {
   where: SnmpTransportWhereInput;
 }
 
-export type SnmpLanguageCode = "EN_US" | "ZH_CN";
+export enum SnmpLanguageCode {
+  EN_US = "EN_US",
+  ZH_CN = "ZH_CN",
+}
 
 export interface SnmpTrapReceiver {
   auth_pass_phrase?: string | null;
@@ -17387,7 +17688,10 @@ export interface DiskOperateModifyDisk {
   disk_index: number;
 }
 
-export type CloudInitNetworkTypeEnum = "IPV4" | "IPV4_DHCP";
+export enum CloudInitNetworkTypeEnum {
+  IPV4 = "IPV4",
+  IPV4DHCP = "IPV4_DHCP",
+}
 
 export interface CloudInitNetWorkRoute {
   network: string;
@@ -17714,17 +18018,18 @@ export interface MetricSample {
   __typename?: "MetricSample";
 }
 
-export type MetricUnit =
-  | "COUNT"
-  | "DATA_RATE_BIT"
-  | "DATA_RATE_BYTE"
-  | "DATA_SIZE"
-  | "FREQUENCY"
-  | "LOAD"
-  | "PERCENT"
-  | "RATIO"
-  | "TEMPERATURE"
-  | "TIME";
+export enum MetricUnit {
+  COUNT = "COUNT",
+  DATA_RATE_BIT = "DATA_RATE_BIT",
+  DATA_RATE_BYTE = "DATA_RATE_BYTE",
+  DATA_SIZE = "DATA_SIZE",
+  FREQUENCY = "FREQUENCY",
+  LOAD = "LOAD",
+  PERCENT = "PERCENT",
+  RATIO = "RATIO",
+  TEMPERATURE = "TEMPERATURE",
+  TIME = "TIME",
+}
 
 export interface Metric {
   unit: MetricUnit;
@@ -17855,9 +18160,16 @@ export interface GetTopNMetricInput {
   range: string;
 }
 
-export type NotifierLanguageCode = "EN_US" | "ZH_CN";
+export enum NotifierLanguageCode {
+  EN_US = "EN_US",
+  ZH_CN = "ZH_CN",
+}
 
-export type NotifierSecurityMode = "SSL" | "STARTTLS" | "UNSPECIFIED";
+export enum NotifierSecurityMode {
+  SSL = "SSL",
+  STARTTLS = "STARTTLS",
+  UNSPECIFIED = "UNSPECIFIED",
+}
 
 export interface AlertNotifier {
   disabled: boolean;
@@ -17874,29 +18186,30 @@ export interface AlertNotifier {
   username?: string | null;
 }
 
-export type AlertNotifierOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "email_from_ASC"
-  | "email_from_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "language_code_ASC"
-  | "language_code_DESC"
-  | "password_ASC"
-  | "password_DESC"
-  | "security_mode_ASC"
-  | "security_mode_DESC"
-  | "smtp_server_host_ASC"
-  | "smtp_server_host_DESC"
-  | "smtp_server_port_ASC"
-  | "smtp_server_port_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC";
+export enum AlertNotifierOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  EmailFromASC = "email_from_ASC",
+  EmailFromDESC = "email_from_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LanguageCodeASC = "language_code_ASC",
+  LanguageCodeDESC = "language_code_DESC",
+  PasswordASC = "password_ASC",
+  PasswordDESC = "password_DESC",
+  SecurityModeASC = "security_mode_ASC",
+  SecurityModeDESC = "security_mode_DESC",
+  SmtpServerHostASC = "smtp_server_host_ASC",
+  SmtpServerHostDESC = "smtp_server_host_DESC",
+  SmtpServerPortASC = "smtp_server_port_ASC",
+  SmtpServerPortDESC = "smtp_server_port_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+}
 
 export interface AlertNotifierWhereInput {
   AND?: AlertNotifierWhereInput[] | null;
@@ -18046,21 +18359,22 @@ export interface AlertRule {
   thresholds: NestedThresholds[];
 }
 
-export type AlertRuleOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "customized_ASC"
-  | "customized_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "thresholds_ASC"
-  | "thresholds_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum AlertRuleOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  CustomizedASC = "customized_ASC",
+  CustomizedDESC = "customized_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ThresholdsASC = "thresholds_ASC",
+  ThresholdsDESC = "thresholds_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetAlertRulesRequestBody {
   after?: string | null;
@@ -18103,43 +18417,44 @@ export interface GetAlertRulesConnectionRequestBody {
   where?: AlertRuleWhereInput | null;
 }
 
-export type AlertOrderByInput =
-  | "cause_ASC"
-  | "cause_DESC"
-  | "create_time_ASC"
-  | "create_time_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "ended_ASC"
-  | "ended_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "impact_ASC"
-  | "impact_DESC"
-  | "labels_ASC"
-  | "labels_DESC"
-  | "local_create_time_ASC"
-  | "local_create_time_DESC"
-  | "local_end_time_ASC"
-  | "local_end_time_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "local_start_time_ASC"
-  | "local_start_time_DESC"
-  | "local_update_time_ASC"
-  | "local_update_time_DESC"
-  | "message_ASC"
-  | "message_DESC"
-  | "severity_ASC"
-  | "severity_DESC"
-  | "solution_ASC"
-  | "solution_DESC"
-  | "threshold_ASC"
-  | "threshold_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "value_ASC"
-  | "value_DESC";
+export enum AlertOrderByInput {
+  CauseASC = "cause_ASC",
+  CauseDESC = "cause_DESC",
+  CreateTimeASC = "create_time_ASC",
+  CreateTimeDESC = "create_time_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EndedASC = "ended_ASC",
+  EndedDESC = "ended_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImpactASC = "impact_ASC",
+  ImpactDESC = "impact_DESC",
+  LabelsASC = "labels_ASC",
+  LabelsDESC = "labels_DESC",
+  LocalCreateTimeASC = "local_create_time_ASC",
+  LocalCreateTimeDESC = "local_create_time_DESC",
+  LocalEndTimeASC = "local_end_time_ASC",
+  LocalEndTimeDESC = "local_end_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LocalStartTimeASC = "local_start_time_ASC",
+  LocalStartTimeDESC = "local_start_time_DESC",
+  LocalUpdateTimeASC = "local_update_time_ASC",
+  LocalUpdateTimeDESC = "local_update_time_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  SeverityASC = "severity_ASC",
+  SeverityDESC = "severity_DESC",
+  SolutionASC = "solution_ASC",
+  SolutionDESC = "solution_DESC",
+  ThresholdASC = "threshold_ASC",
+  ThresholdDESC = "threshold_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  ValueASC = "value_ASC",
+  ValueDESC = "value_DESC",
+}
 
 export interface GetAlertsRequestBody {
   after?: string | null;
@@ -18205,35 +18520,36 @@ export interface Application {
   volume_size: number;
 }
 
-export type ApplicationOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "error_message_ASC"
-  | "error_message_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "image_name_ASC"
-  | "image_name_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "memory_ASC"
-  | "memory_DESC"
-  | "state_ASC"
-  | "state_DESC"
-  | "storage_ip_ASC"
-  | "storage_ip_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "update_time_ASC"
-  | "update_time_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vcpu_ASC"
-  | "vcpu_DESC"
-  | "version_ASC"
-  | "version_DESC"
-  | "volume_size_ASC"
-  | "volume_size_DESC";
+export enum ApplicationOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  ErrorMessageASC = "error_message_ASC",
+  ErrorMessageDESC = "error_message_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImageNameASC = "image_name_ASC",
+  ImageNameDESC = "image_name_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  StorageIpASC = "storage_ip_ASC",
+  StorageIpDESC = "storage_ip_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdateTimeASC = "update_time_ASC",
+  UpdateTimeDESC = "update_time_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+  VolumeSizeASC = "volume_size_ASC",
+  VolumeSizeDESC = "volume_size_DESC",
+}
 
 export interface GetApplicationsRequestBody {
   after?: string | null;
@@ -18276,35 +18592,36 @@ export interface GetApplicationsConnectionRequestBody {
   where?: ApplicationWhereInput | null;
 }
 
-export type BrickTopoOrderByInput =
-  | "capacity_ASC"
-  | "capacity_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "disk_layout_ASC"
-  | "disk_layout_DESC"
-  | "height_ASC"
-  | "height_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "model_ASC"
-  | "model_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "position_ASC"
-  | "position_DESC"
-  | "power_layout_ASC"
-  | "power_layout_DESC"
-  | "power_position_ASC"
-  | "power_position_DESC"
-  | "powers_ASC"
-  | "powers_DESC"
-  | "tag_position_in_brick_ASC"
-  | "tag_position_in_brick_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum BrickTopoOrderByInput {
+  CapacityASC = "capacity_ASC",
+  CapacityDESC = "capacity_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DiskLayoutASC = "disk_layout_ASC",
+  DiskLayoutDESC = "disk_layout_DESC",
+  HeightASC = "height_ASC",
+  HeightDESC = "height_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PositionASC = "position_ASC",
+  PositionDESC = "position_DESC",
+  PowerLayoutASC = "power_layout_ASC",
+  PowerLayoutDESC = "power_layout_DESC",
+  PowerPositionASC = "power_position_ASC",
+  PowerPositionDESC = "power_position_DESC",
+  PowersASC = "powers_ASC",
+  PowersDESC = "powers_DESC",
+  TagPositionInBrickASC = "tag_position_in_brick_ASC",
+  TagPositionInBrickDESC = "tag_position_in_brick_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetBrickTopoesRequestBody {
   after?: string | null;
@@ -18366,31 +18683,32 @@ export interface ClusterImage {
   zbs_version?: string | null;
 }
 
-export type ClusterImageOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "meta_name_ASC"
-  | "meta_name_DESC"
-  | "meta_size_ASC"
-  | "meta_size_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "upgrade_tool_version_ASC"
-  | "upgrade_tool_version_DESC"
-  | "version_ASC"
-  | "version_DESC"
-  | "zbs_version_ASC"
-  | "zbs_version_DESC";
+export enum ClusterImageOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MetaNameASC = "meta_name_ASC",
+  MetaNameDESC = "meta_name_DESC",
+  MetaSizeASC = "meta_size_ASC",
+  MetaSizeDESC = "meta_size_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UpgradeToolVersionASC = "upgrade_tool_version_ASC",
+  UpgradeToolVersionDESC = "upgrade_tool_version_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+  ZbsVersionASC = "zbs_version_ASC",
+  ZbsVersionDESC = "zbs_version_DESC",
+}
 
 export interface ClusterImageWhereInput {
   AND?: ClusterImageWhereInput[] | null;
@@ -18586,151 +18904,152 @@ export interface GetClusterImagesConnectionRequestBody {
   where?: ClusterImageWhereInput | null;
 }
 
-export type ClusterOrderByInput =
-  | "application_highest_version_ASC"
-  | "application_highest_version_DESC"
-  | "architecture_ASC"
-  | "architecture_DESC"
-  | "auto_converge_ASC"
-  | "auto_converge_DESC"
-  | "connect_state_ASC"
-  | "connect_state_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "current_cpu_model_ASC"
-  | "current_cpu_model_DESC"
-  | "disconnected_date_ASC"
-  | "disconnected_date_DESC"
-  | "disconnected_reason_ASC"
-  | "disconnected_reason_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "failure_data_space_ASC"
-  | "failure_data_space_DESC"
-  | "has_metrox_ASC"
-  | "has_metrox_DESC"
-  | "has_remote_backup_ASC"
-  | "has_remote_backup_DESC"
-  | "host_num_ASC"
-  | "host_num_DESC"
-  | "hypervisor_ASC"
-  | "hypervisor_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_ASC"
-  | "ip_DESC"
-  | "is_all_flash_ASC"
-  | "is_all_flash_DESC"
-  | "iscsi_vip_ASC"
-  | "iscsi_vip_DESC"
-  | "license_expire_date_ASC"
-  | "license_expire_date_DESC"
-  | "license_serial_ASC"
-  | "license_serial_DESC"
-  | "license_sign_date_ASC"
-  | "license_sign_date_DESC"
-  | "license_type_ASC"
-  | "license_type_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "maintenance_end_date_ASC"
-  | "maintenance_end_date_DESC"
-  | "maintenance_start_date_ASC"
-  | "maintenance_start_date_DESC"
-  | "management_vip_ASC"
-  | "management_vip_DESC"
-  | "max_chunk_num_ASC"
-  | "max_chunk_num_DESC"
-  | "max_physical_data_capacity_ASC"
-  | "max_physical_data_capacity_DESC"
-  | "max_physical_data_capacity_per_node_ASC"
-  | "max_physical_data_capacity_per_node_DESC"
-  | "metro_availability_checklist_ASC"
-  | "metro_availability_checklist_DESC"
-  | "mgt_gateway_ASC"
-  | "mgt_gateway_DESC"
-  | "mgt_netmask_ASC"
-  | "mgt_netmask_DESC"
-  | "migration_data_size_ASC"
-  | "migration_data_size_DESC"
-  | "migration_speed_ASC"
-  | "migration_speed_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "ntp_mode_ASC"
-  | "ntp_mode_DESC"
-  | "nvme_over_rdma_enabled_ASC"
-  | "nvme_over_rdma_enabled_DESC"
-  | "nvme_over_tcp_enabled_ASC"
-  | "nvme_over_tcp_enabled_DESC"
-  | "nvmf_enabled_ASC"
-  | "nvmf_enabled_DESC"
-  | "password_ASC"
-  | "password_DESC"
-  | "pmem_enabled_ASC"
-  | "pmem_enabled_DESC"
-  | "provisioned_cpu_cores_ASC"
-  | "provisioned_cpu_cores_DESC"
-  | "provisioned_cpu_cores_for_active_vm_ASC"
-  | "provisioned_cpu_cores_for_active_vm_DESC"
-  | "provisioned_for_active_vm_ratio_ASC"
-  | "provisioned_for_active_vm_ratio_DESC"
-  | "provisioned_memory_bytes_ASC"
-  | "provisioned_memory_bytes_DESC"
-  | "provisioned_ratio_ASC"
-  | "provisioned_ratio_DESC"
-  | "rdma_enabled_ASC"
-  | "rdma_enabled_DESC"
-  | "recover_data_size_ASC"
-  | "recover_data_size_DESC"
-  | "recover_speed_ASC"
-  | "recover_speed_DESC"
-  | "reserved_cpu_cores_for_system_service_ASC"
-  | "reserved_cpu_cores_for_system_service_DESC"
-  | "running_vm_num_ASC"
-  | "running_vm_num_DESC"
-  | "software_edition_ASC"
-  | "software_edition_DESC"
-  | "stopped_vm_num_ASC"
-  | "stopped_vm_num_DESC"
-  | "stretch_ASC"
-  | "stretch_DESC"
-  | "suspended_vm_num_ASC"
-  | "suspended_vm_num_DESC"
-  | "total_cache_capacity_ASC"
-  | "total_cache_capacity_DESC"
-  | "total_cpu_cores_ASC"
-  | "total_cpu_cores_DESC"
-  | "total_cpu_hz_ASC"
-  | "total_cpu_hz_DESC"
-  | "total_cpu_sockets_ASC"
-  | "total_cpu_sockets_DESC"
-  | "total_data_capacity_ASC"
-  | "total_data_capacity_DESC"
-  | "total_memory_bytes_ASC"
-  | "total_memory_bytes_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "upgrade_tool_version_ASC"
-  | "upgrade_tool_version_DESC"
-  | "used_cpu_hz_ASC"
-  | "used_cpu_hz_DESC"
-  | "used_data_space_ASC"
-  | "used_data_space_DESC"
-  | "used_memory_bytes_ASC"
-  | "used_memory_bytes_DESC"
-  | "username_ASC"
-  | "username_DESC"
-  | "valid_data_space_ASC"
-  | "valid_data_space_DESC"
-  | "version_ASC"
-  | "version_DESC"
-  | "vhost_enabled_ASC"
-  | "vhost_enabled_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC";
+export enum ClusterOrderByInput {
+  ApplicationHighestVersionASC = "application_highest_version_ASC",
+  ApplicationHighestVersionDESC = "application_highest_version_DESC",
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  AutoConvergeASC = "auto_converge_ASC",
+  AutoConvergeDESC = "auto_converge_DESC",
+  ConnectStateASC = "connect_state_ASC",
+  ConnectStateDESC = "connect_state_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  CurrentCpuModelASC = "current_cpu_model_ASC",
+  CurrentCpuModelDESC = "current_cpu_model_DESC",
+  DisconnectedDateASC = "disconnected_date_ASC",
+  DisconnectedDateDESC = "disconnected_date_DESC",
+  DisconnectedReasonASC = "disconnected_reason_ASC",
+  DisconnectedReasonDESC = "disconnected_reason_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HasMetroxASC = "has_metrox_ASC",
+  HasMetroxDESC = "has_metrox_DESC",
+  HasRemoteBackupASC = "has_remote_backup_ASC",
+  HasRemoteBackupDESC = "has_remote_backup_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  HypervisorASC = "hypervisor_ASC",
+  HypervisorDESC = "hypervisor_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpASC = "ip_ASC",
+  IpDESC = "ip_DESC",
+  IsAllFlashASC = "is_all_flash_ASC",
+  IsAllFlashDESC = "is_all_flash_DESC",
+  IscsiVipASC = "iscsi_vip_ASC",
+  IscsiVipDESC = "iscsi_vip_DESC",
+  LicenseExpireDateASC = "license_expire_date_ASC",
+  LicenseExpireDateDESC = "license_expire_date_DESC",
+  LicenseSerialASC = "license_serial_ASC",
+  LicenseSerialDESC = "license_serial_DESC",
+  LicenseSignDateASC = "license_sign_date_ASC",
+  LicenseSignDateDESC = "license_sign_date_DESC",
+  LicenseTypeASC = "license_type_ASC",
+  LicenseTypeDESC = "license_type_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MaintenanceEndDateASC = "maintenance_end_date_ASC",
+  MaintenanceEndDateDESC = "maintenance_end_date_DESC",
+  MaintenanceStartDateASC = "maintenance_start_date_ASC",
+  MaintenanceStartDateDESC = "maintenance_start_date_DESC",
+  ManagementVipASC = "management_vip_ASC",
+  ManagementVipDESC = "management_vip_DESC",
+  MaxChunkNumASC = "max_chunk_num_ASC",
+  MaxChunkNumDESC = "max_chunk_num_DESC",
+  MaxPhysicalDataCapacityASC = "max_physical_data_capacity_ASC",
+  MaxPhysicalDataCapacityDESC = "max_physical_data_capacity_DESC",
+  MaxPhysicalDataCapacityPerNodeASC = "max_physical_data_capacity_per_node_ASC",
+  MaxPhysicalDataCapacityPerNodeDESC = "max_physical_data_capacity_per_node_DESC",
+  MetroAvailabilityChecklistASC = "metro_availability_checklist_ASC",
+  MetroAvailabilityChecklistDESC = "metro_availability_checklist_DESC",
+  MgtGatewayASC = "mgt_gateway_ASC",
+  MgtGatewayDESC = "mgt_gateway_DESC",
+  MgtNetmaskASC = "mgt_netmask_ASC",
+  MgtNetmaskDESC = "mgt_netmask_DESC",
+  MigrationDataSizeASC = "migration_data_size_ASC",
+  MigrationDataSizeDESC = "migration_data_size_DESC",
+  MigrationSpeedASC = "migration_speed_ASC",
+  MigrationSpeedDESC = "migration_speed_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NtpModeASC = "ntp_mode_ASC",
+  NtpModeDESC = "ntp_mode_DESC",
+  NvmeOverRdmaEnabledASC = "nvme_over_rdma_enabled_ASC",
+  NvmeOverRdmaEnabledDESC = "nvme_over_rdma_enabled_DESC",
+  NvmeOverTcpEnabledASC = "nvme_over_tcp_enabled_ASC",
+  NvmeOverTcpEnabledDESC = "nvme_over_tcp_enabled_DESC",
+  NvmfEnabledASC = "nvmf_enabled_ASC",
+  NvmfEnabledDESC = "nvmf_enabled_DESC",
+  PasswordASC = "password_ASC",
+  PasswordDESC = "password_DESC",
+  PmemEnabledASC = "pmem_enabled_ASC",
+  PmemEnabledDESC = "pmem_enabled_DESC",
+  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
+  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
+  ProvisionedCpuCoresForActiveVmASC = "provisioned_cpu_cores_for_active_vm_ASC",
+  ProvisionedCpuCoresForActiveVmDESC = "provisioned_cpu_cores_for_active_vm_DESC",
+  ProvisionedForActiveVmRatioASC = "provisioned_for_active_vm_ratio_ASC",
+  ProvisionedForActiveVmRatioDESC = "provisioned_for_active_vm_ratio_DESC",
+  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
+  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  ProvisionedRatioASC = "provisioned_ratio_ASC",
+  ProvisionedRatioDESC = "provisioned_ratio_DESC",
+  RdmaEnabledASC = "rdma_enabled_ASC",
+  RdmaEnabledDESC = "rdma_enabled_DESC",
+  RecoverDataSizeASC = "recover_data_size_ASC",
+  RecoverDataSizeDESC = "recover_data_size_DESC",
+  RecoverSpeedASC = "recover_speed_ASC",
+  RecoverSpeedDESC = "recover_speed_DESC",
+  ReservedCpuCoresForSystemServiceASC = "reserved_cpu_cores_for_system_service_ASC",
+  ReservedCpuCoresForSystemServiceDESC = "reserved_cpu_cores_for_system_service_DESC",
+  RunningVmNumASC = "running_vm_num_ASC",
+  RunningVmNumDESC = "running_vm_num_DESC",
+  SoftwareEditionASC = "software_edition_ASC",
+  SoftwareEditionDESC = "software_edition_DESC",
+  StoppedVmNumASC = "stopped_vm_num_ASC",
+  StoppedVmNumDESC = "stopped_vm_num_DESC",
+  StretchASC = "stretch_ASC",
+  StretchDESC = "stretch_DESC",
+  SuspendedVmNumASC = "suspended_vm_num_ASC",
+  SuspendedVmNumDESC = "suspended_vm_num_DESC",
+  TotalCacheCapacityASC = "total_cache_capacity_ASC",
+  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
+  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UpgradeToolVersionASC = "upgrade_tool_version_ASC",
+  UpgradeToolVersionDESC = "upgrade_tool_version_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+  ValidDataSpaceASC = "valid_data_space_ASC",
+  ValidDataSpaceDESC = "valid_data_space_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+  VhostEnabledASC = "vhost_enabled_ASC",
+  VhostEnabledDESC = "vhost_enabled_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
 
 export interface GetClustersRequestBody {
   after?: string | null;
@@ -18773,19 +19092,20 @@ export interface GetClustersConnectionRequestBody {
   where?: ClusterWhereInput | null;
 }
 
-export type ClusterSettingsOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "default_ha_ASC"
-  | "default_ha_DESC"
-  | "enabled_iscsi_ASC"
-  | "enabled_iscsi_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vm_recycle_bin_ASC"
-  | "vm_recycle_bin_DESC";
+export enum ClusterSettingsOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DefaultHaASC = "default_ha_ASC",
+  DefaultHaDESC = "default_ha_DESC",
+  EnabledIscsiASC = "enabled_iscsi_ASC",
+  EnabledIscsiDESC = "enabled_iscsi_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VmRecycleBinASC = "vm_recycle_bin_ASC",
+  VmRecycleBinDESC = "vm_recycle_bin_DESC",
+}
 
 export interface GetClusterSettingsesRequestBody {
   after?: string | null;
@@ -18838,17 +19158,18 @@ export interface ClusterTopo {
   zone_topoes?: NestedZoneTopo[] | null;
 }
 
-export type ClusterTopoOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ClusterTopoOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetClusterTopoesRequestBody {
   after?: string | null;
@@ -18902,25 +19223,26 @@ export interface ClusterUpgradeHistory {
   version: string;
 }
 
-export type ClusterUpgradeHistoryOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "date_ASC"
-  | "date_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "progress_ASC"
-  | "progress_DESC"
-  | "result_ASC"
-  | "result_DESC"
-  | "task_uuid_ASC"
-  | "task_uuid_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum ClusterUpgradeHistoryOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DateASC = "date_ASC",
+  DateDESC = "date_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ProgressASC = "progress_ASC",
+  ProgressDESC = "progress_DESC",
+  ResultASC = "result_ASC",
+  ResultDESC = "result_DESC",
+  TaskUuidASC = "task_uuid_ASC",
+  TaskUuidDESC = "task_uuid_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface ClusterUpgradeHistoryWhereInput {
   AND?: ClusterUpgradeHistoryWhereInput[] | null;
@@ -19048,25 +19370,26 @@ export interface GetClusterUpgradeHistoriesConnectionRequestBody {
   where?: ClusterUpgradeHistoryWhereInput | null;
 }
 
-export type ConsistencyGroupOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ConsistencyGroupOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetConsistencyGroupsRequestBody {
   after?: string | null;
@@ -19109,23 +19432,24 @@ export interface GetConsistencyGroupsConnectionRequestBody {
   where?: ConsistencyGroupWhereInput | null;
 }
 
-export type ConsistencyGroupSnapshotOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ConsistencyGroupSnapshotOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetConsistencyGroupSnapshotsRequestBody {
   after?: string | null;
@@ -19168,23 +19492,24 @@ export interface GetConsistencyGroupSnapshotsConnectionRequestBody {
   where?: ConsistencyGroupSnapshotWhereInput | null;
 }
 
-export type ContentLibraryImageOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ContentLibraryImageOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetContentLibraryImagesRequestBody {
   after?: string | null;
@@ -19227,31 +19552,32 @@ export interface GetContentLibraryImagesConnectionRequestBody {
   where?: ContentLibraryImageWhereInput | null;
 }
 
-export type ContentLibraryVmTemplateOrderByInput =
-  | "architecture_ASC"
-  | "architecture_DESC"
-  | "cloud_init_supported_ASC"
-  | "cloud_init_supported_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "memory_ASC"
-  | "memory_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "os_ASC"
-  | "os_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vcpu_ASC"
-  | "vcpu_DESC";
+export enum ContentLibraryVmTemplateOrderByInput {
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  OsASC = "os_ASC",
+  OsDESC = "os_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+}
 
 export interface GetContentLibraryVmTemplatesRequestBody {
   after?: string | null;
@@ -19294,35 +19620,36 @@ export interface GetContentLibraryVmTemplatesConnectionRequestBody {
   where?: ContentLibraryVmTemplateWhereInput | null;
 }
 
-export type DatacenterOrderByInput =
-  | "cluster_num_ASC"
-  | "cluster_num_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "failure_data_space_ASC"
-  | "failure_data_space_DESC"
-  | "host_num_ASC"
-  | "host_num_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "total_cpu_hz_ASC"
-  | "total_cpu_hz_DESC"
-  | "total_data_capacity_ASC"
-  | "total_data_capacity_DESC"
-  | "total_memory_bytes_ASC"
-  | "total_memory_bytes_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "used_cpu_hz_ASC"
-  | "used_cpu_hz_DESC"
-  | "used_data_space_ASC"
-  | "used_data_space_DESC"
-  | "used_memory_bytes_ASC"
-  | "used_memory_bytes_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC";
+export enum DatacenterOrderByInput {
+  ClusterNumASC = "cluster_num_ASC",
+  ClusterNumDESC = "cluster_num_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
 
 export interface GetDatacentersRequestBody {
   after?: string | null;
@@ -19375,15 +19702,16 @@ export interface Deploy {
   version: string;
 }
 
-export type DeployOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum DeployOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface DeployWhereInput {
   AND?: DeployWhereInput[] | null;
@@ -19643,59 +19971,60 @@ export interface GetDiscoverHostsRequestBody {
   host_address?: string[] | null;
 }
 
-export type DiskOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "failure_information_ASC"
-  | "failure_information_DESC"
-  | "firmware_ASC"
-  | "firmware_DESC"
-  | "function_ASC"
-  | "function_DESC"
-  | "health_status_ASC"
-  | "health_status_DESC"
-  | "healthy_ASC"
-  | "healthy_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "model_ASC"
-  | "model_DESC"
-  | "mounted_ASC"
-  | "mounted_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "numa_node_ASC"
-  | "numa_node_DESC"
-  | "offline_ASC"
-  | "offline_DESC"
-  | "partitions_ASC"
-  | "partitions_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "persistent_memory_type_ASC"
-  | "persistent_memory_type_DESC"
-  | "physical_slot_on_brick_ASC"
-  | "physical_slot_on_brick_DESC"
-  | "recommended_usage_ASC"
-  | "recommended_usage_DESC"
-  | "remaining_life_percent_ASC"
-  | "remaining_life_percent_DESC"
-  | "serial_ASC"
-  | "serial_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "usage_ASC"
-  | "usage_DESC"
-  | "usage_status_ASC"
-  | "usage_status_DESC";
+export enum DiskOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureInformationASC = "failure_information_ASC",
+  FailureInformationDESC = "failure_information_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  FunctionASC = "function_ASC",
+  FunctionDESC = "function_DESC",
+  HealthStatusASC = "health_status_ASC",
+  HealthStatusDESC = "health_status_DESC",
+  HealthyASC = "healthy_ASC",
+  HealthyDESC = "healthy_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  MountedASC = "mounted_ASC",
+  MountedDESC = "mounted_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NumaNodeASC = "numa_node_ASC",
+  NumaNodeDESC = "numa_node_DESC",
+  OfflineASC = "offline_ASC",
+  OfflineDESC = "offline_DESC",
+  PartitionsASC = "partitions_ASC",
+  PartitionsDESC = "partitions_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  PersistentMemoryTypeASC = "persistent_memory_type_ASC",
+  PersistentMemoryTypeDESC = "persistent_memory_type_DESC",
+  PhysicalSlotOnBrickASC = "physical_slot_on_brick_ASC",
+  PhysicalSlotOnBrickDESC = "physical_slot_on_brick_DESC",
+  RecommendedUsageASC = "recommended_usage_ASC",
+  RecommendedUsageDESC = "recommended_usage_DESC",
+  RemainingLifePercentASC = "remaining_life_percent_ASC",
+  RemainingLifePercentDESC = "remaining_life_percent_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
+  UsageStatusASC = "usage_status_ASC",
+  UsageStatusDESC = "usage_status_DESC",
+}
 
 export interface GetDisksRequestBody {
   after?: string | null;
@@ -19738,7 +20067,11 @@ export interface GetDisksConnectionRequestBody {
   where?: DiskWhereInput | null;
 }
 
-export type ElfDataStoreType = "ISCSI" | "NFS" | "NVMe";
+export enum ElfDataStoreType {
+  ISCSI = "ISCSI",
+  NFS = "NFS",
+  NVMe = "NVMe",
+}
 
 export interface ElfDataStore {
   cluster: NestedCluster;
@@ -19759,31 +20092,32 @@ export interface ElfDataStore {
   type: ElfDataStoreType;
 }
 
-export type ElfDataStoreOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "external_use_ASC"
-  | "external_use_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "ip_whitelist_ASC"
-  | "ip_whitelist_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ElfDataStoreOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface ElfDataStoreWhereInput {
   AND?: ElfDataStoreWhereInput[] | null;
@@ -19936,27 +20270,28 @@ export interface GetElfDataStoresConnectionRequestBody {
   where?: ElfDataStoreWhereInput | null;
 }
 
-export type ElfImageOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ElfImageOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetElfImagesRequestBody {
   after?: string | null;
@@ -20018,29 +20353,30 @@ export interface ElfStoragePolicy {
   thin_provision: boolean;
 }
 
-export type ElfStoragePolicyOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "stripe_num_ASC"
-  | "stripe_num_DESC"
-  | "stripe_size_ASC"
-  | "stripe_size_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ElfStoragePolicyOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface ElfStoragePolicyWhereInput {
   AND?: ElfStoragePolicyWhereInput[] | null;
@@ -20212,27 +20548,28 @@ export interface GetElfStoragePoliciesConnectionRequestBody {
   where?: ElfStoragePolicyWhereInput | null;
 }
 
-export type EntityFilterOrderByInput =
-  | "apply_to_all_clusters_ASC"
-  | "apply_to_all_clusters_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entity_type_ASC"
-  | "entity_type_DESC"
-  | "filter_status_ASC"
-  | "filter_status_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "last_executed_at_ASC"
-  | "last_executed_at_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "preset_ASC"
-  | "preset_DESC"
-  | "rules_ASC"
-  | "rules_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum EntityFilterOrderByInput {
+  ApplyToAllClustersASC = "apply_to_all_clusters_ASC",
+  ApplyToAllClustersDESC = "apply_to_all_clusters_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityTypeASC = "entity_type_ASC",
+  EntityTypeDESC = "entity_type_DESC",
+  FilterStatusASC = "filter_status_ASC",
+  FilterStatusDESC = "filter_status_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PresetASC = "preset_ASC",
+  PresetDESC = "preset_DESC",
+  RulesASC = "rules_ASC",
+  RulesDESC = "rules_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetEntityFiltersRequestBody {
   after?: string | null;
@@ -20295,14 +20632,22 @@ export interface NestedEverouteControllerTemplate {
   vcpu: number;
 }
 
-export type NetworkPolicyRulePortProtocol = "ICMP" | "TCP" | "UDP";
+export enum NetworkPolicyRulePortProtocol {
+  ICMP = "ICMP",
+  TCP = "TCP",
+  UDP = "UDP",
+}
 
 export interface NestedNetworkPolicyRulePort {
   port?: string | null;
   protocol: NetworkPolicyRulePortProtocol;
 }
 
-export type NetworkPolicyRuleType = "ALL" | "IP_BLOCK" | "SELECTOR";
+export enum NetworkPolicyRuleType {
+  ALL = "ALL",
+  IP_BLOCK = "IP_BLOCK",
+  SELECTOR = "SELECTOR",
+}
 
 export interface NestedNetworkPolicyRule {
   ip_block?: string | null;
@@ -20427,33 +20772,34 @@ export interface EverouteCluster {
   version: string;
 }
 
-export type EverouteClusterOrderByInput =
-  | "controller_instances_ASC"
-  | "controller_instances_DESC"
-  | "controller_template_ASC"
-  | "controller_template_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "global_default_action_ASC"
-  | "global_default_action_DESC"
-  | "global_whitelist_ASC"
-  | "global_whitelist_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "installed_ASC"
-  | "installed_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "phase_ASC"
-  | "phase_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum EverouteClusterOrderByInput {
+  ControllerInstancesASC = "controller_instances_ASC",
+  ControllerInstancesDESC = "controller_instances_DESC",
+  ControllerTemplateASC = "controller_template_ASC",
+  ControllerTemplateDESC = "controller_template_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  GlobalDefaultActionASC = "global_default_action_ASC",
+  GlobalDefaultActionDESC = "global_default_action_DESC",
+  GlobalWhitelistASC = "global_whitelist_ASC",
+  GlobalWhitelistDESC = "global_whitelist_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InstalledASC = "installed_ASC",
+  InstalledDESC = "installed_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface GetEverouteClustersRequestBody {
   after?: string | null;
@@ -20510,29 +20856,30 @@ export interface EverouteLicense {
   uid: string;
 }
 
-export type EverouteLicenseOrderByInput =
-  | "code_ASC"
-  | "code_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "expire_date_ASC"
-  | "expire_date_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "max_socket_num_ASC"
-  | "max_socket_num_DESC"
-  | "serial_ASC"
-  | "serial_DESC"
-  | "sign_date_ASC"
-  | "sign_date_DESC"
-  | "software_edition_ASC"
-  | "software_edition_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "uid_ASC"
-  | "uid_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum EverouteLicenseOrderByInput {
+  CodeASC = "code_ASC",
+  CodeDESC = "code_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  ExpireDateASC = "expire_date_ASC",
+  ExpireDateDESC = "expire_date_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  MaxSocketNumASC = "max_socket_num_ASC",
+  MaxSocketNumDESC = "max_socket_num_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  SignDateASC = "sign_date_ASC",
+  SignDateDESC = "sign_date_DESC",
+  SoftwareEditionASC = "software_edition_ASC",
+  SoftwareEditionDESC = "software_edition_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UidASC = "uid_ASC",
+  UidDESC = "uid_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface EverouteLicenseWhereInput {
   AND?: EverouteLicenseWhereInput[] | null;
@@ -20700,29 +21047,30 @@ export interface EveroutePackage {
   version: string;
 }
 
-export type EveroutePackageOrderByInput =
-  | "arch_ASC"
-  | "arch_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "package_info_ASC"
-  | "package_info_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum EveroutePackageOrderByInput {
+  ArchASC = "arch_ASC",
+  ArchDESC = "arch_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PackageInfoASC = "package_info_ASC",
+  PackageInfoDESC = "package_info_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface EveroutePackageWhereInput {
   AND?: EveroutePackageWhereInput[] | null;
@@ -20863,37 +21211,38 @@ export interface GetEveroutePackagesConnectionRequestBody {
   where?: EveroutePackageWhereInput | null;
 }
 
-export type GlobalAlertRuleOrderByInput =
-  | "boolean_ASC"
-  | "boolean_DESC"
-  | "cause_ASC"
-  | "cause_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "default_thresholds_ASC"
-  | "default_thresholds_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "impact_ASC"
-  | "impact_DESC"
-  | "message_ASC"
-  | "message_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "object_ASC"
-  | "object_DESC"
-  | "operator_ASC"
-  | "operator_DESC"
-  | "solution_ASC"
-  | "solution_DESC"
-  | "thresholds_ASC"
-  | "thresholds_DESC"
-  | "unit_ASC"
-  | "unit_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum GlobalAlertRuleOrderByInput {
+  BooleanASC = "boolean_ASC",
+  BooleanDESC = "boolean_DESC",
+  CauseASC = "cause_ASC",
+  CauseDESC = "cause_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DefaultThresholdsASC = "default_thresholds_ASC",
+  DefaultThresholdsDESC = "default_thresholds_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImpactASC = "impact_ASC",
+  ImpactDESC = "impact_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ObjectASC = "object_ASC",
+  ObjectDESC = "object_DESC",
+  OperatorASC = "operator_ASC",
+  OperatorDESC = "operator_DESC",
+  SolutionASC = "solution_ASC",
+  SolutionDESC = "solution_DESC",
+  ThresholdsASC = "thresholds_ASC",
+  ThresholdsDESC = "thresholds_DESC",
+  UnitASC = "unit_ASC",
+  UnitDESC = "unit_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetGlobalAlertRulesRequestBody {
   after?: string | null;
@@ -20936,17 +21285,18 @@ export interface GetGlobalAlertRulesConnectionRequestBody {
   where?: GlobalAlertRuleWhereInput | null;
 }
 
-export type GlobalSettingsOrderByInput =
-  | "auth_ASC"
-  | "auth_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vm_recycle_bin_ASC"
-  | "vm_recycle_bin_DESC";
+export enum GlobalSettingsOrderByInput {
+  AuthASC = "auth_ASC",
+  AuthDESC = "auth_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VmRecycleBinASC = "vm_recycle_bin_ASC",
+  VmRecycleBinDESC = "vm_recycle_bin_DESC",
+}
 
 export interface GlobalSettingsWhereInput {
   AND?: GlobalSettingsWhereInput[] | null;
@@ -21009,35 +21359,36 @@ export interface GetGlobalSettingsesConnectionRequestBody {
   where?: GlobalSettingsWhereInput | null;
 }
 
-export type GraphOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "metric_count_ASC"
-  | "metric_count_DESC"
-  | "metric_name_ASC"
-  | "metric_name_DESC"
-  | "metric_type_ASC"
-  | "metric_type_DESC"
-  | "network_ASC"
-  | "network_DESC"
-  | "resource_type_ASC"
-  | "resource_type_DESC"
-  | "service_ASC"
-  | "service_DESC"
-  | "targets_ASC"
-  | "targets_DESC"
-  | "title_ASC"
-  | "title_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum GraphOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MetricCountASC = "metric_count_ASC",
+  MetricCountDESC = "metric_count_DESC",
+  MetricNameASC = "metric_name_ASC",
+  MetricNameDESC = "metric_name_DESC",
+  MetricTypeASC = "metric_type_ASC",
+  MetricTypeDESC = "metric_type_DESC",
+  NetworkASC = "network_ASC",
+  NetworkDESC = "network_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  ServiceASC = "service_ASC",
+  ServiceDESC = "service_DESC",
+  TargetsASC = "targets_ASC",
+  TargetsDESC = "targets_DESC",
+  TitleASC = "title_ASC",
+  TitleDESC = "title_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetGraphsRequestBody {
   after?: string | null;
@@ -21080,119 +21431,120 @@ export interface GetGraphsConnectionRequestBody {
   where?: GraphWhereInput | null;
 }
 
-export type HostOrderByInput =
-  | "access_ip_ASC"
-  | "access_ip_DESC"
-  | "allocatable_memory_bytes_ASC"
-  | "allocatable_memory_bytes_DESC"
-  | "chunk_id_ASC"
-  | "chunk_id_DESC"
-  | "cpu_brand_ASC"
-  | "cpu_brand_DESC"
-  | "cpu_fan_speed_unit_ASC"
-  | "cpu_fan_speed_unit_DESC"
-  | "cpu_hz_per_core_ASC"
-  | "cpu_hz_per_core_DESC"
-  | "cpu_model_ASC"
-  | "cpu_model_DESC"
-  | "cpu_vendor_ASC"
-  | "cpu_vendor_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "data_ip_ASC"
-  | "data_ip_DESC"
-  | "failure_data_space_ASC"
-  | "failure_data_space_DESC"
-  | "hdd_data_capacity_ASC"
-  | "hdd_data_capacity_DESC"
-  | "hdd_disk_count_ASC"
-  | "hdd_disk_count_DESC"
-  | "hypervisor_ip_ASC"
-  | "hypervisor_ip_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "is_os_in_raid1_ASC"
-  | "is_os_in_raid1_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "lsm_cap_disk_safe_umount_ASC"
-  | "lsm_cap_disk_safe_umount_DESC"
-  | "management_ip_ASC"
-  | "management_ip_DESC"
-  | "model_ASC"
-  | "model_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "nested_virtualization_ASC"
-  | "nested_virtualization_DESC"
-  | "nic_count_ASC"
-  | "nic_count_DESC"
-  | "node_topo_local_id_ASC"
-  | "node_topo_local_id_DESC"
-  | "os_memory_bytes_ASC"
-  | "os_memory_bytes_DESC"
-  | "os_version_ASC"
-  | "os_version_DESC"
-  | "pmem_dimm_capacity_ASC"
-  | "pmem_dimm_capacity_DESC"
-  | "pmem_dimm_count_ASC"
-  | "pmem_dimm_count_DESC"
-  | "pmem_disk_count_ASC"
-  | "pmem_disk_count_DESC"
-  | "provisioned_cpu_cores_ASC"
-  | "provisioned_cpu_cores_DESC"
-  | "provisioned_memory_bytes_ASC"
-  | "provisioned_memory_bytes_DESC"
-  | "running_pause_vm_memory_bytes_ASC"
-  | "running_pause_vm_memory_bytes_DESC"
-  | "running_vm_num_ASC"
-  | "running_vm_num_DESC"
-  | "scvm_cpu_ASC"
-  | "scvm_cpu_DESC"
-  | "scvm_memory_ASC"
-  | "scvm_memory_DESC"
-  | "scvm_name_ASC"
-  | "scvm_name_DESC"
-  | "serial_ASC"
-  | "serial_DESC"
-  | "ssd_data_capacity_ASC"
-  | "ssd_data_capacity_DESC"
-  | "ssd_disk_count_ASC"
-  | "ssd_disk_count_DESC"
-  | "state_ASC"
-  | "state_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "stopped_vm_num_ASC"
-  | "stopped_vm_num_DESC"
-  | "suspended_vm_num_ASC"
-  | "suspended_vm_num_DESC"
-  | "total_cache_capacity_ASC"
-  | "total_cache_capacity_DESC"
-  | "total_cpu_cores_ASC"
-  | "total_cpu_cores_DESC"
-  | "total_cpu_hz_ASC"
-  | "total_cpu_hz_DESC"
-  | "total_cpu_sockets_ASC"
-  | "total_cpu_sockets_DESC"
-  | "total_data_capacity_ASC"
-  | "total_data_capacity_DESC"
-  | "total_memory_bytes_ASC"
-  | "total_memory_bytes_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "used_cpu_hz_ASC"
-  | "used_cpu_hz_DESC"
-  | "used_data_space_ASC"
-  | "used_data_space_DESC"
-  | "used_memory_bytes_ASC"
-  | "used_memory_bytes_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC"
-  | "vmotion_ip_ASC"
-  | "vmotion_ip_DESC"
-  | "with_faster_ssd_as_cache_ASC"
-  | "with_faster_ssd_as_cache_DESC";
+export enum HostOrderByInput {
+  AccessIpASC = "access_ip_ASC",
+  AccessIpDESC = "access_ip_DESC",
+  AllocatableMemoryBytesASC = "allocatable_memory_bytes_ASC",
+  AllocatableMemoryBytesDESC = "allocatable_memory_bytes_DESC",
+  ChunkIdASC = "chunk_id_ASC",
+  ChunkIdDESC = "chunk_id_DESC",
+  CpuBrandASC = "cpu_brand_ASC",
+  CpuBrandDESC = "cpu_brand_DESC",
+  CpuFanSpeedUnitASC = "cpu_fan_speed_unit_ASC",
+  CpuFanSpeedUnitDESC = "cpu_fan_speed_unit_DESC",
+  CpuHzPerCoreASC = "cpu_hz_per_core_ASC",
+  CpuHzPerCoreDESC = "cpu_hz_per_core_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CpuVendorASC = "cpu_vendor_ASC",
+  CpuVendorDESC = "cpu_vendor_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DataIpASC = "data_ip_ASC",
+  DataIpDESC = "data_ip_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HddDataCapacityASC = "hdd_data_capacity_ASC",
+  HddDataCapacityDESC = "hdd_data_capacity_DESC",
+  HddDiskCountASC = "hdd_disk_count_ASC",
+  HddDiskCountDESC = "hdd_disk_count_DESC",
+  HypervisorIpASC = "hypervisor_ip_ASC",
+  HypervisorIpDESC = "hypervisor_ip_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IsOsInRaid1ASC = "is_os_in_raid1_ASC",
+  IsOsInRaid1DESC = "is_os_in_raid1_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LsmCapDiskSafeUmountASC = "lsm_cap_disk_safe_umount_ASC",
+  LsmCapDiskSafeUmountDESC = "lsm_cap_disk_safe_umount_DESC",
+  ManagementIpASC = "management_ip_ASC",
+  ManagementIpDESC = "management_ip_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NestedVirtualizationASC = "nested_virtualization_ASC",
+  NestedVirtualizationDESC = "nested_virtualization_DESC",
+  NicCountASC = "nic_count_ASC",
+  NicCountDESC = "nic_count_DESC",
+  NodeTopoLocalIdASC = "node_topo_local_id_ASC",
+  NodeTopoLocalIdDESC = "node_topo_local_id_DESC",
+  OsMemoryBytesASC = "os_memory_bytes_ASC",
+  OsMemoryBytesDESC = "os_memory_bytes_DESC",
+  OsVersionASC = "os_version_ASC",
+  OsVersionDESC = "os_version_DESC",
+  PmemDimmCapacityASC = "pmem_dimm_capacity_ASC",
+  PmemDimmCapacityDESC = "pmem_dimm_capacity_DESC",
+  PmemDimmCountASC = "pmem_dimm_count_ASC",
+  PmemDimmCountDESC = "pmem_dimm_count_DESC",
+  PmemDiskCountASC = "pmem_disk_count_ASC",
+  PmemDiskCountDESC = "pmem_disk_count_DESC",
+  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
+  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
+  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
+  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  RunningPauseVmMemoryBytesASC = "running_pause_vm_memory_bytes_ASC",
+  RunningPauseVmMemoryBytesDESC = "running_pause_vm_memory_bytes_DESC",
+  RunningVmNumASC = "running_vm_num_ASC",
+  RunningVmNumDESC = "running_vm_num_DESC",
+  ScvmCpuASC = "scvm_cpu_ASC",
+  ScvmCpuDESC = "scvm_cpu_DESC",
+  ScvmMemoryASC = "scvm_memory_ASC",
+  ScvmMemoryDESC = "scvm_memory_DESC",
+  ScvmNameASC = "scvm_name_ASC",
+  ScvmNameDESC = "scvm_name_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  SsdDataCapacityASC = "ssd_data_capacity_ASC",
+  SsdDataCapacityDESC = "ssd_data_capacity_DESC",
+  SsdDiskCountASC = "ssd_disk_count_ASC",
+  SsdDiskCountDESC = "ssd_disk_count_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StoppedVmNumASC = "stopped_vm_num_ASC",
+  StoppedVmNumDESC = "stopped_vm_num_DESC",
+  SuspendedVmNumASC = "suspended_vm_num_ASC",
+  SuspendedVmNumDESC = "suspended_vm_num_DESC",
+  TotalCacheCapacityASC = "total_cache_capacity_ASC",
+  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
+  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+  VmotionIpASC = "vmotion_ip_ASC",
+  VmotionIpDESC = "vmotion_ip_DESC",
+  WithFasterSsdAsCacheASC = "with_faster_ssd_as_cache_ASC",
+  WithFasterSsdAsCacheDESC = "with_faster_ssd_as_cache_DESC",
+}
 
 export interface GetHostsRequestBody {
   after?: string | null;
@@ -21244,21 +21596,22 @@ export interface Ipmi {
   valid: boolean;
 }
 
-export type IpmiOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_ASC"
-  | "ip_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC"
-  | "valid_ASC"
-  | "valid_DESC";
+export enum IpmiOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpASC = "ip_ASC",
+  IpDESC = "ip_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+  ValidASC = "valid_ASC",
+  ValidDESC = "valid_DESC",
+}
 
 export interface GetIpmisRequestBody {
   after?: string | null;
@@ -21276,9 +21629,15 @@ export interface GetIpmisRequestBody {
   where?: IpmiWhereInput | null;
 }
 
-export type StoreTransportType = "RDMA" | "TCP";
+export enum StoreTransportType {
+  RDMA = "RDMA",
+  TCP = "TCP",
+}
 
-export type StoreConnectionType = "ISCSI" | "NVMe";
+export enum StoreConnectionType {
+  ISCSI = "ISCSI",
+  NVMe = "NVMe",
+}
 
 export interface IscsiConnection {
   /** @format int32 */
@@ -21293,21 +21652,22 @@ export interface IscsiConnection {
   type: StoreConnectionType;
 }
 
-export type IscsiConnectionOrderByInput =
-  | "client_port_ASC"
-  | "client_port_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "initiator_ip_ASC"
-  | "initiator_ip_DESC"
-  | "tr_type_ASC"
-  | "tr_type_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum IscsiConnectionOrderByInput {
+  ClientPortASC = "client_port_ASC",
+  ClientPortDESC = "client_port_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InitiatorIpASC = "initiator_ip_ASC",
+  InitiatorIpDESC = "initiator_ip_DESC",
+  TrTypeASC = "tr_type_ASC",
+  TrTypeDESC = "tr_type_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface IscsiConnectionWhereInput {
   AND?: IscsiConnectionWhereInput[] | null;
@@ -21416,81 +21776,82 @@ export interface GetIscsiConnectionsConnectionRequestBody {
   where?: IscsiConnectionWhereInput | null;
 }
 
-export type IscsiLunOrderByInput =
-  | "allowed_initiators_ASC"
-  | "allowed_initiators_DESC"
-  | "assigned_size_ASC"
-  | "assigned_size_DESC"
-  | "bps_ASC"
-  | "bps_DESC"
-  | "bps_max_ASC"
-  | "bps_max_DESC"
-  | "bps_max_length_ASC"
-  | "bps_max_length_DESC"
-  | "bps_rd_ASC"
-  | "bps_rd_DESC"
-  | "bps_rd_max_ASC"
-  | "bps_rd_max_DESC"
-  | "bps_rd_max_length_ASC"
-  | "bps_rd_max_length_DESC"
-  | "bps_wr_ASC"
-  | "bps_wr_DESC"
-  | "bps_wr_max_ASC"
-  | "bps_wr_max_DESC"
-  | "bps_wr_max_length_ASC"
-  | "bps_wr_max_length_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "io_size_ASC"
-  | "io_size_DESC"
-  | "iops_ASC"
-  | "iops_DESC"
-  | "iops_max_ASC"
-  | "iops_max_DESC"
-  | "iops_max_length_ASC"
-  | "iops_max_length_DESC"
-  | "iops_rd_ASC"
-  | "iops_rd_DESC"
-  | "iops_rd_max_ASC"
-  | "iops_rd_max_DESC"
-  | "iops_rd_max_length_ASC"
-  | "iops_rd_max_length_DESC"
-  | "iops_wr_ASC"
-  | "iops_wr_DESC"
-  | "iops_wr_max_ASC"
-  | "iops_wr_max_DESC"
-  | "iops_wr_max_length_ASC"
-  | "iops_wr_max_length_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "lun_id_ASC"
-  | "lun_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "shared_size_ASC"
-  | "shared_size_DESC"
-  | "snapshot_num_ASC"
-  | "snapshot_num_DESC"
-  | "stripe_num_ASC"
-  | "stripe_num_DESC"
-  | "stripe_size_ASC"
-  | "stripe_size_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "zbs_volume_id_ASC"
-  | "zbs_volume_id_DESC";
+export enum IscsiLunOrderByInput {
+  AllowedInitiatorsASC = "allowed_initiators_ASC",
+  AllowedInitiatorsDESC = "allowed_initiators_DESC",
+  AssignedSizeASC = "assigned_size_ASC",
+  AssignedSizeDESC = "assigned_size_DESC",
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LunIdASC = "lun_id_ASC",
+  LunIdDESC = "lun_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SnapshotNumASC = "snapshot_num_ASC",
+  SnapshotNumDESC = "snapshot_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  ZbsVolumeIdASC = "zbs_volume_id_ASC",
+  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
+}
 
 export interface GetIscsiLunsRequestBody {
   after?: string | null;
@@ -21533,23 +21894,24 @@ export interface GetIscsiLunsConnectionRequestBody {
   where?: IscsiLunWhereInput | null;
 }
 
-export type IscsiLunSnapshotOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum IscsiLunSnapshotOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetIscsiLunSnapshotsRequestBody {
   after?: string | null;
@@ -21592,85 +21954,86 @@ export interface GetIscsiLunSnapshotsConnectionRequestBody {
   where?: IscsiLunSnapshotWhereInput | null;
 }
 
-export type IscsiTargetOrderByInput =
-  | "bps_ASC"
-  | "bps_DESC"
-  | "bps_max_ASC"
-  | "bps_max_DESC"
-  | "bps_max_length_ASC"
-  | "bps_max_length_DESC"
-  | "bps_rd_ASC"
-  | "bps_rd_DESC"
-  | "bps_rd_max_ASC"
-  | "bps_rd_max_DESC"
-  | "bps_rd_max_length_ASC"
-  | "bps_rd_max_length_DESC"
-  | "bps_wr_ASC"
-  | "bps_wr_DESC"
-  | "bps_wr_max_ASC"
-  | "bps_wr_max_DESC"
-  | "bps_wr_max_length_ASC"
-  | "bps_wr_max_length_DESC"
-  | "chap_enabled_ASC"
-  | "chap_enabled_DESC"
-  | "chap_name_ASC"
-  | "chap_name_DESC"
-  | "chap_secret_ASC"
-  | "chap_secret_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "external_use_ASC"
-  | "external_use_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "initiator_chaps_ASC"
-  | "initiator_chaps_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "io_size_ASC"
-  | "io_size_DESC"
-  | "iops_ASC"
-  | "iops_DESC"
-  | "iops_max_ASC"
-  | "iops_max_DESC"
-  | "iops_max_length_ASC"
-  | "iops_max_length_DESC"
-  | "iops_rd_ASC"
-  | "iops_rd_DESC"
-  | "iops_rd_max_ASC"
-  | "iops_rd_max_DESC"
-  | "iops_rd_max_length_ASC"
-  | "iops_rd_max_length_DESC"
-  | "iops_wr_ASC"
-  | "iops_wr_DESC"
-  | "iops_wr_max_ASC"
-  | "iops_wr_max_DESC"
-  | "iops_wr_max_length_ASC"
-  | "iops_wr_max_length_DESC"
-  | "ip_whitelist_ASC"
-  | "ip_whitelist_DESC"
-  | "iqn_name_ASC"
-  | "iqn_name_DESC"
-  | "iqn_whitelist_ASC"
-  | "iqn_whitelist_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "stripe_num_ASC"
-  | "stripe_num_DESC"
-  | "stripe_size_ASC"
-  | "stripe_size_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum IscsiTargetOrderByInput {
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  ChapEnabledASC = "chap_enabled_ASC",
+  ChapEnabledDESC = "chap_enabled_DESC",
+  ChapNameASC = "chap_name_ASC",
+  ChapNameDESC = "chap_name_DESC",
+  ChapSecretASC = "chap_secret_ASC",
+  ChapSecretDESC = "chap_secret_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InitiatorChapsASC = "initiator_chaps_ASC",
+  InitiatorChapsDESC = "initiator_chaps_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  IqnNameASC = "iqn_name_ASC",
+  IqnNameDESC = "iqn_name_DESC",
+  IqnWhitelistASC = "iqn_whitelist_ASC",
+  IqnWhitelistDESC = "iqn_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetIscsiTargetsRequestBody {
   after?: string | null;
@@ -21723,19 +22086,20 @@ export interface IsolationPolicy {
   vm: NestedVm;
 }
 
-export type IsolationPolicyOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "egress_ASC"
-  | "egress_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ingress_ASC"
-  | "ingress_DESC"
-  | "mode_ASC"
-  | "mode_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum IsolationPolicyOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EgressASC = "egress_ASC",
+  EgressDESC = "egress_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IngressASC = "ingress_ASC",
+  IngressDESC = "ingress_DESC",
+  ModeASC = "mode_ASC",
+  ModeDESC = "mode_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetIsolationPoliciesRequestBody {
   after?: string | null;
@@ -21778,75 +22142,76 @@ export interface GetIsolationPoliciesConnectionRequestBody {
   where?: IsolationPolicyWhereInput | null;
 }
 
-export type LabelOrderByInput =
-  | "cluster_num_ASC"
-  | "cluster_num_DESC"
-  | "consistency_group_num_ASC"
-  | "consistency_group_num_DESC"
-  | "consistency_group_snapshot_num_ASC"
-  | "consistency_group_snapshot_num_DESC"
-  | "content_library_image_num_ASC"
-  | "content_library_image_num_DESC"
-  | "content_library_vm_template_num_ASC"
-  | "content_library_vm_template_num_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "datacenter_num_ASC"
-  | "datacenter_num_DESC"
-  | "disk_num_ASC"
-  | "disk_num_DESC"
-  | "elf_image_num_ASC"
-  | "elf_image_num_DESC"
-  | "host_num_ASC"
-  | "host_num_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "iscsi_lun_num_ASC"
-  | "iscsi_lun_num_DESC"
-  | "iscsi_lun_snapshot_num_ASC"
-  | "iscsi_lun_snapshot_num_DESC"
-  | "iscsi_target_num_ASC"
-  | "iscsi_target_num_DESC"
-  | "isolation_policy_num_ASC"
-  | "isolation_policy_num_DESC"
-  | "key_ASC"
-  | "key_DESC"
-  | "namespace_group_num_ASC"
-  | "namespace_group_num_DESC"
-  | "nfs_export_num_ASC"
-  | "nfs_export_num_DESC"
-  | "nfs_inode_num_ASC"
-  | "nfs_inode_num_DESC"
-  | "nic_num_ASC"
-  | "nic_num_DESC"
-  | "nvmf_namespace_num_ASC"
-  | "nvmf_namespace_num_DESC"
-  | "nvmf_namespace_snapshot_num_ASC"
-  | "nvmf_namespace_snapshot_num_DESC"
-  | "nvmf_subsystem_num_ASC"
-  | "nvmf_subsystem_num_DESC"
-  | "security_policy_num_ASC"
-  | "security_policy_num_DESC"
-  | "system_vlan_num_ASC"
-  | "system_vlan_num_DESC"
-  | "total_num_ASC"
-  | "total_num_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "value_ASC"
-  | "value_DESC"
-  | "vds_num_ASC"
-  | "vds_num_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC"
-  | "vm_snapshot_num_ASC"
-  | "vm_snapshot_num_DESC"
-  | "vm_template_num_ASC"
-  | "vm_template_num_DESC"
-  | "vm_vlan_num_ASC"
-  | "vm_vlan_num_DESC"
-  | "vm_volume_num_ASC"
-  | "vm_volume_num_DESC";
+export enum LabelOrderByInput {
+  ClusterNumASC = "cluster_num_ASC",
+  ClusterNumDESC = "cluster_num_DESC",
+  ConsistencyGroupNumASC = "consistency_group_num_ASC",
+  ConsistencyGroupNumDESC = "consistency_group_num_DESC",
+  ConsistencyGroupSnapshotNumASC = "consistency_group_snapshot_num_ASC",
+  ConsistencyGroupSnapshotNumDESC = "consistency_group_snapshot_num_DESC",
+  ContentLibraryImageNumASC = "content_library_image_num_ASC",
+  ContentLibraryImageNumDESC = "content_library_image_num_DESC",
+  ContentLibraryVmTemplateNumASC = "content_library_vm_template_num_ASC",
+  ContentLibraryVmTemplateNumDESC = "content_library_vm_template_num_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DatacenterNumASC = "datacenter_num_ASC",
+  DatacenterNumDESC = "datacenter_num_DESC",
+  DiskNumASC = "disk_num_ASC",
+  DiskNumDESC = "disk_num_DESC",
+  ElfImageNumASC = "elf_image_num_ASC",
+  ElfImageNumDESC = "elf_image_num_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IscsiLunNumASC = "iscsi_lun_num_ASC",
+  IscsiLunNumDESC = "iscsi_lun_num_DESC",
+  IscsiLunSnapshotNumASC = "iscsi_lun_snapshot_num_ASC",
+  IscsiLunSnapshotNumDESC = "iscsi_lun_snapshot_num_DESC",
+  IscsiTargetNumASC = "iscsi_target_num_ASC",
+  IscsiTargetNumDESC = "iscsi_target_num_DESC",
+  IsolationPolicyNumASC = "isolation_policy_num_ASC",
+  IsolationPolicyNumDESC = "isolation_policy_num_DESC",
+  KeyASC = "key_ASC",
+  KeyDESC = "key_DESC",
+  NamespaceGroupNumASC = "namespace_group_num_ASC",
+  NamespaceGroupNumDESC = "namespace_group_num_DESC",
+  NfsExportNumASC = "nfs_export_num_ASC",
+  NfsExportNumDESC = "nfs_export_num_DESC",
+  NfsInodeNumASC = "nfs_inode_num_ASC",
+  NfsInodeNumDESC = "nfs_inode_num_DESC",
+  NicNumASC = "nic_num_ASC",
+  NicNumDESC = "nic_num_DESC",
+  NvmfNamespaceNumASC = "nvmf_namespace_num_ASC",
+  NvmfNamespaceNumDESC = "nvmf_namespace_num_DESC",
+  NvmfNamespaceSnapshotNumASC = "nvmf_namespace_snapshot_num_ASC",
+  NvmfNamespaceSnapshotNumDESC = "nvmf_namespace_snapshot_num_DESC",
+  NvmfSubsystemNumASC = "nvmf_subsystem_num_ASC",
+  NvmfSubsystemNumDESC = "nvmf_subsystem_num_DESC",
+  SecurityPolicyNumASC = "security_policy_num_ASC",
+  SecurityPolicyNumDESC = "security_policy_num_DESC",
+  SystemVlanNumASC = "system_vlan_num_ASC",
+  SystemVlanNumDESC = "system_vlan_num_DESC",
+  TotalNumASC = "total_num_ASC",
+  TotalNumDESC = "total_num_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  ValueASC = "value_ASC",
+  ValueDESC = "value_DESC",
+  VdsNumASC = "vds_num_ASC",
+  VdsNumDESC = "vds_num_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+  VmSnapshotNumASC = "vm_snapshot_num_ASC",
+  VmSnapshotNumDESC = "vm_snapshot_num_DESC",
+  VmTemplateNumASC = "vm_template_num_ASC",
+  VmTemplateNumDESC = "vm_template_num_DESC",
+  VmVlanNumASC = "vm_vlan_num_ASC",
+  VmVlanNumDESC = "vm_vlan_num_DESC",
+  VmVolumeNumASC = "vm_volume_num_ASC",
+  VmVolumeNumDESC = "vm_volume_num_DESC",
+}
 
 export interface GetLabelsRequestBody {
   after?: string | null;
@@ -21889,31 +22254,32 @@ export interface GetLabelsConnectionRequestBody {
   where?: LabelWhereInput | null;
 }
 
-export type LicenseOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "expire_date_ASC"
-  | "expire_date_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "license_serial_ASC"
-  | "license_serial_DESC"
-  | "maintenance_end_date_ASC"
-  | "maintenance_end_date_DESC"
-  | "maintenance_start_date_ASC"
-  | "maintenance_start_date_DESC"
-  | "max_chunk_num_ASC"
-  | "max_chunk_num_DESC"
-  | "max_cluster_num_ASC"
-  | "max_cluster_num_DESC"
-  | "sign_date_ASC"
-  | "sign_date_DESC"
-  | "software_edition_ASC"
-  | "software_edition_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum LicenseOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  ExpireDateASC = "expire_date_ASC",
+  ExpireDateDESC = "expire_date_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LicenseSerialASC = "license_serial_ASC",
+  LicenseSerialDESC = "license_serial_DESC",
+  MaintenanceEndDateASC = "maintenance_end_date_ASC",
+  MaintenanceEndDateDESC = "maintenance_end_date_DESC",
+  MaintenanceStartDateASC = "maintenance_start_date_ASC",
+  MaintenanceStartDateDESC = "maintenance_start_date_DESC",
+  MaxChunkNumASC = "max_chunk_num_ASC",
+  MaxChunkNumDESC = "max_chunk_num_DESC",
+  MaxClusterNumASC = "max_cluster_num_ASC",
+  MaxClusterNumDESC = "max_cluster_num_DESC",
+  SignDateASC = "sign_date_ASC",
+  SignDateDESC = "sign_date_DESC",
+  SoftwareEditionASC = "software_edition_ASC",
+  SoftwareEditionDESC = "software_edition_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetLicensesRequestBody {
   after?: string | null;
@@ -21956,33 +22322,34 @@ export interface GetLicensesConnectionRequestBody {
   where?: LicenseWhereInput | null;
 }
 
-export type LogCollectionOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "log_ended_at_ASC"
-  | "log_ended_at_DESC"
-  | "log_started_at_ASC"
-  | "log_started_at_DESC"
-  | "owner_ASC"
-  | "owner_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "progress_ASC"
-  | "progress_DESC"
-  | "service_groups_ASC"
-  | "service_groups_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "started_at_ASC"
-  | "started_at_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum LogCollectionOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogEndedAtASC = "log_ended_at_ASC",
+  LogEndedAtDESC = "log_ended_at_DESC",
+  LogStartedAtASC = "log_started_at_ASC",
+  LogStartedAtDESC = "log_started_at_DESC",
+  OwnerASC = "owner_ASC",
+  OwnerDESC = "owner_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  ProgressASC = "progress_ASC",
+  ProgressDESC = "progress_DESC",
+  ServiceGroupsASC = "service_groups_ASC",
+  ServiceGroupsDESC = "service_groups_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetLogCollectionsRequestBody {
   after?: string | null;
@@ -22038,21 +22405,22 @@ export interface GetLogServiceConfigsRequestBody {
   input: LogServiceConfigsInput;
 }
 
-export type NamespaceGroupOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_create_time_ASC"
-  | "local_create_time_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NamespaceGroupOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreateTimeASC = "local_create_time_ASC",
+  LocalCreateTimeDESC = "local_create_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNamespaceGroupsRequestBody {
   after?: string | null;
@@ -22095,31 +22463,32 @@ export interface GetNamespaceGroupsConnectionRequestBody {
   where?: NamespaceGroupWhereInput | null;
 }
 
-export type NfsExportOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "export_inode_id_ASC"
-  | "export_inode_id_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "ip_whitelist_ASC"
-  | "ip_whitelist_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NfsExportOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExportInodeIdASC = "export_inode_id_ASC",
+  ExportInodeIdDESC = "export_inode_id_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNfsExportsRequestBody {
   after?: string | null;
@@ -22185,33 +22554,34 @@ export interface NfsInode {
   unique_size: number;
 }
 
-export type NfsInodeOrderByInput =
-  | "assigned_size_ASC"
-  | "assigned_size_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "file_ASC"
-  | "file_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "local_updated_at_ASC"
-  | "local_updated_at_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "parent_id_ASC"
-  | "parent_id_DESC"
-  | "shared_size_ASC"
-  | "shared_size_DESC"
-  | "snapshot_num_ASC"
-  | "snapshot_num_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NfsInodeOrderByInput {
+  AssignedSizeASC = "assigned_size_ASC",
+  AssignedSizeDESC = "assigned_size_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FileASC = "file_ASC",
+  FileDESC = "file_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LocalUpdatedAtASC = "local_updated_at_ASC",
+  LocalUpdatedAtDESC = "local_updated_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ParentIdASC = "parent_id_ASC",
+  ParentIdDESC = "parent_id_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SnapshotNumASC = "snapshot_num_ASC",
+  SnapshotNumDESC = "snapshot_num_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNfsInodesRequestBody {
   after?: string | null;
@@ -22254,57 +22624,58 @@ export interface GetNfsInodesConnectionRequestBody {
   where?: NfsInodeWhereInput | null;
 }
 
-export type NicOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "driver_ASC"
-  | "driver_DESC"
-  | "driver_state_ASC"
-  | "driver_state_DESC"
-  | "gateway_ip_ASC"
-  | "gateway_ip_DESC"
-  | "ibdev_ASC"
-  | "ibdev_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_address_ASC"
-  | "ip_address_DESC"
-  | "is_sriov_ASC"
-  | "is_sriov_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "mac_address_ASC"
-  | "mac_address_DESC"
-  | "max_vf_num_ASC"
-  | "max_vf_num_DESC"
-  | "model_ASC"
-  | "model_DESC"
-  | "mtu_ASC"
-  | "mtu_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "nic_uuid_ASC"
-  | "nic_uuid_DESC"
-  | "physical_ASC"
-  | "physical_DESC"
-  | "rdma_enabled_ASC"
-  | "rdma_enabled_DESC"
-  | "running_ASC"
-  | "running_DESC"
-  | "speed_ASC"
-  | "speed_DESC"
-  | "subnet_mask_ASC"
-  | "subnet_mask_DESC"
-  | "total_vf_num_ASC"
-  | "total_vf_num_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "up_ASC"
-  | "up_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "used_vf_num_ASC"
-  | "used_vf_num_DESC";
+export enum NicOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DriverASC = "driver_ASC",
+  DriverDESC = "driver_DESC",
+  DriverStateASC = "driver_state_ASC",
+  DriverStateDESC = "driver_state_DESC",
+  GatewayIpASC = "gateway_ip_ASC",
+  GatewayIpDESC = "gateway_ip_DESC",
+  IbdevASC = "ibdev_ASC",
+  IbdevDESC = "ibdev_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpAddressASC = "ip_address_ASC",
+  IpAddressDESC = "ip_address_DESC",
+  IsSriovASC = "is_sriov_ASC",
+  IsSriovDESC = "is_sriov_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MacAddressASC = "mac_address_ASC",
+  MacAddressDESC = "mac_address_DESC",
+  MaxVfNumASC = "max_vf_num_ASC",
+  MaxVfNumDESC = "max_vf_num_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  MtuASC = "mtu_ASC",
+  MtuDESC = "mtu_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NicUuidASC = "nic_uuid_ASC",
+  NicUuidDESC = "nic_uuid_DESC",
+  PhysicalASC = "physical_ASC",
+  PhysicalDESC = "physical_DESC",
+  RdmaEnabledASC = "rdma_enabled_ASC",
+  RdmaEnabledDESC = "rdma_enabled_DESC",
+  RunningASC = "running_ASC",
+  RunningDESC = "running_DESC",
+  SpeedASC = "speed_ASC",
+  SpeedDESC = "speed_DESC",
+  SubnetMaskASC = "subnet_mask_ASC",
+  SubnetMaskDESC = "subnet_mask_DESC",
+  TotalVfNumASC = "total_vf_num_ASC",
+  TotalVfNumDESC = "total_vf_num_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpASC = "up_ASC",
+  UpDESC = "up_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsedVfNumASC = "used_vf_num_ASC",
+  UsedVfNumDESC = "used_vf_num_DESC",
+}
 
 export interface GetNicsRequestBody {
   after?: string | null;
@@ -22347,19 +22718,20 @@ export interface GetNicsConnectionRequestBody {
   where?: NicWhereInput | null;
 }
 
-export type NodeTopoOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "position_ASC"
-  | "position_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NodeTopoOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PositionASC = "position_ASC",
+  PositionDESC = "position_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNodeTopoesRequestBody {
   after?: string | null;
@@ -22402,83 +22774,84 @@ export interface GetNodeTopoesConnectionRequestBody {
   where?: NodeTopoWhereInput | null;
 }
 
-export type NvmfNamespaceOrderByInput =
-  | "assigned_size_ASC"
-  | "assigned_size_DESC"
-  | "bps_ASC"
-  | "bps_DESC"
-  | "bps_max_ASC"
-  | "bps_max_DESC"
-  | "bps_max_length_ASC"
-  | "bps_max_length_DESC"
-  | "bps_rd_ASC"
-  | "bps_rd_DESC"
-  | "bps_rd_max_ASC"
-  | "bps_rd_max_DESC"
-  | "bps_rd_max_length_ASC"
-  | "bps_rd_max_length_DESC"
-  | "bps_wr_ASC"
-  | "bps_wr_DESC"
-  | "bps_wr_max_ASC"
-  | "bps_wr_max_DESC"
-  | "bps_wr_max_length_ASC"
-  | "bps_wr_max_length_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "io_size_ASC"
-  | "io_size_DESC"
-  | "iops_ASC"
-  | "iops_DESC"
-  | "iops_max_ASC"
-  | "iops_max_DESC"
-  | "iops_max_length_ASC"
-  | "iops_max_length_DESC"
-  | "iops_rd_ASC"
-  | "iops_rd_DESC"
-  | "iops_rd_max_ASC"
-  | "iops_rd_max_DESC"
-  | "iops_rd_max_length_ASC"
-  | "iops_rd_max_length_DESC"
-  | "iops_wr_ASC"
-  | "iops_wr_DESC"
-  | "iops_wr_max_ASC"
-  | "iops_wr_max_DESC"
-  | "iops_wr_max_length_ASC"
-  | "iops_wr_max_length_DESC"
-  | "is_shared_ASC"
-  | "is_shared_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "namespace_id_ASC"
-  | "namespace_id_DESC"
-  | "nqn_whitelist_ASC"
-  | "nqn_whitelist_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "shared_size_ASC"
-  | "shared_size_DESC"
-  | "snapshot_num_ASC"
-  | "snapshot_num_DESC"
-  | "stripe_num_ASC"
-  | "stripe_num_DESC"
-  | "stripe_size_ASC"
-  | "stripe_size_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "zbs_volume_id_ASC"
-  | "zbs_volume_id_DESC";
+export enum NvmfNamespaceOrderByInput {
+  AssignedSizeASC = "assigned_size_ASC",
+  AssignedSizeDESC = "assigned_size_DESC",
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IsSharedASC = "is_shared_ASC",
+  IsSharedDESC = "is_shared_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NamespaceIdASC = "namespace_id_ASC",
+  NamespaceIdDESC = "namespace_id_DESC",
+  NqnWhitelistASC = "nqn_whitelist_ASC",
+  NqnWhitelistDESC = "nqn_whitelist_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SnapshotNumASC = "snapshot_num_ASC",
+  SnapshotNumDESC = "snapshot_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  ZbsVolumeIdASC = "zbs_volume_id_ASC",
+  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
+}
 
 export interface GetNvmfNamespacesRequestBody {
   after?: string | null;
@@ -22521,23 +22894,24 @@ export interface GetNvmfNamespacesConnectionRequestBody {
   where?: NvmfNamespaceWhereInput | null;
 }
 
-export type NvmfNamespaceSnapshotOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NvmfNamespaceSnapshotOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNvmfNamespaceSnapshotsRequestBody {
   after?: string | null;
@@ -22580,79 +22954,80 @@ export interface GetNvmfNamespaceSnapshotsConnectionRequestBody {
   where?: NvmfNamespaceSnapshotWhereInput | null;
 }
 
-export type NvmfSubsystemOrderByInput =
-  | "bps_ASC"
-  | "bps_DESC"
-  | "bps_max_ASC"
-  | "bps_max_DESC"
-  | "bps_max_length_ASC"
-  | "bps_max_length_DESC"
-  | "bps_rd_ASC"
-  | "bps_rd_DESC"
-  | "bps_rd_max_ASC"
-  | "bps_rd_max_DESC"
-  | "bps_rd_max_length_ASC"
-  | "bps_rd_max_length_DESC"
-  | "bps_wr_ASC"
-  | "bps_wr_DESC"
-  | "bps_wr_max_ASC"
-  | "bps_wr_max_DESC"
-  | "bps_wr_max_length_ASC"
-  | "bps_wr_max_length_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "external_use_ASC"
-  | "external_use_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "io_size_ASC"
-  | "io_size_DESC"
-  | "iops_ASC"
-  | "iops_DESC"
-  | "iops_max_ASC"
-  | "iops_max_DESC"
-  | "iops_max_length_ASC"
-  | "iops_max_length_DESC"
-  | "iops_rd_ASC"
-  | "iops_rd_DESC"
-  | "iops_rd_max_ASC"
-  | "iops_rd_max_DESC"
-  | "iops_rd_max_length_ASC"
-  | "iops_rd_max_length_DESC"
-  | "iops_wr_ASC"
-  | "iops_wr_DESC"
-  | "iops_wr_max_ASC"
-  | "iops_wr_max_DESC"
-  | "iops_wr_max_length_ASC"
-  | "iops_wr_max_length_DESC"
-  | "ip_whitelist_ASC"
-  | "ip_whitelist_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "nqn_name_ASC"
-  | "nqn_name_DESC"
-  | "nqn_whitelist_ASC"
-  | "nqn_whitelist_DESC"
-  | "policy_ASC"
-  | "policy_DESC"
-  | "replica_num_ASC"
-  | "replica_num_DESC"
-  | "stripe_num_ASC"
-  | "stripe_num_DESC"
-  | "stripe_size_ASC"
-  | "stripe_size_DESC"
-  | "thin_provision_ASC"
-  | "thin_provision_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum NvmfSubsystemOrderByInput {
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NqnNameASC = "nqn_name_ASC",
+  NqnNameDESC = "nqn_name_DESC",
+  NqnWhitelistASC = "nqn_whitelist_ASC",
+  NqnWhitelistDESC = "nqn_whitelist_DESC",
+  PolicyASC = "policy_ASC",
+  PolicyDESC = "policy_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetNvmfSubsystemsRequestBody {
   after?: string | null;
@@ -22695,15 +23070,16 @@ export interface GetNvmfSubsystemsConnectionRequestBody {
   where?: NvmfSubsystemWhereInput | null;
 }
 
-export type OrganizationOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum OrganizationOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetOrganizationsRequestBody {
   after?: string | null;
@@ -22766,31 +23142,32 @@ export interface PmemDimm {
   version: string;
 }
 
-export type PmemDimmOrderByInput =
-  | "capacity_ASC"
-  | "capacity_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "device_locator_ASC"
-  | "device_locator_DESC"
-  | "health_status_ASC"
-  | "health_status_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "numa_node_ASC"
-  | "numa_node_DESC"
-  | "part_number_ASC"
-  | "part_number_DESC"
-  | "remaining_life_percent_ASC"
-  | "remaining_life_percent_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum PmemDimmOrderByInput {
+  CapacityASC = "capacity_ASC",
+  CapacityDESC = "capacity_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeviceLocatorASC = "device_locator_ASC",
+  DeviceLocatorDESC = "device_locator_DESC",
+  HealthStatusASC = "health_status_ASC",
+  HealthStatusDESC = "health_status_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NumaNodeASC = "numa_node_ASC",
+  NumaNodeDESC = "numa_node_DESC",
+  PartNumberASC = "part_number_ASC",
+  PartNumberDESC = "part_number_DESC",
+  RemainingLifePercentASC = "remaining_life_percent_ASC",
+  RemainingLifePercentDESC = "remaining_life_percent_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface GetPmemDimmsRequestBody {
   after?: string | null;
@@ -22833,19 +23210,20 @@ export interface GetPmemDimmsConnectionRequestBody {
   where?: PmemDimmWhereInput | null;
 }
 
-export type RackTopoOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "height_ASC"
-  | "height_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum RackTopoOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  HeightASC = "height_ASC",
+  HeightDESC = "height_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetRackTopoesRequestBody {
   after?: string | null;
@@ -22888,21 +23266,22 @@ export interface GetRackTopoesConnectionRequestBody {
   where?: RackTopoWhereInput | null;
 }
 
-export type ReportTaskOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "plan_id_ASC"
-  | "plan_id_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ReportTaskOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PlanIdASC = "plan_id_ASC",
+  PlanIdDESC = "plan_id_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetReportTasksRequestBody {
   after?: string | null;
@@ -22945,25 +23324,26 @@ export interface GetReportTasksConnectionRequestBody {
   where?: ReportTaskWhereInput | null;
 }
 
-export type ReportTemplateOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "execute_plan_ASC"
-  | "execute_plan_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "preset_ASC"
-  | "preset_DESC"
-  | "resource_meta_ASC"
-  | "resource_meta_DESC"
-  | "task_num_ASC"
-  | "task_num_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ReportTemplateOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ExecutePlanASC = "execute_plan_ASC",
+  ExecutePlanDESC = "execute_plan_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PresetASC = "preset_ASC",
+  PresetDESC = "preset_DESC",
+  ResourceMetaASC = "resource_meta_ASC",
+  ResourceMetaDESC = "resource_meta_DESC",
+  TaskNumASC = "task_num_ASC",
+  TaskNumDESC = "task_num_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetReportTemplatesRequestBody {
   after?: string | null;
@@ -23023,25 +23403,26 @@ export interface SecurityPolicy {
   policy_mode?: PolicyMode | null;
 }
 
-export type SecurityPolicyOrderByInput =
-  | "apply_to_ASC"
-  | "apply_to_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "egress_ASC"
-  | "egress_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ingress_ASC"
-  | "ingress_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "policy_mode_ASC"
-  | "policy_mode_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum SecurityPolicyOrderByInput {
+  ApplyToASC = "apply_to_ASC",
+  ApplyToDESC = "apply_to_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EgressASC = "egress_ASC",
+  EgressDESC = "egress_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IngressASC = "ingress_ASC",
+  IngressDESC = "ingress_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PolicyModeASC = "policy_mode_ASC",
+  PolicyModeDESC = "policy_mode_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetSecurityPoliciesRequestBody {
   after?: string | null;
@@ -23084,35 +23465,36 @@ export interface GetSecurityPoliciesConnectionRequestBody {
   where?: SecurityPolicyWhereInput | null;
 }
 
-export type SnapshotGroupOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "deleted_ASC"
-  | "deleted_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "estimated_recycling_time_ASC"
-  | "estimated_recycling_time_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "keep_ASC"
-  | "keep_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "logical_size_bytes_ASC"
-  | "logical_size_bytes_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "object_num_ASC"
-  | "object_num_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vm_info_ASC"
-  | "vm_info_DESC";
+export enum SnapshotGroupOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeletedASC = "deleted_ASC",
+  DeletedDESC = "deleted_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  EstimatedRecyclingTimeASC = "estimated_recycling_time_ASC",
+  EstimatedRecyclingTimeDESC = "estimated_recycling_time_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  KeepASC = "keep_ASC",
+  KeepDESC = "keep_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeBytesASC = "logical_size_bytes_ASC",
+  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ObjectNumASC = "object_num_ASC",
+  ObjectNumDESC = "object_num_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VmInfoASC = "vm_info_ASC",
+  VmInfoDESC = "vm_info_DESC",
+}
 
 export interface GetSnapshotGroupsRequestBody {
   after?: string | null;
@@ -23155,61 +23537,62 @@ export interface GetSnapshotGroupsConnectionRequestBody {
   where?: SnapshotGroupWhereInput | null;
 }
 
-export type SnapshotPlanOrderByInput =
-  | "auto_delete_num_ASC"
-  | "auto_delete_num_DESC"
-  | "auto_execute_num_ASC"
-  | "auto_execute_num_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "end_time_ASC"
-  | "end_time_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "exec_h_m_ASC"
-  | "exec_h_m_DESC"
-  | "execute_plan_type_ASC"
-  | "execute_plan_type_DESC"
-  | "healthy_ASC"
-  | "healthy_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "last_execute_end_time_ASC"
-  | "last_execute_end_time_DESC"
-  | "last_execute_status_ASC"
-  | "last_execute_status_DESC"
-  | "last_execute_time_ASC"
-  | "last_execute_time_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "logical_size_bytes_ASC"
-  | "logical_size_bytes_DESC"
-  | "manual_delete_num_ASC"
-  | "manual_delete_num_DESC"
-  | "manual_execute_num_ASC"
-  | "manual_execute_num_DESC"
-  | "mirror_ASC"
-  | "mirror_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "next_execute_time_ASC"
-  | "next_execute_time_DESC"
-  | "object_num_ASC"
-  | "object_num_DESC"
-  | "physical_size_bytes_ASC"
-  | "physical_size_bytes_DESC"
-  | "remain_snapshot_num_ASC"
-  | "remain_snapshot_num_DESC"
-  | "snapshot_group_num_ASC"
-  | "snapshot_group_num_DESC"
-  | "start_time_ASC"
-  | "start_time_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum SnapshotPlanOrderByInput {
+  AutoDeleteNumASC = "auto_delete_num_ASC",
+  AutoDeleteNumDESC = "auto_delete_num_DESC",
+  AutoExecuteNumASC = "auto_execute_num_ASC",
+  AutoExecuteNumDESC = "auto_execute_num_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EndTimeASC = "end_time_ASC",
+  EndTimeDESC = "end_time_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExecHMASC = "exec_h_m_ASC",
+  ExecHMDESC = "exec_h_m_DESC",
+  ExecutePlanTypeASC = "execute_plan_type_ASC",
+  ExecutePlanTypeDESC = "execute_plan_type_DESC",
+  HealthyASC = "healthy_ASC",
+  HealthyDESC = "healthy_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LastExecuteEndTimeASC = "last_execute_end_time_ASC",
+  LastExecuteEndTimeDESC = "last_execute_end_time_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteTimeASC = "last_execute_time_ASC",
+  LastExecuteTimeDESC = "last_execute_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeBytesASC = "logical_size_bytes_ASC",
+  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
+  ManualDeleteNumASC = "manual_delete_num_ASC",
+  ManualDeleteNumDESC = "manual_delete_num_DESC",
+  ManualExecuteNumASC = "manual_execute_num_ASC",
+  ManualExecuteNumDESC = "manual_execute_num_DESC",
+  MirrorASC = "mirror_ASC",
+  MirrorDESC = "mirror_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NextExecuteTimeASC = "next_execute_time_ASC",
+  NextExecuteTimeDESC = "next_execute_time_DESC",
+  ObjectNumASC = "object_num_ASC",
+  ObjectNumDESC = "object_num_DESC",
+  PhysicalSizeBytesASC = "physical_size_bytes_ASC",
+  PhysicalSizeBytesDESC = "physical_size_bytes_DESC",
+  RemainSnapshotNumASC = "remain_snapshot_num_ASC",
+  RemainSnapshotNumDESC = "remain_snapshot_num_DESC",
+  SnapshotGroupNumASC = "snapshot_group_num_ASC",
+  SnapshotGroupNumDESC = "snapshot_group_num_DESC",
+  StartTimeASC = "start_time_ASC",
+  StartTimeDESC = "start_time_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetSnapshotPlansRequestBody {
   after?: string | null;
@@ -23266,27 +23649,28 @@ export interface SnapshotPlanTask {
   type: SnapshotPlanTaskType;
 }
 
-export type SnapshotPlanTaskOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "end_time_ASC"
-  | "end_time_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "start_time_ASC"
-  | "start_time_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum SnapshotPlanTaskOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EndTimeASC = "end_time_ASC",
+  EndTimeDESC = "end_time_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  StartTimeASC = "start_time_ASC",
+  StartTimeDESC = "start_time_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetSnapshotPlanTasksRequestBody {
   after?: string | null;
@@ -23329,39 +23713,40 @@ export interface GetSnapshotPlanTasksConnectionRequestBody {
   where?: SnapshotPlanTaskWhereInput | null;
 }
 
-export type SnmpTransportOrderByInput =
-  | "auth_pass_phrase_ASC"
-  | "auth_pass_phrase_DESC"
-  | "auth_protocol_ASC"
-  | "auth_protocol_DESC"
-  | "community_ASC"
-  | "community_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "port_ASC"
-  | "port_DESC"
-  | "privacy_pass_phrase_ASC"
-  | "privacy_pass_phrase_DESC"
-  | "privacy_protocol_ASC"
-  | "privacy_protocol_DESC"
-  | "protocol_ASC"
-  | "protocol_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum SnmpTransportOrderByInput {
+  AuthPassPhraseASC = "auth_pass_phrase_ASC",
+  AuthPassPhraseDESC = "auth_pass_phrase_DESC",
+  AuthProtocolASC = "auth_protocol_ASC",
+  AuthProtocolDESC = "auth_protocol_DESC",
+  CommunityASC = "community_ASC",
+  CommunityDESC = "community_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PortASC = "port_ASC",
+  PortDESC = "port_DESC",
+  PrivacyPassPhraseASC = "privacy_pass_phrase_ASC",
+  PrivacyPassPhraseDESC = "privacy_pass_phrase_DESC",
+  PrivacyProtocolASC = "privacy_protocol_ASC",
+  PrivacyProtocolDESC = "privacy_protocol_DESC",
+  ProtocolASC = "protocol_ASC",
+  ProtocolDESC = "protocol_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface GetSnmpTransportsRequestBody {
   after?: string | null;
@@ -23404,47 +23789,48 @@ export interface GetSnmpTransportsConnectionRequestBody {
   where?: SnmpTransportWhereInput | null;
 }
 
-export type SnmpTrapReceiverOrderByInput =
-  | "auth_pass_phrase_ASC"
-  | "auth_pass_phrase_DESC"
-  | "auth_protocol_ASC"
-  | "auth_protocol_DESC"
-  | "community_ASC"
-  | "community_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "engine_id_ASC"
-  | "engine_id_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "host_ASC"
-  | "host_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "inform_ASC"
-  | "inform_DESC"
-  | "language_code_ASC"
-  | "language_code_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "port_ASC"
-  | "port_DESC"
-  | "privacy_pass_phrase_ASC"
-  | "privacy_pass_phrase_DESC"
-  | "privacy_protocol_ASC"
-  | "privacy_protocol_DESC"
-  | "protocol_ASC"
-  | "protocol_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum SnmpTrapReceiverOrderByInput {
+  AuthPassPhraseASC = "auth_pass_phrase_ASC",
+  AuthPassPhraseDESC = "auth_pass_phrase_DESC",
+  AuthProtocolASC = "auth_protocol_ASC",
+  AuthProtocolDESC = "auth_protocol_DESC",
+  CommunityASC = "community_ASC",
+  CommunityDESC = "community_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  EngineIdASC = "engine_id_ASC",
+  EngineIdDESC = "engine_id_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  HostASC = "host_ASC",
+  HostDESC = "host_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InformASC = "inform_ASC",
+  InformDESC = "inform_DESC",
+  LanguageCodeASC = "language_code_ASC",
+  LanguageCodeDESC = "language_code_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PortASC = "port_ASC",
+  PortDESC = "port_DESC",
+  PrivacyPassPhraseASC = "privacy_pass_phrase_ASC",
+  PrivacyPassPhraseDESC = "privacy_pass_phrase_DESC",
+  PrivacyProtocolASC = "privacy_protocol_ASC",
+  PrivacyProtocolDESC = "privacy_protocol_DESC",
+  ProtocolASC = "protocol_ASC",
+  ProtocolDESC = "protocol_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface GetSnmpTrapReceiversRequestBody {
   after?: string | null;
@@ -23504,27 +23890,28 @@ export interface SvtImage {
   vm_disks?: NestedVmDisk[] | null;
 }
 
-export type SvtImageOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "version_ASC"
-  | "version_DESC";
+export enum SvtImageOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
 
 export interface GetSvtImagesRequestBody {
   after?: string | null;
@@ -23567,7 +23954,10 @@ export interface GetSvtImagesConnectionRequestBody {
   where?: SvtImageWhereInput | null;
 }
 
-export type UserAuditLogStatus = "FAILED" | "SUCCESSED";
+export enum UserAuditLogStatus {
+  FAILED = "FAILED",
+  SUCCESSED = "SUCCESSED",
+}
 
 export interface SystemAuditLog {
   action: string;
@@ -23581,27 +23971,28 @@ export interface SystemAuditLog {
   status?: UserAuditLogStatus | null;
 }
 
-export type SystemAuditLogOrderByInput =
-  | "action_ASC"
-  | "action_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "finished_at_ASC"
-  | "finished_at_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "message_ASC"
-  | "message_DESC"
-  | "resource_id_ASC"
-  | "resource_id_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum SystemAuditLogOrderByInput {
+  ActionASC = "action_ASC",
+  ActionDESC = "action_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface SystemAuditLogWhereInput {
   action?: string | null;
@@ -23741,53 +24132,54 @@ export interface GetSystemAuditLogsConnectionRequestBody {
   where?: SystemAuditLogWhereInput | null;
 }
 
-export type TaskOrderByInput =
-  | "args_ASC"
-  | "args_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "error_code_ASC"
-  | "error_code_DESC"
-  | "error_message_ASC"
-  | "error_message_DESC"
-  | "finished_at_ASC"
-  | "finished_at_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "key_ASC"
-  | "key_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "progress_ASC"
-  | "progress_DESC"
-  | "resource_id_ASC"
-  | "resource_id_DESC"
-  | "resource_mutation_ASC"
-  | "resource_mutation_DESC"
-  | "resource_rollback_error_ASC"
-  | "resource_rollback_error_DESC"
-  | "resource_rollback_retry_count_ASC"
-  | "resource_rollback_retry_count_DESC"
-  | "resource_rollbacked_ASC"
-  | "resource_rollbacked_DESC"
-  | "resource_type_ASC"
-  | "resource_type_DESC"
-  | "snapshot_ASC"
-  | "snapshot_DESC"
-  | "started_at_ASC"
-  | "started_at_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "steps_ASC"
-  | "steps_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum TaskOrderByInput {
+  ArgsASC = "args_ASC",
+  ArgsDESC = "args_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ErrorCodeASC = "error_code_ASC",
+  ErrorCodeDESC = "error_code_DESC",
+  ErrorMessageASC = "error_message_ASC",
+  ErrorMessageDESC = "error_message_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  KeyASC = "key_ASC",
+  KeyDESC = "key_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  ProgressASC = "progress_ASC",
+  ProgressDESC = "progress_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  ResourceMutationASC = "resource_mutation_ASC",
+  ResourceMutationDESC = "resource_mutation_DESC",
+  ResourceRollbackErrorASC = "resource_rollback_error_ASC",
+  ResourceRollbackErrorDESC = "resource_rollback_error_DESC",
+  ResourceRollbackRetryCountASC = "resource_rollback_retry_count_ASC",
+  ResourceRollbackRetryCountDESC = "resource_rollback_retry_count_DESC",
+  ResourceRollbackedASC = "resource_rollbacked_ASC",
+  ResourceRollbackedDESC = "resource_rollbacked_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  SnapshotASC = "snapshot_ASC",
+  SnapshotDESC = "snapshot_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StepsASC = "steps_ASC",
+  StepsDESC = "steps_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface TaskWhereInput {
   AND?: TaskWhereInput[] | null;
@@ -24054,29 +24446,30 @@ export interface GetTasksConnectionRequestBody {
   where?: TaskWhereInput | null;
 }
 
-export type UploadTaskOrderByInput =
-  | "args_ASC"
-  | "args_DESC"
-  | "chunk_size_ASC"
-  | "chunk_size_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "current_chunk_ASC"
-  | "current_chunk_DESC"
-  | "finished_at_ASC"
-  | "finished_at_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "resource_type_ASC"
-  | "resource_type_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "started_at_ASC"
-  | "started_at_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum UploadTaskOrderByInput {
+  ArgsASC = "args_ASC",
+  ArgsDESC = "args_DESC",
+  ChunkSizeASC = "chunk_size_ASC",
+  ChunkSizeDESC = "chunk_size_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  CurrentChunkASC = "current_chunk_ASC",
+  CurrentChunkDESC = "current_chunk_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface UploadTaskWhereInput {
   AND?: UploadTaskWhereInput[] | null;
@@ -24231,31 +24624,32 @@ export interface GetUploadTasksConnectionRequestBody {
   where?: UploadTaskWhereInput | null;
 }
 
-export type UsbDeviceOrderByInput =
-  | "binded_ASC"
-  | "binded_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "manufacturer_ASC"
-  | "manufacturer_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "usb_type_ASC"
-  | "usb_type_DESC";
+export enum UsbDeviceOrderByInput {
+  BindedASC = "binded_ASC",
+  BindedDESC = "binded_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ManufacturerASC = "manufacturer_ASC",
+  ManufacturerDESC = "manufacturer_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsbTypeASC = "usb_type_ASC",
+  UsbTypeDESC = "usb_type_DESC",
+}
 
 export interface GetUsbDevicesRequestBody {
   after?: string | null;
@@ -24318,29 +24712,30 @@ export interface UserAuditLog {
   user?: NestedUser | null;
 }
 
-export type UserAuditLogOrderByInput =
-  | "action_ASC"
-  | "action_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "finished_at_ASC"
-  | "finished_at_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_address_ASC"
-  | "ip_address_DESC"
-  | "message_ASC"
-  | "message_DESC"
-  | "resource_id_ASC"
-  | "resource_id_DESC"
-  | "resource_type_ASC"
-  | "resource_type_DESC"
-  | "started_at_ASC"
-  | "started_at_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum UserAuditLogOrderByInput {
+  ActionASC = "action_ASC",
+  ActionDESC = "action_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpAddressASC = "ip_address_ASC",
+  IpAddressDESC = "ip_address_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface UserAuditLogWhereInput {
   action?: string | null;
@@ -24503,19 +24898,20 @@ export interface GetUserAuditLogsConnectionRequestBody {
   where?: UserAuditLogWhereInput | null;
 }
 
-export type UserRoleNextOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "platform_ASC"
-  | "platform_DESC"
-  | "preset_ASC"
-  | "preset_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum UserRoleNextOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PlatformASC = "platform_ASC",
+  PlatformDESC = "platform_DESC",
+  PresetASC = "preset_ASC",
+  PresetDESC = "preset_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetUserRoleNextsRequestBody {
   after?: string | null;
@@ -24558,37 +24954,38 @@ export interface GetUserRoleNextsConnectionRequestBody {
   where?: UserRoleNextWhereInput | null;
 }
 
-export type UserOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "email_address_ASC"
-  | "email_address_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "ldap_dn_ASC"
-  | "ldap_dn_DESC"
-  | "mobile_phone_ASC"
-  | "mobile_phone_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "password_ASC"
-  | "password_DESC"
-  | "password_expired_ASC"
-  | "password_expired_DESC"
-  | "password_recover_qa_ASC"
-  | "password_recover_qa_DESC"
-  | "password_updated_at_ASC"
-  | "password_updated_at_DESC"
-  | "role_ASC"
-  | "role_DESC"
-  | "source_ASC"
-  | "source_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC";
+export enum UserOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EmailAddressASC = "email_address_ASC",
+  EmailAddressDESC = "email_address_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  LdapDnASC = "ldap_dn_ASC",
+  LdapDnDESC = "ldap_dn_DESC",
+  MobilePhoneASC = "mobile_phone_ASC",
+  MobilePhoneDESC = "mobile_phone_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PasswordASC = "password_ASC",
+  PasswordDESC = "password_DESC",
+  PasswordExpiredASC = "password_expired_ASC",
+  PasswordExpiredDESC = "password_expired_DESC",
+  PasswordRecoverQaASC = "password_recover_qa_ASC",
+  PasswordRecoverQaDESC = "password_recover_qa_DESC",
+  PasswordUpdatedAtASC = "password_updated_at_ASC",
+  PasswordUpdatedAtDESC = "password_updated_at_DESC",
+  RoleASC = "role_ASC",
+  RoleDESC = "role_DESC",
+  SourceASC = "source_ASC",
+  SourceDESC = "source_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+}
 
 export interface GetUsersRequestBody {
   after?: string | null;
@@ -24643,25 +25040,26 @@ export interface VcenterAccount {
   username: string;
 }
 
-export type VcenterAccountOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_ASC"
-  | "ip_DESC"
-  | "is_valid_ASC"
-  | "is_valid_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "password_ASC"
-  | "password_DESC"
-  | "port_ASC"
-  | "port_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC";
+export enum VcenterAccountOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpASC = "ip_ASC",
+  IpDESC = "ip_DESC",
+  IsValidASC = "is_valid_ASC",
+  IsValidDESC = "is_valid_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  PasswordASC = "password_ASC",
+  PasswordDESC = "password_DESC",
+  PortASC = "port_ASC",
+  PortDESC = "port_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+}
 
 export interface GetVcenterAccountsRequestBody {
   after?: string | null;
@@ -24704,31 +25102,32 @@ export interface GetVcenterAccountsConnectionRequestBody {
   where?: VcenterAccountWhereInput | null;
 }
 
-export type VdsOrderByInput =
-  | "bond_mode_ASC"
-  | "bond_mode_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "ovsbr_name_ASC"
-  | "ovsbr_name_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vlans_num_ASC"
-  | "vlans_num_DESC"
-  | "work_mode_ASC"
-  | "work_mode_DESC";
+export enum VdsOrderByInput {
+  BondModeASC = "bond_mode_ASC",
+  BondModeDESC = "bond_mode_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  OvsbrNameASC = "ovsbr_name_ASC",
+  OvsbrNameDESC = "ovsbr_name_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VlansNumASC = "vlans_num_ASC",
+  VlansNumDESC = "vlans_num_DESC",
+  WorkModeASC = "work_mode_ASC",
+  WorkModeDESC = "work_mode_DESC",
+}
 
 export interface GetVdsesRequestBody {
   after?: string | null;
@@ -24771,23 +25170,24 @@ export interface GetVdsesConnectionRequestBody {
   where?: VdsWhereInput | null;
 }
 
-export type ViewOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "time_span_ASC"
-  | "time_span_DESC"
-  | "time_unit_ASC"
-  | "time_unit_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ViewOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  TimeSpanASC = "time_span_ASC",
+  TimeSpanDESC = "time_span_DESC",
+  TimeUnitASC = "time_unit_ASC",
+  TimeUnitDESC = "time_unit_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetViewsRequestBody {
   after?: string | null;
@@ -24830,29 +25230,30 @@ export interface GetViewsConnectionRequestBody {
   where?: ViewWhereInput | null;
 }
 
-export type VlanOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "gateway_ip_ASC"
-  | "gateway_ip_DESC"
-  | "gateway_subnetmask_ASC"
-  | "gateway_subnetmask_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "subnetmask_ASC"
-  | "subnetmask_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vlan_id_ASC"
-  | "vlan_id_DESC";
+export enum VlanOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  GatewayIpASC = "gateway_ip_ASC",
+  GatewayIpDESC = "gateway_ip_DESC",
+  GatewaySubnetmaskASC = "gateway_subnetmask_ASC",
+  GatewaySubnetmaskDESC = "gateway_subnetmask_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SubnetmaskASC = "subnetmask_ASC",
+  SubnetmaskDESC = "subnetmask_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VlanIdASC = "vlan_id_ASC",
+  VlanIdDESC = "vlan_id_DESC",
+}
 
 export interface GetVlansRequestBody {
   after?: string | null;
@@ -24931,45 +25332,46 @@ export interface VmDisk {
   vm_volume?: NestedVmVolume | null;
 }
 
-export type VmDiskOrderByInput =
-  | "boot_ASC"
-  | "boot_DESC"
-  | "bus_ASC"
-  | "bus_DESC"
-  | "cloud_init_image_name_ASC"
-  | "cloud_init_image_name_DESC"
-  | "cloud_init_image_path_ASC"
-  | "cloud_init_image_path_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "device_ASC"
-  | "device_DESC"
-  | "disabled_ASC"
-  | "disabled_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "key_ASC"
-  | "key_DESC"
-  | "max_bandwidth_ASC"
-  | "max_bandwidth_DESC"
-  | "max_bandwidth_policy_ASC"
-  | "max_bandwidth_policy_DESC"
-  | "max_iops_ASC"
-  | "max_iops_DESC"
-  | "max_iops_policy_ASC"
-  | "max_iops_policy_DESC"
-  | "serial_ASC"
-  | "serial_DESC"
-  | "type_ASC"
-  | "type_DESC"
-  | "unsafe_image_path_ASC"
-  | "unsafe_image_path_DESC"
-  | "unsafe_image_uuid_ASC"
-  | "unsafe_image_uuid_DESC"
-  | "unsafe_provision_ASC"
-  | "unsafe_provision_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum VmDiskOrderByInput {
+  BootASC = "boot_ASC",
+  BootDESC = "boot_DESC",
+  BusASC = "bus_ASC",
+  BusDESC = "bus_DESC",
+  CloudInitImageNameASC = "cloud_init_image_name_ASC",
+  CloudInitImageNameDESC = "cloud_init_image_name_DESC",
+  CloudInitImagePathASC = "cloud_init_image_path_ASC",
+  CloudInitImagePathDESC = "cloud_init_image_path_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeviceASC = "device_ASC",
+  DeviceDESC = "device_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  KeyASC = "key_ASC",
+  KeyDESC = "key_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UnsafeImagePathASC = "unsafe_image_path_ASC",
+  UnsafeImagePathDESC = "unsafe_image_path_DESC",
+  UnsafeImageUuidASC = "unsafe_image_uuid_ASC",
+  UnsafeImageUuidDESC = "unsafe_image_uuid_DESC",
+  UnsafeProvisionASC = "unsafe_provision_ASC",
+  UnsafeProvisionDESC = "unsafe_provision_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetVmDisksRequestBody {
   after?: string | null;
@@ -25024,13 +25426,14 @@ export interface VmEntityFilterResult {
   vm: NestedVm;
 }
 
-export type VmEntityFilterResultOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum VmEntityFilterResultOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetVmEntityFilterResultsRequestBody {
   after?: string | null;
@@ -25073,19 +25476,20 @@ export interface GetVmEntityFilterResultsConnectionRequestBody {
   where?: VmEntityFilterResultWhereInput | null;
 }
 
-export type VmFolderOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC";
+export enum VmFolderOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
 
 export interface GetVmFoldersRequestBody {
   after?: string | null;
@@ -25147,33 +25551,34 @@ export interface VmNic {
   vm: NestedVm;
 }
 
-export type VmNicOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "enabled_ASC"
-  | "enabled_DESC"
-  | "gateway_ASC"
-  | "gateway_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "interface_id_ASC"
-  | "interface_id_DESC"
-  | "ip_address_ASC"
-  | "ip_address_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "mac_address_ASC"
-  | "mac_address_DESC"
-  | "mirror_ASC"
-  | "mirror_DESC"
-  | "model_ASC"
-  | "model_DESC"
-  | "order_ASC"
-  | "order_DESC"
-  | "subnet_mask_ASC"
-  | "subnet_mask_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum VmNicOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EnabledASC = "enabled_ASC",
+  EnabledDESC = "enabled_DESC",
+  GatewayASC = "gateway_ASC",
+  GatewayDESC = "gateway_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InterfaceIdASC = "interface_id_ASC",
+  InterfaceIdDESC = "interface_id_DESC",
+  IpAddressASC = "ip_address_ASC",
+  IpAddressDESC = "ip_address_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MacAddressASC = "mac_address_ASC",
+  MacAddressDESC = "mac_address_DESC",
+  MirrorASC = "mirror_ASC",
+  MirrorDESC = "mirror_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  OrderASC = "order_ASC",
+  OrderDESC = "order_DESC",
+  SubnetMaskASC = "subnet_mask_ASC",
+  SubnetMaskDESC = "subnet_mask_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetVmNicsRequestBody {
   after?: string | null;
@@ -25216,39 +25621,40 @@ export interface GetVmNicsConnectionRequestBody {
   where?: VmNicWhereInput | null;
 }
 
-export type VmPlacementGroupOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "enabled_ASC"
-  | "enabled_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "local_updated_at_ASC"
-  | "local_updated_at_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vm_host_must_enabled_ASC"
-  | "vm_host_must_enabled_DESC"
-  | "vm_host_must_policy_ASC"
-  | "vm_host_must_policy_DESC"
-  | "vm_host_prefer_enabled_ASC"
-  | "vm_host_prefer_enabled_DESC"
-  | "vm_host_prefer_policy_ASC"
-  | "vm_host_prefer_policy_DESC"
-  | "vm_vm_policy_ASC"
-  | "vm_vm_policy_DESC"
-  | "vm_vm_policy_enabled_ASC"
-  | "vm_vm_policy_enabled_DESC";
+export enum VmPlacementGroupOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EnabledASC = "enabled_ASC",
+  EnabledDESC = "enabled_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LocalUpdatedAtASC = "local_updated_at_ASC",
+  LocalUpdatedAtDESC = "local_updated_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VmHostMustEnabledASC = "vm_host_must_enabled_ASC",
+  VmHostMustEnabledDESC = "vm_host_must_enabled_DESC",
+  VmHostMustPolicyASC = "vm_host_must_policy_ASC",
+  VmHostMustPolicyDESC = "vm_host_must_policy_DESC",
+  VmHostPreferEnabledASC = "vm_host_prefer_enabled_ASC",
+  VmHostPreferEnabledDESC = "vm_host_prefer_enabled_DESC",
+  VmHostPreferPolicyASC = "vm_host_prefer_policy_ASC",
+  VmHostPreferPolicyDESC = "vm_host_prefer_policy_DESC",
+  VmVmPolicyASC = "vm_vm_policy_ASC",
+  VmVmPolicyDESC = "vm_vm_policy_DESC",
+  VmVmPolicyEnabledASC = "vm_vm_policy_enabled_ASC",
+  VmVmPolicyEnabledDESC = "vm_vm_policy_enabled_DESC",
+}
 
 export interface GetVmPlacementGroupsRequestBody {
   after?: string | null;
@@ -25291,107 +25697,108 @@ export interface GetVmPlacementGroupsConnectionRequestBody {
   where?: VmPlacementGroupWhereInput | null;
 }
 
-export type VmOrderByInput =
-  | "clock_offset_ASC"
-  | "clock_offset_DESC"
-  | "cloud_init_supported_ASC"
-  | "cloud_init_supported_DESC"
-  | "cpu_ASC"
-  | "cpu_DESC"
-  | "cpu_model_ASC"
-  | "cpu_model_DESC"
-  | "cpu_usage_ASC"
-  | "cpu_usage_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "deleted_at_ASC"
-  | "deleted_at_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "dns_servers_ASC"
-  | "dns_servers_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "firmware_ASC"
-  | "firmware_DESC"
-  | "guest_cpu_model_ASC"
-  | "guest_cpu_model_DESC"
-  | "guest_os_type_ASC"
-  | "guest_os_type_DESC"
-  | "guest_size_usage_ASC"
-  | "guest_size_usage_DESC"
-  | "guest_used_size_ASC"
-  | "guest_used_size_DESC"
-  | "ha_ASC"
-  | "ha_DESC"
-  | "hostname_ASC"
-  | "hostname_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "in_recycle_bin_ASC"
-  | "in_recycle_bin_DESC"
-  | "internal_ASC"
-  | "internal_DESC"
-  | "io_policy_ASC"
-  | "io_policy_DESC"
-  | "ips_ASC"
-  | "ips_DESC"
-  | "kernel_info_ASC"
-  | "kernel_info_DESC"
-  | "last_shutdown_time_ASC"
-  | "last_shutdown_time_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "logical_size_bytes_ASC"
-  | "logical_size_bytes_DESC"
-  | "max_bandwidth_ASC"
-  | "max_bandwidth_DESC"
-  | "max_bandwidth_policy_ASC"
-  | "max_bandwidth_policy_DESC"
-  | "max_iops_ASC"
-  | "max_iops_DESC"
-  | "max_iops_policy_ASC"
-  | "max_iops_policy_DESC"
-  | "memory_ASC"
-  | "memory_DESC"
-  | "memory_usage_ASC"
-  | "memory_usage_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "nested_virtualization_ASC"
-  | "nested_virtualization_DESC"
-  | "node_ip_ASC"
-  | "node_ip_DESC"
-  | "original_name_ASC"
-  | "original_name_DESC"
-  | "os_ASC"
-  | "os_DESC"
-  | "protected_ASC"
-  | "protected_DESC"
-  | "provisioned_size_ASC"
-  | "provisioned_size_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "status_ASC"
-  | "status_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vcpu_ASC"
-  | "vcpu_DESC"
-  | "video_type_ASC"
-  | "video_type_DESC"
-  | "vm_tools_status_ASC"
-  | "vm_tools_status_DESC"
-  | "vm_tools_version_ASC"
-  | "vm_tools_version_DESC"
-  | "vm_usage_ASC"
-  | "vm_usage_DESC"
-  | "win_opt_ASC"
-  | "win_opt_DESC";
+export enum VmOrderByInput {
+  ClockOffsetASC = "clock_offset_ASC",
+  ClockOffsetDESC = "clock_offset_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CpuASC = "cpu_ASC",
+  CpuDESC = "cpu_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CpuUsageASC = "cpu_usage_ASC",
+  CpuUsageDESC = "cpu_usage_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeletedAtASC = "deleted_at_ASC",
+  DeletedAtDESC = "deleted_at_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  DnsServersASC = "dns_servers_ASC",
+  DnsServersDESC = "dns_servers_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  GuestCpuModelASC = "guest_cpu_model_ASC",
+  GuestCpuModelDESC = "guest_cpu_model_DESC",
+  GuestOsTypeASC = "guest_os_type_ASC",
+  GuestOsTypeDESC = "guest_os_type_DESC",
+  GuestSizeUsageASC = "guest_size_usage_ASC",
+  GuestSizeUsageDESC = "guest_size_usage_DESC",
+  GuestUsedSizeASC = "guest_used_size_ASC",
+  GuestUsedSizeDESC = "guest_used_size_DESC",
+  HaASC = "ha_ASC",
+  HaDESC = "ha_DESC",
+  HostnameASC = "hostname_ASC",
+  HostnameDESC = "hostname_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InRecycleBinASC = "in_recycle_bin_ASC",
+  InRecycleBinDESC = "in_recycle_bin_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoPolicyASC = "io_policy_ASC",
+  IoPolicyDESC = "io_policy_DESC",
+  IpsASC = "ips_ASC",
+  IpsDESC = "ips_DESC",
+  KernelInfoASC = "kernel_info_ASC",
+  KernelInfoDESC = "kernel_info_DESC",
+  LastShutdownTimeASC = "last_shutdown_time_ASC",
+  LastShutdownTimeDESC = "last_shutdown_time_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeBytesASC = "logical_size_bytes_ASC",
+  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  MemoryUsageASC = "memory_usage_ASC",
+  MemoryUsageDESC = "memory_usage_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NestedVirtualizationASC = "nested_virtualization_ASC",
+  NestedVirtualizationDESC = "nested_virtualization_DESC",
+  NodeIpASC = "node_ip_ASC",
+  NodeIpDESC = "node_ip_DESC",
+  OriginalNameASC = "original_name_ASC",
+  OriginalNameDESC = "original_name_DESC",
+  OsASC = "os_ASC",
+  OsDESC = "os_DESC",
+  ProtectedASC = "protected_ASC",
+  ProtectedDESC = "protected_DESC",
+  ProvisionedSizeASC = "provisioned_size_ASC",
+  ProvisionedSizeDESC = "provisioned_size_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VideoTypeASC = "video_type_ASC",
+  VideoTypeDESC = "video_type_DESC",
+  VmToolsStatusASC = "vm_tools_status_ASC",
+  VmToolsStatusDESC = "vm_tools_status_DESC",
+  VmToolsVersionASC = "vm_tools_version_ASC",
+  VmToolsVersionDESC = "vm_tools_version_DESC",
+  VmUsageASC = "vm_usage_ASC",
+  VmUsageDESC = "vm_usage_DESC",
+  WinOptASC = "win_opt_ASC",
+  WinOptDESC = "win_opt_DESC",
+}
 
 export interface GetVmsRequestBody {
   after?: string | null;
@@ -25434,57 +25841,58 @@ export interface GetVmsConnectionRequestBody {
   where?: VmWhereInput | null;
 }
 
-export type VmSnapshotOrderByInput =
-  | "clock_offset_ASC"
-  | "clock_offset_DESC"
-  | "consistent_type_ASC"
-  | "consistent_type_DESC"
-  | "cpu_ASC"
-  | "cpu_DESC"
-  | "cpu_model_ASC"
-  | "cpu_model_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "firmware_ASC"
-  | "firmware_DESC"
-  | "ha_ASC"
-  | "ha_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "io_policy_ASC"
-  | "io_policy_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "max_bandwidth_ASC"
-  | "max_bandwidth_DESC"
-  | "max_bandwidth_policy_ASC"
-  | "max_bandwidth_policy_DESC"
-  | "max_iops_ASC"
-  | "max_iops_DESC"
-  | "max_iops_policy_ASC"
-  | "max_iops_policy_DESC"
-  | "memory_ASC"
-  | "memory_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vcpu_ASC"
-  | "vcpu_DESC"
-  | "vm_disks_ASC"
-  | "vm_disks_DESC"
-  | "vm_nics_ASC"
-  | "vm_nics_DESC"
-  | "win_opt_ASC"
-  | "win_opt_DESC";
+export enum VmSnapshotOrderByInput {
+  ClockOffsetASC = "clock_offset_ASC",
+  ClockOffsetDESC = "clock_offset_DESC",
+  ConsistentTypeASC = "consistent_type_ASC",
+  ConsistentTypeDESC = "consistent_type_DESC",
+  CpuASC = "cpu_ASC",
+  CpuDESC = "cpu_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  HaASC = "ha_ASC",
+  HaDESC = "ha_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoPolicyASC = "io_policy_ASC",
+  IoPolicyDESC = "io_policy_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VmDisksASC = "vm_disks_ASC",
+  VmDisksDESC = "vm_disks_DESC",
+  VmNicsASC = "vm_nics_ASC",
+  VmNicsDESC = "vm_nics_DESC",
+  WinOptASC = "win_opt_ASC",
+  WinOptDESC = "win_opt_DESC",
+}
 
 export interface GetVmSnapshotsRequestBody {
   after?: string | null;
@@ -25527,59 +25935,60 @@ export interface GetVmSnapshotsConnectionRequestBody {
   where?: VmSnapshotWhereInput | null;
 }
 
-export type VmTemplateOrderByInput =
-  | "clock_offset_ASC"
-  | "clock_offset_DESC"
-  | "cloud_init_supported_ASC"
-  | "cloud_init_supported_DESC"
-  | "cpu_ASC"
-  | "cpu_DESC"
-  | "cpu_model_ASC"
-  | "cpu_model_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "entityAsyncStatus_ASC"
-  | "entityAsyncStatus_DESC"
-  | "firmware_ASC"
-  | "firmware_DESC"
-  | "ha_ASC"
-  | "ha_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "io_policy_ASC"
-  | "io_policy_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "max_bandwidth_ASC"
-  | "max_bandwidth_DESC"
-  | "max_bandwidth_policy_ASC"
-  | "max_bandwidth_policy_DESC"
-  | "max_iops_ASC"
-  | "max_iops_DESC"
-  | "max_iops_policy_ASC"
-  | "max_iops_policy_DESC"
-  | "memory_ASC"
-  | "memory_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "vcpu_ASC"
-  | "vcpu_DESC"
-  | "video_type_ASC"
-  | "video_type_DESC"
-  | "vm_disks_ASC"
-  | "vm_disks_DESC"
-  | "vm_nics_ASC"
-  | "vm_nics_DESC"
-  | "win_opt_ASC"
-  | "win_opt_DESC";
+export enum VmTemplateOrderByInput {
+  ClockOffsetASC = "clock_offset_ASC",
+  ClockOffsetDESC = "clock_offset_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CpuASC = "cpu_ASC",
+  CpuDESC = "cpu_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  HaASC = "ha_ASC",
+  HaDESC = "ha_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoPolicyASC = "io_policy_ASC",
+  IoPolicyDESC = "io_policy_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VideoTypeASC = "video_type_ASC",
+  VideoTypeDESC = "video_type_DESC",
+  VmDisksASC = "vm_disks_ASC",
+  VmDisksDESC = "vm_disks_DESC",
+  VmNicsASC = "vm_nics_ASC",
+  VmNicsDESC = "vm_nics_DESC",
+  WinOptASC = "win_opt_ASC",
+  WinOptDESC = "win_opt_DESC",
+}
 
 export interface GetVmTemplatesRequestBody {
   after?: string | null;
@@ -25622,37 +26031,38 @@ export interface GetVmTemplatesConnectionRequestBody {
   where?: VmTemplateWhereInput | null;
 }
 
-export type VmVolumeOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "description_ASC"
-  | "description_DESC"
-  | "elf_storage_policy_ASC"
-  | "elf_storage_policy_DESC"
-  | "guest_size_usage_ASC"
-  | "guest_size_usage_DESC"
-  | "guest_used_size_ASC"
-  | "guest_used_size_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_created_at_ASC"
-  | "local_created_at_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "mounting_ASC"
-  | "mounting_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "path_ASC"
-  | "path_DESC"
-  | "sharing_ASC"
-  | "sharing_DESC"
-  | "size_ASC"
-  | "size_DESC"
-  | "unique_size_ASC"
-  | "unique_size_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum VmVolumeOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ElfStoragePolicyASC = "elf_storage_policy_ASC",
+  ElfStoragePolicyDESC = "elf_storage_policy_DESC",
+  GuestSizeUsageASC = "guest_size_usage_ASC",
+  GuestSizeUsageDESC = "guest_size_usage_DESC",
+  GuestUsedSizeASC = "guest_used_size_ASC",
+  GuestUsedSizeDESC = "guest_used_size_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MountingASC = "mounting_ASC",
+  MountingDESC = "mounting_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SharingASC = "sharing_ASC",
+  SharingDESC = "sharing_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetVmVolumesRequestBody {
   after?: string | null;
@@ -25707,25 +26117,26 @@ export interface VsphereEsxiAccount {
   username: string;
 }
 
-export type VsphereEsxiAccountOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "ip_ASC"
-  | "ip_DESC"
-  | "is_valid_ASC"
-  | "is_valid_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "password_ASC"
-  | "password_DESC"
-  | "port_ASC"
-  | "port_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "username_ASC"
-  | "username_DESC";
+export enum VsphereEsxiAccountOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpASC = "ip_ASC",
+  IpDESC = "ip_DESC",
+  IsValidASC = "is_valid_ASC",
+  IsValidDESC = "is_valid_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  PasswordASC = "password_ASC",
+  PasswordDESC = "password_DESC",
+  PortASC = "port_ASC",
+  PortDESC = "port_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+}
 
 export interface GetVsphereEsxiAccountsRequestBody {
   after?: string | null;
@@ -25794,33 +26205,34 @@ export interface Witness {
   total_memory_bytes: number;
 }
 
-export type WitnessOrderByInput =
-  | "cpu_hz_per_core_ASC"
-  | "cpu_hz_per_core_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "data_ip_ASC"
-  | "data_ip_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "management_ip_ASC"
-  | "management_ip_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "system_data_capacity_ASC"
-  | "system_data_capacity_DESC"
-  | "system_used_data_space_ASC"
-  | "system_used_data_space_DESC"
-  | "total_cpu_cores_ASC"
-  | "total_cpu_cores_DESC"
-  | "total_cpu_hz_ASC"
-  | "total_cpu_hz_DESC"
-  | "total_memory_bytes_ASC"
-  | "total_memory_bytes_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum WitnessOrderByInput {
+  CpuHzPerCoreASC = "cpu_hz_per_core_ASC",
+  CpuHzPerCoreDESC = "cpu_hz_per_core_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DataIpASC = "data_ip_ASC",
+  DataIpDESC = "data_ip_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ManagementIpASC = "management_ip_ASC",
+  ManagementIpDESC = "management_ip_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SystemDataCapacityASC = "system_data_capacity_ASC",
+  SystemDataCapacityDESC = "system_data_capacity_DESC",
+  SystemUsedDataSpaceASC = "system_used_data_space_ASC",
+  SystemUsedDataSpaceDESC = "system_used_data_space_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetWitnessesRequestBody {
   after?: string | null;
@@ -25942,51 +26354,52 @@ export interface Zone {
   vm_num?: number | null;
 }
 
-export type ZoneOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "failure_data_space_ASC"
-  | "failure_data_space_DESC"
-  | "host_num_ASC"
-  | "host_num_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "is_preferred_ASC"
-  | "is_preferred_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "provisioned_cpu_cores_ASC"
-  | "provisioned_cpu_cores_DESC"
-  | "provisioned_cpu_cores_for_active_vm_ASC"
-  | "provisioned_cpu_cores_for_active_vm_DESC"
-  | "provisioned_data_space_ASC"
-  | "provisioned_data_space_DESC"
-  | "provisioned_memory_bytes_ASC"
-  | "provisioned_memory_bytes_DESC"
-  | "running_vm_num_ASC"
-  | "running_vm_num_DESC"
-  | "stopped_vm_num_ASC"
-  | "stopped_vm_num_DESC"
-  | "suspended_vm_num_ASC"
-  | "suspended_vm_num_DESC"
-  | "total_cache_capacity_ASC"
-  | "total_cache_capacity_DESC"
-  | "total_cpu_cores_ASC"
-  | "total_cpu_cores_DESC"
-  | "total_cpu_hz_ASC"
-  | "total_cpu_hz_DESC"
-  | "total_data_capacity_ASC"
-  | "total_data_capacity_DESC"
-  | "total_memory_bytes_ASC"
-  | "total_memory_bytes_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "used_data_space_ASC"
-  | "used_data_space_DESC"
-  | "valid_data_space_ASC"
-  | "valid_data_space_DESC"
-  | "vm_num_ASC"
-  | "vm_num_DESC";
+export enum ZoneOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IsPreferredASC = "is_preferred_ASC",
+  IsPreferredDESC = "is_preferred_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
+  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
+  ProvisionedCpuCoresForActiveVmASC = "provisioned_cpu_cores_for_active_vm_ASC",
+  ProvisionedCpuCoresForActiveVmDESC = "provisioned_cpu_cores_for_active_vm_DESC",
+  ProvisionedDataSpaceASC = "provisioned_data_space_ASC",
+  ProvisionedDataSpaceDESC = "provisioned_data_space_DESC",
+  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
+  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  RunningVmNumASC = "running_vm_num_ASC",
+  RunningVmNumDESC = "running_vm_num_DESC",
+  StoppedVmNumASC = "stopped_vm_num_ASC",
+  StoppedVmNumDESC = "stopped_vm_num_DESC",
+  SuspendedVmNumASC = "suspended_vm_num_ASC",
+  SuspendedVmNumDESC = "suspended_vm_num_DESC",
+  TotalCacheCapacityASC = "total_cache_capacity_ASC",
+  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  ValidDataSpaceASC = "valid_data_space_ASC",
+  ValidDataSpaceDESC = "valid_data_space_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
 
 export interface GetZonesRequestBody {
   after?: string | null;
@@ -26037,15 +26450,16 @@ export interface ZoneTopo {
   rack_topoes?: NestedRackTopo[] | null;
 }
 
-export type ZoneTopoOrderByInput =
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "local_id_ASC"
-  | "local_id_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
+export enum ZoneTopoOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
 
 export interface GetZoneTopoesRequestBody {
   after?: string | null;
@@ -26101,7 +26515,7 @@ export interface AlertNotifierUpdationParams {
   disabled?: boolean;
 }
 
-export namespace UpdateGlobalAlertRule {
+export namespace GlobalAlertRule {
   /**
    * No description
    * @tags GlobalAlertRule
@@ -26120,9 +26534,6 @@ export namespace UpdateGlobalAlertRule {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskGlobalAlertRule[];
   }
-}
-
-export namespace UpdateCustomizeAlertRule {
   /**
    * No description
    * @tags GlobalAlertRule
@@ -26141,9 +26552,45 @@ export namespace UpdateCustomizeAlertRule {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskGlobalAlertRule[];
   }
+  /**
+   * No description
+   * @tags GlobalAlertRule
+   * @name GetGlobalAlertRules
+   * @request POST:/get-global-alert-rules
+   * @secure
+   * @response `200` `(GlobalAlertRule)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGlobalAlertRules {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGlobalAlertRulesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = GlobalAlertRule[];
+  }
+  /**
+   * No description
+   * @tags GlobalAlertRule
+   * @name GetGlobalAlertRulesConnection
+   * @request POST:/get-global-alert-rules-connection
+   * @secure
+   * @response `200` `GlobalAlertRuleConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGlobalAlertRulesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGlobalAlertRulesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = GlobalAlertRuleConnection;
+  }
 }
 
-export namespace ResolveAlert {
+export namespace Alert {
   /**
    * No description
    * @tags Alert
@@ -26162,9 +26609,45 @@ export namespace ResolveAlert {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskAlert[];
   }
+  /**
+   * No description
+   * @tags Alert
+   * @name GetAlerts
+   * @request POST:/get-alerts
+   * @secure
+   * @response `200` `(Alert)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlerts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Alert[];
+  }
+  /**
+   * No description
+   * @tags Alert
+   * @name GetAlertsConnection
+   * @request POST:/get-alerts-connection
+   * @secure
+   * @response `200` `AlertConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlertsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = AlertConnection;
+  }
 }
 
-export namespace CreateBrickTopo {
+export namespace BrickTopo {
   /**
    * No description
    * @tags BrickTopo
@@ -26183,9 +26666,6 @@ export namespace CreateBrickTopo {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskBrickTopo[];
   }
-}
-
-export namespace UpdateBrickTopo {
   /**
    * No description
    * @tags BrickTopo
@@ -26204,9 +26684,6 @@ export namespace UpdateBrickTopo {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskBrickTopo[];
   }
-}
-
-export namespace MoveBrickTopo {
   /**
    * No description
    * @tags BrickTopo
@@ -26225,9 +26702,6 @@ export namespace MoveBrickTopo {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskBrickTopo[];
   }
-}
-
-export namespace DeleteBrickTopo {
   /**
    * No description
    * @tags BrickTopo
@@ -26246,9 +26720,45 @@ export namespace DeleteBrickTopo {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteBrickTopo[];
   }
+  /**
+   * No description
+   * @tags BrickTopo
+   * @name GetBrickTopoes
+   * @request POST:/get-brick-topoes
+   * @secure
+   * @response `200` `(BrickTopo)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetBrickTopoes {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetBrickTopoesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = BrickTopo[];
+  }
+  /**
+   * No description
+   * @tags BrickTopo
+   * @name GetBrickTopoesConnection
+   * @request POST:/get-brick-topoes-connection
+   * @secure
+   * @response `200` `BrickTopoConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetBrickTopoesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetBrickTopoesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = BrickTopoConnection;
+  }
 }
 
-export namespace ConnectCluster {
+export namespace Cluster {
   /**
    * No description
    * @tags Cluster
@@ -26267,9 +26777,6 @@ export namespace ConnectCluster {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskCluster[];
   }
-}
-
-export namespace UpdateCluster {
   /**
    * No description
    * @tags Cluster
@@ -26288,9 +26795,6 @@ export namespace UpdateCluster {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskCluster[];
   }
-}
-
-export namespace UpdateClusterLicense {
   /**
    * No description
    * @tags Cluster
@@ -26309,9 +26813,6 @@ export namespace UpdateClusterLicense {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskCluster[];
   }
-}
-
-export namespace DeleteCluster {
   /**
    * No description
    * @tags Cluster
@@ -26330,9 +26831,45 @@ export namespace DeleteCluster {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteCluster[];
   }
+  /**
+   * No description
+   * @tags Cluster
+   * @name GetClusters
+   * @request POST:/get-clusters
+   * @secure
+   * @response `200` `(Cluster)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusters {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClustersRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Cluster[];
+  }
+  /**
+   * No description
+   * @tags Cluster
+   * @name GetClustersConnection
+   * @request POST:/get-clusters-connection
+   * @secure
+   * @response `200` `ClusterConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClustersConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClustersConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterConnection;
+  }
 }
 
-export namespace CreateConsistencySnapshotGroup {
+export namespace ConsistencyGroupSnapshot {
   /**
    * No description
    * @tags ConsistencyGroupSnapshot
@@ -26351,9 +26888,6 @@ export namespace CreateConsistencySnapshotGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskConsistencyGroupSnapshot[];
   }
-}
-
-export namespace RollbackConsistencySnapshotGroup {
   /**
    * No description
    * @tags ConsistencyGroupSnapshot
@@ -26372,9 +26906,6 @@ export namespace RollbackConsistencySnapshotGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskConsistencyGroupSnapshot[];
   }
-}
-
-export namespace DeleteConsistencySnapshotGroup {
   /**
    * No description
    * @tags ConsistencyGroupSnapshot
@@ -26393,9 +26924,45 @@ export namespace DeleteConsistencySnapshotGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteConsistencyGroupSnapshot[];
   }
+  /**
+   * No description
+   * @tags ConsistencyGroupSnapshot
+   * @name GetConsistencyGroupSnapshots
+   * @request POST:/get-consistency-group-snapshots
+   * @secure
+   * @response `200` `(ConsistencyGroupSnapshot)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetConsistencyGroupSnapshots {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetConsistencyGroupSnapshotsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ConsistencyGroupSnapshot[];
+  }
+  /**
+   * No description
+   * @tags ConsistencyGroupSnapshot
+   * @name GetConsistencyGroupSnapshotsConnection
+   * @request POST:/get-consistency-group-snapshots-connection
+   * @secure
+   * @response `200` `ConsistencyGroupSnapshotConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetConsistencyGroupSnapshotsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetConsistencyGroupSnapshotsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ConsistencyGroupSnapshotConnection;
+  }
 }
 
-export namespace CreateConsistencyGroup {
+export namespace ConsistencyGroup {
   /**
    * No description
    * @tags ConsistencyGroup
@@ -26414,9 +26981,6 @@ export namespace CreateConsistencyGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskConsistencyGroup[];
   }
-}
-
-export namespace UpdateConsistencyGroup {
   /**
    * No description
    * @tags ConsistencyGroup
@@ -26435,9 +26999,6 @@ export namespace UpdateConsistencyGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskConsistencyGroup[];
   }
-}
-
-export namespace DeleteConsistencyGroup {
   /**
    * No description
    * @tags ConsistencyGroup
@@ -26456,9 +27017,45 @@ export namespace DeleteConsistencyGroup {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteConsistencyGroup[];
   }
+  /**
+   * No description
+   * @tags ConsistencyGroup
+   * @name GetConsistencyGroups
+   * @request POST:/get-consistency-groups
+   * @secure
+   * @response `200` `(ConsistencyGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetConsistencyGroups {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetConsistencyGroupsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ConsistencyGroup[];
+  }
+  /**
+   * No description
+   * @tags ConsistencyGroup
+   * @name GetConsistencyGroupsConnection
+   * @request POST:/get-consistency-groups-connection
+   * @secure
+   * @response `200` `ConsistencyGroupConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetConsistencyGroupsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetConsistencyGroupsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ConsistencyGroupConnection;
+  }
 }
 
-export namespace UploadContentLibraryImage {
+export namespace ContentLibraryImage {
   /**
    * No description
    * @tags ContentLibraryImage
@@ -26485,9 +27082,6 @@ export namespace UploadContentLibraryImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = UploadTask[];
   }
-}
-
-export namespace UpdateContentLibraryImage {
   /**
    * No description
    * @tags ContentLibraryImage
@@ -26506,9 +27100,6 @@ export namespace UpdateContentLibraryImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryImage[];
   }
-}
-
-export namespace DistributeContentLibraryImageClusters {
   /**
    * No description
    * @tags ContentLibraryImage
@@ -26527,9 +27118,6 @@ export namespace DistributeContentLibraryImageClusters {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryImage[];
   }
-}
-
-export namespace RemoveContentLibraryImageClusters {
   /**
    * No description
    * @tags ContentLibraryImage
@@ -26548,9 +27136,6 @@ export namespace RemoveContentLibraryImageClusters {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryImage[];
   }
-}
-
-export namespace DeleteContentLibraryImage {
   /**
    * No description
    * @tags ContentLibraryImage
@@ -26569,9 +27154,45 @@ export namespace DeleteContentLibraryImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteContentLibraryImage[];
   }
+  /**
+   * No description
+   * @tags ContentLibraryImage
+   * @name GetContentLibraryImages
+   * @request POST:/get-content-library-images
+   * @secure
+   * @response `200` `(ContentLibraryImage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetContentLibraryImages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetContentLibraryImagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ContentLibraryImage[];
+  }
+  /**
+   * No description
+   * @tags ContentLibraryImage
+   * @name GetContentLibraryImagesConnection
+   * @request POST:/get-content-library-images-connection
+   * @secure
+   * @response `200` `ContentLibraryImageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetContentLibraryImagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetContentLibraryImagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ContentLibraryImageConnection;
+  }
 }
 
-export namespace CloneContentLibraryVmTemplateFromVm {
+export namespace ContentLibraryVmTemplate {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26590,9 +27211,6 @@ export namespace CloneContentLibraryVmTemplateFromVm {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryVmTemplate[];
   }
-}
-
-export namespace ConvertContentLibraryVmTemplateFromVm {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26611,9 +27229,6 @@ export namespace ConvertContentLibraryVmTemplateFromVm {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryVmTemplate[];
   }
-}
-
-export namespace UpdateContentLibraryVmTemplate {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26632,9 +27247,6 @@ export namespace UpdateContentLibraryVmTemplate {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryVmTemplate[];
   }
-}
-
-export namespace DistributeContentLibraryVmTemplateClusters {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26653,9 +27265,6 @@ export namespace DistributeContentLibraryVmTemplateClusters {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryVmTemplate[];
   }
-}
-
-export namespace RemoveContentLibraryVmTemplateClusters {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26674,9 +27283,6 @@ export namespace RemoveContentLibraryVmTemplateClusters {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskContentLibraryVmTemplate[];
   }
-}
-
-export namespace DeleteContentLibraryVmTemplate {
   /**
    * No description
    * @tags ContentLibraryVmTemplate
@@ -26695,9 +27301,45 @@ export namespace DeleteContentLibraryVmTemplate {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteContentLibraryVmTemplate[];
   }
+  /**
+   * No description
+   * @tags ContentLibraryVmTemplate
+   * @name GetContentLibraryVmTemplates
+   * @request POST:/get-content-library-vm-templates
+   * @secure
+   * @response `200` `(ContentLibraryVmTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetContentLibraryVmTemplates {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetContentLibraryVmTemplatesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ContentLibraryVmTemplate[];
+  }
+  /**
+   * No description
+   * @tags ContentLibraryVmTemplate
+   * @name GetContentLibraryVmTemplatesConnection
+   * @request POST:/get-content-library-vm-templates-connection
+   * @secure
+   * @response `200` `ContentLibraryVmTemplateConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetContentLibraryVmTemplatesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetContentLibraryVmTemplatesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ContentLibraryVmTemplateConnection;
+  }
 }
 
-export namespace CreateDatacenter {
+export namespace Datacenter {
   /**
    * No description
    * @tags Datacenter
@@ -26716,9 +27358,6 @@ export namespace CreateDatacenter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDatacenter[];
   }
-}
-
-export namespace UpdateDatacenter {
   /**
    * No description
    * @tags Datacenter
@@ -26737,9 +27376,6 @@ export namespace UpdateDatacenter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDatacenter[];
   }
-}
-
-export namespace DeleteDatacenter {
   /**
    * No description
    * @tags Datacenter
@@ -26758,9 +27394,45 @@ export namespace DeleteDatacenter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteDatacenter[];
   }
+  /**
+   * No description
+   * @tags Datacenter
+   * @name GetDatacenters
+   * @request POST:/get-datacenters
+   * @secure
+   * @response `200` `(Datacenter)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDatacenters {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDatacentersRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Datacenter[];
+  }
+  /**
+   * No description
+   * @tags Datacenter
+   * @name GetDatacentersConnection
+   * @request POST:/get-datacenters-connection
+   * @secure
+   * @response `200` `DatacenterConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDatacentersConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDatacentersConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = DatacenterConnection;
+  }
 }
 
-export namespace MountDisk {
+export namespace Disk {
   /**
    * No description
    * @tags Disk
@@ -26779,9 +27451,6 @@ export namespace MountDisk {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDisk[];
   }
-}
-
-export namespace UnmountDisk {
   /**
    * No description
    * @tags Disk
@@ -26800,9 +27469,45 @@ export namespace UnmountDisk {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDisk[];
   }
+  /**
+   * No description
+   * @tags Disk
+   * @name GetDisks
+   * @request POST:/get-disks
+   * @secure
+   * @response `200` `(Disk)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDisks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDisksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Disk[];
+  }
+  /**
+   * No description
+   * @tags Disk
+   * @name GetDisksConnection
+   * @request POST:/get-disks-connection
+   * @secure
+   * @response `200` `DiskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDisksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDisksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = DiskConnection;
+  }
 }
 
-export namespace CreateEntityFilter {
+export namespace EntityFilter {
   /**
    * No description
    * @tags EntityFilter
@@ -26821,9 +27526,6 @@ export namespace CreateEntityFilter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskEntityFilter[];
   }
-}
-
-export namespace UpdateEntityFilter {
   /**
    * No description
    * @tags EntityFilter
@@ -26842,9 +27544,6 @@ export namespace UpdateEntityFilter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskEntityFilter[];
   }
-}
-
-export namespace DeleteEntityFilter {
   /**
    * No description
    * @tags EntityFilter
@@ -26863,9 +27562,45 @@ export namespace DeleteEntityFilter {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteEntityFilter[];
   }
+  /**
+   * No description
+   * @tags EntityFilter
+   * @name GetEntityFilters
+   * @request POST:/get-entity-filters
+   * @secure
+   * @response `200` `(EntityFilter)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEntityFilters {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEntityFiltersRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EntityFilter[];
+  }
+  /**
+   * No description
+   * @tags EntityFilter
+   * @name GetEntityFiltersConnection
+   * @request POST:/get-entity-filters-connection
+   * @secure
+   * @response `200` `EntityFilterConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEntityFiltersConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEntityFiltersConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EntityFilterConnection;
+  }
 }
 
-export namespace CreateGraph {
+export namespace Graph {
   /**
    * No description
    * @tags Graph
@@ -26884,9 +27619,6 @@ export namespace CreateGraph {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskGraph[];
   }
-}
-
-export namespace UpdateGraph {
   /**
    * No description
    * @tags Graph
@@ -26905,9 +27637,6 @@ export namespace UpdateGraph {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskGraph[];
   }
-}
-
-export namespace DeleteGraph {
   /**
    * No description
    * @tags Graph
@@ -26926,9 +27655,45 @@ export namespace DeleteGraph {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteGraph[];
   }
+  /**
+   * No description
+   * @tags Graph
+   * @name GetGraphs
+   * @request POST:/get-graphs
+   * @secure
+   * @response `200` `(Graph)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGraphs {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGraphsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Graph[];
+  }
+  /**
+   * No description
+   * @tags Graph
+   * @name GetGraphsConnection
+   * @request POST:/get-graphs-connection
+   * @secure
+   * @response `200` `GraphConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGraphsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGraphsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = GraphConnection;
+  }
 }
 
-export namespace CreateHost {
+export namespace Host {
   /**
    * No description
    * @tags Host
@@ -26947,9 +27712,6 @@ export namespace CreateHost {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskBatchHosts[];
   }
-}
-
-export namespace TriggerDiskBlink {
   /**
    * No description
    * @tags Host
@@ -26968,9 +27730,6 @@ export namespace TriggerDiskBlink {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskHost[];
   }
-}
-
-export namespace UpdateHost {
   /**
    * No description
    * @tags Host
@@ -26989,9 +27748,45 @@ export namespace UpdateHost {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskHost[];
   }
+  /**
+   * No description
+   * @tags Host
+   * @name GetHosts
+   * @request POST:/get-hosts
+   * @secure
+   * @response `200` `(Host)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetHosts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetHostsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Host[];
+  }
+  /**
+   * No description
+   * @tags Host
+   * @name GetHostsConnection
+   * @request POST:/get-hosts-connection
+   * @secure
+   * @response `200` `HostConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetHostsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetHostsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = HostConnection;
+  }
 }
 
-export namespace CreateIscsiLunSnapshot {
+export namespace IscsiLunSnapshot {
   /**
    * No description
    * @tags IscsiLunSnapshot
@@ -27010,9 +27805,6 @@ export namespace CreateIscsiLunSnapshot {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiLunSnapshot[];
   }
-}
-
-export namespace DeleteIscsiLunSnapshot {
   /**
    * No description
    * @tags IscsiLunSnapshot
@@ -27031,9 +27823,45 @@ export namespace DeleteIscsiLunSnapshot {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteIscsiLunSnapshot[];
   }
+  /**
+   * No description
+   * @tags IscsiLunSnapshot
+   * @name GetIscsiLunSnapshots
+   * @request POST:/get-iscsi-lun-snapshots
+   * @secure
+   * @response `200` `(IscsiLunSnapshot)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiLunSnapshots {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiLunSnapshotsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiLunSnapshot[];
+  }
+  /**
+   * No description
+   * @tags IscsiLunSnapshot
+   * @name GetIscsiLunSnapshotsConnection
+   * @request POST:/get-iscsi-lun-snapshots-connection
+   * @secure
+   * @response `200` `IscsiLunSnapshotConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiLunSnapshotsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiLunSnapshotsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiLunSnapshotConnection;
+  }
 }
 
-export namespace CreateIscsiLun {
+export namespace IscsiLun {
   /**
    * No description
    * @tags IscsiLun
@@ -27052,9 +27880,6 @@ export namespace CreateIscsiLun {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiLun[];
   }
-}
-
-export namespace UpdateIscsiLun {
   /**
    * No description
    * @tags IscsiLun
@@ -27073,9 +27898,6 @@ export namespace UpdateIscsiLun {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiLun[];
   }
-}
-
-export namespace DeleteIscsiLun {
   /**
    * No description
    * @tags IscsiLun
@@ -27094,9 +27916,6 @@ export namespace DeleteIscsiLun {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteIscsiLun[];
   }
-}
-
-export namespace CloneIscsiLunFromSnapshot {
   /**
    * No description
    * @tags IscsiLun
@@ -27115,9 +27934,6 @@ export namespace CloneIscsiLunFromSnapshot {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiLun[];
   }
-}
-
-export namespace RollbackIscsiLunFromSnapshot {
   /**
    * No description
    * @tags IscsiLun
@@ -27136,9 +27952,45 @@ export namespace RollbackIscsiLunFromSnapshot {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiLun[];
   }
+  /**
+   * No description
+   * @tags IscsiLun
+   * @name GetIscsiLuns
+   * @request POST:/get-iscsi-luns
+   * @secure
+   * @response `200` `(IscsiLun)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiLuns {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiLunsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiLun[];
+  }
+  /**
+   * No description
+   * @tags IscsiLun
+   * @name GetIscsiLunsConnection
+   * @request POST:/get-iscsi-luns-connection
+   * @secure
+   * @response `200` `IscsiLunConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiLunsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiLunsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiLunConnection;
+  }
 }
 
-export namespace CreateIscsiTarget {
+export namespace IscsiTarget {
   /**
    * No description
    * @tags IscsiTarget
@@ -27157,9 +28009,6 @@ export namespace CreateIscsiTarget {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiTarget[];
   }
-}
-
-export namespace UpdateIscsiTarget {
   /**
    * No description
    * @tags IscsiTarget
@@ -27178,9 +28027,6 @@ export namespace UpdateIscsiTarget {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskIscsiTarget[];
   }
-}
-
-export namespace DeleteIscsiTarget {
   /**
    * No description
    * @tags IscsiTarget
@@ -27199,9 +28045,45 @@ export namespace DeleteIscsiTarget {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteIscsiTarget[];
   }
+  /**
+   * No description
+   * @tags IscsiTarget
+   * @name GetIscsiTargets
+   * @request POST:/get-iscsi-targets
+   * @secure
+   * @response `200` `(IscsiTarget)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiTargets {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiTargetsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiTarget[];
+  }
+  /**
+   * No description
+   * @tags IscsiTarget
+   * @name GetIscsiTargetsConnection
+   * @request POST:/get-iscsi-targets-connection
+   * @secure
+   * @response `200` `IscsiTargetConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiTargetsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiTargetsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiTargetConnection;
+  }
 }
 
-export namespace UploadElfImage {
+export namespace ElfImage {
   /**
    * No description
    * @tags ElfImage
@@ -27227,9 +28109,6 @@ export namespace UploadElfImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = UploadTask[];
   }
-}
-
-export namespace UpdateElfImage {
   /**
    * No description
    * @tags ElfImage
@@ -27248,9 +28127,6 @@ export namespace UpdateElfImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskElfImage[];
   }
-}
-
-export namespace DeleteElfImage {
   /**
    * No description
    * @tags ElfImage
@@ -27269,3850 +28145,6 @@ export namespace DeleteElfImage {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteElfImage[];
   }
-}
-
-export namespace CreateLabel {
-  /**
-   * No description
-   * @tags Label
-   * @name CreateLabel
-   * @request POST:/create-label
-   * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateLabel {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LabelCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskLabel[];
-  }
-}
-
-export namespace UpdateLabel {
-  /**
-   * No description
-   * @tags Label
-   * @name UpdateLabel
-   * @request POST:/update-label
-   * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateLabel {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LabelUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskLabel[];
-  }
-}
-
-export namespace AddLabelsToResources {
-  /**
-   * No description
-   * @tags Label
-   * @name AddLabelsToResources
-   * @request POST:/add-labels-to-resources
-   * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace AddLabelsToResources {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = AddLabelsToResourcesParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskLabel[];
-  }
-}
-
-export namespace RemoveLabelsFromResources {
-  /**
-   * No description
-   * @tags Label
-   * @name RemoveLabelsFromResources
-   * @request POST:/remove-labels-from-resources
-   * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RemoveLabelsFromResources {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RemoveLabelsFromResourcesParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskLabel[];
-  }
-}
-
-export namespace DeleteLabel {
-  /**
-   * No description
-   * @tags Label
-   * @name DeleteLabel
-   * @request POST:/delete-label
-   * @secure
-   * @response `200` `(WithTaskDeleteLabel)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteLabel {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LabelDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteLabel[];
-  }
-}
-
-export namespace UpdateLicense {
-  /**
-   * No description
-   * @tags License
-   * @name UpdateDeploy
-   * @request POST:/update-license
-   * @secure
-   * @response `200` `WithTaskLicense` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateDeploy {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LicenseUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskLicense;
-  }
-}
-
-export namespace CreateLogCollection {
-  /**
-   * No description
-   * @tags LogCollection
-   * @name CreateLogCollection
-   * @request POST:/create-log-collection
-   * @response `200` `(WithTaskLogCollection)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateLogCollection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LogCollectionCreationParams[];
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskLogCollection[];
-  }
-}
-
-export namespace ForceStopLogCollection {
-  /**
-   * No description
-   * @tags LogCollection
-   * @name ForceStopLogCollection
-   * @request POST:/force-stop-log-collection
-   * @response `200` `(WithTaskLogCollection)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ForceStopLogCollection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ForceStopLogCollectionParams;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskLogCollection[];
-  }
-}
-
-export namespace DeleteLogCollection {
-  /**
-   * No description
-   * @tags LogCollection
-   * @name DeleteLogCollection
-   * @request POST:/delete-log-collection
-   * @response `200` `(WithTaskDeleteLogCollection)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteLogCollection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LogCollectionDeletionParams;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskDeleteLogCollection[];
-  }
-}
-
-export namespace CreateNamespaceGroup {
-  /**
-   * No description
-   * @tags NamespaceGroup
-   * @name CreateNamespaceGroup
-   * @request POST:/create-namespace-group
-   * @secure
-   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateNamespaceGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NamespaceGroupCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNamespaceGroup[];
-  }
-}
-
-export namespace UpdateNamespaceGroup {
-  /**
-   * No description
-   * @tags NamespaceGroup
-   * @name UpdateNamespaceGroup
-   * @request POST:/update-namespace-group
-   * @secure
-   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNamespaceGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NamespaceGroupUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNamespaceGroup[];
-  }
-}
-
-export namespace DeleteNamespaceGroup {
-  /**
-   * No description
-   * @tags NamespaceGroup
-   * @name DeleteNamespaceGroup
-   * @request POST:/delete-namespace-group
-   * @secure
-   * @response `200` `(WithTaskDeleteNamespaceGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteNamespaceGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NamespaceGroupDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteNamespaceGroup[];
-  }
-}
-
-export namespace CreateNfsExport {
-  /**
-   * No description
-   * @tags NfsExport
-   * @name CreateNfsExport
-   * @request POST:/create-nfs-export
-   * @secure
-   * @response `200` `(WithTaskNfsExport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateNfsExport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NfsExportCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNfsExport[];
-  }
-}
-
-export namespace UpdateNfsExport {
-  /**
-   * No description
-   * @tags NfsExport
-   * @name UpdateNfsExport
-   * @request POST:/update-nfs-export
-   * @secure
-   * @response `200` `(WithTaskNfsExport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNfsExport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NfsExportUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNfsExport[];
-  }
-}
-
-export namespace DeleteNfsExport {
-  /**
-   * No description
-   * @tags NfsExport
-   * @name DeleteNfsExport
-   * @request POST:/delete-nfs-export
-   * @secure
-   * @response `200` `(WithTaskDeleteNfsExport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteNfsExport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NfsExportDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteNfsExport[];
-  }
-}
-
-export namespace UpdateNic {
-  /**
-   * No description
-   * @tags Nic
-   * @name UpdateNic
-   * @request POST:/update-nic
-   * @secure
-   * @response `200` `(WithTaskNic)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNic {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NicUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNic[];
-  }
-}
-
-export namespace MoveNodeTopo {
-  /**
-   * No description
-   * @tags NodeTopo
-   * @name UpdateNodeTopo
-   * @request POST:/move-node-topo
-   * @secure
-   * @response `200` `(WithTaskNodeTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNodeTopo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NodeTopoUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNodeTopo[];
-  }
-}
-
-export namespace CreateNvmfNamespaceSnapshot {
-  /**
-   * No description
-   * @tags NvmfNamespaceSnapshot
-   * @name CreateNvmfNamespaceSnapshot
-   * @request POST:/create-nvmf-namespace-snapshot
-   * @secure
-   * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateNvmfNamespaceSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceSnapshotCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfNamespaceSnapshot[];
-  }
-}
-
-export namespace DeleteNvmfNamespaceSnapshot {
-  /**
-   * No description
-   * @tags NvmfNamespaceSnapshot
-   * @name DeleteNvmfNamespaceSnapshot
-   * @request POST:/delete-nvmf-namespace-snapshot
-   * @secure
-   * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteNvmfNamespaceSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceSnapshotDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteNvmfNamespaceSnapshot[];
-  }
-}
-
-export namespace CreateNvmfNamespace {
-  /**
-   * No description
-   * @tags NvmfNamespace
-   * @name CreateNvmfNamespace
-   * @request POST:/create-nvmf-namespace
-   * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateNvmfNamespace {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfNamespace[];
-  }
-}
-
-export namespace UpdateNvmfNamespace {
-  /**
-   * No description
-   * @tags NvmfNamespace
-   * @name UpdateNvmfNamespace
-   * @request POST:/update-nvmf-namespace
-   * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNvmfNamespace {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfNamespace[];
-  }
-}
-
-export namespace DeleteNvmfNamespace {
-  /**
-   * No description
-   * @tags NvmfNamespace
-   * @name DeleteNvmfNamespace
-   * @request POST:/delete-nvmf-namespace
-   * @secure
-   * @response `200` `(WithTaskDeleteNvmfNamespace)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteNvmfNamespace {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteNvmfNamespace[];
-  }
-}
-
-export namespace CloneNvmfNamespaceFromSnapshot {
-  /**
-   * No description
-   * @tags NvmfNamespace
-   * @name CloneNvmfNamespaceFromSnapshot
-   * @request POST:/clone-nvmf-namespace-from-snapshot
-   * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CloneNvmfNamespaceFromSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceCloneParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfNamespace[];
-  }
-}
-
-export namespace RollbackNvmfNamespaceFromSnapshot {
-  /**
-   * No description
-   * @tags NvmfNamespace
-   * @name RollbackNvmfNamespaceFromSnapshot
-   * @request POST:/rollback-nvmf-namespace-from-snapshot
-   * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RollbackNvmfNamespaceFromSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfNamespaceRollbackParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfNamespace[];
-  }
-}
-
-export namespace CreateNvmfSubsystem {
-  /**
-   * No description
-   * @tags NvmfSubsystem
-   * @name CreateNvmfSubsystem
-   * @request POST:/create-nvmf-subsystem
-   * @secure
-   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateNvmfSubsystem {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfSubsystemCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfSubsystem[];
-  }
-}
-
-export namespace UpdateNvmfSubsystem {
-  /**
-   * No description
-   * @tags NvmfSubsystem
-   * @name UpdateNvmfSubsystem
-   * @request POST:/update-nvmf-subsystem
-   * @secure
-   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateNvmfSubsystem {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfSubsystemUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskNvmfSubsystem[];
-  }
-}
-
-export namespace DeleteNvmfSubsystem {
-  /**
-   * No description
-   * @tags NvmfSubsystem
-   * @name DeleteNvmfSubsystem
-   * @request POST:/delete-nvmf-subsystem
-   * @secure
-   * @response `200` `(WithTaskDeleteNvmfSubsystem)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteNvmfSubsystem {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = NvmfSubsystemDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteNvmfSubsystem[];
-  }
-}
-
-export namespace CreateOrganization {
-  /**
-   * No description
-   * @tags Organization
-   * @name CreateOrganization
-   * @request POST:/create-organization
-   * @secure
-   * @response `200` `(WithTaskOrganization)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateOrganization {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = OrganizationCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskOrganization[];
-  }
-}
-
-export namespace UpdateOrganization {
-  /**
-   * No description
-   * @tags Organization
-   * @name UpdateOrganization
-   * @request POST:/update-organization
-   * @secure
-   * @response `200` `(WithTaskOrganization)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateOrganization {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = OrganizationUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskOrganization[];
-  }
-}
-
-export namespace DeleteOrganization {
-  /**
-   * No description
-   * @tags Organization
-   * @name DeleteOrganization
-   * @request POST:/delete-organization
-   * @secure
-   * @response `200` `(WithTaskDeleteOrganization)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteOrganization {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = OrganizationDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteOrganization[];
-  }
-}
-
-export namespace CreateRackTopo {
-  /**
-   * No description
-   * @tags RackTopo
-   * @name CreateRackTopo
-   * @request POST:/create-rack-topo
-   * @secure
-   * @response `200` `(WithTaskRackTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateRackTopo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RackTopoCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskRackTopo[];
-  }
-}
-
-export namespace UpdateRackTopo {
-  /**
-   * No description
-   * @tags RackTopo
-   * @name UpdateRackTopo
-   * @request POST:/update-rack-topo
-   * @secure
-   * @response `200` `(WithTaskRackTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateRackTopo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RackTopoUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskRackTopo[];
-  }
-}
-
-export namespace DeleteRackTopo {
-  /**
-   * No description
-   * @tags RackTopo
-   * @name DeleteRackTopo
-   * @request POST:/delete-rack-topo
-   * @secure
-   * @response `200` `(WithTaskDeleteRackTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteRackTopo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RackTopoDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteRackTopo[];
-  }
-}
-
-export namespace UpdateGlobalRecycleBinSetting {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name UpdateGlobalRecycleBinSetting
-   * @request POST:/update-global-recycle-bin-setting
-   * @secure
-   * @response `200` `WithTaskGlobalSettings` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateGlobalRecycleBinSetting {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GlobalRecycleBinUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskGlobalSettings;
-  }
-}
-
-export namespace CreateClusterRecycleBinSetting {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name CreateClusterRecycleBinSetting
-   * @request POST:/create-cluster-recycle-bin-setting
-   * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateClusterRecycleBinSetting {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ClusterRecycleBinCreationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskClusterSettings[];
-  }
-}
-
-export namespace UpdateClusterRecycleBinSetting {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name UpdateClusterRecycleBinSetting
-   * @request POST:/update-cluster-recycle-bin-setting
-   * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateClusterRecycleBinSetting {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ClusterRecycleBinUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskClusterSettings[];
-  }
-}
-
-export namespace DeleteClusterRecycleBinSetting {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name DeleteClusterRecycleBinSetting
-   * @request POST:/delete-cluster-recycle-bin-setting
-   * @secure
-   * @response `200` `(WithTaskDeleteClusterRecycleBin)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteClusterRecycleBinSetting {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ClusterRecycleBinDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteClusterRecycleBin[];
-  }
-}
-
-export namespace CreateReportTemplate {
-  /**
-   * No description
-   * @tags ReportTemplate
-   * @name CreateReportTemplate
-   * @request POST:/create-report-template
-   * @secure
-   * @response `200` `(WithTaskReportTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateReportTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ReportTemplateCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskReportTemplate[];
-  }
-}
-
-export namespace UpdateReportTemplate {
-  /**
-   * No description
-   * @tags ReportTemplate
-   * @name UpdateReportTemplate
-   * @request POST:/update-report-template
-   * @secure
-   * @response `200` `(WithTaskReportTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateReportTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ReportTemplateUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskReportTemplate[];
-  }
-}
-
-export namespace GenerateFromReportTemplate {
-  /**
-   * No description
-   * @tags ReportTemplate
-   * @name GenerateFromReportTemplate
-   * @request POST:/generate-from-report-template
-   * @secure
-   * @response `200` `(WithTaskReportTask)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GenerateFromReportTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ReporteTemplateGenerationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskReportTask[];
-  }
-}
-
-export namespace DeleteReportTemplate {
-  /**
-   * No description
-   * @tags ReportTemplate
-   * @name DeleteReportTemplate
-   * @request POST:/delete-report-template
-   * @secure
-   * @response `200` `(WithTaskDeleteReportTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteReportTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ReportTemplateDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteReportTemplate[];
-  }
-}
-
-export namespace CreateRole {
-  /**
-   * No description
-   * @tags UserRoleNext
-   * @name CreateRole
-   * @request POST:/create-role
-   * @secure
-   * @response `200` `(WithTaskUserRoleNext)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateRole {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RoleCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUserRoleNext[];
-  }
-}
-
-export namespace UpdateRole {
-  /**
-   * No description
-   * @tags UserRoleNext
-   * @name UpdateRole
-   * @request POST:/update-role
-   * @secure
-   * @response `200` `(WithTaskUserRoleNext)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateRole {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RoleUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUserRoleNext[];
-  }
-}
-
-export namespace DeleteRole {
-  /**
-   * No description
-   * @tags UserRoleNext
-   * @name DeleteRole
-   * @request POST:/delete-role
-   * @secure
-   * @response `200` `(WithTaskDeleteRole)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteRole {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RoleDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteRole[];
-  }
-}
-
-export namespace RollbackSnapshotGroup {
-  /**
-   * No description
-   * @tags SnapshotGroup
-   * @name RollbackSnapshotGroup
-   * @request POST:/rollback-snapshot-group
-   * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RollbackSnapshotGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotGroupRollbackParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotGroup[];
-  }
-}
-
-export namespace CloneSnapshotGroup {
-  /**
-   * No description
-   * @tags SnapshotGroup
-   * @name CloneSnapshotGroup
-   * @request POST:/clone-snapshot-group
-   * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CloneSnapshotGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotGroupCloneParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotGroup[];
-  }
-}
-
-export namespace KeepSnapshotGroup {
-  /**
-   * No description
-   * @tags SnapshotGroup
-   * @name KeepSnapshotGroup
-   * @request POST:/keep-snapshot-group
-   * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace KeepSnapshotGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotGroupKeepParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotGroup[];
-  }
-}
-
-export namespace DeleteSnapshotGroup {
-  /**
-   * No description
-   * @tags SnapshotGroup
-   * @name DeleteSnapshotGroup
-   * @request POST:/delete-snapshot-group
-   * @secure
-   * @response `200` `(WithTaskDeleteSnapshotGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteSnapshotGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotGroupDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteSnapshotGroup[];
-  }
-}
-
-export namespace CreateSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name CreateSnapshotPlan
-   * @request POST:/create-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotPlan[];
-  }
-}
-
-export namespace UpdateSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name UpdateSnapshotPlan
-   * @request POST:/update-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotPlan[];
-  }
-}
-
-export namespace DeleteSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name DeleteSnapshotPlan
-   * @request POST:/delete-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskDeleteSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteSnapshotPlan[];
-  }
-}
-
-export namespace ExecuteSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name ExecuteSnapshotPlan
-   * @request POST:/execute-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ExecuteSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanExecutionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotPlan[];
-  }
-}
-
-export namespace SuspendSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name SuspendSnapshotPlan
-   * @request POST:/suspend-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace SuspendSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanSuspendedParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotPlan[];
-  }
-}
-
-export namespace ResumeSnapshotPlan {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name ResumeSnapshotPlan
-   * @request POST:/resume-snapshot-plan
-   * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ResumeSnapshotPlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnapshotPlanResumeParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnapshotPlan[];
-  }
-}
-
-export namespace CreateSnmpTransport {
-  /**
-   * No description
-   * @tags SnmpTransport
-   * @name CreateSnmpTransport
-   * @request POST:/create-snmp-transport
-   * @secure
-   * @response `200` `(WithTaskSnmpTransport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateSnmpTransport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTransportCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnmpTransport[];
-  }
-}
-
-export namespace UpdateSnmpTransport {
-  /**
-   * No description
-   * @tags SnmpTransport
-   * @name UpdateSnmpTransport
-   * @request POST:/update-snmp-transport
-   * @secure
-   * @response `200` `(WithTaskSnmpTransport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateSnmpTransport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTransportUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnmpTransport[];
-  }
-}
-
-export namespace DeleteSnmpTransport {
-  /**
-   * No description
-   * @tags SnmpTransport
-   * @name DeleteSnmpTransport
-   * @request POST:/delete-snmp-transport
-   * @secure
-   * @response `200` `(WithTaskDeleteSnmpTransport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteSnmpTransport {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTransportDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteSnmpTransport[];
-  }
-}
-
-export namespace CreateSnmpTrapReceiver {
-  /**
-   * No description
-   * @tags SnmpTrapReceiver
-   * @name CreateSnmpTrapReceiver
-   * @request POST:/create-snmp-trap-receiver
-   * @secure
-   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateSnmpTrapReceiver {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTrapReceiverCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnmpTrapReceiver[];
-  }
-}
-
-export namespace UpdateSnmpTrapReceiver {
-  /**
-   * No description
-   * @tags SnmpTrapReceiver
-   * @name UpdateSnmpTrapReceiver
-   * @request POST:/update-snmp-trap-receiver
-   * @secure
-   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateSnmpTrapReceiver {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTrapReceiverUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskSnmpTrapReceiver[];
-  }
-}
-
-export namespace DeleteSnmpTrapReceiver {
-  /**
-   * No description
-   * @tags SnmpTrapReceiver
-   * @name DeleteSnmpTrapReceiver
-   * @request POST:/delete-snmp-trap-receiver
-   * @secure
-   * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteSnmpTrapReceiver {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = SnmpTrapReceiverDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteSnmpTrapReceiver[];
-  }
-}
-
-export namespace MountUsbDevice {
-  /**
-   * No description
-   * @tags UsbDevice
-   * @name MountUsbDevice
-   * @request POST:/mount-usb-device
-   * @secure
-   * @response `200` `(WithTaskUsbDevice)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace MountUsbDevice {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = UsbDeviceMountParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUsbDevice[];
-  }
-}
-
-export namespace UnmountUsbDevice {
-  /**
-   * No description
-   * @tags UsbDevice
-   * @name UnmountUsbDevice
-   * @request POST:/unmount-usb-device
-   * @secure
-   * @response `200` `(WithTaskUsbDevice)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UnmountUsbDevice {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = UsbDeviceUnmountParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUsbDevice[];
-  }
-}
-
-export namespace Login {
-  /**
-   * No description
-   * @tags User
-   * @name Login
-   * @request POST:/login
-   * @response `200` `WithTaskTokenString` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace Login {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = LoginInput;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskTokenString;
-  }
-}
-
-export namespace CreateUser {
-  /**
-   * No description
-   * @tags User
-   * @name CreateUser
-   * @request POST:/create-user
-   * @secure
-   * @response `200` `(WithTaskUser)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateUser {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = UserCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUser[];
-  }
-}
-
-export namespace UpdateUser {
-  /**
-   * No description
-   * @tags User
-   * @name UpdateUser
-   * @request POST:/update-user
-   * @secure
-   * @response `200` `(WithTaskUser)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateUser {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = UserUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUser[];
-  }
-}
-
-export namespace DeleteUser {
-  /**
-   * No description
-   * @tags User
-   * @name DeleteUser
-   * @request POST:/delete-user
-   * @secure
-   * @response `200` `(WithTaskDeleteUser)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteUser {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = UserDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteUser[];
-  }
-}
-
-export namespace CreateRootUser {
-  /**
-   * No description
-   * @tags User
-   * @name CreateRootUser
-   * @request POST:/create-root-user
-   * @response `200` `WithTaskUser` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateRootUser {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = RootUserCreationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskUser;
-  }
-}
-
-export namespace CreateVdsWithMigrateVlan {
-  /**
-   * No description
-   * @tags Vds
-   * @name CreateVdsWithMigrateVlan
-   * @request POST:/create-vds-with-migrate-vlan
-   * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVdsWithMigrateVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VdsCreationWithMigrateVlanParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVds[];
-  }
-}
-
-export namespace CreateVdsWithAccessVlan {
-  /**
-   * No description
-   * @tags Vds
-   * @name CreateVdsWithAccessVlan
-   * @request POST:/create-vds-with-access-vlan
-   * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVdsWithAccessVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VdsCreationWithMAccessVlanParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVds[];
-  }
-}
-
-export namespace CreateVds {
-  /**
-   * No description
-   * @tags Vds
-   * @name CreateVds
-   * @request POST:/create-vds
-   * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVds {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VdsCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVds[];
-  }
-}
-
-export namespace UpdateVds {
-  /**
-   * No description
-   * @tags Vds
-   * @name UpdateVds
-   * @request POST:/update-vds
-   * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVds {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VdsUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVds[];
-  }
-}
-
-export namespace DeleteVds {
-  /**
-   * No description
-   * @tags Vds
-   * @name DeleteVds
-   * @request POST:/delete-vds
-   * @secure
-   * @response `200` `(WithTaskDeleteVds)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVds {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VdsDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVds[];
-  }
-}
-
-export namespace CreateView {
-  /**
-   * No description
-   * @tags View
-   * @name CreateView
-   * @request POST:/create-view
-   * @secure
-   * @response `200` `(WithTaskView)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateView {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ViewCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskView[];
-  }
-}
-
-export namespace UpdateView {
-  /**
-   * No description
-   * @tags View
-   * @name UpdateView
-   * @request POST:/update-view
-   * @secure
-   * @response `200` `(WithTaskView)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateView {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ViewUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskView[];
-  }
-}
-
-export namespace DeleteView {
-  /**
-   * No description
-   * @tags View
-   * @name DeleteView
-   * @request POST:/delete-view
-   * @secure
-   * @response `200` `(WithTaskDeleteView)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteView {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ViewDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteView[];
-  }
-}
-
-export namespace CreateVmVlan {
-  /**
-   * No description
-   * @tags Vlan
-   * @name CreateVmVlan
-   * @request POST:/create-vm-vlan
-   * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmVlanCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVlan[];
-  }
-}
-
-export namespace UpdateVmVlan {
-  /**
-   * No description
-   * @tags Vlan
-   * @name UpdateVlan
-   * @request POST:/update-vm-vlan
-   * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmVlanUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVlan[];
-  }
-}
-
-export namespace UpdateManagementVlan {
-  /**
-   * No description
-   * @tags Vlan
-   * @name UpdateManagementVlan
-   * @request POST:/update-management-vlan
-   * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateManagementVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ManagementVlanUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVlan[];
-  }
-}
-
-export namespace UpdateMigrationVlan {
-  /**
-   * No description
-   * @tags Vlan
-   * @name UpdateMigrationVlan
-   * @request POST:/update-migration-vlan
-   * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateMigrationVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = MigrationVlanUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVlan[];
-  }
-}
-
-export namespace DeleteVmVlan {
-  /**
-   * No description
-   * @tags Vlan
-   * @name DeleteVlan
-   * @request POST:/delete-vm-vlan
-   * @secure
-   * @response `200` `(WithTaskDeleteVlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVlan {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VlanDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVlan[];
-  }
-}
-
-export namespace CreateVmFolder {
-  /**
-   * No description
-   * @tags VmFolder
-   * @name CreateVmFolder
-   * @request POST:/create-vm-folder
-   * @secure
-   * @response `200` `(WithTaskVmFolder)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmFolder {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmFolderCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmFolder[];
-  }
-}
-
-export namespace UpdateVmFolder {
-  /**
-   * No description
-   * @tags VmFolder
-   * @name UpdateVmFolder
-   * @request POST:/update-vm-folder
-   * @secure
-   * @response `200` `(WithTaskVmFolder)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmFolder {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmFolderUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmFolder[];
-  }
-}
-
-export namespace DeleteVmFolder {
-  /**
-   * No description
-   * @tags VmFolder
-   * @name DeleteVmFolder
-   * @request POST:/delete-vm-folder
-   * @secure
-   * @response `200` `(WithTaskDeleteVmFolder)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVmFolder {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmFolderDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVmFolder[];
-  }
-}
-
-export namespace CreateVmPlacementGroup {
-  /**
-   * No description
-   * @tags VmPlacementGroup
-   * @name CreateVmPlacementGroup
-   * @request POST:/create-vm-placement-group
-   * @secure
-   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmPlacementGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmPlacementGroupCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmPlacementGroup[];
-  }
-}
-
-export namespace UpdateVmPlacementGroup {
-  /**
-   * No description
-   * @tags VmPlacementGroup
-   * @name UpdateVmPlacementGroup
-   * @request POST:/update-vm-placement-group
-   * @secure
-   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmPlacementGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmPlacementGroupUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmPlacementGroup[];
-  }
-}
-
-export namespace DeleteVmPlacementGroup {
-  /**
-   * No description
-   * @tags VmPlacementGroup
-   * @name DeleteVmPlacementGroup
-   * @request POST:/delete-vm-placement-group
-   * @secure
-   * @response `200` `(WithTaskDeleteVmPlacementGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVmPlacementGroup {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmPlacementGroupDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVmPlacementGroup[];
-  }
-}
-
-export namespace CreateVmSnapshot {
-  /**
-   * No description
-   * @tags VmSnapshot
-   * @name CreateVmSnapshot
-   * @request POST:/create-vm-snapshot
-   * @secure
-   * @response `200` `(WithTaskVmSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmSnapshotCreationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmSnapshot[];
-  }
-}
-
-export namespace DeleteVmSnapshot {
-  /**
-   * No description
-   * @tags VmSnapshot
-   * @name DeleteVmSnapshot
-   * @request POST:/delete-vm-snapshot
-   * @secure
-   * @response `200` `(WithTaskDeleteVmSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVmSnapshot {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmSnapshotDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVmSnapshot[];
-  }
-}
-
-export namespace CloneVmTemplateFromVm {
-  /**
-   * No description
-   * @tags VmTemplate
-   * @name CloneVmTemplateFromVm
-   * @request POST:/clone-vm-template-from-vm
-   * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CloneVmTemplateFromVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmTemplateCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmTemplate[];
-  }
-}
-
-export namespace ConvertVmTemplateFromVm {
-  /**
-   * No description
-   * @tags VmTemplate
-   * @name ConvertVmTemplateFromVm
-   * @request POST:/convert-vm-template-from-vm
-   * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ConvertVmTemplateFromVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmTemplateCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmTemplate[];
-  }
-}
-
-export namespace UpdateVmTemplate {
-  /**
-   * No description
-   * @tags VmTemplate
-   * @name UpdateVmTemplate
-   * @request POST:/update-vm-template
-   * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmTemplateUpdationParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmTemplate[];
-  }
-}
-
-export namespace DeleteVmTemplate {
-  /**
-   * No description
-   * @tags VmTemplate
-   * @name DeleteVmTemplate
-   * @request POST:/delete-vm-template
-   * @secure
-   * @response `200` `(WithTaskDeleteVmTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVmTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmTemplateDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVmTemplate[];
-  }
-}
-
-export namespace CreateVmVolume {
-  /**
-   * No description
-   * @tags VmVolume
-   * @name CreateVmVolume
-   * @request POST:/create-vm-volume
-   * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmVolume {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmVolumeCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVmVolume[];
-  }
-}
-
-export namespace DeleteVmVolume {
-  /**
-   * No description
-   * @tags VmVolume
-   * @name DeleteVmVolumeFromVm
-   * @request POST:/delete-vm-volume
-   * @secure
-   * @response `200` `(WithTaskDeleteVmVolume)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVmVolumeFromVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmVolumeDeletionParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVmVolume[];
-  }
-}
-
-export namespace CreateVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name CreateVm
-   * @request POST:/create-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmCreationParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace CreateVmFromTemplate {
-  /**
-   * No description
-   * @tags Vm
-   * @name CreateVmFromTemplate
-   * @request POST:/create-vm-from-template
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CreateVmFromTemplate {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmCreateVmFromTemplateParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ConvertVmTemplateToVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name ConvertVmTemplateToVm
-   * @request POST:/convert-vm-template-to-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ConvertVmTemplateToVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = ConvertVmTemplateToVmParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace CloneVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name CloneVm
-   * @request POST:/clone-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace CloneVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmCloneParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RebuildVmFromSnapshot {
-  /**
-   * No description
-   * @tags Vm
-   * @name RebuildVm
-   * @request POST:/rebuild-vm-from-snapshot
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RebuildVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmRebuildParams[];
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RollbackVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name RollbackVm
-   * @request POST:/rollback-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RollbackVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmRollbackParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace UpdateVmBasicInfo {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVm
-   * @request POST:/update-vm-basic-info
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace MoveVmToRecycle {
-  /**
-   * No description
-   * @tags Vm
-   * @name MoveVmToRecycleBin
-   * @request POST:/move-vm-to-recycle
-   * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace MoveVmToRecycleBin {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVm[];
-  }
-}
-
-export namespace RecoverVmFromRecycle {
-  /**
-   * No description
-   * @tags Vm
-   * @name RecoverVmFromRecycleBin
-   * @request POST:/recover-vm-from-recycle
-   * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RecoverVmFromRecycleBin {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVm[];
-  }
-}
-
-export namespace DeleteVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name DeleteVm
-   * @request POST:/delete-vm
-   * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace DeleteVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskDeleteVm[];
-  }
-}
-
-export namespace StartVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name StartVm
-   * @request POST:/start-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace StartVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmStartParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RestartVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name RestartVm
-   * @request POST:/restart-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RestartVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ForceRestartVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name ForceRestartVm
-   * @request POST:/force-restart-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ForceRestartVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ShutdownVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name ShutDownVm
-   * @request POST:/shutdown-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ShutDownVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace PoweroffVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name PoweroffVm
-   * @request POST:/poweroff-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace PoweroffVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace SuspendVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name SuspendVm
-   * @request POST:/suspend-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace SuspendVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ResumeVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name ResumeVm
-   * @request POST:/resume-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ResumeVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace AddVmDisk {
-  /**
-   * No description
-   * @tags Vm
-   * @name AddVmDisk
-   * @request POST:/add-vm-disk
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace AddVmDisk {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmAddDiskParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace UpdateVmDisk {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVmDisk
-   * @request POST:/update-vm-disk
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmDisk {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateDiskParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ExpandVmDisk {
-  /**
-   * No description
-   * @tags Vm
-   * @name ExpandVmDisk
-   * @request POST:/expand-vm-disk
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ExpandVmDisk {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmExpandVmDiskParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RemoveVmDisk {
-  /**
-   * No description
-   * @tags Vm
-   * @name RemoveVmDisk
-   * @request POST:/remove-vm-disk
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RemoveVmDisk {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmRemoveDiskParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace AddVmCdRom {
-  /**
-   * No description
-   * @tags Vm
-   * @name AddVmCdRom
-   * @request POST:/add-vm-cd-rom
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace AddVmCdRom {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmAddCdRomParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RemoveVmCdRom {
-  /**
-   * No description
-   * @tags Vm
-   * @name RemoveVmCdRom
-   * @request POST:/remove-vm-cd-rom
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RemoveVmCdRom {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmRemoveCdRomParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace EjectIsoFromVmCdRom {
-  /**
-   * No description
-   * @tags Vm
-   * @name EjectIsoFromVmCdRom
-   * @request POST:/eject-iso-from-vm-cd-rom
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace EjectIsoFromVmCdRom {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmEjectCdRomParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace ToggleVmCdRomDisable {
-  /**
-   * No description
-   * @tags Vm
-   * @name ToggleVmCdRomDisable
-   * @request POST:/toggle-vm-cd-rom-disable
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace ToggleVmCdRomDisable {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmToggleCdRomDisableParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace AddVmNic {
-  /**
-   * No description
-   * @tags Vm
-   * @name AddVmNic
-   * @request POST:/add-vm-nic
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace AddVmNic {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmAddNicParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace UpdateVmNic {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVmNic
-   * @request POST:/update-vm-nic
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmNic {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateNicParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace UpdateVmNicBasicInfo {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVmNicBasicInfo
-   * @request POST:/update-vm-nic-basic-info
-   * @secure
-   * @response `200` `({ task_id: any, data: any })[]` Ok
-   * @response `304` `void` Not modified
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmNicBasicInfo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateNicBasicInfoParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = { task_id: any; data: any }[];
-  }
-}
-
-export namespace UpdateVmNicAdvanceInfo {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVmNicAdvanceInfo
-   * @request POST:/update-vm-nic-advance-info
-   * @secure
-   * @response `200` `({ task_id: any, data: any })[]` Ok
-   * @response `304` `void` Not modified
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmNicAdvanceInfo {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateNicAdvanceInfoParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = { task_id: any; data: any }[];
-  }
-}
-
-export namespace RemoveVmNic {
-  /**
-   * No description
-   * @tags Vm
-   * @name RemoveVmNic
-   * @request POST:/remove-vm-nic
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RemoveVmNic {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmRemoveNicParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace InstallVmtools {
-  /**
-   * No description
-   * @tags Vm
-   * @name InstallVmtools
-   * @request POST:/install-vmtools
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace InstallVmtools {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = InstallVmtoolsParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace MigrateVm {
-  /**
-   * No description
-   * @tags Vm
-   * @name MigRateVm
-   * @request POST:/migrate-vm
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace MigRateVm {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmMigrateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace AddVmToFolder {
-  /**
-   * No description
-   * @tags Vm
-   * @name AddVmToFolder
-   * @request POST:/add-vm-to-folder
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace AddVmToFolder {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmAddFolderParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace RemoveVmFromFolder {
-  /**
-   * No description
-   * @tags Vm
-   * @name RemoveVmToFolder
-   * @request POST:/remove-vm-from-folder
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace RemoveVmToFolder {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmOperateParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace UpdateVmAdvancedOptions {
-  /**
-   * No description
-   * @tags Vm
-   * @name UpdateVmAdvancedOptions
-   * @request POST:/update-vm-advanced-options
-   * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
-   * @response `304` `void` Not modified
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateVmAdvancedOptions {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = VmUpdateAdvancedOptionsParams;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = WithTaskVm[];
-  }
-}
-
-export namespace GetVmMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetVmMetrics
-   * @request POST:/get-vm-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVmMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVmMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetVmNetworkMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetVmNetWorkMetrics
-   * @request POST:/get-vm-network-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVmNetWorkMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVmNetWorkMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetDiskMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetDiskMetrics
-   * @request POST:/get-disk-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDiskMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDiskMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetVmVolumeMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetVmVolumeMetrics
-   * @request POST:/get-vm-volume-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVmVolumeMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVmVolumeMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetLunMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetLunMetrics
-   * @request POST:/get-lun-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetLunMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetLunMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetNvmfNamespaceMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetNvmfNamespaceMetrics
-   * @request POST:/get-nvmf-namespace-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetNvmfNamespaceMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetNvmfNamespaceMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetClusterMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetClusterMetrics
-   * @request POST:/get-cluster-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetHostMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetHostMetrics
-   * @request POST:/get-host-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetHostMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetHostMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetHostNetworkMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetHostNetworkMetrics
-   * @request POST:/get-host-network-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetHostNetworkMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetHostNetworkMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetHostServiceMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetHostServicekMetrics
-   * @request POST:/get-host-service-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetHostServicekMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetHostServiceMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetScvmMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetScvmMetrics
-   * @request POST:/get-scvm-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetScvmMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetScvmMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetScvmNetworkMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetScvmNetworkMetrics
-   * @request POST:/get-scvm-network-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetScvmNetworkMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetScvmNetworkInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetScvmServiceMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetScvmServicekMetrics
-   * @request POST:/get-scvm-service-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetScvmServicekMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetScvmServiceMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetScvmDiskMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetScvmDiskMetrics
-   * @request POST:/get-scvm-disk-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetScvmDiskMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSCVMDiskMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetZoneMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetZoneMetrics
-   * @request POST:/get-zone-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetZoneMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetZoneMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetWitnessMetrics {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetWitnessMetrics
-   * @request POST:/get-witness-metrics
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetWitnessMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetWitnessMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetTopNMetricsInClusters {
-  /**
-   * No description
-   * @tags Metrics
-   * @name GetTopNVmVolumeMetrics
-   * @request POST:/get-top-n-metrics-in-clusters
-   * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetTopNVmVolumeMetrics {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetTopNMetricInput;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskMetric[];
-  }
-}
-
-export namespace GetAlertNotifiers {
-  /**
-   * No description
-   * @tags AlertNotifier
-   * @name GetAlertNotifiers
-   * @request POST:/get-alert-notifiers
-   * @secure
-   * @response `200` `(AlertNotifier)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlertNotifiers {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertNotifiersRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = AlertNotifier[];
-  }
-}
-
-export namespace GetAlertNotifiersConnection {
-  /**
-   * No description
-   * @tags AlertNotifier
-   * @name GetAlertNotifiersConnection
-   * @request POST:/get-alert-notifiers-connection
-   * @secure
-   * @response `200` `AlertNotifierConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlertNotifiersConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertNotifiersConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = AlertNotifierConnection;
-  }
-}
-
-export namespace GetAlertRules {
-  /**
-   * No description
-   * @tags AlertRule
-   * @name GetAlertRules
-   * @request POST:/get-alert-rules
-   * @secure
-   * @response `200` `(AlertRule)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlertRules {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertRulesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = AlertRule[];
-  }
-}
-
-export namespace GetAlertRulesConnection {
-  /**
-   * No description
-   * @tags AlertRule
-   * @name GetAlertRulesConnection
-   * @request POST:/get-alert-rules-connection
-   * @secure
-   * @response `200` `AlertRuleConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlertRulesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertRulesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = AlertRuleConnection;
-  }
-}
-
-export namespace GetAlerts {
-  /**
-   * No description
-   * @tags Alert
-   * @name GetAlerts
-   * @request POST:/get-alerts
-   * @secure
-   * @response `200` `(Alert)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlerts {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Alert[];
-  }
-}
-
-export namespace GetAlertsConnection {
-  /**
-   * No description
-   * @tags Alert
-   * @name GetAlertsConnection
-   * @request POST:/get-alerts-connection
-   * @secure
-   * @response `200` `AlertConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetAlertsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetAlertsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = AlertConnection;
-  }
-}
-
-export namespace GetApplications {
-  /**
-   * No description
-   * @tags Application
-   * @name GetApplications
-   * @request POST:/get-applications
-   * @secure
-   * @response `200` `(Application)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetApplications {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetApplicationsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Application[];
-  }
-}
-
-export namespace GetApplicationsConnection {
-  /**
-   * No description
-   * @tags Application
-   * @name GetApplicationsConnection
-   * @request POST:/get-applications-connection
-   * @secure
-   * @response `200` `ApplicationConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetApplicationsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetApplicationsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ApplicationConnection;
-  }
-}
-
-export namespace GetBrickTopoes {
-  /**
-   * No description
-   * @tags BrickTopo
-   * @name GetBrickTopoes
-   * @request POST:/get-brick-topoes
-   * @secure
-   * @response `200` `(BrickTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetBrickTopoes {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetBrickTopoesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = BrickTopo[];
-  }
-}
-
-export namespace GetBrickTopoesConnection {
-  /**
-   * No description
-   * @tags BrickTopo
-   * @name GetBrickTopoesConnection
-   * @request POST:/get-brick-topoes-connection
-   * @secure
-   * @response `200` `BrickTopoConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetBrickTopoesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetBrickTopoesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = BrickTopoConnection;
-  }
-}
-
-export namespace GetClusterImages {
-  /**
-   * No description
-   * @tags ClusterImage
-   * @name GetClusterImages
-   * @request POST:/get-cluster-images
-   * @secure
-   * @response `200` `(ClusterImage)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterImages {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterImagesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterImage[];
-  }
-}
-
-export namespace GetClusterImagesConnection {
-  /**
-   * No description
-   * @tags ClusterImage
-   * @name GetClusterImagesConnection
-   * @request POST:/get-cluster-images-connection
-   * @secure
-   * @response `200` `ClusterImageConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterImagesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterImagesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterImageConnection;
-  }
-}
-
-export namespace GetClusters {
-  /**
-   * No description
-   * @tags Cluster
-   * @name GetClusters
-   * @request POST:/get-clusters
-   * @secure
-   * @response `200` `(Cluster)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusters {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClustersRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Cluster[];
-  }
-}
-
-export namespace GetClustersConnection {
-  /**
-   * No description
-   * @tags Cluster
-   * @name GetClustersConnection
-   * @request POST:/get-clusters-connection
-   * @secure
-   * @response `200` `ClusterConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClustersConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClustersConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterConnection;
-  }
-}
-
-export namespace GetClusterSettingses {
-  /**
-   * No description
-   * @tags ClusterSettings
-   * @name GetClusterSettingses
-   * @request POST:/get-cluster-settingses
-   * @secure
-   * @response `200` `(ClusterSettings)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterSettingses {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterSettingsesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterSettings[];
-  }
-}
-
-export namespace GetClusterSettingsesConnection {
-  /**
-   * No description
-   * @tags ClusterSettings
-   * @name GetClusterSettingsesConnection
-   * @request POST:/get-cluster-settingses-connection
-   * @secure
-   * @response `200` `ClusterSettingsConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterSettingsesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterSettingsesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterSettingsConnection;
-  }
-}
-
-export namespace GetClusterTopoes {
-  /**
-   * No description
-   * @tags ClusterTopo
-   * @name GetClusterTopoes
-   * @request POST:/get-cluster-topoes
-   * @secure
-   * @response `200` `(ClusterTopo)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterTopoes {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterTopoesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterTopo[];
-  }
-}
-
-export namespace GetClusterTopoesConnection {
-  /**
-   * No description
-   * @tags ClusterTopo
-   * @name GetClusterTopoesConnection
-   * @request POST:/get-cluster-topoes-connection
-   * @secure
-   * @response `200` `ClusterTopoConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterTopoesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterTopoesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterTopoConnection;
-  }
-}
-
-export namespace GetClusterUpgradeHistories {
-  /**
-   * No description
-   * @tags ClusterUpgradeHistory
-   * @name GetClusterUpgradeHistories
-   * @request POST:/get-cluster-upgrade-histories
-   * @secure
-   * @response `200` `(ClusterUpgradeHistory)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterUpgradeHistories {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterUpgradeHistoriesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterUpgradeHistory[];
-  }
-}
-
-export namespace GetClusterUpgradeHistoriesConnection {
-  /**
-   * No description
-   * @tags ClusterUpgradeHistory
-   * @name GetClusterUpgradeHistoriesConnection
-   * @request POST:/get-cluster-upgrade-histories-connection
-   * @secure
-   * @response `200` `ClusterUpgradeHistoryConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetClusterUpgradeHistoriesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetClusterUpgradeHistoriesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ClusterUpgradeHistoryConnection;
-  }
-}
-
-export namespace GetConsistencyGroups {
-  /**
-   * No description
-   * @tags ConsistencyGroup
-   * @name GetConsistencyGroups
-   * @request POST:/get-consistency-groups
-   * @secure
-   * @response `200` `(ConsistencyGroup)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetConsistencyGroups {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetConsistencyGroupsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ConsistencyGroup[];
-  }
-}
-
-export namespace GetConsistencyGroupsConnection {
-  /**
-   * No description
-   * @tags ConsistencyGroup
-   * @name GetConsistencyGroupsConnection
-   * @request POST:/get-consistency-groups-connection
-   * @secure
-   * @response `200` `ConsistencyGroupConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetConsistencyGroupsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetConsistencyGroupsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ConsistencyGroupConnection;
-  }
-}
-
-export namespace GetConsistencyGroupSnapshots {
-  /**
-   * No description
-   * @tags ConsistencyGroupSnapshot
-   * @name GetConsistencyGroupSnapshots
-   * @request POST:/get-consistency-group-snapshots
-   * @secure
-   * @response `200` `(ConsistencyGroupSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetConsistencyGroupSnapshots {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetConsistencyGroupSnapshotsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ConsistencyGroupSnapshot[];
-  }
-}
-
-export namespace GetConsistencyGroupSnapshotsConnection {
-  /**
-   * No description
-   * @tags ConsistencyGroupSnapshot
-   * @name GetConsistencyGroupSnapshotsConnection
-   * @request POST:/get-consistency-group-snapshots-connection
-   * @secure
-   * @response `200` `ConsistencyGroupSnapshotConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetConsistencyGroupSnapshotsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetConsistencyGroupSnapshotsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ConsistencyGroupSnapshotConnection;
-  }
-}
-
-export namespace GetContentLibraryImages {
-  /**
-   * No description
-   * @tags ContentLibraryImage
-   * @name GetContentLibraryImages
-   * @request POST:/get-content-library-images
-   * @secure
-   * @response `200` `(ContentLibraryImage)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetContentLibraryImages {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetContentLibraryImagesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ContentLibraryImage[];
-  }
-}
-
-export namespace GetContentLibraryImagesConnection {
-  /**
-   * No description
-   * @tags ContentLibraryImage
-   * @name GetContentLibraryImagesConnection
-   * @request POST:/get-content-library-images-connection
-   * @secure
-   * @response `200` `ContentLibraryImageConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetContentLibraryImagesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetContentLibraryImagesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ContentLibraryImageConnection;
-  }
-}
-
-export namespace GetContentLibraryVmTemplates {
-  /**
-   * No description
-   * @tags ContentLibraryVmTemplate
-   * @name GetContentLibraryVmTemplates
-   * @request POST:/get-content-library-vm-templates
-   * @secure
-   * @response `200` `(ContentLibraryVmTemplate)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetContentLibraryVmTemplates {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetContentLibraryVmTemplatesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ContentLibraryVmTemplate[];
-  }
-}
-
-export namespace GetContentLibraryVmTemplatesConnection {
-  /**
-   * No description
-   * @tags ContentLibraryVmTemplate
-   * @name GetContentLibraryVmTemplatesConnection
-   * @request POST:/get-content-library-vm-templates-connection
-   * @secure
-   * @response `200` `ContentLibraryVmTemplateConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetContentLibraryVmTemplatesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetContentLibraryVmTemplatesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ContentLibraryVmTemplateConnection;
-  }
-}
-
-export namespace GetDatacenters {
-  /**
-   * No description
-   * @tags Datacenter
-   * @name GetDatacenters
-   * @request POST:/get-datacenters
-   * @secure
-   * @response `200` `(Datacenter)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDatacenters {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDatacentersRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Datacenter[];
-  }
-}
-
-export namespace GetDatacentersConnection {
-  /**
-   * No description
-   * @tags Datacenter
-   * @name GetDatacentersConnection
-   * @request POST:/get-datacenters-connection
-   * @secure
-   * @response `200` `DatacenterConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDatacentersConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDatacentersConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = DatacenterConnection;
-  }
-}
-
-export namespace GetDeploys {
-  /**
-   * No description
-   * @tags Deploy
-   * @name GetDeploys
-   * @request POST:/get-deploys
-   * @secure
-   * @response `200` `(Deploy)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDeploys {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDeploysRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Deploy[];
-  }
-}
-
-export namespace GetDeploysConnection {
-  /**
-   * No description
-   * @tags Deploy
-   * @name GetDeploysConnection
-   * @request POST:/get-deploys-connection
-   * @secure
-   * @response `200` `DeployConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDeploysConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDeploysConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = DeployConnection;
-  }
-}
-
-export namespace GetDiscoverHosts {
-  /**
-   * No description
-   * @tags DiscoveredHost
-   * @name GetDiscoverHosts
-   * @request POST:/get-discover-hosts
-   * @secure
-   * @response `200` `(DiscoveredHost)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDiscoverHosts {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDiscoverHostsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = DiscoveredHost[];
-  }
-}
-
-export namespace GetDisks {
-  /**
-   * No description
-   * @tags Disk
-   * @name GetDisks
-   * @request POST:/get-disks
-   * @secure
-   * @response `200` `(Disk)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDisks {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDisksRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Disk[];
-  }
-}
-
-export namespace GetDisksConnection {
-  /**
-   * No description
-   * @tags Disk
-   * @name GetDisksConnection
-   * @request POST:/get-disks-connection
-   * @secure
-   * @response `200` `DiskConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetDisksConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetDisksConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = DiskConnection;
-  }
-}
-
-export namespace GetElfDataStores {
-  /**
-   * No description
-   * @tags ElfDataStore
-   * @name GetElfDataStores
-   * @request POST:/get-elf-data-stores
-   * @secure
-   * @response `200` `(ElfDataStore)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetElfDataStores {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetElfDataStoresRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ElfDataStore[];
-  }
-}
-
-export namespace GetElfDataStoresConnection {
-  /**
-   * No description
-   * @tags ElfDataStore
-   * @name GetElfDataStoresConnection
-   * @request POST:/get-elf-data-stores-connection
-   * @secure
-   * @response `200` `ElfDataStoreConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetElfDataStoresConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetElfDataStoresConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ElfDataStoreConnection;
-  }
-}
-
-export namespace GetElfImages {
   /**
    * No description
    * @tags ElfImage
@@ -31131,9 +28163,6 @@ export namespace GetElfImages {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = ElfImage[];
   }
-}
-
-export namespace GetElfImagesConnection {
   /**
    * No description
    * @tags ElfImage
@@ -31154,616 +28183,97 @@ export namespace GetElfImagesConnection {
   }
 }
 
-export namespace GetElfStoragePolicies {
+export namespace Label {
   /**
    * No description
-   * @tags ElfStoragePolicy
-   * @name GetElfStoragePolicies
-   * @request POST:/get-elf-storage-policies
+   * @tags Label
+   * @name CreateLabel
+   * @request POST:/create-label
    * @secure
-   * @response `200` `(ElfStoragePolicy)[]` Ok
+   * @response `200` `(WithTaskLabel)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetElfStoragePolicies {
+  export namespace CreateLabel {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetElfStoragePoliciesRequestBody;
+    export type RequestBody = LabelCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ElfStoragePolicy[];
+    export type ResponseBody = WithTaskLabel[];
   }
-}
-
-export namespace GetElfStoragePoliciesConnection {
   /**
    * No description
-   * @tags ElfStoragePolicy
-   * @name GetElfStoragePoliciesConnection
-   * @request POST:/get-elf-storage-policies-connection
+   * @tags Label
+   * @name UpdateLabel
+   * @request POST:/update-label
    * @secure
-   * @response `200` `ElfStoragePolicyConnection` Ok
+   * @response `200` `(WithTaskLabel)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetElfStoragePoliciesConnection {
+  export namespace UpdateLabel {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetElfStoragePoliciesConnectionRequestBody;
+    export type RequestBody = LabelUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ElfStoragePolicyConnection;
+    export type ResponseBody = WithTaskLabel[];
   }
-}
-
-export namespace GetEntityFilters {
   /**
    * No description
-   * @tags EntityFilter
-   * @name GetEntityFilters
-   * @request POST:/get-entity-filters
+   * @tags Label
+   * @name AddLabelsToResources
+   * @request POST:/add-labels-to-resources
    * @secure
-   * @response `200` `(EntityFilter)[]` Ok
+   * @response `200` `(WithTaskLabel)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetEntityFilters {
+  export namespace AddLabelsToResources {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetEntityFiltersRequestBody;
+    export type RequestBody = AddLabelsToResourcesParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EntityFilter[];
+    export type ResponseBody = WithTaskLabel[];
   }
-}
-
-export namespace GetEntityFiltersConnection {
   /**
    * No description
-   * @tags EntityFilter
-   * @name GetEntityFiltersConnection
-   * @request POST:/get-entity-filters-connection
+   * @tags Label
+   * @name RemoveLabelsFromResources
+   * @request POST:/remove-labels-from-resources
    * @secure
-   * @response `200` `EntityFilterConnection` Ok
+   * @response `200` `(WithTaskLabel)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetEntityFiltersConnection {
+  export namespace RemoveLabelsFromResources {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetEntityFiltersConnectionRequestBody;
+    export type RequestBody = RemoveLabelsFromResourcesParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EntityFilterConnection;
+    export type ResponseBody = WithTaskLabel[];
   }
-}
-
-export namespace GetEverouteClusters {
   /**
    * No description
-   * @tags EverouteCluster
-   * @name GetEverouteClusters
-   * @request POST:/get-everoute-clusters
+   * @tags Label
+   * @name DeleteLabel
+   * @request POST:/delete-label
    * @secure
-   * @response `200` `(EverouteCluster)[]` Ok
+   * @response `200` `(WithTaskDeleteLabel)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetEverouteClusters {
+  export namespace DeleteLabel {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetEverouteClustersRequestBody;
+    export type RequestBody = LabelDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EverouteCluster[];
+    export type ResponseBody = WithTaskDeleteLabel[];
   }
-}
-
-export namespace GetEverouteClustersConnection {
-  /**
-   * No description
-   * @tags EverouteCluster
-   * @name GetEverouteClustersConnection
-   * @request POST:/get-everoute-clusters-connection
-   * @secure
-   * @response `200` `EverouteClusterConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetEverouteClustersConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetEverouteClustersConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EverouteClusterConnection;
-  }
-}
-
-export namespace GetEverouteLicenses {
-  /**
-   * No description
-   * @tags EverouteLicense
-   * @name GetEverouteLicenses
-   * @request POST:/get-everoute-licenses
-   * @secure
-   * @response `200` `(EverouteLicense)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetEverouteLicenses {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetEverouteLicensesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EverouteLicense[];
-  }
-}
-
-export namespace GetEverouteLicensesConnection {
-  /**
-   * No description
-   * @tags EverouteLicense
-   * @name GetEverouteLicensesConnection
-   * @request POST:/get-everoute-licenses-connection
-   * @secure
-   * @response `200` `EverouteLicenseConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetEverouteLicensesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetEverouteLicensesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EverouteLicenseConnection;
-  }
-}
-
-export namespace GetEveroutePackages {
-  /**
-   * No description
-   * @tags EveroutePackage
-   * @name GetEveroutePackages
-   * @request POST:/get-everoute-packages
-   * @secure
-   * @response `200` `(EveroutePackage)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetEveroutePackages {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetEveroutePackagesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EveroutePackage[];
-  }
-}
-
-export namespace GetEveroutePackagesConnection {
-  /**
-   * No description
-   * @tags EveroutePackage
-   * @name GetEveroutePackagesConnection
-   * @request POST:/get-everoute-packages-connection
-   * @secure
-   * @response `200` `EveroutePackageConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetEveroutePackagesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetEveroutePackagesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = EveroutePackageConnection;
-  }
-}
-
-export namespace GetGlobalAlertRules {
-  /**
-   * No description
-   * @tags GlobalAlertRule
-   * @name GetGlobalAlertRules
-   * @request POST:/get-global-alert-rules
-   * @secure
-   * @response `200` `(GlobalAlertRule)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGlobalAlertRules {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGlobalAlertRulesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = GlobalAlertRule[];
-  }
-}
-
-export namespace GetGlobalAlertRulesConnection {
-  /**
-   * No description
-   * @tags GlobalAlertRule
-   * @name GetGlobalAlertRulesConnection
-   * @request POST:/get-global-alert-rules-connection
-   * @secure
-   * @response `200` `GlobalAlertRuleConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGlobalAlertRulesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGlobalAlertRulesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = GlobalAlertRuleConnection;
-  }
-}
-
-export namespace GetGlobalSettingses {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name GetGlobalSettingses
-   * @request POST:/get-global-settingses
-   * @secure
-   * @response `200` `(GlobalSettings)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGlobalSettingses {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGlobalSettingsesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = GlobalSettings[];
-  }
-}
-
-export namespace GetGlobalSettingsesConnection {
-  /**
-   * No description
-   * @tags GlobalSettings
-   * @name GetGlobalSettingsesConnection
-   * @request POST:/get-global-settingses-connection
-   * @secure
-   * @response `200` `GlobalSettingsConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGlobalSettingsesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGlobalSettingsesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = GlobalSettingsConnection;
-  }
-}
-
-export namespace GetGraphs {
-  /**
-   * No description
-   * @tags Graph
-   * @name GetGraphs
-   * @request POST:/get-graphs
-   * @secure
-   * @response `200` `(Graph)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGraphs {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGraphsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Graph[];
-  }
-}
-
-export namespace GetGraphsConnection {
-  /**
-   * No description
-   * @tags Graph
-   * @name GetGraphsConnection
-   * @request POST:/get-graphs-connection
-   * @secure
-   * @response `200` `GraphConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetGraphsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetGraphsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = GraphConnection;
-  }
-}
-
-export namespace GetHosts {
-  /**
-   * No description
-   * @tags Host
-   * @name GetHosts
-   * @request POST:/get-hosts
-   * @secure
-   * @response `200` `(Host)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetHosts {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetHostsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Host[];
-  }
-}
-
-export namespace GetHostsConnection {
-  /**
-   * No description
-   * @tags Host
-   * @name GetHostsConnection
-   * @request POST:/get-hosts-connection
-   * @secure
-   * @response `200` `HostConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetHostsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetHostsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = HostConnection;
-  }
-}
-
-export namespace GetIpmis {
-  /**
-   * No description
-   * @tags Ipmi
-   * @name GetIpmis
-   * @request POST:/get-ipmis
-   * @secure
-   * @response `200` `(Ipmi)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIpmis {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIpmisRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Ipmi[];
-  }
-}
-
-export namespace GetIscsiConnections {
-  /**
-   * No description
-   * @tags IscsiConnection
-   * @name GetIscsiConnections
-   * @request POST:/get-iscsi-connections
-   * @secure
-   * @response `200` `(IscsiConnection)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiConnections {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiConnectionsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiConnection[];
-  }
-}
-
-export namespace GetIscsiConnectionsConnection {
-  /**
-   * No description
-   * @tags IscsiConnection
-   * @name GetIscsiConnectionsConnection
-   * @request POST:/get-iscsi-connections-connection
-   * @secure
-   * @response `200` `IscsiConnectionConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiConnectionsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiConnectionsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiConnectionConnection;
-  }
-}
-
-export namespace GetIscsiLuns {
-  /**
-   * No description
-   * @tags IscsiLun
-   * @name GetIscsiLuns
-   * @request POST:/get-iscsi-luns
-   * @secure
-   * @response `200` `(IscsiLun)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiLuns {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiLunsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiLun[];
-  }
-}
-
-export namespace GetIscsiLunsConnection {
-  /**
-   * No description
-   * @tags IscsiLun
-   * @name GetIscsiLunsConnection
-   * @request POST:/get-iscsi-luns-connection
-   * @secure
-   * @response `200` `IscsiLunConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiLunsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiLunsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiLunConnection;
-  }
-}
-
-export namespace GetIscsiLunSnapshots {
-  /**
-   * No description
-   * @tags IscsiLunSnapshot
-   * @name GetIscsiLunSnapshots
-   * @request POST:/get-iscsi-lun-snapshots
-   * @secure
-   * @response `200` `(IscsiLunSnapshot)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiLunSnapshots {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiLunSnapshotsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiLunSnapshot[];
-  }
-}
-
-export namespace GetIscsiLunSnapshotsConnection {
-  /**
-   * No description
-   * @tags IscsiLunSnapshot
-   * @name GetIscsiLunSnapshotsConnection
-   * @request POST:/get-iscsi-lun-snapshots-connection
-   * @secure
-   * @response `200` `IscsiLunSnapshotConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiLunSnapshotsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiLunSnapshotsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiLunSnapshotConnection;
-  }
-}
-
-export namespace GetIscsiTargets {
-  /**
-   * No description
-   * @tags IscsiTarget
-   * @name GetIscsiTargets
-   * @request POST:/get-iscsi-targets
-   * @secure
-   * @response `200` `(IscsiTarget)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiTargets {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiTargetsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiTarget[];
-  }
-}
-
-export namespace GetIscsiTargetsConnection {
-  /**
-   * No description
-   * @tags IscsiTarget
-   * @name GetIscsiTargetsConnection
-   * @request POST:/get-iscsi-targets-connection
-   * @secure
-   * @response `200` `IscsiTargetConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIscsiTargetsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIscsiTargetsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IscsiTargetConnection;
-  }
-}
-
-export namespace GetIsolationPolicies {
-  /**
-   * No description
-   * @tags IsolationPolicy
-   * @name GetIsolationPolicies
-   * @request POST:/get-isolation-policies
-   * @secure
-   * @response `200` `(IsolationPolicy)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIsolationPolicies {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIsolationPoliciesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IsolationPolicy[];
-  }
-}
-
-export namespace GetIsolationPoliciesConnection {
-  /**
-   * No description
-   * @tags IsolationPolicy
-   * @name GetIsolationPoliciesConnection
-   * @request POST:/get-isolation-policies-connection
-   * @secure
-   * @response `200` `IsolationPolicyConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetIsolationPoliciesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetIsolationPoliciesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = IsolationPolicyConnection;
-  }
-}
-
-export namespace GetLabels {
   /**
    * No description
    * @tags Label
@@ -31782,9 +28292,6 @@ export namespace GetLabels {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Label[];
   }
-}
-
-export namespace GetLabelsConnection {
   /**
    * No description
    * @tags Label
@@ -31805,7 +28312,25 @@ export namespace GetLabelsConnection {
   }
 }
 
-export namespace GetLicenses {
+export namespace License {
+  /**
+   * No description
+   * @tags License
+   * @name UpdateDeploy
+   * @request POST:/update-license
+   * @secure
+   * @response `200` `WithTaskLicense` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateDeploy {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = LicenseUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskLicense;
+  }
   /**
    * No description
    * @tags License
@@ -31824,9 +28349,6 @@ export namespace GetLicenses {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = License[];
   }
-}
-
-export namespace GetLicensesConnection {
   /**
    * No description
    * @tags License
@@ -31847,7 +28369,58 @@ export namespace GetLicensesConnection {
   }
 }
 
-export namespace GetLogCollections {
+export namespace LogCollection {
+  /**
+   * No description
+   * @tags LogCollection
+   * @name CreateLogCollection
+   * @request POST:/create-log-collection
+   * @response `200` `(WithTaskLogCollection)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateLogCollection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = LogCollectionCreationParams[];
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskLogCollection[];
+  }
+  /**
+   * No description
+   * @tags LogCollection
+   * @name ForceStopLogCollection
+   * @request POST:/force-stop-log-collection
+   * @response `200` `(WithTaskLogCollection)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ForceStopLogCollection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ForceStopLogCollectionParams;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskLogCollection[];
+  }
+  /**
+   * No description
+   * @tags LogCollection
+   * @name DeleteLogCollection
+   * @request POST:/delete-log-collection
+   * @response `200` `(WithTaskDeleteLogCollection)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteLogCollection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = LogCollectionDeletionParams;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskDeleteLogCollection[];
+  }
   /**
    * No description
    * @tags LogCollection
@@ -31866,9 +28439,6 @@ export namespace GetLogCollections {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = LogCollection[];
   }
-}
-
-export namespace GetLogCollectionsConnection {
   /**
    * No description
    * @tags LogCollection
@@ -31889,28 +28459,61 @@ export namespace GetLogCollectionsConnection {
   }
 }
 
-export namespace GetLogServiceConfigs {
+export namespace NamespaceGroup {
   /**
    * No description
-   * @tags LogServiceConfig
-   * @name GetLogServiceConfigs
-   * @request POST:/get-log-service-configs
+   * @tags NamespaceGroup
+   * @name CreateNamespaceGroup
+   * @request POST:/create-namespace-group
    * @secure
-   * @response `200` `(LogServiceConfig)[]` Ok
+   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetLogServiceConfigs {
+  export namespace CreateNamespaceGroup {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetLogServiceConfigsRequestBody;
+    export type RequestBody = NamespaceGroupCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = LogServiceConfig[];
+    export type ResponseBody = WithTaskNamespaceGroup[];
   }
-}
-
-export namespace GetNamespaceGroups {
+  /**
+   * No description
+   * @tags NamespaceGroup
+   * @name UpdateNamespaceGroup
+   * @request POST:/update-namespace-group
+   * @secure
+   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateNamespaceGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NamespaceGroupUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNamespaceGroup[];
+  }
+  /**
+   * No description
+   * @tags NamespaceGroup
+   * @name DeleteNamespaceGroup
+   * @request POST:/delete-namespace-group
+   * @secure
+   * @response `200` `(WithTaskDeleteNamespaceGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteNamespaceGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NamespaceGroupDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteNamespaceGroup[];
+  }
   /**
    * No description
    * @tags NamespaceGroup
@@ -31929,9 +28532,6 @@ export namespace GetNamespaceGroups {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = NamespaceGroup[];
   }
-}
-
-export namespace GetNamespaceGroupsConnection {
   /**
    * No description
    * @tags NamespaceGroup
@@ -31952,7 +28552,61 @@ export namespace GetNamespaceGroupsConnection {
   }
 }
 
-export namespace GetNfsExports {
+export namespace NfsExport {
+  /**
+   * No description
+   * @tags NfsExport
+   * @name CreateNfsExport
+   * @request POST:/create-nfs-export
+   * @secure
+   * @response `200` `(WithTaskNfsExport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateNfsExport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NfsExportCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNfsExport[];
+  }
+  /**
+   * No description
+   * @tags NfsExport
+   * @name UpdateNfsExport
+   * @request POST:/update-nfs-export
+   * @secure
+   * @response `200` `(WithTaskNfsExport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateNfsExport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NfsExportUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNfsExport[];
+  }
+  /**
+   * No description
+   * @tags NfsExport
+   * @name DeleteNfsExport
+   * @request POST:/delete-nfs-export
+   * @secure
+   * @response `200` `(WithTaskDeleteNfsExport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteNfsExport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NfsExportDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteNfsExport[];
+  }
   /**
    * No description
    * @tags NfsExport
@@ -31971,9 +28625,6 @@ export namespace GetNfsExports {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = NfsExport[];
   }
-}
-
-export namespace GetNfsExportsConnection {
   /**
    * No description
    * @tags NfsExport
@@ -31994,49 +28645,25 @@ export namespace GetNfsExportsConnection {
   }
 }
 
-export namespace GetNfsInodes {
+export namespace Nic {
   /**
    * No description
-   * @tags NfsInode
-   * @name GetNfsInodes
-   * @request POST:/get-nfs-inodes
+   * @tags Nic
+   * @name UpdateNic
+   * @request POST:/update-nic
    * @secure
-   * @response `200` `(NfsInode)[]` Ok
+   * @response `200` `(WithTaskNic)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetNfsInodes {
+  export namespace UpdateNic {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetNfsInodesRequestBody;
+    export type RequestBody = NicUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = NfsInode[];
+    export type ResponseBody = WithTaskNic[];
   }
-}
-
-export namespace GetNfsInodesConnection {
-  /**
-   * No description
-   * @tags NfsInode
-   * @name GetNfsInodesConnection
-   * @request POST:/get-nfs-inodes-connection
-   * @secure
-   * @response `200` `NfsInodeConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetNfsInodesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetNfsInodesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = NfsInodeConnection;
-  }
-}
-
-export namespace GetNics {
   /**
    * No description
    * @tags Nic
@@ -32055,9 +28682,6 @@ export namespace GetNics {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Nic[];
   }
-}
-
-export namespace GetNicsConnection {
   /**
    * No description
    * @tags Nic
@@ -32078,7 +28702,25 @@ export namespace GetNicsConnection {
   }
 }
 
-export namespace GetNodeTopoes {
+export namespace NodeTopo {
+  /**
+   * No description
+   * @tags NodeTopo
+   * @name UpdateNodeTopo
+   * @request POST:/move-node-topo
+   * @secure
+   * @response `200` `(WithTaskNodeTopo)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateNodeTopo {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NodeTopoUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNodeTopo[];
+  }
   /**
    * No description
    * @tags NodeTopo
@@ -32097,9 +28739,6 @@ export namespace GetNodeTopoes {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = NodeTopo[];
   }
-}
-
-export namespace GetNodeTopoesConnection {
   /**
    * No description
    * @tags NodeTopo
@@ -32120,49 +28759,43 @@ export namespace GetNodeTopoesConnection {
   }
 }
 
-export namespace GetNvmfNamespaces {
+export namespace NvmfNamespaceSnapshot {
   /**
    * No description
-   * @tags NvmfNamespace
-   * @name GetNvmfNamespaces
-   * @request POST:/get-nvmf-namespaces
+   * @tags NvmfNamespaceSnapshot
+   * @name CreateNvmfNamespaceSnapshot
+   * @request POST:/create-nvmf-namespace-snapshot
    * @secure
-   * @response `200` `(NvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetNvmfNamespaces {
+  export namespace CreateNvmfNamespaceSnapshot {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetNvmfNamespacesRequestBody;
+    export type RequestBody = NvmfNamespaceSnapshotCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = NvmfNamespace[];
+    export type ResponseBody = WithTaskNvmfNamespaceSnapshot[];
   }
-}
-
-export namespace GetNvmfNamespacesConnection {
   /**
    * No description
-   * @tags NvmfNamespace
-   * @name GetNvmfNamespacesConnection
-   * @request POST:/get-nvmf-namespaces-connection
+   * @tags NvmfNamespaceSnapshot
+   * @name DeleteNvmfNamespaceSnapshot
+   * @request POST:/delete-nvmf-namespace-snapshot
    * @secure
-   * @response `200` `NvmfNamespaceConnection` Ok
+   * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetNvmfNamespacesConnection {
+  export namespace DeleteNvmfNamespaceSnapshot {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetNvmfNamespacesConnectionRequestBody;
+    export type RequestBody = NvmfNamespaceSnapshotDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = NvmfNamespaceConnection;
+    export type ResponseBody = WithTaskDeleteNvmfNamespaceSnapshot[];
   }
-}
-
-export namespace GetNvmfNamespaceSnapshots {
   /**
    * No description
    * @tags NvmfNamespaceSnapshot
@@ -32181,9 +28814,6 @@ export namespace GetNvmfNamespaceSnapshots {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = NvmfNamespaceSnapshot[];
   }
-}
-
-export namespace GetNvmfNamespaceSnapshotsConnection {
   /**
    * No description
    * @tags NvmfNamespaceSnapshot
@@ -32204,7 +28834,190 @@ export namespace GetNvmfNamespaceSnapshotsConnection {
   }
 }
 
-export namespace GetNvmfSubsystems {
+export namespace NvmfNamespace {
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name CreateNvmfNamespace
+   * @request POST:/create-nvmf-namespace
+   * @secure
+   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateNvmfNamespace {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfNamespaceCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name UpdateNvmfNamespace
+   * @request POST:/update-nvmf-namespace
+   * @secure
+   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateNvmfNamespace {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfNamespaceUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name DeleteNvmfNamespace
+   * @request POST:/delete-nvmf-namespace
+   * @secure
+   * @response `200` `(WithTaskDeleteNvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteNvmfNamespace {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfNamespaceDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteNvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name CloneNvmfNamespaceFromSnapshot
+   * @request POST:/clone-nvmf-namespace-from-snapshot
+   * @secure
+   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CloneNvmfNamespaceFromSnapshot {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfNamespaceCloneParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name RollbackNvmfNamespaceFromSnapshot
+   * @request POST:/rollback-nvmf-namespace-from-snapshot
+   * @secure
+   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RollbackNvmfNamespaceFromSnapshot {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfNamespaceRollbackParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name GetNvmfNamespaces
+   * @request POST:/get-nvmf-namespaces
+   * @secure
+   * @response `200` `(NvmfNamespace)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetNvmfNamespaces {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetNvmfNamespacesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = NvmfNamespace[];
+  }
+  /**
+   * No description
+   * @tags NvmfNamespace
+   * @name GetNvmfNamespacesConnection
+   * @request POST:/get-nvmf-namespaces-connection
+   * @secure
+   * @response `200` `NvmfNamespaceConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetNvmfNamespacesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetNvmfNamespacesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = NvmfNamespaceConnection;
+  }
+}
+
+export namespace NvmfSubsystem {
+  /**
+   * No description
+   * @tags NvmfSubsystem
+   * @name CreateNvmfSubsystem
+   * @request POST:/create-nvmf-subsystem
+   * @secure
+   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateNvmfSubsystem {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfSubsystemCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfSubsystem[];
+  }
+  /**
+   * No description
+   * @tags NvmfSubsystem
+   * @name UpdateNvmfSubsystem
+   * @request POST:/update-nvmf-subsystem
+   * @secure
+   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateNvmfSubsystem {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfSubsystemUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskNvmfSubsystem[];
+  }
+  /**
+   * No description
+   * @tags NvmfSubsystem
+   * @name DeleteNvmfSubsystem
+   * @request POST:/delete-nvmf-subsystem
+   * @secure
+   * @response `200` `(WithTaskDeleteNvmfSubsystem)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteNvmfSubsystem {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = NvmfSubsystemDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteNvmfSubsystem[];
+  }
   /**
    * No description
    * @tags NvmfSubsystem
@@ -32223,9 +29036,6 @@ export namespace GetNvmfSubsystems {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = NvmfSubsystem[];
   }
-}
-
-export namespace GetNvmfSubsystemsConnection {
   /**
    * No description
    * @tags NvmfSubsystem
@@ -32246,7 +29056,61 @@ export namespace GetNvmfSubsystemsConnection {
   }
 }
 
-export namespace GetOrganizations {
+export namespace Organization {
+  /**
+   * No description
+   * @tags Organization
+   * @name CreateOrganization
+   * @request POST:/create-organization
+   * @secure
+   * @response `200` `(WithTaskOrganization)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateOrganization {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = OrganizationCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskOrganization[];
+  }
+  /**
+   * No description
+   * @tags Organization
+   * @name UpdateOrganization
+   * @request POST:/update-organization
+   * @secure
+   * @response `200` `(WithTaskOrganization)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateOrganization {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = OrganizationUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskOrganization[];
+  }
+  /**
+   * No description
+   * @tags Organization
+   * @name DeleteOrganization
+   * @request POST:/delete-organization
+   * @secure
+   * @response `200` `(WithTaskDeleteOrganization)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteOrganization {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = OrganizationDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteOrganization[];
+  }
   /**
    * No description
    * @tags Organization
@@ -32265,9 +29129,6 @@ export namespace GetOrganizations {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Organization[];
   }
-}
-
-export namespace GetOrganizationsConnection {
   /**
    * No description
    * @tags Organization
@@ -32288,49 +29149,61 @@ export namespace GetOrganizationsConnection {
   }
 }
 
-export namespace GetPmemDimms {
+export namespace RackTopo {
   /**
    * No description
-   * @tags PmemDimm
-   * @name GetPmemDimms
-   * @request POST:/get-pmem-dimms
+   * @tags RackTopo
+   * @name CreateRackTopo
+   * @request POST:/create-rack-topo
    * @secure
-   * @response `200` `(PmemDimm)[]` Ok
+   * @response `200` `(WithTaskRackTopo)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetPmemDimms {
+  export namespace CreateRackTopo {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetPmemDimmsRequestBody;
+    export type RequestBody = RackTopoCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = PmemDimm[];
+    export type ResponseBody = WithTaskRackTopo[];
   }
-}
-
-export namespace GetPmemDimmsConnection {
   /**
    * No description
-   * @tags PmemDimm
-   * @name GetPmemDimmsConnection
-   * @request POST:/get-pmem-dimms-connection
+   * @tags RackTopo
+   * @name UpdateRackTopo
+   * @request POST:/update-rack-topo
    * @secure
-   * @response `200` `PmemDimmConnection` Ok
+   * @response `200` `(WithTaskRackTopo)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetPmemDimmsConnection {
+  export namespace UpdateRackTopo {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetPmemDimmsConnectionRequestBody;
+    export type RequestBody = RackTopoUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = PmemDimmConnection;
+    export type ResponseBody = WithTaskRackTopo[];
   }
-}
-
-export namespace GetRackTopoes {
+  /**
+   * No description
+   * @tags RackTopo
+   * @name DeleteRackTopo
+   * @request POST:/delete-rack-topo
+   * @secure
+   * @response `200` `(WithTaskDeleteRackTopo)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteRackTopo {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = RackTopoDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteRackTopo[];
+  }
   /**
    * No description
    * @tags RackTopo
@@ -32349,9 +29222,6 @@ export namespace GetRackTopoes {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = RackTopo[];
   }
-}
-
-export namespace GetRackTopoesConnection {
   /**
    * No description
    * @tags RackTopo
@@ -32372,49 +29242,190 @@ export namespace GetRackTopoesConnection {
   }
 }
 
-export namespace GetReportTasks {
+export namespace GlobalSettings {
   /**
    * No description
-   * @tags ReportTask
-   * @name GetReportTasks
-   * @request POST:/get-report-tasks
+   * @tags GlobalSettings
+   * @name UpdateGlobalRecycleBinSetting
+   * @request POST:/update-global-recycle-bin-setting
    * @secure
-   * @response `200` `(ReportTask)[]` Ok
+   * @response `200` `WithTaskGlobalSettings` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetReportTasks {
+  export namespace UpdateGlobalRecycleBinSetting {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetReportTasksRequestBody;
+    export type RequestBody = GlobalRecycleBinUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ReportTask[];
+    export type ResponseBody = WithTaskGlobalSettings;
   }
-}
-
-export namespace GetReportTasksConnection {
   /**
    * No description
-   * @tags ReportTask
-   * @name GetReportTasksConnection
-   * @request POST:/get-report-tasks-connection
+   * @tags GlobalSettings
+   * @name CreateClusterRecycleBinSetting
+   * @request POST:/create-cluster-recycle-bin-setting
    * @secure
-   * @response `200` `ReportTaskConnection` Ok
+   * @response `200` `(WithTaskClusterSettings)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetReportTasksConnection {
+  export namespace CreateClusterRecycleBinSetting {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetReportTasksConnectionRequestBody;
+    export type RequestBody = ClusterRecycleBinCreationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = ReportTaskConnection;
+    export type ResponseBody = WithTaskClusterSettings[];
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name UpdateClusterRecycleBinSetting
+   * @request POST:/update-cluster-recycle-bin-setting
+   * @secure
+   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateClusterRecycleBinSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterRecycleBinUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskClusterSettings[];
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name DeleteClusterRecycleBinSetting
+   * @request POST:/delete-cluster-recycle-bin-setting
+   * @secure
+   * @response `200` `(WithTaskDeleteClusterRecycleBin)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteClusterRecycleBinSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterRecycleBinDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteClusterRecycleBin[];
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name GetGlobalSettingses
+   * @request POST:/get-global-settingses
+   * @secure
+   * @response `200` `(GlobalSettings)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGlobalSettingses {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGlobalSettingsesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = GlobalSettings[];
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name GetGlobalSettingsesConnection
+   * @request POST:/get-global-settingses-connection
+   * @secure
+   * @response `200` `GlobalSettingsConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetGlobalSettingsesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetGlobalSettingsesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = GlobalSettingsConnection;
   }
 }
 
-export namespace GetReportTemplates {
+export namespace ReportTemplate {
+  /**
+   * No description
+   * @tags ReportTemplate
+   * @name CreateReportTemplate
+   * @request POST:/create-report-template
+   * @secure
+   * @response `200` `(WithTaskReportTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateReportTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ReportTemplateCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskReportTemplate[];
+  }
+  /**
+   * No description
+   * @tags ReportTemplate
+   * @name UpdateReportTemplate
+   * @request POST:/update-report-template
+   * @secure
+   * @response `200` `(WithTaskReportTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateReportTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ReportTemplateUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskReportTemplate[];
+  }
+  /**
+   * No description
+   * @tags ReportTemplate
+   * @name GenerateFromReportTemplate
+   * @request POST:/generate-from-report-template
+   * @secure
+   * @response `200` `(WithTaskReportTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GenerateFromReportTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ReporteTemplateGenerationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskReportTask[];
+  }
+  /**
+   * No description
+   * @tags ReportTemplate
+   * @name DeleteReportTemplate
+   * @request POST:/delete-report-template
+   * @secure
+   * @response `200` `(WithTaskDeleteReportTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteReportTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ReportTemplateDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteReportTemplate[];
+  }
   /**
    * No description
    * @tags ReportTemplate
@@ -32433,9 +29444,6 @@ export namespace GetReportTemplates {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = ReportTemplate[];
   }
-}
-
-export namespace GetReportTemplatesConnection {
   /**
    * No description
    * @tags ReportTemplate
@@ -32456,511 +29464,61 @@ export namespace GetReportTemplatesConnection {
   }
 }
 
-export namespace GetSecurityPolicies {
+export namespace UserRoleNext {
   /**
    * No description
-   * @tags SecurityPolicy
-   * @name GetSecurityPolicies
-   * @request POST:/get-security-policies
+   * @tags UserRoleNext
+   * @name CreateRole
+   * @request POST:/create-role
    * @secure
-   * @response `200` `(SecurityPolicy)[]` Ok
+   * @response `200` `(WithTaskUserRoleNext)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetSecurityPolicies {
+  export namespace CreateRole {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetSecurityPoliciesRequestBody;
+    export type RequestBody = RoleCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SecurityPolicy[];
+    export type ResponseBody = WithTaskUserRoleNext[];
   }
-}
-
-export namespace GetSecurityPoliciesConnection {
   /**
    * No description
-   * @tags SecurityPolicy
-   * @name GetSecurityPoliciesConnection
-   * @request POST:/get-security-policies-connection
+   * @tags UserRoleNext
+   * @name UpdateRole
+   * @request POST:/update-role
    * @secure
-   * @response `200` `SecurityPolicyConnection` Ok
+   * @response `200` `(WithTaskUserRoleNext)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetSecurityPoliciesConnection {
+  export namespace UpdateRole {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetSecurityPoliciesConnectionRequestBody;
+    export type RequestBody = RoleUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SecurityPolicyConnection;
+    export type ResponseBody = WithTaskUserRoleNext[];
   }
-}
-
-export namespace GetSnapshotGroups {
   /**
    * No description
-   * @tags SnapshotGroup
-   * @name GetSnapshotGroups
-   * @request POST:/get-snapshot-groups
+   * @tags UserRoleNext
+   * @name DeleteRole
+   * @request POST:/delete-role
    * @secure
-   * @response `200` `(SnapshotGroup)[]` Ok
+   * @response `200` `(WithTaskDeleteRole)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetSnapshotGroups {
+  export namespace DeleteRole {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetSnapshotGroupsRequestBody;
+    export type RequestBody = RoleDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotGroup[];
+    export type ResponseBody = WithTaskDeleteRole[];
   }
-}
-
-export namespace GetSnapshotGroupsConnection {
-  /**
-   * No description
-   * @tags SnapshotGroup
-   * @name GetSnapshotGroupsConnection
-   * @request POST:/get-snapshot-groups-connection
-   * @secure
-   * @response `200` `SnapshotGroupConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnapshotGroupsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnapshotGroupsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotGroupConnection;
-  }
-}
-
-export namespace GetSnapshotPlans {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name GetSnapshotPlans
-   * @request POST:/get-snapshot-plans
-   * @secure
-   * @response `200` `(SnapshotPlan)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnapshotPlans {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnapshotPlansRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotPlan[];
-  }
-}
-
-export namespace GetSnapshotPlansConnection {
-  /**
-   * No description
-   * @tags SnapshotPlan
-   * @name GetSnapshotPlansConnection
-   * @request POST:/get-snapshot-plans-connection
-   * @secure
-   * @response `200` `SnapshotPlanConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnapshotPlansConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnapshotPlansConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotPlanConnection;
-  }
-}
-
-export namespace GetSnapshotPlanTasks {
-  /**
-   * No description
-   * @tags SnapshotPlanTask
-   * @name GetSnapshotPlanTasks
-   * @request POST:/get-snapshot-plan-tasks
-   * @secure
-   * @response `200` `(SnapshotPlanTask)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnapshotPlanTasks {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnapshotPlanTasksRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotPlanTask[];
-  }
-}
-
-export namespace GetSnapshotPlanTasksConnection {
-  /**
-   * No description
-   * @tags SnapshotPlanTask
-   * @name GetSnapshotPlanTasksConnection
-   * @request POST:/get-snapshot-plan-tasks-connection
-   * @secure
-   * @response `200` `SnapshotPlanTaskConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnapshotPlanTasksConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnapshotPlanTasksConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnapshotPlanTaskConnection;
-  }
-}
-
-export namespace GetSnmpTransports {
-  /**
-   * No description
-   * @tags SnmpTransport
-   * @name GetSnmpTransports
-   * @request POST:/get-snmp-transports
-   * @secure
-   * @response `200` `(SnmpTransport)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnmpTransports {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnmpTransportsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnmpTransport[];
-  }
-}
-
-export namespace GetSnmpTransportsConnection {
-  /**
-   * No description
-   * @tags SnmpTransport
-   * @name GetSnmpTransportsConnection
-   * @request POST:/get-snmp-transports-connection
-   * @secure
-   * @response `200` `SnmpTransportConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnmpTransportsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnmpTransportsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnmpTransportConnection;
-  }
-}
-
-export namespace GetSnmpTrapReceivers {
-  /**
-   * No description
-   * @tags SnmpTrapReceiver
-   * @name GetSnmpTrapReceivers
-   * @request POST:/get-snmp-trap-receivers
-   * @secure
-   * @response `200` `(SnmpTrapReceiver)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnmpTrapReceivers {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnmpTrapReceiversRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnmpTrapReceiver[];
-  }
-}
-
-export namespace GetSnmpTrapReceiversConnection {
-  /**
-   * No description
-   * @tags SnmpTrapReceiver
-   * @name GetSnmpTrapReceiversConnection
-   * @request POST:/get-snmp-trap-receivers-connection
-   * @secure
-   * @response `200` `SnmpTrapReceiverConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSnmpTrapReceiversConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSnmpTrapReceiversConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SnmpTrapReceiverConnection;
-  }
-}
-
-export namespace GetSvtImages {
-  /**
-   * No description
-   * @tags SvtImage
-   * @name GetSvtImages
-   * @request POST:/get-svt-images
-   * @secure
-   * @response `200` `(SvtImage)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSvtImages {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSvtImagesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SvtImage[];
-  }
-}
-
-export namespace GetSvtImagesConnection {
-  /**
-   * No description
-   * @tags SvtImage
-   * @name GetSvtImagesConnection
-   * @request POST:/get-svt-images-connection
-   * @secure
-   * @response `200` `SvtImageConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSvtImagesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSvtImagesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SvtImageConnection;
-  }
-}
-
-export namespace GetSystemAuditLogs {
-  /**
-   * No description
-   * @tags SystemAuditLog
-   * @name GetSystemAuditLogs
-   * @request POST:/get-system-audit-logs
-   * @secure
-   * @response `200` `(SystemAuditLog)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSystemAuditLogs {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSystemAuditLogsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SystemAuditLog[];
-  }
-}
-
-export namespace GetSystemAuditLogsConnection {
-  /**
-   * No description
-   * @tags SystemAuditLog
-   * @name GetSystemAuditLogsConnection
-   * @request POST:/get-system-audit-logs-connection
-   * @secure
-   * @response `200` `SystemAuditLogConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSystemAuditLogsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSystemAuditLogsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SystemAuditLogConnection;
-  }
-}
-
-export namespace GetTasks {
-  /**
-   * No description
-   * @tags Task
-   * @name GetTasks
-   * @request POST:/get-tasks
-   * @secure
-   * @response `200` `(Task)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetTasks {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetTasksRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Task[];
-  }
-}
-
-export namespace GetTasksConnection {
-  /**
-   * No description
-   * @tags Task
-   * @name GetTasksConnection
-   * @request POST:/get-tasks-connection
-   * @secure
-   * @response `200` `TaskConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetTasksConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetTasksConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = TaskConnection;
-  }
-}
-
-export namespace GetUploadTasks {
-  /**
-   * No description
-   * @tags UploadTask
-   * @name GetUploadTasks
-   * @request POST:/get-upload-tasks
-   * @secure
-   * @response `200` `(UploadTask)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUploadTasks {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUploadTasksRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UploadTask[];
-  }
-}
-
-export namespace GetUploadTasksConnection {
-  /**
-   * No description
-   * @tags UploadTask
-   * @name GetUploadTasksConnection
-   * @request POST:/get-upload-tasks-connection
-   * @secure
-   * @response `200` `UploadTaskConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUploadTasksConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUploadTasksConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UploadTaskConnection;
-  }
-}
-
-export namespace GetUsbDevices {
-  /**
-   * No description
-   * @tags UsbDevice
-   * @name GetUsbDevices
-   * @request POST:/get-usb-devices
-   * @secure
-   * @response `200` `(UsbDevice)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUsbDevices {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUsbDevicesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UsbDevice[];
-  }
-}
-
-export namespace GetUsbDevicesConnection {
-  /**
-   * No description
-   * @tags UsbDevice
-   * @name GetUsbDevicesConnection
-   * @request POST:/get-usb-devices-connection
-   * @secure
-   * @response `200` `UsbDeviceConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUsbDevicesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUsbDevicesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UsbDeviceConnection;
-  }
-}
-
-export namespace GetUserAuditLogs {
-  /**
-   * No description
-   * @tags UserAuditLog
-   * @name GetUserAuditLogs
-   * @request POST:/get-user-audit-logs
-   * @secure
-   * @response `200` `(UserAuditLog)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUserAuditLogs {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUserAuditLogsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UserAuditLog[];
-  }
-}
-
-export namespace GetUserAuditLogsConnection {
-  /**
-   * No description
-   * @tags UserAuditLog
-   * @name GetUserAuditLogsConnection
-   * @request POST:/get-user-audit-logs-connection
-   * @secure
-   * @response `200` `UserAuditLogConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUserAuditLogsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUserAuditLogsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UserAuditLogConnection;
-  }
-}
-
-export namespace GetUserRoleNexts {
   /**
    * No description
    * @tags UserRoleNext
@@ -32979,9 +29537,6 @@ export namespace GetUserRoleNexts {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = UserRoleNext[];
   }
-}
-
-export namespace GetUserRoleNextsConnection {
   /**
    * No description
    * @tags UserRoleNext
@@ -33002,7 +29557,614 @@ export namespace GetUserRoleNextsConnection {
   }
 }
 
-export namespace GetUsers {
+export namespace SnapshotGroup {
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name RollbackSnapshotGroup
+   * @request POST:/rollback-snapshot-group
+   * @secure
+   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RollbackSnapshotGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotGroupRollbackParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotGroup[];
+  }
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name CloneSnapshotGroup
+   * @request POST:/clone-snapshot-group
+   * @secure
+   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CloneSnapshotGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotGroupCloneParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotGroup[];
+  }
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name KeepSnapshotGroup
+   * @request POST:/keep-snapshot-group
+   * @secure
+   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace KeepSnapshotGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotGroupKeepParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotGroup[];
+  }
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name DeleteSnapshotGroup
+   * @request POST:/delete-snapshot-group
+   * @secure
+   * @response `200` `(WithTaskDeleteSnapshotGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteSnapshotGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotGroupDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteSnapshotGroup[];
+  }
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name GetSnapshotGroups
+   * @request POST:/get-snapshot-groups
+   * @secure
+   * @response `200` `(SnapshotGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotGroups {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotGroupsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotGroup[];
+  }
+  /**
+   * No description
+   * @tags SnapshotGroup
+   * @name GetSnapshotGroupsConnection
+   * @request POST:/get-snapshot-groups-connection
+   * @secure
+   * @response `200` `SnapshotGroupConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotGroupsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotGroupsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotGroupConnection;
+  }
+}
+
+export namespace SnapshotPlan {
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name CreateSnapshotPlan
+   * @request POST:/create-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name UpdateSnapshotPlan
+   * @request POST:/update-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name DeleteSnapshotPlan
+   * @request POST:/delete-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskDeleteSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name ExecuteSnapshotPlan
+   * @request POST:/execute-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ExecuteSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanExecutionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name SuspendSnapshotPlan
+   * @request POST:/suspend-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace SuspendSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanSuspendedParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name ResumeSnapshotPlan
+   * @request POST:/resume-snapshot-plan
+   * @secure
+   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ResumeSnapshotPlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnapshotPlanResumeParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name GetSnapshotPlans
+   * @request POST:/get-snapshot-plans
+   * @secure
+   * @response `200` `(SnapshotPlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotPlans {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotPlansRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotPlan[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlan
+   * @name GetSnapshotPlansConnection
+   * @request POST:/get-snapshot-plans-connection
+   * @secure
+   * @response `200` `SnapshotPlanConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotPlansConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotPlansConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotPlanConnection;
+  }
+}
+
+export namespace SnmpTransport {
+  /**
+   * No description
+   * @tags SnmpTransport
+   * @name CreateSnmpTransport
+   * @request POST:/create-snmp-transport
+   * @secure
+   * @response `200` `(WithTaskSnmpTransport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateSnmpTransport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTransportCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnmpTransport[];
+  }
+  /**
+   * No description
+   * @tags SnmpTransport
+   * @name UpdateSnmpTransport
+   * @request POST:/update-snmp-transport
+   * @secure
+   * @response `200` `(WithTaskSnmpTransport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateSnmpTransport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTransportUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnmpTransport[];
+  }
+  /**
+   * No description
+   * @tags SnmpTransport
+   * @name DeleteSnmpTransport
+   * @request POST:/delete-snmp-transport
+   * @secure
+   * @response `200` `(WithTaskDeleteSnmpTransport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteSnmpTransport {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTransportDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteSnmpTransport[];
+  }
+  /**
+   * No description
+   * @tags SnmpTransport
+   * @name GetSnmpTransports
+   * @request POST:/get-snmp-transports
+   * @secure
+   * @response `200` `(SnmpTransport)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnmpTransports {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnmpTransportsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnmpTransport[];
+  }
+  /**
+   * No description
+   * @tags SnmpTransport
+   * @name GetSnmpTransportsConnection
+   * @request POST:/get-snmp-transports-connection
+   * @secure
+   * @response `200` `SnmpTransportConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnmpTransportsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnmpTransportsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnmpTransportConnection;
+  }
+}
+
+export namespace SnmpTrapReceiver {
+  /**
+   * No description
+   * @tags SnmpTrapReceiver
+   * @name CreateSnmpTrapReceiver
+   * @request POST:/create-snmp-trap-receiver
+   * @secure
+   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateSnmpTrapReceiver {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTrapReceiverCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnmpTrapReceiver[];
+  }
+  /**
+   * No description
+   * @tags SnmpTrapReceiver
+   * @name UpdateSnmpTrapReceiver
+   * @request POST:/update-snmp-trap-receiver
+   * @secure
+   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateSnmpTrapReceiver {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTrapReceiverUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskSnmpTrapReceiver[];
+  }
+  /**
+   * No description
+   * @tags SnmpTrapReceiver
+   * @name DeleteSnmpTrapReceiver
+   * @request POST:/delete-snmp-trap-receiver
+   * @secure
+   * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteSnmpTrapReceiver {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = SnmpTrapReceiverDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteSnmpTrapReceiver[];
+  }
+  /**
+   * No description
+   * @tags SnmpTrapReceiver
+   * @name GetSnmpTrapReceivers
+   * @request POST:/get-snmp-trap-receivers
+   * @secure
+   * @response `200` `(SnmpTrapReceiver)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnmpTrapReceivers {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnmpTrapReceiversRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnmpTrapReceiver[];
+  }
+  /**
+   * No description
+   * @tags SnmpTrapReceiver
+   * @name GetSnmpTrapReceiversConnection
+   * @request POST:/get-snmp-trap-receivers-connection
+   * @secure
+   * @response `200` `SnmpTrapReceiverConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnmpTrapReceiversConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnmpTrapReceiversConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnmpTrapReceiverConnection;
+  }
+}
+
+export namespace UsbDevice {
+  /**
+   * No description
+   * @tags UsbDevice
+   * @name MountUsbDevice
+   * @request POST:/mount-usb-device
+   * @secure
+   * @response `200` `(WithTaskUsbDevice)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace MountUsbDevice {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UsbDeviceMountParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskUsbDevice[];
+  }
+  /**
+   * No description
+   * @tags UsbDevice
+   * @name UnmountUsbDevice
+   * @request POST:/unmount-usb-device
+   * @secure
+   * @response `200` `(WithTaskUsbDevice)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UnmountUsbDevice {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UsbDeviceUnmountParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskUsbDevice[];
+  }
+  /**
+   * No description
+   * @tags UsbDevice
+   * @name GetUsbDevices
+   * @request POST:/get-usb-devices
+   * @secure
+   * @response `200` `(UsbDevice)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUsbDevices {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUsbDevicesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UsbDevice[];
+  }
+  /**
+   * No description
+   * @tags UsbDevice
+   * @name GetUsbDevicesConnection
+   * @request POST:/get-usb-devices-connection
+   * @secure
+   * @response `200` `UsbDeviceConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUsbDevicesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUsbDevicesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UsbDeviceConnection;
+  }
+}
+
+export namespace User {
+  /**
+   * No description
+   * @tags User
+   * @name Login
+   * @request POST:/login
+   * @response `200` `WithTaskTokenString` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace Login {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = LoginInput;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskTokenString;
+  }
+  /**
+   * No description
+   * @tags User
+   * @name CreateUser
+   * @request POST:/create-user
+   * @secure
+   * @response `200` `(WithTaskUser)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateUser {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UserCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskUser[];
+  }
+  /**
+   * No description
+   * @tags User
+   * @name UpdateUser
+   * @request POST:/update-user
+   * @secure
+   * @response `200` `(WithTaskUser)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateUser {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UserUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskUser[];
+  }
+  /**
+   * No description
+   * @tags User
+   * @name DeleteUser
+   * @request POST:/delete-user
+   * @secure
+   * @response `200` `(WithTaskDeleteUser)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteUser {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UserDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteUser[];
+  }
+  /**
+   * No description
+   * @tags User
+   * @name CreateRootUser
+   * @request POST:/create-root-user
+   * @response `200` `WithTaskUser` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateRootUser {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = RootUserCreationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskUser;
+  }
   /**
    * No description
    * @tags User
@@ -33021,9 +30183,6 @@ export namespace GetUsers {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = User[];
   }
-}
-
-export namespace GetUsersConnection {
   /**
    * No description
    * @tags User
@@ -33044,49 +30203,97 @@ export namespace GetUsersConnection {
   }
 }
 
-export namespace GetVcenterAccounts {
+export namespace Vds {
   /**
    * No description
-   * @tags VcenterAccount
-   * @name GetVcenterAccounts
-   * @request POST:/get-vcenter-accounts
+   * @tags Vds
+   * @name CreateVdsWithMigrateVlan
+   * @request POST:/create-vds-with-migrate-vlan
    * @secure
-   * @response `200` `(VcenterAccount)[]` Ok
+   * @response `200` `(WithTaskVds)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVcenterAccounts {
+  export namespace CreateVdsWithMigrateVlan {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVcenterAccountsRequestBody;
+    export type RequestBody = VdsCreationWithMigrateVlanParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VcenterAccount[];
+    export type ResponseBody = WithTaskVds[];
   }
-}
-
-export namespace GetVcenterAccountsConnection {
   /**
    * No description
-   * @tags VcenterAccount
-   * @name GetVcenterAccountsConnection
-   * @request POST:/get-vcenter-accounts-connection
+   * @tags Vds
+   * @name CreateVdsWithAccessVlan
+   * @request POST:/create-vds-with-access-vlan
    * @secure
-   * @response `200` `VcenterAccountConnection` Ok
+   * @response `200` `(WithTaskVds)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVcenterAccountsConnection {
+  export namespace CreateVdsWithAccessVlan {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVcenterAccountsConnectionRequestBody;
+    export type RequestBody = VdsCreationWithMAccessVlanParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VcenterAccountConnection;
+    export type ResponseBody = WithTaskVds[];
   }
-}
-
-export namespace GetVdses {
+  /**
+   * No description
+   * @tags Vds
+   * @name CreateVds
+   * @request POST:/create-vds
+   * @secure
+   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVds {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VdsCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVds[];
+  }
+  /**
+   * No description
+   * @tags Vds
+   * @name UpdateVds
+   * @request POST:/update-vds
+   * @secure
+   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVds {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VdsUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVds[];
+  }
+  /**
+   * No description
+   * @tags Vds
+   * @name DeleteVds
+   * @request POST:/delete-vds
+   * @secure
+   * @response `200` `(WithTaskDeleteVds)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVds {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VdsDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVds[];
+  }
   /**
    * No description
    * @tags Vds
@@ -33105,9 +30312,6 @@ export namespace GetVdses {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Vds[];
   }
-}
-
-export namespace GetVdsesConnection {
   /**
    * No description
    * @tags Vds
@@ -33128,7 +30332,61 @@ export namespace GetVdsesConnection {
   }
 }
 
-export namespace GetViews {
+export namespace View {
+  /**
+   * No description
+   * @tags View
+   * @name CreateView
+   * @request POST:/create-view
+   * @secure
+   * @response `200` `(WithTaskView)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateView {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ViewCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskView[];
+  }
+  /**
+   * No description
+   * @tags View
+   * @name UpdateView
+   * @request POST:/update-view
+   * @secure
+   * @response `200` `(WithTaskView)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateView {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ViewUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskView[];
+  }
+  /**
+   * No description
+   * @tags View
+   * @name DeleteView
+   * @request POST:/delete-view
+   * @secure
+   * @response `200` `(WithTaskDeleteView)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteView {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ViewDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteView[];
+  }
   /**
    * No description
    * @tags View
@@ -33147,9 +30405,6 @@ export namespace GetViews {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = View[];
   }
-}
-
-export namespace GetViewsConnection {
   /**
    * No description
    * @tags View
@@ -33170,7 +30425,97 @@ export namespace GetViewsConnection {
   }
 }
 
-export namespace GetVlans {
+export namespace Vlan {
+  /**
+   * No description
+   * @tags Vlan
+   * @name CreateVmVlan
+   * @request POST:/create-vm-vlan
+   * @secure
+   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVmVlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVlanCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVlan[];
+  }
+  /**
+   * No description
+   * @tags Vlan
+   * @name UpdateVlan
+   * @request POST:/update-vm-vlan
+   * @secure
+   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVlanUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVlan[];
+  }
+  /**
+   * No description
+   * @tags Vlan
+   * @name UpdateManagementVlan
+   * @request POST:/update-management-vlan
+   * @secure
+   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateManagementVlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ManagementVlanUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVlan[];
+  }
+  /**
+   * No description
+   * @tags Vlan
+   * @name UpdateMigrationVlan
+   * @request POST:/update-migration-vlan
+   * @secure
+   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateMigrationVlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = MigrationVlanUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVlan[];
+  }
+  /**
+   * No description
+   * @tags Vlan
+   * @name DeleteVlan
+   * @request POST:/delete-vm-vlan
+   * @secure
+   * @response `200` `(WithTaskDeleteVlan)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVlan {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VlanDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVlan[];
+  }
   /**
    * No description
    * @tags Vlan
@@ -33189,9 +30534,6 @@ export namespace GetVlans {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Vlan[];
   }
-}
-
-export namespace GetVlansConnection {
   /**
    * No description
    * @tags Vlan
@@ -33212,91 +30554,61 @@ export namespace GetVlansConnection {
   }
 }
 
-export namespace GetVmDisks {
+export namespace VmFolder {
   /**
    * No description
-   * @tags VmDisk
-   * @name GetVmDisks
-   * @request POST:/get-vm-disks
+   * @tags VmFolder
+   * @name CreateVmFolder
+   * @request POST:/create-vm-folder
    * @secure
-   * @response `200` `(VmDisk)[]` Ok
+   * @response `200` `(WithTaskVmFolder)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmDisks {
+  export namespace CreateVmFolder {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmDisksRequestBody;
+    export type RequestBody = VmFolderCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmDisk[];
+    export type ResponseBody = WithTaskVmFolder[];
   }
-}
-
-export namespace GetVmDisksConnection {
   /**
    * No description
-   * @tags VmDisk
-   * @name GetVmDisksConnection
-   * @request POST:/get-vm-disks-connection
+   * @tags VmFolder
+   * @name UpdateVmFolder
+   * @request POST:/update-vm-folder
    * @secure
-   * @response `200` `VmDiskConnection` Ok
+   * @response `200` `(WithTaskVmFolder)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmDisksConnection {
+  export namespace UpdateVmFolder {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmDisksConnectionRequestBody;
+    export type RequestBody = VmFolderUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmDiskConnection;
+    export type ResponseBody = WithTaskVmFolder[];
   }
-}
-
-export namespace GetVmEntityFilterResults {
   /**
    * No description
-   * @tags VmEntityFilterResult
-   * @name GetVmEntityFilterResults
-   * @request POST:/get-vm-entity-filter-results
+   * @tags VmFolder
+   * @name DeleteVmFolder
+   * @request POST:/delete-vm-folder
    * @secure
-   * @response `200` `(VmEntityFilterResult)[]` Ok
+   * @response `200` `(WithTaskDeleteVmFolder)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmEntityFilterResults {
+  export namespace DeleteVmFolder {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmEntityFilterResultsRequestBody;
+    export type RequestBody = VmFolderDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmEntityFilterResult[];
+    export type ResponseBody = WithTaskDeleteVmFolder[];
   }
-}
-
-export namespace GetVmEntityFilterResultsConnection {
-  /**
-   * No description
-   * @tags VmEntityFilterResult
-   * @name GetVmEntityFilterResultsConnection
-   * @request POST:/get-vm-entity-filter-results-connection
-   * @secure
-   * @response `200` `VmEntityFilterResultConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVmEntityFilterResultsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVmEntityFilterResultsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmEntityFilterResultConnection;
-  }
-}
-
-export namespace GetVmFolders {
   /**
    * No description
    * @tags VmFolder
@@ -33315,9 +30627,6 @@ export namespace GetVmFolders {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmFolder[];
   }
-}
-
-export namespace GetVmFoldersConnection {
   /**
    * No description
    * @tags VmFolder
@@ -33338,49 +30647,61 @@ export namespace GetVmFoldersConnection {
   }
 }
 
-export namespace GetVmNics {
+export namespace VmPlacementGroup {
   /**
    * No description
-   * @tags VmNic
-   * @name GetVmNics
-   * @request POST:/get-vm-nics
+   * @tags VmPlacementGroup
+   * @name CreateVmPlacementGroup
+   * @request POST:/create-vm-placement-group
    * @secure
-   * @response `200` `(VmNic)[]` Ok
+   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmNics {
+  export namespace CreateVmPlacementGroup {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmNicsRequestBody;
+    export type RequestBody = VmPlacementGroupCreationParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmNic[];
+    export type ResponseBody = WithTaskVmPlacementGroup[];
   }
-}
-
-export namespace GetVmNicsConnection {
   /**
    * No description
-   * @tags VmNic
-   * @name GetVmNicsConnection
-   * @request POST:/get-vm-nics-connection
+   * @tags VmPlacementGroup
+   * @name UpdateVmPlacementGroup
+   * @request POST:/update-vm-placement-group
    * @secure
-   * @response `200` `VmNicConnection` Ok
+   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmNicsConnection {
+  export namespace UpdateVmPlacementGroup {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmNicsConnectionRequestBody;
+    export type RequestBody = VmPlacementGroupUpdationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmNicConnection;
+    export type ResponseBody = WithTaskVmPlacementGroup[];
   }
-}
-
-export namespace GetVmPlacementGroups {
+  /**
+   * No description
+   * @tags VmPlacementGroup
+   * @name DeleteVmPlacementGroup
+   * @request POST:/delete-vm-placement-group
+   * @secure
+   * @response `200` `(WithTaskDeleteVmPlacementGroup)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVmPlacementGroup {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmPlacementGroupDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVmPlacementGroup[];
+  }
   /**
    * No description
    * @tags VmPlacementGroup
@@ -33399,9 +30720,6 @@ export namespace GetVmPlacementGroups {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmPlacementGroup[];
   }
-}
-
-export namespace GetVmPlacementGroupsConnection {
   /**
    * No description
    * @tags VmPlacementGroup
@@ -33422,49 +30740,43 @@ export namespace GetVmPlacementGroupsConnection {
   }
 }
 
-export namespace GetVms {
+export namespace VmSnapshot {
   /**
    * No description
-   * @tags Vm
-   * @name GetVms
-   * @request POST:/get-vms
+   * @tags VmSnapshot
+   * @name CreateVmSnapshot
+   * @request POST:/create-vm-snapshot
    * @secure
-   * @response `200` `(Vm)[]` Ok
+   * @response `200` `(WithTaskVmSnapshot)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVms {
+  export namespace CreateVmSnapshot {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmsRequestBody;
+    export type RequestBody = VmSnapshotCreationParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = Vm[];
+    export type ResponseBody = WithTaskVmSnapshot[];
   }
-}
-
-export namespace GetVmsConnection {
   /**
    * No description
-   * @tags Vm
-   * @name GetVmsConnection
-   * @request POST:/get-vms-connection
+   * @tags VmSnapshot
+   * @name DeleteVmSnapshot
+   * @request POST:/delete-vm-snapshot
    * @secure
-   * @response `200` `VmConnection` Ok
+   * @response `200` `(WithTaskDeleteVmSnapshot)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace GetVmsConnection {
+  export namespace DeleteVmSnapshot {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = GetVmsConnectionRequestBody;
+    export type RequestBody = VmSnapshotDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VmConnection;
+    export type ResponseBody = WithTaskDeleteVmSnapshot[];
   }
-}
-
-export namespace GetVmSnapshots {
   /**
    * No description
    * @tags VmSnapshot
@@ -33483,9 +30795,6 @@ export namespace GetVmSnapshots {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmSnapshot[];
   }
-}
-
-export namespace GetVmSnapshotsConnection {
   /**
    * No description
    * @tags VmSnapshot
@@ -33506,7 +30815,79 @@ export namespace GetVmSnapshotsConnection {
   }
 }
 
-export namespace GetVmTemplates {
+export namespace VmTemplate {
+  /**
+   * No description
+   * @tags VmTemplate
+   * @name CloneVmTemplateFromVm
+   * @request POST:/clone-vm-template-from-vm
+   * @secure
+   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CloneVmTemplateFromVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmTemplateCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmTemplate[];
+  }
+  /**
+   * No description
+   * @tags VmTemplate
+   * @name ConvertVmTemplateFromVm
+   * @request POST:/convert-vm-template-from-vm
+   * @secure
+   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ConvertVmTemplateFromVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmTemplateCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmTemplate[];
+  }
+  /**
+   * No description
+   * @tags VmTemplate
+   * @name UpdateVmTemplate
+   * @request POST:/update-vm-template
+   * @secure
+   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmTemplateUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmTemplate[];
+  }
+  /**
+   * No description
+   * @tags VmTemplate
+   * @name DeleteVmTemplate
+   * @request POST:/delete-vm-template
+   * @secure
+   * @response `200` `(WithTaskDeleteVmTemplate)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVmTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmTemplateDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVmTemplate[];
+  }
   /**
    * No description
    * @tags VmTemplate
@@ -33525,9 +30906,6 @@ export namespace GetVmTemplates {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmTemplate[];
   }
-}
-
-export namespace GetVmTemplatesConnection {
   /**
    * No description
    * @tags VmTemplate
@@ -33548,7 +30926,43 @@ export namespace GetVmTemplatesConnection {
   }
 }
 
-export namespace GetVmVolumes {
+export namespace VmVolume {
+  /**
+   * No description
+   * @tags VmVolume
+   * @name CreateVmVolume
+   * @request POST:/create-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVmVolume {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolume[];
+  }
+  /**
+   * No description
+   * @tags VmVolume
+   * @name DeleteVmVolumeFromVm
+   * @request POST:/delete-vm-volume
+   * @secure
+   * @response `200` `(WithTaskDeleteVmVolume)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVmVolumeFromVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVmVolume[];
+  }
   /**
    * No description
    * @tags VmVolume
@@ -33567,9 +30981,6 @@ export namespace GetVmVolumes {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmVolume[];
   }
-}
-
-export namespace GetVmVolumesConnection {
   /**
    * No description
    * @tags VmVolume
@@ -33590,7 +31001,2199 @@ export namespace GetVmVolumesConnection {
   }
 }
 
-export namespace GetVsphereEsxiAccounts {
+export namespace Vm {
+  /**
+   * No description
+   * @tags Vm
+   * @name CreateVm
+   * @request POST:/create-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name CreateVmFromTemplate
+   * @request POST:/create-vm-from-template
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVmFromTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmCreateVmFromTemplateParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ConvertVmTemplateToVm
+   * @request POST:/convert-vm-template-to-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ConvertVmTemplateToVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ConvertVmTemplateToVmParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name CloneVm
+   * @request POST:/clone-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CloneVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmCloneParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RebuildVm
+   * @request POST:/rebuild-vm-from-snapshot
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RebuildVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmRebuildParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RollbackVm
+   * @request POST:/rollback-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RollbackVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmRollbackParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVm
+   * @request POST:/update-vm-basic-info
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name MoveVmToRecycleBin
+   * @request POST:/move-vm-to-recycle
+   * @secure
+   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace MoveVmToRecycleBin {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RecoverVmFromRecycleBin
+   * @request POST:/recover-vm-from-recycle
+   * @secure
+   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RecoverVmFromRecycleBin {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name DeleteVm
+   * @request POST:/delete-vm
+   * @secure
+   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name StartVm
+   * @request POST:/start-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace StartVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmStartParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RestartVm
+   * @request POST:/restart-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RestartVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ForceRestartVm
+   * @request POST:/force-restart-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ForceRestartVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ShutDownVm
+   * @request POST:/shutdown-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ShutDownVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name PoweroffVm
+   * @request POST:/poweroff-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace PoweroffVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name SuspendVm
+   * @request POST:/suspend-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace SuspendVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ResumeVm
+   * @request POST:/resume-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ResumeVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name AddVmDisk
+   * @request POST:/add-vm-disk
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace AddVmDisk {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmAddDiskParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmDisk
+   * @request POST:/update-vm-disk
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmDisk {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateDiskParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ExpandVmDisk
+   * @request POST:/expand-vm-disk
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ExpandVmDisk {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmExpandVmDiskParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RemoveVmDisk
+   * @request POST:/remove-vm-disk
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RemoveVmDisk {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmRemoveDiskParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name AddVmCdRom
+   * @request POST:/add-vm-cd-rom
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace AddVmCdRom {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmAddCdRomParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RemoveVmCdRom
+   * @request POST:/remove-vm-cd-rom
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RemoveVmCdRom {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmRemoveCdRomParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name EjectIsoFromVmCdRom
+   * @request POST:/eject-iso-from-vm-cd-rom
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace EjectIsoFromVmCdRom {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmEjectCdRomParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ToggleVmCdRomDisable
+   * @request POST:/toggle-vm-cd-rom-disable
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ToggleVmCdRomDisable {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmToggleCdRomDisableParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name AddVmNic
+   * @request POST:/add-vm-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace AddVmNic {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmAddNicParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmNic
+   * @request POST:/update-vm-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmNic {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateNicParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmNicBasicInfo
+   * @request POST:/update-vm-nic-basic-info
+   * @secure
+   * @response `200` `({ task_id: any, data: any })[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmNicBasicInfo {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateNicBasicInfoParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = { task_id: any; data: any }[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmNicAdvanceInfo
+   * @request POST:/update-vm-nic-advance-info
+   * @secure
+   * @response `200` `({ task_id: any, data: any })[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmNicAdvanceInfo {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateNicAdvanceInfoParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = { task_id: any; data: any }[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RemoveVmNic
+   * @request POST:/remove-vm-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RemoveVmNic {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmRemoveNicParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name InstallVmtools
+   * @request POST:/install-vmtools
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace InstallVmtools {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = InstallVmtoolsParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name MigRateVm
+   * @request POST:/migrate-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace MigRateVm {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmMigrateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name AddVmToFolder
+   * @request POST:/add-vm-to-folder
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace AddVmToFolder {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmAddFolderParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name RemoveVmToFolder
+   * @request POST:/remove-vm-from-folder
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RemoveVmToFolder {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmOperateParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmAdvancedOptions
+   * @request POST:/update-vm-advanced-options
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmAdvancedOptions {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateAdvancedOptionsParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name GetVms
+   * @request POST:/get-vms
+   * @secure
+   * @response `200` `(Vm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVms {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Vm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name GetVmsConnection
+   * @request POST:/get-vms-connection
+   * @secure
+   * @response `200` `VmConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmConnection;
+  }
+}
+
+export namespace Metrics {
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetVmMetrics
+   * @request POST:/get-vm-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetVmNetWorkMetrics
+   * @request POST:/get-vm-network-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmNetWorkMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmNetWorkMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetDiskMetrics
+   * @request POST:/get-disk-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDiskMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDiskMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetVmVolumeMetrics
+   * @request POST:/get-vm-volume-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmVolumeMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmVolumeMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetLunMetrics
+   * @request POST:/get-lun-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetLunMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetLunMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetNvmfNamespaceMetrics
+   * @request POST:/get-nvmf-namespace-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetNvmfNamespaceMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetNvmfNamespaceMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetClusterMetrics
+   * @request POST:/get-cluster-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetHostMetrics
+   * @request POST:/get-host-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetHostMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetHostMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetHostNetworkMetrics
+   * @request POST:/get-host-network-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetHostNetworkMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetHostNetworkMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetHostServicekMetrics
+   * @request POST:/get-host-service-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetHostServicekMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetHostServiceMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetScvmMetrics
+   * @request POST:/get-scvm-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetScvmMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetScvmMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetScvmNetworkMetrics
+   * @request POST:/get-scvm-network-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetScvmNetworkMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetScvmNetworkInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetScvmServicekMetrics
+   * @request POST:/get-scvm-service-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetScvmServicekMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetScvmServiceMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetScvmDiskMetrics
+   * @request POST:/get-scvm-disk-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetScvmDiskMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSCVMDiskMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetZoneMetrics
+   * @request POST:/get-zone-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetZoneMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetZoneMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetWitnessMetrics
+   * @request POST:/get-witness-metrics
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetWitnessMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetWitnessMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+  /**
+   * No description
+   * @tags Metrics
+   * @name GetTopNVmVolumeMetrics
+   * @request POST:/get-top-n-metrics-in-clusters
+   * @secure
+   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetTopNVmVolumeMetrics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetTopNMetricInput;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskMetric[];
+  }
+}
+
+export namespace AlertNotifier {
+  /**
+   * No description
+   * @tags AlertNotifier
+   * @name GetAlertNotifiers
+   * @request POST:/get-alert-notifiers
+   * @secure
+   * @response `200` `(AlertNotifier)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlertNotifiers {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertNotifiersRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = AlertNotifier[];
+  }
+  /**
+   * No description
+   * @tags AlertNotifier
+   * @name GetAlertNotifiersConnection
+   * @request POST:/get-alert-notifiers-connection
+   * @secure
+   * @response `200` `AlertNotifierConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlertNotifiersConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertNotifiersConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = AlertNotifierConnection;
+  }
+  /**
+   * No description
+   * @tags AlertNotifier
+   * @name UpdateAlertNotifier
+   * @request POST:/update-alert-notifier
+   * @response `200` `WithTaskAlertNotifier` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateAlertNotifier {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = AlertNotifierUpdationParams;
+    export type RequestHeaders = {};
+    export type ResponseBody = WithTaskAlertNotifier;
+  }
+}
+
+export namespace AlertRule {
+  /**
+   * No description
+   * @tags AlertRule
+   * @name GetAlertRules
+   * @request POST:/get-alert-rules
+   * @secure
+   * @response `200` `(AlertRule)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlertRules {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertRulesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = AlertRule[];
+  }
+  /**
+   * No description
+   * @tags AlertRule
+   * @name GetAlertRulesConnection
+   * @request POST:/get-alert-rules-connection
+   * @secure
+   * @response `200` `AlertRuleConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetAlertRulesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetAlertRulesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = AlertRuleConnection;
+  }
+}
+
+export namespace Application {
+  /**
+   * No description
+   * @tags Application
+   * @name GetApplications
+   * @request POST:/get-applications
+   * @secure
+   * @response `200` `(Application)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetApplications {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetApplicationsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Application[];
+  }
+  /**
+   * No description
+   * @tags Application
+   * @name GetApplicationsConnection
+   * @request POST:/get-applications-connection
+   * @secure
+   * @response `200` `ApplicationConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetApplicationsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetApplicationsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ApplicationConnection;
+  }
+}
+
+export namespace ClusterImage {
+  /**
+   * No description
+   * @tags ClusterImage
+   * @name GetClusterImages
+   * @request POST:/get-cluster-images
+   * @secure
+   * @response `200` `(ClusterImage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterImages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterImagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterImage[];
+  }
+  /**
+   * No description
+   * @tags ClusterImage
+   * @name GetClusterImagesConnection
+   * @request POST:/get-cluster-images-connection
+   * @secure
+   * @response `200` `ClusterImageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterImagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterImagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterImageConnection;
+  }
+}
+
+export namespace ClusterSettings {
+  /**
+   * No description
+   * @tags ClusterSettings
+   * @name GetClusterSettingses
+   * @request POST:/get-cluster-settingses
+   * @secure
+   * @response `200` `(ClusterSettings)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterSettingses {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterSettingsesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterSettings[];
+  }
+  /**
+   * No description
+   * @tags ClusterSettings
+   * @name GetClusterSettingsesConnection
+   * @request POST:/get-cluster-settingses-connection
+   * @secure
+   * @response `200` `ClusterSettingsConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterSettingsesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterSettingsesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterSettingsConnection;
+  }
+}
+
+export namespace ClusterTopo {
+  /**
+   * No description
+   * @tags ClusterTopo
+   * @name GetClusterTopoes
+   * @request POST:/get-cluster-topoes
+   * @secure
+   * @response `200` `(ClusterTopo)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterTopoes {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterTopoesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterTopo[];
+  }
+  /**
+   * No description
+   * @tags ClusterTopo
+   * @name GetClusterTopoesConnection
+   * @request POST:/get-cluster-topoes-connection
+   * @secure
+   * @response `200` `ClusterTopoConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterTopoesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterTopoesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterTopoConnection;
+  }
+}
+
+export namespace ClusterUpgradeHistory {
+  /**
+   * No description
+   * @tags ClusterUpgradeHistory
+   * @name GetClusterUpgradeHistories
+   * @request POST:/get-cluster-upgrade-histories
+   * @secure
+   * @response `200` `(ClusterUpgradeHistory)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterUpgradeHistories {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterUpgradeHistoriesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterUpgradeHistory[];
+  }
+  /**
+   * No description
+   * @tags ClusterUpgradeHistory
+   * @name GetClusterUpgradeHistoriesConnection
+   * @request POST:/get-cluster-upgrade-histories-connection
+   * @secure
+   * @response `200` `ClusterUpgradeHistoryConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetClusterUpgradeHistoriesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetClusterUpgradeHistoriesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ClusterUpgradeHistoryConnection;
+  }
+}
+
+export namespace Deploy {
+  /**
+   * No description
+   * @tags Deploy
+   * @name GetDeploys
+   * @request POST:/get-deploys
+   * @secure
+   * @response `200` `(Deploy)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDeploys {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDeploysRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Deploy[];
+  }
+  /**
+   * No description
+   * @tags Deploy
+   * @name GetDeploysConnection
+   * @request POST:/get-deploys-connection
+   * @secure
+   * @response `200` `DeployConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDeploysConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDeploysConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = DeployConnection;
+  }
+}
+
+export namespace DiscoveredHost {
+  /**
+   * No description
+   * @tags DiscoveredHost
+   * @name GetDiscoverHosts
+   * @request POST:/get-discover-hosts
+   * @secure
+   * @response `200` `(DiscoveredHost)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetDiscoverHosts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetDiscoverHostsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = DiscoveredHost[];
+  }
+}
+
+export namespace ElfDataStore {
+  /**
+   * No description
+   * @tags ElfDataStore
+   * @name GetElfDataStores
+   * @request POST:/get-elf-data-stores
+   * @secure
+   * @response `200` `(ElfDataStore)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetElfDataStores {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetElfDataStoresRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ElfDataStore[];
+  }
+  /**
+   * No description
+   * @tags ElfDataStore
+   * @name GetElfDataStoresConnection
+   * @request POST:/get-elf-data-stores-connection
+   * @secure
+   * @response `200` `ElfDataStoreConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetElfDataStoresConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetElfDataStoresConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ElfDataStoreConnection;
+  }
+}
+
+export namespace ElfStoragePolicy {
+  /**
+   * No description
+   * @tags ElfStoragePolicy
+   * @name GetElfStoragePolicies
+   * @request POST:/get-elf-storage-policies
+   * @secure
+   * @response `200` `(ElfStoragePolicy)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetElfStoragePolicies {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetElfStoragePoliciesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ElfStoragePolicy[];
+  }
+  /**
+   * No description
+   * @tags ElfStoragePolicy
+   * @name GetElfStoragePoliciesConnection
+   * @request POST:/get-elf-storage-policies-connection
+   * @secure
+   * @response `200` `ElfStoragePolicyConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetElfStoragePoliciesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetElfStoragePoliciesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ElfStoragePolicyConnection;
+  }
+}
+
+export namespace EverouteCluster {
+  /**
+   * No description
+   * @tags EverouteCluster
+   * @name GetEverouteClusters
+   * @request POST:/get-everoute-clusters
+   * @secure
+   * @response `200` `(EverouteCluster)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEverouteClusters {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEverouteClustersRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EverouteCluster[];
+  }
+  /**
+   * No description
+   * @tags EverouteCluster
+   * @name GetEverouteClustersConnection
+   * @request POST:/get-everoute-clusters-connection
+   * @secure
+   * @response `200` `EverouteClusterConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEverouteClustersConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEverouteClustersConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EverouteClusterConnection;
+  }
+}
+
+export namespace EverouteLicense {
+  /**
+   * No description
+   * @tags EverouteLicense
+   * @name GetEverouteLicenses
+   * @request POST:/get-everoute-licenses
+   * @secure
+   * @response `200` `(EverouteLicense)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEverouteLicenses {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEverouteLicensesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EverouteLicense[];
+  }
+  /**
+   * No description
+   * @tags EverouteLicense
+   * @name GetEverouteLicensesConnection
+   * @request POST:/get-everoute-licenses-connection
+   * @secure
+   * @response `200` `EverouteLicenseConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEverouteLicensesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEverouteLicensesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EverouteLicenseConnection;
+  }
+}
+
+export namespace EveroutePackage {
+  /**
+   * No description
+   * @tags EveroutePackage
+   * @name GetEveroutePackages
+   * @request POST:/get-everoute-packages
+   * @secure
+   * @response `200` `(EveroutePackage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEveroutePackages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEveroutePackagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EveroutePackage[];
+  }
+  /**
+   * No description
+   * @tags EveroutePackage
+   * @name GetEveroutePackagesConnection
+   * @request POST:/get-everoute-packages-connection
+   * @secure
+   * @response `200` `EveroutePackageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetEveroutePackagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetEveroutePackagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = EveroutePackageConnection;
+  }
+}
+
+export namespace Ipmi {
+  /**
+   * No description
+   * @tags Ipmi
+   * @name GetIpmis
+   * @request POST:/get-ipmis
+   * @secure
+   * @response `200` `(Ipmi)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIpmis {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIpmisRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Ipmi[];
+  }
+}
+
+export namespace IscsiConnection {
+  /**
+   * No description
+   * @tags IscsiConnection
+   * @name GetIscsiConnections
+   * @request POST:/get-iscsi-connections
+   * @secure
+   * @response `200` `(IscsiConnection)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiConnections {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiConnectionsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiConnection[];
+  }
+  /**
+   * No description
+   * @tags IscsiConnection
+   * @name GetIscsiConnectionsConnection
+   * @request POST:/get-iscsi-connections-connection
+   * @secure
+   * @response `200` `IscsiConnectionConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIscsiConnectionsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIscsiConnectionsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IscsiConnectionConnection;
+  }
+}
+
+export namespace IsolationPolicy {
+  /**
+   * No description
+   * @tags IsolationPolicy
+   * @name GetIsolationPolicies
+   * @request POST:/get-isolation-policies
+   * @secure
+   * @response `200` `(IsolationPolicy)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIsolationPolicies {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIsolationPoliciesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IsolationPolicy[];
+  }
+  /**
+   * No description
+   * @tags IsolationPolicy
+   * @name GetIsolationPoliciesConnection
+   * @request POST:/get-isolation-policies-connection
+   * @secure
+   * @response `200` `IsolationPolicyConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetIsolationPoliciesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetIsolationPoliciesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = IsolationPolicyConnection;
+  }
+}
+
+export namespace LogServiceConfig {
+  /**
+   * No description
+   * @tags LogServiceConfig
+   * @name GetLogServiceConfigs
+   * @request POST:/get-log-service-configs
+   * @secure
+   * @response `200` `(LogServiceConfig)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetLogServiceConfigs {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetLogServiceConfigsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = LogServiceConfig[];
+  }
+}
+
+export namespace NfsInode {
+  /**
+   * No description
+   * @tags NfsInode
+   * @name GetNfsInodes
+   * @request POST:/get-nfs-inodes
+   * @secure
+   * @response `200` `(NfsInode)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetNfsInodes {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetNfsInodesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = NfsInode[];
+  }
+  /**
+   * No description
+   * @tags NfsInode
+   * @name GetNfsInodesConnection
+   * @request POST:/get-nfs-inodes-connection
+   * @secure
+   * @response `200` `NfsInodeConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetNfsInodesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetNfsInodesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = NfsInodeConnection;
+  }
+}
+
+export namespace PmemDimm {
+  /**
+   * No description
+   * @tags PmemDimm
+   * @name GetPmemDimms
+   * @request POST:/get-pmem-dimms
+   * @secure
+   * @response `200` `(PmemDimm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetPmemDimms {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetPmemDimmsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = PmemDimm[];
+  }
+  /**
+   * No description
+   * @tags PmemDimm
+   * @name GetPmemDimmsConnection
+   * @request POST:/get-pmem-dimms-connection
+   * @secure
+   * @response `200` `PmemDimmConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetPmemDimmsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetPmemDimmsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = PmemDimmConnection;
+  }
+}
+
+export namespace ReportTask {
+  /**
+   * No description
+   * @tags ReportTask
+   * @name GetReportTasks
+   * @request POST:/get-report-tasks
+   * @secure
+   * @response `200` `(ReportTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetReportTasks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetReportTasksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ReportTask[];
+  }
+  /**
+   * No description
+   * @tags ReportTask
+   * @name GetReportTasksConnection
+   * @request POST:/get-report-tasks-connection
+   * @secure
+   * @response `200` `ReportTaskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetReportTasksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetReportTasksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = ReportTaskConnection;
+  }
+}
+
+export namespace SecurityPolicy {
+  /**
+   * No description
+   * @tags SecurityPolicy
+   * @name GetSecurityPolicies
+   * @request POST:/get-security-policies
+   * @secure
+   * @response `200` `(SecurityPolicy)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSecurityPolicies {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSecurityPoliciesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SecurityPolicy[];
+  }
+  /**
+   * No description
+   * @tags SecurityPolicy
+   * @name GetSecurityPoliciesConnection
+   * @request POST:/get-security-policies-connection
+   * @secure
+   * @response `200` `SecurityPolicyConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSecurityPoliciesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSecurityPoliciesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SecurityPolicyConnection;
+  }
+}
+
+export namespace SnapshotPlanTask {
+  /**
+   * No description
+   * @tags SnapshotPlanTask
+   * @name GetSnapshotPlanTasks
+   * @request POST:/get-snapshot-plan-tasks
+   * @secure
+   * @response `200` `(SnapshotPlanTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotPlanTasks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotPlanTasksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotPlanTask[];
+  }
+  /**
+   * No description
+   * @tags SnapshotPlanTask
+   * @name GetSnapshotPlanTasksConnection
+   * @request POST:/get-snapshot-plan-tasks-connection
+   * @secure
+   * @response `200` `SnapshotPlanTaskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSnapshotPlanTasksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSnapshotPlanTasksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SnapshotPlanTaskConnection;
+  }
+}
+
+export namespace SvtImage {
+  /**
+   * No description
+   * @tags SvtImage
+   * @name GetSvtImages
+   * @request POST:/get-svt-images
+   * @secure
+   * @response `200` `(SvtImage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSvtImages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSvtImagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SvtImage[];
+  }
+  /**
+   * No description
+   * @tags SvtImage
+   * @name GetSvtImagesConnection
+   * @request POST:/get-svt-images-connection
+   * @secure
+   * @response `200` `SvtImageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSvtImagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSvtImagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SvtImageConnection;
+  }
+}
+
+export namespace SystemAuditLog {
+  /**
+   * No description
+   * @tags SystemAuditLog
+   * @name GetSystemAuditLogs
+   * @request POST:/get-system-audit-logs
+   * @secure
+   * @response `200` `(SystemAuditLog)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSystemAuditLogs {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSystemAuditLogsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SystemAuditLog[];
+  }
+  /**
+   * No description
+   * @tags SystemAuditLog
+   * @name GetSystemAuditLogsConnection
+   * @request POST:/get-system-audit-logs-connection
+   * @secure
+   * @response `200` `SystemAuditLogConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSystemAuditLogsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSystemAuditLogsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SystemAuditLogConnection;
+  }
+}
+
+export namespace Task {
+  /**
+   * No description
+   * @tags Task
+   * @name GetTasks
+   * @request POST:/get-tasks
+   * @secure
+   * @response `200` `(Task)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetTasks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetTasksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Task[];
+  }
+  /**
+   * No description
+   * @tags Task
+   * @name GetTasksConnection
+   * @request POST:/get-tasks-connection
+   * @secure
+   * @response `200` `TaskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetTasksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetTasksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = TaskConnection;
+  }
+}
+
+export namespace UploadTask {
+  /**
+   * No description
+   * @tags UploadTask
+   * @name GetUploadTasks
+   * @request POST:/get-upload-tasks
+   * @secure
+   * @response `200` `(UploadTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUploadTasks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUploadTasksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTask[];
+  }
+  /**
+   * No description
+   * @tags UploadTask
+   * @name GetUploadTasksConnection
+   * @request POST:/get-upload-tasks-connection
+   * @secure
+   * @response `200` `UploadTaskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUploadTasksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUploadTasksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTaskConnection;
+  }
+}
+
+export namespace UserAuditLog {
+  /**
+   * No description
+   * @tags UserAuditLog
+   * @name GetUserAuditLogs
+   * @request POST:/get-user-audit-logs
+   * @secure
+   * @response `200` `(UserAuditLog)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUserAuditLogs {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUserAuditLogsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UserAuditLog[];
+  }
+  /**
+   * No description
+   * @tags UserAuditLog
+   * @name GetUserAuditLogsConnection
+   * @request POST:/get-user-audit-logs-connection
+   * @secure
+   * @response `200` `UserAuditLogConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUserAuditLogsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUserAuditLogsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UserAuditLogConnection;
+  }
+}
+
+export namespace VcenterAccount {
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name GetVcenterAccounts
+   * @request POST:/get-vcenter-accounts
+   * @secure
+   * @response `200` `(VcenterAccount)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVcenterAccounts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVcenterAccountsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VcenterAccount[];
+  }
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name GetVcenterAccountsConnection
+   * @request POST:/get-vcenter-accounts-connection
+   * @secure
+   * @response `200` `VcenterAccountConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVcenterAccountsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVcenterAccountsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VcenterAccountConnection;
+  }
+}
+
+export namespace VmDisk {
+  /**
+   * No description
+   * @tags VmDisk
+   * @name GetVmDisks
+   * @request POST:/get-vm-disks
+   * @secure
+   * @response `200` `(VmDisk)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmDisks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmDisksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmDisk[];
+  }
+  /**
+   * No description
+   * @tags VmDisk
+   * @name GetVmDisksConnection
+   * @request POST:/get-vm-disks-connection
+   * @secure
+   * @response `200` `VmDiskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmDisksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmDisksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmDiskConnection;
+  }
+}
+
+export namespace VmEntityFilterResult {
+  /**
+   * No description
+   * @tags VmEntityFilterResult
+   * @name GetVmEntityFilterResults
+   * @request POST:/get-vm-entity-filter-results
+   * @secure
+   * @response `200` `(VmEntityFilterResult)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmEntityFilterResults {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmEntityFilterResultsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmEntityFilterResult[];
+  }
+  /**
+   * No description
+   * @tags VmEntityFilterResult
+   * @name GetVmEntityFilterResultsConnection
+   * @request POST:/get-vm-entity-filter-results-connection
+   * @secure
+   * @response `200` `VmEntityFilterResultConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmEntityFilterResultsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmEntityFilterResultsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmEntityFilterResultConnection;
+  }
+}
+
+export namespace VmNic {
+  /**
+   * No description
+   * @tags VmNic
+   * @name GetVmNics
+   * @request POST:/get-vm-nics
+   * @secure
+   * @response `200` `(VmNic)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmNics {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmNicsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmNic[];
+  }
+  /**
+   * No description
+   * @tags VmNic
+   * @name GetVmNicsConnection
+   * @request POST:/get-vm-nics-connection
+   * @secure
+   * @response `200` `VmNicConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmNicsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmNicsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmNicConnection;
+  }
+}
+
+export namespace VsphereEsxiAccount {
   /**
    * No description
    * @tags VsphereEsxiAccount
@@ -33609,9 +33212,6 @@ export namespace GetVsphereEsxiAccounts {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VsphereEsxiAccount[];
   }
-}
-
-export namespace GetVsphereEsxiAccountsConnection {
   /**
    * No description
    * @tags VsphereEsxiAccount
@@ -33632,7 +33232,7 @@ export namespace GetVsphereEsxiAccountsConnection {
   }
 }
 
-export namespace GetWitnesses {
+export namespace Witness {
   /**
    * No description
    * @tags Witness
@@ -33651,9 +33251,6 @@ export namespace GetWitnesses {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Witness[];
   }
-}
-
-export namespace GetWitnessesConnection {
   /**
    * No description
    * @tags Witness
@@ -33674,7 +33271,7 @@ export namespace GetWitnessesConnection {
   }
 }
 
-export namespace GetWitnessServices {
+export namespace WitnessService {
   /**
    * No description
    * @tags WitnessService
@@ -33695,7 +33292,7 @@ export namespace GetWitnessServices {
   }
 }
 
-export namespace GetZones {
+export namespace Zone {
   /**
    * No description
    * @tags Zone
@@ -33714,9 +33311,6 @@ export namespace GetZones {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = Zone[];
   }
-}
-
-export namespace GetZonesConnection {
   /**
    * No description
    * @tags Zone
@@ -33737,7 +33331,7 @@ export namespace GetZonesConnection {
   }
 }
 
-export namespace GetZoneTopoes {
+export namespace ZoneTopo {
   /**
    * No description
    * @tags ZoneTopo
@@ -33756,9 +33350,6 @@ export namespace GetZoneTopoes {
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = ZoneTopo[];
   }
-}
-
-export namespace GetZoneTopoesConnection {
   /**
    * No description
    * @tags ZoneTopo
@@ -33779,31 +33370,10 @@ export namespace GetZoneTopoesConnection {
   }
 }
 
-export namespace UpdateAlertNotifier {
-  /**
-   * No description
-   * @tags AlertNotifier
-   * @name UpdateAlertNotifier
-   * @request POST:/update-alert-notifier
-   * @response `200` `WithTaskAlertNotifier` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace UpdateAlertNotifier {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = AlertNotifierUpdationParams;
-    export type RequestHeaders = {};
-    export type ResponseBody = WithTaskAlertNotifier;
-  }
-}
-
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from "axios";
-
 export type QueryParamsType = Record<string | number, any>;
+export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
-export interface FullRequestParams extends Omit<AxiosRequestConfig, "data" | "params" | "url" | "responseType"> {
+export interface FullRequestParams extends Omit<RequestInit, "body"> {
   /** set parameter to `true` for call `securityWorker` for this request */
   secure?: boolean;
   /** request path */
@@ -33813,20 +33383,30 @@ export interface FullRequestParams extends Omit<AxiosRequestConfig, "data" | "pa
   /** query params */
   query?: QueryParamsType;
   /** format of response (i.e. response.json() -> format: "json") */
-  format?: ResponseType;
+  format?: ResponseFormat;
   /** request body */
   body?: unknown;
+  /** base url */
+  baseUrl?: string;
+  /** request cancellation token */
+  cancelToken?: CancelToken;
 }
 
 export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
 
-export interface ApiConfig<SecurityDataType = unknown> extends Omit<AxiosRequestConfig, "data" | "cancelToken"> {
-  securityWorker?: (
-    securityData: SecurityDataType | null,
-  ) => Promise<AxiosRequestConfig | void> | AxiosRequestConfig | void;
-  secure?: boolean;
-  format?: ResponseType;
+export interface ApiConfig<SecurityDataType = unknown> {
+  baseUrl?: string;
+  baseApiParams?: Omit<RequestParams, "baseUrl" | "cancelToken" | "signal">;
+  securityWorker?: (securityData: SecurityDataType | null) => Promise<RequestParams | void> | RequestParams | void;
+  customFetch?: typeof fetch;
 }
+
+export interface HttpResponse<D extends unknown, E extends unknown = unknown> extends Response {
+  data: D;
+  error: E;
+}
+
+type CancelToken = Symbol | string | number;
 
 export enum ContentType {
   Json = "application/json",
@@ -33835,86 +33415,165 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public instance: AxiosInstance;
+  public baseUrl: string = "/v2/api";
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
-  private secure?: boolean;
-  private format?: ResponseType;
+  private abortControllers = new Map<CancelToken, AbortController>();
+  private customFetch = (...fetchParams: Parameters<typeof fetch>) => fetch(...fetchParams);
 
-  constructor({ securityWorker, secure, format, ...axiosConfig }: ApiConfig<SecurityDataType> = {}) {
-    this.instance = axios.create({ ...axiosConfig, baseURL: axiosConfig.baseURL || "/v2/api" });
-    this.secure = secure;
-    this.format = format;
-    this.securityWorker = securityWorker;
+  private baseApiParams: RequestParams = {
+    credentials: "same-origin",
+    headers: {},
+    redirect: "follow",
+    referrerPolicy: "no-referrer",
+  };
+
+  constructor(apiConfig: ApiConfig<SecurityDataType> = {}) {
+    Object.assign(this, apiConfig);
   }
 
   public setSecurityData = (data: SecurityDataType | null) => {
     this.securityData = data;
   };
 
-  private mergeRequestParams(params1: AxiosRequestConfig, params2?: AxiosRequestConfig): AxiosRequestConfig {
+  private encodeQueryParam(key: string, value: any) {
+    const encodedKey = encodeURIComponent(key);
+    return `${encodedKey}=${encodeURIComponent(typeof value === "number" ? value : `${value}`)}`;
+  }
+
+  private addQueryParam(query: QueryParamsType, key: string) {
+    return this.encodeQueryParam(key, query[key]);
+  }
+
+  private addArrayQueryParam(query: QueryParamsType, key: string) {
+    const value = query[key];
+    return value.map((v: any) => this.encodeQueryParam(key, v)).join("&");
+  }
+
+  protected toQueryString(rawQuery?: QueryParamsType): string {
+    const query = rawQuery || {};
+    const keys = Object.keys(query).filter((key) => "undefined" !== typeof query[key]);
+    return keys
+      .map((key) => (Array.isArray(query[key]) ? this.addArrayQueryParam(query, key) : this.addQueryParam(query, key)))
+      .join("&");
+  }
+
+  protected addQueryParams(rawQuery?: QueryParamsType): string {
+    const queryString = this.toQueryString(rawQuery);
+    return queryString ? `?${queryString}` : "";
+  }
+
+  private contentFormatters: Record<ContentType, (input: any) => any> = {
+    [ContentType.Json]: (input: any) =>
+      input !== null && (typeof input === "object" || typeof input === "string") ? JSON.stringify(input) : input,
+    [ContentType.FormData]: (input: any) =>
+      Object.keys(input || {}).reduce((formData, key) => {
+        const property = input[key];
+        formData.append(
+          key,
+          property instanceof Blob
+            ? property
+            : typeof property === "object" && property !== null
+            ? JSON.stringify(property)
+            : `${property}`,
+        );
+        return formData;
+      }, new FormData()),
+    [ContentType.UrlEncoded]: (input: any) => this.toQueryString(input),
+  };
+
+  private mergeRequestParams(params1: RequestParams, params2?: RequestParams): RequestParams {
     return {
-      ...this.instance.defaults,
+      ...this.baseApiParams,
       ...params1,
       ...(params2 || {}),
       headers: {
-        ...(this.instance.defaults.headers || {}),
+        ...(this.baseApiParams.headers || {}),
         ...(params1.headers || {}),
         ...((params2 && params2.headers) || {}),
       },
     };
   }
 
-  private createFormData(input: Record<string, unknown>): FormData {
-    return Object.keys(input || {}).reduce((formData, key) => {
-      const property = input[key];
-      formData.append(
-        key,
-        property instanceof Blob
-          ? property
-          : typeof property === "object" && property !== null
-          ? JSON.stringify(property)
-          : `${property}`,
-      );
-      return formData;
-    }, new FormData());
-  }
+  private createAbortSignal = (cancelToken: CancelToken): AbortSignal | undefined => {
+    if (this.abortControllers.has(cancelToken)) {
+      const abortController = this.abortControllers.get(cancelToken);
+      if (abortController) {
+        return abortController.signal;
+      }
+      return void 0;
+    }
 
-  public request = async <T = any, _E = any>({
+    const abortController = new AbortController();
+    this.abortControllers.set(cancelToken, abortController);
+    return abortController.signal;
+  };
+
+  public abortRequest = (cancelToken: CancelToken) => {
+    const abortController = this.abortControllers.get(cancelToken);
+
+    if (abortController) {
+      abortController.abort();
+      this.abortControllers.delete(cancelToken);
+    }
+  };
+
+  public request = async <T = any, E = any>({
+    body,
     secure,
     path,
     type,
     query,
     format,
-    body,
+    baseUrl,
+    cancelToken,
     ...params
-  }: FullRequestParams): Promise<AxiosResponse<T>> => {
+  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
     const secureParams =
-      ((typeof secure === "boolean" ? secure : this.secure) &&
+      ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
         this.securityWorker &&
         (await this.securityWorker(this.securityData))) ||
       {};
     const requestParams = this.mergeRequestParams(params, secureParams);
-    const responseFormat = (format && this.format) || void 0;
+    const queryString = query && this.toQueryString(query);
+    const payloadFormatter = this.contentFormatters[type || ContentType.Json];
+    const responseFormat = format || requestParams.format;
 
-    if (type === ContentType.FormData && body && body !== null && typeof body === "object") {
-      requestParams.headers.common = { Accept: "*/*" };
-      requestParams.headers.post = {};
-      requestParams.headers.put = {};
-
-      body = this.createFormData(body as Record<string, unknown>);
-    }
-
-    return this.instance.request({
+    return this.customFetch(`${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`, {
       ...requestParams,
       headers: {
         ...(type && type !== ContentType.FormData ? { "Content-Type": type } : {}),
         ...(requestParams.headers || {}),
       },
-      params: query,
-      responseType: responseFormat,
-      data: body,
-      url: path,
+      signal: cancelToken ? this.createAbortSignal(cancelToken) : void 0,
+      body: typeof body === "undefined" || body === null ? null : payloadFormatter(body),
+    }).then(async (response) => {
+      const r = response as HttpResponse<T, E>;
+      r.data = null as unknown as T;
+      r.error = null as unknown as E;
+
+      const data = !responseFormat
+        ? r
+        : await response[responseFormat]()
+            .then((data) => {
+              if (r.ok) {
+                r.data = data;
+              } else {
+                r.error = data;
+              }
+              return r;
+            })
+            .catch((e) => {
+              r.error = e;
+              return r;
+            });
+
+      if (cancelToken) {
+        this.abortControllers.delete(cancelToken);
+      }
+
+      if (!response.ok) throw data;
+      return data;
     });
   };
 }
@@ -33933,7 +33592,7 @@ export class Api<SecurityDataType extends unknown> {
     this.http = http;
   }
 
-  updateGlobalAlertRule = {
+  globalAlertRule = {
     /**
      * No description
      *
@@ -33956,8 +33615,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateCustomizeAlertRule = {
+
     /**
      * No description
      *
@@ -33980,8 +33638,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalAlertRule
+     * @name GetGlobalAlertRules
+     * @request POST:/get-global-alert-rules
+     * @secure
+     * @response `200` `(GlobalAlertRule)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGlobalAlertRules: (data: GetGlobalAlertRulesRequestBody, params: RequestParams = {}) =>
+      this.http.request<GlobalAlertRule[], ErrorBody>({
+        path: `/get-global-alert-rules`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalAlertRule
+     * @name GetGlobalAlertRulesConnection
+     * @request POST:/get-global-alert-rules-connection
+     * @secure
+     * @response `200` `GlobalAlertRuleConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGlobalAlertRulesConnection: (data: GetGlobalAlertRulesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<GlobalAlertRuleConnection, ErrorBody>({
+        path: `/get-global-alert-rules-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  resolveAlert = {
+  alert = {
     /**
      * No description
      *
@@ -34004,8 +33708,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Alert
+     * @name GetAlerts
+     * @request POST:/get-alerts
+     * @secure
+     * @response `200` `(Alert)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlerts: (data: GetAlertsRequestBody, params: RequestParams = {}) =>
+      this.http.request<Alert[], ErrorBody>({
+        path: `/get-alerts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Alert
+     * @name GetAlertsConnection
+     * @request POST:/get-alerts-connection
+     * @secure
+     * @response `200` `AlertConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlertsConnection: (data: GetAlertsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<AlertConnection, ErrorBody>({
+        path: `/get-alerts-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createBrickTopo = {
+  brickTopo = {
     /**
      * No description
      *
@@ -34028,8 +33778,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateBrickTopo = {
+
     /**
      * No description
      *
@@ -34052,8 +33801,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  moveBrickTopo = {
+
     /**
      * No description
      *
@@ -34076,8 +33824,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteBrickTopo = {
+
     /**
      * No description
      *
@@ -34100,8 +33847,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags BrickTopo
+     * @name GetBrickTopoes
+     * @request POST:/get-brick-topoes
+     * @secure
+     * @response `200` `(BrickTopo)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getBrickTopoes: (data: GetBrickTopoesRequestBody, params: RequestParams = {}) =>
+      this.http.request<BrickTopo[], ErrorBody>({
+        path: `/get-brick-topoes`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags BrickTopo
+     * @name GetBrickTopoesConnection
+     * @request POST:/get-brick-topoes-connection
+     * @secure
+     * @response `200` `BrickTopoConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getBrickTopoesConnection: (data: GetBrickTopoesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<BrickTopoConnection, ErrorBody>({
+        path: `/get-brick-topoes-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  connectCluster = {
+  cluster = {
     /**
      * No description
      *
@@ -34124,8 +33917,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateCluster = {
+
     /**
      * No description
      *
@@ -34148,8 +33940,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateClusterLicense = {
+
     /**
      * No description
      *
@@ -34172,8 +33963,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteCluster = {
+
     /**
      * No description
      *
@@ -34196,8 +33986,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
+     * @name GetClusters
+     * @request POST:/get-clusters
+     * @secure
+     * @response `200` `(Cluster)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusters: (data: GetClustersRequestBody, params: RequestParams = {}) =>
+      this.http.request<Cluster[], ErrorBody>({
+        path: `/get-clusters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
+     * @name GetClustersConnection
+     * @request POST:/get-clusters-connection
+     * @secure
+     * @response `200` `ClusterConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClustersConnection: (data: GetClustersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterConnection, ErrorBody>({
+        path: `/get-clusters-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createConsistencySnapshotGroup = {
+  consistencyGroupSnapshot = {
     /**
      * No description
      *
@@ -34220,8 +34056,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  rollbackConsistencySnapshotGroup = {
+
     /**
      * No description
      *
@@ -34244,8 +34079,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteConsistencySnapshotGroup = {
+
     /**
      * No description
      *
@@ -34268,8 +34102,57 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags ConsistencyGroupSnapshot
+     * @name GetConsistencyGroupSnapshots
+     * @request POST:/get-consistency-group-snapshots
+     * @secure
+     * @response `200` `(ConsistencyGroupSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getConsistencyGroupSnapshots: (data: GetConsistencyGroupSnapshotsRequestBody, params: RequestParams = {}) =>
+      this.http.request<ConsistencyGroupSnapshot[], ErrorBody>({
+        path: `/get-consistency-group-snapshots`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ConsistencyGroupSnapshot
+     * @name GetConsistencyGroupSnapshotsConnection
+     * @request POST:/get-consistency-group-snapshots-connection
+     * @secure
+     * @response `200` `ConsistencyGroupSnapshotConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getConsistencyGroupSnapshotsConnection: (
+      data: GetConsistencyGroupSnapshotsConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<ConsistencyGroupSnapshotConnection, ErrorBody>({
+        path: `/get-consistency-group-snapshots-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createConsistencyGroup = {
+  consistencyGroup = {
     /**
      * No description
      *
@@ -34292,8 +34175,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateConsistencyGroup = {
+
     /**
      * No description
      *
@@ -34316,8 +34198,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteConsistencyGroup = {
+
     /**
      * No description
      *
@@ -34340,8 +34221,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags ConsistencyGroup
+     * @name GetConsistencyGroups
+     * @request POST:/get-consistency-groups
+     * @secure
+     * @response `200` `(ConsistencyGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getConsistencyGroups: (data: GetConsistencyGroupsRequestBody, params: RequestParams = {}) =>
+      this.http.request<ConsistencyGroup[], ErrorBody>({
+        path: `/get-consistency-groups`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ConsistencyGroup
+     * @name GetConsistencyGroupsConnection
+     * @request POST:/get-consistency-groups-connection
+     * @secure
+     * @response `200` `ConsistencyGroupConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getConsistencyGroupsConnection: (data: GetConsistencyGroupsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ConsistencyGroupConnection, ErrorBody>({
+        path: `/get-consistency-groups-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  uploadContentLibraryImage = {
+  contentLibraryImage = {
     /**
      * No description
      *
@@ -34368,8 +34295,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateContentLibraryImage = {
+
     /**
      * No description
      *
@@ -34392,8 +34318,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  distributeContentLibraryImageClusters = {
+
     /**
      * No description
      *
@@ -34419,8 +34344,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  removeContentLibraryImageClusters = {
+
     /**
      * No description
      *
@@ -34443,8 +34367,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteContentLibraryImage = {
+
     /**
      * No description
      *
@@ -34467,8 +34390,57 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags ContentLibraryImage
+     * @name GetContentLibraryImages
+     * @request POST:/get-content-library-images
+     * @secure
+     * @response `200` `(ContentLibraryImage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getContentLibraryImages: (data: GetContentLibraryImagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ContentLibraryImage[], ErrorBody>({
+        path: `/get-content-library-images`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ContentLibraryImage
+     * @name GetContentLibraryImagesConnection
+     * @request POST:/get-content-library-images-connection
+     * @secure
+     * @response `200` `ContentLibraryImageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getContentLibraryImagesConnection: (
+      data: GetContentLibraryImagesConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<ContentLibraryImageConnection, ErrorBody>({
+        path: `/get-content-library-images-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  cloneContentLibraryVmTemplateFromVm = {
+  contentLibraryVmTemplate = {
     /**
      * No description
      *
@@ -34491,8 +34463,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  convertContentLibraryVmTemplateFromVm = {
+
     /**
      * No description
      *
@@ -34518,8 +34489,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateContentLibraryVmTemplate = {
+
     /**
      * No description
      *
@@ -34542,8 +34512,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  distributeContentLibraryVmTemplateClusters = {
+
     /**
      * No description
      *
@@ -34569,8 +34538,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  removeContentLibraryVmTemplateClusters = {
+
     /**
      * No description
      *
@@ -34596,8 +34564,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteContentLibraryVmTemplate = {
+
     /**
      * No description
      *
@@ -34620,8 +34587,57 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags ContentLibraryVmTemplate
+     * @name GetContentLibraryVmTemplates
+     * @request POST:/get-content-library-vm-templates
+     * @secure
+     * @response `200` `(ContentLibraryVmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getContentLibraryVmTemplates: (data: GetContentLibraryVmTemplatesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ContentLibraryVmTemplate[], ErrorBody>({
+        path: `/get-content-library-vm-templates`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ContentLibraryVmTemplate
+     * @name GetContentLibraryVmTemplatesConnection
+     * @request POST:/get-content-library-vm-templates-connection
+     * @secure
+     * @response `200` `ContentLibraryVmTemplateConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getContentLibraryVmTemplatesConnection: (
+      data: GetContentLibraryVmTemplatesConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<ContentLibraryVmTemplateConnection, ErrorBody>({
+        path: `/get-content-library-vm-templates-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createDatacenter = {
+  datacenter = {
     /**
      * No description
      *
@@ -34644,8 +34660,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateDatacenter = {
+
     /**
      * No description
      *
@@ -34668,8 +34683,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteDatacenter = {
+
     /**
      * No description
      *
@@ -34692,8 +34706,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Datacenter
+     * @name GetDatacenters
+     * @request POST:/get-datacenters
+     * @secure
+     * @response `200` `(Datacenter)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDatacenters: (data: GetDatacentersRequestBody, params: RequestParams = {}) =>
+      this.http.request<Datacenter[], ErrorBody>({
+        path: `/get-datacenters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Datacenter
+     * @name GetDatacentersConnection
+     * @request POST:/get-datacenters-connection
+     * @secure
+     * @response `200` `DatacenterConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDatacentersConnection: (data: GetDatacentersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<DatacenterConnection, ErrorBody>({
+        path: `/get-datacenters-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  mountDisk = {
+  disk = {
     /**
      * No description
      *
@@ -34716,8 +34776,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  unmountDisk = {
+
     /**
      * No description
      *
@@ -34740,8 +34799,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Disk
+     * @name GetDisks
+     * @request POST:/get-disks
+     * @secure
+     * @response `200` `(Disk)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDisks: (data: GetDisksRequestBody, params: RequestParams = {}) =>
+      this.http.request<Disk[], ErrorBody>({
+        path: `/get-disks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Disk
+     * @name GetDisksConnection
+     * @request POST:/get-disks-connection
+     * @secure
+     * @response `200` `DiskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDisksConnection: (data: GetDisksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<DiskConnection, ErrorBody>({
+        path: `/get-disks-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createEntityFilter = {
+  entityFilter = {
     /**
      * No description
      *
@@ -34764,8 +34869,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateEntityFilter = {
+
     /**
      * No description
      *
@@ -34788,8 +34892,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteEntityFilter = {
+
     /**
      * No description
      *
@@ -34812,8 +34915,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags EntityFilter
+     * @name GetEntityFilters
+     * @request POST:/get-entity-filters
+     * @secure
+     * @response `200` `(EntityFilter)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEntityFilters: (data: GetEntityFiltersRequestBody, params: RequestParams = {}) =>
+      this.http.request<EntityFilter[], ErrorBody>({
+        path: `/get-entity-filters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags EntityFilter
+     * @name GetEntityFiltersConnection
+     * @request POST:/get-entity-filters-connection
+     * @secure
+     * @response `200` `EntityFilterConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEntityFiltersConnection: (data: GetEntityFiltersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<EntityFilterConnection, ErrorBody>({
+        path: `/get-entity-filters-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createGraph = {
+  graph = {
     /**
      * No description
      *
@@ -34836,8 +34985,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateGraph = {
+
     /**
      * No description
      *
@@ -34860,8 +35008,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteGraph = {
+
     /**
      * No description
      *
@@ -34884,8 +35031,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Graph
+     * @name GetGraphs
+     * @request POST:/get-graphs
+     * @secure
+     * @response `200` `(Graph)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGraphs: (data: GetGraphsRequestBody, params: RequestParams = {}) =>
+      this.http.request<Graph[], ErrorBody>({
+        path: `/get-graphs`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Graph
+     * @name GetGraphsConnection
+     * @request POST:/get-graphs-connection
+     * @secure
+     * @response `200` `GraphConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGraphsConnection: (data: GetGraphsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<GraphConnection, ErrorBody>({
+        path: `/get-graphs-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createHost = {
+  host = {
     /**
      * No description
      *
@@ -34908,8 +35101,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  triggerDiskBlink = {
+
     /**
      * No description
      *
@@ -34932,8 +35124,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateHost = {
+
     /**
      * No description
      *
@@ -34956,8 +35147,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags Host
+     * @name GetHosts
+     * @request POST:/get-hosts
+     * @secure
+     * @response `200` `(Host)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getHosts: (data: GetHostsRequestBody, params: RequestParams = {}) =>
+      this.http.request<Host[], ErrorBody>({
+        path: `/get-hosts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Host
+     * @name GetHostsConnection
+     * @request POST:/get-hosts-connection
+     * @secure
+     * @response `200` `HostConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getHostsConnection: (data: GetHostsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<HostConnection, ErrorBody>({
+        path: `/get-hosts-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createIscsiLunSnapshot = {
+  iscsiLunSnapshot = {
     /**
      * No description
      *
@@ -34980,8 +35217,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteIscsiLunSnapshot = {
+
     /**
      * No description
      *
@@ -35004,8 +35240,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiLunSnapshot
+     * @name GetIscsiLunSnapshots
+     * @request POST:/get-iscsi-lun-snapshots
+     * @secure
+     * @response `200` `(IscsiLunSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiLunSnapshots: (data: GetIscsiLunSnapshotsRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiLunSnapshot[], ErrorBody>({
+        path: `/get-iscsi-lun-snapshots`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiLunSnapshot
+     * @name GetIscsiLunSnapshotsConnection
+     * @request POST:/get-iscsi-lun-snapshots-connection
+     * @secure
+     * @response `200` `IscsiLunSnapshotConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiLunSnapshotsConnection: (data: GetIscsiLunSnapshotsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiLunSnapshotConnection, ErrorBody>({
+        path: `/get-iscsi-lun-snapshots-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createIscsiLun = {
+  iscsiLun = {
     /**
      * No description
      *
@@ -35028,8 +35310,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateIscsiLun = {
+
     /**
      * No description
      *
@@ -35052,8 +35333,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteIscsiLun = {
+
     /**
      * No description
      *
@@ -35076,8 +35356,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  cloneIscsiLunFromSnapshot = {
+
     /**
      * No description
      *
@@ -35100,8 +35379,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  rollbackIscsiLunFromSnapshot = {
+
     /**
      * No description
      *
@@ -35124,8 +35402,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiLun
+     * @name GetIscsiLuns
+     * @request POST:/get-iscsi-luns
+     * @secure
+     * @response `200` `(IscsiLun)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiLuns: (data: GetIscsiLunsRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiLun[], ErrorBody>({
+        path: `/get-iscsi-luns`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiLun
+     * @name GetIscsiLunsConnection
+     * @request POST:/get-iscsi-luns-connection
+     * @secure
+     * @response `200` `IscsiLunConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiLunsConnection: (data: GetIscsiLunsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiLunConnection, ErrorBody>({
+        path: `/get-iscsi-luns-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  createIscsiTarget = {
+  iscsiTarget = {
     /**
      * No description
      *
@@ -35148,8 +35472,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateIscsiTarget = {
+
     /**
      * No description
      *
@@ -35172,8 +35495,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteIscsiTarget = {
+
     /**
      * No description
      *
@@ -35196,8 +35518,54 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiTarget
+     * @name GetIscsiTargets
+     * @request POST:/get-iscsi-targets
+     * @secure
+     * @response `200` `(IscsiTarget)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiTargets: (data: GetIscsiTargetsRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiTarget[], ErrorBody>({
+        path: `/get-iscsi-targets`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiTarget
+     * @name GetIscsiTargetsConnection
+     * @request POST:/get-iscsi-targets-connection
+     * @secure
+     * @response `200` `IscsiTargetConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiTargetsConnection: (data: GetIscsiTargetsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiTargetConnection, ErrorBody>({
+        path: `/get-iscsi-targets-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
   };
-  uploadElfImage = {
+  elfImage = {
     /**
      * No description
      *
@@ -35230,8 +35598,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  updateElfImage = {
+
     /**
      * No description
      *
@@ -35254,8 +35621,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  deleteElfImage = {
+
     /**
      * No description
      *
@@ -35278,4405 +35644,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  createLabel = {
-    /**
-     * No description
-     *
-     * @tags Label
-     * @name CreateLabel
-     * @request POST:/create-label
-     * @secure
-     * @response `200` `(WithTaskLabel)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createLabel: (data: LabelCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
-        path: `/create-label`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateLabel = {
-    /**
-     * No description
-     *
-     * @tags Label
-     * @name UpdateLabel
-     * @request POST:/update-label
-     * @secure
-     * @response `200` `(WithTaskLabel)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateLabel: (data: LabelUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
-        path: `/update-label`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  addLabelsToResources = {
-    /**
-     * No description
-     *
-     * @tags Label
-     * @name AddLabelsToResources
-     * @request POST:/add-labels-to-resources
-     * @secure
-     * @response `200` `(WithTaskLabel)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    addLabelsToResources: (data: AddLabelsToResourcesParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
-        path: `/add-labels-to-resources`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  removeLabelsFromResources = {
-    /**
-     * No description
-     *
-     * @tags Label
-     * @name RemoveLabelsFromResources
-     * @request POST:/remove-labels-from-resources
-     * @secure
-     * @response `200` `(WithTaskLabel)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    removeLabelsFromResources: (data: RemoveLabelsFromResourcesParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
-        path: `/remove-labels-from-resources`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteLabel = {
-    /**
-     * No description
-     *
-     * @tags Label
-     * @name DeleteLabel
-     * @request POST:/delete-label
-     * @secure
-     * @response `200` `(WithTaskDeleteLabel)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteLabel: (data: LabelDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteLabel[], ErrorBody>({
-        path: `/delete-label`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateLicense = {
-    /**
-     * No description
-     *
-     * @tags License
-     * @name UpdateDeploy
-     * @request POST:/update-license
-     * @secure
-     * @response `200` `WithTaskLicense` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateDeploy: (data: LicenseUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLicense, ErrorBody>({
-        path: `/update-license`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createLogCollection = {
-    /**
-     * No description
-     *
-     * @tags LogCollection
-     * @name CreateLogCollection
-     * @request POST:/create-log-collection
-     * @response `200` `(WithTaskLogCollection)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createLogCollection: (data: LogCollectionCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskLogCollection[], ErrorBody>({
-        path: `/create-log-collection`,
-        method: "POST",
-        body: data,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  forceStopLogCollection = {
-    /**
-     * No description
-     *
-     * @tags LogCollection
-     * @name ForceStopLogCollection
-     * @request POST:/force-stop-log-collection
-     * @response `200` `(WithTaskLogCollection)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    forceStopLogCollection: (data: ForceStopLogCollectionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLogCollection[], ErrorBody>({
-        path: `/force-stop-log-collection`,
-        method: "POST",
-        body: data,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteLogCollection = {
-    /**
-     * No description
-     *
-     * @tags LogCollection
-     * @name DeleteLogCollection
-     * @request POST:/delete-log-collection
-     * @response `200` `(WithTaskDeleteLogCollection)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteLogCollection: (data: LogCollectionDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteLogCollection[], ErrorBody>({
-        path: `/delete-log-collection`,
-        method: "POST",
-        body: data,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createNamespaceGroup = {
-    /**
-     * No description
-     *
-     * @tags NamespaceGroup
-     * @name CreateNamespaceGroup
-     * @request POST:/create-namespace-group
-     * @secure
-     * @response `200` `(WithTaskNamespaceGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createNamespaceGroup: (data: NamespaceGroupCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
-        path: `/create-namespace-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateNamespaceGroup = {
-    /**
-     * No description
-     *
-     * @tags NamespaceGroup
-     * @name UpdateNamespaceGroup
-     * @request POST:/update-namespace-group
-     * @secure
-     * @response `200` `(WithTaskNamespaceGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNamespaceGroup: (data: NamespaceGroupUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
-        path: `/update-namespace-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteNamespaceGroup = {
-    /**
-     * No description
-     *
-     * @tags NamespaceGroup
-     * @name DeleteNamespaceGroup
-     * @request POST:/delete-namespace-group
-     * @secure
-     * @response `200` `(WithTaskDeleteNamespaceGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteNamespaceGroup: (data: NamespaceGroupDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteNamespaceGroup[], ErrorBody>({
-        path: `/delete-namespace-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createNfsExport = {
-    /**
-     * No description
-     *
-     * @tags NfsExport
-     * @name CreateNfsExport
-     * @request POST:/create-nfs-export
-     * @secure
-     * @response `200` `(WithTaskNfsExport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createNfsExport: (data: NfsExportCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNfsExport[], ErrorBody>({
-        path: `/create-nfs-export`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateNfsExport = {
-    /**
-     * No description
-     *
-     * @tags NfsExport
-     * @name UpdateNfsExport
-     * @request POST:/update-nfs-export
-     * @secure
-     * @response `200` `(WithTaskNfsExport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNfsExport: (data: NfsExportUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNfsExport[], ErrorBody>({
-        path: `/update-nfs-export`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteNfsExport = {
-    /**
-     * No description
-     *
-     * @tags NfsExport
-     * @name DeleteNfsExport
-     * @request POST:/delete-nfs-export
-     * @secure
-     * @response `200` `(WithTaskDeleteNfsExport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteNfsExport: (data: NfsExportDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteNfsExport[], ErrorBody>({
-        path: `/delete-nfs-export`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateNic = {
-    /**
-     * No description
-     *
-     * @tags Nic
-     * @name UpdateNic
-     * @request POST:/update-nic
-     * @secure
-     * @response `200` `(WithTaskNic)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNic: (data: NicUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNic[], ErrorBody>({
-        path: `/update-nic`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  moveNodeTopo = {
-    /**
-     * No description
-     *
-     * @tags NodeTopo
-     * @name UpdateNodeTopo
-     * @request POST:/move-node-topo
-     * @secure
-     * @response `200` `(WithTaskNodeTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNodeTopo: (data: NodeTopoUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNodeTopo[], ErrorBody>({
-        path: `/move-node-topo`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createNvmfNamespaceSnapshot = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespaceSnapshot
-     * @name CreateNvmfNamespaceSnapshot
-     * @request POST:/create-nvmf-namespace-snapshot
-     * @secure
-     * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createNvmfNamespaceSnapshot: (data: NvmfNamespaceSnapshotCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfNamespaceSnapshot[], ErrorBody>({
-        path: `/create-nvmf-namespace-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteNvmfNamespaceSnapshot = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespaceSnapshot
-     * @name DeleteNvmfNamespaceSnapshot
-     * @request POST:/delete-nvmf-namespace-snapshot
-     * @secure
-     * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteNvmfNamespaceSnapshot: (data: NvmfNamespaceSnapshotDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteNvmfNamespaceSnapshot[], ErrorBody>({
-        path: `/delete-nvmf-namespace-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createNvmfNamespace = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespace
-     * @name CreateNvmfNamespace
-     * @request POST:/create-nvmf-namespace
-     * @secure
-     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createNvmfNamespace: (data: NvmfNamespaceCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
-        path: `/create-nvmf-namespace`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateNvmfNamespace = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespace
-     * @name UpdateNvmfNamespace
-     * @request POST:/update-nvmf-namespace
-     * @secure
-     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNvmfNamespace: (data: NvmfNamespaceUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
-        path: `/update-nvmf-namespace`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteNvmfNamespace = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespace
-     * @name DeleteNvmfNamespace
-     * @request POST:/delete-nvmf-namespace
-     * @secure
-     * @response `200` `(WithTaskDeleteNvmfNamespace)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteNvmfNamespace: (data: NvmfNamespaceDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteNvmfNamespace[], ErrorBody>({
-        path: `/delete-nvmf-namespace`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  cloneNvmfNamespaceFromSnapshot = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespace
-     * @name CloneNvmfNamespaceFromSnapshot
-     * @request POST:/clone-nvmf-namespace-from-snapshot
-     * @secure
-     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    cloneNvmfNamespaceFromSnapshot: (data: NvmfNamespaceCloneParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
-        path: `/clone-nvmf-namespace-from-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  rollbackNvmfNamespaceFromSnapshot = {
-    /**
-     * No description
-     *
-     * @tags NvmfNamespace
-     * @name RollbackNvmfNamespaceFromSnapshot
-     * @request POST:/rollback-nvmf-namespace-from-snapshot
-     * @secure
-     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    rollbackNvmfNamespaceFromSnapshot: (data: NvmfNamespaceRollbackParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
-        path: `/rollback-nvmf-namespace-from-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createNvmfSubsystem = {
-    /**
-     * No description
-     *
-     * @tags NvmfSubsystem
-     * @name CreateNvmfSubsystem
-     * @request POST:/create-nvmf-subsystem
-     * @secure
-     * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createNvmfSubsystem: (data: NvmfSubsystemCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
-        path: `/create-nvmf-subsystem`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateNvmfSubsystem = {
-    /**
-     * No description
-     *
-     * @tags NvmfSubsystem
-     * @name UpdateNvmfSubsystem
-     * @request POST:/update-nvmf-subsystem
-     * @secure
-     * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateNvmfSubsystem: (data: NvmfSubsystemUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
-        path: `/update-nvmf-subsystem`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteNvmfSubsystem = {
-    /**
-     * No description
-     *
-     * @tags NvmfSubsystem
-     * @name DeleteNvmfSubsystem
-     * @request POST:/delete-nvmf-subsystem
-     * @secure
-     * @response `200` `(WithTaskDeleteNvmfSubsystem)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteNvmfSubsystem: (data: NvmfSubsystemDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteNvmfSubsystem[], ErrorBody>({
-        path: `/delete-nvmf-subsystem`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createOrganization = {
-    /**
-     * No description
-     *
-     * @tags Organization
-     * @name CreateOrganization
-     * @request POST:/create-organization
-     * @secure
-     * @response `200` `(WithTaskOrganization)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createOrganization: (data: OrganizationCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskOrganization[], ErrorBody>({
-        path: `/create-organization`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateOrganization = {
-    /**
-     * No description
-     *
-     * @tags Organization
-     * @name UpdateOrganization
-     * @request POST:/update-organization
-     * @secure
-     * @response `200` `(WithTaskOrganization)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateOrganization: (data: OrganizationUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskOrganization[], ErrorBody>({
-        path: `/update-organization`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteOrganization = {
-    /**
-     * No description
-     *
-     * @tags Organization
-     * @name DeleteOrganization
-     * @request POST:/delete-organization
-     * @secure
-     * @response `200` `(WithTaskDeleteOrganization)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteOrganization: (data: OrganizationDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteOrganization[], ErrorBody>({
-        path: `/delete-organization`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createRackTopo = {
-    /**
-     * No description
-     *
-     * @tags RackTopo
-     * @name CreateRackTopo
-     * @request POST:/create-rack-topo
-     * @secure
-     * @response `200` `(WithTaskRackTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createRackTopo: (data: RackTopoCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskRackTopo[], ErrorBody>({
-        path: `/create-rack-topo`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateRackTopo = {
-    /**
-     * No description
-     *
-     * @tags RackTopo
-     * @name UpdateRackTopo
-     * @request POST:/update-rack-topo
-     * @secure
-     * @response `200` `(WithTaskRackTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateRackTopo: (data: RackTopoUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskRackTopo[], ErrorBody>({
-        path: `/update-rack-topo`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteRackTopo = {
-    /**
-     * No description
-     *
-     * @tags RackTopo
-     * @name DeleteRackTopo
-     * @request POST:/delete-rack-topo
-     * @secure
-     * @response `200` `(WithTaskDeleteRackTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteRackTopo: (data: RackTopoDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteRackTopo[], ErrorBody>({
-        path: `/delete-rack-topo`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateGlobalRecycleBinSetting = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name UpdateGlobalRecycleBinSetting
-     * @request POST:/update-global-recycle-bin-setting
-     * @secure
-     * @response `200` `WithTaskGlobalSettings` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateGlobalRecycleBinSetting: (data: GlobalRecycleBinUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskGlobalSettings, ErrorBody>({
-        path: `/update-global-recycle-bin-setting`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createClusterRecycleBinSetting = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name CreateClusterRecycleBinSetting
-     * @request POST:/create-cluster-recycle-bin-setting
-     * @secure
-     * @response `200` `(WithTaskClusterSettings)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createClusterRecycleBinSetting: (data: ClusterRecycleBinCreationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskClusterSettings[], ErrorBody>({
-        path: `/create-cluster-recycle-bin-setting`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateClusterRecycleBinSetting = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name UpdateClusterRecycleBinSetting
-     * @request POST:/update-cluster-recycle-bin-setting
-     * @secure
-     * @response `200` `(WithTaskClusterSettings)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateClusterRecycleBinSetting: (data: ClusterRecycleBinUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskClusterSettings[], ErrorBody>({
-        path: `/update-cluster-recycle-bin-setting`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteClusterRecycleBinSetting = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name DeleteClusterRecycleBinSetting
-     * @request POST:/delete-cluster-recycle-bin-setting
-     * @secure
-     * @response `200` `(WithTaskDeleteClusterRecycleBin)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteClusterRecycleBinSetting: (data: ClusterRecycleBinDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteClusterRecycleBin[], ErrorBody>({
-        path: `/delete-cluster-recycle-bin-setting`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createReportTemplate = {
-    /**
-     * No description
-     *
-     * @tags ReportTemplate
-     * @name CreateReportTemplate
-     * @request POST:/create-report-template
-     * @secure
-     * @response `200` `(WithTaskReportTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createReportTemplate: (data: ReportTemplateCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskReportTemplate[], ErrorBody>({
-        path: `/create-report-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateReportTemplate = {
-    /**
-     * No description
-     *
-     * @tags ReportTemplate
-     * @name UpdateReportTemplate
-     * @request POST:/update-report-template
-     * @secure
-     * @response `200` `(WithTaskReportTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateReportTemplate: (data: ReportTemplateUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskReportTemplate[], ErrorBody>({
-        path: `/update-report-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  generateFromReportTemplate = {
-    /**
-     * No description
-     *
-     * @tags ReportTemplate
-     * @name GenerateFromReportTemplate
-     * @request POST:/generate-from-report-template
-     * @secure
-     * @response `200` `(WithTaskReportTask)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    generateFromReportTemplate: (data: ReporteTemplateGenerationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskReportTask[], ErrorBody>({
-        path: `/generate-from-report-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteReportTemplate = {
-    /**
-     * No description
-     *
-     * @tags ReportTemplate
-     * @name DeleteReportTemplate
-     * @request POST:/delete-report-template
-     * @secure
-     * @response `200` `(WithTaskDeleteReportTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteReportTemplate: (data: ReportTemplateDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteReportTemplate[], ErrorBody>({
-        path: `/delete-report-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createRole = {
-    /**
-     * No description
-     *
-     * @tags UserRoleNext
-     * @name CreateRole
-     * @request POST:/create-role
-     * @secure
-     * @response `200` `(WithTaskUserRoleNext)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createRole: (data: RoleCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskUserRoleNext[], ErrorBody>({
-        path: `/create-role`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateRole = {
-    /**
-     * No description
-     *
-     * @tags UserRoleNext
-     * @name UpdateRole
-     * @request POST:/update-role
-     * @secure
-     * @response `200` `(WithTaskUserRoleNext)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateRole: (data: RoleUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskUserRoleNext[], ErrorBody>({
-        path: `/update-role`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteRole = {
-    /**
-     * No description
-     *
-     * @tags UserRoleNext
-     * @name DeleteRole
-     * @request POST:/delete-role
-     * @secure
-     * @response `200` `(WithTaskDeleteRole)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteRole: (data: RoleDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteRole[], ErrorBody>({
-        path: `/delete-role`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  rollbackSnapshotGroup = {
-    /**
-     * No description
-     *
-     * @tags SnapshotGroup
-     * @name RollbackSnapshotGroup
-     * @request POST:/rollback-snapshot-group
-     * @secure
-     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    rollbackSnapshotGroup: (data: SnapshotGroupRollbackParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
-        path: `/rollback-snapshot-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  cloneSnapshotGroup = {
-    /**
-     * No description
-     *
-     * @tags SnapshotGroup
-     * @name CloneSnapshotGroup
-     * @request POST:/clone-snapshot-group
-     * @secure
-     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    cloneSnapshotGroup: (data: SnapshotGroupCloneParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
-        path: `/clone-snapshot-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  keepSnapshotGroup = {
-    /**
-     * No description
-     *
-     * @tags SnapshotGroup
-     * @name KeepSnapshotGroup
-     * @request POST:/keep-snapshot-group
-     * @secure
-     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    keepSnapshotGroup: (data: SnapshotGroupKeepParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
-        path: `/keep-snapshot-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteSnapshotGroup = {
-    /**
-     * No description
-     *
-     * @tags SnapshotGroup
-     * @name DeleteSnapshotGroup
-     * @request POST:/delete-snapshot-group
-     * @secure
-     * @response `200` `(WithTaskDeleteSnapshotGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteSnapshotGroup: (data: SnapshotGroupDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteSnapshotGroup[], ErrorBody>({
-        path: `/delete-snapshot-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name CreateSnapshotPlan
-     * @request POST:/create-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createSnapshotPlan: (data: SnapshotPlanCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
-        path: `/create-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name UpdateSnapshotPlan
-     * @request POST:/update-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateSnapshotPlan: (data: SnapshotPlanUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
-        path: `/update-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name DeleteSnapshotPlan
-     * @request POST:/delete-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskDeleteSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteSnapshotPlan: (data: SnapshotPlanDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteSnapshotPlan[], ErrorBody>({
-        path: `/delete-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  executeSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name ExecuteSnapshotPlan
-     * @request POST:/execute-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    executeSnapshotPlan: (data: SnapshotPlanExecutionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
-        path: `/execute-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  suspendSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name SuspendSnapshotPlan
-     * @request POST:/suspend-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    suspendSnapshotPlan: (data: SnapshotPlanSuspendedParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
-        path: `/suspend-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  resumeSnapshotPlan = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name ResumeSnapshotPlan
-     * @request POST:/resume-snapshot-plan
-     * @secure
-     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    resumeSnapshotPlan: (data: SnapshotPlanResumeParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
-        path: `/resume-snapshot-plan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createSnmpTransport = {
-    /**
-     * No description
-     *
-     * @tags SnmpTransport
-     * @name CreateSnmpTransport
-     * @request POST:/create-snmp-transport
-     * @secure
-     * @response `200` `(WithTaskSnmpTransport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createSnmpTransport: (data: SnmpTransportCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskSnmpTransport[], ErrorBody>({
-        path: `/create-snmp-transport`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateSnmpTransport = {
-    /**
-     * No description
-     *
-     * @tags SnmpTransport
-     * @name UpdateSnmpTransport
-     * @request POST:/update-snmp-transport
-     * @secure
-     * @response `200` `(WithTaskSnmpTransport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateSnmpTransport: (data: SnmpTransportUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnmpTransport[], ErrorBody>({
-        path: `/update-snmp-transport`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteSnmpTransport = {
-    /**
-     * No description
-     *
-     * @tags SnmpTransport
-     * @name DeleteSnmpTransport
-     * @request POST:/delete-snmp-transport
-     * @secure
-     * @response `200` `(WithTaskDeleteSnmpTransport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteSnmpTransport: (data: SnmpTransportDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteSnmpTransport[], ErrorBody>({
-        path: `/delete-snmp-transport`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createSnmpTrapReceiver = {
-    /**
-     * No description
-     *
-     * @tags SnmpTrapReceiver
-     * @name CreateSnmpTrapReceiver
-     * @request POST:/create-snmp-trap-receiver
-     * @secure
-     * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createSnmpTrapReceiver: (data: SnmpTrapReceiverCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
-        path: `/create-snmp-trap-receiver`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateSnmpTrapReceiver = {
-    /**
-     * No description
-     *
-     * @tags SnmpTrapReceiver
-     * @name UpdateSnmpTrapReceiver
-     * @request POST:/update-snmp-trap-receiver
-     * @secure
-     * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateSnmpTrapReceiver: (data: SnmpTrapReceiverUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
-        path: `/update-snmp-trap-receiver`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteSnmpTrapReceiver = {
-    /**
-     * No description
-     *
-     * @tags SnmpTrapReceiver
-     * @name DeleteSnmpTrapReceiver
-     * @request POST:/delete-snmp-trap-receiver
-     * @secure
-     * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteSnmpTrapReceiver: (data: SnmpTrapReceiverDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteSnmpTrapReceiver[], ErrorBody>({
-        path: `/delete-snmp-trap-receiver`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  mountUsbDevice = {
-    /**
-     * No description
-     *
-     * @tags UsbDevice
-     * @name MountUsbDevice
-     * @request POST:/mount-usb-device
-     * @secure
-     * @response `200` `(WithTaskUsbDevice)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    mountUsbDevice: (data: UsbDeviceMountParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskUsbDevice[], ErrorBody>({
-        path: `/mount-usb-device`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  unmountUsbDevice = {
-    /**
-     * No description
-     *
-     * @tags UsbDevice
-     * @name UnmountUsbDevice
-     * @request POST:/unmount-usb-device
-     * @secure
-     * @response `200` `(WithTaskUsbDevice)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    unmountUsbDevice: (data: UsbDeviceUnmountParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskUsbDevice[], ErrorBody>({
-        path: `/unmount-usb-device`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  login = {
-    /**
-     * No description
-     *
-     * @tags User
-     * @name Login
-     * @request POST:/login
-     * @response `200` `WithTaskTokenString` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    login: (data: LoginInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskTokenString, ErrorBody>({
-        path: `/login`,
-        method: "POST",
-        body: data,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createUser = {
-    /**
-     * No description
-     *
-     * @tags User
-     * @name CreateUser
-     * @request POST:/create-user
-     * @secure
-     * @response `200` `(WithTaskUser)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createUser: (data: UserCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskUser[], ErrorBody>({
-        path: `/create-user`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateUser = {
-    /**
-     * No description
-     *
-     * @tags User
-     * @name UpdateUser
-     * @request POST:/update-user
-     * @secure
-     * @response `200` `(WithTaskUser)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateUser: (data: UserUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskUser[], ErrorBody>({
-        path: `/update-user`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteUser = {
-    /**
-     * No description
-     *
-     * @tags User
-     * @name DeleteUser
-     * @request POST:/delete-user
-     * @secure
-     * @response `200` `(WithTaskDeleteUser)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteUser: (data: UserDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteUser[], ErrorBody>({
-        path: `/delete-user`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createRootUser = {
-    /**
-     * No description
-     *
-     * @tags User
-     * @name CreateRootUser
-     * @request POST:/create-root-user
-     * @response `200` `WithTaskUser` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createRootUser: (data: RootUserCreationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskUser, ErrorBody>({
-        path: `/create-root-user`,
-        method: "POST",
-        body: data,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVdsWithMigrateVlan = {
-    /**
-     * No description
-     *
-     * @tags Vds
-     * @name CreateVdsWithMigrateVlan
-     * @request POST:/create-vds-with-migrate-vlan
-     * @secure
-     * @response `200` `(WithTaskVds)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVdsWithMigrateVlan: (data: VdsCreationWithMigrateVlanParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVds[], ErrorBody>({
-        path: `/create-vds-with-migrate-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVdsWithAccessVlan = {
-    /**
-     * No description
-     *
-     * @tags Vds
-     * @name CreateVdsWithAccessVlan
-     * @request POST:/create-vds-with-access-vlan
-     * @secure
-     * @response `200` `(WithTaskVds)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVdsWithAccessVlan: (data: VdsCreationWithMAccessVlanParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVds[], ErrorBody>({
-        path: `/create-vds-with-access-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVds = {
-    /**
-     * No description
-     *
-     * @tags Vds
-     * @name CreateVds
-     * @request POST:/create-vds
-     * @secure
-     * @response `200` `(WithTaskVds)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVds: (data: VdsCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVds[], ErrorBody>({
-        path: `/create-vds`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVds = {
-    /**
-     * No description
-     *
-     * @tags Vds
-     * @name UpdateVds
-     * @request POST:/update-vds
-     * @secure
-     * @response `200` `(WithTaskVds)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVds: (data: VdsUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVds[], ErrorBody>({
-        path: `/update-vds`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVds = {
-    /**
-     * No description
-     *
-     * @tags Vds
-     * @name DeleteVds
-     * @request POST:/delete-vds
-     * @secure
-     * @response `200` `(WithTaskDeleteVds)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVds: (data: VdsDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVds[], ErrorBody>({
-        path: `/delete-vds`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createView = {
-    /**
-     * No description
-     *
-     * @tags View
-     * @name CreateView
-     * @request POST:/create-view
-     * @secure
-     * @response `200` `(WithTaskView)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createView: (data: ViewCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskView[], ErrorBody>({
-        path: `/create-view`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateView = {
-    /**
-     * No description
-     *
-     * @tags View
-     * @name UpdateView
-     * @request POST:/update-view
-     * @secure
-     * @response `200` `(WithTaskView)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateView: (data: ViewUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskView[], ErrorBody>({
-        path: `/update-view`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteView = {
-    /**
-     * No description
-     *
-     * @tags View
-     * @name DeleteView
-     * @request POST:/delete-view
-     * @secure
-     * @response `200` `(WithTaskDeleteView)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteView: (data: ViewDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteView[], ErrorBody>({
-        path: `/delete-view`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmVlan = {
-    /**
-     * No description
-     *
-     * @tags Vlan
-     * @name CreateVmVlan
-     * @request POST:/create-vm-vlan
-     * @secure
-     * @response `200` `(WithTaskVlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmVlan: (data: VmVlanCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVlan[], ErrorBody>({
-        path: `/create-vm-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmVlan = {
-    /**
-     * No description
-     *
-     * @tags Vlan
-     * @name UpdateVlan
-     * @request POST:/update-vm-vlan
-     * @secure
-     * @response `200` `(WithTaskVlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVlan: (data: VmVlanUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVlan[], ErrorBody>({
-        path: `/update-vm-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateManagementVlan = {
-    /**
-     * No description
-     *
-     * @tags Vlan
-     * @name UpdateManagementVlan
-     * @request POST:/update-management-vlan
-     * @secure
-     * @response `200` `(WithTaskVlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateManagementVlan: (data: ManagementVlanUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVlan[], ErrorBody>({
-        path: `/update-management-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateMigrationVlan = {
-    /**
-     * No description
-     *
-     * @tags Vlan
-     * @name UpdateMigrationVlan
-     * @request POST:/update-migration-vlan
-     * @secure
-     * @response `200` `(WithTaskVlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateMigrationVlan: (data: MigrationVlanUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVlan[], ErrorBody>({
-        path: `/update-migration-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmVlan = {
-    /**
-     * No description
-     *
-     * @tags Vlan
-     * @name DeleteVlan
-     * @request POST:/delete-vm-vlan
-     * @secure
-     * @response `200` `(WithTaskDeleteVlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVlan: (data: VlanDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVlan[], ErrorBody>({
-        path: `/delete-vm-vlan`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmFolder = {
-    /**
-     * No description
-     *
-     * @tags VmFolder
-     * @name CreateVmFolder
-     * @request POST:/create-vm-folder
-     * @secure
-     * @response `200` `(WithTaskVmFolder)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmFolder: (data: VmFolderCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVmFolder[], ErrorBody>({
-        path: `/create-vm-folder`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmFolder = {
-    /**
-     * No description
-     *
-     * @tags VmFolder
-     * @name UpdateVmFolder
-     * @request POST:/update-vm-folder
-     * @secure
-     * @response `200` `(WithTaskVmFolder)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmFolder: (data: VmFolderUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVmFolder[], ErrorBody>({
-        path: `/update-vm-folder`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmFolder = {
-    /**
-     * No description
-     *
-     * @tags VmFolder
-     * @name DeleteVmFolder
-     * @request POST:/delete-vm-folder
-     * @secure
-     * @response `200` `(WithTaskDeleteVmFolder)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVmFolder: (data: VmFolderDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVmFolder[], ErrorBody>({
-        path: `/delete-vm-folder`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmPlacementGroup = {
-    /**
-     * No description
-     *
-     * @tags VmPlacementGroup
-     * @name CreateVmPlacementGroup
-     * @request POST:/create-vm-placement-group
-     * @secure
-     * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmPlacementGroup: (data: VmPlacementGroupCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
-        path: `/create-vm-placement-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmPlacementGroup = {
-    /**
-     * No description
-     *
-     * @tags VmPlacementGroup
-     * @name UpdateVmPlacementGroup
-     * @request POST:/update-vm-placement-group
-     * @secure
-     * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmPlacementGroup: (data: VmPlacementGroupUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
-        path: `/update-vm-placement-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmPlacementGroup = {
-    /**
-     * No description
-     *
-     * @tags VmPlacementGroup
-     * @name DeleteVmPlacementGroup
-     * @request POST:/delete-vm-placement-group
-     * @secure
-     * @response `200` `(WithTaskDeleteVmPlacementGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVmPlacementGroup: (data: VmPlacementGroupDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVmPlacementGroup[], ErrorBody>({
-        path: `/delete-vm-placement-group`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmSnapshot = {
-    /**
-     * No description
-     *
-     * @tags VmSnapshot
-     * @name CreateVmSnapshot
-     * @request POST:/create-vm-snapshot
-     * @secure
-     * @response `200` `(WithTaskVmSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmSnapshot: (data: VmSnapshotCreationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVmSnapshot[], ErrorBody>({
-        path: `/create-vm-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmSnapshot = {
-    /**
-     * No description
-     *
-     * @tags VmSnapshot
-     * @name DeleteVmSnapshot
-     * @request POST:/delete-vm-snapshot
-     * @secure
-     * @response `200` `(WithTaskDeleteVmSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVmSnapshot: (data: VmSnapshotDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVmSnapshot[], ErrorBody>({
-        path: `/delete-vm-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  cloneVmTemplateFromVm = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name CloneVmTemplateFromVm
-     * @request POST:/clone-vm-template-from-vm
-     * @secure
-     * @response `200` `(WithTaskVmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    cloneVmTemplateFromVm: (data: VmTemplateCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVmTemplate[], ErrorBody>({
-        path: `/clone-vm-template-from-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  convertVmTemplateFromVm = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name ConvertVmTemplateFromVm
-     * @request POST:/convert-vm-template-from-vm
-     * @secure
-     * @response `200` `(WithTaskVmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    convertVmTemplateFromVm: (data: VmTemplateCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVmTemplate[], ErrorBody>({
-        path: `/convert-vm-template-from-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmTemplate = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name UpdateVmTemplate
-     * @request POST:/update-vm-template
-     * @secure
-     * @response `200` `(WithTaskVmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmTemplate: (data: VmTemplateUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVmTemplate[], ErrorBody>({
-        path: `/update-vm-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmTemplate = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name DeleteVmTemplate
-     * @request POST:/delete-vm-template
-     * @secure
-     * @response `200` `(WithTaskDeleteVmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVmTemplate: (data: VmTemplateDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVmTemplate[], ErrorBody>({
-        path: `/delete-vm-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmVolume = {
-    /**
-     * No description
-     *
-     * @tags VmVolume
-     * @name CreateVmVolume
-     * @request POST:/create-vm-volume
-     * @secure
-     * @response `200` `(WithTaskVmVolume)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmVolume: (data: VmVolumeCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVmVolume[], ErrorBody>({
-        path: `/create-vm-volume`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVmVolume = {
-    /**
-     * No description
-     *
-     * @tags VmVolume
-     * @name DeleteVmVolumeFromVm
-     * @request POST:/delete-vm-volume
-     * @secure
-     * @response `200` `(WithTaskDeleteVmVolume)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVmVolumeFromVm: (data: VmVolumeDeletionParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVmVolume[], ErrorBody>({
-        path: `/delete-vm-volume`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name CreateVm
-     * @request POST:/create-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVm: (data: VmCreationParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/create-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  createVmFromTemplate = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name CreateVmFromTemplate
-     * @request POST:/create-vm-from-template
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    createVmFromTemplate: (data: VmCreateVmFromTemplateParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/create-vm-from-template`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  convertVmTemplateToVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ConvertVmTemplateToVm
-     * @request POST:/convert-vm-template-to-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    convertVmTemplateToVm: (data: ConvertVmTemplateToVmParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/convert-vm-template-to-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  cloneVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name CloneVm
-     * @request POST:/clone-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    cloneVm: (data: VmCloneParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/clone-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  rebuildVmFromSnapshot = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RebuildVm
-     * @request POST:/rebuild-vm-from-snapshot
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    rebuildVm: (data: VmRebuildParams[], params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/rebuild-vm-from-snapshot`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  rollbackVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RollbackVm
-     * @request POST:/rollback-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    rollbackVm: (data: VmRollbackParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/rollback-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmBasicInfo = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVm
-     * @request POST:/update-vm-basic-info
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVm: (data: VmUpdateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/update-vm-basic-info`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  moveVmToRecycle = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name MoveVmToRecycleBin
-     * @request POST:/move-vm-to-recycle
-     * @secure
-     * @response `200` `(WithTaskDeleteVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    moveVmToRecycleBin: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVm[], ErrorBody>({
-        path: `/move-vm-to-recycle`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  recoverVmFromRecycle = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RecoverVmFromRecycleBin
-     * @request POST:/recover-vm-from-recycle
-     * @secure
-     * @response `200` `(WithTaskDeleteVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    recoverVmFromRecycleBin: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVm[], ErrorBody>({
-        path: `/recover-vm-from-recycle`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  deleteVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name DeleteVm
-     * @request POST:/delete-vm
-     * @secure
-     * @response `200` `(WithTaskDeleteVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    deleteVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskDeleteVm[], ErrorBody>({
-        path: `/delete-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  startVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name StartVm
-     * @request POST:/start-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    startVm: (data: VmStartParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/start-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  restartVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RestartVm
-     * @request POST:/restart-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    restartVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/restart-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  forceRestartVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ForceRestartVm
-     * @request POST:/force-restart-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    forceRestartVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/force-restart-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  shutdownVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ShutDownVm
-     * @request POST:/shutdown-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    shutDownVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/shutdown-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  poweroffVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name PoweroffVm
-     * @request POST:/poweroff-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    poweroffVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/poweroff-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  suspendVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name SuspendVm
-     * @request POST:/suspend-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    suspendVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/suspend-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  resumeVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ResumeVm
-     * @request POST:/resume-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    resumeVm: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/resume-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  addVmDisk = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name AddVmDisk
-     * @request POST:/add-vm-disk
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    addVmDisk: (data: VmAddDiskParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/add-vm-disk`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmDisk = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVmDisk
-     * @request POST:/update-vm-disk
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmDisk: (data: VmUpdateDiskParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/update-vm-disk`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  expandVmDisk = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ExpandVmDisk
-     * @request POST:/expand-vm-disk
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    expandVmDisk: (data: VmExpandVmDiskParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/expand-vm-disk`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  removeVmDisk = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RemoveVmDisk
-     * @request POST:/remove-vm-disk
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    removeVmDisk: (data: VmRemoveDiskParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/remove-vm-disk`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  addVmCdRom = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name AddVmCdRom
-     * @request POST:/add-vm-cd-rom
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    addVmCdRom: (data: VmAddCdRomParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/add-vm-cd-rom`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  removeVmCdRom = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RemoveVmCdRom
-     * @request POST:/remove-vm-cd-rom
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    removeVmCdRom: (data: VmRemoveCdRomParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/remove-vm-cd-rom`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  ejectIsoFromVmCdRom = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name EjectIsoFromVmCdRom
-     * @request POST:/eject-iso-from-vm-cd-rom
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    ejectIsoFromVmCdRom: (data: VmEjectCdRomParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/eject-iso-from-vm-cd-rom`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  toggleVmCdRomDisable = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name ToggleVmCdRomDisable
-     * @request POST:/toggle-vm-cd-rom-disable
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    toggleVmCdRomDisable: (data: VmToggleCdRomDisableParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/toggle-vm-cd-rom-disable`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  addVmNic = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name AddVmNic
-     * @request POST:/add-vm-nic
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    addVmNic: (data: VmAddNicParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/add-vm-nic`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmNic = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVmNic
-     * @request POST:/update-vm-nic
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmNic: (data: VmUpdateNicParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/update-vm-nic`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmNicBasicInfo = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVmNicBasicInfo
-     * @request POST:/update-vm-nic-basic-info
-     * @secure
-     * @response `200` `({ task_id: any, data: any })[]` Ok
-     * @response `304` `void` Not modified
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmNicBasicInfo: (data: VmUpdateNicBasicInfoParams, params: RequestParams = {}) =>
-      this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
-        path: `/update-vm-nic-basic-info`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmNicAdvanceInfo = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVmNicAdvanceInfo
-     * @request POST:/update-vm-nic-advance-info
-     * @secure
-     * @response `200` `({ task_id: any, data: any })[]` Ok
-     * @response `304` `void` Not modified
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmNicAdvanceInfo: (data: VmUpdateNicAdvanceInfoParams, params: RequestParams = {}) =>
-      this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
-        path: `/update-vm-nic-advance-info`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  removeVmNic = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RemoveVmNic
-     * @request POST:/remove-vm-nic
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    removeVmNic: (data: VmRemoveNicParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/remove-vm-nic`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  installVmtools = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name InstallVmtools
-     * @request POST:/install-vmtools
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    installVmtools: (data: InstallVmtoolsParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/install-vmtools`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  migrateVm = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name MigRateVm
-     * @request POST:/migrate-vm
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    migRateVm: (data: VmMigrateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/migrate-vm`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  addVmToFolder = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name AddVmToFolder
-     * @request POST:/add-vm-to-folder
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    addVmToFolder: (data: VmAddFolderParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/add-vm-to-folder`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  removeVmFromFolder = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name RemoveVmToFolder
-     * @request POST:/remove-vm-from-folder
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    removeVmToFolder: (data: VmOperateParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
-        path: `/remove-vm-from-folder`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateVmAdvancedOptions = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name UpdateVmAdvancedOptions
-     * @request POST:/update-vm-advanced-options
-     * @secure
-     * @response `200` `(WithTaskVm)[]` Ok
-     * @response `304` `void` Not modified
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateVmAdvancedOptions: (data: VmUpdateAdvancedOptionsParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], void | ErrorBody>({
-        path: `/update-vm-advanced-options`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetVmMetrics
-     * @request POST:/get-vm-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmMetrics: (data: GetVmMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-vm-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmNetworkMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetVmNetWorkMetrics
-     * @request POST:/get-vm-network-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmNetWorkMetrics: (data: GetVmNetWorkMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-vm-network-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDiskMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetDiskMetrics
-     * @request POST:/get-disk-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDiskMetrics: (data: GetDiskMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-disk-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmVolumeMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetVmVolumeMetrics
-     * @request POST:/get-vm-volume-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmVolumeMetrics: (data: GetVmVolumeMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-vm-volume-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getLunMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetLunMetrics
-     * @request POST:/get-lun-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getLunMetrics: (data: GetLunMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-lun-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getNvmfNamespaceMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetNvmfNamespaceMetrics
-     * @request POST:/get-nvmf-namespace-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getNvmfNamespaceMetrics: (data: GetNvmfNamespaceMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-nvmf-namespace-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetClusterMetrics
-     * @request POST:/get-cluster-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterMetrics: (data: GetClusterMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-cluster-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getHostMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetHostMetrics
-     * @request POST:/get-host-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getHostMetrics: (data: GetHostMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-host-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getHostNetworkMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetHostNetworkMetrics
-     * @request POST:/get-host-network-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getHostNetworkMetrics: (data: GetHostNetworkMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-host-network-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getHostServiceMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetHostServicekMetrics
-     * @request POST:/get-host-service-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getHostServicekMetrics: (data: GetHostServiceMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-host-service-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getScvmMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetScvmMetrics
-     * @request POST:/get-scvm-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getScvmMetrics: (data: GetScvmMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-scvm-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getScvmNetworkMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetScvmNetworkMetrics
-     * @request POST:/get-scvm-network-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getScvmNetworkMetrics: (data: GetScvmNetworkInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-scvm-network-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getScvmServiceMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetScvmServicekMetrics
-     * @request POST:/get-scvm-service-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getScvmServicekMetrics: (data: GetScvmServiceMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-scvm-service-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getScvmDiskMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetScvmDiskMetrics
-     * @request POST:/get-scvm-disk-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getScvmDiskMetrics: (data: GetSCVMDiskMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-scvm-disk-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getZoneMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetZoneMetrics
-     * @request POST:/get-zone-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getZoneMetrics: (data: GetZoneMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-zone-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getWitnessMetrics = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetWitnessMetrics
-     * @request POST:/get-witness-metrics
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getWitnessMetrics: (data: GetWitnessMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-witness-metrics`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getTopNMetricsInClusters = {
-    /**
-     * No description
-     *
-     * @tags Metrics
-     * @name GetTopNVmVolumeMetrics
-     * @request POST:/get-top-n-metrics-in-clusters
-     * @secure
-     * @response `200` `(WithTaskMetric)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getTopNVmVolumeMetrics: (data: GetTopNMetricInput, params: RequestParams = {}) =>
-      this.http.request<WithTaskMetric[], ErrorBody>({
-        path: `/get-top-n-metrics-in-clusters`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlertNotifiers = {
-    /**
-     * No description
-     *
-     * @tags AlertNotifier
-     * @name GetAlertNotifiers
-     * @request POST:/get-alert-notifiers
-     * @secure
-     * @response `200` `(AlertNotifier)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlertNotifiers: (data: GetAlertNotifiersRequestBody, params: RequestParams = {}) =>
-      this.http.request<AlertNotifier[], ErrorBody>({
-        path: `/get-alert-notifiers`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlertNotifiersConnection = {
-    /**
-     * No description
-     *
-     * @tags AlertNotifier
-     * @name GetAlertNotifiersConnection
-     * @request POST:/get-alert-notifiers-connection
-     * @secure
-     * @response `200` `AlertNotifierConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlertNotifiersConnection: (data: GetAlertNotifiersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<AlertNotifierConnection, ErrorBody>({
-        path: `/get-alert-notifiers-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlertRules = {
-    /**
-     * No description
-     *
-     * @tags AlertRule
-     * @name GetAlertRules
-     * @request POST:/get-alert-rules
-     * @secure
-     * @response `200` `(AlertRule)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlertRules: (data: GetAlertRulesRequestBody, params: RequestParams = {}) =>
-      this.http.request<AlertRule[], ErrorBody>({
-        path: `/get-alert-rules`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlertRulesConnection = {
-    /**
-     * No description
-     *
-     * @tags AlertRule
-     * @name GetAlertRulesConnection
-     * @request POST:/get-alert-rules-connection
-     * @secure
-     * @response `200` `AlertRuleConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlertRulesConnection: (data: GetAlertRulesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<AlertRuleConnection, ErrorBody>({
-        path: `/get-alert-rules-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlerts = {
-    /**
-     * No description
-     *
-     * @tags Alert
-     * @name GetAlerts
-     * @request POST:/get-alerts
-     * @secure
-     * @response `200` `(Alert)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlerts: (data: GetAlertsRequestBody, params: RequestParams = {}) =>
-      this.http.request<Alert[], ErrorBody>({
-        path: `/get-alerts`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getAlertsConnection = {
-    /**
-     * No description
-     *
-     * @tags Alert
-     * @name GetAlertsConnection
-     * @request POST:/get-alerts-connection
-     * @secure
-     * @response `200` `AlertConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getAlertsConnection: (data: GetAlertsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<AlertConnection, ErrorBody>({
-        path: `/get-alerts-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getApplications = {
-    /**
-     * No description
-     *
-     * @tags Application
-     * @name GetApplications
-     * @request POST:/get-applications
-     * @secure
-     * @response `200` `(Application)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getApplications: (data: GetApplicationsRequestBody, params: RequestParams = {}) =>
-      this.http.request<Application[], ErrorBody>({
-        path: `/get-applications`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getApplicationsConnection = {
-    /**
-     * No description
-     *
-     * @tags Application
-     * @name GetApplicationsConnection
-     * @request POST:/get-applications-connection
-     * @secure
-     * @response `200` `ApplicationConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getApplicationsConnection: (data: GetApplicationsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ApplicationConnection, ErrorBody>({
-        path: `/get-applications-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getBrickTopoes = {
-    /**
-     * No description
-     *
-     * @tags BrickTopo
-     * @name GetBrickTopoes
-     * @request POST:/get-brick-topoes
-     * @secure
-     * @response `200` `(BrickTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getBrickTopoes: (data: GetBrickTopoesRequestBody, params: RequestParams = {}) =>
-      this.http.request<BrickTopo[], ErrorBody>({
-        path: `/get-brick-topoes`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getBrickTopoesConnection = {
-    /**
-     * No description
-     *
-     * @tags BrickTopo
-     * @name GetBrickTopoesConnection
-     * @request POST:/get-brick-topoes-connection
-     * @secure
-     * @response `200` `BrickTopoConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getBrickTopoesConnection: (data: GetBrickTopoesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<BrickTopoConnection, ErrorBody>({
-        path: `/get-brick-topoes-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterImages = {
-    /**
-     * No description
-     *
-     * @tags ClusterImage
-     * @name GetClusterImages
-     * @request POST:/get-cluster-images
-     * @secure
-     * @response `200` `(ClusterImage)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterImages: (data: GetClusterImagesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterImage[], ErrorBody>({
-        path: `/get-cluster-images`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterImagesConnection = {
-    /**
-     * No description
-     *
-     * @tags ClusterImage
-     * @name GetClusterImagesConnection
-     * @request POST:/get-cluster-images-connection
-     * @secure
-     * @response `200` `ClusterImageConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterImagesConnection: (data: GetClusterImagesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterImageConnection, ErrorBody>({
-        path: `/get-cluster-images-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusters = {
-    /**
-     * No description
-     *
-     * @tags Cluster
-     * @name GetClusters
-     * @request POST:/get-clusters
-     * @secure
-     * @response `200` `(Cluster)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusters: (data: GetClustersRequestBody, params: RequestParams = {}) =>
-      this.http.request<Cluster[], ErrorBody>({
-        path: `/get-clusters`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClustersConnection = {
-    /**
-     * No description
-     *
-     * @tags Cluster
-     * @name GetClustersConnection
-     * @request POST:/get-clusters-connection
-     * @secure
-     * @response `200` `ClusterConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClustersConnection: (data: GetClustersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterConnection, ErrorBody>({
-        path: `/get-clusters-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterSettingses = {
-    /**
-     * No description
-     *
-     * @tags ClusterSettings
-     * @name GetClusterSettingses
-     * @request POST:/get-cluster-settingses
-     * @secure
-     * @response `200` `(ClusterSettings)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterSettingses: (data: GetClusterSettingsesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterSettings[], ErrorBody>({
-        path: `/get-cluster-settingses`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterSettingsesConnection = {
-    /**
-     * No description
-     *
-     * @tags ClusterSettings
-     * @name GetClusterSettingsesConnection
-     * @request POST:/get-cluster-settingses-connection
-     * @secure
-     * @response `200` `ClusterSettingsConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterSettingsesConnection: (data: GetClusterSettingsesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterSettingsConnection, ErrorBody>({
-        path: `/get-cluster-settingses-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterTopoes = {
-    /**
-     * No description
-     *
-     * @tags ClusterTopo
-     * @name GetClusterTopoes
-     * @request POST:/get-cluster-topoes
-     * @secure
-     * @response `200` `(ClusterTopo)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterTopoes: (data: GetClusterTopoesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterTopo[], ErrorBody>({
-        path: `/get-cluster-topoes`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterTopoesConnection = {
-    /**
-     * No description
-     *
-     * @tags ClusterTopo
-     * @name GetClusterTopoesConnection
-     * @request POST:/get-cluster-topoes-connection
-     * @secure
-     * @response `200` `ClusterTopoConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterTopoesConnection: (data: GetClusterTopoesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterTopoConnection, ErrorBody>({
-        path: `/get-cluster-topoes-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterUpgradeHistories = {
-    /**
-     * No description
-     *
-     * @tags ClusterUpgradeHistory
-     * @name GetClusterUpgradeHistories
-     * @request POST:/get-cluster-upgrade-histories
-     * @secure
-     * @response `200` `(ClusterUpgradeHistory)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterUpgradeHistories: (data: GetClusterUpgradeHistoriesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ClusterUpgradeHistory[], ErrorBody>({
-        path: `/get-cluster-upgrade-histories`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getClusterUpgradeHistoriesConnection = {
-    /**
-     * No description
-     *
-     * @tags ClusterUpgradeHistory
-     * @name GetClusterUpgradeHistoriesConnection
-     * @request POST:/get-cluster-upgrade-histories-connection
-     * @secure
-     * @response `200` `ClusterUpgradeHistoryConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getClusterUpgradeHistoriesConnection: (
-      data: GetClusterUpgradeHistoriesConnectionRequestBody,
-      params: RequestParams = {},
-    ) =>
-      this.http.request<ClusterUpgradeHistoryConnection, ErrorBody>({
-        path: `/get-cluster-upgrade-histories-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getConsistencyGroups = {
-    /**
-     * No description
-     *
-     * @tags ConsistencyGroup
-     * @name GetConsistencyGroups
-     * @request POST:/get-consistency-groups
-     * @secure
-     * @response `200` `(ConsistencyGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getConsistencyGroups: (data: GetConsistencyGroupsRequestBody, params: RequestParams = {}) =>
-      this.http.request<ConsistencyGroup[], ErrorBody>({
-        path: `/get-consistency-groups`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getConsistencyGroupsConnection = {
-    /**
-     * No description
-     *
-     * @tags ConsistencyGroup
-     * @name GetConsistencyGroupsConnection
-     * @request POST:/get-consistency-groups-connection
-     * @secure
-     * @response `200` `ConsistencyGroupConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getConsistencyGroupsConnection: (data: GetConsistencyGroupsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ConsistencyGroupConnection, ErrorBody>({
-        path: `/get-consistency-groups-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getConsistencyGroupSnapshots = {
-    /**
-     * No description
-     *
-     * @tags ConsistencyGroupSnapshot
-     * @name GetConsistencyGroupSnapshots
-     * @request POST:/get-consistency-group-snapshots
-     * @secure
-     * @response `200` `(ConsistencyGroupSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getConsistencyGroupSnapshots: (data: GetConsistencyGroupSnapshotsRequestBody, params: RequestParams = {}) =>
-      this.http.request<ConsistencyGroupSnapshot[], ErrorBody>({
-        path: `/get-consistency-group-snapshots`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getConsistencyGroupSnapshotsConnection = {
-    /**
-     * No description
-     *
-     * @tags ConsistencyGroupSnapshot
-     * @name GetConsistencyGroupSnapshotsConnection
-     * @request POST:/get-consistency-group-snapshots-connection
-     * @secure
-     * @response `200` `ConsistencyGroupSnapshotConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getConsistencyGroupSnapshotsConnection: (
-      data: GetConsistencyGroupSnapshotsConnectionRequestBody,
-      params: RequestParams = {},
-    ) =>
-      this.http.request<ConsistencyGroupSnapshotConnection, ErrorBody>({
-        path: `/get-consistency-group-snapshots-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getContentLibraryImages = {
-    /**
-     * No description
-     *
-     * @tags ContentLibraryImage
-     * @name GetContentLibraryImages
-     * @request POST:/get-content-library-images
-     * @secure
-     * @response `200` `(ContentLibraryImage)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getContentLibraryImages: (data: GetContentLibraryImagesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ContentLibraryImage[], ErrorBody>({
-        path: `/get-content-library-images`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getContentLibraryImagesConnection = {
-    /**
-     * No description
-     *
-     * @tags ContentLibraryImage
-     * @name GetContentLibraryImagesConnection
-     * @request POST:/get-content-library-images-connection
-     * @secure
-     * @response `200` `ContentLibraryImageConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getContentLibraryImagesConnection: (
-      data: GetContentLibraryImagesConnectionRequestBody,
-      params: RequestParams = {},
-    ) =>
-      this.http.request<ContentLibraryImageConnection, ErrorBody>({
-        path: `/get-content-library-images-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getContentLibraryVmTemplates = {
-    /**
-     * No description
-     *
-     * @tags ContentLibraryVmTemplate
-     * @name GetContentLibraryVmTemplates
-     * @request POST:/get-content-library-vm-templates
-     * @secure
-     * @response `200` `(ContentLibraryVmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getContentLibraryVmTemplates: (data: GetContentLibraryVmTemplatesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ContentLibraryVmTemplate[], ErrorBody>({
-        path: `/get-content-library-vm-templates`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getContentLibraryVmTemplatesConnection = {
-    /**
-     * No description
-     *
-     * @tags ContentLibraryVmTemplate
-     * @name GetContentLibraryVmTemplatesConnection
-     * @request POST:/get-content-library-vm-templates-connection
-     * @secure
-     * @response `200` `ContentLibraryVmTemplateConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getContentLibraryVmTemplatesConnection: (
-      data: GetContentLibraryVmTemplatesConnectionRequestBody,
-      params: RequestParams = {},
-    ) =>
-      this.http.request<ContentLibraryVmTemplateConnection, ErrorBody>({
-        path: `/get-content-library-vm-templates-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDatacenters = {
-    /**
-     * No description
-     *
-     * @tags Datacenter
-     * @name GetDatacenters
-     * @request POST:/get-datacenters
-     * @secure
-     * @response `200` `(Datacenter)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDatacenters: (data: GetDatacentersRequestBody, params: RequestParams = {}) =>
-      this.http.request<Datacenter[], ErrorBody>({
-        path: `/get-datacenters`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDatacentersConnection = {
-    /**
-     * No description
-     *
-     * @tags Datacenter
-     * @name GetDatacentersConnection
-     * @request POST:/get-datacenters-connection
-     * @secure
-     * @response `200` `DatacenterConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDatacentersConnection: (data: GetDatacentersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<DatacenterConnection, ErrorBody>({
-        path: `/get-datacenters-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDeploys = {
-    /**
-     * No description
-     *
-     * @tags Deploy
-     * @name GetDeploys
-     * @request POST:/get-deploys
-     * @secure
-     * @response `200` `(Deploy)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDeploys: (data: GetDeploysRequestBody, params: RequestParams = {}) =>
-      this.http.request<Deploy[], ErrorBody>({
-        path: `/get-deploys`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDeploysConnection = {
-    /**
-     * No description
-     *
-     * @tags Deploy
-     * @name GetDeploysConnection
-     * @request POST:/get-deploys-connection
-     * @secure
-     * @response `200` `DeployConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDeploysConnection: (data: GetDeploysConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<DeployConnection, ErrorBody>({
-        path: `/get-deploys-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDiscoverHosts = {
-    /**
-     * No description
-     *
-     * @tags DiscoveredHost
-     * @name GetDiscoverHosts
-     * @request POST:/get-discover-hosts
-     * @secure
-     * @response `200` `(DiscoveredHost)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDiscoverHosts: (data: GetDiscoverHostsRequestBody, params: RequestParams = {}) =>
-      this.http.request<DiscoveredHost[], ErrorBody>({
-        path: `/get-discover-hosts`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDisks = {
-    /**
-     * No description
-     *
-     * @tags Disk
-     * @name GetDisks
-     * @request POST:/get-disks
-     * @secure
-     * @response `200` `(Disk)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDisks: (data: GetDisksRequestBody, params: RequestParams = {}) =>
-      this.http.request<Disk[], ErrorBody>({
-        path: `/get-disks`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getDisksConnection = {
-    /**
-     * No description
-     *
-     * @tags Disk
-     * @name GetDisksConnection
-     * @request POST:/get-disks-connection
-     * @secure
-     * @response `200` `DiskConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getDisksConnection: (data: GetDisksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<DiskConnection, ErrorBody>({
-        path: `/get-disks-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getElfDataStores = {
-    /**
-     * No description
-     *
-     * @tags ElfDataStore
-     * @name GetElfDataStores
-     * @request POST:/get-elf-data-stores
-     * @secure
-     * @response `200` `(ElfDataStore)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getElfDataStores: (data: GetElfDataStoresRequestBody, params: RequestParams = {}) =>
-      this.http.request<ElfDataStore[], ErrorBody>({
-        path: `/get-elf-data-stores`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getElfDataStoresConnection = {
-    /**
-     * No description
-     *
-     * @tags ElfDataStore
-     * @name GetElfDataStoresConnection
-     * @request POST:/get-elf-data-stores-connection
-     * @secure
-     * @response `200` `ElfDataStoreConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getElfDataStoresConnection: (data: GetElfDataStoresConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ElfDataStoreConnection, ErrorBody>({
-        path: `/get-elf-data-stores-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getElfImages = {
+
     /**
      * No description
      *
@@ -39699,8 +35667,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getElfImagesConnection = {
+
     /**
      * No description
      *
@@ -39724,22 +35691,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getElfStoragePolicies = {
+  label = {
     /**
      * No description
      *
-     * @tags ElfStoragePolicy
-     * @name GetElfStoragePolicies
-     * @request POST:/get-elf-storage-policies
+     * @tags Label
+     * @name CreateLabel
+     * @request POST:/create-label
      * @secure
-     * @response `200` `(ElfStoragePolicy)[]` Ok
+     * @response `200` `(WithTaskLabel)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getElfStoragePolicies: (data: GetElfStoragePoliciesRequestBody, params: RequestParams = {}) =>
-      this.http.request<ElfStoragePolicy[], ErrorBody>({
-        path: `/get-elf-storage-policies`,
+    createLabel: (data: LabelCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskLabel[], ErrorBody>({
+        path: `/create-label`,
         method: "POST",
         body: data,
         secure: true,
@@ -39747,23 +35714,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getElfStoragePoliciesConnection = {
+
     /**
      * No description
      *
-     * @tags ElfStoragePolicy
-     * @name GetElfStoragePoliciesConnection
-     * @request POST:/get-elf-storage-policies-connection
+     * @tags Label
+     * @name UpdateLabel
+     * @request POST:/update-label
      * @secure
-     * @response `200` `ElfStoragePolicyConnection` Ok
+     * @response `200` `(WithTaskLabel)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getElfStoragePoliciesConnection: (data: GetElfStoragePoliciesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ElfStoragePolicyConnection, ErrorBody>({
-        path: `/get-elf-storage-policies-connection`,
+    updateLabel: (data: LabelUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskLabel[], ErrorBody>({
+        path: `/update-label`,
         method: "POST",
         body: data,
         secure: true,
@@ -39771,23 +35737,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getEntityFilters = {
+
     /**
      * No description
      *
-     * @tags EntityFilter
-     * @name GetEntityFilters
-     * @request POST:/get-entity-filters
+     * @tags Label
+     * @name AddLabelsToResources
+     * @request POST:/add-labels-to-resources
      * @secure
-     * @response `200` `(EntityFilter)[]` Ok
+     * @response `200` `(WithTaskLabel)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getEntityFilters: (data: GetEntityFiltersRequestBody, params: RequestParams = {}) =>
-      this.http.request<EntityFilter[], ErrorBody>({
-        path: `/get-entity-filters`,
+    addLabelsToResources: (data: AddLabelsToResourcesParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskLabel[], ErrorBody>({
+        path: `/add-labels-to-resources`,
         method: "POST",
         body: data,
         secure: true,
@@ -39795,23 +35760,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getEntityFiltersConnection = {
+
     /**
      * No description
      *
-     * @tags EntityFilter
-     * @name GetEntityFiltersConnection
-     * @request POST:/get-entity-filters-connection
+     * @tags Label
+     * @name RemoveLabelsFromResources
+     * @request POST:/remove-labels-from-resources
      * @secure
-     * @response `200` `EntityFilterConnection` Ok
+     * @response `200` `(WithTaskLabel)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getEntityFiltersConnection: (data: GetEntityFiltersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<EntityFilterConnection, ErrorBody>({
-        path: `/get-entity-filters-connection`,
+    removeLabelsFromResources: (data: RemoveLabelsFromResourcesParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskLabel[], ErrorBody>({
+        path: `/remove-labels-from-resources`,
         method: "POST",
         body: data,
         secure: true,
@@ -39819,23 +35783,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getEverouteClusters = {
+
     /**
      * No description
      *
-     * @tags EverouteCluster
-     * @name GetEverouteClusters
-     * @request POST:/get-everoute-clusters
+     * @tags Label
+     * @name DeleteLabel
+     * @request POST:/delete-label
      * @secure
-     * @response `200` `(EverouteCluster)[]` Ok
+     * @response `200` `(WithTaskDeleteLabel)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getEverouteClusters: (data: GetEverouteClustersRequestBody, params: RequestParams = {}) =>
-      this.http.request<EverouteCluster[], ErrorBody>({
-        path: `/get-everoute-clusters`,
+    deleteLabel: (data: LabelDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteLabel[], ErrorBody>({
+        path: `/delete-label`,
         method: "POST",
         body: data,
         secure: true,
@@ -39843,584 +35806,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getEverouteClustersConnection = {
-    /**
-     * No description
-     *
-     * @tags EverouteCluster
-     * @name GetEverouteClustersConnection
-     * @request POST:/get-everoute-clusters-connection
-     * @secure
-     * @response `200` `EverouteClusterConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getEverouteClustersConnection: (data: GetEverouteClustersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<EverouteClusterConnection, ErrorBody>({
-        path: `/get-everoute-clusters-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getEverouteLicenses = {
-    /**
-     * No description
-     *
-     * @tags EverouteLicense
-     * @name GetEverouteLicenses
-     * @request POST:/get-everoute-licenses
-     * @secure
-     * @response `200` `(EverouteLicense)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getEverouteLicenses: (data: GetEverouteLicensesRequestBody, params: RequestParams = {}) =>
-      this.http.request<EverouteLicense[], ErrorBody>({
-        path: `/get-everoute-licenses`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getEverouteLicensesConnection = {
-    /**
-     * No description
-     *
-     * @tags EverouteLicense
-     * @name GetEverouteLicensesConnection
-     * @request POST:/get-everoute-licenses-connection
-     * @secure
-     * @response `200` `EverouteLicenseConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getEverouteLicensesConnection: (data: GetEverouteLicensesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<EverouteLicenseConnection, ErrorBody>({
-        path: `/get-everoute-licenses-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getEveroutePackages = {
-    /**
-     * No description
-     *
-     * @tags EveroutePackage
-     * @name GetEveroutePackages
-     * @request POST:/get-everoute-packages
-     * @secure
-     * @response `200` `(EveroutePackage)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getEveroutePackages: (data: GetEveroutePackagesRequestBody, params: RequestParams = {}) =>
-      this.http.request<EveroutePackage[], ErrorBody>({
-        path: `/get-everoute-packages`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getEveroutePackagesConnection = {
-    /**
-     * No description
-     *
-     * @tags EveroutePackage
-     * @name GetEveroutePackagesConnection
-     * @request POST:/get-everoute-packages-connection
-     * @secure
-     * @response `200` `EveroutePackageConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getEveroutePackagesConnection: (data: GetEveroutePackagesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<EveroutePackageConnection, ErrorBody>({
-        path: `/get-everoute-packages-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGlobalAlertRules = {
-    /**
-     * No description
-     *
-     * @tags GlobalAlertRule
-     * @name GetGlobalAlertRules
-     * @request POST:/get-global-alert-rules
-     * @secure
-     * @response `200` `(GlobalAlertRule)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGlobalAlertRules: (data: GetGlobalAlertRulesRequestBody, params: RequestParams = {}) =>
-      this.http.request<GlobalAlertRule[], ErrorBody>({
-        path: `/get-global-alert-rules`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGlobalAlertRulesConnection = {
-    /**
-     * No description
-     *
-     * @tags GlobalAlertRule
-     * @name GetGlobalAlertRulesConnection
-     * @request POST:/get-global-alert-rules-connection
-     * @secure
-     * @response `200` `GlobalAlertRuleConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGlobalAlertRulesConnection: (data: GetGlobalAlertRulesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<GlobalAlertRuleConnection, ErrorBody>({
-        path: `/get-global-alert-rules-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGlobalSettingses = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name GetGlobalSettingses
-     * @request POST:/get-global-settingses
-     * @secure
-     * @response `200` `(GlobalSettings)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGlobalSettingses: (data: GetGlobalSettingsesRequestBody, params: RequestParams = {}) =>
-      this.http.request<GlobalSettings[], ErrorBody>({
-        path: `/get-global-settingses`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGlobalSettingsesConnection = {
-    /**
-     * No description
-     *
-     * @tags GlobalSettings
-     * @name GetGlobalSettingsesConnection
-     * @request POST:/get-global-settingses-connection
-     * @secure
-     * @response `200` `GlobalSettingsConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGlobalSettingsesConnection: (data: GetGlobalSettingsesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<GlobalSettingsConnection, ErrorBody>({
-        path: `/get-global-settingses-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGraphs = {
-    /**
-     * No description
-     *
-     * @tags Graph
-     * @name GetGraphs
-     * @request POST:/get-graphs
-     * @secure
-     * @response `200` `(Graph)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGraphs: (data: GetGraphsRequestBody, params: RequestParams = {}) =>
-      this.http.request<Graph[], ErrorBody>({
-        path: `/get-graphs`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getGraphsConnection = {
-    /**
-     * No description
-     *
-     * @tags Graph
-     * @name GetGraphsConnection
-     * @request POST:/get-graphs-connection
-     * @secure
-     * @response `200` `GraphConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getGraphsConnection: (data: GetGraphsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<GraphConnection, ErrorBody>({
-        path: `/get-graphs-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getHosts = {
-    /**
-     * No description
-     *
-     * @tags Host
-     * @name GetHosts
-     * @request POST:/get-hosts
-     * @secure
-     * @response `200` `(Host)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getHosts: (data: GetHostsRequestBody, params: RequestParams = {}) =>
-      this.http.request<Host[], ErrorBody>({
-        path: `/get-hosts`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getHostsConnection = {
-    /**
-     * No description
-     *
-     * @tags Host
-     * @name GetHostsConnection
-     * @request POST:/get-hosts-connection
-     * @secure
-     * @response `200` `HostConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getHostsConnection: (data: GetHostsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<HostConnection, ErrorBody>({
-        path: `/get-hosts-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIpmis = {
-    /**
-     * No description
-     *
-     * @tags Ipmi
-     * @name GetIpmis
-     * @request POST:/get-ipmis
-     * @secure
-     * @response `200` `(Ipmi)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIpmis: (data: GetIpmisRequestBody, params: RequestParams = {}) =>
-      this.http.request<Ipmi[], ErrorBody>({
-        path: `/get-ipmis`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiConnections = {
-    /**
-     * No description
-     *
-     * @tags IscsiConnection
-     * @name GetIscsiConnections
-     * @request POST:/get-iscsi-connections
-     * @secure
-     * @response `200` `(IscsiConnection)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiConnections: (data: GetIscsiConnectionsRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiConnection[], ErrorBody>({
-        path: `/get-iscsi-connections`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiConnectionsConnection = {
-    /**
-     * No description
-     *
-     * @tags IscsiConnection
-     * @name GetIscsiConnectionsConnection
-     * @request POST:/get-iscsi-connections-connection
-     * @secure
-     * @response `200` `IscsiConnectionConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiConnectionsConnection: (data: GetIscsiConnectionsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiConnectionConnection, ErrorBody>({
-        path: `/get-iscsi-connections-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiLuns = {
-    /**
-     * No description
-     *
-     * @tags IscsiLun
-     * @name GetIscsiLuns
-     * @request POST:/get-iscsi-luns
-     * @secure
-     * @response `200` `(IscsiLun)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiLuns: (data: GetIscsiLunsRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiLun[], ErrorBody>({
-        path: `/get-iscsi-luns`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiLunsConnection = {
-    /**
-     * No description
-     *
-     * @tags IscsiLun
-     * @name GetIscsiLunsConnection
-     * @request POST:/get-iscsi-luns-connection
-     * @secure
-     * @response `200` `IscsiLunConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiLunsConnection: (data: GetIscsiLunsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiLunConnection, ErrorBody>({
-        path: `/get-iscsi-luns-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiLunSnapshots = {
-    /**
-     * No description
-     *
-     * @tags IscsiLunSnapshot
-     * @name GetIscsiLunSnapshots
-     * @request POST:/get-iscsi-lun-snapshots
-     * @secure
-     * @response `200` `(IscsiLunSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiLunSnapshots: (data: GetIscsiLunSnapshotsRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiLunSnapshot[], ErrorBody>({
-        path: `/get-iscsi-lun-snapshots`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiLunSnapshotsConnection = {
-    /**
-     * No description
-     *
-     * @tags IscsiLunSnapshot
-     * @name GetIscsiLunSnapshotsConnection
-     * @request POST:/get-iscsi-lun-snapshots-connection
-     * @secure
-     * @response `200` `IscsiLunSnapshotConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiLunSnapshotsConnection: (data: GetIscsiLunSnapshotsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiLunSnapshotConnection, ErrorBody>({
-        path: `/get-iscsi-lun-snapshots-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiTargets = {
-    /**
-     * No description
-     *
-     * @tags IscsiTarget
-     * @name GetIscsiTargets
-     * @request POST:/get-iscsi-targets
-     * @secure
-     * @response `200` `(IscsiTarget)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiTargets: (data: GetIscsiTargetsRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiTarget[], ErrorBody>({
-        path: `/get-iscsi-targets`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIscsiTargetsConnection = {
-    /**
-     * No description
-     *
-     * @tags IscsiTarget
-     * @name GetIscsiTargetsConnection
-     * @request POST:/get-iscsi-targets-connection
-     * @secure
-     * @response `200` `IscsiTargetConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIscsiTargetsConnection: (data: GetIscsiTargetsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<IscsiTargetConnection, ErrorBody>({
-        path: `/get-iscsi-targets-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIsolationPolicies = {
-    /**
-     * No description
-     *
-     * @tags IsolationPolicy
-     * @name GetIsolationPolicies
-     * @request POST:/get-isolation-policies
-     * @secure
-     * @response `200` `(IsolationPolicy)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIsolationPolicies: (data: GetIsolationPoliciesRequestBody, params: RequestParams = {}) =>
-      this.http.request<IsolationPolicy[], ErrorBody>({
-        path: `/get-isolation-policies`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getIsolationPoliciesConnection = {
-    /**
-     * No description
-     *
-     * @tags IsolationPolicy
-     * @name GetIsolationPoliciesConnection
-     * @request POST:/get-isolation-policies-connection
-     * @secure
-     * @response `200` `IsolationPolicyConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getIsolationPoliciesConnection: (data: GetIsolationPoliciesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<IsolationPolicyConnection, ErrorBody>({
-        path: `/get-isolation-policies-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getLabels = {
+
     /**
      * No description
      *
@@ -40443,8 +35829,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getLabelsConnection = {
+
     /**
      * No description
      *
@@ -40468,7 +35853,30 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getLicenses = {
+  license = {
+    /**
+     * No description
+     *
+     * @tags License
+     * @name UpdateDeploy
+     * @request POST:/update-license
+     * @secure
+     * @response `200` `WithTaskLicense` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateDeploy: (data: LicenseUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskLicense, ErrorBody>({
+        path: `/update-license`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40491,8 +35899,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getLicensesConnection = {
+
     /**
      * No description
      *
@@ -40516,7 +35923,70 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getLogCollections = {
+  logCollection = {
+    /**
+     * No description
+     *
+     * @tags LogCollection
+     * @name CreateLogCollection
+     * @request POST:/create-log-collection
+     * @response `200` `(WithTaskLogCollection)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createLogCollection: (data: LogCollectionCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskLogCollection[], ErrorBody>({
+        path: `/create-log-collection`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags LogCollection
+     * @name ForceStopLogCollection
+     * @request POST:/force-stop-log-collection
+     * @response `200` `(WithTaskLogCollection)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    forceStopLogCollection: (data: ForceStopLogCollectionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskLogCollection[], ErrorBody>({
+        path: `/force-stop-log-collection`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags LogCollection
+     * @name DeleteLogCollection
+     * @request POST:/delete-log-collection
+     * @response `200` `(WithTaskDeleteLogCollection)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteLogCollection: (data: LogCollectionDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteLogCollection[], ErrorBody>({
+        path: `/delete-log-collection`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40539,8 +36009,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getLogCollectionsConnection = {
+
     /**
      * No description
      *
@@ -40564,22 +36033,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getLogServiceConfigs = {
+  namespaceGroup = {
     /**
      * No description
      *
-     * @tags LogServiceConfig
-     * @name GetLogServiceConfigs
-     * @request POST:/get-log-service-configs
+     * @tags NamespaceGroup
+     * @name CreateNamespaceGroup
+     * @request POST:/create-namespace-group
      * @secure
-     * @response `200` `(LogServiceConfig)[]` Ok
+     * @response `200` `(WithTaskNamespaceGroup)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getLogServiceConfigs: (data: GetLogServiceConfigsRequestBody, params: RequestParams = {}) =>
-      this.http.request<LogServiceConfig[], ErrorBody>({
-        path: `/get-log-service-configs`,
+    createNamespaceGroup: (data: NamespaceGroupCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
+        path: `/create-namespace-group`,
         method: "POST",
         body: data,
         secure: true,
@@ -40587,8 +36056,53 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNamespaceGroups = {
+
+    /**
+     * No description
+     *
+     * @tags NamespaceGroup
+     * @name UpdateNamespaceGroup
+     * @request POST:/update-namespace-group
+     * @secure
+     * @response `200` `(WithTaskNamespaceGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateNamespaceGroup: (data: NamespaceGroupUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
+        path: `/update-namespace-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NamespaceGroup
+     * @name DeleteNamespaceGroup
+     * @request POST:/delete-namespace-group
+     * @secure
+     * @response `200` `(WithTaskDeleteNamespaceGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteNamespaceGroup: (data: NamespaceGroupDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteNamespaceGroup[], ErrorBody>({
+        path: `/delete-namespace-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40611,8 +36125,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNamespaceGroupsConnection = {
+
     /**
      * No description
      *
@@ -40636,7 +36149,76 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getNfsExports = {
+  nfsExport = {
+    /**
+     * No description
+     *
+     * @tags NfsExport
+     * @name CreateNfsExport
+     * @request POST:/create-nfs-export
+     * @secure
+     * @response `200` `(WithTaskNfsExport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createNfsExport: (data: NfsExportCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNfsExport[], ErrorBody>({
+        path: `/create-nfs-export`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NfsExport
+     * @name UpdateNfsExport
+     * @request POST:/update-nfs-export
+     * @secure
+     * @response `200` `(WithTaskNfsExport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateNfsExport: (data: NfsExportUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNfsExport[], ErrorBody>({
+        path: `/update-nfs-export`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NfsExport
+     * @name DeleteNfsExport
+     * @request POST:/delete-nfs-export
+     * @secure
+     * @response `200` `(WithTaskDeleteNfsExport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteNfsExport: (data: NfsExportDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteNfsExport[], ErrorBody>({
+        path: `/delete-nfs-export`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40659,8 +36241,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNfsExportsConnection = {
+
     /**
      * No description
      *
@@ -40684,22 +36265,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getNfsInodes = {
+  nic = {
     /**
      * No description
      *
-     * @tags NfsInode
-     * @name GetNfsInodes
-     * @request POST:/get-nfs-inodes
+     * @tags Nic
+     * @name UpdateNic
+     * @request POST:/update-nic
      * @secure
-     * @response `200` `(NfsInode)[]` Ok
+     * @response `200` `(WithTaskNic)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getNfsInodes: (data: GetNfsInodesRequestBody, params: RequestParams = {}) =>
-      this.http.request<NfsInode[], ErrorBody>({
-        path: `/get-nfs-inodes`,
+    updateNic: (data: NicUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNic[], ErrorBody>({
+        path: `/update-nic`,
         method: "POST",
         body: data,
         secure: true,
@@ -40707,32 +36288,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNfsInodesConnection = {
-    /**
-     * No description
-     *
-     * @tags NfsInode
-     * @name GetNfsInodesConnection
-     * @request POST:/get-nfs-inodes-connection
-     * @secure
-     * @response `200` `NfsInodeConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getNfsInodesConnection: (data: GetNfsInodesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<NfsInodeConnection, ErrorBody>({
-        path: `/get-nfs-inodes-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getNics = {
+
     /**
      * No description
      *
@@ -40755,8 +36311,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNicsConnection = {
+
     /**
      * No description
      *
@@ -40780,7 +36335,30 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getNodeTopoes = {
+  nodeTopo = {
+    /**
+     * No description
+     *
+     * @tags NodeTopo
+     * @name UpdateNodeTopo
+     * @request POST:/move-node-topo
+     * @secure
+     * @response `200` `(WithTaskNodeTopo)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateNodeTopo: (data: NodeTopoUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNodeTopo[], ErrorBody>({
+        path: `/move-node-topo`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40803,8 +36381,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNodeTopoesConnection = {
+
     /**
      * No description
      *
@@ -40828,22 +36405,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getNvmfNamespaces = {
+  nvmfNamespaceSnapshot = {
     /**
      * No description
      *
-     * @tags NvmfNamespace
-     * @name GetNvmfNamespaces
-     * @request POST:/get-nvmf-namespaces
+     * @tags NvmfNamespaceSnapshot
+     * @name CreateNvmfNamespaceSnapshot
+     * @request POST:/create-nvmf-namespace-snapshot
      * @secure
-     * @response `200` `(NvmfNamespace)[]` Ok
+     * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getNvmfNamespaces: (data: GetNvmfNamespacesRequestBody, params: RequestParams = {}) =>
-      this.http.request<NvmfNamespace[], ErrorBody>({
-        path: `/get-nvmf-namespaces`,
+    createNvmfNamespaceSnapshot: (data: NvmfNamespaceSnapshotCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfNamespaceSnapshot[], ErrorBody>({
+        path: `/create-nvmf-namespace-snapshot`,
         method: "POST",
         body: data,
         secure: true,
@@ -40851,23 +36428,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNvmfNamespacesConnection = {
+
     /**
      * No description
      *
-     * @tags NvmfNamespace
-     * @name GetNvmfNamespacesConnection
-     * @request POST:/get-nvmf-namespaces-connection
+     * @tags NvmfNamespaceSnapshot
+     * @name DeleteNvmfNamespaceSnapshot
+     * @request POST:/delete-nvmf-namespace-snapshot
      * @secure
-     * @response `200` `NvmfNamespaceConnection` Ok
+     * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getNvmfNamespacesConnection: (data: GetNvmfNamespacesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<NvmfNamespaceConnection, ErrorBody>({
-        path: `/get-nvmf-namespaces-connection`,
+    deleteNvmfNamespaceSnapshot: (data: NvmfNamespaceSnapshotDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteNvmfNamespaceSnapshot[], ErrorBody>({
+        path: `/delete-nvmf-namespace-snapshot`,
         method: "POST",
         body: data,
         secure: true,
@@ -40875,8 +36451,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNvmfNamespaceSnapshots = {
+
     /**
      * No description
      *
@@ -40899,8 +36474,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNvmfNamespaceSnapshotsConnection = {
+
     /**
      * No description
      *
@@ -40927,7 +36501,238 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getNvmfSubsystems = {
+  nvmfNamespace = {
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name CreateNvmfNamespace
+     * @request POST:/create-nvmf-namespace
+     * @secure
+     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createNvmfNamespace: (data: NvmfNamespaceCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
+        path: `/create-nvmf-namespace`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name UpdateNvmfNamespace
+     * @request POST:/update-nvmf-namespace
+     * @secure
+     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateNvmfNamespace: (data: NvmfNamespaceUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
+        path: `/update-nvmf-namespace`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name DeleteNvmfNamespace
+     * @request POST:/delete-nvmf-namespace
+     * @secure
+     * @response `200` `(WithTaskDeleteNvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteNvmfNamespace: (data: NvmfNamespaceDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteNvmfNamespace[], ErrorBody>({
+        path: `/delete-nvmf-namespace`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name CloneNvmfNamespaceFromSnapshot
+     * @request POST:/clone-nvmf-namespace-from-snapshot
+     * @secure
+     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cloneNvmfNamespaceFromSnapshot: (data: NvmfNamespaceCloneParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
+        path: `/clone-nvmf-namespace-from-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name RollbackNvmfNamespaceFromSnapshot
+     * @request POST:/rollback-nvmf-namespace-from-snapshot
+     * @secure
+     * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rollbackNvmfNamespaceFromSnapshot: (data: NvmfNamespaceRollbackParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
+        path: `/rollback-nvmf-namespace-from-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name GetNvmfNamespaces
+     * @request POST:/get-nvmf-namespaces
+     * @secure
+     * @response `200` `(NvmfNamespace)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getNvmfNamespaces: (data: GetNvmfNamespacesRequestBody, params: RequestParams = {}) =>
+      this.http.request<NvmfNamespace[], ErrorBody>({
+        path: `/get-nvmf-namespaces`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfNamespace
+     * @name GetNvmfNamespacesConnection
+     * @request POST:/get-nvmf-namespaces-connection
+     * @secure
+     * @response `200` `NvmfNamespaceConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getNvmfNamespacesConnection: (data: GetNvmfNamespacesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<NvmfNamespaceConnection, ErrorBody>({
+        path: `/get-nvmf-namespaces-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  nvmfSubsystem = {
+    /**
+     * No description
+     *
+     * @tags NvmfSubsystem
+     * @name CreateNvmfSubsystem
+     * @request POST:/create-nvmf-subsystem
+     * @secure
+     * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createNvmfSubsystem: (data: NvmfSubsystemCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
+        path: `/create-nvmf-subsystem`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfSubsystem
+     * @name UpdateNvmfSubsystem
+     * @request POST:/update-nvmf-subsystem
+     * @secure
+     * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateNvmfSubsystem: (data: NvmfSubsystemUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
+        path: `/update-nvmf-subsystem`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NvmfSubsystem
+     * @name DeleteNvmfSubsystem
+     * @request POST:/delete-nvmf-subsystem
+     * @secure
+     * @response `200` `(WithTaskDeleteNvmfSubsystem)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteNvmfSubsystem: (data: NvmfSubsystemDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteNvmfSubsystem[], ErrorBody>({
+        path: `/delete-nvmf-subsystem`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40950,8 +36755,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getNvmfSubsystemsConnection = {
+
     /**
      * No description
      *
@@ -40975,7 +36779,76 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getOrganizations = {
+  organization = {
+    /**
+     * No description
+     *
+     * @tags Organization
+     * @name CreateOrganization
+     * @request POST:/create-organization
+     * @secure
+     * @response `200` `(WithTaskOrganization)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createOrganization: (data: OrganizationCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskOrganization[], ErrorBody>({
+        path: `/create-organization`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Organization
+     * @name UpdateOrganization
+     * @request POST:/update-organization
+     * @secure
+     * @response `200` `(WithTaskOrganization)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateOrganization: (data: OrganizationUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskOrganization[], ErrorBody>({
+        path: `/update-organization`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Organization
+     * @name DeleteOrganization
+     * @request POST:/delete-organization
+     * @secure
+     * @response `200` `(WithTaskDeleteOrganization)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteOrganization: (data: OrganizationDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteOrganization[], ErrorBody>({
+        path: `/delete-organization`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -40998,8 +36871,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getOrganizationsConnection = {
+
     /**
      * No description
      *
@@ -41023,22 +36895,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getPmemDimms = {
+  rackTopo = {
     /**
      * No description
      *
-     * @tags PmemDimm
-     * @name GetPmemDimms
-     * @request POST:/get-pmem-dimms
+     * @tags RackTopo
+     * @name CreateRackTopo
+     * @request POST:/create-rack-topo
      * @secure
-     * @response `200` `(PmemDimm)[]` Ok
+     * @response `200` `(WithTaskRackTopo)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getPmemDimms: (data: GetPmemDimmsRequestBody, params: RequestParams = {}) =>
-      this.http.request<PmemDimm[], ErrorBody>({
-        path: `/get-pmem-dimms`,
+    createRackTopo: (data: RackTopoCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskRackTopo[], ErrorBody>({
+        path: `/create-rack-topo`,
         method: "POST",
         body: data,
         secure: true,
@@ -41046,23 +36918,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getPmemDimmsConnection = {
+
     /**
      * No description
      *
-     * @tags PmemDimm
-     * @name GetPmemDimmsConnection
-     * @request POST:/get-pmem-dimms-connection
+     * @tags RackTopo
+     * @name UpdateRackTopo
+     * @request POST:/update-rack-topo
      * @secure
-     * @response `200` `PmemDimmConnection` Ok
+     * @response `200` `(WithTaskRackTopo)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getPmemDimmsConnection: (data: GetPmemDimmsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<PmemDimmConnection, ErrorBody>({
-        path: `/get-pmem-dimms-connection`,
+    updateRackTopo: (data: RackTopoUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskRackTopo[], ErrorBody>({
+        path: `/update-rack-topo`,
         method: "POST",
         body: data,
         secure: true,
@@ -41070,8 +36941,30 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getRackTopoes = {
+
+    /**
+     * No description
+     *
+     * @tags RackTopo
+     * @name DeleteRackTopo
+     * @request POST:/delete-rack-topo
+     * @secure
+     * @response `200` `(WithTaskDeleteRackTopo)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteRackTopo: (data: RackTopoDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteRackTopo[], ErrorBody>({
+        path: `/delete-rack-topo`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -41094,8 +36987,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getRackTopoesConnection = {
+
     /**
      * No description
      *
@@ -41119,22 +37011,137 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getReportTasks = {
+  globalSettings = {
     /**
      * No description
      *
-     * @tags ReportTask
-     * @name GetReportTasks
-     * @request POST:/get-report-tasks
+     * @tags GlobalSettings
+     * @name UpdateGlobalRecycleBinSetting
+     * @request POST:/update-global-recycle-bin-setting
      * @secure
-     * @response `200` `(ReportTask)[]` Ok
+     * @response `200` `WithTaskGlobalSettings` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getReportTasks: (data: GetReportTasksRequestBody, params: RequestParams = {}) =>
-      this.http.request<ReportTask[], ErrorBody>({
-        path: `/get-report-tasks`,
+    updateGlobalRecycleBinSetting: (data: GlobalRecycleBinUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskGlobalSettings, ErrorBody>({
+        path: `/update-global-recycle-bin-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name CreateClusterRecycleBinSetting
+     * @request POST:/create-cluster-recycle-bin-setting
+     * @secure
+     * @response `200` `(WithTaskClusterSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createClusterRecycleBinSetting: (data: ClusterRecycleBinCreationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskClusterSettings[], ErrorBody>({
+        path: `/create-cluster-recycle-bin-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name UpdateClusterRecycleBinSetting
+     * @request POST:/update-cluster-recycle-bin-setting
+     * @secure
+     * @response `200` `(WithTaskClusterSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateClusterRecycleBinSetting: (data: ClusterRecycleBinUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskClusterSettings[], ErrorBody>({
+        path: `/update-cluster-recycle-bin-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name DeleteClusterRecycleBinSetting
+     * @request POST:/delete-cluster-recycle-bin-setting
+     * @secure
+     * @response `200` `(WithTaskDeleteClusterRecycleBin)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteClusterRecycleBinSetting: (data: ClusterRecycleBinDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteClusterRecycleBin[], ErrorBody>({
+        path: `/delete-cluster-recycle-bin-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name GetGlobalSettingses
+     * @request POST:/get-global-settingses
+     * @secure
+     * @response `200` `(GlobalSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGlobalSettingses: (data: GetGlobalSettingsesRequestBody, params: RequestParams = {}) =>
+      this.http.request<GlobalSettings[], ErrorBody>({
+        path: `/get-global-settingses`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name GetGlobalSettingsesConnection
+     * @request POST:/get-global-settingses-connection
+     * @secure
+     * @response `200` `GlobalSettingsConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getGlobalSettingsesConnection: (data: GetGlobalSettingsesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<GlobalSettingsConnection, ErrorBody>({
+        path: `/get-global-settingses-connection`,
         method: "POST",
         body: data,
         secure: true,
@@ -41143,22 +37150,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getReportTasksConnection = {
+  reportTemplate = {
     /**
      * No description
      *
-     * @tags ReportTask
-     * @name GetReportTasksConnection
-     * @request POST:/get-report-tasks-connection
+     * @tags ReportTemplate
+     * @name CreateReportTemplate
+     * @request POST:/create-report-template
      * @secure
-     * @response `200` `ReportTaskConnection` Ok
+     * @response `200` `(WithTaskReportTemplate)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getReportTasksConnection: (data: GetReportTasksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<ReportTaskConnection, ErrorBody>({
-        path: `/get-report-tasks-connection`,
+    createReportTemplate: (data: ReportTemplateCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskReportTemplate[], ErrorBody>({
+        path: `/create-report-template`,
         method: "POST",
         body: data,
         secure: true,
@@ -41166,8 +37173,76 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getReportTemplates = {
+
+    /**
+     * No description
+     *
+     * @tags ReportTemplate
+     * @name UpdateReportTemplate
+     * @request POST:/update-report-template
+     * @secure
+     * @response `200` `(WithTaskReportTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateReportTemplate: (data: ReportTemplateUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskReportTemplate[], ErrorBody>({
+        path: `/update-report-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ReportTemplate
+     * @name GenerateFromReportTemplate
+     * @request POST:/generate-from-report-template
+     * @secure
+     * @response `200` `(WithTaskReportTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    generateFromReportTemplate: (data: ReporteTemplateGenerationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskReportTask[], ErrorBody>({
+        path: `/generate-from-report-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ReportTemplate
+     * @name DeleteReportTemplate
+     * @request POST:/delete-report-template
+     * @secure
+     * @response `200` `(WithTaskDeleteReportTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteReportTemplate: (data: ReportTemplateDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteReportTemplate[], ErrorBody>({
+        path: `/delete-report-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -41190,8 +37265,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getReportTemplatesConnection = {
+
     /**
      * No description
      *
@@ -41215,22 +37289,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getSecurityPolicies = {
+  userRoleNext = {
     /**
      * No description
      *
-     * @tags SecurityPolicy
-     * @name GetSecurityPolicies
-     * @request POST:/get-security-policies
+     * @tags UserRoleNext
+     * @name CreateRole
+     * @request POST:/create-role
      * @secure
-     * @response `200` `(SecurityPolicy)[]` Ok
+     * @response `200` `(WithTaskUserRoleNext)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getSecurityPolicies: (data: GetSecurityPoliciesRequestBody, params: RequestParams = {}) =>
-      this.http.request<SecurityPolicy[], ErrorBody>({
-        path: `/get-security-policies`,
+    createRole: (data: RoleCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskUserRoleNext[], ErrorBody>({
+        path: `/create-role`,
         method: "POST",
         body: data,
         secure: true,
@@ -41238,23 +37312,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getSecurityPoliciesConnection = {
+
     /**
      * No description
      *
-     * @tags SecurityPolicy
-     * @name GetSecurityPoliciesConnection
-     * @request POST:/get-security-policies-connection
+     * @tags UserRoleNext
+     * @name UpdateRole
+     * @request POST:/update-role
      * @secure
-     * @response `200` `SecurityPolicyConnection` Ok
+     * @response `200` `(WithTaskUserRoleNext)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getSecurityPoliciesConnection: (data: GetSecurityPoliciesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SecurityPolicyConnection, ErrorBody>({
-        path: `/get-security-policies-connection`,
+    updateRole: (data: RoleUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskUserRoleNext[], ErrorBody>({
+        path: `/update-role`,
         method: "POST",
         body: data,
         secure: true,
@@ -41262,23 +37335,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getSnapshotGroups = {
+
     /**
      * No description
      *
-     * @tags SnapshotGroup
-     * @name GetSnapshotGroups
-     * @request POST:/get-snapshot-groups
+     * @tags UserRoleNext
+     * @name DeleteRole
+     * @request POST:/delete-role
      * @secure
-     * @response `200` `(SnapshotGroup)[]` Ok
+     * @response `200` `(WithTaskDeleteRole)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getSnapshotGroups: (data: GetSnapshotGroupsRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotGroup[], ErrorBody>({
-        path: `/get-snapshot-groups`,
+    deleteRole: (data: RoleDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteRole[], ErrorBody>({
+        path: `/delete-role`,
         method: "POST",
         body: data,
         secure: true,
@@ -41286,512 +37358,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getSnapshotGroupsConnection = {
-    /**
-     * No description
-     *
-     * @tags SnapshotGroup
-     * @name GetSnapshotGroupsConnection
-     * @request POST:/get-snapshot-groups-connection
-     * @secure
-     * @response `200` `SnapshotGroupConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnapshotGroupsConnection: (data: GetSnapshotGroupsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotGroupConnection, ErrorBody>({
-        path: `/get-snapshot-groups-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnapshotPlans = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name GetSnapshotPlans
-     * @request POST:/get-snapshot-plans
-     * @secure
-     * @response `200` `(SnapshotPlan)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnapshotPlans: (data: GetSnapshotPlansRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotPlan[], ErrorBody>({
-        path: `/get-snapshot-plans`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnapshotPlansConnection = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlan
-     * @name GetSnapshotPlansConnection
-     * @request POST:/get-snapshot-plans-connection
-     * @secure
-     * @response `200` `SnapshotPlanConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnapshotPlansConnection: (data: GetSnapshotPlansConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotPlanConnection, ErrorBody>({
-        path: `/get-snapshot-plans-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnapshotPlanTasks = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlanTask
-     * @name GetSnapshotPlanTasks
-     * @request POST:/get-snapshot-plan-tasks
-     * @secure
-     * @response `200` `(SnapshotPlanTask)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnapshotPlanTasks: (data: GetSnapshotPlanTasksRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotPlanTask[], ErrorBody>({
-        path: `/get-snapshot-plan-tasks`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnapshotPlanTasksConnection = {
-    /**
-     * No description
-     *
-     * @tags SnapshotPlanTask
-     * @name GetSnapshotPlanTasksConnection
-     * @request POST:/get-snapshot-plan-tasks-connection
-     * @secure
-     * @response `200` `SnapshotPlanTaskConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnapshotPlanTasksConnection: (data: GetSnapshotPlanTasksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnapshotPlanTaskConnection, ErrorBody>({
-        path: `/get-snapshot-plan-tasks-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnmpTransports = {
-    /**
-     * No description
-     *
-     * @tags SnmpTransport
-     * @name GetSnmpTransports
-     * @request POST:/get-snmp-transports
-     * @secure
-     * @response `200` `(SnmpTransport)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnmpTransports: (data: GetSnmpTransportsRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnmpTransport[], ErrorBody>({
-        path: `/get-snmp-transports`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnmpTransportsConnection = {
-    /**
-     * No description
-     *
-     * @tags SnmpTransport
-     * @name GetSnmpTransportsConnection
-     * @request POST:/get-snmp-transports-connection
-     * @secure
-     * @response `200` `SnmpTransportConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnmpTransportsConnection: (data: GetSnmpTransportsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnmpTransportConnection, ErrorBody>({
-        path: `/get-snmp-transports-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnmpTrapReceivers = {
-    /**
-     * No description
-     *
-     * @tags SnmpTrapReceiver
-     * @name GetSnmpTrapReceivers
-     * @request POST:/get-snmp-trap-receivers
-     * @secure
-     * @response `200` `(SnmpTrapReceiver)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnmpTrapReceivers: (data: GetSnmpTrapReceiversRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnmpTrapReceiver[], ErrorBody>({
-        path: `/get-snmp-trap-receivers`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSnmpTrapReceiversConnection = {
-    /**
-     * No description
-     *
-     * @tags SnmpTrapReceiver
-     * @name GetSnmpTrapReceiversConnection
-     * @request POST:/get-snmp-trap-receivers-connection
-     * @secure
-     * @response `200` `SnmpTrapReceiverConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSnmpTrapReceiversConnection: (data: GetSnmpTrapReceiversConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SnmpTrapReceiverConnection, ErrorBody>({
-        path: `/get-snmp-trap-receivers-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSvtImages = {
-    /**
-     * No description
-     *
-     * @tags SvtImage
-     * @name GetSvtImages
-     * @request POST:/get-svt-images
-     * @secure
-     * @response `200` `(SvtImage)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSvtImages: (data: GetSvtImagesRequestBody, params: RequestParams = {}) =>
-      this.http.request<SvtImage[], ErrorBody>({
-        path: `/get-svt-images`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSvtImagesConnection = {
-    /**
-     * No description
-     *
-     * @tags SvtImage
-     * @name GetSvtImagesConnection
-     * @request POST:/get-svt-images-connection
-     * @secure
-     * @response `200` `SvtImageConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSvtImagesConnection: (data: GetSvtImagesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SvtImageConnection, ErrorBody>({
-        path: `/get-svt-images-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSystemAuditLogs = {
-    /**
-     * No description
-     *
-     * @tags SystemAuditLog
-     * @name GetSystemAuditLogs
-     * @request POST:/get-system-audit-logs
-     * @secure
-     * @response `200` `(SystemAuditLog)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSystemAuditLogs: (data: GetSystemAuditLogsRequestBody, params: RequestParams = {}) =>
-      this.http.request<SystemAuditLog[], ErrorBody>({
-        path: `/get-system-audit-logs`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getSystemAuditLogsConnection = {
-    /**
-     * No description
-     *
-     * @tags SystemAuditLog
-     * @name GetSystemAuditLogsConnection
-     * @request POST:/get-system-audit-logs-connection
-     * @secure
-     * @response `200` `SystemAuditLogConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSystemAuditLogsConnection: (data: GetSystemAuditLogsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SystemAuditLogConnection, ErrorBody>({
-        path: `/get-system-audit-logs-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getTasks = {
-    /**
-     * No description
-     *
-     * @tags Task
-     * @name GetTasks
-     * @request POST:/get-tasks
-     * @secure
-     * @response `200` `(Task)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getTasks: (data: GetTasksRequestBody, params: RequestParams = {}) =>
-      this.http.request<Task[], ErrorBody>({
-        path: `/get-tasks`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getTasksConnection = {
-    /**
-     * No description
-     *
-     * @tags Task
-     * @name GetTasksConnection
-     * @request POST:/get-tasks-connection
-     * @secure
-     * @response `200` `TaskConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getTasksConnection: (data: GetTasksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<TaskConnection, ErrorBody>({
-        path: `/get-tasks-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUploadTasks = {
-    /**
-     * No description
-     *
-     * @tags UploadTask
-     * @name GetUploadTasks
-     * @request POST:/get-upload-tasks
-     * @secure
-     * @response `200` `(UploadTask)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUploadTasks: (data: GetUploadTasksRequestBody, params: RequestParams = {}) =>
-      this.http.request<UploadTask[], ErrorBody>({
-        path: `/get-upload-tasks`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUploadTasksConnection = {
-    /**
-     * No description
-     *
-     * @tags UploadTask
-     * @name GetUploadTasksConnection
-     * @request POST:/get-upload-tasks-connection
-     * @secure
-     * @response `200` `UploadTaskConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUploadTasksConnection: (data: GetUploadTasksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<UploadTaskConnection, ErrorBody>({
-        path: `/get-upload-tasks-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUsbDevices = {
-    /**
-     * No description
-     *
-     * @tags UsbDevice
-     * @name GetUsbDevices
-     * @request POST:/get-usb-devices
-     * @secure
-     * @response `200` `(UsbDevice)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUsbDevices: (data: GetUsbDevicesRequestBody, params: RequestParams = {}) =>
-      this.http.request<UsbDevice[], ErrorBody>({
-        path: `/get-usb-devices`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUsbDevicesConnection = {
-    /**
-     * No description
-     *
-     * @tags UsbDevice
-     * @name GetUsbDevicesConnection
-     * @request POST:/get-usb-devices-connection
-     * @secure
-     * @response `200` `UsbDeviceConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUsbDevicesConnection: (data: GetUsbDevicesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<UsbDeviceConnection, ErrorBody>({
-        path: `/get-usb-devices-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUserAuditLogs = {
-    /**
-     * No description
-     *
-     * @tags UserAuditLog
-     * @name GetUserAuditLogs
-     * @request POST:/get-user-audit-logs
-     * @secure
-     * @response `200` `(UserAuditLog)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUserAuditLogs: (data: GetUserAuditLogsRequestBody, params: RequestParams = {}) =>
-      this.http.request<UserAuditLog[], ErrorBody>({
-        path: `/get-user-audit-logs`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUserAuditLogsConnection = {
-    /**
-     * No description
-     *
-     * @tags UserAuditLog
-     * @name GetUserAuditLogsConnection
-     * @request POST:/get-user-audit-logs-connection
-     * @secure
-     * @response `200` `UserAuditLogConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUserAuditLogsConnection: (data: GetUserAuditLogsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<UserAuditLogConnection, ErrorBody>({
-        path: `/get-user-audit-logs-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getUserRoleNexts = {
+
     /**
      * No description
      *
@@ -41814,8 +37381,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getUserRoleNextsConnection = {
+
     /**
      * No description
      *
@@ -41839,7 +37405,767 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getUsers = {
+  snapshotGroup = {
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name RollbackSnapshotGroup
+     * @request POST:/rollback-snapshot-group
+     * @secure
+     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rollbackSnapshotGroup: (data: SnapshotGroupRollbackParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
+        path: `/rollback-snapshot-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name CloneSnapshotGroup
+     * @request POST:/clone-snapshot-group
+     * @secure
+     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cloneSnapshotGroup: (data: SnapshotGroupCloneParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
+        path: `/clone-snapshot-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name KeepSnapshotGroup
+     * @request POST:/keep-snapshot-group
+     * @secure
+     * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    keepSnapshotGroup: (data: SnapshotGroupKeepParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
+        path: `/keep-snapshot-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name DeleteSnapshotGroup
+     * @request POST:/delete-snapshot-group
+     * @secure
+     * @response `200` `(WithTaskDeleteSnapshotGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteSnapshotGroup: (data: SnapshotGroupDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteSnapshotGroup[], ErrorBody>({
+        path: `/delete-snapshot-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name GetSnapshotGroups
+     * @request POST:/get-snapshot-groups
+     * @secure
+     * @response `200` `(SnapshotGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotGroups: (data: GetSnapshotGroupsRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotGroup[], ErrorBody>({
+        path: `/get-snapshot-groups`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotGroup
+     * @name GetSnapshotGroupsConnection
+     * @request POST:/get-snapshot-groups-connection
+     * @secure
+     * @response `200` `SnapshotGroupConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotGroupsConnection: (data: GetSnapshotGroupsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotGroupConnection, ErrorBody>({
+        path: `/get-snapshot-groups-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  snapshotPlan = {
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name CreateSnapshotPlan
+     * @request POST:/create-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createSnapshotPlan: (data: SnapshotPlanCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
+        path: `/create-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name UpdateSnapshotPlan
+     * @request POST:/update-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateSnapshotPlan: (data: SnapshotPlanUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
+        path: `/update-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name DeleteSnapshotPlan
+     * @request POST:/delete-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskDeleteSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteSnapshotPlan: (data: SnapshotPlanDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteSnapshotPlan[], ErrorBody>({
+        path: `/delete-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name ExecuteSnapshotPlan
+     * @request POST:/execute-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    executeSnapshotPlan: (data: SnapshotPlanExecutionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
+        path: `/execute-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name SuspendSnapshotPlan
+     * @request POST:/suspend-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    suspendSnapshotPlan: (data: SnapshotPlanSuspendedParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
+        path: `/suspend-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name ResumeSnapshotPlan
+     * @request POST:/resume-snapshot-plan
+     * @secure
+     * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    resumeSnapshotPlan: (data: SnapshotPlanResumeParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
+        path: `/resume-snapshot-plan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name GetSnapshotPlans
+     * @request POST:/get-snapshot-plans
+     * @secure
+     * @response `200` `(SnapshotPlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotPlans: (data: GetSnapshotPlansRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotPlan[], ErrorBody>({
+        path: `/get-snapshot-plans`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlan
+     * @name GetSnapshotPlansConnection
+     * @request POST:/get-snapshot-plans-connection
+     * @secure
+     * @response `200` `SnapshotPlanConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotPlansConnection: (data: GetSnapshotPlansConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotPlanConnection, ErrorBody>({
+        path: `/get-snapshot-plans-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  snmpTransport = {
+    /**
+     * No description
+     *
+     * @tags SnmpTransport
+     * @name CreateSnmpTransport
+     * @request POST:/create-snmp-transport
+     * @secure
+     * @response `200` `(WithTaskSnmpTransport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createSnmpTransport: (data: SnmpTransportCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskSnmpTransport[], ErrorBody>({
+        path: `/create-snmp-transport`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTransport
+     * @name UpdateSnmpTransport
+     * @request POST:/update-snmp-transport
+     * @secure
+     * @response `200` `(WithTaskSnmpTransport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateSnmpTransport: (data: SnmpTransportUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnmpTransport[], ErrorBody>({
+        path: `/update-snmp-transport`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTransport
+     * @name DeleteSnmpTransport
+     * @request POST:/delete-snmp-transport
+     * @secure
+     * @response `200` `(WithTaskDeleteSnmpTransport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteSnmpTransport: (data: SnmpTransportDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteSnmpTransport[], ErrorBody>({
+        path: `/delete-snmp-transport`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTransport
+     * @name GetSnmpTransports
+     * @request POST:/get-snmp-transports
+     * @secure
+     * @response `200` `(SnmpTransport)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnmpTransports: (data: GetSnmpTransportsRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnmpTransport[], ErrorBody>({
+        path: `/get-snmp-transports`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTransport
+     * @name GetSnmpTransportsConnection
+     * @request POST:/get-snmp-transports-connection
+     * @secure
+     * @response `200` `SnmpTransportConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnmpTransportsConnection: (data: GetSnmpTransportsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnmpTransportConnection, ErrorBody>({
+        path: `/get-snmp-transports-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  snmpTrapReceiver = {
+    /**
+     * No description
+     *
+     * @tags SnmpTrapReceiver
+     * @name CreateSnmpTrapReceiver
+     * @request POST:/create-snmp-trap-receiver
+     * @secure
+     * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createSnmpTrapReceiver: (data: SnmpTrapReceiverCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
+        path: `/create-snmp-trap-receiver`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTrapReceiver
+     * @name UpdateSnmpTrapReceiver
+     * @request POST:/update-snmp-trap-receiver
+     * @secure
+     * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateSnmpTrapReceiver: (data: SnmpTrapReceiverUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
+        path: `/update-snmp-trap-receiver`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTrapReceiver
+     * @name DeleteSnmpTrapReceiver
+     * @request POST:/delete-snmp-trap-receiver
+     * @secure
+     * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteSnmpTrapReceiver: (data: SnmpTrapReceiverDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteSnmpTrapReceiver[], ErrorBody>({
+        path: `/delete-snmp-trap-receiver`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTrapReceiver
+     * @name GetSnmpTrapReceivers
+     * @request POST:/get-snmp-trap-receivers
+     * @secure
+     * @response `200` `(SnmpTrapReceiver)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnmpTrapReceivers: (data: GetSnmpTrapReceiversRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnmpTrapReceiver[], ErrorBody>({
+        path: `/get-snmp-trap-receivers`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnmpTrapReceiver
+     * @name GetSnmpTrapReceiversConnection
+     * @request POST:/get-snmp-trap-receivers-connection
+     * @secure
+     * @response `200` `SnmpTrapReceiverConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnmpTrapReceiversConnection: (data: GetSnmpTrapReceiversConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnmpTrapReceiverConnection, ErrorBody>({
+        path: `/get-snmp-trap-receivers-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  usbDevice = {
+    /**
+     * No description
+     *
+     * @tags UsbDevice
+     * @name MountUsbDevice
+     * @request POST:/mount-usb-device
+     * @secure
+     * @response `200` `(WithTaskUsbDevice)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    mountUsbDevice: (data: UsbDeviceMountParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskUsbDevice[], ErrorBody>({
+        path: `/mount-usb-device`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UsbDevice
+     * @name UnmountUsbDevice
+     * @request POST:/unmount-usb-device
+     * @secure
+     * @response `200` `(WithTaskUsbDevice)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    unmountUsbDevice: (data: UsbDeviceUnmountParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskUsbDevice[], ErrorBody>({
+        path: `/unmount-usb-device`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UsbDevice
+     * @name GetUsbDevices
+     * @request POST:/get-usb-devices
+     * @secure
+     * @response `200` `(UsbDevice)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUsbDevices: (data: GetUsbDevicesRequestBody, params: RequestParams = {}) =>
+      this.http.request<UsbDevice[], ErrorBody>({
+        path: `/get-usb-devices`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UsbDevice
+     * @name GetUsbDevicesConnection
+     * @request POST:/get-usb-devices-connection
+     * @secure
+     * @response `200` `UsbDeviceConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUsbDevicesConnection: (data: GetUsbDevicesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<UsbDeviceConnection, ErrorBody>({
+        path: `/get-usb-devices-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  user = {
+    /**
+     * No description
+     *
+     * @tags User
+     * @name Login
+     * @request POST:/login
+     * @response `200` `WithTaskTokenString` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    login: (data: LoginInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskTokenString, ErrorBody>({
+        path: `/login`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags User
+     * @name CreateUser
+     * @request POST:/create-user
+     * @secure
+     * @response `200` `(WithTaskUser)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createUser: (data: UserCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskUser[], ErrorBody>({
+        path: `/create-user`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags User
+     * @name UpdateUser
+     * @request POST:/update-user
+     * @secure
+     * @response `200` `(WithTaskUser)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateUser: (data: UserUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskUser[], ErrorBody>({
+        path: `/update-user`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags User
+     * @name DeleteUser
+     * @request POST:/delete-user
+     * @secure
+     * @response `200` `(WithTaskDeleteUser)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteUser: (data: UserDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteUser[], ErrorBody>({
+        path: `/delete-user`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags User
+     * @name CreateRootUser
+     * @request POST:/create-root-user
+     * @response `200` `WithTaskUser` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createRootUser: (data: RootUserCreationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskUser, ErrorBody>({
+        path: `/create-root-user`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -41862,8 +38188,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getUsersConnection = {
+
     /**
      * No description
      *
@@ -41887,22 +38212,22 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVcenterAccounts = {
+  vds = {
     /**
      * No description
      *
-     * @tags VcenterAccount
-     * @name GetVcenterAccounts
-     * @request POST:/get-vcenter-accounts
+     * @tags Vds
+     * @name CreateVdsWithMigrateVlan
+     * @request POST:/create-vds-with-migrate-vlan
      * @secure
-     * @response `200` `(VcenterAccount)[]` Ok
+     * @response `200` `(WithTaskVds)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getVcenterAccounts: (data: GetVcenterAccountsRequestBody, params: RequestParams = {}) =>
-      this.http.request<VcenterAccount[], ErrorBody>({
-        path: `/get-vcenter-accounts`,
+    createVdsWithMigrateVlan: (data: VdsCreationWithMigrateVlanParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVds[], ErrorBody>({
+        path: `/create-vds-with-migrate-vlan`,
         method: "POST",
         body: data,
         secure: true,
@@ -41910,23 +38235,22 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVcenterAccountsConnection = {
+
     /**
      * No description
      *
-     * @tags VcenterAccount
-     * @name GetVcenterAccountsConnection
-     * @request POST:/get-vcenter-accounts-connection
+     * @tags Vds
+     * @name CreateVdsWithAccessVlan
+     * @request POST:/create-vds-with-access-vlan
      * @secure
-     * @response `200` `VcenterAccountConnection` Ok
+     * @response `200` `(WithTaskVds)[]` Ok
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    getVcenterAccountsConnection: (data: GetVcenterAccountsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VcenterAccountConnection, ErrorBody>({
-        path: `/get-vcenter-accounts-connection`,
+    createVdsWithAccessVlan: (data: VdsCreationWithMAccessVlanParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVds[], ErrorBody>({
+        path: `/create-vds-with-access-vlan`,
         method: "POST",
         body: data,
         secure: true,
@@ -41934,8 +38258,76 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVdses = {
+
+    /**
+     * No description
+     *
+     * @tags Vds
+     * @name CreateVds
+     * @request POST:/create-vds
+     * @secure
+     * @response `200` `(WithTaskVds)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVds: (data: VdsCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVds[], ErrorBody>({
+        path: `/create-vds`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vds
+     * @name UpdateVds
+     * @request POST:/update-vds
+     * @secure
+     * @response `200` `(WithTaskVds)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVds: (data: VdsUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVds[], ErrorBody>({
+        path: `/update-vds`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vds
+     * @name DeleteVds
+     * @request POST:/delete-vds
+     * @secure
+     * @response `200` `(WithTaskDeleteVds)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVds: (data: VdsDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVds[], ErrorBody>({
+        path: `/delete-vds`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -41958,8 +38350,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVdsesConnection = {
+
     /**
      * No description
      *
@@ -41983,7 +38374,76 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getViews = {
+  view = {
+    /**
+     * No description
+     *
+     * @tags View
+     * @name CreateView
+     * @request POST:/create-view
+     * @secure
+     * @response `200` `(WithTaskView)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createView: (data: ViewCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskView[], ErrorBody>({
+        path: `/create-view`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags View
+     * @name UpdateView
+     * @request POST:/update-view
+     * @secure
+     * @response `200` `(WithTaskView)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateView: (data: ViewUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskView[], ErrorBody>({
+        path: `/update-view`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags View
+     * @name DeleteView
+     * @request POST:/delete-view
+     * @secure
+     * @response `200` `(WithTaskDeleteView)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteView: (data: ViewDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteView[], ErrorBody>({
+        path: `/delete-view`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -42006,8 +38466,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getViewsConnection = {
+
     /**
      * No description
      *
@@ -42031,7 +38490,122 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVlans = {
+  vlan = {
+    /**
+     * No description
+     *
+     * @tags Vlan
+     * @name CreateVmVlan
+     * @request POST:/create-vm-vlan
+     * @secure
+     * @response `200` `(WithTaskVlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmVlan: (data: VmVlanCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVlan[], ErrorBody>({
+        path: `/create-vm-vlan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vlan
+     * @name UpdateVlan
+     * @request POST:/update-vm-vlan
+     * @secure
+     * @response `200` `(WithTaskVlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVlan: (data: VmVlanUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVlan[], ErrorBody>({
+        path: `/update-vm-vlan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vlan
+     * @name UpdateManagementVlan
+     * @request POST:/update-management-vlan
+     * @secure
+     * @response `200` `(WithTaskVlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateManagementVlan: (data: ManagementVlanUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVlan[], ErrorBody>({
+        path: `/update-management-vlan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vlan
+     * @name UpdateMigrationVlan
+     * @request POST:/update-migration-vlan
+     * @secure
+     * @response `200` `(WithTaskVlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateMigrationVlan: (data: MigrationVlanUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVlan[], ErrorBody>({
+        path: `/update-migration-vlan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vlan
+     * @name DeleteVlan
+     * @request POST:/delete-vm-vlan
+     * @secure
+     * @response `200` `(WithTaskDeleteVlan)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVlan: (data: VlanDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVlan[], ErrorBody>({
+        path: `/delete-vm-vlan`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *
@@ -42054,8 +38628,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVlansConnection = {
+
     /**
      * No description
      *
@@ -42079,7 +38652,3129 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVmDisks = {
+  vmFolder = {
+    /**
+     * No description
+     *
+     * @tags VmFolder
+     * @name CreateVmFolder
+     * @request POST:/create-vm-folder
+     * @secure
+     * @response `200` `(WithTaskVmFolder)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmFolder: (data: VmFolderCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmFolder[], ErrorBody>({
+        path: `/create-vm-folder`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmFolder
+     * @name UpdateVmFolder
+     * @request POST:/update-vm-folder
+     * @secure
+     * @response `200` `(WithTaskVmFolder)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmFolder: (data: VmFolderUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVmFolder[], ErrorBody>({
+        path: `/update-vm-folder`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmFolder
+     * @name DeleteVmFolder
+     * @request POST:/delete-vm-folder
+     * @secure
+     * @response `200` `(WithTaskDeleteVmFolder)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmFolder: (data: VmFolderDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmFolder[], ErrorBody>({
+        path: `/delete-vm-folder`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmFolder
+     * @name GetVmFolders
+     * @request POST:/get-vm-folders
+     * @secure
+     * @response `200` `(VmFolder)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmFolders: (data: GetVmFoldersRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmFolder[], ErrorBody>({
+        path: `/get-vm-folders`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmFolder
+     * @name GetVmFoldersConnection
+     * @request POST:/get-vm-folders-connection
+     * @secure
+     * @response `200` `VmFolderConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmFoldersConnection: (data: GetVmFoldersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmFolderConnection, ErrorBody>({
+        path: `/get-vm-folders-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vmPlacementGroup = {
+    /**
+     * No description
+     *
+     * @tags VmPlacementGroup
+     * @name CreateVmPlacementGroup
+     * @request POST:/create-vm-placement-group
+     * @secure
+     * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmPlacementGroup: (data: VmPlacementGroupCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
+        path: `/create-vm-placement-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmPlacementGroup
+     * @name UpdateVmPlacementGroup
+     * @request POST:/update-vm-placement-group
+     * @secure
+     * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmPlacementGroup: (data: VmPlacementGroupUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
+        path: `/update-vm-placement-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmPlacementGroup
+     * @name DeleteVmPlacementGroup
+     * @request POST:/delete-vm-placement-group
+     * @secure
+     * @response `200` `(WithTaskDeleteVmPlacementGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmPlacementGroup: (data: VmPlacementGroupDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmPlacementGroup[], ErrorBody>({
+        path: `/delete-vm-placement-group`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmPlacementGroup
+     * @name GetVmPlacementGroups
+     * @request POST:/get-vm-placement-groups
+     * @secure
+     * @response `200` `(VmPlacementGroup)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmPlacementGroups: (data: GetVmPlacementGroupsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmPlacementGroup[], ErrorBody>({
+        path: `/get-vm-placement-groups`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmPlacementGroup
+     * @name GetVmPlacementGroupsConnection
+     * @request POST:/get-vm-placement-groups-connection
+     * @secure
+     * @response `200` `VmPlacementGroupConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmPlacementGroupsConnection: (data: GetVmPlacementGroupsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmPlacementGroupConnection, ErrorBody>({
+        path: `/get-vm-placement-groups-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vmSnapshot = {
+    /**
+     * No description
+     *
+     * @tags VmSnapshot
+     * @name CreateVmSnapshot
+     * @request POST:/create-vm-snapshot
+     * @secure
+     * @response `200` `(WithTaskVmSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmSnapshot: (data: VmSnapshotCreationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVmSnapshot[], ErrorBody>({
+        path: `/create-vm-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmSnapshot
+     * @name DeleteVmSnapshot
+     * @request POST:/delete-vm-snapshot
+     * @secure
+     * @response `200` `(WithTaskDeleteVmSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmSnapshot: (data: VmSnapshotDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmSnapshot[], ErrorBody>({
+        path: `/delete-vm-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmSnapshot
+     * @name GetVmSnapshots
+     * @request POST:/get-vm-snapshots
+     * @secure
+     * @response `200` `(VmSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmSnapshots: (data: GetVmSnapshotsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmSnapshot[], ErrorBody>({
+        path: `/get-vm-snapshots`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmSnapshot
+     * @name GetVmSnapshotsConnection
+     * @request POST:/get-vm-snapshots-connection
+     * @secure
+     * @response `200` `VmSnapshotConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmSnapshotsConnection: (data: GetVmSnapshotsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmSnapshotConnection, ErrorBody>({
+        path: `/get-vm-snapshots-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vmTemplate = {
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name CloneVmTemplateFromVm
+     * @request POST:/clone-vm-template-from-vm
+     * @secure
+     * @response `200` `(WithTaskVmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cloneVmTemplateFromVm: (data: VmTemplateCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmTemplate[], ErrorBody>({
+        path: `/clone-vm-template-from-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name ConvertVmTemplateFromVm
+     * @request POST:/convert-vm-template-from-vm
+     * @secure
+     * @response `200` `(WithTaskVmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    convertVmTemplateFromVm: (data: VmTemplateCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmTemplate[], ErrorBody>({
+        path: `/convert-vm-template-from-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name UpdateVmTemplate
+     * @request POST:/update-vm-template
+     * @secure
+     * @response `200` `(WithTaskVmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmTemplate: (data: VmTemplateUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVmTemplate[], ErrorBody>({
+        path: `/update-vm-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name DeleteVmTemplate
+     * @request POST:/delete-vm-template
+     * @secure
+     * @response `200` `(WithTaskDeleteVmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmTemplate: (data: VmTemplateDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmTemplate[], ErrorBody>({
+        path: `/delete-vm-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name GetVmTemplates
+     * @request POST:/get-vm-templates
+     * @secure
+     * @response `200` `(VmTemplate)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmTemplates: (data: GetVmTemplatesRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmTemplate[], ErrorBody>({
+        path: `/get-vm-templates`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmTemplate
+     * @name GetVmTemplatesConnection
+     * @request POST:/get-vm-templates-connection
+     * @secure
+     * @response `200` `VmTemplateConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmTemplatesConnection: (data: GetVmTemplatesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmTemplateConnection, ErrorBody>({
+        path: `/get-vm-templates-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vmVolume = {
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name CreateVmVolume
+     * @request POST:/create-vm-volume
+     * @secure
+     * @response `200` `(WithTaskVmVolume)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmVolume: (data: VmVolumeCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolume[], ErrorBody>({
+        path: `/create-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name DeleteVmVolumeFromVm
+     * @request POST:/delete-vm-volume
+     * @secure
+     * @response `200` `(WithTaskDeleteVmVolume)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmVolumeFromVm: (data: VmVolumeDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmVolume[], ErrorBody>({
+        path: `/delete-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name GetVmVolumes
+     * @request POST:/get-vm-volumes
+     * @secure
+     * @response `200` `(VmVolume)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmVolumes: (data: GetVmVolumesRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmVolume[], ErrorBody>({
+        path: `/get-vm-volumes`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name GetVmVolumesConnection
+     * @request POST:/get-vm-volumes-connection
+     * @secure
+     * @response `200` `VmVolumeConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmVolumesConnection: (data: GetVmVolumesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmVolumeConnection, ErrorBody>({
+        path: `/get-vm-volumes-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vm = {
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name CreateVm
+     * @request POST:/create-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVm: (data: VmCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/create-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name CreateVmFromTemplate
+     * @request POST:/create-vm-from-template
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmFromTemplate: (data: VmCreateVmFromTemplateParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/create-vm-from-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ConvertVmTemplateToVm
+     * @request POST:/convert-vm-template-to-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    convertVmTemplateToVm: (data: ConvertVmTemplateToVmParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/convert-vm-template-to-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name CloneVm
+     * @request POST:/clone-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cloneVm: (data: VmCloneParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/clone-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RebuildVm
+     * @request POST:/rebuild-vm-from-snapshot
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rebuildVm: (data: VmRebuildParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/rebuild-vm-from-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RollbackVm
+     * @request POST:/rollback-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rollbackVm: (data: VmRollbackParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/rollback-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVm
+     * @request POST:/update-vm-basic-info
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVm: (data: VmUpdateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/update-vm-basic-info`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name MoveVmToRecycleBin
+     * @request POST:/move-vm-to-recycle
+     * @secure
+     * @response `200` `(WithTaskDeleteVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    moveVmToRecycleBin: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVm[], ErrorBody>({
+        path: `/move-vm-to-recycle`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RecoverVmFromRecycleBin
+     * @request POST:/recover-vm-from-recycle
+     * @secure
+     * @response `200` `(WithTaskDeleteVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    recoverVmFromRecycleBin: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVm[], ErrorBody>({
+        path: `/recover-vm-from-recycle`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name DeleteVm
+     * @request POST:/delete-vm
+     * @secure
+     * @response `200` `(WithTaskDeleteVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVm[], ErrorBody>({
+        path: `/delete-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name StartVm
+     * @request POST:/start-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    startVm: (data: VmStartParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/start-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RestartVm
+     * @request POST:/restart-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    restartVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/restart-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ForceRestartVm
+     * @request POST:/force-restart-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    forceRestartVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/force-restart-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ShutDownVm
+     * @request POST:/shutdown-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    shutDownVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/shutdown-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name PoweroffVm
+     * @request POST:/poweroff-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    poweroffVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/poweroff-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name SuspendVm
+     * @request POST:/suspend-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    suspendVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/suspend-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ResumeVm
+     * @request POST:/resume-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    resumeVm: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/resume-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name AddVmDisk
+     * @request POST:/add-vm-disk
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    addVmDisk: (data: VmAddDiskParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/add-vm-disk`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmDisk
+     * @request POST:/update-vm-disk
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmDisk: (data: VmUpdateDiskParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/update-vm-disk`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ExpandVmDisk
+     * @request POST:/expand-vm-disk
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    expandVmDisk: (data: VmExpandVmDiskParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/expand-vm-disk`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RemoveVmDisk
+     * @request POST:/remove-vm-disk
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    removeVmDisk: (data: VmRemoveDiskParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/remove-vm-disk`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name AddVmCdRom
+     * @request POST:/add-vm-cd-rom
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    addVmCdRom: (data: VmAddCdRomParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/add-vm-cd-rom`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RemoveVmCdRom
+     * @request POST:/remove-vm-cd-rom
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    removeVmCdRom: (data: VmRemoveCdRomParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/remove-vm-cd-rom`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name EjectIsoFromVmCdRom
+     * @request POST:/eject-iso-from-vm-cd-rom
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    ejectIsoFromVmCdRom: (data: VmEjectCdRomParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/eject-iso-from-vm-cd-rom`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ToggleVmCdRomDisable
+     * @request POST:/toggle-vm-cd-rom-disable
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    toggleVmCdRomDisable: (data: VmToggleCdRomDisableParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/toggle-vm-cd-rom-disable`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name AddVmNic
+     * @request POST:/add-vm-nic
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    addVmNic: (data: VmAddNicParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/add-vm-nic`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmNic
+     * @request POST:/update-vm-nic
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmNic: (data: VmUpdateNicParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/update-vm-nic`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmNicBasicInfo
+     * @request POST:/update-vm-nic-basic-info
+     * @secure
+     * @response `200` `({ task_id: any, data: any })[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmNicBasicInfo: (data: VmUpdateNicBasicInfoParams, params: RequestParams = {}) =>
+      this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
+        path: `/update-vm-nic-basic-info`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmNicAdvanceInfo
+     * @request POST:/update-vm-nic-advance-info
+     * @secure
+     * @response `200` `({ task_id: any, data: any })[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmNicAdvanceInfo: (data: VmUpdateNicAdvanceInfoParams, params: RequestParams = {}) =>
+      this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
+        path: `/update-vm-nic-advance-info`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RemoveVmNic
+     * @request POST:/remove-vm-nic
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    removeVmNic: (data: VmRemoveNicParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/remove-vm-nic`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name InstallVmtools
+     * @request POST:/install-vmtools
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    installVmtools: (data: InstallVmtoolsParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/install-vmtools`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name MigRateVm
+     * @request POST:/migrate-vm
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    migRateVm: (data: VmMigrateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/migrate-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name AddVmToFolder
+     * @request POST:/add-vm-to-folder
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    addVmToFolder: (data: VmAddFolderParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/add-vm-to-folder`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name RemoveVmToFolder
+     * @request POST:/remove-vm-from-folder
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    removeVmToFolder: (data: VmOperateParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/remove-vm-from-folder`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmAdvancedOptions
+     * @request POST:/update-vm-advanced-options
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmAdvancedOptions: (data: VmUpdateAdvancedOptionsParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], void | ErrorBody>({
+        path: `/update-vm-advanced-options`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name GetVms
+     * @request POST:/get-vms
+     * @secure
+     * @response `200` `(Vm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVms: (data: GetVmsRequestBody, params: RequestParams = {}) =>
+      this.http.request<Vm[], ErrorBody>({
+        path: `/get-vms`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name GetVmsConnection
+     * @request POST:/get-vms-connection
+     * @secure
+     * @response `200` `VmConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmsConnection: (data: GetVmsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmConnection, ErrorBody>({
+        path: `/get-vms-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  metrics = {
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetVmMetrics
+     * @request POST:/get-vm-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmMetrics: (data: GetVmMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-vm-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetVmNetWorkMetrics
+     * @request POST:/get-vm-network-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmNetWorkMetrics: (data: GetVmNetWorkMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-vm-network-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetDiskMetrics
+     * @request POST:/get-disk-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDiskMetrics: (data: GetDiskMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-disk-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetVmVolumeMetrics
+     * @request POST:/get-vm-volume-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmVolumeMetrics: (data: GetVmVolumeMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-vm-volume-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetLunMetrics
+     * @request POST:/get-lun-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getLunMetrics: (data: GetLunMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-lun-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetNvmfNamespaceMetrics
+     * @request POST:/get-nvmf-namespace-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getNvmfNamespaceMetrics: (data: GetNvmfNamespaceMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-nvmf-namespace-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetClusterMetrics
+     * @request POST:/get-cluster-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterMetrics: (data: GetClusterMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-cluster-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetHostMetrics
+     * @request POST:/get-host-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getHostMetrics: (data: GetHostMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-host-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetHostNetworkMetrics
+     * @request POST:/get-host-network-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getHostNetworkMetrics: (data: GetHostNetworkMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-host-network-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetHostServicekMetrics
+     * @request POST:/get-host-service-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getHostServicekMetrics: (data: GetHostServiceMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-host-service-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetScvmMetrics
+     * @request POST:/get-scvm-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getScvmMetrics: (data: GetScvmMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-scvm-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetScvmNetworkMetrics
+     * @request POST:/get-scvm-network-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getScvmNetworkMetrics: (data: GetScvmNetworkInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-scvm-network-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetScvmServicekMetrics
+     * @request POST:/get-scvm-service-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getScvmServicekMetrics: (data: GetScvmServiceMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-scvm-service-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetScvmDiskMetrics
+     * @request POST:/get-scvm-disk-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getScvmDiskMetrics: (data: GetSCVMDiskMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-scvm-disk-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetZoneMetrics
+     * @request POST:/get-zone-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getZoneMetrics: (data: GetZoneMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-zone-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetWitnessMetrics
+     * @request POST:/get-witness-metrics
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getWitnessMetrics: (data: GetWitnessMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-witness-metrics`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Metrics
+     * @name GetTopNVmVolumeMetrics
+     * @request POST:/get-top-n-metrics-in-clusters
+     * @secure
+     * @response `200` `(WithTaskMetric)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getTopNVmVolumeMetrics: (data: GetTopNMetricInput, params: RequestParams = {}) =>
+      this.http.request<WithTaskMetric[], ErrorBody>({
+        path: `/get-top-n-metrics-in-clusters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  alertNotifier = {
+    /**
+     * No description
+     *
+     * @tags AlertNotifier
+     * @name GetAlertNotifiers
+     * @request POST:/get-alert-notifiers
+     * @secure
+     * @response `200` `(AlertNotifier)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlertNotifiers: (data: GetAlertNotifiersRequestBody, params: RequestParams = {}) =>
+      this.http.request<AlertNotifier[], ErrorBody>({
+        path: `/get-alert-notifiers`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags AlertNotifier
+     * @name GetAlertNotifiersConnection
+     * @request POST:/get-alert-notifiers-connection
+     * @secure
+     * @response `200` `AlertNotifierConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlertNotifiersConnection: (data: GetAlertNotifiersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<AlertNotifierConnection, ErrorBody>({
+        path: `/get-alert-notifiers-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags AlertNotifier
+     * @name UpdateAlertNotifier
+     * @request POST:/update-alert-notifier
+     * @response `200` `WithTaskAlertNotifier` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateAlertNotifier: (data: AlertNotifierUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskAlertNotifier, ErrorBody>({
+        path: `/update-alert-notifier`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  alertRule = {
+    /**
+     * No description
+     *
+     * @tags AlertRule
+     * @name GetAlertRules
+     * @request POST:/get-alert-rules
+     * @secure
+     * @response `200` `(AlertRule)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlertRules: (data: GetAlertRulesRequestBody, params: RequestParams = {}) =>
+      this.http.request<AlertRule[], ErrorBody>({
+        path: `/get-alert-rules`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags AlertRule
+     * @name GetAlertRulesConnection
+     * @request POST:/get-alert-rules-connection
+     * @secure
+     * @response `200` `AlertRuleConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getAlertRulesConnection: (data: GetAlertRulesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<AlertRuleConnection, ErrorBody>({
+        path: `/get-alert-rules-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  application = {
+    /**
+     * No description
+     *
+     * @tags Application
+     * @name GetApplications
+     * @request POST:/get-applications
+     * @secure
+     * @response `200` `(Application)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getApplications: (data: GetApplicationsRequestBody, params: RequestParams = {}) =>
+      this.http.request<Application[], ErrorBody>({
+        path: `/get-applications`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Application
+     * @name GetApplicationsConnection
+     * @request POST:/get-applications-connection
+     * @secure
+     * @response `200` `ApplicationConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getApplicationsConnection: (data: GetApplicationsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ApplicationConnection, ErrorBody>({
+        path: `/get-applications-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  clusterImage = {
+    /**
+     * No description
+     *
+     * @tags ClusterImage
+     * @name GetClusterImages
+     * @request POST:/get-cluster-images
+     * @secure
+     * @response `200` `(ClusterImage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterImages: (data: GetClusterImagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterImage[], ErrorBody>({
+        path: `/get-cluster-images`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ClusterImage
+     * @name GetClusterImagesConnection
+     * @request POST:/get-cluster-images-connection
+     * @secure
+     * @response `200` `ClusterImageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterImagesConnection: (data: GetClusterImagesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterImageConnection, ErrorBody>({
+        path: `/get-cluster-images-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  clusterSettings = {
+    /**
+     * No description
+     *
+     * @tags ClusterSettings
+     * @name GetClusterSettingses
+     * @request POST:/get-cluster-settingses
+     * @secure
+     * @response `200` `(ClusterSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterSettingses: (data: GetClusterSettingsesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterSettings[], ErrorBody>({
+        path: `/get-cluster-settingses`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ClusterSettings
+     * @name GetClusterSettingsesConnection
+     * @request POST:/get-cluster-settingses-connection
+     * @secure
+     * @response `200` `ClusterSettingsConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterSettingsesConnection: (data: GetClusterSettingsesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterSettingsConnection, ErrorBody>({
+        path: `/get-cluster-settingses-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  clusterTopo = {
+    /**
+     * No description
+     *
+     * @tags ClusterTopo
+     * @name GetClusterTopoes
+     * @request POST:/get-cluster-topoes
+     * @secure
+     * @response `200` `(ClusterTopo)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterTopoes: (data: GetClusterTopoesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterTopo[], ErrorBody>({
+        path: `/get-cluster-topoes`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ClusterTopo
+     * @name GetClusterTopoesConnection
+     * @request POST:/get-cluster-topoes-connection
+     * @secure
+     * @response `200` `ClusterTopoConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterTopoesConnection: (data: GetClusterTopoesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterTopoConnection, ErrorBody>({
+        path: `/get-cluster-topoes-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  clusterUpgradeHistory = {
+    /**
+     * No description
+     *
+     * @tags ClusterUpgradeHistory
+     * @name GetClusterUpgradeHistories
+     * @request POST:/get-cluster-upgrade-histories
+     * @secure
+     * @response `200` `(ClusterUpgradeHistory)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterUpgradeHistories: (data: GetClusterUpgradeHistoriesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ClusterUpgradeHistory[], ErrorBody>({
+        path: `/get-cluster-upgrade-histories`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ClusterUpgradeHistory
+     * @name GetClusterUpgradeHistoriesConnection
+     * @request POST:/get-cluster-upgrade-histories-connection
+     * @secure
+     * @response `200` `ClusterUpgradeHistoryConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getClusterUpgradeHistoriesConnection: (
+      data: GetClusterUpgradeHistoriesConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<ClusterUpgradeHistoryConnection, ErrorBody>({
+        path: `/get-cluster-upgrade-histories-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  deploy = {
+    /**
+     * No description
+     *
+     * @tags Deploy
+     * @name GetDeploys
+     * @request POST:/get-deploys
+     * @secure
+     * @response `200` `(Deploy)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDeploys: (data: GetDeploysRequestBody, params: RequestParams = {}) =>
+      this.http.request<Deploy[], ErrorBody>({
+        path: `/get-deploys`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Deploy
+     * @name GetDeploysConnection
+     * @request POST:/get-deploys-connection
+     * @secure
+     * @response `200` `DeployConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDeploysConnection: (data: GetDeploysConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<DeployConnection, ErrorBody>({
+        path: `/get-deploys-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  discoveredHost = {
+    /**
+     * No description
+     *
+     * @tags DiscoveredHost
+     * @name GetDiscoverHosts
+     * @request POST:/get-discover-hosts
+     * @secure
+     * @response `200` `(DiscoveredHost)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getDiscoverHosts: (data: GetDiscoverHostsRequestBody, params: RequestParams = {}) =>
+      this.http.request<DiscoveredHost[], ErrorBody>({
+        path: `/get-discover-hosts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  elfDataStore = {
+    /**
+     * No description
+     *
+     * @tags ElfDataStore
+     * @name GetElfDataStores
+     * @request POST:/get-elf-data-stores
+     * @secure
+     * @response `200` `(ElfDataStore)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getElfDataStores: (data: GetElfDataStoresRequestBody, params: RequestParams = {}) =>
+      this.http.request<ElfDataStore[], ErrorBody>({
+        path: `/get-elf-data-stores`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ElfDataStore
+     * @name GetElfDataStoresConnection
+     * @request POST:/get-elf-data-stores-connection
+     * @secure
+     * @response `200` `ElfDataStoreConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getElfDataStoresConnection: (data: GetElfDataStoresConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ElfDataStoreConnection, ErrorBody>({
+        path: `/get-elf-data-stores-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  elfStoragePolicy = {
+    /**
+     * No description
+     *
+     * @tags ElfStoragePolicy
+     * @name GetElfStoragePolicies
+     * @request POST:/get-elf-storage-policies
+     * @secure
+     * @response `200` `(ElfStoragePolicy)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getElfStoragePolicies: (data: GetElfStoragePoliciesRequestBody, params: RequestParams = {}) =>
+      this.http.request<ElfStoragePolicy[], ErrorBody>({
+        path: `/get-elf-storage-policies`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ElfStoragePolicy
+     * @name GetElfStoragePoliciesConnection
+     * @request POST:/get-elf-storage-policies-connection
+     * @secure
+     * @response `200` `ElfStoragePolicyConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getElfStoragePoliciesConnection: (data: GetElfStoragePoliciesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ElfStoragePolicyConnection, ErrorBody>({
+        path: `/get-elf-storage-policies-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  everouteCluster = {
+    /**
+     * No description
+     *
+     * @tags EverouteCluster
+     * @name GetEverouteClusters
+     * @request POST:/get-everoute-clusters
+     * @secure
+     * @response `200` `(EverouteCluster)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEverouteClusters: (data: GetEverouteClustersRequestBody, params: RequestParams = {}) =>
+      this.http.request<EverouteCluster[], ErrorBody>({
+        path: `/get-everoute-clusters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags EverouteCluster
+     * @name GetEverouteClustersConnection
+     * @request POST:/get-everoute-clusters-connection
+     * @secure
+     * @response `200` `EverouteClusterConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEverouteClustersConnection: (data: GetEverouteClustersConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<EverouteClusterConnection, ErrorBody>({
+        path: `/get-everoute-clusters-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  everouteLicense = {
+    /**
+     * No description
+     *
+     * @tags EverouteLicense
+     * @name GetEverouteLicenses
+     * @request POST:/get-everoute-licenses
+     * @secure
+     * @response `200` `(EverouteLicense)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEverouteLicenses: (data: GetEverouteLicensesRequestBody, params: RequestParams = {}) =>
+      this.http.request<EverouteLicense[], ErrorBody>({
+        path: `/get-everoute-licenses`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags EverouteLicense
+     * @name GetEverouteLicensesConnection
+     * @request POST:/get-everoute-licenses-connection
+     * @secure
+     * @response `200` `EverouteLicenseConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEverouteLicensesConnection: (data: GetEverouteLicensesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<EverouteLicenseConnection, ErrorBody>({
+        path: `/get-everoute-licenses-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  everoutePackage = {
+    /**
+     * No description
+     *
+     * @tags EveroutePackage
+     * @name GetEveroutePackages
+     * @request POST:/get-everoute-packages
+     * @secure
+     * @response `200` `(EveroutePackage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEveroutePackages: (data: GetEveroutePackagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<EveroutePackage[], ErrorBody>({
+        path: `/get-everoute-packages`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags EveroutePackage
+     * @name GetEveroutePackagesConnection
+     * @request POST:/get-everoute-packages-connection
+     * @secure
+     * @response `200` `EveroutePackageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getEveroutePackagesConnection: (data: GetEveroutePackagesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<EveroutePackageConnection, ErrorBody>({
+        path: `/get-everoute-packages-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  ipmi = {
+    /**
+     * No description
+     *
+     * @tags Ipmi
+     * @name GetIpmis
+     * @request POST:/get-ipmis
+     * @secure
+     * @response `200` `(Ipmi)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIpmis: (data: GetIpmisRequestBody, params: RequestParams = {}) =>
+      this.http.request<Ipmi[], ErrorBody>({
+        path: `/get-ipmis`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  iscsiConnection = {
+    /**
+     * No description
+     *
+     * @tags IscsiConnection
+     * @name GetIscsiConnections
+     * @request POST:/get-iscsi-connections
+     * @secure
+     * @response `200` `(IscsiConnection)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiConnections: (data: GetIscsiConnectionsRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiConnection[], ErrorBody>({
+        path: `/get-iscsi-connections`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags IscsiConnection
+     * @name GetIscsiConnectionsConnection
+     * @request POST:/get-iscsi-connections-connection
+     * @secure
+     * @response `200` `IscsiConnectionConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIscsiConnectionsConnection: (data: GetIscsiConnectionsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<IscsiConnectionConnection, ErrorBody>({
+        path: `/get-iscsi-connections-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  isolationPolicy = {
+    /**
+     * No description
+     *
+     * @tags IsolationPolicy
+     * @name GetIsolationPolicies
+     * @request POST:/get-isolation-policies
+     * @secure
+     * @response `200` `(IsolationPolicy)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIsolationPolicies: (data: GetIsolationPoliciesRequestBody, params: RequestParams = {}) =>
+      this.http.request<IsolationPolicy[], ErrorBody>({
+        path: `/get-isolation-policies`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags IsolationPolicy
+     * @name GetIsolationPoliciesConnection
+     * @request POST:/get-isolation-policies-connection
+     * @secure
+     * @response `200` `IsolationPolicyConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getIsolationPoliciesConnection: (data: GetIsolationPoliciesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<IsolationPolicyConnection, ErrorBody>({
+        path: `/get-isolation-policies-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  logServiceConfig = {
+    /**
+     * No description
+     *
+     * @tags LogServiceConfig
+     * @name GetLogServiceConfigs
+     * @request POST:/get-log-service-configs
+     * @secure
+     * @response `200` `(LogServiceConfig)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getLogServiceConfigs: (data: GetLogServiceConfigsRequestBody, params: RequestParams = {}) =>
+      this.http.request<LogServiceConfig[], ErrorBody>({
+        path: `/get-log-service-configs`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  nfsInode = {
+    /**
+     * No description
+     *
+     * @tags NfsInode
+     * @name GetNfsInodes
+     * @request POST:/get-nfs-inodes
+     * @secure
+     * @response `200` `(NfsInode)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getNfsInodes: (data: GetNfsInodesRequestBody, params: RequestParams = {}) =>
+      this.http.request<NfsInode[], ErrorBody>({
+        path: `/get-nfs-inodes`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags NfsInode
+     * @name GetNfsInodesConnection
+     * @request POST:/get-nfs-inodes-connection
+     * @secure
+     * @response `200` `NfsInodeConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getNfsInodesConnection: (data: GetNfsInodesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<NfsInodeConnection, ErrorBody>({
+        path: `/get-nfs-inodes-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  pmemDimm = {
+    /**
+     * No description
+     *
+     * @tags PmemDimm
+     * @name GetPmemDimms
+     * @request POST:/get-pmem-dimms
+     * @secure
+     * @response `200` `(PmemDimm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getPmemDimms: (data: GetPmemDimmsRequestBody, params: RequestParams = {}) =>
+      this.http.request<PmemDimm[], ErrorBody>({
+        path: `/get-pmem-dimms`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags PmemDimm
+     * @name GetPmemDimmsConnection
+     * @request POST:/get-pmem-dimms-connection
+     * @secure
+     * @response `200` `PmemDimmConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getPmemDimmsConnection: (data: GetPmemDimmsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<PmemDimmConnection, ErrorBody>({
+        path: `/get-pmem-dimms-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  reportTask = {
+    /**
+     * No description
+     *
+     * @tags ReportTask
+     * @name GetReportTasks
+     * @request POST:/get-report-tasks
+     * @secure
+     * @response `200` `(ReportTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getReportTasks: (data: GetReportTasksRequestBody, params: RequestParams = {}) =>
+      this.http.request<ReportTask[], ErrorBody>({
+        path: `/get-report-tasks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags ReportTask
+     * @name GetReportTasksConnection
+     * @request POST:/get-report-tasks-connection
+     * @secure
+     * @response `200` `ReportTaskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getReportTasksConnection: (data: GetReportTasksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<ReportTaskConnection, ErrorBody>({
+        path: `/get-report-tasks-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  securityPolicy = {
+    /**
+     * No description
+     *
+     * @tags SecurityPolicy
+     * @name GetSecurityPolicies
+     * @request POST:/get-security-policies
+     * @secure
+     * @response `200` `(SecurityPolicy)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSecurityPolicies: (data: GetSecurityPoliciesRequestBody, params: RequestParams = {}) =>
+      this.http.request<SecurityPolicy[], ErrorBody>({
+        path: `/get-security-policies`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SecurityPolicy
+     * @name GetSecurityPoliciesConnection
+     * @request POST:/get-security-policies-connection
+     * @secure
+     * @response `200` `SecurityPolicyConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSecurityPoliciesConnection: (data: GetSecurityPoliciesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SecurityPolicyConnection, ErrorBody>({
+        path: `/get-security-policies-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  snapshotPlanTask = {
+    /**
+     * No description
+     *
+     * @tags SnapshotPlanTask
+     * @name GetSnapshotPlanTasks
+     * @request POST:/get-snapshot-plan-tasks
+     * @secure
+     * @response `200` `(SnapshotPlanTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotPlanTasks: (data: GetSnapshotPlanTasksRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotPlanTask[], ErrorBody>({
+        path: `/get-snapshot-plan-tasks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SnapshotPlanTask
+     * @name GetSnapshotPlanTasksConnection
+     * @request POST:/get-snapshot-plan-tasks-connection
+     * @secure
+     * @response `200` `SnapshotPlanTaskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSnapshotPlanTasksConnection: (data: GetSnapshotPlanTasksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SnapshotPlanTaskConnection, ErrorBody>({
+        path: `/get-snapshot-plan-tasks-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  svtImage = {
+    /**
+     * No description
+     *
+     * @tags SvtImage
+     * @name GetSvtImages
+     * @request POST:/get-svt-images
+     * @secure
+     * @response `200` `(SvtImage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSvtImages: (data: GetSvtImagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<SvtImage[], ErrorBody>({
+        path: `/get-svt-images`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SvtImage
+     * @name GetSvtImagesConnection
+     * @request POST:/get-svt-images-connection
+     * @secure
+     * @response `200` `SvtImageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSvtImagesConnection: (data: GetSvtImagesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SvtImageConnection, ErrorBody>({
+        path: `/get-svt-images-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  systemAuditLog = {
+    /**
+     * No description
+     *
+     * @tags SystemAuditLog
+     * @name GetSystemAuditLogs
+     * @request POST:/get-system-audit-logs
+     * @secure
+     * @response `200` `(SystemAuditLog)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSystemAuditLogs: (data: GetSystemAuditLogsRequestBody, params: RequestParams = {}) =>
+      this.http.request<SystemAuditLog[], ErrorBody>({
+        path: `/get-system-audit-logs`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SystemAuditLog
+     * @name GetSystemAuditLogsConnection
+     * @request POST:/get-system-audit-logs-connection
+     * @secure
+     * @response `200` `SystemAuditLogConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSystemAuditLogsConnection: (data: GetSystemAuditLogsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SystemAuditLogConnection, ErrorBody>({
+        path: `/get-system-audit-logs-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  task = {
+    /**
+     * No description
+     *
+     * @tags Task
+     * @name GetTasks
+     * @request POST:/get-tasks
+     * @secure
+     * @response `200` `(Task)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getTasks: (data: GetTasksRequestBody, params: RequestParams = {}) =>
+      this.http.request<Task[], ErrorBody>({
+        path: `/get-tasks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Task
+     * @name GetTasksConnection
+     * @request POST:/get-tasks-connection
+     * @secure
+     * @response `200` `TaskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getTasksConnection: (data: GetTasksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<TaskConnection, ErrorBody>({
+        path: `/get-tasks-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  uploadTask = {
+    /**
+     * No description
+     *
+     * @tags UploadTask
+     * @name GetUploadTasks
+     * @request POST:/get-upload-tasks
+     * @secure
+     * @response `200` `(UploadTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUploadTasks: (data: GetUploadTasksRequestBody, params: RequestParams = {}) =>
+      this.http.request<UploadTask[], ErrorBody>({
+        path: `/get-upload-tasks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UploadTask
+     * @name GetUploadTasksConnection
+     * @request POST:/get-upload-tasks-connection
+     * @secure
+     * @response `200` `UploadTaskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUploadTasksConnection: (data: GetUploadTasksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<UploadTaskConnection, ErrorBody>({
+        path: `/get-upload-tasks-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  userAuditLog = {
+    /**
+     * No description
+     *
+     * @tags UserAuditLog
+     * @name GetUserAuditLogs
+     * @request POST:/get-user-audit-logs
+     * @secure
+     * @response `200` `(UserAuditLog)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUserAuditLogs: (data: GetUserAuditLogsRequestBody, params: RequestParams = {}) =>
+      this.http.request<UserAuditLog[], ErrorBody>({
+        path: `/get-user-audit-logs`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UserAuditLog
+     * @name GetUserAuditLogsConnection
+     * @request POST:/get-user-audit-logs-connection
+     * @secure
+     * @response `200` `UserAuditLogConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUserAuditLogsConnection: (data: GetUserAuditLogsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<UserAuditLogConnection, ErrorBody>({
+        path: `/get-user-audit-logs-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vcenterAccount = {
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name GetVcenterAccounts
+     * @request POST:/get-vcenter-accounts
+     * @secure
+     * @response `200` `(VcenterAccount)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVcenterAccounts: (data: GetVcenterAccountsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VcenterAccount[], ErrorBody>({
+        path: `/get-vcenter-accounts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name GetVcenterAccountsConnection
+     * @request POST:/get-vcenter-accounts-connection
+     * @secure
+     * @response `200` `VcenterAccountConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVcenterAccountsConnection: (data: GetVcenterAccountsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VcenterAccountConnection, ErrorBody>({
+        path: `/get-vcenter-accounts-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vmDisk = {
     /**
      * No description
      *
@@ -42102,8 +41797,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVmDisksConnection = {
+
     /**
      * No description
      *
@@ -42127,7 +41821,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVmEntityFilterResults = {
+  vmEntityFilterResult = {
     /**
      * No description
      *
@@ -42150,8 +41844,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVmEntityFilterResultsConnection = {
+
     /**
      * No description
      *
@@ -42178,55 +41871,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVmFolders = {
-    /**
-     * No description
-     *
-     * @tags VmFolder
-     * @name GetVmFolders
-     * @request POST:/get-vm-folders
-     * @secure
-     * @response `200` `(VmFolder)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmFolders: (data: GetVmFoldersRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmFolder[], ErrorBody>({
-        path: `/get-vm-folders`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmFoldersConnection = {
-    /**
-     * No description
-     *
-     * @tags VmFolder
-     * @name GetVmFoldersConnection
-     * @request POST:/get-vm-folders-connection
-     * @secure
-     * @response `200` `VmFolderConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmFoldersConnection: (data: GetVmFoldersConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmFolderConnection, ErrorBody>({
-        path: `/get-vm-folders-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmNics = {
+  vmNic = {
     /**
      * No description
      *
@@ -42249,8 +41894,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVmNicsConnection = {
+
     /**
      * No description
      *
@@ -42274,247 +41918,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getVmPlacementGroups = {
-    /**
-     * No description
-     *
-     * @tags VmPlacementGroup
-     * @name GetVmPlacementGroups
-     * @request POST:/get-vm-placement-groups
-     * @secure
-     * @response `200` `(VmPlacementGroup)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmPlacementGroups: (data: GetVmPlacementGroupsRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmPlacementGroup[], ErrorBody>({
-        path: `/get-vm-placement-groups`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmPlacementGroupsConnection = {
-    /**
-     * No description
-     *
-     * @tags VmPlacementGroup
-     * @name GetVmPlacementGroupsConnection
-     * @request POST:/get-vm-placement-groups-connection
-     * @secure
-     * @response `200` `VmPlacementGroupConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmPlacementGroupsConnection: (data: GetVmPlacementGroupsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmPlacementGroupConnection, ErrorBody>({
-        path: `/get-vm-placement-groups-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVms = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name GetVms
-     * @request POST:/get-vms
-     * @secure
-     * @response `200` `(Vm)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVms: (data: GetVmsRequestBody, params: RequestParams = {}) =>
-      this.http.request<Vm[], ErrorBody>({
-        path: `/get-vms`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmsConnection = {
-    /**
-     * No description
-     *
-     * @tags Vm
-     * @name GetVmsConnection
-     * @request POST:/get-vms-connection
-     * @secure
-     * @response `200` `VmConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmsConnection: (data: GetVmsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmConnection, ErrorBody>({
-        path: `/get-vms-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmSnapshots = {
-    /**
-     * No description
-     *
-     * @tags VmSnapshot
-     * @name GetVmSnapshots
-     * @request POST:/get-vm-snapshots
-     * @secure
-     * @response `200` `(VmSnapshot)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmSnapshots: (data: GetVmSnapshotsRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmSnapshot[], ErrorBody>({
-        path: `/get-vm-snapshots`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmSnapshotsConnection = {
-    /**
-     * No description
-     *
-     * @tags VmSnapshot
-     * @name GetVmSnapshotsConnection
-     * @request POST:/get-vm-snapshots-connection
-     * @secure
-     * @response `200` `VmSnapshotConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmSnapshotsConnection: (data: GetVmSnapshotsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmSnapshotConnection, ErrorBody>({
-        path: `/get-vm-snapshots-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmTemplates = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name GetVmTemplates
-     * @request POST:/get-vm-templates
-     * @secure
-     * @response `200` `(VmTemplate)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmTemplates: (data: GetVmTemplatesRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmTemplate[], ErrorBody>({
-        path: `/get-vm-templates`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmTemplatesConnection = {
-    /**
-     * No description
-     *
-     * @tags VmTemplate
-     * @name GetVmTemplatesConnection
-     * @request POST:/get-vm-templates-connection
-     * @secure
-     * @response `200` `VmTemplateConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmTemplatesConnection: (data: GetVmTemplatesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmTemplateConnection, ErrorBody>({
-        path: `/get-vm-templates-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmVolumes = {
-    /**
-     * No description
-     *
-     * @tags VmVolume
-     * @name GetVmVolumes
-     * @request POST:/get-vm-volumes
-     * @secure
-     * @response `200` `(VmVolume)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmVolumes: (data: GetVmVolumesRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmVolume[], ErrorBody>({
-        path: `/get-vm-volumes`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVmVolumesConnection = {
-    /**
-     * No description
-     *
-     * @tags VmVolume
-     * @name GetVmVolumesConnection
-     * @request POST:/get-vm-volumes-connection
-     * @secure
-     * @response `200` `VmVolumeConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVmVolumesConnection: (data: GetVmVolumesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VmVolumeConnection, ErrorBody>({
-        path: `/get-vm-volumes-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  getVsphereEsxiAccounts = {
+  vsphereEsxiAccount = {
     /**
      * No description
      *
@@ -42537,8 +41941,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getVsphereEsxiAccountsConnection = {
+
     /**
      * No description
      *
@@ -42562,7 +41965,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getWitnesses = {
+  witness = {
     /**
      * No description
      *
@@ -42585,8 +41988,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getWitnessesConnection = {
+
     /**
      * No description
      *
@@ -42610,7 +42012,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getWitnessServices = {
+  witnessService = {
     /**
      * No description
      *
@@ -42634,7 +42036,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getZones = {
+  zone = {
     /**
      * No description
      *
@@ -42657,8 +42059,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getZonesConnection = {
+
     /**
      * No description
      *
@@ -42682,7 +42083,7 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  getZoneTopoes = {
+  zoneTopo = {
     /**
      * No description
      *
@@ -42705,8 +42106,7 @@ export class Api<SecurityDataType extends unknown> {
         format: "json",
         ...params,
       }),
-  };
-  getZoneTopoesConnection = {
+
     /**
      * No description
      *
@@ -42725,28 +42125,6 @@ export class Api<SecurityDataType extends unknown> {
         method: "POST",
         body: data,
         secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  updateAlertNotifier = {
-    /**
-     * No description
-     *
-     * @tags AlertNotifier
-     * @name UpdateAlertNotifier
-     * @request POST:/update-alert-notifier
-     * @response `200` `WithTaskAlertNotifier` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    updateAlertNotifier: (data: AlertNotifierUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskAlertNotifier, ErrorBody>({
-        path: `/update-alert-notifier`,
-        method: "POST",
-        body: data,
         type: ContentType.Json,
         format: "json",
         ...params,
