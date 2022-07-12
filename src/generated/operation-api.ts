@@ -887,23 +887,23 @@ export interface ClusterWhereInput {
   upgrade_tool_version_not_starts_with?: string | null;
   upgrade_tool_version_starts_with?: string | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
 
@@ -927,23 +927,23 @@ export interface ClusterWhereInput {
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
 
@@ -2739,23 +2739,23 @@ export interface HostWhereInput {
   usb_devices_none?: UsbDeviceWhereInput | null;
   usb_devices_some?: UsbDeviceWhereInput | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
 
@@ -2779,23 +2779,23 @@ export interface HostWhereInput {
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
 
@@ -8766,23 +8766,23 @@ export interface DatacenterWhereInput {
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
 
@@ -8806,23 +8806,23 @@ export interface DatacenterWhereInput {
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
 
@@ -11033,6 +11033,7 @@ export enum VmToolsStatus {
 }
 
 export enum VmUsage {
+  BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
   EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
 }
 
@@ -11258,6 +11259,20 @@ export interface WitnessWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
+  management_ip?: string | null;
+  management_ip_contains?: string | null;
+  management_ip_ends_with?: string | null;
+  management_ip_gt?: string | null;
+  management_ip_gte?: string | null;
+  management_ip_in?: string[] | null;
+  management_ip_lt?: string | null;
+  management_ip_lte?: string | null;
+  management_ip_not?: string | null;
+  management_ip_not_contains?: string | null;
+  management_ip_not_ends_with?: string | null;
+  management_ip_not_in?: string[] | null;
+  management_ip_not_starts_with?: string | null;
+  management_ip_starts_with?: string | null;
   name?: string | null;
   name_contains?: string | null;
   name_ends_with?: string | null;
@@ -12466,13 +12481,13 @@ export interface Cluster {
   type: ClusterType;
   upgrade_tool_version?: string | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
   /** @format int64 */
   used_data_space?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
   /** @format int64 */
@@ -12521,6 +12536,60 @@ export interface ClusterUpdationParams {
 
 export interface ClusterLicenseUpdationParams {
   data: { license: string };
+  where: ClusterWhereInput;
+}
+
+export interface MgtIpMapper {
+  ip: string;
+  host_id: string;
+}
+
+export interface ClusterNetworkSettingUpdationParams {
+  data: {
+    mgt_ip_mapper?: MgtIpMapper[];
+    mgt_netmask?: string;
+    mgt_gateway?: string;
+    ntp_mode?: NtpMode;
+    ntp_servers?: string[];
+    dns?: string[];
+    iscsi_vip?: string;
+    management_vip?: string;
+  };
+  where: ClusterWhereInput;
+}
+
+export interface ClusterVirtualizationUpdationParams {
+  data: { auto_converge?: boolean; current_cpu_model?: string };
+  where: ClusterWhereInput;
+}
+
+export interface NestedVmRecycleBin {
+  enabled: boolean;
+
+  /** @format int32 */
+  retain: number;
+}
+
+export interface ClusterSettings {
+  cluster: NestedCluster;
+  default_ha?: boolean | null;
+  enabled_iscsi?: boolean | null;
+  id: string;
+  vm_recycle_bin?: NestedVmRecycleBin | null;
+}
+
+export interface WithTaskClusterSettings {
+  task_id?: string | null;
+  data: ClusterSettings;
+}
+
+export interface ClusterHaUpdationParams {
+  ha: boolean;
+  where: ClusterWhereInput;
+}
+
+export interface ClusterEnableIscsiUpdationParams {
+  enable_iscsi: boolean;
   where: ClusterWhereInput;
 }
 
@@ -12668,7 +12737,10 @@ export enum UploadResourceType {
   ELF_IMAGE = "ELF_IMAGE",
   EVEROUTE_PACKAGE = "EVEROUTE_PACKAGE",
   MONITOR_IMAGE = "MONITOR_IMAGE",
+  OVF = "OVF",
   SVT_IMAGE = "SVT_IMAGE",
+  VMVOLUMEQCOW2 = "VM_VOLUME_QCOW2",
+  VM_VOLUME_RAW = "VM_VOLUME_RAW",
 }
 
 export enum UploadTaskStatus {
@@ -12874,13 +12946,13 @@ export interface Datacenter {
   /** @format int64 */
   total_memory_bytes?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
   /** @format int64 */
   used_data_space?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
   /** @format int32 */
@@ -12949,7 +13021,7 @@ export interface NestedPartition {
   size: number;
   usage: PartitionUsage;
 
-  /** @format int64 */
+  /** @format double */
   used_size: number;
 }
 
@@ -13493,137 +13565,36 @@ export enum StepUnit {
   PERCENT = "PERCENT",
 }
 
-export interface Step {
-  unit?: StepUnit | null;
-
+export interface NestedStep {
   /** @format double */
-  total?: number | null;
+  current?: number | null;
+  finished?: boolean | null;
+  key?: string | null;
 
   /** @format double */
   per_second?: number | null;
-  key?: string | null;
-  finished?: boolean | null;
 
   /** @format double */
-  current?: number | null;
-  __typename?: "Step";
+  total?: number | null;
+  unit?: StepUnit | null;
 }
 
-export enum TaskType {
-  APPLICATION = "APPLICATION",
-  BACKUP = "BACKUP",
-  RESOLVER = "RESOLVER",
-}
-
-export interface User {
-  username: string;
-  source: UserSource;
-  roles?: UserRoleNext[] | null;
-  role?: UserRole | null;
-  password_updated_at?: any;
-  password_recover_qa?: PasswordRecoverQa | null;
-  password_expired?: boolean | null;
-  name: string;
-  mobile_phone?: string | null;
-  login_info?: UserLoginInfo | null;
-  ldap_dn?: string | null;
+export interface NestedTask {
+  args: object;
+  description: string;
+  id: string;
   internal: boolean;
-  id: string;
-  email_address?: string | null;
-  __typename?: "User";
-}
-
-export interface UserLoginInfo {
-  user: User;
-  missed_at?: any;
-
-  /** @format int32 */
-  miss_num: number;
-  locked_at?: any;
-  id: string;
-  __typename?: "UserLoginInfo";
-}
-
-export interface PasswordReoverQaItem {
-  question: string;
-  __typename?: "PasswordReoverQaItem";
-}
-
-export interface PasswordRecoverQa {
-  items?: PasswordReoverQaItem[] | null;
-  enabled: boolean;
-  __typename?: "PasswordRecoverQa";
-}
-
-export enum UserRole {
-  ADMIN = "ADMIN",
-  READ_ONLY = "READ_ONLY",
-  ROOT = "ROOT",
-}
-
-export enum UserRolePlatform {
-  MANAGEMENT = "MANAGEMENT",
-  SELF_SERVICE = "SELF_SERVICE",
-}
-
-export enum UserRolePreset {
-  ADMIN = "ADMIN",
-  AUDITOR = "AUDITOR",
-  READ_ONLY = "READ_ONLY",
-  ROOT = "ROOT",
-  USER_ADMIN = "USER_ADMIN",
-  VM_USER = "VM_USER",
-}
-
-export interface UserRoleNext {
-  users?: User[] | null;
-  preset?: UserRolePreset | null;
-  platform: UserRolePlatform;
-  name: string;
-  id: string;
-  actions: string[];
-  __typename?: "UserRoleNext";
-}
-
-export enum UserSource {
-  LDAP = "LDAP",
-  LOCAL = "LOCAL",
-}
-
-export interface Task {
-  user?: User | null;
-  type?: TaskType | null;
-  steps: Step[];
-  status: TaskStatus;
-  started_at?: any;
-  snapshot: string;
-  resource_type?: string | null;
-  resource_rollbacked?: boolean | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count?: number | null;
-  resource_rollback_error?: string | null;
-  resource_mutation?: string | null;
-  resource_id?: string | null;
+  local_created_at: string;
 
   /** @format double */
   progress: number;
-  local_created_at: any;
-  key?: string | null;
-  internal: boolean;
-  id: string;
-  finished_at?: any;
-  error_message?: string | null;
-  error_code?: string | null;
-  description: string;
-  cluster?: Cluster | null;
-  args: any;
-  __typename?: "Task";
+  snapshot: string;
+  status: TaskStatus;
+  steps: NestedStep[];
 }
 
 export interface BatchHosts {
-  task: Task;
-  __typename?: "BatchHosts";
+  task: NestedTask;
 }
 
 export interface WithTaskBatchHosts {
@@ -13799,13 +13770,13 @@ export interface Host {
   total_memory_bytes: number;
   usb_devices?: NestedUsbDevice[] | null;
 
-  /** @format int64 */
+  /** @format double */
   used_cpu_hz?: number | null;
 
   /** @format int64 */
   used_data_space: number;
 
-  /** @format int64 */
+  /** @format double */
   used_memory_bytes?: number | null;
 
   /** @format int32 */
@@ -14490,6 +14461,10 @@ export interface LabelUpdationParams {
 
 export interface AddLabelsToResourcesParams {
   data: {
+    content_library_vm_templates?: ContentLibraryVmTemplateWhereInput;
+    content_library_images?: ContentLibraryImageWhereInput;
+    isolation_policies?: IsolationPolicyWhereInput;
+    security_policies?: SecurityPolicyWhereInput;
     vms?: VmWhereInput;
     vm_volumes?: VmVolumeWhereInput;
     vm_templates?: VmTemplateWhereInput;
@@ -15493,13 +15468,6 @@ export interface NestedAuthSettings {
   session_max_age?: number | null;
 }
 
-export interface NestedVmRecycleBin {
-  enabled: boolean;
-
-  /** @format int32 */
-  retain: number;
-}
-
 export interface GlobalSettings {
   auth?: NestedAuthSettings | null;
   id: string;
@@ -15515,19 +15483,6 @@ export interface GlobalRecycleBinUpdationParams {
   /** @format int32 */
   retain: number;
   enabled: boolean;
-}
-
-export interface ClusterSettings {
-  cluster: NestedCluster;
-  default_ha?: boolean | null;
-  enabled_iscsi?: boolean | null;
-  id: string;
-  vm_recycle_bin?: NestedVmRecycleBin | null;
-}
-
-export interface WithTaskClusterSettings {
-  task_id?: string | null;
-  data: ClusterSettings;
 }
 
 export interface ClusterRecycleBinCreationParams {
@@ -15835,6 +15790,34 @@ export interface ReportTemplateDeletionParams {
   where: ReportTemplateWhereInput;
 }
 
+export enum UserRolePlatform {
+  MANAGEMENT = "MANAGEMENT",
+  SELF_SERVICE = "SELF_SERVICE",
+}
+
+export enum UserRolePreset {
+  ADMIN = "ADMIN",
+  AUDITOR = "AUDITOR",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+  USER_ADMIN = "USER_ADMIN",
+  VM_USER = "VM_USER",
+}
+
+export interface NestedUser {
+  id: string;
+  name: string;
+}
+
+export interface UserRoleNext {
+  actions: string[];
+  id: string;
+  name: string;
+  platform: UserRolePlatform;
+  preset?: UserRolePreset | null;
+  users?: NestedUser[] | null;
+}
+
 export interface WithTaskUserRoleNext {
   task_id?: string | null;
   data: UserRoleNext;
@@ -15907,7 +15890,6 @@ export enum ROLE_ACTION {
   MANAGE_REPORT = "MANAGE_REPORT",
   MANAGE_SHARING_VM_TOOLS = "MANAGE_SHARING_VM_TOOLS",
   MANAGE_ADVANCED_MONITOR = "MANAGE_ADVANCED_MONITOR",
-  MANAGE_MIGRATE_TRANSMITTER = "MANAGE_MIGRATE_TRANSMITTER",
   MANAGE_THIRD_PARTY_DRIVER = "MANAGE_THIRD_PARTY_DRIVER",
   MANAGE_ORGANIZATION_NAME = "MANAGE_ORGANIZATION_NAME",
   MANAGE_CLOUD_TOWER_LICENSE = "MANAGE_CLOUD_TOWER_LICENSE",
@@ -16085,6 +16067,17 @@ export interface UserWhereInput {
   username_not_in?: string[] | null;
   username_not_starts_with?: string | null;
   username_starts_with?: string | null;
+}
+
+export enum UserRole {
+  ADMIN = "ADMIN",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+}
+
+export enum UserSource {
+  LDAP = "LDAP",
+  LOCAL = "LOCAL",
 }
 
 export interface RoleUpdationParams {
@@ -16842,6 +16835,36 @@ export interface LoginInput {
   username: string;
   source: UserSource;
   password: string;
+}
+
+export interface NestedPasswordReoverQaItem {
+  question: string;
+}
+
+export interface NestedPasswordRecoverQa {
+  enabled: boolean;
+  items?: NestedPasswordReoverQaItem[] | null;
+}
+
+export interface NestedUserRoleNext {
+  id: string;
+  name: string;
+}
+
+export interface User {
+  email_address?: string | null;
+  id: string;
+  internal: boolean;
+  ldap_dn?: string | null;
+  mobile_phone?: string | null;
+  name: string;
+  password_expired?: boolean | null;
+  password_recover_qa?: NestedPasswordRecoverQa | null;
+  password_updated_at?: string | null;
+  role?: UserRole | null;
+  roles?: NestedUserRoleNext[] | null;
+  source: UserSource;
+  username: string;
 }
 
 export interface WithTaskUser {
@@ -17688,6 +17711,12 @@ export interface DiskOperateModifyDisk {
   disk_index: number;
 }
 
+export interface VmDiskOperate {
+  remove_disks?: { disk_index: number[] };
+  modify_disks?: DiskOperateModifyDisk[];
+  new_disks?: VmDiskParams;
+}
+
 export enum CloudInitNetworkTypeEnum {
   IPV4 = "IPV4",
   IPV4DHCP = "IPV4_DHCP",
@@ -17709,15 +17738,17 @@ export interface CloudInitNetWork {
   ip_address?: string;
 }
 
+export interface TemplateCloudInit {
+  user_data?: string;
+  public_keys?: string[];
+  hostname?: string;
+  networks?: CloudInitNetWork[];
+  nameservers?: string[];
+  default_user_password?: string;
+}
+
 export interface VmCreateVmFromTemplateParams {
-  cloud_init?: {
-    user_data?: string;
-    public_keys?: string[];
-    hostname?: string;
-    networks?: CloudInitNetWork[];
-    nameservers?: string[];
-    default_user_password?: string;
-  };
+  cloud_init?: TemplateCloudInit;
   is_full_copy: boolean;
   template_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
@@ -17736,11 +17767,7 @@ export interface VmCreateVmFromTemplateParams {
   firmware?: VmFirmware;
   ha?: boolean;
   vm_nics?: VmNicParams[];
-  disk_operate?: {
-    remove_disks?: { disk_index: number[] };
-    modify_disks?: DiskOperateModifyDisk[];
-    new_disks?: VmDiskParams;
-  };
+  disk_operate?: VmDiskOperate;
 
   /** @format int64 */
   memory?: number;
@@ -17964,6 +17991,300 @@ export interface VmMigrateParams {
   where: VmWhereInput;
 }
 
+export enum MigrateType {
+  COLD_MIGRATE = "COLD_MIGRATE",
+  CUTOVER_MIGRATE = "CUTOVER_MIGRATE",
+  LIVE_MIGRATE = "LIVE_MIGRATE",
+}
+
+export interface VlanMapping {
+  src_vlan_local_id: string;
+  dest_vlan_local_id: string;
+}
+
+export interface MigrateVmConfig {
+  remove_unmovable_devices?: boolean;
+  new_name?: string;
+  network_mapping: VlanMapping[];
+  migrate_type: MigrateType;
+  elf_storage_policy: VmVolumeElfStoragePolicyType;
+  delete_src_vm?: boolean;
+}
+
+export interface VmMigrateAcrossClusterParams {
+  data: { vm_config: MigrateVmConfig; cluster_id: string; host_id?: string };
+  where: VmWhereInput;
+}
+
+export interface TaskWhereInput {
+  AND?: TaskWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  error_code?: string | null;
+  error_code_contains?: string | null;
+  error_code_ends_with?: string | null;
+  error_code_gt?: string | null;
+  error_code_gte?: string | null;
+  error_code_in?: string[] | null;
+  error_code_lt?: string | null;
+  error_code_lte?: string | null;
+  error_code_not?: string | null;
+  error_code_not_contains?: string | null;
+  error_code_not_ends_with?: string | null;
+  error_code_not_in?: string[] | null;
+  error_code_not_starts_with?: string | null;
+  error_code_starts_with?: string | null;
+  error_message?: string | null;
+  error_message_contains?: string | null;
+  error_message_ends_with?: string | null;
+  error_message_gt?: string | null;
+  error_message_gte?: string | null;
+  error_message_in?: string[] | null;
+  error_message_lt?: string | null;
+  error_message_lte?: string | null;
+  error_message_not?: string | null;
+  error_message_not_contains?: string | null;
+  error_message_not_ends_with?: string | null;
+  error_message_not_in?: string[] | null;
+  error_message_not_starts_with?: string | null;
+  error_message_starts_with?: string | null;
+  finished_at?: string | null;
+  finished_at_gt?: string | null;
+  finished_at_gte?: string | null;
+  finished_at_in?: string[] | null;
+  finished_at_lt?: string | null;
+  finished_at_lte?: string | null;
+  finished_at_not?: string | null;
+  finished_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  key?: string | null;
+  key_contains?: string | null;
+  key_ends_with?: string | null;
+  key_gt?: string | null;
+  key_gte?: string | null;
+  key_in?: string[] | null;
+  key_lt?: string | null;
+  key_lte?: string | null;
+  key_not?: string | null;
+  key_not_contains?: string | null;
+  key_not_ends_with?: string | null;
+  key_not_in?: string[] | null;
+  key_not_starts_with?: string | null;
+  key_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  NOT?: TaskWhereInput[] | null;
+  OR?: TaskWhereInput[] | null;
+
+  /** @format double */
+  progress?: number | null;
+
+  /** @format double */
+  progress_gt?: number | null;
+
+  /** @format double */
+  progress_gte?: number | null;
+  progress_in?: number[] | null;
+
+  /** @format double */
+  progress_lt?: number | null;
+
+  /** @format double */
+  progress_lte?: number | null;
+
+  /** @format double */
+  progress_not?: number | null;
+  progress_not_in?: number[] | null;
+  resource_id?: string | null;
+  resource_id_contains?: string | null;
+  resource_id_ends_with?: string | null;
+  resource_id_gt?: string | null;
+  resource_id_gte?: string | null;
+  resource_id_in?: string[] | null;
+  resource_id_lt?: string | null;
+  resource_id_lte?: string | null;
+  resource_id_not?: string | null;
+  resource_id_not_contains?: string | null;
+  resource_id_not_ends_with?: string | null;
+  resource_id_not_in?: string[] | null;
+  resource_id_not_starts_with?: string | null;
+  resource_id_starts_with?: string | null;
+  resource_mutation?: string | null;
+  resource_mutation_contains?: string | null;
+  resource_mutation_ends_with?: string | null;
+  resource_mutation_gt?: string | null;
+  resource_mutation_gte?: string | null;
+  resource_mutation_in?: string[] | null;
+  resource_mutation_lt?: string | null;
+  resource_mutation_lte?: string | null;
+  resource_mutation_not?: string | null;
+  resource_mutation_not_contains?: string | null;
+  resource_mutation_not_ends_with?: string | null;
+  resource_mutation_not_in?: string[] | null;
+  resource_mutation_not_starts_with?: string | null;
+  resource_mutation_starts_with?: string | null;
+  resource_rollback_error?: string | null;
+  resource_rollback_error_contains?: string | null;
+  resource_rollback_error_ends_with?: string | null;
+  resource_rollback_error_gt?: string | null;
+  resource_rollback_error_gte?: string | null;
+  resource_rollback_error_in?: string[] | null;
+  resource_rollback_error_lt?: string | null;
+  resource_rollback_error_lte?: string | null;
+  resource_rollback_error_not?: string | null;
+  resource_rollback_error_not_contains?: string | null;
+  resource_rollback_error_not_ends_with?: string | null;
+  resource_rollback_error_not_in?: string[] | null;
+  resource_rollback_error_not_starts_with?: string | null;
+  resource_rollback_error_starts_with?: string | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_gt?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_gte?: number | null;
+  resource_rollback_retry_count_in?: number[] | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_lt?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_lte?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_not?: number | null;
+  resource_rollback_retry_count_not_in?: number[] | null;
+  resource_rollbacked?: boolean | null;
+  resource_rollbacked_not?: boolean | null;
+  resource_type?: string | null;
+  resource_type_contains?: string | null;
+  resource_type_ends_with?: string | null;
+  resource_type_gt?: string | null;
+  resource_type_gte?: string | null;
+  resource_type_in?: string[] | null;
+  resource_type_lt?: string | null;
+  resource_type_lte?: string | null;
+  resource_type_not?: string | null;
+  resource_type_not_contains?: string | null;
+  resource_type_not_ends_with?: string | null;
+  resource_type_not_in?: string[] | null;
+  resource_type_not_starts_with?: string | null;
+  resource_type_starts_with?: string | null;
+  snapshot?: string | null;
+  snapshot_contains?: string | null;
+  snapshot_ends_with?: string | null;
+  snapshot_gt?: string | null;
+  snapshot_gte?: string | null;
+  snapshot_in?: string[] | null;
+  snapshot_lt?: string | null;
+  snapshot_lte?: string | null;
+  snapshot_not?: string | null;
+  snapshot_not_contains?: string | null;
+  snapshot_not_ends_with?: string | null;
+  snapshot_not_in?: string[] | null;
+  snapshot_not_starts_with?: string | null;
+  snapshot_starts_with?: string | null;
+  started_at?: string | null;
+  started_at_gt?: string | null;
+  started_at_gte?: string | null;
+  started_at_in?: string[] | null;
+  started_at_lt?: string | null;
+  started_at_lte?: string | null;
+  started_at_not?: string | null;
+  started_at_not_in?: string[] | null;
+  status?: TaskStatus | null;
+  status_in?: TaskStatus[] | null;
+  status_not?: TaskStatus | null;
+  status_not_in?: TaskStatus[] | null;
+  type?: TaskType | null;
+  type_in?: TaskType[] | null;
+  type_not?: TaskType | null;
+  type_not_in?: TaskType[] | null;
+  user?: UserWhereInput | null;
+}
+
+export enum TaskType {
+  APPLICATION = "APPLICATION",
+  BACKUP = "BACKUP",
+  RESOLVER = "RESOLVER",
+}
+
+export interface StopVmInCutoverMigrationParams {
+  force?: boolean;
+  tasks: TaskWhereInput;
+}
+
+export interface Task {
+  args: object;
+  cluster?: NestedCluster | null;
+  description: string;
+  error_code?: string | null;
+  error_message?: string | null;
+  finished_at?: string | null;
+  id: string;
+  internal: boolean;
+  key?: string | null;
+  local_created_at: string;
+
+  /** @format double */
+  progress: number;
+  resource_id?: string | null;
+  resource_mutation?: string | null;
+  resource_rollback_error?: string | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count?: number | null;
+  resource_rollbacked?: boolean | null;
+  resource_type?: string | null;
+  snapshot: string;
+  started_at?: string | null;
+  status: TaskStatus;
+  steps: NestedStep[];
+  type?: TaskType | null;
+  user?: NestedUser | null;
+}
+
+export interface AbortMigrateVmAcrossClusterParams {
+  tasks: TaskWhereInput;
+}
+
 export interface VmAddFolderParams {
   data: { folder_id: string };
   where: VmWhereInput;
@@ -17974,10 +18295,26 @@ export interface VmUpdateAdvancedOptionsParams {
   where: VmWhereInput;
 }
 
+export interface VmUpdateHostOptionsParams {
+  data: { ntp_servers?: string[]; dns_servers?: string[]; hostname?: string };
+  where: VmWhereInput;
+}
+
+export interface VmResetGuestOsPasswordParams {
+  data: { password: string; username: string };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateOwnerParams {
+  data: { search_for: "username" | "id"; value: string };
+  where: VmWhereInput;
+}
+
 export interface MetricLabel {
   to_hostname?: string | null;
   serial_number?: string | null;
   pool?: string | null;
+  name?: string | null;
   metric_name?: string | null;
   job?: string | null;
   instance?: string | null;
@@ -18160,6 +18497,2604 @@ export interface GetTopNMetricInput {
   range: string;
 }
 
+export interface UpdatePassrodSecurityParams {
+  /** @format int32 */
+  password_expire_days?: number;
+  password_complexity?: PasswordComplexity;
+
+  /** @format int32 */
+  login_miss_time_threshold?: number;
+
+  /** @format int32 */
+  login_miss_num_threshold?: number;
+}
+
+export interface UpdateAccessRestrictionParams {
+  access_list: string[];
+  access_mode: AccessMode;
+}
+
+export interface UpdateSessionTimeoutParams {
+  /** @format int32 */
+  session_max_age: number;
+}
+
+export interface VsphereEsxiAccount {
+  host: NestedHost;
+  id: string;
+  ip: string;
+  is_valid: boolean;
+  local_id: string;
+
+  /** @format int32 */
+  port: number;
+  username: string;
+}
+
+export interface WithTaskVsphereEsxiAccountArray {
+  task_id?: string | null;
+  data: VsphereEsxiAccount[];
+}
+
+export interface UpdateVsphereEsxiAccountParamsData {
+  /** @format int32 */
+  port?: number;
+  password?: string;
+  username: string;
+  ip: string;
+  esxi_account_id: string;
+}
+
+export interface UpdateVsphereEsxiAccountParams {
+  data: UpdateVsphereEsxiAccountParamsData[];
+}
+
+export interface VcenterAccount {
+  cluster?: NestedCluster | null;
+  id: string;
+  ip: string;
+  is_valid: boolean;
+  local_id: string;
+
+  /** @format int32 */
+  port: number;
+  username: string;
+}
+
+export interface WithTaskVcenterAccount {
+  task_id?: string | null;
+  data: VcenterAccount;
+}
+
+export interface CreateVcenterAccountParamsData {
+  /** @format int32 */
+  port: number;
+  password: string;
+  username: string;
+  ip: string;
+  cluster_id: string;
+}
+
+export interface CreateVcenterAccountParams {
+  data: CreateVcenterAccountParamsData;
+}
+
+export interface VcenterAccountWhereUniqueInput {
+  id?: string | null;
+  local_id?: string | null;
+}
+
+export interface UpdateVcenterAccountParamsData {
+  /** @format int32 */
+  port: number;
+  password: string;
+  username: string;
+  ip: string;
+}
+
+export interface UpdateVcenterAccountParams {
+  data: UpdateVcenterAccountParamsData;
+  where: VcenterAccountWhereUniqueInput;
+}
+
+export interface ColumnConfig {
+  name: string;
+  path: string;
+}
+
+export enum HostOrderByInput {
+  AccessIpASC = "access_ip_ASC",
+  AccessIpDESC = "access_ip_DESC",
+  AllocatableMemoryBytesASC = "allocatable_memory_bytes_ASC",
+  AllocatableMemoryBytesDESC = "allocatable_memory_bytes_DESC",
+  ChunkIdASC = "chunk_id_ASC",
+  ChunkIdDESC = "chunk_id_DESC",
+  CpuBrandASC = "cpu_brand_ASC",
+  CpuBrandDESC = "cpu_brand_DESC",
+  CpuFanSpeedUnitASC = "cpu_fan_speed_unit_ASC",
+  CpuFanSpeedUnitDESC = "cpu_fan_speed_unit_DESC",
+  CpuHzPerCoreASC = "cpu_hz_per_core_ASC",
+  CpuHzPerCoreDESC = "cpu_hz_per_core_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CpuVendorASC = "cpu_vendor_ASC",
+  CpuVendorDESC = "cpu_vendor_DESC",
+  DataIpASC = "data_ip_ASC",
+  DataIpDESC = "data_ip_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HddDataCapacityASC = "hdd_data_capacity_ASC",
+  HddDataCapacityDESC = "hdd_data_capacity_DESC",
+  HddDiskCountASC = "hdd_disk_count_ASC",
+  HddDiskCountDESC = "hdd_disk_count_DESC",
+  HypervisorIpASC = "hypervisor_ip_ASC",
+  HypervisorIpDESC = "hypervisor_ip_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IsOsInRaid1ASC = "is_os_in_raid1_ASC",
+  IsOsInRaid1DESC = "is_os_in_raid1_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LsmCapDiskSafeUmountASC = "lsm_cap_disk_safe_umount_ASC",
+  LsmCapDiskSafeUmountDESC = "lsm_cap_disk_safe_umount_DESC",
+  ManagementIpASC = "management_ip_ASC",
+  ManagementIpDESC = "management_ip_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NestedVirtualizationASC = "nested_virtualization_ASC",
+  NestedVirtualizationDESC = "nested_virtualization_DESC",
+  NicCountASC = "nic_count_ASC",
+  NicCountDESC = "nic_count_DESC",
+  NodeTopoLocalIdASC = "node_topo_local_id_ASC",
+  NodeTopoLocalIdDESC = "node_topo_local_id_DESC",
+  OsMemoryBytesASC = "os_memory_bytes_ASC",
+  OsMemoryBytesDESC = "os_memory_bytes_DESC",
+  OsVersionASC = "os_version_ASC",
+  OsVersionDESC = "os_version_DESC",
+  PmemDimmCapacityASC = "pmem_dimm_capacity_ASC",
+  PmemDimmCapacityDESC = "pmem_dimm_capacity_DESC",
+  PmemDimmCountASC = "pmem_dimm_count_ASC",
+  PmemDimmCountDESC = "pmem_dimm_count_DESC",
+  PmemDiskCountASC = "pmem_disk_count_ASC",
+  PmemDiskCountDESC = "pmem_disk_count_DESC",
+  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
+  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
+  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
+  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  RunningPauseVmMemoryBytesASC = "running_pause_vm_memory_bytes_ASC",
+  RunningPauseVmMemoryBytesDESC = "running_pause_vm_memory_bytes_DESC",
+  RunningVmNumASC = "running_vm_num_ASC",
+  RunningVmNumDESC = "running_vm_num_DESC",
+  ScvmCpuASC = "scvm_cpu_ASC",
+  ScvmCpuDESC = "scvm_cpu_DESC",
+  ScvmMemoryASC = "scvm_memory_ASC",
+  ScvmMemoryDESC = "scvm_memory_DESC",
+  ScvmNameASC = "scvm_name_ASC",
+  ScvmNameDESC = "scvm_name_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  SsdDataCapacityASC = "ssd_data_capacity_ASC",
+  SsdDataCapacityDESC = "ssd_data_capacity_DESC",
+  SsdDiskCountASC = "ssd_disk_count_ASC",
+  SsdDiskCountDESC = "ssd_disk_count_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StoppedVmNumASC = "stopped_vm_num_ASC",
+  StoppedVmNumDESC = "stopped_vm_num_DESC",
+  SuspendedVmNumASC = "suspended_vm_num_ASC",
+  SuspendedVmNumDESC = "suspended_vm_num_DESC",
+  TotalCacheCapacityASC = "total_cache_capacity_ASC",
+  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
+  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+  VmotionIpASC = "vmotion_ip_ASC",
+  VmotionIpDESC = "vmotion_ip_DESC",
+  WithFasterSsdAsCacheASC = "with_faster_ssd_as_cache_ASC",
+  WithFasterSsdAsCacheDESC = "with_faster_ssd_as_cache_DESC",
+}
+
+export interface GetHostsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: HostOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: HostWhereInput | null;
+}
+
+export enum DatacenterOrderByInput {
+  ClusterNumASC = "cluster_num_ASC",
+  ClusterNumDESC = "cluster_num_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
+
+export interface GetDatacentersRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: DatacenterOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: DatacenterWhereInput | null;
+}
+
+export enum ClusterOrderByInput {
+  ApplicationHighestVersionASC = "application_highest_version_ASC",
+  ApplicationHighestVersionDESC = "application_highest_version_DESC",
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  AutoConvergeASC = "auto_converge_ASC",
+  AutoConvergeDESC = "auto_converge_DESC",
+  ConnectStateASC = "connect_state_ASC",
+  ConnectStateDESC = "connect_state_DESC",
+  CurrentCpuModelASC = "current_cpu_model_ASC",
+  CurrentCpuModelDESC = "current_cpu_model_DESC",
+  DisconnectedDateASC = "disconnected_date_ASC",
+  DisconnectedDateDESC = "disconnected_date_DESC",
+  DisconnectedReasonASC = "disconnected_reason_ASC",
+  DisconnectedReasonDESC = "disconnected_reason_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureDataSpaceASC = "failure_data_space_ASC",
+  FailureDataSpaceDESC = "failure_data_space_DESC",
+  HasMetroxASC = "has_metrox_ASC",
+  HasMetroxDESC = "has_metrox_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  HypervisorASC = "hypervisor_ASC",
+  HypervisorDESC = "hypervisor_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpASC = "ip_ASC",
+  IpDESC = "ip_DESC",
+  IsAllFlashASC = "is_all_flash_ASC",
+  IsAllFlashDESC = "is_all_flash_DESC",
+  IscsiVipASC = "iscsi_vip_ASC",
+  IscsiVipDESC = "iscsi_vip_DESC",
+  LicenseExpireDateASC = "license_expire_date_ASC",
+  LicenseExpireDateDESC = "license_expire_date_DESC",
+  LicenseSerialASC = "license_serial_ASC",
+  LicenseSerialDESC = "license_serial_DESC",
+  LicenseSignDateASC = "license_sign_date_ASC",
+  LicenseSignDateDESC = "license_sign_date_DESC",
+  LicenseTypeASC = "license_type_ASC",
+  LicenseTypeDESC = "license_type_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MaintenanceEndDateASC = "maintenance_end_date_ASC",
+  MaintenanceEndDateDESC = "maintenance_end_date_DESC",
+  MaintenanceStartDateASC = "maintenance_start_date_ASC",
+  MaintenanceStartDateDESC = "maintenance_start_date_DESC",
+  ManagementVipASC = "management_vip_ASC",
+  ManagementVipDESC = "management_vip_DESC",
+  MaxChunkNumASC = "max_chunk_num_ASC",
+  MaxChunkNumDESC = "max_chunk_num_DESC",
+  MaxPhysicalDataCapacityASC = "max_physical_data_capacity_ASC",
+  MaxPhysicalDataCapacityDESC = "max_physical_data_capacity_DESC",
+  MaxPhysicalDataCapacityPerNodeASC = "max_physical_data_capacity_per_node_ASC",
+  MaxPhysicalDataCapacityPerNodeDESC = "max_physical_data_capacity_per_node_DESC",
+  MetroAvailabilityChecklistASC = "metro_availability_checklist_ASC",
+  MetroAvailabilityChecklistDESC = "metro_availability_checklist_DESC",
+  MgtGatewayASC = "mgt_gateway_ASC",
+  MgtGatewayDESC = "mgt_gateway_DESC",
+  MgtNetmaskASC = "mgt_netmask_ASC",
+  MgtNetmaskDESC = "mgt_netmask_DESC",
+  MigrationDataSizeASC = "migration_data_size_ASC",
+  MigrationDataSizeDESC = "migration_data_size_DESC",
+  MigrationSpeedASC = "migration_speed_ASC",
+  MigrationSpeedDESC = "migration_speed_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NtpModeASC = "ntp_mode_ASC",
+  NtpModeDESC = "ntp_mode_DESC",
+  NvmeOverRdmaEnabledASC = "nvme_over_rdma_enabled_ASC",
+  NvmeOverRdmaEnabledDESC = "nvme_over_rdma_enabled_DESC",
+  NvmeOverTcpEnabledASC = "nvme_over_tcp_enabled_ASC",
+  NvmeOverTcpEnabledDESC = "nvme_over_tcp_enabled_DESC",
+  NvmfEnabledASC = "nvmf_enabled_ASC",
+  NvmfEnabledDESC = "nvmf_enabled_DESC",
+  PmemEnabledASC = "pmem_enabled_ASC",
+  PmemEnabledDESC = "pmem_enabled_DESC",
+  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
+  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
+  ProvisionedCpuCoresForActiveVmASC = "provisioned_cpu_cores_for_active_vm_ASC",
+  ProvisionedCpuCoresForActiveVmDESC = "provisioned_cpu_cores_for_active_vm_DESC",
+  ProvisionedForActiveVmRatioASC = "provisioned_for_active_vm_ratio_ASC",
+  ProvisionedForActiveVmRatioDESC = "provisioned_for_active_vm_ratio_DESC",
+  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
+  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  ProvisionedRatioASC = "provisioned_ratio_ASC",
+  ProvisionedRatioDESC = "provisioned_ratio_DESC",
+  RdmaEnabledASC = "rdma_enabled_ASC",
+  RdmaEnabledDESC = "rdma_enabled_DESC",
+  RecoverDataSizeASC = "recover_data_size_ASC",
+  RecoverDataSizeDESC = "recover_data_size_DESC",
+  RecoverSpeedASC = "recover_speed_ASC",
+  RecoverSpeedDESC = "recover_speed_DESC",
+  ReservedCpuCoresForSystemServiceASC = "reserved_cpu_cores_for_system_service_ASC",
+  ReservedCpuCoresForSystemServiceDESC = "reserved_cpu_cores_for_system_service_DESC",
+  RunningVmNumASC = "running_vm_num_ASC",
+  RunningVmNumDESC = "running_vm_num_DESC",
+  SoftwareEditionASC = "software_edition_ASC",
+  SoftwareEditionDESC = "software_edition_DESC",
+  StoppedVmNumASC = "stopped_vm_num_ASC",
+  StoppedVmNumDESC = "stopped_vm_num_DESC",
+  StretchASC = "stretch_ASC",
+  StretchDESC = "stretch_DESC",
+  SuspendedVmNumASC = "suspended_vm_num_ASC",
+  SuspendedVmNumDESC = "suspended_vm_num_DESC",
+  TotalCacheCapacityASC = "total_cache_capacity_ASC",
+  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
+  TotalCpuCoresASC = "total_cpu_cores_ASC",
+  TotalCpuCoresDESC = "total_cpu_cores_DESC",
+  TotalCpuHzASC = "total_cpu_hz_ASC",
+  TotalCpuHzDESC = "total_cpu_hz_DESC",
+  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
+  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
+  TotalDataCapacityASC = "total_data_capacity_ASC",
+  TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalMemoryBytesASC = "total_memory_bytes_ASC",
+  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpgradeToolVersionASC = "upgrade_tool_version_ASC",
+  UpgradeToolVersionDESC = "upgrade_tool_version_DESC",
+  UsedCpuHzASC = "used_cpu_hz_ASC",
+  UsedCpuHzDESC = "used_cpu_hz_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedMemoryBytesASC = "used_memory_bytes_ASC",
+  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
+  ValidDataSpaceASC = "valid_data_space_ASC",
+  ValidDataSpaceDESC = "valid_data_space_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+  VhostEnabledASC = "vhost_enabled_ASC",
+  VhostEnabledDESC = "vhost_enabled_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+}
+
+export interface GetClustersRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ClusterOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ClusterWhereInput | null;
+}
+
+export enum NicOrderByInput {
+  DriverASC = "driver_ASC",
+  DriverDESC = "driver_DESC",
+  DriverStateASC = "driver_state_ASC",
+  DriverStateDESC = "driver_state_DESC",
+  GatewayIpASC = "gateway_ip_ASC",
+  GatewayIpDESC = "gateway_ip_DESC",
+  IbdevASC = "ibdev_ASC",
+  IbdevDESC = "ibdev_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpAddressASC = "ip_address_ASC",
+  IpAddressDESC = "ip_address_DESC",
+  IsSriovASC = "is_sriov_ASC",
+  IsSriovDESC = "is_sriov_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MacAddressASC = "mac_address_ASC",
+  MacAddressDESC = "mac_address_DESC",
+  MaxVfNumASC = "max_vf_num_ASC",
+  MaxVfNumDESC = "max_vf_num_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  MtuASC = "mtu_ASC",
+  MtuDESC = "mtu_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NicUuidASC = "nic_uuid_ASC",
+  NicUuidDESC = "nic_uuid_DESC",
+  PhysicalASC = "physical_ASC",
+  PhysicalDESC = "physical_DESC",
+  RdmaEnabledASC = "rdma_enabled_ASC",
+  RdmaEnabledDESC = "rdma_enabled_DESC",
+  RunningASC = "running_ASC",
+  RunningDESC = "running_DESC",
+  SpeedASC = "speed_ASC",
+  SpeedDESC = "speed_DESC",
+  SubnetMaskASC = "subnet_mask_ASC",
+  SubnetMaskDESC = "subnet_mask_DESC",
+  TotalVfNumASC = "total_vf_num_ASC",
+  TotalVfNumDESC = "total_vf_num_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpASC = "up_ASC",
+  UpDESC = "up_DESC",
+  UsedVfNumASC = "used_vf_num_ASC",
+  UsedVfNumDESC = "used_vf_num_DESC",
+}
+
+export interface GetNicsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NicOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NicWhereInput | null;
+}
+
+export enum UsbDeviceOrderByInput {
+  BindedASC = "binded_ASC",
+  BindedDESC = "binded_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ManufacturerASC = "manufacturer_ASC",
+  ManufacturerDESC = "manufacturer_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UsbTypeASC = "usb_type_ASC",
+  UsbTypeDESC = "usb_type_DESC",
+}
+
+export interface GetUsbDevicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: UsbDeviceOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: UsbDeviceWhereInput | null;
+}
+
+export enum IscsiTargetOrderByInput {
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  ChapEnabledASC = "chap_enabled_ASC",
+  ChapEnabledDESC = "chap_enabled_DESC",
+  ChapNameASC = "chap_name_ASC",
+  ChapNameDESC = "chap_name_DESC",
+  ChapSecretASC = "chap_secret_ASC",
+  ChapSecretDESC = "chap_secret_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InitiatorChapsASC = "initiator_chaps_ASC",
+  InitiatorChapsDESC = "initiator_chaps_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  IqnNameASC = "iqn_name_ASC",
+  IqnNameDESC = "iqn_name_DESC",
+  IqnWhitelistASC = "iqn_whitelist_ASC",
+  IqnWhitelistDESC = "iqn_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+}
+
+export interface GetIscsiTargetsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: IscsiTargetOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: IscsiTargetWhereInput | null;
+}
+
+export enum NfsExportOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExportInodeIdASC = "export_inode_id_ASC",
+  ExportInodeIdDESC = "export_inode_id_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+}
+
+export interface GetNfsExportsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NfsExportOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NfsExportWhereInput | null;
+}
+
+export enum VmOrderByInput {
+  ClockOffsetASC = "clock_offset_ASC",
+  ClockOffsetDESC = "clock_offset_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CpuASC = "cpu_ASC",
+  CpuDESC = "cpu_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  CpuUsageASC = "cpu_usage_ASC",
+  CpuUsageDESC = "cpu_usage_DESC",
+  DeletedAtASC = "deleted_at_ASC",
+  DeletedAtDESC = "deleted_at_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  DnsServersASC = "dns_servers_ASC",
+  DnsServersDESC = "dns_servers_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  GuestCpuModelASC = "guest_cpu_model_ASC",
+  GuestCpuModelDESC = "guest_cpu_model_DESC",
+  GuestOsTypeASC = "guest_os_type_ASC",
+  GuestOsTypeDESC = "guest_os_type_DESC",
+  GuestSizeUsageASC = "guest_size_usage_ASC",
+  GuestSizeUsageDESC = "guest_size_usage_DESC",
+  GuestUsedSizeASC = "guest_used_size_ASC",
+  GuestUsedSizeDESC = "guest_used_size_DESC",
+  HaASC = "ha_ASC",
+  HaDESC = "ha_DESC",
+  HostnameASC = "hostname_ASC",
+  HostnameDESC = "hostname_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InRecycleBinASC = "in_recycle_bin_ASC",
+  InRecycleBinDESC = "in_recycle_bin_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoPolicyASC = "io_policy_ASC",
+  IoPolicyDESC = "io_policy_DESC",
+  IpsASC = "ips_ASC",
+  IpsDESC = "ips_DESC",
+  KernelInfoASC = "kernel_info_ASC",
+  KernelInfoDESC = "kernel_info_DESC",
+  LastShutdownTimeASC = "last_shutdown_time_ASC",
+  LastShutdownTimeDESC = "last_shutdown_time_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeBytesASC = "logical_size_bytes_ASC",
+  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  MemoryUsageASC = "memory_usage_ASC",
+  MemoryUsageDESC = "memory_usage_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NestedVirtualizationASC = "nested_virtualization_ASC",
+  NestedVirtualizationDESC = "nested_virtualization_DESC",
+  NodeIpASC = "node_ip_ASC",
+  NodeIpDESC = "node_ip_DESC",
+  OriginalNameASC = "original_name_ASC",
+  OriginalNameDESC = "original_name_DESC",
+  OsASC = "os_ASC",
+  OsDESC = "os_DESC",
+  ProtectedASC = "protected_ASC",
+  ProtectedDESC = "protected_DESC",
+  ProvisionedSizeASC = "provisioned_size_ASC",
+  ProvisionedSizeDESC = "provisioned_size_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VideoTypeASC = "video_type_ASC",
+  VideoTypeDESC = "video_type_DESC",
+  VmToolsStatusASC = "vm_tools_status_ASC",
+  VmToolsStatusDESC = "vm_tools_status_DESC",
+  VmToolsVersionASC = "vm_tools_version_ASC",
+  VmToolsVersionDESC = "vm_tools_version_DESC",
+  VmUsageASC = "vm_usage_ASC",
+  VmUsageDESC = "vm_usage_DESC",
+  WinOptASC = "win_opt_ASC",
+  WinOptDESC = "win_opt_DESC",
+}
+
+export interface GetVmsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmWhereInput | null;
+}
+
+export enum ElfDataStoreOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+}
+
+export interface ElfDataStoreWhereInput {
+  AND?: ElfDataStoreWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  external_use?: boolean | null;
+  external_use_not?: boolean | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  ip_whitelist?: string | null;
+  ip_whitelist_contains?: string | null;
+  ip_whitelist_ends_with?: string | null;
+  ip_whitelist_gt?: string | null;
+  ip_whitelist_gte?: string | null;
+  ip_whitelist_in?: string[] | null;
+  ip_whitelist_lt?: string | null;
+  ip_whitelist_lte?: string | null;
+  ip_whitelist_not?: string | null;
+  ip_whitelist_not_contains?: string | null;
+  ip_whitelist_not_ends_with?: string | null;
+  ip_whitelist_not_in?: string[] | null;
+  ip_whitelist_not_starts_with?: string | null;
+  ip_whitelist_starts_with?: string | null;
+  iscsi_target?: IscsiTargetWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nfs_export?: NfsExportWhereInput | null;
+  NOT?: ElfDataStoreWhereInput[] | null;
+  nvmf_subsystem?: NvmfSubsystemWhereInput | null;
+  OR?: ElfDataStoreWhereInput[] | null;
+
+  /** @format int32 */
+  replica_num?: number | null;
+
+  /** @format int32 */
+  replica_num_gt?: number | null;
+
+  /** @format int32 */
+  replica_num_gte?: number | null;
+  replica_num_in?: number[] | null;
+
+  /** @format int32 */
+  replica_num_lt?: number | null;
+
+  /** @format int32 */
+  replica_num_lte?: number | null;
+
+  /** @format int32 */
+  replica_num_not?: number | null;
+  replica_num_not_in?: number[] | null;
+  thin_provision?: boolean | null;
+  thin_provision_not?: boolean | null;
+  type?: ElfDataStoreType | null;
+  type_in?: ElfDataStoreType[] | null;
+  type_not?: ElfDataStoreType | null;
+  type_not_in?: ElfDataStoreType[] | null;
+}
+
+export enum ElfDataStoreType {
+  ISCSI = "ISCSI",
+  NFS = "NFS",
+  NVMe = "NVMe",
+}
+
+export interface GetElfDataStoresRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ElfDataStoreOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ElfDataStoreWhereInput | null;
+}
+
+export enum VdsOrderByInput {
+  BondModeASC = "bond_mode_ASC",
+  BondModeDESC = "bond_mode_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  OvsbrNameASC = "ovsbr_name_ASC",
+  OvsbrNameDESC = "ovsbr_name_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  VlansNumASC = "vlans_num_ASC",
+  VlansNumDESC = "vlans_num_DESC",
+  WorkModeASC = "work_mode_ASC",
+  WorkModeDESC = "work_mode_DESC",
+}
+
+export interface GetVdsesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VdsOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VdsWhereInput | null;
+}
+
+export enum DiskOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureInformationASC = "failure_information_ASC",
+  FailureInformationDESC = "failure_information_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  FunctionASC = "function_ASC",
+  FunctionDESC = "function_DESC",
+  HealthStatusASC = "health_status_ASC",
+  HealthStatusDESC = "health_status_DESC",
+  HealthyASC = "healthy_ASC",
+  HealthyDESC = "healthy_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  MountedASC = "mounted_ASC",
+  MountedDESC = "mounted_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NumaNodeASC = "numa_node_ASC",
+  NumaNodeDESC = "numa_node_DESC",
+  OfflineASC = "offline_ASC",
+  OfflineDESC = "offline_DESC",
+  PartitionsASC = "partitions_ASC",
+  PartitionsDESC = "partitions_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  PersistentMemoryTypeASC = "persistent_memory_type_ASC",
+  PersistentMemoryTypeDESC = "persistent_memory_type_DESC",
+  PhysicalSlotOnBrickASC = "physical_slot_on_brick_ASC",
+  PhysicalSlotOnBrickDESC = "physical_slot_on_brick_DESC",
+  RecommendedUsageASC = "recommended_usage_ASC",
+  RecommendedUsageDESC = "recommended_usage_DESC",
+  RemainingLifePercentASC = "remaining_life_percent_ASC",
+  RemainingLifePercentDESC = "remaining_life_percent_DESC",
+  SerialASC = "serial_ASC",
+  SerialDESC = "serial_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
+  UsageStatusASC = "usage_status_ASC",
+  UsageStatusDESC = "usage_status_DESC",
+}
+
+export interface GetDisksRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: DiskOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: DiskWhereInput | null;
+}
+
+export enum VlanOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  GatewayIpASC = "gateway_ip_ASC",
+  GatewayIpDESC = "gateway_ip_DESC",
+  GatewaySubnetmaskASC = "gateway_subnetmask_ASC",
+  GatewaySubnetmaskDESC = "gateway_subnetmask_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SubnetmaskASC = "subnetmask_ASC",
+  SubnetmaskDESC = "subnetmask_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  VlanIdASC = "vlan_id_ASC",
+  VlanIdDESC = "vlan_id_DESC",
+}
+
+export interface GetVlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VlanOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VlanWhereInput | null;
+}
+
+export enum VmVolumeOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ElfStoragePolicyASC = "elf_storage_policy_ASC",
+  ElfStoragePolicyDESC = "elf_storage_policy_DESC",
+  GuestSizeUsageASC = "guest_size_usage_ASC",
+  GuestSizeUsageDESC = "guest_size_usage_DESC",
+  GuestUsedSizeASC = "guest_used_size_ASC",
+  GuestUsedSizeDESC = "guest_used_size_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MountingASC = "mounting_ASC",
+  MountingDESC = "mounting_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SharingASC = "sharing_ASC",
+  SharingDESC = "sharing_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+}
+
+export interface GetVmVolumesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmVolumeOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmVolumeWhereInput | null;
+}
+
+export enum ElfImageOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+}
+
+export interface GetElfImagesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ElfImageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ElfImageWhereInput | null;
+}
+
+export enum VmTemplateOrderByInput {
+  ClockOffsetASC = "clock_offset_ASC",
+  ClockOffsetDESC = "clock_offset_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CpuASC = "cpu_ASC",
+  CpuDESC = "cpu_DESC",
+  CpuModelASC = "cpu_model_ASC",
+  CpuModelDESC = "cpu_model_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FirmwareASC = "firmware_ASC",
+  FirmwareDESC = "firmware_DESC",
+  HaASC = "ha_ASC",
+  HaDESC = "ha_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoPolicyASC = "io_policy_ASC",
+  IoPolicyDESC = "io_policy_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MaxBandwidthASC = "max_bandwidth_ASC",
+  MaxBandwidthDESC = "max_bandwidth_DESC",
+  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
+  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
+  MaxIopsASC = "max_iops_ASC",
+  MaxIopsDESC = "max_iops_DESC",
+  MaxIopsPolicyASC = "max_iops_policy_ASC",
+  MaxIopsPolicyDESC = "max_iops_policy_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+  VideoTypeASC = "video_type_ASC",
+  VideoTypeDESC = "video_type_DESC",
+  VmDisksASC = "vm_disks_ASC",
+  VmDisksDESC = "vm_disks_DESC",
+  VmNicsASC = "vm_nics_ASC",
+  VmNicsDESC = "vm_nics_DESC",
+  WinOptASC = "win_opt_ASC",
+  WinOptDESC = "win_opt_DESC",
+}
+
+export interface GetVmTemplatesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmTemplateOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmTemplateWhereInput | null;
+}
+
+export enum VmPlacementGroupOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EnabledASC = "enabled_ASC",
+  EnabledDESC = "enabled_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LocalUpdatedAtASC = "local_updated_at_ASC",
+  LocalUpdatedAtDESC = "local_updated_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  VmHostMustEnabledASC = "vm_host_must_enabled_ASC",
+  VmHostMustEnabledDESC = "vm_host_must_enabled_DESC",
+  VmHostMustPolicyASC = "vm_host_must_policy_ASC",
+  VmHostMustPolicyDESC = "vm_host_must_policy_DESC",
+  VmHostPreferEnabledASC = "vm_host_prefer_enabled_ASC",
+  VmHostPreferEnabledDESC = "vm_host_prefer_enabled_DESC",
+  VmHostPreferPolicyASC = "vm_host_prefer_policy_ASC",
+  VmHostPreferPolicyDESC = "vm_host_prefer_policy_DESC",
+  VmVmPolicyASC = "vm_vm_policy_ASC",
+  VmVmPolicyDESC = "vm_vm_policy_DESC",
+  VmVmPolicyEnabledASC = "vm_vm_policy_enabled_ASC",
+  VmVmPolicyEnabledDESC = "vm_vm_policy_enabled_DESC",
+}
+
+export interface GetVmPlacementGroupsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmPlacementGroupOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmPlacementGroupWhereInput | null;
+}
+
+export enum AlertOrderByInput {
+  CauseASC = "cause_ASC",
+  CauseDESC = "cause_DESC",
+  CreateTimeASC = "create_time_ASC",
+  CreateTimeDESC = "create_time_DESC",
+  EndedASC = "ended_ASC",
+  EndedDESC = "ended_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImpactASC = "impact_ASC",
+  ImpactDESC = "impact_DESC",
+  LabelsASC = "labels_ASC",
+  LabelsDESC = "labels_DESC",
+  LocalCreateTimeASC = "local_create_time_ASC",
+  LocalCreateTimeDESC = "local_create_time_DESC",
+  LocalEndTimeASC = "local_end_time_ASC",
+  LocalEndTimeDESC = "local_end_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LocalStartTimeASC = "local_start_time_ASC",
+  LocalStartTimeDESC = "local_start_time_DESC",
+  LocalUpdateTimeASC = "local_update_time_ASC",
+  LocalUpdateTimeDESC = "local_update_time_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  SeverityASC = "severity_ASC",
+  SeverityDESC = "severity_DESC",
+  SolutionASC = "solution_ASC",
+  SolutionDESC = "solution_DESC",
+  ThresholdASC = "threshold_ASC",
+  ThresholdDESC = "threshold_DESC",
+  ValueASC = "value_ASC",
+  ValueDESC = "value_DESC",
+}
+
+export interface GetAlertsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: AlertOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: AlertWhereInput | null;
+}
+
+export enum GlobalAlertRuleOrderByInput {
+  BooleanASC = "boolean_ASC",
+  BooleanDESC = "boolean_DESC",
+  CauseASC = "cause_ASC",
+  CauseDESC = "cause_DESC",
+  DefaultThresholdsASC = "default_thresholds_ASC",
+  DefaultThresholdsDESC = "default_thresholds_DESC",
+  DisabledASC = "disabled_ASC",
+  DisabledDESC = "disabled_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImpactASC = "impact_ASC",
+  ImpactDESC = "impact_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ObjectASC = "object_ASC",
+  ObjectDESC = "object_DESC",
+  OperatorASC = "operator_ASC",
+  OperatorDESC = "operator_DESC",
+  SolutionASC = "solution_ASC",
+  SolutionDESC = "solution_DESC",
+  ThresholdsASC = "thresholds_ASC",
+  ThresholdsDESC = "thresholds_DESC",
+  UnitASC = "unit_ASC",
+  UnitDESC = "unit_DESC",
+}
+
+export interface GetGlobalAlertRulesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: GlobalAlertRuleOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: GlobalAlertRuleWhereInput | null;
+}
+
+export enum SnapshotPlanOrderByInput {
+  AutoDeleteNumASC = "auto_delete_num_ASC",
+  AutoDeleteNumDESC = "auto_delete_num_DESC",
+  AutoExecuteNumASC = "auto_execute_num_ASC",
+  AutoExecuteNumDESC = "auto_execute_num_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EndTimeASC = "end_time_ASC",
+  EndTimeDESC = "end_time_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExecHMASC = "exec_h_m_ASC",
+  ExecHMDESC = "exec_h_m_DESC",
+  ExecutePlanTypeASC = "execute_plan_type_ASC",
+  ExecutePlanTypeDESC = "execute_plan_type_DESC",
+  HealthyASC = "healthy_ASC",
+  HealthyDESC = "healthy_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LastExecuteEndTimeASC = "last_execute_end_time_ASC",
+  LastExecuteEndTimeDESC = "last_execute_end_time_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteTimeASC = "last_execute_time_ASC",
+  LastExecuteTimeDESC = "last_execute_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeBytesASC = "logical_size_bytes_ASC",
+  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
+  ManualDeleteNumASC = "manual_delete_num_ASC",
+  ManualDeleteNumDESC = "manual_delete_num_DESC",
+  ManualExecuteNumASC = "manual_execute_num_ASC",
+  ManualExecuteNumDESC = "manual_execute_num_DESC",
+  MirrorASC = "mirror_ASC",
+  MirrorDESC = "mirror_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NextExecuteTimeASC = "next_execute_time_ASC",
+  NextExecuteTimeDESC = "next_execute_time_DESC",
+  ObjectNumASC = "object_num_ASC",
+  ObjectNumDESC = "object_num_DESC",
+  PhysicalSizeBytesASC = "physical_size_bytes_ASC",
+  PhysicalSizeBytesDESC = "physical_size_bytes_DESC",
+  RemainSnapshotNumASC = "remain_snapshot_num_ASC",
+  RemainSnapshotNumDESC = "remain_snapshot_num_DESC",
+  SnapshotGroupNumASC = "snapshot_group_num_ASC",
+  SnapshotGroupNumDESC = "snapshot_group_num_DESC",
+  StartTimeASC = "start_time_ASC",
+  StartTimeDESC = "start_time_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+}
+
+export interface GetSnapshotPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SnapshotPlanOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: SnapshotPlanWhereInput | null;
+}
+
+export enum EntityFilterOrderByInput {
+  ApplyToAllClustersASC = "apply_to_all_clusters_ASC",
+  ApplyToAllClustersDESC = "apply_to_all_clusters_DESC",
+  EntityTypeASC = "entity_type_ASC",
+  EntityTypeDESC = "entity_type_DESC",
+  FilterStatusASC = "filter_status_ASC",
+  FilterStatusDESC = "filter_status_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PresetASC = "preset_ASC",
+  PresetDESC = "preset_DESC",
+  RulesASC = "rules_ASC",
+  RulesDESC = "rules_DESC",
+}
+
+export interface GetEntityFiltersRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: EntityFilterOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: EntityFilterWhereInput | null;
+}
+
+export enum UserOrderByInput {
+  EmailAddressASC = "email_address_ASC",
+  EmailAddressDESC = "email_address_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  LdapDnASC = "ldap_dn_ASC",
+  LdapDnDESC = "ldap_dn_DESC",
+  MobilePhoneASC = "mobile_phone_ASC",
+  MobilePhoneDESC = "mobile_phone_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PasswordExpiredASC = "password_expired_ASC",
+  PasswordExpiredDESC = "password_expired_DESC",
+  PasswordRecoverQaASC = "password_recover_qa_ASC",
+  PasswordRecoverQaDESC = "password_recover_qa_DESC",
+  PasswordUpdatedAtASC = "password_updated_at_ASC",
+  PasswordUpdatedAtDESC = "password_updated_at_DESC",
+  RoleASC = "role_ASC",
+  RoleDESC = "role_DESC",
+  SourceASC = "source_ASC",
+  SourceDESC = "source_DESC",
+  UsernameASC = "username_ASC",
+  UsernameDESC = "username_DESC",
+}
+
+export interface GetUsersRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: UserOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: UserWhereInput | null;
+}
+
+export enum ConsistencyGroupOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+}
+
+export interface GetConsistencyGroupsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ConsistencyGroupOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ConsistencyGroupWhereInput | null;
+}
+
+export enum IscsiConnectionOrderByInput {
+  ClientPortASC = "client_port_ASC",
+  ClientPortDESC = "client_port_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InitiatorIpASC = "initiator_ip_ASC",
+  InitiatorIpDESC = "initiator_ip_DESC",
+  TrTypeASC = "tr_type_ASC",
+  TrTypeDESC = "tr_type_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+}
+
+export interface IscsiConnectionWhereInput {
+  AND?: IscsiConnectionWhereInput[] | null;
+
+  /** @format int32 */
+  client_port?: number | null;
+
+  /** @format int32 */
+  client_port_gt?: number | null;
+
+  /** @format int32 */
+  client_port_gte?: number | null;
+  client_port_in?: number[] | null;
+
+  /** @format int32 */
+  client_port_lt?: number | null;
+
+  /** @format int32 */
+  client_port_lte?: number | null;
+
+  /** @format int32 */
+  client_port_not?: number | null;
+  client_port_not_in?: number[] | null;
+  cluster?: ClusterWhereInput | null;
+  host?: HostWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  initiator_ip?: string | null;
+  initiator_ip_contains?: string | null;
+  initiator_ip_ends_with?: string | null;
+  initiator_ip_gt?: string | null;
+  initiator_ip_gte?: string | null;
+  initiator_ip_in?: string[] | null;
+  initiator_ip_lt?: string | null;
+  initiator_ip_lte?: string | null;
+  initiator_ip_not?: string | null;
+  initiator_ip_not_contains?: string | null;
+  initiator_ip_not_ends_with?: string | null;
+  initiator_ip_not_in?: string[] | null;
+  initiator_ip_not_starts_with?: string | null;
+  initiator_ip_starts_with?: string | null;
+  iscsi_target?: IscsiTargetWhereInput | null;
+  NOT?: IscsiConnectionWhereInput[] | null;
+  nvmf_subsystem?: NvmfSubsystemWhereInput | null;
+  OR?: IscsiConnectionWhereInput[] | null;
+  tr_type?: StoreTransportType | null;
+  tr_type_in?: StoreTransportType[] | null;
+  tr_type_not?: StoreTransportType | null;
+  tr_type_not_in?: StoreTransportType[] | null;
+  type?: StoreConnectionType | null;
+  type_in?: StoreConnectionType[] | null;
+  type_not?: StoreConnectionType | null;
+  type_not_in?: StoreConnectionType[] | null;
+}
+
+export enum StoreTransportType {
+  RDMA = "RDMA",
+  TCP = "TCP",
+}
+
+export enum StoreConnectionType {
+  ISCSI = "ISCSI",
+  NVMe = "NVMe",
+}
+
+export interface GetIscsiConnectionsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: IscsiConnectionOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: IscsiConnectionWhereInput | null;
+}
+
+export enum IscsiLunSnapshotOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+}
+
+export interface GetIscsiLunSnapshotsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: IscsiLunSnapshotOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: IscsiLunSnapshotWhereInput | null;
+}
+
+export enum SystemAuditLogOrderByInput {
+  ActionASC = "action_ASC",
+  ActionDESC = "action_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+}
+
+export interface SystemAuditLogWhereInput {
+  action?: string | null;
+  action_contains?: string | null;
+  action_ends_with?: string | null;
+  action_gt?: string | null;
+  action_gte?: string | null;
+  action_in?: string[] | null;
+  action_lt?: string | null;
+  action_lte?: string | null;
+  action_not?: string | null;
+  action_not_contains?: string | null;
+  action_not_ends_with?: string | null;
+  action_not_in?: string[] | null;
+  action_not_starts_with?: string | null;
+  action_starts_with?: string | null;
+  AND?: SystemAuditLogWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  finished_at?: string | null;
+  finished_at_gt?: string | null;
+  finished_at_gte?: string | null;
+  finished_at_in?: string[] | null;
+  finished_at_lt?: string | null;
+  finished_at_lte?: string | null;
+  finished_at_not?: string | null;
+  finished_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  message?: string | null;
+  message_contains?: string | null;
+  message_ends_with?: string | null;
+  message_gt?: string | null;
+  message_gte?: string | null;
+  message_in?: string[] | null;
+  message_lt?: string | null;
+  message_lte?: string | null;
+  message_not?: string | null;
+  message_not_contains?: string | null;
+  message_not_ends_with?: string | null;
+  message_not_in?: string[] | null;
+  message_not_starts_with?: string | null;
+  message_starts_with?: string | null;
+  NOT?: SystemAuditLogWhereInput[] | null;
+  OR?: SystemAuditLogWhereInput[] | null;
+  resource_id?: string | null;
+  resource_id_contains?: string | null;
+  resource_id_ends_with?: string | null;
+  resource_id_gt?: string | null;
+  resource_id_gte?: string | null;
+  resource_id_in?: string[] | null;
+  resource_id_lt?: string | null;
+  resource_id_lte?: string | null;
+  resource_id_not?: string | null;
+  resource_id_not_contains?: string | null;
+  resource_id_not_ends_with?: string | null;
+  resource_id_not_in?: string[] | null;
+  resource_id_not_starts_with?: string | null;
+  resource_id_starts_with?: string | null;
+  status?: UserAuditLogStatus | null;
+  status_in?: UserAuditLogStatus[] | null;
+  status_not?: UserAuditLogStatus | null;
+  status_not_in?: UserAuditLogStatus[] | null;
+}
+
+export enum UserAuditLogStatus {
+  FAILED = "FAILED",
+  SUCCESSED = "SUCCESSED",
+}
+
+export interface GetSystemAuditLogsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SystemAuditLogOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: SystemAuditLogWhereInput | null;
+}
+
+export enum UserAuditLogOrderByInput {
+  ActionASC = "action_ASC",
+  ActionDESC = "action_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IpAddressASC = "ip_address_ASC",
+  IpAddressDESC = "ip_address_DESC",
+  MessageASC = "message_ASC",
+  MessageDESC = "message_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+}
+
+export interface UserAuditLogWhereInput {
+  action?: string | null;
+  action_contains?: string | null;
+  action_ends_with?: string | null;
+  action_gt?: string | null;
+  action_gte?: string | null;
+  action_in?: string[] | null;
+  action_lt?: string | null;
+  action_lte?: string | null;
+  action_not?: string | null;
+  action_not_contains?: string | null;
+  action_not_ends_with?: string | null;
+  action_not_in?: string[] | null;
+  action_not_starts_with?: string | null;
+  action_starts_with?: string | null;
+  AND?: UserAuditLogWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  finished_at?: string | null;
+  finished_at_gt?: string | null;
+  finished_at_gte?: string | null;
+  finished_at_in?: string[] | null;
+  finished_at_lt?: string | null;
+  finished_at_lte?: string | null;
+  finished_at_not?: string | null;
+  finished_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  ip_address?: string | null;
+  ip_address_contains?: string | null;
+  ip_address_ends_with?: string | null;
+  ip_address_gt?: string | null;
+  ip_address_gte?: string | null;
+  ip_address_in?: string[] | null;
+  ip_address_lt?: string | null;
+  ip_address_lte?: string | null;
+  ip_address_not?: string | null;
+  ip_address_not_contains?: string | null;
+  ip_address_not_ends_with?: string | null;
+  ip_address_not_in?: string[] | null;
+  ip_address_not_starts_with?: string | null;
+  ip_address_starts_with?: string | null;
+  message?: string | null;
+  message_contains?: string | null;
+  message_ends_with?: string | null;
+  message_gt?: string | null;
+  message_gte?: string | null;
+  message_in?: string[] | null;
+  message_lt?: string | null;
+  message_lte?: string | null;
+  message_not?: string | null;
+  message_not_contains?: string | null;
+  message_not_ends_with?: string | null;
+  message_not_in?: string[] | null;
+  message_not_starts_with?: string | null;
+  message_starts_with?: string | null;
+  NOT?: UserAuditLogWhereInput[] | null;
+  OR?: UserAuditLogWhereInput[] | null;
+  resource_id?: string | null;
+  resource_id_contains?: string | null;
+  resource_id_ends_with?: string | null;
+  resource_id_gt?: string | null;
+  resource_id_gte?: string | null;
+  resource_id_in?: string[] | null;
+  resource_id_lt?: string | null;
+  resource_id_lte?: string | null;
+  resource_id_not?: string | null;
+  resource_id_not_contains?: string | null;
+  resource_id_not_ends_with?: string | null;
+  resource_id_not_in?: string[] | null;
+  resource_id_not_starts_with?: string | null;
+  resource_id_starts_with?: string | null;
+  resource_type?: string | null;
+  resource_type_contains?: string | null;
+  resource_type_ends_with?: string | null;
+  resource_type_gt?: string | null;
+  resource_type_gte?: string | null;
+  resource_type_in?: string[] | null;
+  resource_type_lt?: string | null;
+  resource_type_lte?: string | null;
+  resource_type_not?: string | null;
+  resource_type_not_contains?: string | null;
+  resource_type_not_ends_with?: string | null;
+  resource_type_not_in?: string[] | null;
+  resource_type_not_starts_with?: string | null;
+  resource_type_starts_with?: string | null;
+  started_at?: string | null;
+  started_at_gt?: string | null;
+  started_at_gte?: string | null;
+  started_at_in?: string[] | null;
+  started_at_lt?: string | null;
+  started_at_lte?: string | null;
+  started_at_not?: string | null;
+  started_at_not_in?: string[] | null;
+  status?: UserAuditLogStatus | null;
+  status_in?: UserAuditLogStatus[] | null;
+  status_not?: UserAuditLogStatus | null;
+  status_not_in?: UserAuditLogStatus[] | null;
+  user?: UserWhereInput | null;
+}
+
+export interface GetUserAuditLogsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: UserAuditLogOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: UserAuditLogWhereInput | null;
+}
+
+export enum TaskOrderByInput {
+  ArgsASC = "args_ASC",
+  ArgsDESC = "args_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  ErrorCodeASC = "error_code_ASC",
+  ErrorCodeDESC = "error_code_DESC",
+  ErrorMessageASC = "error_message_ASC",
+  ErrorMessageDESC = "error_message_DESC",
+  FinishedAtASC = "finished_at_ASC",
+  FinishedAtDESC = "finished_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  KeyASC = "key_ASC",
+  KeyDESC = "key_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  ProgressASC = "progress_ASC",
+  ProgressDESC = "progress_DESC",
+  ResourceIdASC = "resource_id_ASC",
+  ResourceIdDESC = "resource_id_DESC",
+  ResourceMutationASC = "resource_mutation_ASC",
+  ResourceMutationDESC = "resource_mutation_DESC",
+  ResourceRollbackErrorASC = "resource_rollback_error_ASC",
+  ResourceRollbackErrorDESC = "resource_rollback_error_DESC",
+  ResourceRollbackRetryCountASC = "resource_rollback_retry_count_ASC",
+  ResourceRollbackRetryCountDESC = "resource_rollback_retry_count_DESC",
+  ResourceRollbackedASC = "resource_rollbacked_ASC",
+  ResourceRollbackedDESC = "resource_rollbacked_DESC",
+  ResourceTypeASC = "resource_type_ASC",
+  ResourceTypeDESC = "resource_type_DESC",
+  SnapshotASC = "snapshot_ASC",
+  SnapshotDESC = "snapshot_DESC",
+  StartedAtASC = "started_at_ASC",
+  StartedAtDESC = "started_at_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StepsASC = "steps_ASC",
+  StepsDESC = "steps_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+}
+
+export interface GetTasksRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: TaskOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: TaskWhereInput | null;
+}
+
+export enum IscsiLunOrderByInput {
+  AllowedInitiatorsASC = "allowed_initiators_ASC",
+  AllowedInitiatorsDESC = "allowed_initiators_DESC",
+  AssignedSizeASC = "assigned_size_ASC",
+  AssignedSizeDESC = "assigned_size_DESC",
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LunIdASC = "lun_id_ASC",
+  LunIdDESC = "lun_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SnapshotNumASC = "snapshot_num_ASC",
+  SnapshotNumDESC = "snapshot_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  ZbsVolumeIdASC = "zbs_volume_id_ASC",
+  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
+}
+
+export interface GetIscsiLunsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: IscsiLunOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: IscsiLunWhereInput | null;
+}
+
+export enum NamespaceGroupOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreateTimeASC = "local_create_time_ASC",
+  LocalCreateTimeDESC = "local_create_time_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+}
+
+export interface GetNamespaceGroupsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NamespaceGroupOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NamespaceGroupWhereInput | null;
+}
+
+export enum NvmfNamespaceOrderByInput {
+  AssignedSizeASC = "assigned_size_ASC",
+  AssignedSizeDESC = "assigned_size_DESC",
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IsSharedASC = "is_shared_ASC",
+  IsSharedDESC = "is_shared_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NamespaceIdASC = "namespace_id_ASC",
+  NamespaceIdDESC = "namespace_id_DESC",
+  NqnWhitelistASC = "nqn_whitelist_ASC",
+  NqnWhitelistDESC = "nqn_whitelist_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SnapshotNumASC = "snapshot_num_ASC",
+  SnapshotNumDESC = "snapshot_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  ZbsVolumeIdASC = "zbs_volume_id_ASC",
+  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
+}
+
+export interface GetNvmfNamespacesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NvmfNamespaceOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NvmfNamespaceWhereInput | null;
+}
+
+export enum ContentLibraryImageOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+}
+
+export interface GetContentLibraryImagesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ContentLibraryImageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ContentLibraryImageWhereInput | null;
+}
+
+export enum NvmfNamespaceSnapshotOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+}
+
+export interface GetNvmfNamespaceSnapshotsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NvmfNamespaceSnapshotOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NvmfNamespaceSnapshotWhereInput | null;
+}
+
+export enum ContentLibraryVmTemplateOrderByInput {
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  CloudInitSupportedASC = "cloud_init_supported_ASC",
+  CloudInitSupportedDESC = "cloud_init_supported_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  MemoryASC = "memory_ASC",
+  MemoryDESC = "memory_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  OsASC = "os_ASC",
+  OsDESC = "os_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  VcpuASC = "vcpu_ASC",
+  VcpuDESC = "vcpu_DESC",
+}
+
+export interface GetContentLibraryVmTemplatesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ContentLibraryVmTemplateOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: ContentLibraryVmTemplateWhereInput | null;
+}
+
+export enum NvmfSubsystemOrderByInput {
+  BpsASC = "bps_ASC",
+  BpsDESC = "bps_DESC",
+  BpsMaxASC = "bps_max_ASC",
+  BpsMaxDESC = "bps_max_DESC",
+  BpsMaxLengthASC = "bps_max_length_ASC",
+  BpsMaxLengthDESC = "bps_max_length_DESC",
+  BpsRdASC = "bps_rd_ASC",
+  BpsRdDESC = "bps_rd_DESC",
+  BpsRdMaxASC = "bps_rd_max_ASC",
+  BpsRdMaxDESC = "bps_rd_max_DESC",
+  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
+  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
+  BpsWrASC = "bps_wr_ASC",
+  BpsWrDESC = "bps_wr_DESC",
+  BpsWrMaxASC = "bps_wr_max_ASC",
+  BpsWrMaxDESC = "bps_wr_max_DESC",
+  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
+  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExternalUseASC = "external_use_ASC",
+  ExternalUseDESC = "external_use_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InternalASC = "internal_ASC",
+  InternalDESC = "internal_DESC",
+  IoSizeASC = "io_size_ASC",
+  IoSizeDESC = "io_size_DESC",
+  IopsASC = "iops_ASC",
+  IopsDESC = "iops_DESC",
+  IopsMaxASC = "iops_max_ASC",
+  IopsMaxDESC = "iops_max_DESC",
+  IopsMaxLengthASC = "iops_max_length_ASC",
+  IopsMaxLengthDESC = "iops_max_length_DESC",
+  IopsRdASC = "iops_rd_ASC",
+  IopsRdDESC = "iops_rd_DESC",
+  IopsRdMaxASC = "iops_rd_max_ASC",
+  IopsRdMaxDESC = "iops_rd_max_DESC",
+  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
+  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
+  IopsWrASC = "iops_wr_ASC",
+  IopsWrDESC = "iops_wr_DESC",
+  IopsWrMaxASC = "iops_wr_max_ASC",
+  IopsWrMaxDESC = "iops_wr_max_DESC",
+  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
+  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
+  IpWhitelistASC = "ip_whitelist_ASC",
+  IpWhitelistDESC = "ip_whitelist_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NqnNameASC = "nqn_name_ASC",
+  NqnNameDESC = "nqn_name_DESC",
+  NqnWhitelistASC = "nqn_whitelist_ASC",
+  NqnWhitelistDESC = "nqn_whitelist_DESC",
+  PolicyASC = "policy_ASC",
+  PolicyDESC = "policy_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  StripeNumASC = "stripe_num_ASC",
+  StripeNumDESC = "stripe_num_DESC",
+  StripeSizeASC = "stripe_size_ASC",
+  StripeSizeDESC = "stripe_size_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+}
+
+export interface GetNvmfSubsystemsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: NvmfSubsystemOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: NvmfSubsystemWhereInput | null;
+}
+
+export interface TableReporterParams {
+  filter: {
+    nvmfSubsystems?: GetNvmfSubsystemsRequestBody;
+    contentLibraryVmTemplates?: GetContentLibraryVmTemplatesRequestBody;
+    nvmfNamespaceSnapshots?: GetNvmfNamespaceSnapshotsRequestBody;
+    contentLibraryImages?: GetContentLibraryImagesRequestBody;
+    nvmfNamespaces?: GetNvmfNamespacesRequestBody;
+    namespaceGroups?: GetNamespaceGroupsRequestBody;
+    iscsiLuns?: GetIscsiLunsRequestBody;
+    tasks?: GetTasksRequestBody;
+    userAuditLogs?: GetUserAuditLogsRequestBody;
+    systemAuditLogs?: GetSystemAuditLogsRequestBody;
+    iscsiLunSnapshots?: GetIscsiLunSnapshotsRequestBody;
+    iscsiConnections?: GetIscsiConnectionsRequestBody;
+    consistencyGroups?: GetConsistencyGroupsRequestBody;
+    users?: GetUsersRequestBody;
+    vmEntityFilters?: GetEntityFiltersRequestBody;
+    snapshotPlans?: GetSnapshotPlansRequestBody;
+    globalAlertRules?: GetGlobalAlertRulesRequestBody;
+    alerts?: GetAlertsRequestBody;
+    vmPlacementGroups?: GetVmPlacementGroupsRequestBody;
+    vmTemplates?: GetVmTemplatesRequestBody;
+    elfImages?: GetElfImagesRequestBody;
+    vmVolumes?: GetVmVolumesRequestBody;
+    vlans?: GetVlansRequestBody;
+    disks?: GetDisksRequestBody;
+    vdses?: GetVdsesRequestBody;
+    elfDataStores?: GetElfDataStoresRequestBody;
+    vms?: GetVmsRequestBody;
+    nfsExports?: GetNfsExportsRequestBody;
+    iscsiTargets?: GetIscsiTargetsRequestBody;
+    usbDevices?: GetUsbDevicesRequestBody;
+    nics?: GetNicsRequestBody;
+    clusters?: GetClustersRequestBody;
+    datacenters?: GetDatacentersRequestBody;
+    hosts?: GetHostsRequestBody;
+  };
+  columns: ColumnConfig[];
+  name: string;
+}
+
+export interface UploadTaskWhereInput {
+  AND?: UploadTaskWhereInput[] | null;
+
+  /** @format int64 */
+  chunk_size?: number | null;
+
+  /** @format int64 */
+  chunk_size_gt?: number | null;
+
+  /** @format int64 */
+  chunk_size_gte?: number | null;
+  chunk_size_in?: number[] | null;
+
+  /** @format int64 */
+  chunk_size_lt?: number | null;
+
+  /** @format int64 */
+  chunk_size_lte?: number | null;
+
+  /** @format int64 */
+  chunk_size_not?: number | null;
+  chunk_size_not_in?: number[] | null;
+
+  /** @format int32 */
+  current_chunk?: number | null;
+
+  /** @format int32 */
+  current_chunk_gt?: number | null;
+
+  /** @format int32 */
+  current_chunk_gte?: number | null;
+  current_chunk_in?: number[] | null;
+
+  /** @format int32 */
+  current_chunk_lt?: number | null;
+
+  /** @format int32 */
+  current_chunk_lte?: number | null;
+
+  /** @format int32 */
+  current_chunk_not?: number | null;
+  current_chunk_not_in?: number[] | null;
+  finished_at?: string | null;
+  finished_at_gt?: string | null;
+  finished_at_gte?: string | null;
+  finished_at_in?: string[] | null;
+  finished_at_lt?: string | null;
+  finished_at_lte?: string | null;
+  finished_at_not?: string | null;
+  finished_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  NOT?: UploadTaskWhereInput[] | null;
+  OR?: UploadTaskWhereInput[] | null;
+  resource_type?: UploadResourceType | null;
+  resource_type_in?: UploadResourceType[] | null;
+  resource_type_not?: UploadResourceType | null;
+  resource_type_not_in?: UploadResourceType[] | null;
+
+  /** @format int64 */
+  size?: number | null;
+
+  /** @format int64 */
+  size_gt?: number | null;
+
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+
+  /** @format int64 */
+  size_lt?: number | null;
+
+  /** @format int64 */
+  size_lte?: number | null;
+
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  started_at?: string | null;
+  started_at_gt?: string | null;
+  started_at_gte?: string | null;
+  started_at_in?: string[] | null;
+  started_at_lt?: string | null;
+  started_at_lte?: string | null;
+  started_at_not?: string | null;
+  started_at_not_in?: string[] | null;
+  status?: UploadTaskStatus | null;
+  status_in?: UploadTaskStatus[] | null;
+  status_not?: UploadTaskStatus | null;
+  status_not_in?: UploadTaskStatus[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+}
+
+export interface CancelUploadTaskParams {
+  where: UploadTaskWhereInput;
+}
+
 export enum NotifierLanguageCode {
   EN_US = "EN_US",
   ZH_CN = "ZH_CN",
@@ -18187,8 +21122,6 @@ export interface AlertNotifier {
 }
 
 export enum AlertNotifierOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DisabledASC = "disabled_ASC",
   DisabledDESC = "disabled_DESC",
   EmailFromASC = "email_from_ASC",
@@ -18197,16 +21130,12 @@ export enum AlertNotifierOrderByInput {
   IdDESC = "id_DESC",
   LanguageCodeASC = "language_code_ASC",
   LanguageCodeDESC = "language_code_DESC",
-  PasswordASC = "password_ASC",
-  PasswordDESC = "password_DESC",
   SecurityModeASC = "security_mode_ASC",
   SecurityModeDESC = "security_mode_DESC",
   SmtpServerHostASC = "smtp_server_host_ASC",
   SmtpServerHostDESC = "smtp_server_host_DESC",
   SmtpServerPortASC = "smtp_server_port_ASC",
   SmtpServerPortDESC = "smtp_server_port_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
 }
@@ -18360,8 +21289,6 @@ export interface AlertRule {
 }
 
 export enum AlertRuleOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   CustomizedASC = "customized_ASC",
   CustomizedDESC = "customized_DESC",
   DisabledASC = "disabled_ASC",
@@ -18372,8 +21299,6 @@ export enum AlertRuleOrderByInput {
   LocalIdDESC = "local_id_DESC",
   ThresholdsASC = "thresholds_ASC",
   ThresholdsDESC = "thresholds_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetAlertRulesRequestBody {
@@ -18415,61 +21340,6 @@ export interface GetAlertRulesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: AlertRuleWhereInput | null;
-}
-
-export enum AlertOrderByInput {
-  CauseASC = "cause_ASC",
-  CauseDESC = "cause_DESC",
-  CreateTimeASC = "create_time_ASC",
-  CreateTimeDESC = "create_time_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EndedASC = "ended_ASC",
-  EndedDESC = "ended_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  ImpactASC = "impact_ASC",
-  ImpactDESC = "impact_DESC",
-  LabelsASC = "labels_ASC",
-  LabelsDESC = "labels_DESC",
-  LocalCreateTimeASC = "local_create_time_ASC",
-  LocalCreateTimeDESC = "local_create_time_DESC",
-  LocalEndTimeASC = "local_end_time_ASC",
-  LocalEndTimeDESC = "local_end_time_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LocalStartTimeASC = "local_start_time_ASC",
-  LocalStartTimeDESC = "local_start_time_DESC",
-  LocalUpdateTimeASC = "local_update_time_ASC",
-  LocalUpdateTimeDESC = "local_update_time_DESC",
-  MessageASC = "message_ASC",
-  MessageDESC = "message_DESC",
-  SeverityASC = "severity_ASC",
-  SeverityDESC = "severity_DESC",
-  SolutionASC = "solution_ASC",
-  SolutionDESC = "solution_DESC",
-  ThresholdASC = "threshold_ASC",
-  ThresholdDESC = "threshold_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  ValueASC = "value_ASC",
-  ValueDESC = "value_DESC",
-}
-
-export interface GetAlertsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: AlertOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: AlertWhereInput | null;
 }
 
 export interface NestedAggregateAlert {
@@ -18521,8 +21391,6 @@ export interface Application {
 }
 
 export enum ApplicationOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   ErrorMessageASC = "error_message_ASC",
   ErrorMessageDESC = "error_message_DESC",
   IdASC = "id_ASC",
@@ -18541,8 +21409,6 @@ export enum ApplicationOrderByInput {
   TypeDESC = "type_DESC",
   UpdateTimeASC = "update_time_ASC",
   UpdateTimeDESC = "update_time_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VcpuASC = "vcpu_ASC",
   VcpuDESC = "vcpu_DESC",
   VersionASC = "version_ASC",
@@ -18595,8 +21461,6 @@ export interface GetApplicationsConnectionRequestBody {
 export enum BrickTopoOrderByInput {
   CapacityASC = "capacity_ASC",
   CapacityDESC = "capacity_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DiskLayoutASC = "disk_layout_ASC",
   DiskLayoutDESC = "disk_layout_DESC",
   HeightASC = "height_ASC",
@@ -18619,8 +21483,6 @@ export enum BrickTopoOrderByInput {
   PowersDESC = "powers_DESC",
   TagPositionInBrickASC = "tag_position_in_brick_ASC",
   TagPositionInBrickDESC = "tag_position_in_brick_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetBrickTopoesRequestBody {
@@ -18684,8 +21546,6 @@ export interface ClusterImage {
 }
 
 export enum ClusterImageOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -18700,8 +21560,6 @@ export enum ClusterImageOrderByInput {
   NameDESC = "name_DESC",
   SizeASC = "size_ASC",
   SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UpgradeToolVersionASC = "upgrade_tool_version_ASC",
   UpgradeToolVersionDESC = "upgrade_tool_version_DESC",
   VersionASC = "version_ASC",
@@ -18904,169 +21762,6 @@ export interface GetClusterImagesConnectionRequestBody {
   where?: ClusterImageWhereInput | null;
 }
 
-export enum ClusterOrderByInput {
-  ApplicationHighestVersionASC = "application_highest_version_ASC",
-  ApplicationHighestVersionDESC = "application_highest_version_DESC",
-  ArchitectureASC = "architecture_ASC",
-  ArchitectureDESC = "architecture_DESC",
-  AutoConvergeASC = "auto_converge_ASC",
-  AutoConvergeDESC = "auto_converge_DESC",
-  ConnectStateASC = "connect_state_ASC",
-  ConnectStateDESC = "connect_state_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  CurrentCpuModelASC = "current_cpu_model_ASC",
-  CurrentCpuModelDESC = "current_cpu_model_DESC",
-  DisconnectedDateASC = "disconnected_date_ASC",
-  DisconnectedDateDESC = "disconnected_date_DESC",
-  DisconnectedReasonASC = "disconnected_reason_ASC",
-  DisconnectedReasonDESC = "disconnected_reason_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  FailureDataSpaceASC = "failure_data_space_ASC",
-  FailureDataSpaceDESC = "failure_data_space_DESC",
-  HasMetroxASC = "has_metrox_ASC",
-  HasMetroxDESC = "has_metrox_DESC",
-  HasRemoteBackupASC = "has_remote_backup_ASC",
-  HasRemoteBackupDESC = "has_remote_backup_DESC",
-  HostNumASC = "host_num_ASC",
-  HostNumDESC = "host_num_DESC",
-  HypervisorASC = "hypervisor_ASC",
-  HypervisorDESC = "hypervisor_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IpASC = "ip_ASC",
-  IpDESC = "ip_DESC",
-  IsAllFlashASC = "is_all_flash_ASC",
-  IsAllFlashDESC = "is_all_flash_DESC",
-  IscsiVipASC = "iscsi_vip_ASC",
-  IscsiVipDESC = "iscsi_vip_DESC",
-  LicenseExpireDateASC = "license_expire_date_ASC",
-  LicenseExpireDateDESC = "license_expire_date_DESC",
-  LicenseSerialASC = "license_serial_ASC",
-  LicenseSerialDESC = "license_serial_DESC",
-  LicenseSignDateASC = "license_sign_date_ASC",
-  LicenseSignDateDESC = "license_sign_date_DESC",
-  LicenseTypeASC = "license_type_ASC",
-  LicenseTypeDESC = "license_type_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  MaintenanceEndDateASC = "maintenance_end_date_ASC",
-  MaintenanceEndDateDESC = "maintenance_end_date_DESC",
-  MaintenanceStartDateASC = "maintenance_start_date_ASC",
-  MaintenanceStartDateDESC = "maintenance_start_date_DESC",
-  ManagementVipASC = "management_vip_ASC",
-  ManagementVipDESC = "management_vip_DESC",
-  MaxChunkNumASC = "max_chunk_num_ASC",
-  MaxChunkNumDESC = "max_chunk_num_DESC",
-  MaxPhysicalDataCapacityASC = "max_physical_data_capacity_ASC",
-  MaxPhysicalDataCapacityDESC = "max_physical_data_capacity_DESC",
-  MaxPhysicalDataCapacityPerNodeASC = "max_physical_data_capacity_per_node_ASC",
-  MaxPhysicalDataCapacityPerNodeDESC = "max_physical_data_capacity_per_node_DESC",
-  MetroAvailabilityChecklistASC = "metro_availability_checklist_ASC",
-  MetroAvailabilityChecklistDESC = "metro_availability_checklist_DESC",
-  MgtGatewayASC = "mgt_gateway_ASC",
-  MgtGatewayDESC = "mgt_gateway_DESC",
-  MgtNetmaskASC = "mgt_netmask_ASC",
-  MgtNetmaskDESC = "mgt_netmask_DESC",
-  MigrationDataSizeASC = "migration_data_size_ASC",
-  MigrationDataSizeDESC = "migration_data_size_DESC",
-  MigrationSpeedASC = "migration_speed_ASC",
-  MigrationSpeedDESC = "migration_speed_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NtpModeASC = "ntp_mode_ASC",
-  NtpModeDESC = "ntp_mode_DESC",
-  NvmeOverRdmaEnabledASC = "nvme_over_rdma_enabled_ASC",
-  NvmeOverRdmaEnabledDESC = "nvme_over_rdma_enabled_DESC",
-  NvmeOverTcpEnabledASC = "nvme_over_tcp_enabled_ASC",
-  NvmeOverTcpEnabledDESC = "nvme_over_tcp_enabled_DESC",
-  NvmfEnabledASC = "nvmf_enabled_ASC",
-  NvmfEnabledDESC = "nvmf_enabled_DESC",
-  PasswordASC = "password_ASC",
-  PasswordDESC = "password_DESC",
-  PmemEnabledASC = "pmem_enabled_ASC",
-  PmemEnabledDESC = "pmem_enabled_DESC",
-  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
-  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
-  ProvisionedCpuCoresForActiveVmASC = "provisioned_cpu_cores_for_active_vm_ASC",
-  ProvisionedCpuCoresForActiveVmDESC = "provisioned_cpu_cores_for_active_vm_DESC",
-  ProvisionedForActiveVmRatioASC = "provisioned_for_active_vm_ratio_ASC",
-  ProvisionedForActiveVmRatioDESC = "provisioned_for_active_vm_ratio_DESC",
-  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
-  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
-  ProvisionedRatioASC = "provisioned_ratio_ASC",
-  ProvisionedRatioDESC = "provisioned_ratio_DESC",
-  RdmaEnabledASC = "rdma_enabled_ASC",
-  RdmaEnabledDESC = "rdma_enabled_DESC",
-  RecoverDataSizeASC = "recover_data_size_ASC",
-  RecoverDataSizeDESC = "recover_data_size_DESC",
-  RecoverSpeedASC = "recover_speed_ASC",
-  RecoverSpeedDESC = "recover_speed_DESC",
-  ReservedCpuCoresForSystemServiceASC = "reserved_cpu_cores_for_system_service_ASC",
-  ReservedCpuCoresForSystemServiceDESC = "reserved_cpu_cores_for_system_service_DESC",
-  RunningVmNumASC = "running_vm_num_ASC",
-  RunningVmNumDESC = "running_vm_num_DESC",
-  SoftwareEditionASC = "software_edition_ASC",
-  SoftwareEditionDESC = "software_edition_DESC",
-  StoppedVmNumASC = "stopped_vm_num_ASC",
-  StoppedVmNumDESC = "stopped_vm_num_DESC",
-  StretchASC = "stretch_ASC",
-  StretchDESC = "stretch_DESC",
-  SuspendedVmNumASC = "suspended_vm_num_ASC",
-  SuspendedVmNumDESC = "suspended_vm_num_DESC",
-  TotalCacheCapacityASC = "total_cache_capacity_ASC",
-  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
-  TotalCpuCoresASC = "total_cpu_cores_ASC",
-  TotalCpuCoresDESC = "total_cpu_cores_DESC",
-  TotalCpuHzASC = "total_cpu_hz_ASC",
-  TotalCpuHzDESC = "total_cpu_hz_DESC",
-  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
-  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
-  TotalDataCapacityASC = "total_data_capacity_ASC",
-  TotalDataCapacityDESC = "total_data_capacity_DESC",
-  TotalMemoryBytesASC = "total_memory_bytes_ASC",
-  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UpgradeToolVersionASC = "upgrade_tool_version_ASC",
-  UpgradeToolVersionDESC = "upgrade_tool_version_DESC",
-  UsedCpuHzASC = "used_cpu_hz_ASC",
-  UsedCpuHzDESC = "used_cpu_hz_DESC",
-  UsedDataSpaceASC = "used_data_space_ASC",
-  UsedDataSpaceDESC = "used_data_space_DESC",
-  UsedMemoryBytesASC = "used_memory_bytes_ASC",
-  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
-  UsernameASC = "username_ASC",
-  UsernameDESC = "username_DESC",
-  ValidDataSpaceASC = "valid_data_space_ASC",
-  ValidDataSpaceDESC = "valid_data_space_DESC",
-  VersionASC = "version_ASC",
-  VersionDESC = "version_DESC",
-  VhostEnabledASC = "vhost_enabled_ASC",
-  VhostEnabledDESC = "vhost_enabled_DESC",
-  VmNumASC = "vm_num_ASC",
-  VmNumDESC = "vm_num_DESC",
-}
-
-export interface GetClustersRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ClusterOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ClusterWhereInput | null;
-}
-
 export interface NestedAggregateCluster {
   /** @format int32 */
   count: number;
@@ -19093,16 +21788,12 @@ export interface GetClustersConnectionRequestBody {
 }
 
 export enum ClusterSettingsOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DefaultHaASC = "default_ha_ASC",
   DefaultHaDESC = "default_ha_DESC",
   EnabledIscsiASC = "enabled_iscsi_ASC",
   EnabledIscsiDESC = "enabled_iscsi_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VmRecycleBinASC = "vm_recycle_bin_ASC",
   VmRecycleBinDESC = "vm_recycle_bin_DESC",
 }
@@ -19159,16 +21850,12 @@ export interface ClusterTopo {
 }
 
 export enum ClusterTopoOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetClusterTopoesRequestBody {
@@ -19224,8 +21911,6 @@ export interface ClusterUpgradeHistory {
 }
 
 export enum ClusterUpgradeHistoryOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DateASC = "date_ASC",
   DateDESC = "date_DESC",
   IdASC = "id_ASC",
@@ -19238,8 +21923,6 @@ export enum ClusterUpgradeHistoryOrderByInput {
   ResultDESC = "result_DESC",
   TaskUuidASC = "task_uuid_ASC",
   TaskUuidDESC = "task_uuid_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -19370,43 +22053,6 @@ export interface GetClusterUpgradeHistoriesConnectionRequestBody {
   where?: ClusterUpgradeHistoryWhereInput | null;
 }
 
-export enum ConsistencyGroupOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetConsistencyGroupsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ConsistencyGroupOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ConsistencyGroupWhereInput | null;
-}
-
 export interface NestedAggregateConsistencyGroup {
   /** @format int32 */
   count: number;
@@ -19433,8 +22079,6 @@ export interface GetConsistencyGroupsConnectionRequestBody {
 }
 
 export enum ConsistencyGroupSnapshotOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -19447,8 +22091,6 @@ export enum ConsistencyGroupSnapshotOrderByInput {
   NameDESC = "name_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetConsistencyGroupSnapshotsRequestBody {
@@ -19492,41 +22134,6 @@ export interface GetConsistencyGroupSnapshotsConnectionRequestBody {
   where?: ConsistencyGroupSnapshotWhereInput | null;
 }
 
-export enum ContentLibraryImageOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  PathASC = "path_ASC",
-  PathDESC = "path_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetContentLibraryImagesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ContentLibraryImageOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ContentLibraryImageWhereInput | null;
-}
-
 export interface NestedAggregateContentLibraryImage {
   /** @format int32 */
   count: number;
@@ -19552,49 +22159,6 @@ export interface GetContentLibraryImagesConnectionRequestBody {
   where?: ContentLibraryImageWhereInput | null;
 }
 
-export enum ContentLibraryVmTemplateOrderByInput {
-  ArchitectureASC = "architecture_ASC",
-  ArchitectureDESC = "architecture_DESC",
-  CloudInitSupportedASC = "cloud_init_supported_ASC",
-  CloudInitSupportedDESC = "cloud_init_supported_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  MemoryASC = "memory_ASC",
-  MemoryDESC = "memory_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  OsASC = "os_ASC",
-  OsDESC = "os_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VcpuASC = "vcpu_ASC",
-  VcpuDESC = "vcpu_DESC",
-}
-
-export interface GetContentLibraryVmTemplatesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ContentLibraryVmTemplateOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ContentLibraryVmTemplateWhereInput | null;
-}
-
 export interface NestedAggregateContentLibraryVmTemplate {
   /** @format int32 */
   count: number;
@@ -19618,53 +22182,6 @@ export interface GetContentLibraryVmTemplatesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: ContentLibraryVmTemplateWhereInput | null;
-}
-
-export enum DatacenterOrderByInput {
-  ClusterNumASC = "cluster_num_ASC",
-  ClusterNumDESC = "cluster_num_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  FailureDataSpaceASC = "failure_data_space_ASC",
-  FailureDataSpaceDESC = "failure_data_space_DESC",
-  HostNumASC = "host_num_ASC",
-  HostNumDESC = "host_num_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  TotalCpuHzASC = "total_cpu_hz_ASC",
-  TotalCpuHzDESC = "total_cpu_hz_DESC",
-  TotalDataCapacityASC = "total_data_capacity_ASC",
-  TotalDataCapacityDESC = "total_data_capacity_DESC",
-  TotalMemoryBytesASC = "total_memory_bytes_ASC",
-  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsedCpuHzASC = "used_cpu_hz_ASC",
-  UsedCpuHzDESC = "used_cpu_hz_DESC",
-  UsedDataSpaceASC = "used_data_space_ASC",
-  UsedDataSpaceDESC = "used_data_space_DESC",
-  UsedMemoryBytesASC = "used_memory_bytes_ASC",
-  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
-  VmNumASC = "vm_num_ASC",
-  VmNumDESC = "vm_num_DESC",
-}
-
-export interface GetDatacentersRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: DatacenterOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: DatacenterWhereInput | null;
 }
 
 export interface NestedAggregateDatacenter {
@@ -19703,12 +22220,8 @@ export interface Deploy {
 }
 
 export enum DeployOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -19937,7 +22450,7 @@ export interface NestedDiscoveredHostIface {
   pci_slot_name?: string | null;
   rdma_enabled?: boolean | null;
 
-  /** @format int64 */
+  /** @format double */
   speed?: number | null;
   up: boolean;
 }
@@ -19971,77 +22484,6 @@ export interface GetDiscoverHostsRequestBody {
   host_address?: string[] | null;
 }
 
-export enum DiskOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  FailureInformationASC = "failure_information_ASC",
-  FailureInformationDESC = "failure_information_DESC",
-  FirmwareASC = "firmware_ASC",
-  FirmwareDESC = "firmware_DESC",
-  FunctionASC = "function_ASC",
-  FunctionDESC = "function_DESC",
-  HealthStatusASC = "health_status_ASC",
-  HealthStatusDESC = "health_status_DESC",
-  HealthyASC = "healthy_ASC",
-  HealthyDESC = "healthy_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  ModelASC = "model_ASC",
-  ModelDESC = "model_DESC",
-  MountedASC = "mounted_ASC",
-  MountedDESC = "mounted_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NumaNodeASC = "numa_node_ASC",
-  NumaNodeDESC = "numa_node_DESC",
-  OfflineASC = "offline_ASC",
-  OfflineDESC = "offline_DESC",
-  PartitionsASC = "partitions_ASC",
-  PartitionsDESC = "partitions_DESC",
-  PathASC = "path_ASC",
-  PathDESC = "path_DESC",
-  PersistentMemoryTypeASC = "persistent_memory_type_ASC",
-  PersistentMemoryTypeDESC = "persistent_memory_type_DESC",
-  PhysicalSlotOnBrickASC = "physical_slot_on_brick_ASC",
-  PhysicalSlotOnBrickDESC = "physical_slot_on_brick_DESC",
-  RecommendedUsageASC = "recommended_usage_ASC",
-  RecommendedUsageDESC = "recommended_usage_DESC",
-  RemainingLifePercentASC = "remaining_life_percent_ASC",
-  RemainingLifePercentDESC = "remaining_life_percent_DESC",
-  SerialASC = "serial_ASC",
-  SerialDESC = "serial_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsageASC = "usage_ASC",
-  UsageDESC = "usage_DESC",
-  UsageStatusASC = "usage_status_ASC",
-  UsageStatusDESC = "usage_status_DESC",
-}
-
-export interface GetDisksRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: DiskOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: DiskWhereInput | null;
-}
-
 export interface NestedAggregateDisk {
   /** @format int32 */
   count: number;
@@ -20067,12 +22509,6 @@ export interface GetDisksConnectionRequestBody {
   where?: DiskWhereInput | null;
 }
 
-export enum ElfDataStoreType {
-  ISCSI = "ISCSI",
-  NFS = "NFS",
-  NVMe = "NVMe",
-}
-
 export interface ElfDataStore {
   cluster: NestedCluster;
   description: string;
@@ -20090,159 +22526,6 @@ export interface ElfDataStore {
   replica_num: number;
   thin_provision: boolean;
   type: ElfDataStoreType;
-}
-
-export enum ElfDataStoreOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  ExternalUseASC = "external_use_ASC",
-  ExternalUseDESC = "external_use_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  IpWhitelistASC = "ip_whitelist_ASC",
-  IpWhitelistDESC = "ip_whitelist_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface ElfDataStoreWhereInput {
-  AND?: ElfDataStoreWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  external_use?: boolean | null;
-  external_use_not?: boolean | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  ip_whitelist?: string | null;
-  ip_whitelist_contains?: string | null;
-  ip_whitelist_ends_with?: string | null;
-  ip_whitelist_gt?: string | null;
-  ip_whitelist_gte?: string | null;
-  ip_whitelist_in?: string[] | null;
-  ip_whitelist_lt?: string | null;
-  ip_whitelist_lte?: string | null;
-  ip_whitelist_not?: string | null;
-  ip_whitelist_not_contains?: string | null;
-  ip_whitelist_not_ends_with?: string | null;
-  ip_whitelist_not_in?: string[] | null;
-  ip_whitelist_not_starts_with?: string | null;
-  ip_whitelist_starts_with?: string | null;
-  iscsi_target?: IscsiTargetWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nfs_export?: NfsExportWhereInput | null;
-  NOT?: ElfDataStoreWhereInput[] | null;
-  nvmf_subsystem?: NvmfSubsystemWhereInput | null;
-  OR?: ElfDataStoreWhereInput[] | null;
-
-  /** @format int32 */
-  replica_num?: number | null;
-
-  /** @format int32 */
-  replica_num_gt?: number | null;
-
-  /** @format int32 */
-  replica_num_gte?: number | null;
-  replica_num_in?: number[] | null;
-
-  /** @format int32 */
-  replica_num_lt?: number | null;
-
-  /** @format int32 */
-  replica_num_lte?: number | null;
-
-  /** @format int32 */
-  replica_num_not?: number | null;
-  replica_num_not_in?: number[] | null;
-  thin_provision?: boolean | null;
-  thin_provision_not?: boolean | null;
-  type?: ElfDataStoreType | null;
-  type_in?: ElfDataStoreType[] | null;
-  type_not?: ElfDataStoreType | null;
-  type_not_in?: ElfDataStoreType[] | null;
-}
-
-export interface GetElfDataStoresRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ElfDataStoreOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ElfDataStoreWhereInput | null;
 }
 
 export interface NestedAggregateElfDataStore {
@@ -20268,45 +22551,6 @@ export interface GetElfDataStoresConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: ElfDataStoreWhereInput | null;
-}
-
-export enum ElfImageOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  PathASC = "path_ASC",
-  PathDESC = "path_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetElfImagesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ElfImageOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ElfImageWhereInput | null;
 }
 
 export interface NestedAggregateElfImage {
@@ -20354,8 +22598,6 @@ export interface ElfStoragePolicy {
 }
 
 export enum ElfStoragePolicyOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -20374,8 +22616,6 @@ export enum ElfStoragePolicyOrderByInput {
   StripeSizeDESC = "stripe_size_DESC",
   ThinProvisionASC = "thin_provision_ASC",
   ThinProvisionDESC = "thin_provision_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface ElfStoragePolicyWhereInput {
@@ -20548,45 +22788,6 @@ export interface GetElfStoragePoliciesConnectionRequestBody {
   where?: ElfStoragePolicyWhereInput | null;
 }
 
-export enum EntityFilterOrderByInput {
-  ApplyToAllClustersASC = "apply_to_all_clusters_ASC",
-  ApplyToAllClustersDESC = "apply_to_all_clusters_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityTypeASC = "entity_type_ASC",
-  EntityTypeDESC = "entity_type_DESC",
-  FilterStatusASC = "filter_status_ASC",
-  FilterStatusDESC = "filter_status_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LastExecutedAtASC = "last_executed_at_ASC",
-  LastExecutedAtDESC = "last_executed_at_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  PresetASC = "preset_ASC",
-  PresetDESC = "preset_DESC",
-  RulesASC = "rules_ASC",
-  RulesDESC = "rules_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetEntityFiltersRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: EntityFilterOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: EntityFilterWhereInput | null;
-}
-
 export interface NestedAggregateEntityFilter {
   /** @format int32 */
   count: number;
@@ -20689,9 +22890,6 @@ export interface NestedEverouteClusterAgentStatus {
   currentNumber: number;
 
   /** @format int32 */
-  elfClusterNumber: number;
-
-  /** @format int32 */
   expectNumber: number;
   instances?: NestedEverouteAgentStatus[] | null;
   manageVDSes?: NestedEverouteManageVDSStatus[] | null;
@@ -20731,9 +22929,6 @@ export interface NestedEverouteControllerStatus {
 export interface NestedEverouteClusterControllerStatus {
   /** @format int32 */
   currentNumber: number;
-
-  /** @format int32 */
-  elfClusterNumber: number;
 
   /** @format int32 */
   expectNumber: number;
@@ -20777,8 +22972,6 @@ export enum EverouteClusterOrderByInput {
   ControllerInstancesDESC = "controller_instances_DESC",
   ControllerTemplateASC = "controller_template_ASC",
   ControllerTemplateDESC = "controller_template_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   GlobalDefaultActionASC = "global_default_action_ASC",
@@ -20795,8 +22988,6 @@ export enum EverouteClusterOrderByInput {
   PhaseDESC = "phase_DESC",
   StatusASC = "status_ASC",
   StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -20859,8 +23050,6 @@ export interface EverouteLicense {
 export enum EverouteLicenseOrderByInput {
   CodeASC = "code_ASC",
   CodeDESC = "code_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   ExpireDateASC = "expire_date_ASC",
   ExpireDateDESC = "expire_date_DESC",
   IdASC = "id_ASC",
@@ -20877,8 +23066,6 @@ export enum EverouteLicenseOrderByInput {
   TypeDESC = "type_DESC",
   UidASC = "uid_ASC",
   UidDESC = "uid_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface EverouteLicenseWhereInput {
@@ -21028,10 +23215,6 @@ export interface GetEverouteLicensesConnectionRequestBody {
   where?: EverouteLicenseWhereInput | null;
 }
 
-export interface NestedUploadTask {
-  id: string;
-}
-
 export interface EveroutePackage {
   arch: Architecture;
   description: string;
@@ -21043,15 +23226,12 @@ export interface EveroutePackage {
 
   /** @format int64 */
   size: number;
-  upload_task?: NestedUploadTask | null;
   version: string;
 }
 
 export enum EveroutePackageOrderByInput {
   ArchASC = "arch_ASC",
   ArchDESC = "arch_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -21066,8 +23246,6 @@ export enum EveroutePackageOrderByInput {
   PackageInfoDESC = "package_info_DESC",
   SizeASC = "size_ASC",
   SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -21211,55 +23389,6 @@ export interface GetEveroutePackagesConnectionRequestBody {
   where?: EveroutePackageWhereInput | null;
 }
 
-export enum GlobalAlertRuleOrderByInput {
-  BooleanASC = "boolean_ASC",
-  BooleanDESC = "boolean_DESC",
-  CauseASC = "cause_ASC",
-  CauseDESC = "cause_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DefaultThresholdsASC = "default_thresholds_ASC",
-  DefaultThresholdsDESC = "default_thresholds_DESC",
-  DisabledASC = "disabled_ASC",
-  DisabledDESC = "disabled_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  ImpactASC = "impact_ASC",
-  ImpactDESC = "impact_DESC",
-  MessageASC = "message_ASC",
-  MessageDESC = "message_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  ObjectASC = "object_ASC",
-  ObjectDESC = "object_DESC",
-  OperatorASC = "operator_ASC",
-  OperatorDESC = "operator_DESC",
-  SolutionASC = "solution_ASC",
-  SolutionDESC = "solution_DESC",
-  ThresholdsASC = "thresholds_ASC",
-  ThresholdsDESC = "thresholds_DESC",
-  UnitASC = "unit_ASC",
-  UnitDESC = "unit_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetGlobalAlertRulesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: GlobalAlertRuleOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: GlobalAlertRuleWhereInput | null;
-}
-
 export interface NestedAggregateGlobalAlertRule {
   /** @format int32 */
   count: number;
@@ -21288,12 +23417,8 @@ export interface GetGlobalAlertRulesConnectionRequestBody {
 export enum GlobalSettingsOrderByInput {
   AuthASC = "auth_ASC",
   AuthDESC = "auth_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VmRecycleBinASC = "vm_recycle_bin_ASC",
   VmRecycleBinDESC = "vm_recycle_bin_DESC",
 }
@@ -21360,8 +23485,6 @@ export interface GetGlobalSettingsesConnectionRequestBody {
 }
 
 export enum GraphOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -21386,8 +23509,6 @@ export enum GraphOrderByInput {
   TitleDESC = "title_DESC",
   TypeASC = "type_ASC",
   TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetGraphsRequestBody {
@@ -21431,137 +23552,6 @@ export interface GetGraphsConnectionRequestBody {
   where?: GraphWhereInput | null;
 }
 
-export enum HostOrderByInput {
-  AccessIpASC = "access_ip_ASC",
-  AccessIpDESC = "access_ip_DESC",
-  AllocatableMemoryBytesASC = "allocatable_memory_bytes_ASC",
-  AllocatableMemoryBytesDESC = "allocatable_memory_bytes_DESC",
-  ChunkIdASC = "chunk_id_ASC",
-  ChunkIdDESC = "chunk_id_DESC",
-  CpuBrandASC = "cpu_brand_ASC",
-  CpuBrandDESC = "cpu_brand_DESC",
-  CpuFanSpeedUnitASC = "cpu_fan_speed_unit_ASC",
-  CpuFanSpeedUnitDESC = "cpu_fan_speed_unit_DESC",
-  CpuHzPerCoreASC = "cpu_hz_per_core_ASC",
-  CpuHzPerCoreDESC = "cpu_hz_per_core_DESC",
-  CpuModelASC = "cpu_model_ASC",
-  CpuModelDESC = "cpu_model_DESC",
-  CpuVendorASC = "cpu_vendor_ASC",
-  CpuVendorDESC = "cpu_vendor_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DataIpASC = "data_ip_ASC",
-  DataIpDESC = "data_ip_DESC",
-  FailureDataSpaceASC = "failure_data_space_ASC",
-  FailureDataSpaceDESC = "failure_data_space_DESC",
-  HddDataCapacityASC = "hdd_data_capacity_ASC",
-  HddDataCapacityDESC = "hdd_data_capacity_DESC",
-  HddDiskCountASC = "hdd_disk_count_ASC",
-  HddDiskCountDESC = "hdd_disk_count_DESC",
-  HypervisorIpASC = "hypervisor_ip_ASC",
-  HypervisorIpDESC = "hypervisor_ip_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IsOsInRaid1ASC = "is_os_in_raid1_ASC",
-  IsOsInRaid1DESC = "is_os_in_raid1_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LsmCapDiskSafeUmountASC = "lsm_cap_disk_safe_umount_ASC",
-  LsmCapDiskSafeUmountDESC = "lsm_cap_disk_safe_umount_DESC",
-  ManagementIpASC = "management_ip_ASC",
-  ManagementIpDESC = "management_ip_DESC",
-  ModelASC = "model_ASC",
-  ModelDESC = "model_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NestedVirtualizationASC = "nested_virtualization_ASC",
-  NestedVirtualizationDESC = "nested_virtualization_DESC",
-  NicCountASC = "nic_count_ASC",
-  NicCountDESC = "nic_count_DESC",
-  NodeTopoLocalIdASC = "node_topo_local_id_ASC",
-  NodeTopoLocalIdDESC = "node_topo_local_id_DESC",
-  OsMemoryBytesASC = "os_memory_bytes_ASC",
-  OsMemoryBytesDESC = "os_memory_bytes_DESC",
-  OsVersionASC = "os_version_ASC",
-  OsVersionDESC = "os_version_DESC",
-  PmemDimmCapacityASC = "pmem_dimm_capacity_ASC",
-  PmemDimmCapacityDESC = "pmem_dimm_capacity_DESC",
-  PmemDimmCountASC = "pmem_dimm_count_ASC",
-  PmemDimmCountDESC = "pmem_dimm_count_DESC",
-  PmemDiskCountASC = "pmem_disk_count_ASC",
-  PmemDiskCountDESC = "pmem_disk_count_DESC",
-  ProvisionedCpuCoresASC = "provisioned_cpu_cores_ASC",
-  ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
-  ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
-  ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
-  RunningPauseVmMemoryBytesASC = "running_pause_vm_memory_bytes_ASC",
-  RunningPauseVmMemoryBytesDESC = "running_pause_vm_memory_bytes_DESC",
-  RunningVmNumASC = "running_vm_num_ASC",
-  RunningVmNumDESC = "running_vm_num_DESC",
-  ScvmCpuASC = "scvm_cpu_ASC",
-  ScvmCpuDESC = "scvm_cpu_DESC",
-  ScvmMemoryASC = "scvm_memory_ASC",
-  ScvmMemoryDESC = "scvm_memory_DESC",
-  ScvmNameASC = "scvm_name_ASC",
-  ScvmNameDESC = "scvm_name_DESC",
-  SerialASC = "serial_ASC",
-  SerialDESC = "serial_DESC",
-  SsdDataCapacityASC = "ssd_data_capacity_ASC",
-  SsdDataCapacityDESC = "ssd_data_capacity_DESC",
-  SsdDiskCountASC = "ssd_disk_count_ASC",
-  SsdDiskCountDESC = "ssd_disk_count_DESC",
-  StateASC = "state_ASC",
-  StateDESC = "state_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  StoppedVmNumASC = "stopped_vm_num_ASC",
-  StoppedVmNumDESC = "stopped_vm_num_DESC",
-  SuspendedVmNumASC = "suspended_vm_num_ASC",
-  SuspendedVmNumDESC = "suspended_vm_num_DESC",
-  TotalCacheCapacityASC = "total_cache_capacity_ASC",
-  TotalCacheCapacityDESC = "total_cache_capacity_DESC",
-  TotalCpuCoresASC = "total_cpu_cores_ASC",
-  TotalCpuCoresDESC = "total_cpu_cores_DESC",
-  TotalCpuHzASC = "total_cpu_hz_ASC",
-  TotalCpuHzDESC = "total_cpu_hz_DESC",
-  TotalCpuSocketsASC = "total_cpu_sockets_ASC",
-  TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
-  TotalDataCapacityASC = "total_data_capacity_ASC",
-  TotalDataCapacityDESC = "total_data_capacity_DESC",
-  TotalMemoryBytesASC = "total_memory_bytes_ASC",
-  TotalMemoryBytesDESC = "total_memory_bytes_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsedCpuHzASC = "used_cpu_hz_ASC",
-  UsedCpuHzDESC = "used_cpu_hz_DESC",
-  UsedDataSpaceASC = "used_data_space_ASC",
-  UsedDataSpaceDESC = "used_data_space_DESC",
-  UsedMemoryBytesASC = "used_memory_bytes_ASC",
-  UsedMemoryBytesDESC = "used_memory_bytes_DESC",
-  VmNumASC = "vm_num_ASC",
-  VmNumDESC = "vm_num_DESC",
-  VmotionIpASC = "vmotion_ip_ASC",
-  VmotionIpDESC = "vmotion_ip_DESC",
-  WithFasterSsdAsCacheASC = "with_faster_ssd_as_cache_ASC",
-  WithFasterSsdAsCacheDESC = "with_faster_ssd_as_cache_DESC",
-}
-
-export interface GetHostsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: HostOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: HostWhereInput | null;
-}
-
 export interface NestedAggregateHost {
   /** @format int32 */
   count: number;
@@ -21597,16 +23587,12 @@ export interface Ipmi {
 }
 
 export enum IpmiOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   IpASC = "ip_ASC",
   IpDESC = "ip_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
   ValidASC = "valid_ASC",
@@ -21629,16 +23615,6 @@ export interface GetIpmisRequestBody {
   where?: IpmiWhereInput | null;
 }
 
-export enum StoreTransportType {
-  RDMA = "RDMA",
-  TCP = "TCP",
-}
-
-export enum StoreConnectionType {
-  ISCSI = "ISCSI",
-  NVMe = "NVMe",
-}
-
 export interface IscsiConnection {
   /** @format int32 */
   client_port: number;
@@ -21650,105 +23626,6 @@ export interface IscsiConnection {
   nvmf_subsystem?: NestedNvmfSubsystem | null;
   tr_type?: StoreTransportType | null;
   type: StoreConnectionType;
-}
-
-export enum IscsiConnectionOrderByInput {
-  ClientPortASC = "client_port_ASC",
-  ClientPortDESC = "client_port_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InitiatorIpASC = "initiator_ip_ASC",
-  InitiatorIpDESC = "initiator_ip_DESC",
-  TrTypeASC = "tr_type_ASC",
-  TrTypeDESC = "tr_type_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface IscsiConnectionWhereInput {
-  AND?: IscsiConnectionWhereInput[] | null;
-
-  /** @format int32 */
-  client_port?: number | null;
-
-  /** @format int32 */
-  client_port_gt?: number | null;
-
-  /** @format int32 */
-  client_port_gte?: number | null;
-  client_port_in?: number[] | null;
-
-  /** @format int32 */
-  client_port_lt?: number | null;
-
-  /** @format int32 */
-  client_port_lte?: number | null;
-
-  /** @format int32 */
-  client_port_not?: number | null;
-  client_port_not_in?: number[] | null;
-  cluster?: ClusterWhereInput | null;
-  host?: HostWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  initiator_ip?: string | null;
-  initiator_ip_contains?: string | null;
-  initiator_ip_ends_with?: string | null;
-  initiator_ip_gt?: string | null;
-  initiator_ip_gte?: string | null;
-  initiator_ip_in?: string[] | null;
-  initiator_ip_lt?: string | null;
-  initiator_ip_lte?: string | null;
-  initiator_ip_not?: string | null;
-  initiator_ip_not_contains?: string | null;
-  initiator_ip_not_ends_with?: string | null;
-  initiator_ip_not_in?: string[] | null;
-  initiator_ip_not_starts_with?: string | null;
-  initiator_ip_starts_with?: string | null;
-  iscsi_target?: IscsiTargetWhereInput | null;
-  NOT?: IscsiConnectionWhereInput[] | null;
-  nvmf_subsystem?: NvmfSubsystemWhereInput | null;
-  OR?: IscsiConnectionWhereInput[] | null;
-  tr_type?: StoreTransportType | null;
-  tr_type_in?: StoreTransportType[] | null;
-  tr_type_not?: StoreTransportType | null;
-  tr_type_not_in?: StoreTransportType[] | null;
-  type?: StoreConnectionType | null;
-  type_in?: StoreConnectionType[] | null;
-  type_not?: StoreConnectionType | null;
-  type_not_in?: StoreConnectionType[] | null;
-}
-
-export interface GetIscsiConnectionsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: IscsiConnectionOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: IscsiConnectionWhereInput | null;
 }
 
 export interface NestedAggregateIscsiConnection {
@@ -21776,99 +23653,6 @@ export interface GetIscsiConnectionsConnectionRequestBody {
   where?: IscsiConnectionWhereInput | null;
 }
 
-export enum IscsiLunOrderByInput {
-  AllowedInitiatorsASC = "allowed_initiators_ASC",
-  AllowedInitiatorsDESC = "allowed_initiators_DESC",
-  AssignedSizeASC = "assigned_size_ASC",
-  AssignedSizeDESC = "assigned_size_DESC",
-  BpsASC = "bps_ASC",
-  BpsDESC = "bps_DESC",
-  BpsMaxASC = "bps_max_ASC",
-  BpsMaxDESC = "bps_max_DESC",
-  BpsMaxLengthASC = "bps_max_length_ASC",
-  BpsMaxLengthDESC = "bps_max_length_DESC",
-  BpsRdASC = "bps_rd_ASC",
-  BpsRdDESC = "bps_rd_DESC",
-  BpsRdMaxASC = "bps_rd_max_ASC",
-  BpsRdMaxDESC = "bps_rd_max_DESC",
-  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
-  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
-  BpsWrASC = "bps_wr_ASC",
-  BpsWrDESC = "bps_wr_DESC",
-  BpsWrMaxASC = "bps_wr_max_ASC",
-  BpsWrMaxDESC = "bps_wr_max_DESC",
-  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
-  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IoSizeASC = "io_size_ASC",
-  IoSizeDESC = "io_size_DESC",
-  IopsASC = "iops_ASC",
-  IopsDESC = "iops_DESC",
-  IopsMaxASC = "iops_max_ASC",
-  IopsMaxDESC = "iops_max_DESC",
-  IopsMaxLengthASC = "iops_max_length_ASC",
-  IopsMaxLengthDESC = "iops_max_length_DESC",
-  IopsRdASC = "iops_rd_ASC",
-  IopsRdDESC = "iops_rd_DESC",
-  IopsRdMaxASC = "iops_rd_max_ASC",
-  IopsRdMaxDESC = "iops_rd_max_DESC",
-  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
-  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
-  IopsWrASC = "iops_wr_ASC",
-  IopsWrDESC = "iops_wr_DESC",
-  IopsWrMaxASC = "iops_wr_max_ASC",
-  IopsWrMaxDESC = "iops_wr_max_DESC",
-  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
-  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LunIdASC = "lun_id_ASC",
-  LunIdDESC = "lun_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  SharedSizeASC = "shared_size_ASC",
-  SharedSizeDESC = "shared_size_DESC",
-  SnapshotNumASC = "snapshot_num_ASC",
-  SnapshotNumDESC = "snapshot_num_DESC",
-  StripeNumASC = "stripe_num_ASC",
-  StripeNumDESC = "stripe_num_DESC",
-  StripeSizeASC = "stripe_size_ASC",
-  StripeSizeDESC = "stripe_size_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  ZbsVolumeIdASC = "zbs_volume_id_ASC",
-  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
-}
-
-export interface GetIscsiLunsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: IscsiLunOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: IscsiLunWhereInput | null;
-}
-
 export interface NestedAggregateIscsiLun {
   /** @format int32 */
   count: number;
@@ -21894,41 +23678,6 @@ export interface GetIscsiLunsConnectionRequestBody {
   where?: IscsiLunWhereInput | null;
 }
 
-export enum IscsiLunSnapshotOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetIscsiLunSnapshotsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: IscsiLunSnapshotOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: IscsiLunSnapshotWhereInput | null;
-}
-
 export interface NestedAggregateIscsiLunSnapshot {
   /** @format int32 */
   count: number;
@@ -21952,103 +23701,6 @@ export interface GetIscsiLunSnapshotsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: IscsiLunSnapshotWhereInput | null;
-}
-
-export enum IscsiTargetOrderByInput {
-  BpsASC = "bps_ASC",
-  BpsDESC = "bps_DESC",
-  BpsMaxASC = "bps_max_ASC",
-  BpsMaxDESC = "bps_max_DESC",
-  BpsMaxLengthASC = "bps_max_length_ASC",
-  BpsMaxLengthDESC = "bps_max_length_DESC",
-  BpsRdASC = "bps_rd_ASC",
-  BpsRdDESC = "bps_rd_DESC",
-  BpsRdMaxASC = "bps_rd_max_ASC",
-  BpsRdMaxDESC = "bps_rd_max_DESC",
-  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
-  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
-  BpsWrASC = "bps_wr_ASC",
-  BpsWrDESC = "bps_wr_DESC",
-  BpsWrMaxASC = "bps_wr_max_ASC",
-  BpsWrMaxDESC = "bps_wr_max_DESC",
-  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
-  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
-  ChapEnabledASC = "chap_enabled_ASC",
-  ChapEnabledDESC = "chap_enabled_DESC",
-  ChapNameASC = "chap_name_ASC",
-  ChapNameDESC = "chap_name_DESC",
-  ChapSecretASC = "chap_secret_ASC",
-  ChapSecretDESC = "chap_secret_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  ExternalUseASC = "external_use_ASC",
-  ExternalUseDESC = "external_use_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InitiatorChapsASC = "initiator_chaps_ASC",
-  InitiatorChapsDESC = "initiator_chaps_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  IoSizeASC = "io_size_ASC",
-  IoSizeDESC = "io_size_DESC",
-  IopsASC = "iops_ASC",
-  IopsDESC = "iops_DESC",
-  IopsMaxASC = "iops_max_ASC",
-  IopsMaxDESC = "iops_max_DESC",
-  IopsMaxLengthASC = "iops_max_length_ASC",
-  IopsMaxLengthDESC = "iops_max_length_DESC",
-  IopsRdASC = "iops_rd_ASC",
-  IopsRdDESC = "iops_rd_DESC",
-  IopsRdMaxASC = "iops_rd_max_ASC",
-  IopsRdMaxDESC = "iops_rd_max_DESC",
-  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
-  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
-  IopsWrASC = "iops_wr_ASC",
-  IopsWrDESC = "iops_wr_DESC",
-  IopsWrMaxASC = "iops_wr_max_ASC",
-  IopsWrMaxDESC = "iops_wr_max_DESC",
-  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
-  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
-  IpWhitelistASC = "ip_whitelist_ASC",
-  IpWhitelistDESC = "ip_whitelist_DESC",
-  IqnNameASC = "iqn_name_ASC",
-  IqnNameDESC = "iqn_name_DESC",
-  IqnWhitelistASC = "iqn_whitelist_ASC",
-  IqnWhitelistDESC = "iqn_whitelist_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  StripeNumASC = "stripe_num_ASC",
-  StripeNumDESC = "stripe_num_DESC",
-  StripeSizeASC = "stripe_size_ASC",
-  StripeSizeDESC = "stripe_size_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetIscsiTargetsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: IscsiTargetOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: IscsiTargetWhereInput | null;
 }
 
 export interface NestedAggregateIscsiTarget {
@@ -22087,8 +23739,6 @@ export interface IsolationPolicy {
 }
 
 export enum IsolationPolicyOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EgressASC = "egress_ASC",
   EgressDESC = "egress_DESC",
   IdASC = "id_ASC",
@@ -22097,8 +23747,6 @@ export enum IsolationPolicyOrderByInput {
   IngressDESC = "ingress_DESC",
   ModeASC = "mode_ASC",
   ModeDESC = "mode_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetIsolationPoliciesRequestBody {
@@ -22195,8 +23843,6 @@ export enum LabelOrderByInput {
   SystemVlanNumDESC = "system_vlan_num_DESC",
   TotalNumASC = "total_num_ASC",
   TotalNumDESC = "total_num_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   ValueASC = "value_ASC",
   ValueDESC = "value_DESC",
   VdsNumASC = "vds_num_ASC",
@@ -22255,8 +23901,6 @@ export interface GetLabelsConnectionRequestBody {
 }
 
 export enum LicenseOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   ExpireDateASC = "expire_date_ASC",
   ExpireDateDESC = "expire_date_DESC",
   IdASC = "id_ASC",
@@ -22277,8 +23921,6 @@ export enum LicenseOrderByInput {
   SoftwareEditionDESC = "software_edition_DESC",
   TypeASC = "type_ASC",
   TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetLicensesRequestBody {
@@ -22323,8 +23965,6 @@ export interface GetLicensesConnectionRequestBody {
 }
 
 export enum LogCollectionOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
@@ -22347,8 +23987,6 @@ export enum LogCollectionOrderByInput {
   StartedAtDESC = "started_at_DESC",
   StatusASC = "status_ASC",
   StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetLogCollectionsRequestBody {
@@ -22405,39 +24043,6 @@ export interface GetLogServiceConfigsRequestBody {
   input: LogServiceConfigsInput;
 }
 
-export enum NamespaceGroupOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreateTimeASC = "local_create_time_ASC",
-  LocalCreateTimeDESC = "local_create_time_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetNamespaceGroupsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NamespaceGroupOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NamespaceGroupWhereInput | null;
-}
-
 export interface NestedAggregateNamespaceGroup {
   /** @format int32 */
   count: number;
@@ -22461,49 +24066,6 @@ export interface GetNamespaceGroupsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: NamespaceGroupWhereInput | null;
-}
-
-export enum NfsExportOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  ExportInodeIdASC = "export_inode_id_ASC",
-  ExportInodeIdDESC = "export_inode_id_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  IpWhitelistASC = "ip_whitelist_ASC",
-  IpWhitelistDESC = "ip_whitelist_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetNfsExportsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NfsExportOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NfsExportWhereInput | null;
 }
 
 export interface NestedAggregateNfsExport {
@@ -22557,8 +24119,6 @@ export interface NfsInode {
 export enum NfsInodeOrderByInput {
   AssignedSizeASC = "assigned_size_ASC",
   AssignedSizeDESC = "assigned_size_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   FileASC = "file_ASC",
@@ -22579,8 +24139,6 @@ export enum NfsInodeOrderByInput {
   SnapshotNumDESC = "snapshot_num_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetNfsInodesRequestBody {
@@ -22624,75 +24182,6 @@ export interface GetNfsInodesConnectionRequestBody {
   where?: NfsInodeWhereInput | null;
 }
 
-export enum NicOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DriverASC = "driver_ASC",
-  DriverDESC = "driver_DESC",
-  DriverStateASC = "driver_state_ASC",
-  DriverStateDESC = "driver_state_DESC",
-  GatewayIpASC = "gateway_ip_ASC",
-  GatewayIpDESC = "gateway_ip_DESC",
-  IbdevASC = "ibdev_ASC",
-  IbdevDESC = "ibdev_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IpAddressASC = "ip_address_ASC",
-  IpAddressDESC = "ip_address_DESC",
-  IsSriovASC = "is_sriov_ASC",
-  IsSriovDESC = "is_sriov_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  MacAddressASC = "mac_address_ASC",
-  MacAddressDESC = "mac_address_DESC",
-  MaxVfNumASC = "max_vf_num_ASC",
-  MaxVfNumDESC = "max_vf_num_DESC",
-  ModelASC = "model_ASC",
-  ModelDESC = "model_DESC",
-  MtuASC = "mtu_ASC",
-  MtuDESC = "mtu_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NicUuidASC = "nic_uuid_ASC",
-  NicUuidDESC = "nic_uuid_DESC",
-  PhysicalASC = "physical_ASC",
-  PhysicalDESC = "physical_DESC",
-  RdmaEnabledASC = "rdma_enabled_ASC",
-  RdmaEnabledDESC = "rdma_enabled_DESC",
-  RunningASC = "running_ASC",
-  RunningDESC = "running_DESC",
-  SpeedASC = "speed_ASC",
-  SpeedDESC = "speed_DESC",
-  SubnetMaskASC = "subnet_mask_ASC",
-  SubnetMaskDESC = "subnet_mask_DESC",
-  TotalVfNumASC = "total_vf_num_ASC",
-  TotalVfNumDESC = "total_vf_num_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpASC = "up_ASC",
-  UpDESC = "up_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsedVfNumASC = "used_vf_num_ASC",
-  UsedVfNumDESC = "used_vf_num_DESC",
-}
-
-export interface GetNicsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NicOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NicWhereInput | null;
-}
-
 export interface NestedAggregateNic {
   /** @format int32 */
   count: number;
@@ -22719,8 +24208,6 @@ export interface GetNicsConnectionRequestBody {
 }
 
 export enum NodeTopoOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
@@ -22729,8 +24216,6 @@ export enum NodeTopoOrderByInput {
   NameDESC = "name_DESC",
   PositionASC = "position_ASC",
   PositionDESC = "position_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetNodeTopoesRequestBody {
@@ -22774,101 +24259,6 @@ export interface GetNodeTopoesConnectionRequestBody {
   where?: NodeTopoWhereInput | null;
 }
 
-export enum NvmfNamespaceOrderByInput {
-  AssignedSizeASC = "assigned_size_ASC",
-  AssignedSizeDESC = "assigned_size_DESC",
-  BpsASC = "bps_ASC",
-  BpsDESC = "bps_DESC",
-  BpsMaxASC = "bps_max_ASC",
-  BpsMaxDESC = "bps_max_DESC",
-  BpsMaxLengthASC = "bps_max_length_ASC",
-  BpsMaxLengthDESC = "bps_max_length_DESC",
-  BpsRdASC = "bps_rd_ASC",
-  BpsRdDESC = "bps_rd_DESC",
-  BpsRdMaxASC = "bps_rd_max_ASC",
-  BpsRdMaxDESC = "bps_rd_max_DESC",
-  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
-  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
-  BpsWrASC = "bps_wr_ASC",
-  BpsWrDESC = "bps_wr_DESC",
-  BpsWrMaxASC = "bps_wr_max_ASC",
-  BpsWrMaxDESC = "bps_wr_max_DESC",
-  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
-  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IoSizeASC = "io_size_ASC",
-  IoSizeDESC = "io_size_DESC",
-  IopsASC = "iops_ASC",
-  IopsDESC = "iops_DESC",
-  IopsMaxASC = "iops_max_ASC",
-  IopsMaxDESC = "iops_max_DESC",
-  IopsMaxLengthASC = "iops_max_length_ASC",
-  IopsMaxLengthDESC = "iops_max_length_DESC",
-  IopsRdASC = "iops_rd_ASC",
-  IopsRdDESC = "iops_rd_DESC",
-  IopsRdMaxASC = "iops_rd_max_ASC",
-  IopsRdMaxDESC = "iops_rd_max_DESC",
-  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
-  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
-  IopsWrASC = "iops_wr_ASC",
-  IopsWrDESC = "iops_wr_DESC",
-  IopsWrMaxASC = "iops_wr_max_ASC",
-  IopsWrMaxDESC = "iops_wr_max_DESC",
-  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
-  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
-  IsSharedASC = "is_shared_ASC",
-  IsSharedDESC = "is_shared_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NamespaceIdASC = "namespace_id_ASC",
-  NamespaceIdDESC = "namespace_id_DESC",
-  NqnWhitelistASC = "nqn_whitelist_ASC",
-  NqnWhitelistDESC = "nqn_whitelist_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  SharedSizeASC = "shared_size_ASC",
-  SharedSizeDESC = "shared_size_DESC",
-  SnapshotNumASC = "snapshot_num_ASC",
-  SnapshotNumDESC = "snapshot_num_DESC",
-  StripeNumASC = "stripe_num_ASC",
-  StripeNumDESC = "stripe_num_DESC",
-  StripeSizeASC = "stripe_size_ASC",
-  StripeSizeDESC = "stripe_size_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  ZbsVolumeIdASC = "zbs_volume_id_ASC",
-  ZbsVolumeIdDESC = "zbs_volume_id_DESC",
-}
-
-export interface GetNvmfNamespacesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NvmfNamespaceOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NvmfNamespaceWhereInput | null;
-}
-
 export interface NestedAggregateNvmfNamespace {
   /** @format int32 */
   count: number;
@@ -22894,41 +24284,6 @@ export interface GetNvmfNamespacesConnectionRequestBody {
   where?: NvmfNamespaceWhereInput | null;
 }
 
-export enum NvmfNamespaceSnapshotOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetNvmfNamespaceSnapshotsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NvmfNamespaceSnapshotOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NvmfNamespaceSnapshotWhereInput | null;
-}
-
 export interface NestedAggregateNvmfNamespaceSnapshot {
   /** @format int32 */
   count: number;
@@ -22952,97 +24307,6 @@ export interface GetNvmfNamespaceSnapshotsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: NvmfNamespaceSnapshotWhereInput | null;
-}
-
-export enum NvmfSubsystemOrderByInput {
-  BpsASC = "bps_ASC",
-  BpsDESC = "bps_DESC",
-  BpsMaxASC = "bps_max_ASC",
-  BpsMaxDESC = "bps_max_DESC",
-  BpsMaxLengthASC = "bps_max_length_ASC",
-  BpsMaxLengthDESC = "bps_max_length_DESC",
-  BpsRdASC = "bps_rd_ASC",
-  BpsRdDESC = "bps_rd_DESC",
-  BpsRdMaxASC = "bps_rd_max_ASC",
-  BpsRdMaxDESC = "bps_rd_max_DESC",
-  BpsRdMaxLengthASC = "bps_rd_max_length_ASC",
-  BpsRdMaxLengthDESC = "bps_rd_max_length_DESC",
-  BpsWrASC = "bps_wr_ASC",
-  BpsWrDESC = "bps_wr_DESC",
-  BpsWrMaxASC = "bps_wr_max_ASC",
-  BpsWrMaxDESC = "bps_wr_max_DESC",
-  BpsWrMaxLengthASC = "bps_wr_max_length_ASC",
-  BpsWrMaxLengthDESC = "bps_wr_max_length_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  ExternalUseASC = "external_use_ASC",
-  ExternalUseDESC = "external_use_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  IoSizeASC = "io_size_ASC",
-  IoSizeDESC = "io_size_DESC",
-  IopsASC = "iops_ASC",
-  IopsDESC = "iops_DESC",
-  IopsMaxASC = "iops_max_ASC",
-  IopsMaxDESC = "iops_max_DESC",
-  IopsMaxLengthASC = "iops_max_length_ASC",
-  IopsMaxLengthDESC = "iops_max_length_DESC",
-  IopsRdASC = "iops_rd_ASC",
-  IopsRdDESC = "iops_rd_DESC",
-  IopsRdMaxASC = "iops_rd_max_ASC",
-  IopsRdMaxDESC = "iops_rd_max_DESC",
-  IopsRdMaxLengthASC = "iops_rd_max_length_ASC",
-  IopsRdMaxLengthDESC = "iops_rd_max_length_DESC",
-  IopsWrASC = "iops_wr_ASC",
-  IopsWrDESC = "iops_wr_DESC",
-  IopsWrMaxASC = "iops_wr_max_ASC",
-  IopsWrMaxDESC = "iops_wr_max_DESC",
-  IopsWrMaxLengthASC = "iops_wr_max_length_ASC",
-  IopsWrMaxLengthDESC = "iops_wr_max_length_DESC",
-  IpWhitelistASC = "ip_whitelist_ASC",
-  IpWhitelistDESC = "ip_whitelist_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NqnNameASC = "nqn_name_ASC",
-  NqnNameDESC = "nqn_name_DESC",
-  NqnWhitelistASC = "nqn_whitelist_ASC",
-  NqnWhitelistDESC = "nqn_whitelist_DESC",
-  PolicyASC = "policy_ASC",
-  PolicyDESC = "policy_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  StripeNumASC = "stripe_num_ASC",
-  StripeNumDESC = "stripe_num_DESC",
-  StripeSizeASC = "stripe_size_ASC",
-  StripeSizeDESC = "stripe_size_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetNvmfSubsystemsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: NvmfSubsystemOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: NvmfSubsystemWhereInput | null;
 }
 
 export interface NestedAggregateNvmfSubsystem {
@@ -23071,14 +24335,10 @@ export interface GetNvmfSubsystemsConnectionRequestBody {
 }
 
 export enum OrganizationOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetOrganizationsRequestBody {
@@ -23145,8 +24405,6 @@ export interface PmemDimm {
 export enum PmemDimmOrderByInput {
   CapacityASC = "capacity_ASC",
   CapacityDESC = "capacity_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DeviceLocatorASC = "device_locator_ASC",
   DeviceLocatorDESC = "device_locator_DESC",
   HealthStatusASC = "health_status_ASC",
@@ -23163,8 +24421,6 @@ export enum PmemDimmOrderByInput {
   PartNumberDESC = "part_number_DESC",
   RemainingLifePercentASC = "remaining_life_percent_ASC",
   RemainingLifePercentDESC = "remaining_life_percent_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -23211,8 +24467,6 @@ export interface GetPmemDimmsConnectionRequestBody {
 }
 
 export enum RackTopoOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   HeightASC = "height_ASC",
   HeightDESC = "height_DESC",
   IdASC = "id_ASC",
@@ -23221,8 +24475,6 @@ export enum RackTopoOrderByInput {
   LocalIdDESC = "local_id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetRackTopoesRequestBody {
@@ -23279,8 +24531,6 @@ export enum ReportTaskOrderByInput {
   PlanIdDESC = "plan_id_DESC",
   StatusASC = "status_ASC",
   StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetReportTasksRequestBody {
@@ -23341,8 +24591,6 @@ export enum ReportTemplateOrderByInput {
   ResourceMetaDESC = "resource_meta_DESC",
   TaskNumASC = "task_num_ASC",
   TaskNumDESC = "task_num_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetReportTemplatesRequestBody {
@@ -23406,8 +24654,6 @@ export interface SecurityPolicy {
 export enum SecurityPolicyOrderByInput {
   ApplyToASC = "apply_to_ASC",
   ApplyToDESC = "apply_to_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
   EgressASC = "egress_ASC",
@@ -23420,8 +24666,6 @@ export enum SecurityPolicyOrderByInput {
   NameDESC = "name_DESC",
   PolicyModeASC = "policy_mode_ASC",
   PolicyModeDESC = "policy_mode_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetSecurityPoliciesRequestBody {
@@ -23466,8 +24710,6 @@ export interface GetSecurityPoliciesConnectionRequestBody {
 }
 
 export enum SnapshotGroupOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DeletedASC = "deleted_ASC",
   DeletedDESC = "deleted_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -23490,8 +24732,6 @@ export enum SnapshotGroupOrderByInput {
   NameDESC = "name_DESC",
   ObjectNumASC = "object_num_ASC",
   ObjectNumDESC = "object_num_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VmInfoASC = "vm_info_ASC",
   VmInfoDESC = "vm_info_DESC",
 }
@@ -23537,79 +24777,6 @@ export interface GetSnapshotGroupsConnectionRequestBody {
   where?: SnapshotGroupWhereInput | null;
 }
 
-export enum SnapshotPlanOrderByInput {
-  AutoDeleteNumASC = "auto_delete_num_ASC",
-  AutoDeleteNumDESC = "auto_delete_num_DESC",
-  AutoExecuteNumASC = "auto_execute_num_ASC",
-  AutoExecuteNumDESC = "auto_execute_num_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EndTimeASC = "end_time_ASC",
-  EndTimeDESC = "end_time_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  ExecHMASC = "exec_h_m_ASC",
-  ExecHMDESC = "exec_h_m_DESC",
-  ExecutePlanTypeASC = "execute_plan_type_ASC",
-  ExecutePlanTypeDESC = "execute_plan_type_DESC",
-  HealthyASC = "healthy_ASC",
-  HealthyDESC = "healthy_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LastExecuteEndTimeASC = "last_execute_end_time_ASC",
-  LastExecuteEndTimeDESC = "last_execute_end_time_DESC",
-  LastExecuteStatusASC = "last_execute_status_ASC",
-  LastExecuteStatusDESC = "last_execute_status_DESC",
-  LastExecuteTimeASC = "last_execute_time_ASC",
-  LastExecuteTimeDESC = "last_execute_time_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LogicalSizeBytesASC = "logical_size_bytes_ASC",
-  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
-  ManualDeleteNumASC = "manual_delete_num_ASC",
-  ManualDeleteNumDESC = "manual_delete_num_DESC",
-  ManualExecuteNumASC = "manual_execute_num_ASC",
-  ManualExecuteNumDESC = "manual_execute_num_DESC",
-  MirrorASC = "mirror_ASC",
-  MirrorDESC = "mirror_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NextExecuteTimeASC = "next_execute_time_ASC",
-  NextExecuteTimeDESC = "next_execute_time_DESC",
-  ObjectNumASC = "object_num_ASC",
-  ObjectNumDESC = "object_num_DESC",
-  PhysicalSizeBytesASC = "physical_size_bytes_ASC",
-  PhysicalSizeBytesDESC = "physical_size_bytes_DESC",
-  RemainSnapshotNumASC = "remain_snapshot_num_ASC",
-  RemainSnapshotNumDESC = "remain_snapshot_num_DESC",
-  SnapshotGroupNumASC = "snapshot_group_num_ASC",
-  SnapshotGroupNumDESC = "snapshot_group_num_DESC",
-  StartTimeASC = "start_time_ASC",
-  StartTimeDESC = "start_time_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetSnapshotPlansRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: SnapshotPlanOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: SnapshotPlanWhereInput | null;
-}
-
 export interface NestedAggregateSnapshotPlan {
   /** @format int32 */
   count: number;
@@ -23650,8 +24817,6 @@ export interface SnapshotPlanTask {
 }
 
 export enum SnapshotPlanTaskOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EndTimeASC = "end_time_ASC",
   EndTimeDESC = "end_time_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -23668,8 +24833,6 @@ export enum SnapshotPlanTaskOrderByInput {
   StatusDESC = "status_DESC",
   TypeASC = "type_ASC",
   TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetSnapshotPlanTasksRequestBody {
@@ -23720,8 +24883,6 @@ export enum SnmpTransportOrderByInput {
   AuthProtocolDESC = "auth_protocol_DESC",
   CommunityASC = "community_ASC",
   CommunityDESC = "community_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DisabledASC = "disabled_ASC",
   DisabledDESC = "disabled_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -23740,8 +24901,6 @@ export enum SnmpTransportOrderByInput {
   PrivacyProtocolDESC = "privacy_protocol_DESC",
   ProtocolASC = "protocol_ASC",
   ProtocolDESC = "protocol_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
   VersionASC = "version_ASC",
@@ -23796,8 +24955,6 @@ export enum SnmpTrapReceiverOrderByInput {
   AuthProtocolDESC = "auth_protocol_DESC",
   CommunityASC = "community_ASC",
   CommunityDESC = "community_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DisabledASC = "disabled_ASC",
   DisabledDESC = "disabled_DESC",
   EngineIdASC = "engine_id_ASC",
@@ -23824,8 +24981,6 @@ export enum SnmpTrapReceiverOrderByInput {
   PrivacyProtocolDESC = "privacy_protocol_DESC",
   ProtocolASC = "protocol_ASC",
   ProtocolDESC = "protocol_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
   VersionASC = "version_ASC",
@@ -23891,8 +25046,6 @@ export interface SvtImage {
 }
 
 export enum SvtImageOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -23907,8 +25060,6 @@ export enum SvtImageOrderByInput {
   PathDESC = "path_DESC",
   SizeASC = "size_ASC",
   SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VersionASC = "version_ASC",
   VersionDESC = "version_DESC",
 }
@@ -23954,11 +25105,6 @@ export interface GetSvtImagesConnectionRequestBody {
   where?: SvtImageWhereInput | null;
 }
 
-export enum UserAuditLogStatus {
-  FAILED = "FAILED",
-  SUCCESSED = "SUCCESSED",
-}
-
 export interface SystemAuditLog {
   action: string;
   cluster?: NestedCluster | null;
@@ -23969,142 +25115,6 @@ export interface SystemAuditLog {
   message: string;
   resource_id?: string | null;
   status?: UserAuditLogStatus | null;
-}
-
-export enum SystemAuditLogOrderByInput {
-  ActionASC = "action_ASC",
-  ActionDESC = "action_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  FinishedAtASC = "finished_at_ASC",
-  FinishedAtDESC = "finished_at_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  MessageASC = "message_ASC",
-  MessageDESC = "message_DESC",
-  ResourceIdASC = "resource_id_ASC",
-  ResourceIdDESC = "resource_id_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface SystemAuditLogWhereInput {
-  action?: string | null;
-  action_contains?: string | null;
-  action_ends_with?: string | null;
-  action_gt?: string | null;
-  action_gte?: string | null;
-  action_in?: string[] | null;
-  action_lt?: string | null;
-  action_lte?: string | null;
-  action_not?: string | null;
-  action_not_contains?: string | null;
-  action_not_ends_with?: string | null;
-  action_not_in?: string[] | null;
-  action_not_starts_with?: string | null;
-  action_starts_with?: string | null;
-  AND?: SystemAuditLogWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  finished_at?: string | null;
-  finished_at_gt?: string | null;
-  finished_at_gte?: string | null;
-  finished_at_in?: string[] | null;
-  finished_at_lt?: string | null;
-  finished_at_lte?: string | null;
-  finished_at_not?: string | null;
-  finished_at_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  message?: string | null;
-  message_contains?: string | null;
-  message_ends_with?: string | null;
-  message_gt?: string | null;
-  message_gte?: string | null;
-  message_in?: string[] | null;
-  message_lt?: string | null;
-  message_lte?: string | null;
-  message_not?: string | null;
-  message_not_contains?: string | null;
-  message_not_ends_with?: string | null;
-  message_not_in?: string[] | null;
-  message_not_starts_with?: string | null;
-  message_starts_with?: string | null;
-  NOT?: SystemAuditLogWhereInput[] | null;
-  OR?: SystemAuditLogWhereInput[] | null;
-  resource_id?: string | null;
-  resource_id_contains?: string | null;
-  resource_id_ends_with?: string | null;
-  resource_id_gt?: string | null;
-  resource_id_gte?: string | null;
-  resource_id_in?: string[] | null;
-  resource_id_lt?: string | null;
-  resource_id_lte?: string | null;
-  resource_id_not?: string | null;
-  resource_id_not_contains?: string | null;
-  resource_id_not_ends_with?: string | null;
-  resource_id_not_in?: string[] | null;
-  resource_id_not_starts_with?: string | null;
-  resource_id_starts_with?: string | null;
-  status?: UserAuditLogStatus | null;
-  status_in?: UserAuditLogStatus[] | null;
-  status_not?: UserAuditLogStatus | null;
-  status_not_in?: UserAuditLogStatus[] | null;
-}
-
-export interface GetSystemAuditLogsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: SystemAuditLogOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: SystemAuditLogWhereInput | null;
 }
 
 export interface NestedAggregateSystemAuditLog {
@@ -24130,295 +25140,6 @@ export interface GetSystemAuditLogsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: SystemAuditLogWhereInput | null;
-}
-
-export enum TaskOrderByInput {
-  ArgsASC = "args_ASC",
-  ArgsDESC = "args_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  ErrorCodeASC = "error_code_ASC",
-  ErrorCodeDESC = "error_code_DESC",
-  ErrorMessageASC = "error_message_ASC",
-  ErrorMessageDESC = "error_message_DESC",
-  FinishedAtASC = "finished_at_ASC",
-  FinishedAtDESC = "finished_at_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  KeyASC = "key_ASC",
-  KeyDESC = "key_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  ProgressASC = "progress_ASC",
-  ProgressDESC = "progress_DESC",
-  ResourceIdASC = "resource_id_ASC",
-  ResourceIdDESC = "resource_id_DESC",
-  ResourceMutationASC = "resource_mutation_ASC",
-  ResourceMutationDESC = "resource_mutation_DESC",
-  ResourceRollbackErrorASC = "resource_rollback_error_ASC",
-  ResourceRollbackErrorDESC = "resource_rollback_error_DESC",
-  ResourceRollbackRetryCountASC = "resource_rollback_retry_count_ASC",
-  ResourceRollbackRetryCountDESC = "resource_rollback_retry_count_DESC",
-  ResourceRollbackedASC = "resource_rollbacked_ASC",
-  ResourceRollbackedDESC = "resource_rollbacked_DESC",
-  ResourceTypeASC = "resource_type_ASC",
-  ResourceTypeDESC = "resource_type_DESC",
-  SnapshotASC = "snapshot_ASC",
-  SnapshotDESC = "snapshot_DESC",
-  StartedAtASC = "started_at_ASC",
-  StartedAtDESC = "started_at_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  StepsASC = "steps_ASC",
-  StepsDESC = "steps_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface TaskWhereInput {
-  AND?: TaskWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  error_code?: string | null;
-  error_code_contains?: string | null;
-  error_code_ends_with?: string | null;
-  error_code_gt?: string | null;
-  error_code_gte?: string | null;
-  error_code_in?: string[] | null;
-  error_code_lt?: string | null;
-  error_code_lte?: string | null;
-  error_code_not?: string | null;
-  error_code_not_contains?: string | null;
-  error_code_not_ends_with?: string | null;
-  error_code_not_in?: string[] | null;
-  error_code_not_starts_with?: string | null;
-  error_code_starts_with?: string | null;
-  error_message?: string | null;
-  error_message_contains?: string | null;
-  error_message_ends_with?: string | null;
-  error_message_gt?: string | null;
-  error_message_gte?: string | null;
-  error_message_in?: string[] | null;
-  error_message_lt?: string | null;
-  error_message_lte?: string | null;
-  error_message_not?: string | null;
-  error_message_not_contains?: string | null;
-  error_message_not_ends_with?: string | null;
-  error_message_not_in?: string[] | null;
-  error_message_not_starts_with?: string | null;
-  error_message_starts_with?: string | null;
-  finished_at?: string | null;
-  finished_at_gt?: string | null;
-  finished_at_gte?: string | null;
-  finished_at_in?: string[] | null;
-  finished_at_lt?: string | null;
-  finished_at_lte?: string | null;
-  finished_at_not?: string | null;
-  finished_at_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  key?: string | null;
-  key_contains?: string | null;
-  key_ends_with?: string | null;
-  key_gt?: string | null;
-  key_gte?: string | null;
-  key_in?: string[] | null;
-  key_lt?: string | null;
-  key_lte?: string | null;
-  key_not?: string | null;
-  key_not_contains?: string | null;
-  key_not_ends_with?: string | null;
-  key_not_in?: string[] | null;
-  key_not_starts_with?: string | null;
-  key_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  NOT?: TaskWhereInput[] | null;
-  OR?: TaskWhereInput[] | null;
-
-  /** @format double */
-  progress?: number | null;
-
-  /** @format double */
-  progress_gt?: number | null;
-
-  /** @format double */
-  progress_gte?: number | null;
-  progress_in?: number[] | null;
-
-  /** @format double */
-  progress_lt?: number | null;
-
-  /** @format double */
-  progress_lte?: number | null;
-
-  /** @format double */
-  progress_not?: number | null;
-  progress_not_in?: number[] | null;
-  resource_id?: string | null;
-  resource_id_contains?: string | null;
-  resource_id_ends_with?: string | null;
-  resource_id_gt?: string | null;
-  resource_id_gte?: string | null;
-  resource_id_in?: string[] | null;
-  resource_id_lt?: string | null;
-  resource_id_lte?: string | null;
-  resource_id_not?: string | null;
-  resource_id_not_contains?: string | null;
-  resource_id_not_ends_with?: string | null;
-  resource_id_not_in?: string[] | null;
-  resource_id_not_starts_with?: string | null;
-  resource_id_starts_with?: string | null;
-  resource_mutation?: string | null;
-  resource_mutation_contains?: string | null;
-  resource_mutation_ends_with?: string | null;
-  resource_mutation_gt?: string | null;
-  resource_mutation_gte?: string | null;
-  resource_mutation_in?: string[] | null;
-  resource_mutation_lt?: string | null;
-  resource_mutation_lte?: string | null;
-  resource_mutation_not?: string | null;
-  resource_mutation_not_contains?: string | null;
-  resource_mutation_not_ends_with?: string | null;
-  resource_mutation_not_in?: string[] | null;
-  resource_mutation_not_starts_with?: string | null;
-  resource_mutation_starts_with?: string | null;
-  resource_rollback_error?: string | null;
-  resource_rollback_error_contains?: string | null;
-  resource_rollback_error_ends_with?: string | null;
-  resource_rollback_error_gt?: string | null;
-  resource_rollback_error_gte?: string | null;
-  resource_rollback_error_in?: string[] | null;
-  resource_rollback_error_lt?: string | null;
-  resource_rollback_error_lte?: string | null;
-  resource_rollback_error_not?: string | null;
-  resource_rollback_error_not_contains?: string | null;
-  resource_rollback_error_not_ends_with?: string | null;
-  resource_rollback_error_not_in?: string[] | null;
-  resource_rollback_error_not_starts_with?: string | null;
-  resource_rollback_error_starts_with?: string | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_gt?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_gte?: number | null;
-  resource_rollback_retry_count_in?: number[] | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_lt?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_lte?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_not?: number | null;
-  resource_rollback_retry_count_not_in?: number[] | null;
-  resource_rollbacked?: boolean | null;
-  resource_rollbacked_not?: boolean | null;
-  resource_type?: string | null;
-  resource_type_contains?: string | null;
-  resource_type_ends_with?: string | null;
-  resource_type_gt?: string | null;
-  resource_type_gte?: string | null;
-  resource_type_in?: string[] | null;
-  resource_type_lt?: string | null;
-  resource_type_lte?: string | null;
-  resource_type_not?: string | null;
-  resource_type_not_contains?: string | null;
-  resource_type_not_ends_with?: string | null;
-  resource_type_not_in?: string[] | null;
-  resource_type_not_starts_with?: string | null;
-  resource_type_starts_with?: string | null;
-  snapshot?: string | null;
-  snapshot_contains?: string | null;
-  snapshot_ends_with?: string | null;
-  snapshot_gt?: string | null;
-  snapshot_gte?: string | null;
-  snapshot_in?: string[] | null;
-  snapshot_lt?: string | null;
-  snapshot_lte?: string | null;
-  snapshot_not?: string | null;
-  snapshot_not_contains?: string | null;
-  snapshot_not_ends_with?: string | null;
-  snapshot_not_in?: string[] | null;
-  snapshot_not_starts_with?: string | null;
-  snapshot_starts_with?: string | null;
-  started_at?: string | null;
-  started_at_gt?: string | null;
-  started_at_gte?: string | null;
-  started_at_in?: string[] | null;
-  started_at_lt?: string | null;
-  started_at_lte?: string | null;
-  started_at_not?: string | null;
-  started_at_not_in?: string[] | null;
-  status?: TaskStatus | null;
-  status_in?: TaskStatus[] | null;
-  status_not?: TaskStatus | null;
-  status_not_in?: TaskStatus[] | null;
-  type?: TaskType | null;
-  type_in?: TaskType[] | null;
-  type_not?: TaskType | null;
-  type_not_in?: TaskType[] | null;
-  user?: UserWhereInput | null;
-}
-
-export interface GetTasksRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: TaskOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: TaskWhereInput | null;
 }
 
 export interface NestedAggregateTask {
@@ -24451,8 +25172,6 @@ export enum UploadTaskOrderByInput {
   ArgsDESC = "args_DESC",
   ChunkSizeASC = "chunk_size_ASC",
   ChunkSizeDESC = "chunk_size_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   CurrentChunkASC = "current_chunk_ASC",
   CurrentChunkDESC = "current_chunk_DESC",
   FinishedAtASC = "finished_at_ASC",
@@ -24469,118 +25188,6 @@ export enum UploadTaskOrderByInput {
   StatusDESC = "status_DESC",
   UpdatedAtASC = "updatedAt_ASC",
   UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface UploadTaskWhereInput {
-  AND?: UploadTaskWhereInput[] | null;
-
-  /** @format int64 */
-  chunk_size?: number | null;
-
-  /** @format int64 */
-  chunk_size_gt?: number | null;
-
-  /** @format int64 */
-  chunk_size_gte?: number | null;
-  chunk_size_in?: number[] | null;
-
-  /** @format int64 */
-  chunk_size_lt?: number | null;
-
-  /** @format int64 */
-  chunk_size_lte?: number | null;
-
-  /** @format int64 */
-  chunk_size_not?: number | null;
-  chunk_size_not_in?: number[] | null;
-
-  /** @format int32 */
-  current_chunk?: number | null;
-
-  /** @format int32 */
-  current_chunk_gt?: number | null;
-
-  /** @format int32 */
-  current_chunk_gte?: number | null;
-  current_chunk_in?: number[] | null;
-
-  /** @format int32 */
-  current_chunk_lt?: number | null;
-
-  /** @format int32 */
-  current_chunk_lte?: number | null;
-
-  /** @format int32 */
-  current_chunk_not?: number | null;
-  current_chunk_not_in?: number[] | null;
-  finished_at?: string | null;
-  finished_at_gt?: string | null;
-  finished_at_gte?: string | null;
-  finished_at_in?: string[] | null;
-  finished_at_lt?: string | null;
-  finished_at_lte?: string | null;
-  finished_at_not?: string | null;
-  finished_at_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  NOT?: UploadTaskWhereInput[] | null;
-  OR?: UploadTaskWhereInput[] | null;
-  resource_type?: UploadResourceType | null;
-  resource_type_in?: UploadResourceType[] | null;
-  resource_type_not?: UploadResourceType | null;
-  resource_type_not_in?: UploadResourceType[] | null;
-
-  /** @format int64 */
-  size?: number | null;
-
-  /** @format int64 */
-  size_gt?: number | null;
-
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-
-  /** @format int64 */
-  size_lt?: number | null;
-
-  /** @format int64 */
-  size_lte?: number | null;
-
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  started_at?: string | null;
-  started_at_gt?: string | null;
-  started_at_gte?: string | null;
-  started_at_in?: string[] | null;
-  started_at_lt?: string | null;
-  started_at_lte?: string | null;
-  started_at_not?: string | null;
-  started_at_not_in?: string[] | null;
-  status?: UploadTaskStatus | null;
-  status_in?: UploadTaskStatus[] | null;
-  status_not?: UploadTaskStatus | null;
-  status_not_in?: UploadTaskStatus[] | null;
-  updatedAt?: string | null;
-  updatedAt_gt?: string | null;
-  updatedAt_gte?: string | null;
-  updatedAt_in?: string[] | null;
-  updatedAt_lt?: string | null;
-  updatedAt_lte?: string | null;
-  updatedAt_not?: string | null;
-  updatedAt_not_in?: string[] | null;
 }
 
 export interface GetUploadTasksRequestBody {
@@ -24624,49 +25231,6 @@ export interface GetUploadTasksConnectionRequestBody {
   where?: UploadTaskWhereInput | null;
 }
 
-export enum UsbDeviceOrderByInput {
-  BindedASC = "binded_ASC",
-  BindedDESC = "binded_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  ManufacturerASC = "manufacturer_ASC",
-  ManufacturerDESC = "manufacturer_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsbTypeASC = "usb_type_ASC",
-  UsbTypeDESC = "usb_type_DESC",
-}
-
-export interface GetUsbDevicesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: UsbDeviceOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: UsbDeviceWhereInput | null;
-}
-
 export interface NestedAggregateUsbDevice {
   /** @format int32 */
   count: number;
@@ -24692,11 +25256,6 @@ export interface GetUsbDevicesConnectionRequestBody {
   where?: UsbDeviceWhereInput | null;
 }
 
-export interface NestedUser {
-  id: string;
-  name: string;
-}
-
 export interface UserAuditLog {
   action: string;
   cluster?: NestedCluster | null;
@@ -24710,167 +25269,6 @@ export interface UserAuditLog {
   started_at?: string | null;
   status?: UserAuditLogStatus | null;
   user?: NestedUser | null;
-}
-
-export enum UserAuditLogOrderByInput {
-  ActionASC = "action_ASC",
-  ActionDESC = "action_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  FinishedAtASC = "finished_at_ASC",
-  FinishedAtDESC = "finished_at_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IpAddressASC = "ip_address_ASC",
-  IpAddressDESC = "ip_address_DESC",
-  MessageASC = "message_ASC",
-  MessageDESC = "message_DESC",
-  ResourceIdASC = "resource_id_ASC",
-  ResourceIdDESC = "resource_id_DESC",
-  ResourceTypeASC = "resource_type_ASC",
-  ResourceTypeDESC = "resource_type_DESC",
-  StartedAtASC = "started_at_ASC",
-  StartedAtDESC = "started_at_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface UserAuditLogWhereInput {
-  action?: string | null;
-  action_contains?: string | null;
-  action_ends_with?: string | null;
-  action_gt?: string | null;
-  action_gte?: string | null;
-  action_in?: string[] | null;
-  action_lt?: string | null;
-  action_lte?: string | null;
-  action_not?: string | null;
-  action_not_contains?: string | null;
-  action_not_ends_with?: string | null;
-  action_not_in?: string[] | null;
-  action_not_starts_with?: string | null;
-  action_starts_with?: string | null;
-  AND?: UserAuditLogWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  createdAt?: string | null;
-  createdAt_gt?: string | null;
-  createdAt_gte?: string | null;
-  createdAt_in?: string[] | null;
-  createdAt_lt?: string | null;
-  createdAt_lte?: string | null;
-  createdAt_not?: string | null;
-  createdAt_not_in?: string[] | null;
-  finished_at?: string | null;
-  finished_at_gt?: string | null;
-  finished_at_gte?: string | null;
-  finished_at_in?: string[] | null;
-  finished_at_lt?: string | null;
-  finished_at_lte?: string | null;
-  finished_at_not?: string | null;
-  finished_at_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  ip_address?: string | null;
-  ip_address_contains?: string | null;
-  ip_address_ends_with?: string | null;
-  ip_address_gt?: string | null;
-  ip_address_gte?: string | null;
-  ip_address_in?: string[] | null;
-  ip_address_lt?: string | null;
-  ip_address_lte?: string | null;
-  ip_address_not?: string | null;
-  ip_address_not_contains?: string | null;
-  ip_address_not_ends_with?: string | null;
-  ip_address_not_in?: string[] | null;
-  ip_address_not_starts_with?: string | null;
-  ip_address_starts_with?: string | null;
-  message?: string | null;
-  message_contains?: string | null;
-  message_ends_with?: string | null;
-  message_gt?: string | null;
-  message_gte?: string | null;
-  message_in?: string[] | null;
-  message_lt?: string | null;
-  message_lte?: string | null;
-  message_not?: string | null;
-  message_not_contains?: string | null;
-  message_not_ends_with?: string | null;
-  message_not_in?: string[] | null;
-  message_not_starts_with?: string | null;
-  message_starts_with?: string | null;
-  NOT?: UserAuditLogWhereInput[] | null;
-  OR?: UserAuditLogWhereInput[] | null;
-  resource_id?: string | null;
-  resource_id_contains?: string | null;
-  resource_id_ends_with?: string | null;
-  resource_id_gt?: string | null;
-  resource_id_gte?: string | null;
-  resource_id_in?: string[] | null;
-  resource_id_lt?: string | null;
-  resource_id_lte?: string | null;
-  resource_id_not?: string | null;
-  resource_id_not_contains?: string | null;
-  resource_id_not_ends_with?: string | null;
-  resource_id_not_in?: string[] | null;
-  resource_id_not_starts_with?: string | null;
-  resource_id_starts_with?: string | null;
-  resource_type?: string | null;
-  resource_type_contains?: string | null;
-  resource_type_ends_with?: string | null;
-  resource_type_gt?: string | null;
-  resource_type_gte?: string | null;
-  resource_type_in?: string[] | null;
-  resource_type_lt?: string | null;
-  resource_type_lte?: string | null;
-  resource_type_not?: string | null;
-  resource_type_not_contains?: string | null;
-  resource_type_not_ends_with?: string | null;
-  resource_type_not_in?: string[] | null;
-  resource_type_not_starts_with?: string | null;
-  resource_type_starts_with?: string | null;
-  started_at?: string | null;
-  started_at_gt?: string | null;
-  started_at_gte?: string | null;
-  started_at_in?: string[] | null;
-  started_at_lt?: string | null;
-  started_at_lte?: string | null;
-  started_at_not?: string | null;
-  started_at_not_in?: string[] | null;
-  status?: UserAuditLogStatus | null;
-  status_in?: UserAuditLogStatus[] | null;
-  status_not?: UserAuditLogStatus | null;
-  status_not_in?: UserAuditLogStatus[] | null;
-  user?: UserWhereInput | null;
-}
-
-export interface GetUserAuditLogsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: UserAuditLogOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: UserAuditLogWhereInput | null;
 }
 
 export interface NestedAggregateUserAuditLog {
@@ -24899,8 +25297,6 @@ export interface GetUserAuditLogsConnectionRequestBody {
 }
 
 export enum UserRoleNextOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   NameASC = "name_ASC",
@@ -24909,8 +25305,6 @@ export enum UserRoleNextOrderByInput {
   PlatformDESC = "platform_DESC",
   PresetASC = "preset_ASC",
   PresetDESC = "preset_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetUserRoleNextsRequestBody {
@@ -24954,55 +25348,6 @@ export interface GetUserRoleNextsConnectionRequestBody {
   where?: UserRoleNextWhereInput | null;
 }
 
-export enum UserOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EmailAddressASC = "email_address_ASC",
-  EmailAddressDESC = "email_address_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  LdapDnASC = "ldap_dn_ASC",
-  LdapDnDESC = "ldap_dn_DESC",
-  MobilePhoneASC = "mobile_phone_ASC",
-  MobilePhoneDESC = "mobile_phone_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  PasswordASC = "password_ASC",
-  PasswordDESC = "password_DESC",
-  PasswordExpiredASC = "password_expired_ASC",
-  PasswordExpiredDESC = "password_expired_DESC",
-  PasswordRecoverQaASC = "password_recover_qa_ASC",
-  PasswordRecoverQaDESC = "password_recover_qa_DESC",
-  PasswordUpdatedAtASC = "password_updated_at_ASC",
-  PasswordUpdatedAtDESC = "password_updated_at_DESC",
-  RoleASC = "role_ASC",
-  RoleDESC = "role_DESC",
-  SourceASC = "source_ASC",
-  SourceDESC = "source_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  UsernameASC = "username_ASC",
-  UsernameDESC = "username_DESC",
-}
-
-export interface GetUsersRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: UserOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: UserWhereInput | null;
-}
-
 export interface NestedAggregateUser {
   /** @format int32 */
   count: number;
@@ -25028,21 +25373,7 @@ export interface GetUsersConnectionRequestBody {
   where?: UserWhereInput | null;
 }
 
-export interface VcenterAccount {
-  cluster?: NestedCluster | null;
-  id: string;
-  ip: string;
-  is_valid: boolean;
-  local_id: string;
-
-  /** @format int32 */
-  port: number;
-  username: string;
-}
-
 export enum VcenterAccountOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   IpASC = "ip_ASC",
@@ -25051,12 +25382,8 @@ export enum VcenterAccountOrderByInput {
   IsValidDESC = "is_valid_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
-  PasswordASC = "password_ASC",
-  PasswordDESC = "password_DESC",
   PortASC = "port_ASC",
   PortDESC = "port_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
 }
@@ -25102,49 +25429,6 @@ export interface GetVcenterAccountsConnectionRequestBody {
   where?: VcenterAccountWhereInput | null;
 }
 
-export enum VdsOrderByInput {
-  BondModeASC = "bond_mode_ASC",
-  BondModeDESC = "bond_mode_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  OvsbrNameASC = "ovsbr_name_ASC",
-  OvsbrNameDESC = "ovsbr_name_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VlansNumASC = "vlans_num_ASC",
-  VlansNumDESC = "vlans_num_DESC",
-  WorkModeASC = "work_mode_ASC",
-  WorkModeDESC = "work_mode_DESC",
-}
-
-export interface GetVdsesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VdsOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VdsWhereInput | null;
-}
-
 export interface NestedAggregateVds {
   /** @format int32 */
   count: number;
@@ -25171,8 +25455,6 @@ export interface GetVdsesConnectionRequestBody {
 }
 
 export enum ViewOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -25185,8 +25467,6 @@ export enum ViewOrderByInput {
   TimeSpanDESC = "time_span_DESC",
   TimeUnitASC = "time_unit_ASC",
   TimeUnitDESC = "time_unit_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetViewsRequestBody {
@@ -25228,47 +25508,6 @@ export interface GetViewsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: ViewWhereInput | null;
-}
-
-export enum VlanOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  GatewayIpASC = "gateway_ip_ASC",
-  GatewayIpDESC = "gateway_ip_DESC",
-  GatewaySubnetmaskASC = "gateway_subnetmask_ASC",
-  GatewaySubnetmaskDESC = "gateway_subnetmask_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  SubnetmaskASC = "subnetmask_ASC",
-  SubnetmaskDESC = "subnetmask_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VlanIdASC = "vlan_id_ASC",
-  VlanIdDESC = "vlan_id_DESC",
-}
-
-export interface GetVlansRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VlanOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VlanWhereInput | null;
 }
 
 export interface NestedAggregateVlan {
@@ -25341,8 +25580,6 @@ export enum VmDiskOrderByInput {
   CloudInitImageNameDESC = "cloud_init_image_name_DESC",
   CloudInitImagePathASC = "cloud_init_image_path_ASC",
   CloudInitImagePathDESC = "cloud_init_image_path_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DeviceASC = "device_ASC",
   DeviceDESC = "device_DESC",
   DisabledASC = "disabled_ASC",
@@ -25369,8 +25606,6 @@ export enum VmDiskOrderByInput {
   UnsafeImageUuidDESC = "unsafe_image_uuid_DESC",
   UnsafeProvisionASC = "unsafe_provision_ASC",
   UnsafeProvisionDESC = "unsafe_provision_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetVmDisksRequestBody {
@@ -25427,12 +25662,8 @@ export interface VmEntityFilterResult {
 }
 
 export enum VmEntityFilterResultOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetVmEntityFilterResultsRequestBody {
@@ -25477,16 +25708,12 @@ export interface GetVmEntityFilterResultsConnectionRequestBody {
 }
 
 export enum VmFolderOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VmNumASC = "vm_num_ASC",
   VmNumDESC = "vm_num_DESC",
 }
@@ -25552,8 +25779,6 @@ export interface VmNic {
 }
 
 export enum VmNicOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   EnabledASC = "enabled_ASC",
   EnabledDESC = "enabled_DESC",
   GatewayASC = "gateway_ASC",
@@ -25576,8 +25801,6 @@ export enum VmNicOrderByInput {
   OrderDESC = "order_DESC",
   SubnetMaskASC = "subnet_mask_ASC",
   SubnetMaskDESC = "subnet_mask_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetVmNicsRequestBody {
@@ -25621,57 +25844,6 @@ export interface GetVmNicsConnectionRequestBody {
   where?: VmNicWhereInput | null;
 }
 
-export enum VmPlacementGroupOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EnabledASC = "enabled_ASC",
-  EnabledDESC = "enabled_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LocalUpdatedAtASC = "local_updated_at_ASC",
-  LocalUpdatedAtDESC = "local_updated_at_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VmHostMustEnabledASC = "vm_host_must_enabled_ASC",
-  VmHostMustEnabledDESC = "vm_host_must_enabled_DESC",
-  VmHostMustPolicyASC = "vm_host_must_policy_ASC",
-  VmHostMustPolicyDESC = "vm_host_must_policy_DESC",
-  VmHostPreferEnabledASC = "vm_host_prefer_enabled_ASC",
-  VmHostPreferEnabledDESC = "vm_host_prefer_enabled_DESC",
-  VmHostPreferPolicyASC = "vm_host_prefer_policy_ASC",
-  VmHostPreferPolicyDESC = "vm_host_prefer_policy_DESC",
-  VmVmPolicyASC = "vm_vm_policy_ASC",
-  VmVmPolicyDESC = "vm_vm_policy_DESC",
-  VmVmPolicyEnabledASC = "vm_vm_policy_enabled_ASC",
-  VmVmPolicyEnabledDESC = "vm_vm_policy_enabled_DESC",
-}
-
-export interface GetVmPlacementGroupsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VmPlacementGroupOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VmPlacementGroupWhereInput | null;
-}
-
 export interface NestedAggregateVmPlacementGroup {
   /** @format int32 */
   count: number;
@@ -25695,125 +25867,6 @@ export interface GetVmPlacementGroupsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: VmPlacementGroupWhereInput | null;
-}
-
-export enum VmOrderByInput {
-  ClockOffsetASC = "clock_offset_ASC",
-  ClockOffsetDESC = "clock_offset_DESC",
-  CloudInitSupportedASC = "cloud_init_supported_ASC",
-  CloudInitSupportedDESC = "cloud_init_supported_DESC",
-  CpuASC = "cpu_ASC",
-  CpuDESC = "cpu_DESC",
-  CpuModelASC = "cpu_model_ASC",
-  CpuModelDESC = "cpu_model_DESC",
-  CpuUsageASC = "cpu_usage_ASC",
-  CpuUsageDESC = "cpu_usage_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DeletedAtASC = "deleted_at_ASC",
-  DeletedAtDESC = "deleted_at_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  DnsServersASC = "dns_servers_ASC",
-  DnsServersDESC = "dns_servers_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  FirmwareASC = "firmware_ASC",
-  FirmwareDESC = "firmware_DESC",
-  GuestCpuModelASC = "guest_cpu_model_ASC",
-  GuestCpuModelDESC = "guest_cpu_model_DESC",
-  GuestOsTypeASC = "guest_os_type_ASC",
-  GuestOsTypeDESC = "guest_os_type_DESC",
-  GuestSizeUsageASC = "guest_size_usage_ASC",
-  GuestSizeUsageDESC = "guest_size_usage_DESC",
-  GuestUsedSizeASC = "guest_used_size_ASC",
-  GuestUsedSizeDESC = "guest_used_size_DESC",
-  HaASC = "ha_ASC",
-  HaDESC = "ha_DESC",
-  HostnameASC = "hostname_ASC",
-  HostnameDESC = "hostname_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InRecycleBinASC = "in_recycle_bin_ASC",
-  InRecycleBinDESC = "in_recycle_bin_DESC",
-  InternalASC = "internal_ASC",
-  InternalDESC = "internal_DESC",
-  IoPolicyASC = "io_policy_ASC",
-  IoPolicyDESC = "io_policy_DESC",
-  IpsASC = "ips_ASC",
-  IpsDESC = "ips_DESC",
-  KernelInfoASC = "kernel_info_ASC",
-  KernelInfoDESC = "kernel_info_DESC",
-  LastShutdownTimeASC = "last_shutdown_time_ASC",
-  LastShutdownTimeDESC = "last_shutdown_time_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  LogicalSizeBytesASC = "logical_size_bytes_ASC",
-  LogicalSizeBytesDESC = "logical_size_bytes_DESC",
-  MaxBandwidthASC = "max_bandwidth_ASC",
-  MaxBandwidthDESC = "max_bandwidth_DESC",
-  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
-  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
-  MaxIopsASC = "max_iops_ASC",
-  MaxIopsDESC = "max_iops_DESC",
-  MaxIopsPolicyASC = "max_iops_policy_ASC",
-  MaxIopsPolicyDESC = "max_iops_policy_DESC",
-  MemoryASC = "memory_ASC",
-  MemoryDESC = "memory_DESC",
-  MemoryUsageASC = "memory_usage_ASC",
-  MemoryUsageDESC = "memory_usage_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NestedVirtualizationASC = "nested_virtualization_ASC",
-  NestedVirtualizationDESC = "nested_virtualization_DESC",
-  NodeIpASC = "node_ip_ASC",
-  NodeIpDESC = "node_ip_DESC",
-  OriginalNameASC = "original_name_ASC",
-  OriginalNameDESC = "original_name_DESC",
-  OsASC = "os_ASC",
-  OsDESC = "os_DESC",
-  ProtectedASC = "protected_ASC",
-  ProtectedDESC = "protected_DESC",
-  ProvisionedSizeASC = "provisioned_size_ASC",
-  ProvisionedSizeDESC = "provisioned_size_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VcpuASC = "vcpu_ASC",
-  VcpuDESC = "vcpu_DESC",
-  VideoTypeASC = "video_type_ASC",
-  VideoTypeDESC = "video_type_DESC",
-  VmToolsStatusASC = "vm_tools_status_ASC",
-  VmToolsStatusDESC = "vm_tools_status_DESC",
-  VmToolsVersionASC = "vm_tools_version_ASC",
-  VmToolsVersionDESC = "vm_tools_version_DESC",
-  VmUsageASC = "vm_usage_ASC",
-  VmUsageDESC = "vm_usage_DESC",
-  WinOptASC = "win_opt_ASC",
-  WinOptDESC = "win_opt_DESC",
-}
-
-export interface GetVmsRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VmOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VmWhereInput | null;
 }
 
 export interface NestedAggregateVm {
@@ -25850,8 +25903,6 @@ export enum VmSnapshotOrderByInput {
   CpuDESC = "cpu_DESC",
   CpuModelASC = "cpu_model_ASC",
   CpuModelDESC = "cpu_model_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -25882,8 +25933,6 @@ export enum VmSnapshotOrderByInput {
   NameDESC = "name_DESC",
   SizeASC = "size_ASC",
   SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   VcpuASC = "vcpu_ASC",
   VcpuDESC = "vcpu_DESC",
   VmDisksASC = "vm_disks_ASC",
@@ -25935,77 +25984,6 @@ export interface GetVmSnapshotsConnectionRequestBody {
   where?: VmSnapshotWhereInput | null;
 }
 
-export enum VmTemplateOrderByInput {
-  ClockOffsetASC = "clock_offset_ASC",
-  ClockOffsetDESC = "clock_offset_DESC",
-  CloudInitSupportedASC = "cloud_init_supported_ASC",
-  CloudInitSupportedDESC = "cloud_init_supported_DESC",
-  CpuASC = "cpu_ASC",
-  CpuDESC = "cpu_DESC",
-  CpuModelASC = "cpu_model_ASC",
-  CpuModelDESC = "cpu_model_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  FirmwareASC = "firmware_ASC",
-  FirmwareDESC = "firmware_DESC",
-  HaASC = "ha_ASC",
-  HaDESC = "ha_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IoPolicyASC = "io_policy_ASC",
-  IoPolicyDESC = "io_policy_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  MaxBandwidthASC = "max_bandwidth_ASC",
-  MaxBandwidthDESC = "max_bandwidth_DESC",
-  MaxBandwidthPolicyASC = "max_bandwidth_policy_ASC",
-  MaxBandwidthPolicyDESC = "max_bandwidth_policy_DESC",
-  MaxIopsASC = "max_iops_ASC",
-  MaxIopsDESC = "max_iops_DESC",
-  MaxIopsPolicyASC = "max_iops_policy_ASC",
-  MaxIopsPolicyDESC = "max_iops_policy_DESC",
-  MemoryASC = "memory_ASC",
-  MemoryDESC = "memory_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  VcpuASC = "vcpu_ASC",
-  VcpuDESC = "vcpu_DESC",
-  VideoTypeASC = "video_type_ASC",
-  VideoTypeDESC = "video_type_DESC",
-  VmDisksASC = "vm_disks_ASC",
-  VmDisksDESC = "vm_disks_DESC",
-  VmNicsASC = "vm_nics_ASC",
-  VmNicsDESC = "vm_nics_DESC",
-  WinOptASC = "win_opt_ASC",
-  WinOptDESC = "win_opt_DESC",
-}
-
-export interface GetVmTemplatesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VmTemplateOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VmTemplateWhereInput | null;
-}
-
 export interface NestedAggregateVmTemplate {
   /** @format int32 */
   count: number;
@@ -26029,55 +26007,6 @@ export interface GetVmTemplatesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: VmTemplateWhereInput | null;
-}
-
-export enum VmVolumeOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  ElfStoragePolicyASC = "elf_storage_policy_ASC",
-  ElfStoragePolicyDESC = "elf_storage_policy_DESC",
-  GuestSizeUsageASC = "guest_size_usage_ASC",
-  GuestSizeUsageDESC = "guest_size_usage_DESC",
-  GuestUsedSizeASC = "guest_used_size_ASC",
-  GuestUsedSizeDESC = "guest_used_size_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  MountingASC = "mounting_ASC",
-  MountingDESC = "mounting_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  PathASC = "path_ASC",
-  PathDESC = "path_DESC",
-  SharingASC = "sharing_ASC",
-  SharingDESC = "sharing_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  UniqueSizeASC = "unique_size_ASC",
-  UniqueSizeDESC = "unique_size_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-}
-
-export interface GetVmVolumesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: VmVolumeOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: VmVolumeWhereInput | null;
 }
 
 export interface NestedAggregateVmVolume {
@@ -26105,21 +26034,7 @@ export interface GetVmVolumesConnectionRequestBody {
   where?: VmVolumeWhereInput | null;
 }
 
-export interface VsphereEsxiAccount {
-  host: NestedHost;
-  id: string;
-  ip: string;
-  is_valid: boolean;
-  local_id: string;
-
-  /** @format int32 */
-  port: number;
-  username: string;
-}
-
 export enum VsphereEsxiAccountOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   IpASC = "ip_ASC",
@@ -26128,12 +26043,8 @@ export enum VsphereEsxiAccountOrderByInput {
   IsValidDESC = "is_valid_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
-  PasswordASC = "password_ASC",
-  PasswordDESC = "password_DESC",
   PortASC = "port_ASC",
   PortDESC = "port_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsernameASC = "username_ASC",
   UsernameDESC = "username_DESC",
 }
@@ -26187,6 +26098,7 @@ export interface Witness {
   data_ip: string;
   id: string;
   local_id?: string | null;
+  management_ip: string;
   name: string;
 
   /** @format int64 */
@@ -26208,8 +26120,6 @@ export interface Witness {
 export enum WitnessOrderByInput {
   CpuHzPerCoreASC = "cpu_hz_per_core_ASC",
   CpuHzPerCoreDESC = "cpu_hz_per_core_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   DataIpASC = "data_ip_ASC",
   DataIpDESC = "data_ip_DESC",
   IdASC = "id_ASC",
@@ -26230,8 +26140,6 @@ export enum WitnessOrderByInput {
   TotalCpuHzDESC = "total_cpu_hz_DESC",
   TotalMemoryBytesASC = "total_memory_bytes_ASC",
   TotalMemoryBytesDESC = "total_memory_bytes_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetWitnessesRequestBody {
@@ -26355,8 +26263,6 @@ export interface Zone {
 }
 
 export enum ZoneOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HostNumASC = "host_num_ASC",
@@ -26391,8 +26297,6 @@ export enum ZoneOrderByInput {
   TotalDataCapacityDESC = "total_data_capacity_DESC",
   TotalMemoryBytesASC = "total_memory_bytes_ASC",
   TotalMemoryBytesDESC = "total_memory_bytes_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
   UsedDataSpaceASC = "used_data_space_ASC",
   UsedDataSpaceDESC = "used_data_space_DESC",
   ValidDataSpaceASC = "valid_data_space_ASC",
@@ -26451,14 +26355,10 @@ export interface ZoneTopo {
 }
 
 export enum ZoneTopoOrderByInput {
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
 }
 
 export interface GetZoneTopoesRequestBody {
@@ -26816,6 +26716,78 @@ export namespace Cluster {
   /**
    * No description
    * @tags Cluster
+   * @name UpdateClusterNetworkSetting
+   * @request POST:/update-cluster-network-setting
+   * @secure
+   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateClusterNetworkSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterNetworkSettingUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskCluster[];
+  }
+  /**
+   * No description
+   * @tags Cluster
+   * @name UpdateClusterVirtualizationSetting
+   * @request POST:/update-cluster-virtualization-setting
+   * @secure
+   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateClusterVirtualizationSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterVirtualizationUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskCluster[];
+  }
+  /**
+   * No description
+   * @tags Cluster
+   * @name UpdateClusterHaSetting
+   * @request POST:/update-cluster-ha-setting
+   * @secure
+   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateClusterHaSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterHaUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskClusterSettings[];
+  }
+  /**
+   * No description
+   * @tags Cluster
+   * @name UpdateClusterEnableIscsiSetting
+   * @request POST:/update-cluster-enable-iscsi-setting
+   * @secure
+   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateClusterEnableIscsiSetting {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = ClusterEnableIscsiUpdationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskClusterSettings[];
+  }
+  /**
+   * No description
+   * @tags Cluster
    * @name DeleteCluster
    * @request POST:/delete-cluster
    * @secure
@@ -27074,9 +27046,9 @@ export namespace ContentLibraryImage {
     export type RequestBody = {
       file: File;
       clusters: string;
-      name: string;
-      size: string;
-      description: string;
+      name?: string;
+      size?: string;
+      description?: string;
       upload_task_id?: string;
     };
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
@@ -28100,10 +28072,10 @@ export namespace ElfImage {
     export type RequestQuery = {};
     export type RequestBody = {
       file: File;
-      cluster_id: string;
-      name: string;
-      size: string;
-      description: string;
+      cluster_id?: string;
+      name?: string;
+      size?: string;
+      description?: string;
       upload_task_id?: string;
     };
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
@@ -29314,6 +29286,60 @@ export namespace GlobalSettings {
     export type RequestBody = ClusterRecycleBinDeletionParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskDeleteClusterRecycleBin[];
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name UpdatePasswordSecurity
+   * @request POST:/update-password-security
+   * @secure
+   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdatePasswordSecurity {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdatePassrodSecurityParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskGlobalSettings;
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name UpdateAccessRestriction
+   * @request POST:/update-access-restriction
+   * @secure
+   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateAccessRestriction {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdateAccessRestrictionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskGlobalSettings;
+  }
+  /**
+   * No description
+   * @tags GlobalSettings
+   * @name UpdateSessionTimeout
+   * @request POST:/update-session-timeout
+   * @secure
+   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateSessionTimeout {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdateSessionTimeoutParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskGlobalSettings;
   }
   /**
    * No description
@@ -31565,7 +31591,7 @@ export namespace Vm {
   /**
    * No description
    * @tags Vm
-   * @name MigRateVm
+   * @name MigrateVm
    * @request POST:/migrate-vm
    * @secure
    * @response `200` `(WithTaskVm)[]` Ok
@@ -31573,12 +31599,67 @@ export namespace Vm {
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  export namespace MigRateVm {
+  export namespace MigrateVm {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = VmMigrateParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name MigrateVmAcrossCluster
+   * @request POST:/migrate-vm-across-cluster
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace MigrateVmAcrossCluster {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmMigrateAcrossClusterParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name StopVmInCutoverMigration
+   * @request POST:/stop-vm-in-cutover-migration
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace StopVmInCutoverMigration {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = StopVmInCutoverMigrationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name AbortMigrateVmAcrossCluster
+   * @request POST:/abort-migrate-vm-across-cluster
+   * @secure
+   * @response `200` `(Task)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace AbortMigrateVmAcrossCluster {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = AbortMigrateVmAcrossClusterParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = Task[];
   }
   /**
    * No description
@@ -31634,6 +31715,63 @@ export namespace Vm {
     export type RequestBody = VmUpdateAdvancedOptionsParams;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmHostOptions
+   * @request POST:/update-vm-host-options
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmHostOptions {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateHostOptionsParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name ResetVmGuestOsPassword
+   * @request POST:/reset-vm-guest-os-password
+   * @secure
+   * @response `200` `(any)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ResetVmGuestOsPassword {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmResetGuestOsPasswordParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = any[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name UpdateVmOwner
+   * @request POST:/update-vm-owner
+   * @secure
+   * @response `200` `(any)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `void` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmOwner {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmUpdateOwnerParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = any[];
   }
   /**
    * No description
@@ -31979,6 +32117,282 @@ export namespace Metrics {
     export type RequestBody = GetTopNMetricInput;
     export type RequestHeaders = {};
     export type ResponseBody = WithTaskMetric[];
+  }
+}
+
+export namespace VsphereEsxiAccount {
+  /**
+   * No description
+   * @tags VsphereEsxiAccount
+   * @name UpdateVsphereEsxiAccount
+   * @request POST:/update-vsphere-esxi-account
+   * @secure
+   * @response `200` `(WithTaskVsphereEsxiAccountArray)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVsphereEsxiAccount {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdateVsphereEsxiAccountParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVsphereEsxiAccountArray[];
+  }
+  /**
+   * No description
+   * @tags VsphereEsxiAccount
+   * @name GetVsphereEsxiAccounts
+   * @request POST:/get-vsphere-esxi-accounts
+   * @secure
+   * @response `200` `(VsphereEsxiAccount)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVsphereEsxiAccounts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVsphereEsxiAccountsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VsphereEsxiAccount[];
+  }
+  /**
+   * No description
+   * @tags VsphereEsxiAccount
+   * @name GetVsphereEsxiAccountsConnection
+   * @request POST:/get-vsphere-esxi-accounts-connection
+   * @secure
+   * @response `200` `VsphereEsxiAccountConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVsphereEsxiAccountsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVsphereEsxiAccountsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VsphereEsxiAccountConnection;
+  }
+}
+
+export namespace VcenterAccount {
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name CreateVcenterAccount
+   * @request POST:/create-vcenter-account
+   * @secure
+   * @response `200` `WithTaskVcenterAccount` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVcenterAccount {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = CreateVcenterAccountParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVcenterAccount;
+  }
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name UpdateVcenterAccount
+   * @request POST:/update-vcenter-account
+   * @secure
+   * @response `200` `WithTaskVcenterAccount` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVcenterAccount {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdateVcenterAccountParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVcenterAccount;
+  }
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name GetVcenterAccounts
+   * @request POST:/get-vcenter-accounts
+   * @secure
+   * @response `200` `(VcenterAccount)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVcenterAccounts {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVcenterAccountsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VcenterAccount[];
+  }
+  /**
+   * No description
+   * @tags VcenterAccount
+   * @name GetVcenterAccountsConnection
+   * @request POST:/get-vcenter-accounts-connection
+   * @secure
+   * @response `200` `VcenterAccountConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVcenterAccountsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVcenterAccountsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VcenterAccountConnection;
+  }
+}
+
+export namespace SvtImage {
+  /**
+   * No description
+   * @tags SvtImage
+   * @name UploadSvtImage
+   * @request POST:/upload-svt-image
+   * @secure
+   * @response `200` `(UploadTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UploadSvtImage {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = {
+      file: File;
+      cluster_id?: string;
+      name?: string;
+      size?: string;
+      version?: string;
+      upload_task_id?: string;
+    };
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTask[];
+  }
+  /**
+   * No description
+   * @tags SvtImage
+   * @name GetSvtImages
+   * @request POST:/get-svt-images
+   * @secure
+   * @response `200` `(SvtImage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSvtImages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSvtImagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SvtImage[];
+  }
+  /**
+   * No description
+   * @tags SvtImage
+   * @name GetSvtImagesConnection
+   * @request POST:/get-svt-images-connection
+   * @secure
+   * @response `200` `SvtImageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetSvtImagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetSvtImagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = SvtImageConnection;
+  }
+}
+
+export namespace TableReporter {
+  /**
+   * No description
+   * @tags TableReporter
+   * @name ExportCsv
+   * @request POST:/export-csv
+   * @secure
+   * @response `200` `string` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace ExportCsv {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = TableReporterParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = string;
+  }
+}
+
+export namespace UploadTask {
+  /**
+   * No description
+   * @tags UploadTask
+   * @name CancelUploadTask
+   * @request POST:/cancel-upload-task
+   * @secure
+   * @response `200` `(string)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CancelUploadTask {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = CancelUploadTaskParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = string[];
+  }
+  /**
+   * No description
+   * @tags UploadTask
+   * @name GetUploadTasks
+   * @request POST:/get-upload-tasks
+   * @secure
+   * @response `200` `(UploadTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUploadTasks {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUploadTasksRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTask[];
+  }
+  /**
+   * No description
+   * @tags UploadTask
+   * @name GetUploadTasksConnection
+   * @request POST:/get-upload-tasks-connection
+   * @secure
+   * @response `200` `UploadTaskConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetUploadTasksConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetUploadTasksConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTaskConnection;
   }
 }
 
@@ -32842,45 +33256,6 @@ export namespace SnapshotPlanTask {
   }
 }
 
-export namespace SvtImage {
-  /**
-   * No description
-   * @tags SvtImage
-   * @name GetSvtImages
-   * @request POST:/get-svt-images
-   * @secure
-   * @response `200` `(SvtImage)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSvtImages {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSvtImagesRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SvtImage[];
-  }
-  /**
-   * No description
-   * @tags SvtImage
-   * @name GetSvtImagesConnection
-   * @request POST:/get-svt-images-connection
-   * @secure
-   * @response `200` `SvtImageConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetSvtImagesConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetSvtImagesConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = SvtImageConnection;
-  }
-}
-
 export namespace SystemAuditLog {
   /**
    * No description
@@ -32959,45 +33334,6 @@ export namespace Task {
   }
 }
 
-export namespace UploadTask {
-  /**
-   * No description
-   * @tags UploadTask
-   * @name GetUploadTasks
-   * @request POST:/get-upload-tasks
-   * @secure
-   * @response `200` `(UploadTask)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUploadTasks {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUploadTasksRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UploadTask[];
-  }
-  /**
-   * No description
-   * @tags UploadTask
-   * @name GetUploadTasksConnection
-   * @request POST:/get-upload-tasks-connection
-   * @secure
-   * @response `200` `UploadTaskConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetUploadTasksConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetUploadTasksConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = UploadTaskConnection;
-  }
-}
-
 export namespace UserAuditLog {
   /**
    * No description
@@ -33034,45 +33370,6 @@ export namespace UserAuditLog {
     export type RequestBody = GetUserAuditLogsConnectionRequestBody;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = UserAuditLogConnection;
-  }
-}
-
-export namespace VcenterAccount {
-  /**
-   * No description
-   * @tags VcenterAccount
-   * @name GetVcenterAccounts
-   * @request POST:/get-vcenter-accounts
-   * @secure
-   * @response `200` `(VcenterAccount)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVcenterAccounts {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVcenterAccountsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VcenterAccount[];
-  }
-  /**
-   * No description
-   * @tags VcenterAccount
-   * @name GetVcenterAccountsConnection
-   * @request POST:/get-vcenter-accounts-connection
-   * @secure
-   * @response `200` `VcenterAccountConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVcenterAccountsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVcenterAccountsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VcenterAccountConnection;
   }
 }
 
@@ -33190,45 +33487,6 @@ export namespace VmNic {
     export type RequestBody = GetVmNicsConnectionRequestBody;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = VmNicConnection;
-  }
-}
-
-export namespace VsphereEsxiAccount {
-  /**
-   * No description
-   * @tags VsphereEsxiAccount
-   * @name GetVsphereEsxiAccounts
-   * @request POST:/get-vsphere-esxi-accounts
-   * @secure
-   * @response `200` `(VsphereEsxiAccount)[]` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVsphereEsxiAccounts {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVsphereEsxiAccountsRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VsphereEsxiAccount[];
-  }
-  /**
-   * No description
-   * @tags VsphereEsxiAccount
-   * @name GetVsphereEsxiAccountsConnection
-   * @request POST:/get-vsphere-esxi-accounts-connection
-   * @secure
-   * @response `200` `VsphereEsxiAccountConnection` Ok
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  export namespace GetVsphereEsxiAccountsConnection {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = GetVsphereEsxiAccountsConnectionRequestBody;
-    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
-    export type ResponseBody = VsphereEsxiAccountConnection;
   }
 }
 
@@ -33370,10 +33628,11 @@ export namespace ZoneTopo {
   }
 }
 
-export type QueryParamsType = Record<string | number, any>;
-export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from "axios";
 
-export interface FullRequestParams extends Omit<RequestInit, "body"> {
+export type QueryParamsType = Record<string | number, any>;
+
+export interface FullRequestParams extends Omit<AxiosRequestConfig, "data" | "params" | "url" | "responseType"> {
   /** set parameter to `true` for call `securityWorker` for this request */
   secure?: boolean;
   /** request path */
@@ -33383,30 +33642,20 @@ export interface FullRequestParams extends Omit<RequestInit, "body"> {
   /** query params */
   query?: QueryParamsType;
   /** format of response (i.e. response.json() -> format: "json") */
-  format?: ResponseFormat;
+  format?: ResponseType;
   /** request body */
   body?: unknown;
-  /** base url */
-  baseUrl?: string;
-  /** request cancellation token */
-  cancelToken?: CancelToken;
 }
 
 export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
 
-export interface ApiConfig<SecurityDataType = unknown> {
-  baseUrl?: string;
-  baseApiParams?: Omit<RequestParams, "baseUrl" | "cancelToken" | "signal">;
-  securityWorker?: (securityData: SecurityDataType | null) => Promise<RequestParams | void> | RequestParams | void;
-  customFetch?: typeof fetch;
+export interface ApiConfig<SecurityDataType = unknown> extends Omit<AxiosRequestConfig, "data" | "cancelToken"> {
+  securityWorker?: (
+    securityData: SecurityDataType | null,
+  ) => Promise<AxiosRequestConfig | void> | AxiosRequestConfig | void;
+  secure?: boolean;
+  format?: ResponseType;
 }
-
-export interface HttpResponse<D extends unknown, E extends unknown = unknown> extends Response {
-  data: D;
-  error: E;
-}
-
-type CancelToken = Symbol | string | number;
 
 export enum ContentType {
   Json = "application/json",
@@ -33415,172 +33664,93 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = "/v2/api";
+  public instance: AxiosInstance;
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
-  private abortControllers = new Map<CancelToken, AbortController>();
-  private customFetch = (...fetchParams: Parameters<typeof fetch>) => fetch(...fetchParams);
+  private secure?: boolean;
+  private format?: ResponseType;
 
-  private baseApiParams: RequestParams = {
-    credentials: "same-origin",
-    headers: {},
-    redirect: "follow",
-    referrerPolicy: "no-referrer",
-  };
-
-  constructor(apiConfig: ApiConfig<SecurityDataType> = {}) {
-    Object.assign(this, apiConfig);
+  constructor({ securityWorker, secure, format, ...axiosConfig }: ApiConfig<SecurityDataType> = {}) {
+    this.instance = axios.create({ ...axiosConfig, baseURL: axiosConfig.baseURL || "/v2/api" });
+    this.secure = secure;
+    this.format = format;
+    this.securityWorker = securityWorker;
   }
 
   public setSecurityData = (data: SecurityDataType | null) => {
     this.securityData = data;
   };
 
-  private encodeQueryParam(key: string, value: any) {
-    const encodedKey = encodeURIComponent(key);
-    return `${encodedKey}=${encodeURIComponent(typeof value === "number" ? value : `${value}`)}`;
-  }
-
-  private addQueryParam(query: QueryParamsType, key: string) {
-    return this.encodeQueryParam(key, query[key]);
-  }
-
-  private addArrayQueryParam(query: QueryParamsType, key: string) {
-    const value = query[key];
-    return value.map((v: any) => this.encodeQueryParam(key, v)).join("&");
-  }
-
-  protected toQueryString(rawQuery?: QueryParamsType): string {
-    const query = rawQuery || {};
-    const keys = Object.keys(query).filter((key) => "undefined" !== typeof query[key]);
-    return keys
-      .map((key) => (Array.isArray(query[key]) ? this.addArrayQueryParam(query, key) : this.addQueryParam(query, key)))
-      .join("&");
-  }
-
-  protected addQueryParams(rawQuery?: QueryParamsType): string {
-    const queryString = this.toQueryString(rawQuery);
-    return queryString ? `?${queryString}` : "";
-  }
-
-  private contentFormatters: Record<ContentType, (input: any) => any> = {
-    [ContentType.Json]: (input: any) =>
-      input !== null && (typeof input === "object" || typeof input === "string") ? JSON.stringify(input) : input,
-    [ContentType.FormData]: (input: any) =>
-      Object.keys(input || {}).reduce((formData, key) => {
-        const property = input[key];
-        formData.append(
-          key,
-          property instanceof Blob
-            ? property
-            : typeof property === "object" && property !== null
-            ? JSON.stringify(property)
-            : `${property}`,
-        );
-        return formData;
-      }, new FormData()),
-    [ContentType.UrlEncoded]: (input: any) => this.toQueryString(input),
-  };
-
-  private mergeRequestParams(params1: RequestParams, params2?: RequestParams): RequestParams {
+  private mergeRequestParams(params1: AxiosRequestConfig, params2?: AxiosRequestConfig): AxiosRequestConfig {
     return {
-      ...this.baseApiParams,
+      ...this.instance.defaults,
       ...params1,
       ...(params2 || {}),
       headers: {
-        ...(this.baseApiParams.headers || {}),
+        ...(this.instance.defaults.headers || {}),
         ...(params1.headers || {}),
         ...((params2 && params2.headers) || {}),
       },
     };
   }
 
-  private createAbortSignal = (cancelToken: CancelToken): AbortSignal | undefined => {
-    if (this.abortControllers.has(cancelToken)) {
-      const abortController = this.abortControllers.get(cancelToken);
-      if (abortController) {
-        return abortController.signal;
-      }
-      return void 0;
-    }
+  private createFormData(input: Record<string, unknown>): FormData {
+    return Object.keys(input || {}).reduce((formData, key) => {
+      const property = input[key];
+      formData.append(
+        key,
+        property instanceof Blob
+          ? property
+          : typeof property === "object" && property !== null
+          ? JSON.stringify(property)
+          : `${property}`,
+      );
+      return formData;
+    }, new FormData());
+  }
 
-    const abortController = new AbortController();
-    this.abortControllers.set(cancelToken, abortController);
-    return abortController.signal;
-  };
-
-  public abortRequest = (cancelToken: CancelToken) => {
-    const abortController = this.abortControllers.get(cancelToken);
-
-    if (abortController) {
-      abortController.abort();
-      this.abortControllers.delete(cancelToken);
-    }
-  };
-
-  public request = async <T = any, E = any>({
-    body,
+  public request = async <T = any, _E = any>({
     secure,
     path,
     type,
     query,
     format,
-    baseUrl,
-    cancelToken,
+    body,
     ...params
-  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
+  }: FullRequestParams): Promise<AxiosResponse<T>> => {
     const secureParams =
-      ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
+      ((typeof secure === "boolean" ? secure : this.secure) &&
         this.securityWorker &&
         (await this.securityWorker(this.securityData))) ||
       {};
     const requestParams = this.mergeRequestParams(params, secureParams);
-    const queryString = query && this.toQueryString(query);
-    const payloadFormatter = this.contentFormatters[type || ContentType.Json];
-    const responseFormat = format || requestParams.format;
+    const responseFormat = (format && this.format) || void 0;
 
-    return this.customFetch(`${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`, {
+    if (type === ContentType.FormData && body && body !== null && typeof body === "object") {
+      requestParams.headers.common = { Accept: "*/*" };
+      requestParams.headers.post = {};
+      requestParams.headers.put = {};
+
+      body = this.createFormData(body as Record<string, unknown>);
+    }
+
+    return this.instance.request({
       ...requestParams,
       headers: {
         ...(type && type !== ContentType.FormData ? { "Content-Type": type } : {}),
         ...(requestParams.headers || {}),
       },
-      signal: cancelToken ? this.createAbortSignal(cancelToken) : void 0,
-      body: typeof body === "undefined" || body === null ? null : payloadFormatter(body),
-    }).then(async (response) => {
-      const r = response as HttpResponse<T, E>;
-      r.data = null as unknown as T;
-      r.error = null as unknown as E;
-
-      const data = !responseFormat
-        ? r
-        : await response[responseFormat]()
-            .then((data) => {
-              if (r.ok) {
-                r.data = data;
-              } else {
-                r.error = data;
-              }
-              return r;
-            })
-            .catch((e) => {
-              r.error = e;
-              return r;
-            });
-
-      if (cancelToken) {
-        this.abortControllers.delete(cancelToken);
-      }
-
-      if (!response.ok) throw data;
-      return data;
+      params: query,
+      responseType: responseFormat,
+      data: body,
+      url: path,
     });
   };
 }
 
 /**
  * @title CloudTower APIs
- * @version 1.9.0
+ * @version 2.1.0
  * @baseUrl /
  *
  * cloudtower operation API and SDK
@@ -33968,6 +34138,98 @@ export class Api<SecurityDataType extends unknown> {
      * No description
      *
      * @tags Cluster
+     * @name UpdateClusterNetworkSetting
+     * @request POST:/update-cluster-network-setting
+     * @secure
+     * @response `200` `(WithTaskCluster)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateClusterNetworkSetting: (data: ClusterNetworkSettingUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskCluster[], ErrorBody>({
+        path: `/update-cluster-network-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
+     * @name UpdateClusterVirtualizationSetting
+     * @request POST:/update-cluster-virtualization-setting
+     * @secure
+     * @response `200` `(WithTaskCluster)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateClusterVirtualizationSetting: (data: ClusterVirtualizationUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskCluster[], ErrorBody>({
+        path: `/update-cluster-virtualization-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
+     * @name UpdateClusterHaSetting
+     * @request POST:/update-cluster-ha-setting
+     * @secure
+     * @response `200` `(WithTaskClusterSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateClusterHaSetting: (data: ClusterHaUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskClusterSettings[], ErrorBody>({
+        path: `/update-cluster-ha-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
+     * @name UpdateClusterEnableIscsiSetting
+     * @request POST:/update-cluster-enable-iscsi-setting
+     * @secure
+     * @response `200` `(WithTaskClusterSettings)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateClusterEnableIscsiSetting: (data: ClusterEnableIscsiUpdationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskClusterSettings[], ErrorBody>({
+        path: `/update-cluster-enable-iscsi-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Cluster
      * @name DeleteCluster
      * @request POST:/delete-cluster
      * @secure
@@ -34283,7 +34545,14 @@ export class Api<SecurityDataType extends unknown> {
      * @response `500` `ErrorBody` Server error
      */
     createContentLibraryImage: (
-      data: { file: File; clusters: string; name: string; size: string; description: string; upload_task_id?: string },
+      data: {
+        file: File;
+        clusters: string;
+        name?: string;
+        size?: string;
+        description?: string;
+        upload_task_id?: string;
+      },
       params: RequestParams = {},
     ) =>
       this.http.request<UploadTask[], void | ErrorBody>({
@@ -35581,10 +35850,10 @@ export class Api<SecurityDataType extends unknown> {
     createElfImage: (
       data: {
         file: File;
-        cluster_id: string;
-        name: string;
-        size: string;
-        description: string;
+        cluster_id?: string;
+        name?: string;
+        size?: string;
+        description?: string;
         upload_task_id?: string;
       },
       params: RequestParams = {},
@@ -37096,6 +37365,75 @@ export class Api<SecurityDataType extends unknown> {
     deleteClusterRecycleBinSetting: (data: ClusterRecycleBinDeletionParams, params: RequestParams = {}) =>
       this.http.request<WithTaskDeleteClusterRecycleBin[], ErrorBody>({
         path: `/delete-cluster-recycle-bin-setting`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name UpdatePasswordSecurity
+     * @request POST:/update-password-security
+     * @secure
+     * @response `200` `WithTaskGlobalSettings` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updatePasswordSecurity: (data: UpdatePassrodSecurityParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskGlobalSettings, ErrorBody>({
+        path: `/update-password-security`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name UpdateAccessRestriction
+     * @request POST:/update-access-restriction
+     * @secure
+     * @response `200` `WithTaskGlobalSettings` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateAccessRestriction: (data: UpdateAccessRestrictionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskGlobalSettings, ErrorBody>({
+        path: `/update-access-restriction`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags GlobalSettings
+     * @name UpdateSessionTimeout
+     * @request POST:/update-session-timeout
+     * @secure
+     * @response `200` `WithTaskGlobalSettings` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateSessionTimeout: (data: UpdateSessionTimeoutParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskGlobalSettings, ErrorBody>({
+        path: `/update-session-timeout`,
         method: "POST",
         body: data,
         secure: true,
@@ -39929,7 +40267,7 @@ export class Api<SecurityDataType extends unknown> {
      * No description
      *
      * @tags Vm
-     * @name MigRateVm
+     * @name MigrateVm
      * @request POST:/migrate-vm
      * @secure
      * @response `200` `(WithTaskVm)[]` Ok
@@ -39937,9 +40275,79 @@ export class Api<SecurityDataType extends unknown> {
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
-    migRateVm: (data: VmMigrateParams, params: RequestParams = {}) =>
+    migrateVm: (data: VmMigrateParams, params: RequestParams = {}) =>
       this.http.request<WithTaskVm[], ErrorBody>({
         path: `/migrate-vm`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name MigrateVmAcrossCluster
+     * @request POST:/migrate-vm-across-cluster
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    migrateVmAcrossCluster: (data: VmMigrateAcrossClusterParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], void | ErrorBody>({
+        path: `/migrate-vm-across-cluster`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name StopVmInCutoverMigration
+     * @request POST:/stop-vm-in-cutover-migration
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    stopVmInCutoverMigration: (data: StopVmInCutoverMigrationParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/stop-vm-in-cutover-migration`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name AbortMigrateVmAcrossCluster
+     * @request POST:/abort-migrate-vm-across-cluster
+     * @secure
+     * @response `200` `(Task)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    abortMigrateVmAcrossCluster: (data: AbortMigrateVmAcrossClusterParams, params: RequestParams = {}) =>
+      this.http.request<Task[], ErrorBody>({
+        path: `/abort-migrate-vm-across-cluster`,
         method: "POST",
         body: data,
         secure: true,
@@ -40010,6 +40418,78 @@ export class Api<SecurityDataType extends unknown> {
     updateVmAdvancedOptions: (data: VmUpdateAdvancedOptionsParams, params: RequestParams = {}) =>
       this.http.request<WithTaskVm[], void | ErrorBody>({
         path: `/update-vm-advanced-options`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmHostOptions
+     * @request POST:/update-vm-host-options
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmHostOptions: (data: VmUpdateHostOptionsParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVm[], void | ErrorBody>({
+        path: `/update-vm-host-options`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name ResetVmGuestOsPassword
+     * @request POST:/reset-vm-guest-os-password
+     * @secure
+     * @response `200` `(any)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    resetVmGuestOsPassword: (data: VmResetGuestOsPasswordParams, params: RequestParams = {}) =>
+      this.http.request<any[], void | ErrorBody>({
+        path: `/reset-vm-guest-os-password`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name UpdateVmOwner
+     * @request POST:/update-vm-owner
+     * @secure
+     * @response `200` `(any)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `void` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmOwner: (data: VmUpdateOwnerParams, params: RequestParams = {}) =>
+      this.http.request<any[], void | ErrorBody>({
+        path: `/update-vm-owner`,
         method: "POST",
         body: data,
         secure: true,
@@ -40448,6 +40928,345 @@ export class Api<SecurityDataType extends unknown> {
     getTopNVmVolumeMetrics: (data: GetTopNMetricInput, params: RequestParams = {}) =>
       this.http.request<WithTaskMetric[], ErrorBody>({
         path: `/get-top-n-metrics-in-clusters`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vsphereEsxiAccount = {
+    /**
+     * No description
+     *
+     * @tags VsphereEsxiAccount
+     * @name UpdateVsphereEsxiAccount
+     * @request POST:/update-vsphere-esxi-account
+     * @secure
+     * @response `200` `(WithTaskVsphereEsxiAccountArray)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVsphereEsxiAccount: (data: UpdateVsphereEsxiAccountParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVsphereEsxiAccountArray[], void | ErrorBody>({
+        path: `/update-vsphere-esxi-account`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VsphereEsxiAccount
+     * @name GetVsphereEsxiAccounts
+     * @request POST:/get-vsphere-esxi-accounts
+     * @secure
+     * @response `200` `(VsphereEsxiAccount)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVsphereEsxiAccounts: (data: GetVsphereEsxiAccountsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VsphereEsxiAccount[], ErrorBody>({
+        path: `/get-vsphere-esxi-accounts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VsphereEsxiAccount
+     * @name GetVsphereEsxiAccountsConnection
+     * @request POST:/get-vsphere-esxi-accounts-connection
+     * @secure
+     * @response `200` `VsphereEsxiAccountConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVsphereEsxiAccountsConnection: (data: GetVsphereEsxiAccountsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VsphereEsxiAccountConnection, ErrorBody>({
+        path: `/get-vsphere-esxi-accounts-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  vcenterAccount = {
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name CreateVcenterAccount
+     * @request POST:/create-vcenter-account
+     * @secure
+     * @response `200` `WithTaskVcenterAccount` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVcenterAccount: (data: CreateVcenterAccountParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVcenterAccount, ErrorBody>({
+        path: `/create-vcenter-account`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name UpdateVcenterAccount
+     * @request POST:/update-vcenter-account
+     * @secure
+     * @response `200` `WithTaskVcenterAccount` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVcenterAccount: (data: UpdateVcenterAccountParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVcenterAccount, ErrorBody>({
+        path: `/update-vcenter-account`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name GetVcenterAccounts
+     * @request POST:/get-vcenter-accounts
+     * @secure
+     * @response `200` `(VcenterAccount)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVcenterAccounts: (data: GetVcenterAccountsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VcenterAccount[], ErrorBody>({
+        path: `/get-vcenter-accounts`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VcenterAccount
+     * @name GetVcenterAccountsConnection
+     * @request POST:/get-vcenter-accounts-connection
+     * @secure
+     * @response `200` `VcenterAccountConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVcenterAccountsConnection: (data: GetVcenterAccountsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VcenterAccountConnection, ErrorBody>({
+        path: `/get-vcenter-accounts-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  svtImage = {
+    /**
+     * No description
+     *
+     * @tags SvtImage
+     * @name UploadSvtImage
+     * @request POST:/upload-svt-image
+     * @secure
+     * @response `200` `(UploadTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    uploadSvtImage: (
+      data: {
+        file: File;
+        cluster_id?: string;
+        name?: string;
+        size?: string;
+        version?: string;
+        upload_task_id?: string;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.http.request<UploadTask[], ErrorBody>({
+        path: `/upload-svt-image`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.FormData,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SvtImage
+     * @name GetSvtImages
+     * @request POST:/get-svt-images
+     * @secure
+     * @response `200` `(SvtImage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSvtImages: (data: GetSvtImagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<SvtImage[], ErrorBody>({
+        path: `/get-svt-images`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags SvtImage
+     * @name GetSvtImagesConnection
+     * @request POST:/get-svt-images-connection
+     * @secure
+     * @response `200` `SvtImageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getSvtImagesConnection: (data: GetSvtImagesConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<SvtImageConnection, ErrorBody>({
+        path: `/get-svt-images-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  tableReporter = {
+    /**
+     * No description
+     *
+     * @tags TableReporter
+     * @name ExportCsv
+     * @request POST:/export-csv
+     * @secure
+     * @response `200` `string` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    exportCsv: (data: TableReporterParams, params: RequestParams = {}) =>
+      this.http.request<string, ErrorBody>({
+        path: `/export-csv`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  uploadTask = {
+    /**
+     * No description
+     *
+     * @tags UploadTask
+     * @name CancelUploadTask
+     * @request POST:/cancel-upload-task
+     * @secure
+     * @response `200` `(string)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cancelUploadTask: (data: CancelUploadTaskParams, params: RequestParams = {}) =>
+      this.http.request<string[], void | ErrorBody>({
+        path: `/cancel-upload-task`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UploadTask
+     * @name GetUploadTasks
+     * @request POST:/get-upload-tasks
+     * @secure
+     * @response `200` `(UploadTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUploadTasks: (data: GetUploadTasksRequestBody, params: RequestParams = {}) =>
+      this.http.request<UploadTask[], ErrorBody>({
+        path: `/get-upload-tasks`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags UploadTask
+     * @name GetUploadTasksConnection
+     * @request POST:/get-upload-tasks-connection
+     * @secure
+     * @response `200` `UploadTaskConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getUploadTasksConnection: (data: GetUploadTasksConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<UploadTaskConnection, ErrorBody>({
+        path: `/get-upload-tasks-connection`,
         method: "POST",
         body: data,
         secure: true,
@@ -41492,53 +42311,6 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  svtImage = {
-    /**
-     * No description
-     *
-     * @tags SvtImage
-     * @name GetSvtImages
-     * @request POST:/get-svt-images
-     * @secure
-     * @response `200` `(SvtImage)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSvtImages: (data: GetSvtImagesRequestBody, params: RequestParams = {}) =>
-      this.http.request<SvtImage[], ErrorBody>({
-        path: `/get-svt-images`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags SvtImage
-     * @name GetSvtImagesConnection
-     * @request POST:/get-svt-images-connection
-     * @secure
-     * @response `200` `SvtImageConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getSvtImagesConnection: (data: GetSvtImagesConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<SvtImageConnection, ErrorBody>({
-        path: `/get-svt-images-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
   systemAuditLog = {
     /**
      * No description
@@ -41633,53 +42405,6 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
-  uploadTask = {
-    /**
-     * No description
-     *
-     * @tags UploadTask
-     * @name GetUploadTasks
-     * @request POST:/get-upload-tasks
-     * @secure
-     * @response `200` `(UploadTask)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUploadTasks: (data: GetUploadTasksRequestBody, params: RequestParams = {}) =>
-      this.http.request<UploadTask[], ErrorBody>({
-        path: `/get-upload-tasks`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags UploadTask
-     * @name GetUploadTasksConnection
-     * @request POST:/get-upload-tasks-connection
-     * @secure
-     * @response `200` `UploadTaskConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getUploadTasksConnection: (data: GetUploadTasksConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<UploadTaskConnection, ErrorBody>({
-        path: `/get-upload-tasks-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
   userAuditLog = {
     /**
      * No description
@@ -41719,53 +42444,6 @@ export class Api<SecurityDataType extends unknown> {
     getUserAuditLogsConnection: (data: GetUserAuditLogsConnectionRequestBody, params: RequestParams = {}) =>
       this.http.request<UserAuditLogConnection, ErrorBody>({
         path: `/get-user-audit-logs-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  vcenterAccount = {
-    /**
-     * No description
-     *
-     * @tags VcenterAccount
-     * @name GetVcenterAccounts
-     * @request POST:/get-vcenter-accounts
-     * @secure
-     * @response `200` `(VcenterAccount)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVcenterAccounts: (data: GetVcenterAccountsRequestBody, params: RequestParams = {}) =>
-      this.http.request<VcenterAccount[], ErrorBody>({
-        path: `/get-vcenter-accounts`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags VcenterAccount
-     * @name GetVcenterAccountsConnection
-     * @request POST:/get-vcenter-accounts-connection
-     * @secure
-     * @response `200` `VcenterAccountConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVcenterAccountsConnection: (data: GetVcenterAccountsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VcenterAccountConnection, ErrorBody>({
-        path: `/get-vcenter-accounts-connection`,
         method: "POST",
         body: data,
         secure: true,
@@ -41910,53 +42588,6 @@ export class Api<SecurityDataType extends unknown> {
     getVmNicsConnection: (data: GetVmNicsConnectionRequestBody, params: RequestParams = {}) =>
       this.http.request<VmNicConnection, ErrorBody>({
         path: `/get-vm-nics-connection`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-  };
-  vsphereEsxiAccount = {
-    /**
-     * No description
-     *
-     * @tags VsphereEsxiAccount
-     * @name GetVsphereEsxiAccounts
-     * @request POST:/get-vsphere-esxi-accounts
-     * @secure
-     * @response `200` `(VsphereEsxiAccount)[]` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVsphereEsxiAccounts: (data: GetVsphereEsxiAccountsRequestBody, params: RequestParams = {}) =>
-      this.http.request<VsphereEsxiAccount[], ErrorBody>({
-        path: `/get-vsphere-esxi-accounts`,
-        method: "POST",
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: "json",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags VsphereEsxiAccount
-     * @name GetVsphereEsxiAccountsConnection
-     * @request POST:/get-vsphere-esxi-accounts-connection
-     * @secure
-     * @response `200` `VsphereEsxiAccountConnection` Ok
-     * @response `400` `ErrorBody` Bad request
-     * @response `404` `ErrorBody` Not found
-     * @response `500` `ErrorBody` Server error
-     */
-    getVsphereEsxiAccountsConnection: (data: GetVsphereEsxiAccountsConnectionRequestBody, params: RequestParams = {}) =>
-      this.http.request<VsphereEsxiAccountConnection, ErrorBody>({
-        path: `/get-vsphere-esxi-accounts-connection`,
         method: "POST",
         body: data,
         secure: true,
