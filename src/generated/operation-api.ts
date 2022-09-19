@@ -7431,6 +7431,10 @@ export interface VmVolumeWhereInput {
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
+  type?: VmVolumeType | null;
+  type_in?: VmVolumeType[] | null;
+  type_not?: VmVolumeType | null;
+  type_not_in?: VmVolumeType[] | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -7463,6 +7467,11 @@ export enum VmVolumeElfStoragePolicyType {
   REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
   REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
   REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
+}
+
+export enum VmVolumeType {
+  KVM_VOLUME = "KVM_VOLUME",
+  KVM_VOLUME_ISCSI = "KVM_VOLUME_ISCSI",
 }
 
 export interface VmSnapshotWhereInput {
@@ -8195,6 +8204,7 @@ export interface SnapshotPlanWhereInput {
 export enum SnapshotPlanExecuteType {
   DAY = "DAY",
   HOUR = "HOUR",
+  MINUTE = "MINUTE",
   MONTH = "MONTH",
   WEEK = "WEEK",
 }
@@ -11033,7 +11043,9 @@ export enum VmToolsStatus {
 }
 
 export enum VmUsage {
+  ADVANCED_MONITORING = "ADVANCED_MONITORING",
   BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
+  CLOUDTOWER = "CLOUDTOWER",
   EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
 }
 
@@ -13021,7 +13033,7 @@ export interface NestedPartition {
   size: number;
   usage: PartitionUsage;
 
-  /** @format double */
+  /** @format int64 */
   used_size: number;
 }
 
@@ -15454,17 +15466,17 @@ export interface NestedAuthSettings {
   access_mode?: AccessMode | null;
   enable_single_session_login?: boolean | null;
 
-  /** @format int64 */
+  /** @format int32 */
   login_miss_num_threshold?: number | null;
 
-  /** @format int64 */
+  /** @format int32 */
   login_miss_time_threshold?: number | null;
   password_complexity?: PasswordComplexity | null;
 
-  /** @format int64 */
+  /** @format int32 */
   password_expire_days?: number | null;
 
-  /** @format int64 */
+  /** @format int32 */
   session_max_age?: number | null;
 }
 
@@ -17221,7 +17233,7 @@ export interface NestedSnapshotGroup {
 }
 
 export interface NestedFrozenDisks {
-  /** @format int64 */
+  /** @format int32 */
   boot: number;
   bus: Bus;
   disabled?: boolean | null;
@@ -17259,7 +17271,7 @@ export interface NestedFrozenVlan {
   name: string;
   vds_ovs: string;
 
-  /** @format int64 */
+  /** @format int32 */
   vlan_id: number;
   vlan_local_id: string;
 }
@@ -17451,6 +17463,7 @@ export interface VmVolume {
 
   /** @format int64 */
   size: number;
+  type?: VmVolumeType | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -17483,6 +17496,31 @@ export interface WithTaskDeleteVmVolume {
 
 export interface VmVolumeDeletionParams {
   where: VmVolumeWhereInput;
+}
+
+export interface VmVolumeRebuildParams {
+  name: string;
+  description: string;
+  volume_snapshot_id: string;
+}
+
+export interface VmVolumeRollbackParams {
+  volume_snapshot_id: string;
+}
+
+export interface VmVolumeWhereUniqueInput {
+  id?: string | null;
+  local_id?: string | null;
+}
+
+export interface CloneVmVolumeParams {
+  where: VmVolumeWhereUniqueInput;
+  data: { description?: string; name: string };
+}
+
+export interface UpdateVmVolumeParams {
+  where: VmVolumeWhereInput;
+  data: { size?: number; description?: string; name?: string };
 }
 
 export interface NestedVmEntityFilterResult {
@@ -17637,6 +17675,7 @@ export interface MountDisksParams {
 }
 
 export interface VmCdRomParams {
+  content_library_image_id?: string;
   elf_image_id?: string;
 
   /** @format int32 */
@@ -17785,6 +17824,44 @@ export interface VmCreateVmFromTemplateParams {
   cluster_id?: string;
 }
 
+export interface VmCreateVmFromContentLibraryTemplateParams {
+  cloud_init?: TemplateCloudInit;
+  is_full_copy: boolean;
+  template_id: string;
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  firmware?: VmFirmware;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  disk_operate?: VmDiskOperate;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id: string;
+}
+
 export interface ConvertVmTemplateToVmParams {
   name: string;
   converted_from_template_id: string;
@@ -17911,7 +17988,13 @@ export interface VmAddDiskParams {
 }
 
 export interface VmUpdateDiskParams {
-  data: { elf_image_id?: string | null; vm_volume_id?: string; vm_disk_id: string; bus?: Bus };
+  data: {
+    content_library_image_id?: string | null;
+    elf_image_id?: string | null;
+    vm_volume_id?: string;
+    vm_disk_id: string;
+    bus?: Bus;
+  };
   where: VmWhereInput;
 }
 
@@ -18338,7 +18421,7 @@ export interface DataPoint {
   /** @format double */
   v?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   t: number;
   __typename?: "DataPoint";
 }
@@ -19599,6 +19682,8 @@ export enum VmVolumeOrderByInput {
   SharingDESC = "sharing_DESC",
   SizeASC = "size_ASC",
   SizeDESC = "size_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
 }
@@ -21095,6 +21180,530 @@ export interface CancelUploadTaskParams {
   where: UploadTaskWhereInput;
 }
 
+export enum VmVolumeSnapshotType {
+  KVM_VOLUME_ISCSI_SNAPSHOT = "KVM_VOLUME_ISCSI_SNAPSHOT",
+  KVM_VOLUME_SNAPSHOT = "KVM_VOLUME_SNAPSHOT",
+}
+
+export interface VmVolumeSnapshot {
+  cluster: NestedCluster;
+  createAt?: string | null;
+  description: string;
+  id: string;
+  local_created_at: string;
+  local_id: string;
+  name: string;
+
+  /** @format double */
+  shared_size?: number | null;
+
+  /** @format double */
+  size?: number | null;
+  type: VmVolumeSnapshotType;
+
+  /** @format double */
+  unique_size?: number | null;
+  vm_volume?: NestedVmVolume | null;
+  zbs_snapshot_uuid?: string | null;
+}
+
+export interface WithTaskVmVolumeSnapshot {
+  task_id?: string | null;
+  data: VmVolumeSnapshot;
+}
+
+export interface VmVolumeSnapshotCreationParams {
+  volume_id: string;
+  description: string;
+  name: string;
+}
+
+export interface DeleteVmVolumeSnapshot {
+  id: string;
+}
+
+export interface WithTaskDeleteVmVolumeSnapshot {
+  task_id?: string | null;
+  data: DeleteVmVolumeSnapshot;
+}
+
+export interface VmVolumeSnapshotWhereInput {
+  AND?: VmVolumeSnapshotWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  createAt?: string | null;
+  createAt_gt?: string | null;
+  createAt_gte?: string | null;
+  createAt_in?: string[] | null;
+  createAt_lt?: string | null;
+  createAt_lte?: string | null;
+  createAt_not?: string | null;
+  createAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: VmVolumeSnapshotWhereInput[] | null;
+  OR?: VmVolumeSnapshotWhereInput[] | null;
+
+  /** @format double */
+  shared_size?: number | null;
+
+  /** @format double */
+  shared_size_gt?: number | null;
+
+  /** @format double */
+  shared_size_gte?: number | null;
+  shared_size_in?: number[] | null;
+
+  /** @format double */
+  shared_size_lt?: number | null;
+
+  /** @format double */
+  shared_size_lte?: number | null;
+
+  /** @format double */
+  shared_size_not?: number | null;
+  shared_size_not_in?: number[] | null;
+
+  /** @format double */
+  size?: number | null;
+
+  /** @format double */
+  size_gt?: number | null;
+
+  /** @format double */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+
+  /** @format double */
+  size_lt?: number | null;
+
+  /** @format double */
+  size_lte?: number | null;
+
+  /** @format double */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  type?: VmVolumeSnapshotType | null;
+  type_in?: VmVolumeSnapshotType[] | null;
+  type_not?: VmVolumeSnapshotType | null;
+  type_not_in?: VmVolumeSnapshotType[] | null;
+
+  /** @format double */
+  unique_size?: number | null;
+
+  /** @format double */
+  unique_size_gt?: number | null;
+
+  /** @format double */
+  unique_size_gte?: number | null;
+  unique_size_in?: number[] | null;
+
+  /** @format double */
+  unique_size_lt?: number | null;
+
+  /** @format double */
+  unique_size_lte?: number | null;
+
+  /** @format double */
+  unique_size_not?: number | null;
+  unique_size_not_in?: number[] | null;
+  vm_volume?: VmVolumeWhereInput | null;
+  zbs_snapshot_uuid?: string | null;
+  zbs_snapshot_uuid_contains?: string | null;
+  zbs_snapshot_uuid_ends_with?: string | null;
+  zbs_snapshot_uuid_gt?: string | null;
+  zbs_snapshot_uuid_gte?: string | null;
+  zbs_snapshot_uuid_in?: string[] | null;
+  zbs_snapshot_uuid_lt?: string | null;
+  zbs_snapshot_uuid_lte?: string | null;
+  zbs_snapshot_uuid_not?: string | null;
+  zbs_snapshot_uuid_not_contains?: string | null;
+  zbs_snapshot_uuid_not_ends_with?: string | null;
+  zbs_snapshot_uuid_not_in?: string[] | null;
+  zbs_snapshot_uuid_not_starts_with?: string | null;
+  zbs_snapshot_uuid_starts_with?: string | null;
+}
+
+export interface VmVolumeSnapshotDeletionParams {
+  where: VmVolumeSnapshotWhereInput;
+}
+
+export interface DeleteCloudTowerApplicationPackage {
+  id: string;
+}
+
+export interface CloudTowerApplicationPackageWhereInput {
+  AND?: CloudTowerApplicationPackageWhereInput[] | null;
+  applications_every?: CloudTowerApplicationWhereInput | null;
+  applications_none?: CloudTowerApplicationWhereInput | null;
+  applications_some?: CloudTowerApplicationWhereInput | null;
+  architecture?: Architecture | null;
+  architecture_in?: Architecture[] | null;
+  architecture_not?: Architecture | null;
+  architecture_not_in?: Architecture[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: CloudTowerApplicationPackageWhereInput[] | null;
+  OR?: CloudTowerApplicationPackageWhereInput[] | null;
+  scosVersion?: string | null;
+  scosVersion_contains?: string | null;
+  scosVersion_ends_with?: string | null;
+  scosVersion_gt?: string | null;
+  scosVersion_gte?: string | null;
+  scosVersion_in?: string[] | null;
+  scosVersion_lt?: string | null;
+  scosVersion_lte?: string | null;
+  scosVersion_not?: string | null;
+  scosVersion_not_contains?: string | null;
+  scosVersion_not_ends_with?: string | null;
+  scosVersion_not_in?: string[] | null;
+  scosVersion_not_starts_with?: string | null;
+  scosVersion_starts_with?: string | null;
+  version?: string | null;
+  version_contains?: string | null;
+  version_ends_with?: string | null;
+  version_gt?: string | null;
+  version_gte?: string | null;
+  version_in?: string[] | null;
+  version_lt?: string | null;
+  version_lte?: string | null;
+  version_not?: string | null;
+  version_not_contains?: string | null;
+  version_not_ends_with?: string | null;
+  version_not_in?: string[] | null;
+  version_not_starts_with?: string | null;
+  version_starts_with?: string | null;
+}
+
+export interface CloudTowerApplicationWhereInput {
+  AND?: CloudTowerApplicationWhereInput[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: CloudTowerApplicationWhereInput[] | null;
+  OR?: CloudTowerApplicationWhereInput[] | null;
+  package?: CloudTowerApplicationPackageWhereInput | null;
+  placementSituation?: string | null;
+  placementSituation_contains?: string | null;
+  placementSituation_ends_with?: string | null;
+  placementSituation_gt?: string | null;
+  placementSituation_gte?: string | null;
+  placementSituation_in?: string[] | null;
+  placementSituation_lt?: string | null;
+  placementSituation_lte?: string | null;
+  placementSituation_not?: string | null;
+  placementSituation_not_contains?: string | null;
+  placementSituation_not_ends_with?: string | null;
+  placementSituation_not_in?: string[] | null;
+  placementSituation_not_starts_with?: string | null;
+  placementSituation_starts_with?: string | null;
+  placementVerb?: string | null;
+  placementVerb_contains?: string | null;
+  placementVerb_ends_with?: string | null;
+  placementVerb_gt?: string | null;
+  placementVerb_gte?: string | null;
+  placementVerb_in?: string[] | null;
+  placementVerb_lt?: string | null;
+  placementVerb_lte?: string | null;
+  placementVerb_not?: string | null;
+  placementVerb_not_contains?: string | null;
+  placementVerb_not_ends_with?: string | null;
+  placementVerb_not_in?: string[] | null;
+  placementVerb_not_starts_with?: string | null;
+  placementVerb_starts_with?: string | null;
+
+  /** @format int32 */
+  resourceVersion?: number | null;
+
+  /** @format int32 */
+  resourceVersion_gt?: number | null;
+
+  /** @format int32 */
+  resourceVersion_gte?: number | null;
+  resourceVersion_in?: number[] | null;
+
+  /** @format int32 */
+  resourceVersion_lt?: number | null;
+
+  /** @format int32 */
+  resourceVersion_lte?: number | null;
+
+  /** @format int32 */
+  resourceVersion_not?: number | null;
+  resourceVersion_not_in?: number[] | null;
+  state?: CloudTowerApplicationState | null;
+  state_in?: CloudTowerApplicationState[] | null;
+  state_not?: CloudTowerApplicationState | null;
+  state_not_in?: CloudTowerApplicationState[] | null;
+  targetPackage?: string | null;
+  targetPackage_contains?: string | null;
+  targetPackage_ends_with?: string | null;
+  targetPackage_gt?: string | null;
+  targetPackage_gte?: string | null;
+  targetPackage_in?: string[] | null;
+  targetPackage_lt?: string | null;
+  targetPackage_lte?: string | null;
+  targetPackage_not?: string | null;
+  targetPackage_not_contains?: string | null;
+  targetPackage_not_ends_with?: string | null;
+  targetPackage_not_in?: string[] | null;
+  targetPackage_not_starts_with?: string | null;
+  targetPackage_starts_with?: string | null;
+  user?: UserWhereInput | null;
+}
+
+export enum CloudTowerApplicationState {
+  ERROR = "ERROR",
+  INSTALL_FAILED = "INSTALL_FAILED",
+  INSTALLING = "INSTALLING",
+  RUNNING = "RUNNING",
+  SCALE_FAILED = "SCALE_FAILED",
+  SCALING = "SCALING",
+  TERMINATE_FAILED = "TERMINATE_FAILED",
+  TERMINATING = "TERMINATING",
+  UPGRADE_FAILED = "UPGRADE_FAILED",
+  UPGRADING = "UPGRADING",
+}
+
+export interface DeleteCloudTowerApplicationPackageParams {
+  where: CloudTowerApplicationPackageWhereInput;
+}
+
+export interface NestedCloudTowerApplicationPackage {
+  id: string;
+  name: string;
+}
+
+export interface CloudTowerApplication {
+  id: string;
+  instanceStatuses: object;
+  name: string;
+  package?: NestedCloudTowerApplicationPackage | null;
+  placementSituation?: string | null;
+  placementVerb?: string | null;
+
+  /** @format int32 */
+  resourceVersion: number;
+  state?: CloudTowerApplicationState | null;
+  targetPackage: string;
+  user?: NestedUser | null;
+  vmSpec: object;
+}
+
+export interface ApplicationVmSpecEnv {
+  value?: string;
+  name: string;
+}
+
+export interface ApplicationVmSpecNic {
+  vlanId?: string;
+  mask?: string;
+  ip?: string;
+  gateway?: string;
+  dhcp?: boolean;
+}
+
+export interface ApplicationVmSpecNetwork {
+  nics?: ApplicationVmSpecNic[];
+  dns?: string[];
+}
+
+export interface ApplicationVmSpecStatus {
+  vmIps?: string[];
+  message?: VmStatus;
+}
+
+export interface ApplicationVmSpecStorage {
+  /** @format int64 */
+  size?: number;
+}
+
+export interface ApplicationVmSpec {
+  vmUsage?: VmUsage;
+  storages?: ApplicationVmSpecStorage[];
+  status?: ApplicationVmSpecStatus;
+  publicKeys?: string[];
+  network?: ApplicationVmSpecNetwork;
+  name?: string;
+
+  /** @format int64 */
+  memory?: number;
+  internal?: boolean;
+  image?: string;
+  host?: string;
+  env?: ApplicationVmSpecEnv[];
+
+  /** @format int32 */
+  cpu?: number;
+  cluster?: string;
+  cloudInitUserData?: string;
+}
+
+export enum ApplicationVmSpecPlacementSituation {
+  DIFFERENT = "DIFFERENT",
+  SAME = "SAME",
+}
+
+export enum ApplicationVmSpecPlacementVerb {
+  MUST = "MUST",
+  PREFER = "PREFER",
+}
+
+export interface ApplicationVmSpecPlacement {
+  verb: ApplicationVmSpecPlacementVerb;
+  situation: ApplicationVmSpecPlacementSituation;
+}
+
+export enum ApplicationVmSpecAffinityPolicy {
+  MUST = "MUST",
+  PREFER = "PREFER",
+}
+
+export interface ApplicationVmSpecDefinition {
+  vmAffinity?: ApplicationVmSpecAffinityPolicy;
+  placement?: ApplicationVmSpecPlacement;
+  name?: string;
+  group?: string;
+  template?: ApplicationVmSpec;
+  instances?: ApplicationVmSpec[];
+}
+
+export interface DeployCloudTowerApplicationParams {
+  name: string;
+  targetPackage: string;
+  vmSpec: ApplicationVmSpecDefinition;
+}
+
+export interface CloudTowerApplicationWhereUniqueInput {
+  id?: string | null;
+}
+
+export interface UpgradeCloudTowerApplicationParams {
+  data: { targetPackage: string };
+  where: CloudTowerApplicationWhereUniqueInput;
+}
+
+export interface UpdateCloudTowerApplicationVmSpecParams {
+  data: { vmSpec: ApplicationVmSpecDefinition };
+  where: CloudTowerApplicationWhereUniqueInput;
+}
+
+export interface UninstallCloudTowerApplicationParams {
+  where: CloudTowerApplicationWhereInput;
+}
+
 export enum NotifierLanguageCode {
   EN_US = "EN_US",
   ZH_CN = "ZH_CN",
@@ -21524,6 +22133,142 @@ export interface GetBrickTopoesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: BrickTopoWhereInput | null;
+}
+
+export interface NestedCloudTowerApplication {
+  id: string;
+  name: string;
+}
+
+export interface CloudTowerApplicationPackage {
+  applications?: NestedCloudTowerApplication[] | null;
+  architecture: Architecture;
+  containers: object;
+  id: string;
+  images: object;
+  name: string;
+  scosVersion: string;
+  version: string;
+}
+
+export enum CloudTowerApplicationPackageOrderByInput {
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  ContainersASC = "containers_ASC",
+  ContainersDESC = "containers_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImagesASC = "images_ASC",
+  ImagesDESC = "images_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ScosVersionASC = "scosVersion_ASC",
+  ScosVersionDESC = "scosVersion_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
+
+export interface GetCloudTowerApplicationPackagesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationPackageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationPackageWhereInput | null;
+}
+
+export interface NestedAggregateCloudTowerApplicationPackage {
+  /** @format int32 */
+  count: number;
+}
+
+export interface CloudTowerApplicationPackageConnection {
+  aggregate: NestedAggregateCloudTowerApplicationPackage;
+}
+
+export interface GetCloudTowerApplicationPackagesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationPackageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationPackageWhereInput | null;
+}
+
+export enum CloudTowerApplicationOrderByInput {
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InstanceStatusesASC = "instanceStatuses_ASC",
+  InstanceStatusesDESC = "instanceStatuses_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PlacementSituationASC = "placementSituation_ASC",
+  PlacementSituationDESC = "placementSituation_DESC",
+  PlacementVerbASC = "placementVerb_ASC",
+  PlacementVerbDESC = "placementVerb_DESC",
+  ResourceVersionASC = "resourceVersion_ASC",
+  ResourceVersionDESC = "resourceVersion_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  TargetPackageASC = "targetPackage_ASC",
+  TargetPackageDESC = "targetPackage_DESC",
+  VmSpecASC = "vmSpec_ASC",
+  VmSpecDESC = "vmSpec_DESC",
+}
+
+export interface GetCloudTowerApplicationsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationWhereInput | null;
+}
+
+export interface NestedAggregateCloudTowerApplication {
+  /** @format int32 */
+  count: number;
+}
+
+export interface CloudTowerApplicationConnection {
+  aggregate: NestedAggregateCloudTowerApplication;
+}
+
+export interface GetCloudTowerApplicationsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationWhereInput | null;
 }
 
 export interface ClusterImage {
@@ -26034,6 +26779,72 @@ export interface GetVmVolumesConnectionRequestBody {
   where?: VmVolumeWhereInput | null;
 }
 
+export enum VmVolumeSnapshotOrderByInput {
+  CreateAtASC = "createAt_ASC",
+  CreateAtDESC = "createAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SharedSizeASC = "shared_size_ASC",
+  SharedSizeDESC = "shared_size_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UniqueSizeASC = "unique_size_ASC",
+  UniqueSizeDESC = "unique_size_DESC",
+  ZbsSnapshotUuidASC = "zbs_snapshot_uuid_ASC",
+  ZbsSnapshotUuidDESC = "zbs_snapshot_uuid_DESC",
+}
+
+export interface GetVmVolumeSnapshotsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmVolumeSnapshotOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmVolumeSnapshotWhereInput | null;
+}
+
+export interface NestedAggregateVmVolumeSnapshot {
+  /** @format int32 */
+  count: number;
+}
+
+export interface VmVolumeSnapshotConnection {
+  aggregate: NestedAggregateVmVolumeSnapshot;
+}
+
+export interface GetVmVolumeSnapshotsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmVolumeSnapshotOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmVolumeSnapshotWhereInput | null;
+}
+
 export enum VsphereEsxiAccountOrderByInput {
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
@@ -28181,6 +28992,7 @@ export namespace Label {
    * @request POST:/update-label
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -28199,6 +29011,7 @@ export namespace Label {
    * @request POST:/add-labels-to-resources
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -28217,6 +29030,7 @@ export namespace Label {
    * @request POST:/remove-labels-from-resources
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -30194,6 +31008,23 @@ export namespace User {
   /**
    * No description
    * @tags User
+   * @name GetMyInfo
+   * @request POST:/get-my-info
+   * @response `200` `User` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetMyInfo {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = never;
+    export type RequestHeaders = {};
+    export type ResponseBody = User;
+  }
+  /**
+   * No description
+   * @tags User
    * @name GetUsers
    * @request POST:/get-users
    * @secure
@@ -30992,6 +31823,81 @@ export namespace VmVolume {
   /**
    * No description
    * @tags VmVolume
+   * @name RebuildVmVolume
+   * @request POST:/rebuild-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RebuildVmVolume {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeRebuildParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolume[];
+  }
+  /**
+   * No description
+   * @tags VmVolume
+   * @name RollbackVmVolume
+   * @request POST:/rollback-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace RollbackVmVolume {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeRollbackParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolume[];
+  }
+  /**
+   * No description
+   * @tags VmVolume
+   * @name CloneVmVolume
+   * @request POST:/clone-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CloneVmVolume {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = CloneVmVolumeParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolume[];
+  }
+  /**
+   * No description
+   * @tags VmVolume
+   * @name UpdateVmVolume
+   * @request POST:/update-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpdateVmVolume {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpdateVmVolumeParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolume[];
+  }
+  /**
+   * No description
+   * @tags VmVolume
    * @name GetVmVolumes
    * @request POST:/get-vm-volumes
    * @secure
@@ -31061,6 +31967,24 @@ export namespace Vm {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = VmCreateVmFromTemplateParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVm[];
+  }
+  /**
+   * No description
+   * @tags Vm
+   * @name CreateVmFromContentLibraryTemplate
+   * @request POST:/create-vm-from-content-library-template
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVmFromContentLibraryTemplate {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmCreateVmFromContentLibraryTemplateParams[];
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = WithTaskVm[];
   }
@@ -31413,6 +32337,7 @@ export namespace Vm {
    * @request POST:/add-vm-cd-rom
    * @secure
    * @response `200` `(WithTaskVm)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -32396,6 +33321,227 @@ export namespace UploadTask {
   }
 }
 
+export namespace VmVolumeSnapshot {
+  /**
+   * No description
+   * @tags VmVolumeSnapshot
+   * @name CreateVmVolumeSnapshot
+   * @request POST:/create-vm-volume-snapshot
+   * @secure
+   * @response `200` `(WithTaskVmVolumeSnapshot)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace CreateVmVolumeSnapshot {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeSnapshotCreationParams[];
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskVmVolumeSnapshot[];
+  }
+  /**
+   * No description
+   * @tags VmVolumeSnapshot
+   * @name DeleteVmVolumeSnapshot
+   * @request POST:/delete-vm-volume-snapshot
+   * @secure
+   * @response `200` `(WithTaskDeleteVmVolumeSnapshot)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteVmVolumeSnapshot {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = VmVolumeSnapshotDeletionParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = WithTaskDeleteVmVolumeSnapshot[];
+  }
+  /**
+   * No description
+   * @tags VmVolumeSnapshot
+   * @name GetVmVolumeSnapshots
+   * @request POST:/get-vm-volume-snapshots
+   * @secure
+   * @response `200` `(VmVolumeSnapshot)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmVolumeSnapshots {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmVolumeSnapshotsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmVolumeSnapshot[];
+  }
+  /**
+   * No description
+   * @tags VmVolumeSnapshot
+   * @name GetVmVolumeSnapshotsConnection
+   * @request POST:/get-vm-volume-snapshots-connection
+   * @secure
+   * @response `200` `VmVolumeSnapshotConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetVmVolumeSnapshotsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetVmVolumeSnapshotsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = VmVolumeSnapshotConnection;
+  }
+}
+
+export namespace ApiInfo {
+  /**
+   * No description
+   * @tags ApiInfo
+   * @name GetApiVersion
+   * @request GET:/get-version
+   * @response `200` `string` Ok
+   */
+  export namespace GetApiVersion {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = never;
+    export type RequestHeaders = {};
+    export type ResponseBody = string;
+  }
+}
+
+export namespace CloudTowerApplication {
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name UploadCloudTowerApplicationPackage
+   * @request POST:/upload-cloudtower-application-package
+   * @secure
+   * @response `200` `(UploadTask)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UploadCloudTowerApplicationPackage {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = { file: File; name?: string; size?: string; upload_task_id?: string };
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = UploadTask[];
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name DeleteCloudTowerApplicationPackage
+   * @request POST:/delete-cloudtower-application-package
+   * @secure
+   * @response `200` `(DeleteCloudTowerApplicationPackage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeleteCloudTowerApplicationPackage {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = DeleteCloudTowerApplicationPackageParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = DeleteCloudTowerApplicationPackage[];
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name DeployCloudTowerApplication
+   * @request POST:/deploy-cloudtower-application
+   * @secure
+   * @response `200` `CloudTowerApplication` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace DeployCloudTowerApplication {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = DeployCloudTowerApplicationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplication;
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name UpgradeCloudTowerApplication
+   * @request POST:/upgrade-cloudtower-application
+   * @secure
+   * @response `200` `CloudTowerApplication` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UpgradeCloudTowerApplication {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UpgradeCloudTowerApplicationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplication;
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name UninstallCloudTowerApplication
+   * @request POST:/uninstall-cloudtower-application
+   * @secure
+   * @response `200` `(CloudTowerApplication)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace UninstallCloudTowerApplication {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = UninstallCloudTowerApplicationParams;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplication[];
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name GetCloudTowerApplications
+   * @request POST:/get-cloudtower-applications
+   * @secure
+   * @response `200` `(CloudTowerApplication)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetCloudTowerApplications {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetCloudTowerApplicationsRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplication[];
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplication
+   * @name GetCloudTowerApplicationsConnection
+   * @request POST:/get-cloud-tower-applications-connection
+   * @secure
+   * @response `200` `CloudTowerApplicationConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetCloudTowerApplicationsConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetCloudTowerApplicationsConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplicationConnection;
+  }
+}
+
 export namespace AlertNotifier {
   /**
    * No description
@@ -32527,6 +33673,45 @@ export namespace Application {
     export type RequestBody = GetApplicationsConnectionRequestBody;
     export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
     export type ResponseBody = ApplicationConnection;
+  }
+}
+
+export namespace CloudTowerApplicationPackage {
+  /**
+   * No description
+   * @tags CloudTowerApplicationPackage
+   * @name GetCloudTowerApplicationPackages
+   * @request POST:/get-cloudtower-application-packages
+   * @secure
+   * @response `200` `(CloudTowerApplicationPackage)[]` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetCloudTowerApplicationPackages {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetCloudTowerApplicationPackagesRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplicationPackage[];
+  }
+  /**
+   * No description
+   * @tags CloudTowerApplicationPackage
+   * @name GetCloudTowerApplicationPackagesConnection
+   * @request POST:/get-cloud-tower-application-packages-connection
+   * @secure
+   * @response `200` `CloudTowerApplicationPackageConnection` Ok
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  export namespace GetCloudTowerApplicationPackagesConnection {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = GetCloudTowerApplicationPackagesConnectionRequestBody;
+    export type RequestHeaders = { "content-language"?: "zh-CN" | "en-US" };
+    export type ResponseBody = CloudTowerApplicationPackageConnection;
   }
 }
 
@@ -33628,7 +34813,7 @@ export namespace ZoneTopo {
   }
 }
 
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, HeadersDefaults, ResponseType } from "axios";
 
 export type QueryParamsType = Record<string | number, any>;
 
@@ -33681,20 +34866,41 @@ export class HttpClient<SecurityDataType = unknown> {
     this.securityData = data;
   };
 
-  private mergeRequestParams(params1: AxiosRequestConfig, params2?: AxiosRequestConfig): AxiosRequestConfig {
+  protected mergeRequestParams(params1: AxiosRequestConfig, params2?: AxiosRequestConfig): AxiosRequestConfig {
+    const method = params1.method || (params2 && params2.method);
+
     return {
       ...this.instance.defaults,
       ...params1,
       ...(params2 || {}),
       headers: {
-        ...(this.instance.defaults.headers || {}),
+        ...((method && this.instance.defaults.headers[method.toLowerCase() as keyof HeadersDefaults]) || {}),
         ...(params1.headers || {}),
         ...((params2 && params2.headers) || {}),
       },
     };
   }
 
-  private createFormData(input: Record<string, unknown>): FormData {
+  protected stringifyFormItem(formItem: unknown) {
+    if (typeof formItem === "object" && formItem !== null) {
+      return JSON.stringify(formItem);
+    } else {
+      return `${formItem}`;
+    }
+  }
+
+  protected createFormData(input: Record<string, unknown>): FormData {
+    return Object.keys(input || {}).reduce((formData, key) => {
+      const property = input[key];
+      const propertyContent: Iterable<any> = property instanceof Array ? property : [property];
+
+      for (const formItem of propertyContent) {
+        const isFileType = formItem instanceof Blob || formItem instanceof File;
+        formData.append(key, isFileType ? formItem : this.stringifyFormItem(formItem));
+      }
+
+      return formData;
+    }, new FormData());
     return Object.keys(input || {}).reduce((formData, key) => {
       const property = input[key];
       formData.append(
@@ -33724,13 +34930,9 @@ export class HttpClient<SecurityDataType = unknown> {
         (await this.securityWorker(this.securityData))) ||
       {};
     const requestParams = this.mergeRequestParams(params, secureParams);
-    const responseFormat = (format && this.format) || void 0;
+    const responseFormat = format || this.format || undefined;
 
     if (type === ContentType.FormData && body && body !== null && typeof body === "object") {
-      requestParams.headers.common = { Accept: "*/*" };
-      requestParams.headers.post = {};
-      requestParams.headers.put = {};
-
       body = this.createFormData(body as Record<string, unknown>);
     }
 
@@ -33750,7 +34952,7 @@ export class HttpClient<SecurityDataType = unknown> {
 
 /**
  * @title CloudTower APIs
- * @version 2.1.0
+ * @version 2.3.0
  * @baseUrl /
  *
  * cloudtower operation API and SDK
@@ -35992,12 +37194,13 @@ export class Api<SecurityDataType extends unknown> {
      * @request POST:/update-label
      * @secure
      * @response `200` `(WithTaskLabel)[]` Ok
+     * @response `304` `void` Not modified
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
     updateLabel: (data: LabelUpdationParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
+      this.http.request<WithTaskLabel[], void | ErrorBody>({
         path: `/update-label`,
         method: "POST",
         body: data,
@@ -36015,12 +37218,13 @@ export class Api<SecurityDataType extends unknown> {
      * @request POST:/add-labels-to-resources
      * @secure
      * @response `200` `(WithTaskLabel)[]` Ok
+     * @response `304` `void` Not modified
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
     addLabelsToResources: (data: AddLabelsToResourcesParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
+      this.http.request<WithTaskLabel[], void | ErrorBody>({
         path: `/add-labels-to-resources`,
         method: "POST",
         body: data,
@@ -36038,12 +37242,13 @@ export class Api<SecurityDataType extends unknown> {
      * @request POST:/remove-labels-from-resources
      * @secure
      * @response `200` `(WithTaskLabel)[]` Ok
+     * @response `304` `void` Not modified
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
     removeLabelsFromResources: (data: RemoveLabelsFromResourcesParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskLabel[], ErrorBody>({
+      this.http.request<WithTaskLabel[], void | ErrorBody>({
         path: `/remove-labels-from-resources`,
         method: "POST",
         body: data,
@@ -38508,6 +39713,25 @@ export class Api<SecurityDataType extends unknown> {
      * No description
      *
      * @tags User
+     * @name GetMyInfo
+     * @request POST:/get-my-info
+     * @response `200` `User` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getMyInfo: (params: RequestParams = {}) =>
+      this.http.request<User, ErrorBody>({
+        path: `/get-my-info`,
+        method: "POST",
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags User
      * @name GetUsers
      * @request POST:/get-users
      * @secure
@@ -39505,6 +40729,101 @@ export class Api<SecurityDataType extends unknown> {
      * No description
      *
      * @tags VmVolume
+     * @name RebuildVmVolume
+     * @request POST:/rebuild-vm-volume
+     * @secure
+     * @response `200` `(WithTaskVmVolume)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rebuildVmVolume: (data: VmVolumeRebuildParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolume[], void | ErrorBody>({
+        path: `/rebuild-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name RollbackVmVolume
+     * @request POST:/rollback-vm-volume
+     * @secure
+     * @response `200` `(WithTaskVmVolume)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    rollbackVmVolume: (data: VmVolumeRollbackParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolume[], void | ErrorBody>({
+        path: `/rollback-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name CloneVmVolume
+     * @request POST:/clone-vm-volume
+     * @secure
+     * @response `200` `(WithTaskVmVolume)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    cloneVmVolume: (data: CloneVmVolumeParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolume[], ErrorBody>({
+        path: `/clone-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
+     * @name UpdateVmVolume
+     * @request POST:/update-vm-volume
+     * @secure
+     * @response `200` `(WithTaskVmVolume)[]` Ok
+     * @response `304` `void` Not modified
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    updateVmVolume: (data: UpdateVmVolumeParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolume[], void | ErrorBody>({
+        path: `/update-vm-volume`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolume
      * @name GetVmVolumes
      * @request POST:/get-vm-volumes
      * @secure
@@ -39586,6 +40905,32 @@ export class Api<SecurityDataType extends unknown> {
     createVmFromTemplate: (data: VmCreateVmFromTemplateParams[], params: RequestParams = {}) =>
       this.http.request<WithTaskVm[], ErrorBody>({
         path: `/create-vm-from-template`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Vm
+     * @name CreateVmFromContentLibraryTemplate
+     * @request POST:/create-vm-from-content-library-template
+     * @secure
+     * @response `200` `(WithTaskVm)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmFromContentLibraryTemplate: (
+      data: VmCreateVmFromContentLibraryTemplateParams[],
+      params: RequestParams = {},
+    ) =>
+      this.http.request<WithTaskVm[], ErrorBody>({
+        path: `/create-vm-from-content-library-template`,
         method: "POST",
         body: data,
         secure: true,
@@ -40039,12 +41384,13 @@ export class Api<SecurityDataType extends unknown> {
      * @request POST:/add-vm-cd-rom
      * @secure
      * @response `200` `(WithTaskVm)[]` Ok
+     * @response `304` `void` Not modified
      * @response `400` `ErrorBody` Bad request
      * @response `404` `ErrorBody` Not found
      * @response `500` `ErrorBody` Server error
      */
     addVmCdRom: (data: VmAddCdRomParams, params: RequestParams = {}) =>
-      this.http.request<WithTaskVm[], ErrorBody>({
+      this.http.request<WithTaskVm[], void | ErrorBody>({
         path: `/add-vm-cd-rom`,
         method: "POST",
         body: data,
@@ -41275,6 +42621,284 @@ export class Api<SecurityDataType extends unknown> {
         ...params,
       }),
   };
+  vmVolumeSnapshot = {
+    /**
+     * No description
+     *
+     * @tags VmVolumeSnapshot
+     * @name CreateVmVolumeSnapshot
+     * @request POST:/create-vm-volume-snapshot
+     * @secure
+     * @response `200` `(WithTaskVmVolumeSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    createVmVolumeSnapshot: (data: VmVolumeSnapshotCreationParams[], params: RequestParams = {}) =>
+      this.http.request<WithTaskVmVolumeSnapshot[], ErrorBody>({
+        path: `/create-vm-volume-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolumeSnapshot
+     * @name DeleteVmVolumeSnapshot
+     * @request POST:/delete-vm-volume-snapshot
+     * @secure
+     * @response `200` `(WithTaskDeleteVmVolumeSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteVmVolumeSnapshot: (data: VmVolumeSnapshotDeletionParams, params: RequestParams = {}) =>
+      this.http.request<WithTaskDeleteVmVolumeSnapshot[], ErrorBody>({
+        path: `/delete-vm-volume-snapshot`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolumeSnapshot
+     * @name GetVmVolumeSnapshots
+     * @request POST:/get-vm-volume-snapshots
+     * @secure
+     * @response `200` `(VmVolumeSnapshot)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmVolumeSnapshots: (data: GetVmVolumeSnapshotsRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmVolumeSnapshot[], ErrorBody>({
+        path: `/get-vm-volume-snapshots`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags VmVolumeSnapshot
+     * @name GetVmVolumeSnapshotsConnection
+     * @request POST:/get-vm-volume-snapshots-connection
+     * @secure
+     * @response `200` `VmVolumeSnapshotConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getVmVolumeSnapshotsConnection: (data: GetVmVolumeSnapshotsConnectionRequestBody, params: RequestParams = {}) =>
+      this.http.request<VmVolumeSnapshotConnection, ErrorBody>({
+        path: `/get-vm-volume-snapshots-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  apiInfo = {
+    /**
+     * No description
+     *
+     * @tags ApiInfo
+     * @name GetApiVersion
+     * @request GET:/get-version
+     * @response `200` `string` Ok
+     */
+    getApiVersion: (params: RequestParams = {}) =>
+      this.http.request<string, any>({
+        path: `/get-version`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+  };
+  cloudTowerApplication = {
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name UploadCloudTowerApplicationPackage
+     * @request POST:/upload-cloudtower-application-package
+     * @secure
+     * @response `200` `(UploadTask)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    uploadCloudTowerApplicationPackage: (
+      data: { file: File; name?: string; size?: string; upload_task_id?: string },
+      params: RequestParams = {},
+    ) =>
+      this.http.request<UploadTask[], ErrorBody>({
+        path: `/upload-cloudtower-application-package`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.FormData,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name DeleteCloudTowerApplicationPackage
+     * @request POST:/delete-cloudtower-application-package
+     * @secure
+     * @response `200` `(DeleteCloudTowerApplicationPackage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deleteCloudTowerApplicationPackage: (data: DeleteCloudTowerApplicationPackageParams, params: RequestParams = {}) =>
+      this.http.request<DeleteCloudTowerApplicationPackage[], ErrorBody>({
+        path: `/delete-cloudtower-application-package`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name DeployCloudTowerApplication
+     * @request POST:/deploy-cloudtower-application
+     * @secure
+     * @response `200` `CloudTowerApplication` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    deployCloudTowerApplication: (data: DeployCloudTowerApplicationParams, params: RequestParams = {}) =>
+      this.http.request<CloudTowerApplication, ErrorBody>({
+        path: `/deploy-cloudtower-application`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name UpgradeCloudTowerApplication
+     * @request POST:/upgrade-cloudtower-application
+     * @secure
+     * @response `200` `CloudTowerApplication` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    upgradeCloudTowerApplication: (data: UpgradeCloudTowerApplicationParams, params: RequestParams = {}) =>
+      this.http.request<CloudTowerApplication, ErrorBody>({
+        path: `/upgrade-cloudtower-application`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name UninstallCloudTowerApplication
+     * @request POST:/uninstall-cloudtower-application
+     * @secure
+     * @response `200` `(CloudTowerApplication)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    uninstallCloudTowerApplication: (data: UninstallCloudTowerApplicationParams, params: RequestParams = {}) =>
+      this.http.request<CloudTowerApplication[], ErrorBody>({
+        path: `/uninstall-cloudtower-application`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name GetCloudTowerApplications
+     * @request POST:/get-cloudtower-applications
+     * @secure
+     * @response `200` `(CloudTowerApplication)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getCloudTowerApplications: (data: GetCloudTowerApplicationsRequestBody, params: RequestParams = {}) =>
+      this.http.request<CloudTowerApplication[], ErrorBody>({
+        path: `/get-cloudtower-applications`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplication
+     * @name GetCloudTowerApplicationsConnection
+     * @request POST:/get-cloud-tower-applications-connection
+     * @secure
+     * @response `200` `CloudTowerApplicationConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getCloudTowerApplicationsConnection: (
+      data: GetCloudTowerApplicationsConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<CloudTowerApplicationConnection, ErrorBody>({
+        path: `/get-cloud-tower-applications-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
   alertNotifier = {
     /**
      * No description
@@ -41429,6 +43053,56 @@ export class Api<SecurityDataType extends unknown> {
     getApplicationsConnection: (data: GetApplicationsConnectionRequestBody, params: RequestParams = {}) =>
       this.http.request<ApplicationConnection, ErrorBody>({
         path: `/get-applications-connection`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  cloudTowerApplicationPackage = {
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplicationPackage
+     * @name GetCloudTowerApplicationPackages
+     * @request POST:/get-cloudtower-application-packages
+     * @secure
+     * @response `200` `(CloudTowerApplicationPackage)[]` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getCloudTowerApplicationPackages: (data: GetCloudTowerApplicationPackagesRequestBody, params: RequestParams = {}) =>
+      this.http.request<CloudTowerApplicationPackage[], ErrorBody>({
+        path: `/get-cloudtower-application-packages`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags CloudTowerApplicationPackage
+     * @name GetCloudTowerApplicationPackagesConnection
+     * @request POST:/get-cloud-tower-application-packages-connection
+     * @secure
+     * @response `200` `CloudTowerApplicationPackageConnection` Ok
+     * @response `400` `ErrorBody` Bad request
+     * @response `404` `ErrorBody` Not found
+     * @response `500` `ErrorBody` Server error
+     */
+    getCloudTowerApplicationPackagesConnection: (
+      data: GetCloudTowerApplicationPackagesConnectionRequestBody,
+      params: RequestParams = {},
+    ) =>
+      this.http.request<CloudTowerApplicationPackageConnection, ErrorBody>({
+        path: `/get-cloud-tower-application-packages-connection`,
         method: "POST",
         body: data,
         secure: true,

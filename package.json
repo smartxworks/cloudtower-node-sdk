@@ -1,42 +1,42 @@
 {
-  "name": "cloudtower-node-sdk",
-  "version": "2.1.0",
-  "description": "cloudtower operation api",
-  "main": "lib/index.js",
-  "typings": "typings/index.d.ts",
-  "scripts": {
-    "build": "tsc -b .",
-    "typings": "tsc -d --emitDeclarationOnly --declarationDir typings",
-    "prepublish": "yarn build && yarn typings"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sczlog/cloudtower-node-sdk.git"
-  },
-  "files": [
-    "lib",
-    "typings"
-  ],
-  "keywords": [
-    "swagger",
-    "codegen",
-    "cloudtower",
-    "typescript",
-    "nodejs"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sczlog/cloudtower-node-sdk/issues"
-  },
-  "homepage": "https://github.com/Sczlog/cloudtower-node-sdk",
-  "dependencies": {
-    "@koa/multer": "^3.0.0",
-    "axios": "^0.21.4",
-    "multer": "^1.4.3",
-    "spdx-license-ids": "^3.0.10"
-  },
-  "devDependencies": {
-    "typescript": "^4.4.2"
+    "name": "cloudtower-node-sdk",
+    "version": ".3.0",
+    "description": "cloudtower operation api",
+    "main": "lib/index.js",
+    "typings": "typings/index.d.ts",
+    "scripts": {
+      "build": "tsc -b .",
+      "typings": "tsc -d --emitDeclarationOnly --declarationDir typings",
+      "prepublish": "yarn build && yarn typings"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Sczlog/cloudtower-node-sdk.git"
+    },
+    "files": [
+      "lib",
+      "typings"
+    ],
+    "keywords": [
+      "swagger",
+      "codegen",
+      "cloudtower",
+      "typescript",
+      "nodejs"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Sczlog/cloudtower-node-sdk/issues"
+    },
+    "homepage": "https://github.com/Sczlog/cloudtower-node-sdk",
+    "dependencies": {
+      "@koa/multer": "^3.0.0",
+      "axios": "^0.21.4",
+      "multer": "^1.4.3",
+      "spdx-license-ids": "^3.0.10"
+    },
+    "devDependencies": {
+      "typescript": "^4.4.2"
+    }
   }
-}
