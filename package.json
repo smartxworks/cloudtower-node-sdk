@@ -32,7 +32,7 @@
   "homepage": "https://github.com/Sczlog/cloudtower-node-sdk",
   "dependencies": {
     "@koa/multer": "^3.0.0",
-    "axios": "^0.21.4",
+    "axios": "^0.27.2",
     "multer": "^1.4.3",
     "spdx-license-ids": "^3.0.10"
   },
