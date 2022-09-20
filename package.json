@@ -1,6 +1,6 @@
 {
   "name": "cloudtower-node-sdk",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "description": "cloudtower operation api",
   "main": "lib/index.js",
   "typings": "typings/index.d.ts",
@@ -11,28 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sczlog/cloudtower-node-sdk.git"
+    "url": "git+https://github.com/smartxwork/cloudtower-node-sdk.git"
   },
-  "files": [
-    "lib",
-    "typings"
-  ],
-  "keywords": [
-    "swagger",
-    "codegen",
-    "cloudtower",
-    "typescript",
-    "nodejs"
-  ],
+  "files": ["lib", "typings"],
+  "keywords": ["swagger", "codegen", "cloudtower", "typescript", "nodejs"],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sczlog/cloudtower-node-sdk/issues"
+    "url": "https://github.com/smartxworks/cloudtower-node-sdk/issues"
   },
-  "homepage": "https://github.com/Sczlog/cloudtower-node-sdk",
+  "homepage": "https://github.com/smartxworks/cloudtower-node-sdk",
   "dependencies": {
     "@koa/multer": "^3.0.0",
-    "axios": "^0.21.4",
+    "axios": "^0.27.2",
     "multer": "^1.4.3",
     "spdx-license-ids": "^3.0.10"
   },
