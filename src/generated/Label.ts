@@ -51,12 +51,13 @@ export class LabelApi<SecurityDataType = unknown> {
    * @request POST:/update-label
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
   updateLabel = (data: LabelUpdationParams, params: RequestParams = {}) =>
-    this.http.request<WithTaskLabel[], ErrorBody>({
+    this.http.request<WithTaskLabel[], void | ErrorBody>({
       path: `/update-label`,
       method: "POST",
       body: data,
@@ -73,6 +74,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @request POST:/add-labels-to-resources
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -81,7 +83,7 @@ export class LabelApi<SecurityDataType = unknown> {
     data: AddLabelsToResourcesParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<WithTaskLabel[], ErrorBody>({
+    this.http.request<WithTaskLabel[], void | ErrorBody>({
       path: `/add-labels-to-resources`,
       method: "POST",
       body: data,
@@ -98,6 +100,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @request POST:/remove-labels-from-resources
    * @secure
    * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -106,7 +109,7 @@ export class LabelApi<SecurityDataType = unknown> {
     data: RemoveLabelsFromResourcesParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<WithTaskLabel[], ErrorBody>({
+    this.http.request<WithTaskLabel[], void | ErrorBody>({
       path: `/remove-labels-from-resources`,
       method: "POST",
       body: data,

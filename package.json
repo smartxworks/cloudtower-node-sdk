@@ -1,6 +1,6 @@
 {
   "name": "cloudtower-node-sdk",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "cloudtower operation api",
   "main": "lib/index.js",
   "typings": "typings/index.d.ts",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@koa/multer": "^3.0.0",
     "axios": "^0.27.2",
-    "multer": "^1.4.3",
+    "multer": "^1.4.4-lts.1",
     "spdx-license-ids": "^3.0.10"
   },
   "devDependencies": {

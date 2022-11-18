@@ -33,6 +33,7 @@ import {
   VmUpdateAdvancedOptionsParams,
   VmUpdateDiskParams,
   VmUpdateHostOptionsParams,
+  VmUpdateIoPolicyParams,
   VmUpdateNicAdvanceInfoParams,
   VmUpdateNicBasicInfoParams,
   VmUpdateNicParams,
@@ -692,7 +693,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmNicBasicInfo
    * @request POST:/update-vm-nic-basic-info
    * @secure
-   * @response `200` `({ task_id: any, data: any })[]` Ok
+   * @response `200` `(WithTaskVm)[]` Ok
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -702,7 +703,7 @@ export class VmApi<SecurityDataType = unknown> {
     data: VmUpdateNicBasicInfoParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
+    this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-basic-info`,
       method: "POST",
       body: data,
@@ -718,7 +719,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmNicAdvanceInfo
    * @request POST:/update-vm-nic-advance-info
    * @secure
-   * @response `200` `({ task_id: any, data: any })[]` Ok
+   * @response `200` `(WithTaskVm)[]` Ok
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -728,7 +729,7 @@ export class VmApi<SecurityDataType = unknown> {
     data: VmUpdateNicAdvanceInfoParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<{ task_id: any; data: any }[], void | ErrorBody>({
+    this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-advance-info`,
       method: "POST",
       body: data,
@@ -982,7 +983,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ResetVmGuestOsPassword
    * @request POST:/reset-vm-guest-os-password
    * @secure
-   * @response `200` `(any)[]` Ok
+   * @response `200` `(WithTaskVm)[]` Ok
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -992,7 +993,7 @@ export class VmApi<SecurityDataType = unknown> {
     data: VmResetGuestOsPasswordParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<any[], void | ErrorBody>({
+    this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/reset-vm-guest-os-password`,
       method: "POST",
       body: data,
@@ -1008,15 +1009,41 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmOwner
    * @request POST:/update-vm-owner
    * @secure
-   * @response `200` `(any)[]` Ok
+   * @response `200` `(WithTaskVm)[]` Ok
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
-   * @response `404` `void` Not found
+   * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
   updateVmOwner = (data: VmUpdateOwnerParams, params: RequestParams = {}) =>
-    this.http.request<any[], void | ErrorBody>({
+    this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-owner`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name UpdateVmIoPolicy
+   * @request POST:/update-vm-io-policy
+   * @secure
+   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateVmIoPolicy = (
+    data: VmUpdateIoPolicyParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], void | ErrorBody>({
+      path: `/update-vm-io-policy`,
       method: "POST",
       body: data,
       secure: true,

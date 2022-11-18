@@ -11045,6 +11045,7 @@ export enum VmToolsStatus {
 export enum VmUsage {
   ADVANCED_MONITORING = "ADVANCED_MONITORING",
   BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
+  CLOUDTOWER = "CLOUDTOWER",
   EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
 }
 
@@ -12785,6 +12786,15 @@ export interface UploadTask {
   updatedAt: string;
 }
 
+export enum ByteUnit {
+  B = "B",
+  KB = "KB",
+  MB = "MB",
+  GB = "GB",
+  TB = "TB",
+  PB = "PB",
+}
+
 export interface NestedElfImage {
   id: string;
   name: string;
@@ -13963,21 +13973,32 @@ export interface WithTaskIscsiLun {
   data: IscsiLun;
 }
 
+export enum BPSUnit {
+  Bps = "Bps",
+  KBps = "KBps",
+  MBps = "MBps",
+  GBps = "GBps",
+  TBps = "TBps",
+}
+
 export interface IscsiLunCommonParams {
   /** @format int64 */
   bps_wr_max_length?: number;
+  bps_wr_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr_max?: number;
 
   /** @format int64 */
   bps_rd_max_length?: number;
+  bps_rd_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd_max?: number;
 
   /** @format int64 */
   bps_max_length?: number;
+  bps_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_max?: number;
@@ -13999,12 +14020,15 @@ export interface IscsiLunCommonParams {
 
   /** @format int64 */
   iops_max?: number;
+  bps_wr_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr?: number;
+  bps_rd_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd?: number;
+  bps_unit?: BPSUnit;
 
   /** @format int64 */
   bps?: number;
@@ -14022,6 +14046,7 @@ export interface IscsiLunCommonParams {
 
 export type IscsiLunCreationParams = {
   lun_id?: number;
+  assigned_size_unit?: ByteUnit;
   assigned_size: number;
   replica_num: number;
   iscsi_target_id: string;
@@ -14029,6 +14054,7 @@ export type IscsiLunCreationParams = {
 } & IscsiLunCommonParams;
 
 export type IscsiLunUpdationParamsData = {
+  assigned_size_unit?: ByteUnit;
   assigned_size?: number;
   name?: string;
 } & IscsiLunCommonParams;
@@ -14169,18 +14195,21 @@ export interface IscsiTargetCommonParamsInitiatorChaps {
 export interface IscsiTargetCommonParams {
   /** @format int64 */
   bps_wr_max_length?: number;
+  bps_wr_max_size?: BPSUnit;
 
   /** @format int64 */
   bps_wr_max?: number;
 
   /** @format int64 */
   bps_rd_max_length?: number;
+  bps_rd_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd_max?: number;
 
   /** @format int64 */
   bps_max_length?: number;
+  bps_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_max?: number;
@@ -14202,12 +14231,15 @@ export interface IscsiTargetCommonParams {
 
   /** @format int64 */
   iops_max?: number;
+  bps_wr_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr?: number;
+  bps_rd_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd?: number;
+  bps_unit?: BPSUnit;
 
   /** @format int64 */
   bps?: number;
@@ -14230,6 +14262,7 @@ export interface IscsiTargetCommonParams {
 }
 
 export type IscsiTargetCreationParams = {
+  stripe_size_unit?: ByteUnit;
   stripe_size: number;
   stripe_num: number;
   replica_num: number;
@@ -15094,18 +15127,21 @@ export interface WithTaskNvmfNamespace {
 export interface NvmfNamespaceCommonParams {
   /** @format int64 */
   bps_wr_max_length?: number;
+  bps_wr_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr_max?: number;
 
   /** @format int64 */
   bps_rd_max_length?: number;
+  bps_rd_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd_max?: number;
 
   /** @format int64 */
   bps_max_length?: number;
+  bps_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_max?: number;
@@ -15127,12 +15163,15 @@ export interface NvmfNamespaceCommonParams {
 
   /** @format int64 */
   iops_max?: number;
+  bps_wr_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr?: number;
+  bps_rd_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd?: number;
+  bps_unit?: BPSUnit;
 
   /** @format int64 */
   bps?: number;
@@ -15152,6 +15191,7 @@ export type NvmfNamespaceCreationParams = {
   namespace_id?: number;
   group_id?: string;
   is_shared?: boolean;
+  assigned_size_unit?: ByteUnit;
   assigned_size: number;
   replica_num: number;
   nvmf_subsystem_id: string;
@@ -15159,6 +15199,7 @@ export type NvmfNamespaceCreationParams = {
 } & NvmfNamespaceCommonParams;
 
 export type NvmfNamespaceUpdationParamsData = {
+  assigned_size_unit?: ByteUnit;
   assigned_size?: number;
   name?: string;
 } & NvmfNamespaceCommonParams;
@@ -15286,18 +15327,21 @@ export interface WithTaskNvmfSubsystem {
 export interface NvmfSubsystemCommonParams {
   /** @format int64 */
   bps_wr_max_length?: number;
+  bps_wr_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr_max?: number;
 
   /** @format int64 */
   bps_rd_max_length?: number;
+  bps_rd_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd_max?: number;
 
   /** @format int64 */
   bps_max_length?: number;
+  bps_max_unit?: BPSUnit;
 
   /** @format int64 */
   bps_max?: number;
@@ -15319,12 +15363,15 @@ export interface NvmfSubsystemCommonParams {
 
   /** @format int64 */
   iops_max?: number;
+  bps_wr_unit?: BPSUnit;
 
   /** @format int64 */
   bps_wr?: number;
+  bps_rd_unit?: BPSUnit;
 
   /** @format int64 */
   bps_rd?: number;
+  bps_unit?: BPSUnit;
 
   /** @format int64 */
   bps?: number;
@@ -15345,6 +15392,7 @@ export interface NvmfSubsystemCommonParams {
 export type NvmfSubsystemCreationParams = {
   replica_num: number;
   thin_provision: boolean;
+  stripe_size_unit?: ByteUnit;
   stripe_size: number;
   stripe_num: number;
   policy: NvmfSubsystemPolicyType;
@@ -17510,6 +17558,7 @@ export interface WithTaskVmVolume {
 
 export interface VmVolumeCreationParams {
   elf_storage_policy: VmVolumeElfStoragePolicyType;
+  size_unit?: ByteUnit;
 
   /** @format int64 */
   size: number;
@@ -17553,7 +17602,12 @@ export interface CloneVmVolumeParams {
 
 export interface UpdateVmVolumeParams {
   where: VmVolumeWhereInput;
-  data: { size?: number; description?: string; name?: string };
+  data: {
+    size_unit?: ByteUnit;
+    size?: number;
+    description?: string;
+    name?: string;
+  };
 }
 
 export interface NestedVmEntityFilterResult {
@@ -17665,6 +17719,7 @@ export interface WithTaskVm {
 
 export interface MountNewCreateDisksParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17675,6 +17730,7 @@ export interface MountNewCreateDisksParams {
   vm_volume: {
     elf_storage_policy: VmVolumeElfStoragePolicyType;
     path?: string;
+    size_unit?: ByteUnit;
     size: number;
     name: string;
   };
@@ -17692,6 +17748,7 @@ export interface MountNewCreateDisksParams {
 
 export interface MountDisksParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17747,6 +17804,7 @@ export interface VmNicParams {
 
 export interface VmCreationParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17763,6 +17821,7 @@ export interface VmCreationParams {
   ha: boolean;
   vm_nics: VmNicParams[];
   vm_disks: VmDiskParams;
+  memory_unit?: ByteUnit;
 
   /** @format int64 */
   memory: number;
@@ -17829,6 +17888,7 @@ export interface VmCreateVmFromTemplateParams {
   is_full_copy: boolean;
   template_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17845,6 +17905,7 @@ export interface VmCreateVmFromTemplateParams {
   ha?: boolean;
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
+  memory_unit?: ByteUnit;
 
   /** @format int64 */
   memory?: number;
@@ -17867,6 +17928,7 @@ export interface VmCreateVmFromContentLibraryTemplateParams {
   is_full_copy: boolean;
   template_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17883,6 +17945,7 @@ export interface VmCreateVmFromContentLibraryTemplateParams {
   ha?: boolean;
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
+  memory_unit?: ByteUnit;
 
   /** @format int64 */
   memory?: number;
@@ -17906,8 +17969,10 @@ export interface ConvertVmTemplateToVmParams {
 }
 
 export interface VmCloneParams {
+  is_full_copy?: boolean;
   src_vm_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17924,6 +17989,7 @@ export interface VmCloneParams {
   ha?: boolean;
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
+  memory_unit?: ByteUnit;
 
   /** @format int64 */
   memory?: number;
@@ -17942,8 +18008,10 @@ export interface VmCloneParams {
 }
 
 export interface VmRebuildParams {
+  is_full_copy?: boolean;
   rebuild_from_snapshot_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
 
   /** @format int64 */
   max_bandwidth?: number;
@@ -17960,6 +18028,7 @@ export interface VmRebuildParams {
   ha?: boolean;
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
+  memory_unit?: ByteUnit;
 
   /** @format int64 */
   memory?: number;
@@ -17986,6 +18055,7 @@ export interface VmUpdateParams {
   data: {
     vcpu?: number;
     ha?: boolean;
+    memory_unit?: ByteUnit;
     memory?: number;
     cpu_cores?: number;
     cpu_sockets?: number;
@@ -18016,6 +18086,7 @@ export interface VmStartParams {
 export interface VmAddDiskParams {
   data: {
     max_bandwidth_policy?: VmDiskIoRestrictType;
+    max_bandwidth_unit?: BPSUnit;
     max_bandwidth?: number;
     max_iops_policy?: VmDiskIoRestrictType;
     max_iops?: number;
@@ -18040,6 +18111,8 @@ export interface VmUpdateDiskParams {
 }
 
 export interface VmExpandVmDiskParams {
+  size_unit?: ByteUnit;
+
   /** @format int64 */
   size: number;
   where: VmDiskWhereInput;
@@ -18442,6 +18515,34 @@ export interface VmResetGuestOsPasswordParams {
 
 export interface VmUpdateOwnerParams {
   data: { search_for: "username" | "id"; value: string };
+  where: VmWhereInput;
+}
+
+export interface VmRestrictIoParamsData {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+}
+
+export interface VmUpdateEachDiskIoPolicyParams {
+  data: VmRestrictIoParamsData;
+
+  /** @format int32 */
+  boot: number;
+}
+
+export interface VmUpdateIoPolicyParams {
+  data: {
+    each_disk?: VmUpdateEachDiskIoPolicyParams[];
+    whole_vm?: VmRestrictIoParamsData;
+    io_policy?: VmDiskIoPolicy | null;
+  };
   where: VmWhereInput;
 }
 
@@ -21441,6 +21542,324 @@ export interface VmVolumeSnapshotDeletionParams {
   where: VmVolumeSnapshotWhereInput;
 }
 
+export interface DeleteCloudTowerApplicationPackage {
+  id: string;
+}
+
+export interface CloudTowerApplicationPackageWhereInput {
+  AND?: CloudTowerApplicationPackageWhereInput[] | null;
+  applications_every?: CloudTowerApplicationWhereInput | null;
+  applications_none?: CloudTowerApplicationWhereInput | null;
+  applications_some?: CloudTowerApplicationWhereInput | null;
+  architecture?: Architecture | null;
+  architecture_in?: Architecture[] | null;
+  architecture_not?: Architecture | null;
+  architecture_not_in?: Architecture[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: CloudTowerApplicationPackageWhereInput[] | null;
+  OR?: CloudTowerApplicationPackageWhereInput[] | null;
+  scosVersion?: string | null;
+  scosVersion_contains?: string | null;
+  scosVersion_ends_with?: string | null;
+  scosVersion_gt?: string | null;
+  scosVersion_gte?: string | null;
+  scosVersion_in?: string[] | null;
+  scosVersion_lt?: string | null;
+  scosVersion_lte?: string | null;
+  scosVersion_not?: string | null;
+  scosVersion_not_contains?: string | null;
+  scosVersion_not_ends_with?: string | null;
+  scosVersion_not_in?: string[] | null;
+  scosVersion_not_starts_with?: string | null;
+  scosVersion_starts_with?: string | null;
+  version?: string | null;
+  version_contains?: string | null;
+  version_ends_with?: string | null;
+  version_gt?: string | null;
+  version_gte?: string | null;
+  version_in?: string[] | null;
+  version_lt?: string | null;
+  version_lte?: string | null;
+  version_not?: string | null;
+  version_not_contains?: string | null;
+  version_not_ends_with?: string | null;
+  version_not_in?: string[] | null;
+  version_not_starts_with?: string | null;
+  version_starts_with?: string | null;
+}
+
+export interface CloudTowerApplicationWhereInput {
+  AND?: CloudTowerApplicationWhereInput[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: CloudTowerApplicationWhereInput[] | null;
+  OR?: CloudTowerApplicationWhereInput[] | null;
+  package?: CloudTowerApplicationPackageWhereInput | null;
+  placementSituation?: string | null;
+  placementSituation_contains?: string | null;
+  placementSituation_ends_with?: string | null;
+  placementSituation_gt?: string | null;
+  placementSituation_gte?: string | null;
+  placementSituation_in?: string[] | null;
+  placementSituation_lt?: string | null;
+  placementSituation_lte?: string | null;
+  placementSituation_not?: string | null;
+  placementSituation_not_contains?: string | null;
+  placementSituation_not_ends_with?: string | null;
+  placementSituation_not_in?: string[] | null;
+  placementSituation_not_starts_with?: string | null;
+  placementSituation_starts_with?: string | null;
+  placementVerb?: string | null;
+  placementVerb_contains?: string | null;
+  placementVerb_ends_with?: string | null;
+  placementVerb_gt?: string | null;
+  placementVerb_gte?: string | null;
+  placementVerb_in?: string[] | null;
+  placementVerb_lt?: string | null;
+  placementVerb_lte?: string | null;
+  placementVerb_not?: string | null;
+  placementVerb_not_contains?: string | null;
+  placementVerb_not_ends_with?: string | null;
+  placementVerb_not_in?: string[] | null;
+  placementVerb_not_starts_with?: string | null;
+  placementVerb_starts_with?: string | null;
+
+  /** @format int32 */
+  resourceVersion?: number | null;
+
+  /** @format int32 */
+  resourceVersion_gt?: number | null;
+
+  /** @format int32 */
+  resourceVersion_gte?: number | null;
+  resourceVersion_in?: number[] | null;
+
+  /** @format int32 */
+  resourceVersion_lt?: number | null;
+
+  /** @format int32 */
+  resourceVersion_lte?: number | null;
+
+  /** @format int32 */
+  resourceVersion_not?: number | null;
+  resourceVersion_not_in?: number[] | null;
+  state?: CloudTowerApplicationState | null;
+  state_in?: CloudTowerApplicationState[] | null;
+  state_not?: CloudTowerApplicationState | null;
+  state_not_in?: CloudTowerApplicationState[] | null;
+  targetPackage?: string | null;
+  targetPackage_contains?: string | null;
+  targetPackage_ends_with?: string | null;
+  targetPackage_gt?: string | null;
+  targetPackage_gte?: string | null;
+  targetPackage_in?: string[] | null;
+  targetPackage_lt?: string | null;
+  targetPackage_lte?: string | null;
+  targetPackage_not?: string | null;
+  targetPackage_not_contains?: string | null;
+  targetPackage_not_ends_with?: string | null;
+  targetPackage_not_in?: string[] | null;
+  targetPackage_not_starts_with?: string | null;
+  targetPackage_starts_with?: string | null;
+  user?: UserWhereInput | null;
+}
+
+export enum CloudTowerApplicationState {
+  ERROR = "ERROR",
+  INSTALL_FAILED = "INSTALL_FAILED",
+  INSTALLING = "INSTALLING",
+  RUNNING = "RUNNING",
+  SCALE_FAILED = "SCALE_FAILED",
+  SCALING = "SCALING",
+  TERMINATE_FAILED = "TERMINATE_FAILED",
+  TERMINATING = "TERMINATING",
+  UPGRADE_FAILED = "UPGRADE_FAILED",
+  UPGRADING = "UPGRADING",
+}
+
+export interface DeleteCloudTowerApplicationPackageParams {
+  where: CloudTowerApplicationPackageWhereInput;
+}
+
+export interface NestedCloudTowerApplicationPackage {
+  id: string;
+  name: string;
+}
+
+export interface CloudTowerApplication {
+  id: string;
+  instanceStatuses: object;
+  name: string;
+  package?: NestedCloudTowerApplicationPackage | null;
+  placementSituation?: string | null;
+  placementVerb?: string | null;
+
+  /** @format int32 */
+  resourceVersion: number;
+  state?: CloudTowerApplicationState | null;
+  targetPackage: string;
+  user?: NestedUser | null;
+  vmSpec: object;
+}
+
+export interface ApplicationVmSpecEnv {
+  value?: string;
+  name: string;
+}
+
+export interface ApplicationVmSpecNic {
+  vlanId?: string;
+  mask?: string;
+  ip?: string;
+  gateway?: string;
+  dhcp?: boolean;
+}
+
+export interface ApplicationVmSpecNetwork {
+  nics?: ApplicationVmSpecNic[];
+  dns?: string[];
+}
+
+export interface ApplicationVmSpecStatus {
+  vmIps?: string[];
+  message?: VmStatus;
+}
+
+export interface ApplicationVmSpecStorage {
+  size_unit?: ByteUnit;
+
+  /** @format int64 */
+  size?: number;
+}
+
+export interface ApplicationVmSpec {
+  vmUsage?: VmUsage;
+  storages?: ApplicationVmSpecStorage[];
+  status?: ApplicationVmSpecStatus;
+  publicKeys?: string[];
+  network?: ApplicationVmSpecNetwork;
+  name?: string;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+  internal?: boolean;
+  image?: string;
+  host?: string;
+  env?: ApplicationVmSpecEnv[];
+
+  /** @format int32 */
+  cpu?: number;
+  cluster?: string;
+  cloudInitUserData?: string;
+}
+
+export enum ApplicationVmSpecPlacementSituation {
+  DIFFERENT = "DIFFERENT",
+  SAME = "SAME",
+}
+
+export enum ApplicationVmSpecPlacementVerb {
+  MUST = "MUST",
+  PREFER = "PREFER",
+}
+
+export interface ApplicationVmSpecPlacement {
+  verb: ApplicationVmSpecPlacementVerb;
+  situation: ApplicationVmSpecPlacementSituation;
+}
+
+export enum ApplicationVmSpecAffinityPolicy {
+  MUST = "MUST",
+  PREFER = "PREFER",
+}
+
+export interface ApplicationVmSpecDefinition {
+  vmAffinity?: ApplicationVmSpecAffinityPolicy;
+  placement?: ApplicationVmSpecPlacement;
+  name?: string;
+  group?: string;
+  template?: ApplicationVmSpec;
+  instances?: ApplicationVmSpec[];
+}
+
+export interface DeployCloudTowerApplicationParams {
+  name: string;
+  targetPackage: string;
+  vmSpec: ApplicationVmSpecDefinition;
+}
+
+export interface CloudTowerApplicationWhereUniqueInput {
+  id?: string | null;
+}
+
+export interface UpgradeCloudTowerApplicationParams {
+  data: { targetPackage: string };
+  where: CloudTowerApplicationWhereUniqueInput;
+}
+
+export interface UpdateCloudTowerApplicationVmSpecParams {
+  data: { vmSpec: ApplicationVmSpecDefinition };
+  where: CloudTowerApplicationWhereUniqueInput;
+}
+
+export interface UninstallCloudTowerApplicationParams {
+  where: CloudTowerApplicationWhereInput;
+}
+
 export enum NotifierLanguageCode {
   EN_US = "EN_US",
   ZH_CN = "ZH_CN",
@@ -21870,6 +22289,142 @@ export interface GetBrickTopoesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: BrickTopoWhereInput | null;
+}
+
+export interface NestedCloudTowerApplication {
+  id: string;
+  name: string;
+}
+
+export interface CloudTowerApplicationPackage {
+  applications?: NestedCloudTowerApplication[] | null;
+  architecture: Architecture;
+  containers: object;
+  id: string;
+  images: object;
+  name: string;
+  scosVersion: string;
+  version: string;
+}
+
+export enum CloudTowerApplicationPackageOrderByInput {
+  ArchitectureASC = "architecture_ASC",
+  ArchitectureDESC = "architecture_DESC",
+  ContainersASC = "containers_ASC",
+  ContainersDESC = "containers_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ImagesASC = "images_ASC",
+  ImagesDESC = "images_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ScosVersionASC = "scosVersion_ASC",
+  ScosVersionDESC = "scosVersion_DESC",
+  VersionASC = "version_ASC",
+  VersionDESC = "version_DESC",
+}
+
+export interface GetCloudTowerApplicationPackagesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationPackageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationPackageWhereInput | null;
+}
+
+export interface NestedAggregateCloudTowerApplicationPackage {
+  /** @format int32 */
+  count: number;
+}
+
+export interface CloudTowerApplicationPackageConnection {
+  aggregate: NestedAggregateCloudTowerApplicationPackage;
+}
+
+export interface GetCloudTowerApplicationPackagesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationPackageOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationPackageWhereInput | null;
+}
+
+export enum CloudTowerApplicationOrderByInput {
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InstanceStatusesASC = "instanceStatuses_ASC",
+  InstanceStatusesDESC = "instanceStatuses_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  PlacementSituationASC = "placementSituation_ASC",
+  PlacementSituationDESC = "placementSituation_DESC",
+  PlacementVerbASC = "placementVerb_ASC",
+  PlacementVerbDESC = "placementVerb_DESC",
+  ResourceVersionASC = "resourceVersion_ASC",
+  ResourceVersionDESC = "resourceVersion_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  TargetPackageASC = "targetPackage_ASC",
+  TargetPackageDESC = "targetPackage_DESC",
+  VmSpecASC = "vmSpec_ASC",
+  VmSpecDESC = "vmSpec_DESC",
+}
+
+export interface GetCloudTowerApplicationsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationWhereInput | null;
+}
+
+export interface NestedAggregateCloudTowerApplication {
+  /** @format int32 */
+  count: number;
+}
+
+export interface CloudTowerApplicationConnection {
+  aggregate: NestedAggregateCloudTowerApplication;
+}
+
+export interface GetCloudTowerApplicationsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: CloudTowerApplicationOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: CloudTowerApplicationWhereInput | null;
 }
 
 export interface ClusterImage {
@@ -23193,6 +23748,7 @@ export interface NestedNetworkPolicyRulePort {
 export enum NetworkPolicyRuleType {
   ALL = "ALL",
   IP_BLOCK = "IP_BLOCK",
+  SECURITY_GROUP = "SECURITY_GROUP",
   SELECTOR = "SELECTOR",
 }
 
