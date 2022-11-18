@@ -1,6 +1,6 @@
 ## release 日期 2022-11-18
 
-v2.4.0 release
+v2.4.1 release
 
 - feature:CloudTowerApplicationApi: [CloudTowerApplicationApi] 新增 CloudTowerApplicationApi;
   - [getCloudTowerApplications] 获取应用;
