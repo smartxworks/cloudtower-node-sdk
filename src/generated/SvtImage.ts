@@ -33,6 +33,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
       cluster_id?: string;
       name?: string;
       size?: string;
+      size_unit?: string;
       version?: string;
       upload_task_id?: string;
     },

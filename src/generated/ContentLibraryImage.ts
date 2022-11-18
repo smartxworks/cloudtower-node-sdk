@@ -39,6 +39,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
       clusters: string;
       name?: string;
       size?: string;
+      size_unit?: string;
       description?: string;
       upload_task_id?: string;
     },
