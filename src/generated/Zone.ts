@@ -21,7 +21,7 @@ export class ZoneApi<SecurityDataType = unknown> {
    * @name GetZones
    * @request POST:/get-zones
    * @secure
-   * @response `200` `(Zone)[]` Ok
+   * @response `200` `(Zone)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class ZoneApi<SecurityDataType = unknown> {
    * @name GetZonesConnection
    * @request POST:/get-zones-connection
    * @secure
-   * @response `200` `ZoneConnection` Ok
+   * @response `200` `ZoneConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

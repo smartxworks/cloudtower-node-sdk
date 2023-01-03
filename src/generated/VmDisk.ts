@@ -21,7 +21,7 @@ export class VmDiskApi<SecurityDataType = unknown> {
    * @name GetVmDisks
    * @request POST:/get-vm-disks
    * @secure
-   * @response `200` `(VmDisk)[]` Ok
+   * @response `200` `(VmDisk)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class VmDiskApi<SecurityDataType = unknown> {
    * @name GetVmDisksConnection
    * @request POST:/get-vm-disks-connection
    * @secure
-   * @response `200` `VmDiskConnection` Ok
+   * @response `200` `VmDiskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

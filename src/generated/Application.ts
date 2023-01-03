@@ -21,7 +21,7 @@ export class ApplicationApi<SecurityDataType = unknown> {
    * @name GetApplications
    * @request POST:/get-applications
    * @secure
-   * @response `200` `(Application)[]` Ok
+   * @response `200` `(Application)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ApplicationApi<SecurityDataType = unknown> {
    * @name GetApplicationsConnection
    * @request POST:/get-applications-connection
    * @secure
-   * @response `200` `ApplicationConnection` Ok
+   * @response `200` `ApplicationConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -28,7 +28,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name CreateLabel
    * @request POST:/create-label
    * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `200` `(WithTaskLabel)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name UpdateLabel
    * @request POST:/update-label
    * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `200` `(WithTaskLabel)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -73,7 +73,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name AddLabelsToResources
    * @request POST:/add-labels-to-resources
    * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `200` `(WithTaskLabel)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -99,7 +99,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name RemoveLabelsFromResources
    * @request POST:/remove-labels-from-resources
    * @secure
-   * @response `200` `(WithTaskLabel)[]` Ok
+   * @response `200` `(WithTaskLabel)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -125,7 +125,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name DeleteLabel
    * @request POST:/delete-label
    * @secure
-   * @response `200` `(WithTaskDeleteLabel)[]` Ok
+   * @response `200` `(WithTaskDeleteLabel)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -147,7 +147,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name GetLabels
    * @request POST:/get-labels
    * @secure
-   * @response `200` `(Label)[]` Ok
+   * @response `200` `(Label)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -169,7 +169,7 @@ export class LabelApi<SecurityDataType = unknown> {
    * @name GetLabelsConnection
    * @request POST:/get-labels-connection
    * @secure
-   * @response `200` `LabelConnection` Ok
+   * @response `200` `LabelConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

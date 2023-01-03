@@ -26,7 +26,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    * @name CreateEntityFilter
    * @request POST:/create-entity-filter
    * @secure
-   * @response `200` `(WithTaskEntityFilter)[]` Ok
+   * @response `200` `(WithTaskEntityFilter)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    * @name UpdateEntityFilter
    * @request POST:/update-entity-filter
    * @secure
-   * @response `200` `(WithTaskEntityFilter)[]` Ok
+   * @response `200` `(WithTaskEntityFilter)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    * @name DeleteEntityFilter
    * @request POST:/delete-entity-filter
    * @secure
-   * @response `200` `(WithTaskDeleteEntityFilter)[]` Ok
+   * @response `200` `(WithTaskDeleteEntityFilter)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    * @name GetEntityFilters
    * @request POST:/get-entity-filters
    * @secure
-   * @response `200` `(EntityFilter)[]` Ok
+   * @response `200` `(EntityFilter)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    * @name GetEntityFiltersConnection
    * @request POST:/get-entity-filters-connection
    * @secure
-   * @response `200` `EntityFilterConnection` Ok
+   * @response `200` `EntityFilterConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

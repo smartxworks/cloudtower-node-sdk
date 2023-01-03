@@ -26,7 +26,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    * @name CreateSnmpTransport
    * @request POST:/create-snmp-transport
    * @secure
-   * @response `200` `(WithTaskSnmpTransport)[]` Ok
+   * @response `200` `(WithTaskSnmpTransport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    * @name UpdateSnmpTransport
    * @request POST:/update-snmp-transport
    * @secure
-   * @response `200` `(WithTaskSnmpTransport)[]` Ok
+   * @response `200` `(WithTaskSnmpTransport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    * @name DeleteSnmpTransport
    * @request POST:/delete-snmp-transport
    * @secure
-   * @response `200` `(WithTaskDeleteSnmpTransport)[]` Ok
+   * @response `200` `(WithTaskDeleteSnmpTransport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    * @name GetSnmpTransports
    * @request POST:/get-snmp-transports
    * @secure
-   * @response `200` `(SnmpTransport)[]` Ok
+   * @response `200` `(SnmpTransport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    * @name GetSnmpTransportsConnection
    * @request POST:/get-snmp-transports-connection
    * @secure
-   * @response `200` `SnmpTransportConnection` Ok
+   * @response `200` `SnmpTransportConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

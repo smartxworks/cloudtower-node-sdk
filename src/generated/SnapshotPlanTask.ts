@@ -21,7 +21,7 @@ export class SnapshotPlanTaskApi<SecurityDataType = unknown> {
    * @name GetSnapshotPlanTasks
    * @request POST:/get-snapshot-plan-tasks
    * @secure
-   * @response `200` `(SnapshotPlanTask)[]` Ok
+   * @response `200` `(SnapshotPlanTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class SnapshotPlanTaskApi<SecurityDataType = unknown> {
    * @name GetSnapshotPlanTasksConnection
    * @request POST:/get-snapshot-plan-tasks-connection
    * @secure
-   * @response `200` `SnapshotPlanTaskConnection` Ok
+   * @response `200` `SnapshotPlanTaskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

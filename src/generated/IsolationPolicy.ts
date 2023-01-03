@@ -21,7 +21,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    * @name GetIsolationPolicies
    * @request POST:/get-isolation-policies
    * @secure
-   * @response `200` `(IsolationPolicy)[]` Ok
+   * @response `200` `(IsolationPolicy)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    * @name GetIsolationPoliciesConnection
    * @request POST:/get-isolation-policies-connection
    * @secure
-   * @response `200` `IsolationPolicyConnection` Ok
+   * @response `200` `IsolationPolicyConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

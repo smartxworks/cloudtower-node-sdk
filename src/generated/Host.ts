@@ -26,7 +26,7 @@ export class HostApi<SecurityDataType = unknown> {
    * @name CreateHost
    * @request POST:/create-host
    * @secure
-   * @response `200` `(WithTaskBatchHosts)[]` Ok
+   * @response `200` `(WithTaskBatchHosts)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class HostApi<SecurityDataType = unknown> {
    * @name TriggerDiskBlink
    * @request POST:/trigger-disk-blink
    * @secure
-   * @response `200` `(WithTaskHost)[]` Ok
+   * @response `200` `(WithTaskHost)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -73,7 +73,7 @@ export class HostApi<SecurityDataType = unknown> {
    * @name UpdateHost
    * @request POST:/update-host
    * @secure
-   * @response `200` `(WithTaskHost)[]` Ok
+   * @response `200` `(WithTaskHost)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -95,7 +95,7 @@ export class HostApi<SecurityDataType = unknown> {
    * @name GetHosts
    * @request POST:/get-hosts
    * @secure
-   * @response `200` `(Host)[]` Ok
+   * @response `200` `(Host)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -117,7 +117,7 @@ export class HostApi<SecurityDataType = unknown> {
    * @name GetHostsConnection
    * @request POST:/get-hosts-connection
    * @secure
-   * @response `200` `HostConnection` Ok
+   * @response `200` `HostConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

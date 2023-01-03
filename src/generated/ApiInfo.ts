@@ -13,7 +13,7 @@ export class ApiInfoApi<SecurityDataType = unknown> {
    * @tags ApiInfo
    * @name GetApiVersion
    * @request GET:/get-version
-   * @response `200` `string` Ok
+   * @response `200` `string`
    */
   getApiVersion = (params: RequestParams = {}) =>
     this.http.request<string, any>({

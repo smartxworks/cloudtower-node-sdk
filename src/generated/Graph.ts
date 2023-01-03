@@ -26,7 +26,7 @@ export class GraphApi<SecurityDataType = unknown> {
    * @name CreateGraph
    * @request POST:/create-graph
    * @secure
-   * @response `200` `(WithTaskGraph)[]` Ok
+   * @response `200` `(WithTaskGraph)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class GraphApi<SecurityDataType = unknown> {
    * @name UpdateGraph
    * @request POST:/update-graph
    * @secure
-   * @response `200` `(WithTaskGraph)[]` Ok
+   * @response `200` `(WithTaskGraph)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -70,7 +70,7 @@ export class GraphApi<SecurityDataType = unknown> {
    * @name DeleteGraph
    * @request POST:/delete-graph
    * @secure
-   * @response `200` `(WithTaskDeleteGraph)[]` Ok
+   * @response `200` `(WithTaskDeleteGraph)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -92,7 +92,7 @@ export class GraphApi<SecurityDataType = unknown> {
    * @name GetGraphs
    * @request POST:/get-graphs
    * @secure
-   * @response `200` `(Graph)[]` Ok
+   * @response `200` `(Graph)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -114,7 +114,7 @@ export class GraphApi<SecurityDataType = unknown> {
    * @name GetGraphsConnection
    * @request POST:/get-graphs-connection
    * @secure
-   * @response `200` `GraphConnection` Ok
+   * @response `200` `GraphConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

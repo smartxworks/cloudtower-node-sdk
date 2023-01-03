@@ -26,7 +26,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    * @name CreateConsistencyGroupSnapshot
    * @request POST:/create-consistency-snapshot-group
    * @secure
-   * @response `200` `(WithTaskConsistencyGroupSnapshot)[]` Ok
+   * @response `200` `(WithTaskConsistencyGroupSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    * @name UpdateConsistencyGroupSnapshot
    * @request POST:/rollback-consistency-snapshot-group
    * @secure
-   * @response `200` `(WithTaskConsistencyGroupSnapshot)[]` Ok
+   * @response `200` `(WithTaskConsistencyGroupSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    * @name DeleteConsistencyGroupSnapshot
    * @request POST:/delete-consistency-snapshot-group
    * @secure
-   * @response `200` `(WithTaskDeleteConsistencyGroupSnapshot)[]` Ok
+   * @response `200` `(WithTaskDeleteConsistencyGroupSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    * @name GetConsistencyGroupSnapshots
    * @request POST:/get-consistency-group-snapshots
    * @secure
-   * @response `200` `(ConsistencyGroupSnapshot)[]` Ok
+   * @response `200` `(ConsistencyGroupSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    * @name GetConsistencyGroupSnapshotsConnection
    * @request POST:/get-consistency-group-snapshots-connection
    * @secure
-   * @response `200` `ConsistencyGroupSnapshotConnection` Ok
+   * @response `200` `ConsistencyGroupSnapshotConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

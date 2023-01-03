@@ -26,7 +26,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    * @name CreateSnmpTrapReceiver
    * @request POST:/create-snmp-trap-receiver
    * @secure
-   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+   * @response `200` `(WithTaskSnmpTrapReceiver)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    * @name UpdateSnmpTrapReceiver
    * @request POST:/update-snmp-trap-receiver
    * @secure
-   * @response `200` `(WithTaskSnmpTrapReceiver)[]` Ok
+   * @response `200` `(WithTaskSnmpTrapReceiver)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    * @name DeleteSnmpTrapReceiver
    * @request POST:/delete-snmp-trap-receiver
    * @secure
-   * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]` Ok
+   * @response `200` `(WithTaskDeleteSnmpTrapReceiver)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    * @name GetSnmpTrapReceivers
    * @request POST:/get-snmp-trap-receivers
    * @secure
-   * @response `200` `(SnmpTrapReceiver)[]` Ok
+   * @response `200` `(SnmpTrapReceiver)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    * @name GetSnmpTrapReceiversConnection
    * @request POST:/get-snmp-trap-receivers-connection
    * @secure
-   * @response `200` `SnmpTrapReceiverConnection` Ok
+   * @response `200` `SnmpTrapReceiverConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

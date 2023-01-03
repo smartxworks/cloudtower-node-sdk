@@ -21,7 +21,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    * @name GetSecurityPolicies
    * @request POST:/get-security-policies
    * @secure
-   * @response `200` `(SecurityPolicy)[]` Ok
+   * @response `200` `(SecurityPolicy)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    * @name GetSecurityPoliciesConnection
    * @request POST:/get-security-policies-connection
    * @secure
-   * @response `200` `SecurityPolicyConnection` Ok
+   * @response `200` `SecurityPolicyConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

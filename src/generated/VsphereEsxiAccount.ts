@@ -23,7 +23,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    * @name UpdateVsphereEsxiAccount
    * @request POST:/update-vsphere-esxi-account
    * @secure
-   * @response `200` `(WithTaskVsphereEsxiAccountArray)[]` Ok
+   * @response `200` `(WithTaskVsphereEsxiAccountArray)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -49,7 +49,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    * @name GetVsphereEsxiAccounts
    * @request POST:/get-vsphere-esxi-accounts
    * @secure
-   * @response `200` `(VsphereEsxiAccount)[]` Ok
+   * @response `200` `(VsphereEsxiAccount)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -74,7 +74,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    * @name GetVsphereEsxiAccountsConnection
    * @request POST:/get-vsphere-esxi-accounts-connection
    * @secure
-   * @response `200` `VsphereEsxiAccountConnection` Ok
+   * @response `200` `VsphereEsxiAccountConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

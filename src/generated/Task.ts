@@ -21,7 +21,7 @@ export class TaskApi<SecurityDataType = unknown> {
    * @name GetTasks
    * @request POST:/get-tasks
    * @secure
-   * @response `200` `(Task)[]` Ok
+   * @response `200` `(Task)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class TaskApi<SecurityDataType = unknown> {
    * @name GetTasksConnection
    * @request POST:/get-tasks-connection
    * @secure
-   * @response `200` `TaskConnection` Ok
+   * @response `200` `TaskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

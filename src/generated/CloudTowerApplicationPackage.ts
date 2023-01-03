@@ -21,7 +21,7 @@ export class CloudTowerApplicationPackageApi<SecurityDataType = unknown> {
    * @name GetCloudTowerApplicationPackages
    * @request POST:/get-cloudtower-application-packages
    * @secure
-   * @response `200` `(CloudTowerApplicationPackage)[]` Ok
+   * @response `200` `(CloudTowerApplicationPackage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class CloudTowerApplicationPackageApi<SecurityDataType = unknown> {
    * @name GetCloudTowerApplicationPackagesConnection
    * @request POST:/get-cloud-tower-application-packages-connection
    * @secure
-   * @response `200` `CloudTowerApplicationPackageConnection` Ok
+   * @response `200` `CloudTowerApplicationPackageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -29,7 +29,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name CreateVmVolume
    * @request POST:/create-vm-volume
    * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `200` `(WithTaskVmVolume)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -54,7 +54,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name DeleteVmVolumeFromVm
    * @request POST:/delete-vm-volume
    * @secure
-   * @response `200` `(WithTaskDeleteVmVolume)[]` Ok
+   * @response `200` `(WithTaskDeleteVmVolume)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -79,7 +79,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name RebuildVmVolume
    * @request POST:/rebuild-vm-volume
    * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `200` `(WithTaskVmVolume)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -105,7 +105,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name RollbackVmVolume
    * @request POST:/rollback-vm-volume
    * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `200` `(WithTaskVmVolume)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -131,7 +131,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name CloneVmVolume
    * @request POST:/clone-vm-volume
    * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `200` `(WithTaskVmVolume)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -153,7 +153,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name UpdateVmVolume
    * @request POST:/update-vm-volume
    * @secure
-   * @response `200` `(WithTaskVmVolume)[]` Ok
+   * @response `200` `(WithTaskVmVolume)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -176,7 +176,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name GetVmVolumes
    * @request POST:/get-vm-volumes
    * @secure
-   * @response `200` `(VmVolume)[]` Ok
+   * @response `200` `(VmVolume)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -198,7 +198,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    * @name GetVmVolumesConnection
    * @request POST:/get-vm-volumes-connection
    * @secure
-   * @response `200` `VmVolumeConnection` Ok
+   * @response `200` `VmVolumeConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

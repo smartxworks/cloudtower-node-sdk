@@ -26,7 +26,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name CloneVmTemplateFromVm
    * @request POST:/clone-vm-template-from-vm
    * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `200` `(WithTaskVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name ConvertVmTemplateFromVm
    * @request POST:/convert-vm-template-from-vm
    * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `200` `(WithTaskVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name UpdateVmTemplate
    * @request POST:/update-vm-template
    * @secure
-   * @response `200` `(WithTaskVmTemplate)[]` Ok
+   * @response `200` `(WithTaskVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name DeleteVmTemplate
    * @request POST:/delete-vm-template
    * @secure
-   * @response `200` `(WithTaskDeleteVmTemplate)[]` Ok
+   * @response `200` `(WithTaskDeleteVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name GetVmTemplates
    * @request POST:/get-vm-templates
    * @secure
-   * @response `200` `(VmTemplate)[]` Ok
+   * @response `200` `(VmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -151,7 +151,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    * @name GetVmTemplatesConnection
    * @request POST:/get-vm-templates-connection
    * @secure
-   * @response `200` `VmTemplateConnection` Ok
+   * @response `200` `VmTemplateConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

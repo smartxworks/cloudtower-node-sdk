@@ -26,7 +26,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    * @name CreateOrganization
    * @request POST:/create-organization
    * @secure
-   * @response `200` `(WithTaskOrganization)[]` Ok
+   * @response `200` `(WithTaskOrganization)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    * @name UpdateOrganization
    * @request POST:/update-organization
    * @secure
-   * @response `200` `(WithTaskOrganization)[]` Ok
+   * @response `200` `(WithTaskOrganization)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    * @name DeleteOrganization
    * @request POST:/delete-organization
    * @secure
-   * @response `200` `(WithTaskDeleteOrganization)[]` Ok
+   * @response `200` `(WithTaskDeleteOrganization)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    * @name GetOrganizations
    * @request POST:/get-organizations
    * @secure
-   * @response `200` `(Organization)[]` Ok
+   * @response `200` `(Organization)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    * @name GetOrganizationsConnection
    * @request POST:/get-organizations-connection
    * @secure
-   * @response `200` `OrganizationConnection` Ok
+   * @response `200` `OrganizationConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

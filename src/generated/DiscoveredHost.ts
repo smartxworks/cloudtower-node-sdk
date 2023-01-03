@@ -19,7 +19,7 @@ export class DiscoveredHostApi<SecurityDataType = unknown> {
    * @name GetDiscoverHosts
    * @request POST:/get-discover-hosts
    * @secure
-   * @response `200` `(DiscoveredHost)[]` Ok
+   * @response `200` `(DiscoveredHost)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

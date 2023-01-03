@@ -26,7 +26,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    * @name CreateNamespaceGroup
    * @request POST:/create-namespace-group
    * @secure
-   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
+   * @response `200` `(WithTaskNamespaceGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    * @name UpdateNamespaceGroup
    * @request POST:/update-namespace-group
    * @secure
-   * @response `200` `(WithTaskNamespaceGroup)[]` Ok
+   * @response `200` `(WithTaskNamespaceGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    * @name DeleteNamespaceGroup
    * @request POST:/delete-namespace-group
    * @secure
-   * @response `200` `(WithTaskDeleteNamespaceGroup)[]` Ok
+   * @response `200` `(WithTaskDeleteNamespaceGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    * @name GetNamespaceGroups
    * @request POST:/get-namespace-groups
    * @secure
-   * @response `200` `(NamespaceGroup)[]` Ok
+   * @response `200` `(NamespaceGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    * @name GetNamespaceGroupsConnection
    * @request POST:/get-namespace-groups-connection
    * @secure
-   * @response `200` `NamespaceGroupConnection` Ok
+   * @response `200` `NamespaceGroupConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

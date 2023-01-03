@@ -28,7 +28,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name CreateNvmfNamespace
    * @request POST:/create-nvmf-namespace
    * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -53,7 +53,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name UpdateNvmfNamespace
    * @request POST:/update-nvmf-namespace
    * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -78,7 +78,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name DeleteNvmfNamespace
    * @request POST:/delete-nvmf-namespace
    * @secure
-   * @response `200` `(WithTaskDeleteNvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskDeleteNvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -103,7 +103,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name CloneNvmfNamespaceFromSnapshot
    * @request POST:/clone-nvmf-namespace-from-snapshot
    * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -128,7 +128,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name RollbackNvmfNamespaceFromSnapshot
    * @request POST:/rollback-nvmf-namespace-from-snapshot
    * @secure
-   * @response `200` `(WithTaskNvmfNamespace)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -153,7 +153,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name GetNvmfNamespaces
    * @request POST:/get-nvmf-namespaces
    * @secure
-   * @response `200` `(NvmfNamespace)[]` Ok
+   * @response `200` `(NvmfNamespace)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -178,7 +178,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    * @name GetNvmfNamespacesConnection
    * @request POST:/get-nvmf-namespaces-connection
    * @secure
-   * @response `200` `NvmfNamespaceConnection` Ok
+   * @response `200` `NvmfNamespaceConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

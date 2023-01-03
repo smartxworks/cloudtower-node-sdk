@@ -26,7 +26,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    * @name CreateElfImage
    * @request POST:/upload-elf-image
    * @secure
-   * @response `200` `(UploadTask)[]` Ok
+   * @response `200` `(UploadTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -58,7 +58,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    * @name UpdateElfImage
    * @request POST:/update-elf-image
    * @secure
-   * @response `200` `(WithTaskElfImage)[]` Ok
+   * @response `200` `(WithTaskElfImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -80,7 +80,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    * @name DeleteElfImage
    * @request POST:/delete-elf-image
    * @secure
-   * @response `200` `(WithTaskDeleteElfImage)[]` Ok
+   * @response `200` `(WithTaskDeleteElfImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -102,7 +102,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    * @name GetElfImages
    * @request POST:/get-elf-images
    * @secure
-   * @response `200` `(ElfImage)[]` Ok
+   * @response `200` `(ElfImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -124,7 +124,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    * @name GetElfImagesConnection
    * @request POST:/get-elf-images-connection
    * @secure
-   * @response `200` `ElfImageConnection` Ok
+   * @response `200` `ElfImageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

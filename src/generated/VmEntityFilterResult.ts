@@ -21,7 +21,7 @@ export class VmEntityFilterResultApi<SecurityDataType = unknown> {
    * @name GetVmEntityFilterResults
    * @request POST:/get-vm-entity-filter-results
    * @secure
-   * @response `200` `(VmEntityFilterResult)[]` Ok
+   * @response `200` `(VmEntityFilterResult)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class VmEntityFilterResultApi<SecurityDataType = unknown> {
    * @name GetVmEntityFilterResultsConnection
    * @request POST:/get-vm-entity-filter-results-connection
    * @secure
-   * @response `200` `VmEntityFilterResultConnection` Ok
+   * @response `200` `VmEntityFilterResultConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

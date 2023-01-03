@@ -24,7 +24,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    * @name CreateVcenterAccount
    * @request POST:/create-vcenter-account
    * @secure
-   * @response `200` `WithTaskVcenterAccount` Ok
+   * @response `200` `WithTaskVcenterAccount`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -49,7 +49,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    * @name UpdateVcenterAccount
    * @request POST:/update-vcenter-account
    * @secure
-   * @response `200` `WithTaskVcenterAccount` Ok
+   * @response `200` `WithTaskVcenterAccount`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -74,7 +74,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    * @name GetVcenterAccounts
    * @request POST:/get-vcenter-accounts
    * @secure
-   * @response `200` `(VcenterAccount)[]` Ok
+   * @response `200` `(VcenterAccount)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -99,7 +99,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    * @name GetVcenterAccountsConnection
    * @request POST:/get-vcenter-accounts-connection
    * @secure
-   * @response `200` `VcenterAccountConnection` Ok
+   * @response `200` `VcenterAccountConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

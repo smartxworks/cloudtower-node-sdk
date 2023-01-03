@@ -23,7 +23,7 @@ export class LicenseApi<SecurityDataType = unknown> {
    * @name UpdateDeploy
    * @request POST:/update-license
    * @secure
-   * @response `200` `WithTaskLicense` Ok
+   * @response `200` `WithTaskLicense`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -45,7 +45,7 @@ export class LicenseApi<SecurityDataType = unknown> {
    * @name GetLicenses
    * @request POST:/get-licenses
    * @secure
-   * @response `200` `(License)[]` Ok
+   * @response `200` `(License)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -67,7 +67,7 @@ export class LicenseApi<SecurityDataType = unknown> {
    * @name GetLicensesConnection
    * @request POST:/get-licenses-connection
    * @secure
-   * @response `200` `LicenseConnection` Ok
+   * @response `200` `LicenseConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

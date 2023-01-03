@@ -27,7 +27,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name RollbackSnapshotGroup
    * @request POST:/rollback-snapshot-group
    * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `200` `(WithTaskSnapshotGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -52,7 +52,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name CloneSnapshotGroup
    * @request POST:/clone-snapshot-group
    * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `200` `(WithTaskSnapshotGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -77,7 +77,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name KeepSnapshotGroup
    * @request POST:/keep-snapshot-group
    * @secure
-   * @response `200` `(WithTaskSnapshotGroup)[]` Ok
+   * @response `200` `(WithTaskSnapshotGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -102,7 +102,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name DeleteSnapshotGroup
    * @request POST:/delete-snapshot-group
    * @secure
-   * @response `200` `(WithTaskDeleteSnapshotGroup)[]` Ok
+   * @response `200` `(WithTaskDeleteSnapshotGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -127,7 +127,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name GetSnapshotGroups
    * @request POST:/get-snapshot-groups
    * @secure
-   * @response `200` `(SnapshotGroup)[]` Ok
+   * @response `200` `(SnapshotGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -152,7 +152,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    * @name GetSnapshotGroupsConnection
    * @request POST:/get-snapshot-groups-connection
    * @secure
-   * @response `200` `SnapshotGroupConnection` Ok
+   * @response `200` `SnapshotGroupConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

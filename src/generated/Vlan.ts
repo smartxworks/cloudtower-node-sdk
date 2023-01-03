@@ -28,7 +28,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name CreateVmVlan
    * @request POST:/create-vm-vlan
    * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `200` `(WithTaskVlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name UpdateVlan
    * @request POST:/update-vm-vlan
    * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `200` `(WithTaskVlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -72,7 +72,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name UpdateManagementVlan
    * @request POST:/update-management-vlan
    * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `200` `(WithTaskVlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -97,7 +97,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name UpdateMigrationVlan
    * @request POST:/update-migration-vlan
    * @secure
-   * @response `200` `(WithTaskVlan)[]` Ok
+   * @response `200` `(WithTaskVlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -122,7 +122,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name DeleteVlan
    * @request POST:/delete-vm-vlan
    * @secure
-   * @response `200` `(WithTaskDeleteVlan)[]` Ok
+   * @response `200` `(WithTaskDeleteVlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -144,7 +144,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name GetVlans
    * @request POST:/get-vlans
    * @secure
-   * @response `200` `(Vlan)[]` Ok
+   * @response `200` `(Vlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -166,7 +166,7 @@ export class VlanApi<SecurityDataType = unknown> {
    * @name GetVlansConnection
    * @request POST:/get-vlans-connection
    * @secure
-   * @response `200` `VlanConnection` Ok
+   * @response `200` `VlanConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

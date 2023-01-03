@@ -25,7 +25,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name CreateLogCollection
    * @request POST:/create-log-collection
-   * @response `200` `(WithTaskLogCollection)[]` Ok
+   * @response `200` `(WithTaskLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name ForceStopLogCollection
    * @request POST:/force-stop-log-collection
-   * @response `200` `(WithTaskLogCollection)[]` Ok
+   * @response `200` `(WithTaskLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -71,7 +71,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name DeleteLogCollection
    * @request POST:/delete-log-collection
-   * @response `200` `(WithTaskDeleteLogCollection)[]` Ok
+   * @response `200` `(WithTaskDeleteLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -95,7 +95,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @name GetLogCollections
    * @request POST:/get-log-collections
    * @secure
-   * @response `200` `(LogCollection)[]` Ok
+   * @response `200` `(LogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -120,7 +120,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @name GetLogCollectionsConnection
    * @request POST:/get-log-collections-connection
    * @secure
-   * @response `200` `LogCollectionConnection` Ok
+   * @response `200` `LogCollectionConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

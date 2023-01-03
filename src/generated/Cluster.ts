@@ -12,6 +12,8 @@ import {
   ErrorBody,
   GetClustersConnectionRequestBody,
   GetClustersRequestBody,
+  GetMetaLeaderRequestBody,
+  MetaLeader,
   WithTaskCluster,
   WithTaskClusterSettings,
   WithTaskDeleteCluster,
@@ -32,7 +34,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name ConnectCluster
    * @request POST:/connect-cluster
    * @secure
-   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `200` `(WithTaskCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -57,7 +59,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateCluster
    * @request POST:/update-cluster
    * @secure
-   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `200` `(WithTaskCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -79,7 +81,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateClusterLicense
    * @request POST:/update-cluster-license
    * @secure
-   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `200` `(WithTaskCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -104,7 +106,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateClusterNetworkSetting
    * @request POST:/update-cluster-network-setting
    * @secure
-   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `200` `(WithTaskCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -129,7 +131,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateClusterVirtualizationSetting
    * @request POST:/update-cluster-virtualization-setting
    * @secure
-   * @response `200` `(WithTaskCluster)[]` Ok
+   * @response `200` `(WithTaskCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -154,7 +156,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateClusterHaSetting
    * @request POST:/update-cluster-ha-setting
    * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `200` `(WithTaskClusterSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -179,7 +181,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name UpdateClusterEnableIscsiSetting
    * @request POST:/update-cluster-enable-iscsi-setting
    * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `200` `(WithTaskClusterSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -204,7 +206,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name DeleteCluster
    * @request POST:/delete-cluster
    * @secure
-   * @response `200` `(WithTaskDeleteCluster)[]` Ok
+   * @response `200` `(WithTaskDeleteCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -223,10 +225,35 @@ export class ClusterApi<SecurityDataType = unknown> {
    * No description
    *
    * @tags Cluster
+   * @name GetMetaLeader
+   * @request POST:/get-meta-leader
+   * @secure
+   * @response `200` `(MetaLeader)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getMetaLeader = (
+    data: GetMetaLeaderRequestBody,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<MetaLeader[], ErrorBody>({
+      path: `/get-meta-leader`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
    * @name GetClusters
    * @request POST:/get-clusters
    * @secure
-   * @response `200` `(Cluster)[]` Ok
+   * @response `200` `(Cluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -248,7 +275,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    * @name GetClustersConnection
    * @request POST:/get-clusters-connection
    * @secure
-   * @response `200` `ClusterConnection` Ok
+   * @response `200` `ClusterConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

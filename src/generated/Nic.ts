@@ -23,7 +23,7 @@ export class NicApi<SecurityDataType = unknown> {
    * @name UpdateNic
    * @request POST:/update-nic
    * @secure
-   * @response `200` `(WithTaskNic)[]` Ok
+   * @response `200` `(WithTaskNic)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -45,7 +45,7 @@ export class NicApi<SecurityDataType = unknown> {
    * @name GetNics
    * @request POST:/get-nics
    * @secure
-   * @response `200` `(Nic)[]` Ok
+   * @response `200` `(Nic)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -67,7 +67,7 @@ export class NicApi<SecurityDataType = unknown> {
    * @name GetNicsConnection
    * @request POST:/get-nics-connection
    * @secure
-   * @response `200` `NicConnection` Ok
+   * @response `200` `NicConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

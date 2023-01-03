@@ -21,7 +21,7 @@ export class ClusterImageApi<SecurityDataType = unknown> {
    * @name GetClusterImages
    * @request POST:/get-cluster-images
    * @secure
-   * @response `200` `(ClusterImage)[]` Ok
+   * @response `200` `(ClusterImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ClusterImageApi<SecurityDataType = unknown> {
    * @name GetClusterImagesConnection
    * @request POST:/get-cluster-images-connection
    * @secure
-   * @response `200` `ClusterImageConnection` Ok
+   * @response `200` `ClusterImageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

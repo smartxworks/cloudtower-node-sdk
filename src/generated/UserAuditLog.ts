@@ -21,7 +21,7 @@ export class UserAuditLogApi<SecurityDataType = unknown> {
    * @name GetUserAuditLogs
    * @request POST:/get-user-audit-logs
    * @secure
-   * @response `200` `(UserAuditLog)[]` Ok
+   * @response `200` `(UserAuditLog)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class UserAuditLogApi<SecurityDataType = unknown> {
    * @name GetUserAuditLogsConnection
    * @request POST:/get-user-audit-logs-connection
    * @secure
-   * @response `200` `UserAuditLogConnection` Ok
+   * @response `200` `UserAuditLogConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

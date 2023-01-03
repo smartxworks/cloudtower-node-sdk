@@ -24,7 +24,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    * @name UpdateGlobalAlertRule
    * @request POST:/update-global-alert-rule
    * @secure
-   * @response `200` `(WithTaskGlobalAlertRule)[]` Ok
+   * @response `200` `(WithTaskGlobalAlertRule)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -49,7 +49,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    * @name UpdateCustomizeAlertRule
    * @request POST:/update-customize-alert-rule
    * @secure
-   * @response `200` `(WithTaskGlobalAlertRule)[]` Ok
+   * @response `200` `(WithTaskGlobalAlertRule)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -74,7 +74,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    * @name GetGlobalAlertRules
    * @request POST:/get-global-alert-rules
    * @secure
-   * @response `200` `(GlobalAlertRule)[]` Ok
+   * @response `200` `(GlobalAlertRule)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -99,7 +99,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    * @name GetGlobalAlertRulesConnection
    * @request POST:/get-global-alert-rules-connection
    * @secure
-   * @response `200` `GlobalAlertRuleConnection` Ok
+   * @response `200` `GlobalAlertRuleConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

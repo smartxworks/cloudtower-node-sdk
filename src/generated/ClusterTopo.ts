@@ -21,7 +21,7 @@ export class ClusterTopoApi<SecurityDataType = unknown> {
    * @name GetClusterTopoes
    * @request POST:/get-cluster-topoes
    * @secure
-   * @response `200` `(ClusterTopo)[]` Ok
+   * @response `200` `(ClusterTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ClusterTopoApi<SecurityDataType = unknown> {
    * @name GetClusterTopoesConnection
    * @request POST:/get-cluster-topoes-connection
    * @secure
-   * @response `200` `ClusterTopoConnection` Ok
+   * @response `200` `ClusterTopoConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -27,7 +27,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name UploadCloudTowerApplicationPackage
    * @request POST:/upload-cloudtower-application-package
    * @secure
-   * @response `200` `(UploadTask)[]` Ok
+   * @response `200` `(UploadTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -58,7 +58,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name DeleteCloudTowerApplicationPackage
    * @request POST:/delete-cloudtower-application-package
    * @secure
-   * @response `200` `(DeleteCloudTowerApplicationPackage)[]` Ok
+   * @response `200` `(DeleteCloudTowerApplicationPackage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -83,7 +83,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name DeployCloudTowerApplication
    * @request POST:/deploy-cloudtower-application
    * @secure
-   * @response `200` `CloudTowerApplication` Ok
+   * @response `200` `CloudTowerApplication`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -108,7 +108,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name UpgradeCloudTowerApplication
    * @request POST:/upgrade-cloudtower-application
    * @secure
-   * @response `200` `CloudTowerApplication` Ok
+   * @response `200` `CloudTowerApplication`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -133,7 +133,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name UninstallCloudTowerApplication
    * @request POST:/uninstall-cloudtower-application
    * @secure
-   * @response `200` `(CloudTowerApplication)[]` Ok
+   * @response `200` `(CloudTowerApplication)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -158,7 +158,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name GetCloudTowerApplications
    * @request POST:/get-cloudtower-applications
    * @secure
-   * @response `200` `(CloudTowerApplication)[]` Ok
+   * @response `200` `(CloudTowerApplication)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -183,7 +183,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    * @name GetCloudTowerApplicationsConnection
    * @request POST:/get-cloud-tower-applications-connection
    * @secure
-   * @response `200` `CloudTowerApplicationConnection` Ok
+   * @response `200` `CloudTowerApplicationConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

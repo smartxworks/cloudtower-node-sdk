@@ -27,7 +27,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name CloneContentLibraryVmTemplateFromVm
    * @request POST:/clone-content-library-vm-template-from-vm
    * @secure
-   * @response `200` `(WithTaskContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -52,7 +52,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name ConvertContentLibraryVmTemplateFromVm
    * @request POST:/convert-content-library-vm-template-from-vm
    * @secure
-   * @response `200` `(WithTaskContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -77,7 +77,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name UpdateContentLibraryVmTemplate
    * @request POST:/update-content-library-vm-template
    * @secure
-   * @response `200` `(WithTaskContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -102,7 +102,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name DistributeContentLibraryVmtemplateClusters
    * @request POST:/distribute-content-library-vm-template-clusters
    * @secure
-   * @response `200` `(WithTaskContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -127,7 +127,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name RemoveContentLibraryVmTemplateClusters
    * @request POST:/remove-content-library-vm-template-clusters
    * @secure
-   * @response `200` `(WithTaskContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -152,7 +152,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name DeleteContentLibraryVmTemplate
    * @request POST:/delete-content-library-vm-template
    * @secure
-   * @response `200` `(WithTaskDeleteContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(WithTaskDeleteContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -177,7 +177,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name GetContentLibraryVmTemplates
    * @request POST:/get-content-library-vm-templates
    * @secure
-   * @response `200` `(ContentLibraryVmTemplate)[]` Ok
+   * @response `200` `(ContentLibraryVmTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -202,7 +202,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    * @name GetContentLibraryVmTemplatesConnection
    * @request POST:/get-content-library-vm-templates-connection
    * @secure
-   * @response `200` `ContentLibraryVmTemplateConnection` Ok
+   * @response `200` `ContentLibraryVmTemplateConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

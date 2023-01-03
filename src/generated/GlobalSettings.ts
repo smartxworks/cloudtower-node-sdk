@@ -31,7 +31,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name UpdateGlobalRecycleBinSetting
    * @request POST:/update-global-recycle-bin-setting
    * @secure
-   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `200` `WithTaskGlobalSettings`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -56,7 +56,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name CreateClusterRecycleBinSetting
    * @request POST:/create-cluster-recycle-bin-setting
    * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `200` `(WithTaskClusterSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -81,7 +81,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name UpdateClusterRecycleBinSetting
    * @request POST:/update-cluster-recycle-bin-setting
    * @secure
-   * @response `200` `(WithTaskClusterSettings)[]` Ok
+   * @response `200` `(WithTaskClusterSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -106,7 +106,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name DeleteClusterRecycleBinSetting
    * @request POST:/delete-cluster-recycle-bin-setting
    * @secure
-   * @response `200` `(WithTaskDeleteClusterRecycleBin)[]` Ok
+   * @response `200` `(WithTaskDeleteClusterRecycleBin)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -131,7 +131,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name UpdatePasswordSecurity
    * @request POST:/update-password-security
    * @secure
-   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `200` `WithTaskGlobalSettings`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -156,7 +156,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name UpdateAccessRestriction
    * @request POST:/update-access-restriction
    * @secure
-   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `200` `WithTaskGlobalSettings`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -181,7 +181,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name UpdateSessionTimeout
    * @request POST:/update-session-timeout
    * @secure
-   * @response `200` `WithTaskGlobalSettings` Ok
+   * @response `200` `WithTaskGlobalSettings`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -206,7 +206,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name GetGlobalSettingses
    * @request POST:/get-global-settingses
    * @secure
-   * @response `200` `(GlobalSettings)[]` Ok
+   * @response `200` `(GlobalSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -231,7 +231,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    * @name GetGlobalSettingsesConnection
    * @request POST:/get-global-settingses-connection
    * @secure
-   * @response `200` `GlobalSettingsConnection` Ok
+   * @response `200` `GlobalSettingsConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

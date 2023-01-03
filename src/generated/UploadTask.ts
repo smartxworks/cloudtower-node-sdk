@@ -22,7 +22,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    * @name CancelUploadTask
    * @request POST:/cancel-upload-task
    * @secure
-   * @response `200` `(string)[]` Ok
+   * @response `200` `(string)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -48,7 +48,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    * @name GetUploadTasks
    * @request POST:/get-upload-tasks
    * @secure
-   * @response `200` `(UploadTask)[]` Ok
+   * @response `200` `(UploadTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -73,7 +73,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    * @name GetUploadTasksConnection
    * @request POST:/get-upload-tasks-connection
    * @secure
-   * @response `200` `UploadTaskConnection` Ok
+   * @response `200` `UploadTaskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -26,7 +26,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    * @name CreateVmFolder
    * @request POST:/create-vm-folder
    * @secure
-   * @response `200` `(WithTaskVmFolder)[]` Ok
+   * @response `200` `(WithTaskVmFolder)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    * @name UpdateVmFolder
    * @request POST:/update-vm-folder
    * @secure
-   * @response `200` `(WithTaskVmFolder)[]` Ok
+   * @response `200` `(WithTaskVmFolder)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -73,7 +73,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    * @name DeleteVmFolder
    * @request POST:/delete-vm-folder
    * @secure
-   * @response `200` `(WithTaskDeleteVmFolder)[]` Ok
+   * @response `200` `(WithTaskDeleteVmFolder)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -95,7 +95,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    * @name GetVmFolders
    * @request POST:/get-vm-folders
    * @secure
-   * @response `200` `(VmFolder)[]` Ok
+   * @response `200` `(VmFolder)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -117,7 +117,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    * @name GetVmFoldersConnection
    * @request POST:/get-vm-folders-connection
    * @secure
-   * @response `200` `VmFolderConnection` Ok
+   * @response `200` `VmFolderConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

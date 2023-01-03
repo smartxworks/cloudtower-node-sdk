@@ -15,7 +15,7 @@ export class IpmiApi<SecurityDataType = unknown> {
    * @name GetIpmis
    * @request POST:/get-ipmis
    * @secure
-   * @response `200` `(Ipmi)[]` Ok
+   * @response `200` `(Ipmi)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
