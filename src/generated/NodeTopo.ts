@@ -23,7 +23,7 @@ export class NodeTopoApi<SecurityDataType = unknown> {
    * @name UpdateNodeTopo
    * @request POST:/move-node-topo
    * @secure
-   * @response `200` `(WithTaskNodeTopo)[]` Ok
+   * @response `200` `(WithTaskNodeTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -45,7 +45,7 @@ export class NodeTopoApi<SecurityDataType = unknown> {
    * @name GetNodeTopoes
    * @request POST:/get-node-topoes
    * @secure
-   * @response `200` `(NodeTopo)[]` Ok
+   * @response `200` `(NodeTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -70,7 +70,7 @@ export class NodeTopoApi<SecurityDataType = unknown> {
    * @name GetNodeTopoesConnection
    * @request POST:/get-node-topoes-connection
    * @secure
-   * @response `200` `NodeTopoConnection` Ok
+   * @response `200` `NodeTopoConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -21,7 +21,7 @@ export class PmemDimmApi<SecurityDataType = unknown> {
    * @name GetPmemDimms
    * @request POST:/get-pmem-dimms
    * @secure
-   * @response `200` `(PmemDimm)[]` Ok
+   * @response `200` `(PmemDimm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class PmemDimmApi<SecurityDataType = unknown> {
    * @name GetPmemDimmsConnection
    * @request POST:/get-pmem-dimms-connection
    * @secure
-   * @response `200` `PmemDimmConnection` Ok
+   * @response `200` `PmemDimmConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

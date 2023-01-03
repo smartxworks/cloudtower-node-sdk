@@ -21,7 +21,7 @@ export class WitnessApi<SecurityDataType = unknown> {
    * @name GetWitnesses
    * @request POST:/get-witnesses
    * @secure
-   * @response `200` `(Witness)[]` Ok
+   * @response `200` `(Witness)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class WitnessApi<SecurityDataType = unknown> {
    * @name GetWitnessesConnection
    * @request POST:/get-witnesses-connection
    * @secure
-   * @response `200` `WitnessConnection` Ok
+   * @response `200` `WitnessConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

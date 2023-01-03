@@ -21,7 +21,7 @@ export class DeployApi<SecurityDataType = unknown> {
    * @name GetDeploys
    * @request POST:/get-deploys
    * @secure
-   * @response `200` `(Deploy)[]` Ok
+   * @response `200` `(Deploy)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class DeployApi<SecurityDataType = unknown> {
    * @name GetDeploysConnection
    * @request POST:/get-deploys-connection
    * @secure
-   * @response `200` `DeployConnection` Ok
+   * @response `200` `DeployConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

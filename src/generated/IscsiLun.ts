@@ -28,7 +28,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name CreateIscsiLun
    * @request POST:/create-iscsi-lun
    * @secure
-   * @response `200` `(WithTaskIscsiLun)[]` Ok
+   * @response `200` `(WithTaskIscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -53,7 +53,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name UpdateIscsiLun
    * @request POST:/update-iscsi-lun
    * @secure
-   * @response `200` `(WithTaskIscsiLun)[]` Ok
+   * @response `200` `(WithTaskIscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -75,7 +75,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name DeleteIscsiLun
    * @request POST:/delete-iscsi-lun
    * @secure
-   * @response `200` `(WithTaskDeleteIscsiLun)[]` Ok
+   * @response `200` `(WithTaskDeleteIscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -97,7 +97,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name CloneIscsiLunFromSnapshot
    * @request POST:/clone-iscsi-lun-from-snapshot
    * @secure
-   * @response `200` `(WithTaskIscsiLun)[]` Ok
+   * @response `200` `(WithTaskIscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -122,7 +122,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name RollbackIscsiLunFromSnapshot
    * @request POST:/rollback-iscsi-lun-from-snapshot
    * @secure
-   * @response `200` `(WithTaskIscsiLun)[]` Ok
+   * @response `200` `(WithTaskIscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -147,7 +147,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name GetIscsiLuns
    * @request POST:/get-iscsi-luns
    * @secure
-   * @response `200` `(IscsiLun)[]` Ok
+   * @response `200` `(IscsiLun)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -169,7 +169,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    * @name GetIscsiLunsConnection
    * @request POST:/get-iscsi-luns-connection
    * @secure
-   * @response `200` `IscsiLunConnection` Ok
+   * @response `200` `IscsiLunConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

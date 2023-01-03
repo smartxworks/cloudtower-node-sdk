@@ -26,7 +26,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    * @name CreateVmPlacementGroup
    * @request POST:/create-vm-placement-group
    * @secure
-   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
+   * @response `200` `(WithTaskVmPlacementGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    * @name UpdateVmPlacementGroup
    * @request POST:/update-vm-placement-group
    * @secure
-   * @response `200` `(WithTaskVmPlacementGroup)[]` Ok
+   * @response `200` `(WithTaskVmPlacementGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    * @name DeleteVmPlacementGroup
    * @request POST:/delete-vm-placement-group
    * @secure
-   * @response `200` `(WithTaskDeleteVmPlacementGroup)[]` Ok
+   * @response `200` `(WithTaskDeleteVmPlacementGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    * @name GetVmPlacementGroups
    * @request POST:/get-vm-placement-groups
    * @secure
-   * @response `200` `(VmPlacementGroup)[]` Ok
+   * @response `200` `(VmPlacementGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    * @name GetVmPlacementGroupsConnection
    * @request POST:/get-vm-placement-groups-connection
    * @secure
-   * @response `200` `VmPlacementGroupConnection` Ok
+   * @response `200` `VmPlacementGroupConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

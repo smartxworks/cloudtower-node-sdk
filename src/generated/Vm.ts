@@ -58,7 +58,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name CreateVm
    * @request POST:/create-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -80,7 +80,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name CreateVmFromTemplate
    * @request POST:/create-vm-from-template
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -105,7 +105,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name CreateVmFromContentLibraryTemplate
    * @request POST:/create-vm-from-content-library-template
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -130,7 +130,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ConvertVmTemplateToVm
    * @request POST:/convert-vm-template-to-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -155,7 +155,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name CloneVm
    * @request POST:/clone-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -177,7 +177,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RebuildVm
    * @request POST:/rebuild-vm-from-snapshot
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -199,7 +199,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RollbackVm
    * @request POST:/rollback-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -221,7 +221,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVm
    * @request POST:/update-vm-basic-info
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -243,7 +243,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name MoveVmToRecycleBin
    * @request POST:/move-vm-to-recycle
    * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `200` `(WithTaskDeleteVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -265,7 +265,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RecoverVmFromRecycleBin
    * @request POST:/recover-vm-from-recycle
    * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `200` `(WithTaskDeleteVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -290,7 +290,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name DeleteVm
    * @request POST:/delete-vm
    * @secure
-   * @response `200` `(WithTaskDeleteVm)[]` Ok
+   * @response `200` `(WithTaskDeleteVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -312,7 +312,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name StartVm
    * @request POST:/start-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -334,7 +334,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RestartVm
    * @request POST:/restart-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -356,7 +356,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ForceRestartVm
    * @request POST:/force-restart-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -378,7 +378,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ShutDownVm
    * @request POST:/shutdown-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -400,7 +400,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name PoweroffVm
    * @request POST:/poweroff-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -422,7 +422,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name SuspendVm
    * @request POST:/suspend-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -444,7 +444,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ResumeVm
    * @request POST:/resume-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -466,7 +466,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name AddVmDisk
    * @request POST:/add-vm-disk
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -488,7 +488,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmDisk
    * @request POST:/update-vm-disk
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -510,7 +510,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ExpandVmDisk
    * @request POST:/expand-vm-disk
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -532,7 +532,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RemoveVmDisk
    * @request POST:/remove-vm-disk
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -554,7 +554,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name AddVmCdRom
    * @request POST:/add-vm-cd-rom
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -577,7 +577,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RemoveVmCdRom
    * @request POST:/remove-vm-cd-rom
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -599,7 +599,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name EjectIsoFromVmCdRom
    * @request POST:/eject-iso-from-vm-cd-rom
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -624,7 +624,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ToggleVmCdRomDisable
    * @request POST:/toggle-vm-cd-rom-disable
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -649,7 +649,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name AddVmNic
    * @request POST:/add-vm-nic
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -671,7 +671,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmNic
    * @request POST:/update-vm-nic
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -693,7 +693,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmNicBasicInfo
    * @request POST:/update-vm-nic-basic-info
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -719,7 +719,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmNicAdvanceInfo
    * @request POST:/update-vm-nic-advance-info
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -745,7 +745,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RemoveVmNic
    * @request POST:/remove-vm-nic
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -767,7 +767,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name InstallVmtools
    * @request POST:/install-vmtools
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -789,7 +789,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name MigrateVm
    * @request POST:/migrate-vm
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -811,7 +811,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name MigrateVmAcrossCluster
    * @request POST:/migrate-vm-across-cluster
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -837,7 +837,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name StopVmInCutoverMigration
    * @request POST:/stop-vm-in-cutover-migration
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -862,7 +862,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name AbortMigrateVmAcrossCluster
    * @request POST:/abort-migrate-vm-across-cluster
    * @secure
-   * @response `200` `(Task)[]` Ok
+   * @response `200` `(Task)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -887,7 +887,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name AddVmToFolder
    * @request POST:/add-vm-to-folder
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -909,7 +909,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name RemoveVmToFolder
    * @request POST:/remove-vm-from-folder
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -931,7 +931,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmAdvancedOptions
    * @request POST:/update-vm-advanced-options
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -957,7 +957,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmHostOptions
    * @request POST:/update-vm-host-options
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -983,7 +983,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name ResetVmGuestOsPassword
    * @request POST:/reset-vm-guest-os-password
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -1009,7 +1009,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmOwner
    * @request POST:/update-vm-owner
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -1032,7 +1032,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name UpdateVmIoPolicy
    * @request POST:/update-vm-io-policy
    * @secure
-   * @response `200` `(WithTaskVm)[]` Ok
+   * @response `200` `(WithTaskVm)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -1058,7 +1058,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name GetVms
    * @request POST:/get-vms
    * @secure
-   * @response `200` `(Vm)[]` Ok
+   * @response `200` `(Vm)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -1080,7 +1080,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @name GetVmsConnection
    * @request POST:/get-vms-connection
    * @secure
-   * @response `200` `VmConnection` Ok
+   * @response `200` `VmConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

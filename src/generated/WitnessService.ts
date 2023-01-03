@@ -19,7 +19,7 @@ export class WitnessServiceApi<SecurityDataType = unknown> {
    * @name GetWitnessServices
    * @request POST:/get-witness-services
    * @secure
-   * @response `200` `(WitnessService)[]` Ok
+   * @response `200` `(WitnessService)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

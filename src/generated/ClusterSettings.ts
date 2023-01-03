@@ -21,7 +21,7 @@ export class ClusterSettingsApi<SecurityDataType = unknown> {
    * @name GetClusterSettingses
    * @request POST:/get-cluster-settingses
    * @secure
-   * @response `200` `(ClusterSettings)[]` Ok
+   * @response `200` `(ClusterSettings)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ClusterSettingsApi<SecurityDataType = unknown> {
    * @name GetClusterSettingsesConnection
    * @request POST:/get-cluster-settingses-connection
    * @secure
-   * @response `200` `ClusterSettingsConnection` Ok
+   * @response `200` `ClusterSettingsConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

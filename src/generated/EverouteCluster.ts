@@ -21,7 +21,7 @@ export class EverouteClusterApi<SecurityDataType = unknown> {
    * @name GetEverouteClusters
    * @request POST:/get-everoute-clusters
    * @secure
-   * @response `200` `(EverouteCluster)[]` Ok
+   * @response `200` `(EverouteCluster)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class EverouteClusterApi<SecurityDataType = unknown> {
    * @name GetEverouteClustersConnection
    * @request POST:/get-everoute-clusters-connection
    * @secure
-   * @response `200` `EverouteClusterConnection` Ok
+   * @response `200` `EverouteClusterConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

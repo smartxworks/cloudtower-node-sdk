@@ -21,7 +21,7 @@ export class ReportTaskApi<SecurityDataType = unknown> {
    * @name GetReportTasks
    * @request POST:/get-report-tasks
    * @secure
-   * @response `200` `(ReportTask)[]` Ok
+   * @response `200` `(ReportTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ReportTaskApi<SecurityDataType = unknown> {
    * @name GetReportTasksConnection
    * @request POST:/get-report-tasks-connection
    * @secure
-   * @response `200` `ReportTaskConnection` Ok
+   * @response `200` `ReportTaskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

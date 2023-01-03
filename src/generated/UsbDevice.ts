@@ -24,7 +24,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    * @name MountUsbDevice
    * @request POST:/mount-usb-device
    * @secure
-   * @response `200` `(WithTaskUsbDevice)[]` Ok
+   * @response `200` `(WithTaskUsbDevice)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    * @name UnmountUsbDevice
    * @request POST:/unmount-usb-device
    * @secure
-   * @response `200` `(WithTaskUsbDevice)[]` Ok
+   * @response `200` `(WithTaskUsbDevice)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -67,11 +67,11 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags UsbDevice
+   * @tags UsbDevice, UsbDevice
    * @name GetUsbDevices
    * @request POST:/get-usb-devices
    * @secure
-   * @response `200` `(UsbDevice)[]` Ok
+   * @response `200` `(UsbDevice)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -96,7 +96,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    * @name GetUsbDevicesConnection
    * @request POST:/get-usb-devices-connection
    * @secure
-   * @response `200` `UsbDeviceConnection` Ok
+   * @response `200` `UsbDeviceConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

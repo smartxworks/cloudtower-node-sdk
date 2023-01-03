@@ -27,7 +27,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name CreateBrickTopo
    * @request POST:/create-brick-topo
    * @secure
-   * @response `200` `(WithTaskBrickTopo)[]` Ok
+   * @response `200` `(WithTaskBrickTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -52,7 +52,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name UpdateBrickTopo
    * @request POST:/update-brick-topo
    * @secure
-   * @response `200` `(WithTaskBrickTopo)[]` Ok
+   * @response `200` `(WithTaskBrickTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -77,7 +77,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name MoveBrickTopo
    * @request POST:/move-brick-topo
    * @secure
-   * @response `200` `(WithTaskBrickTopo)[]` Ok
+   * @response `200` `(WithTaskBrickTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -99,7 +99,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name DeleteBrickTopo
    * @request POST:/delete-brick-topo
    * @secure
-   * @response `200` `(WithTaskDeleteBrickTopo)[]` Ok
+   * @response `200` `(WithTaskDeleteBrickTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -124,7 +124,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name GetBrickTopoes
    * @request POST:/get-brick-topoes
    * @secure
-   * @response `200` `(BrickTopo)[]` Ok
+   * @response `200` `(BrickTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -149,7 +149,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    * @name GetBrickTopoesConnection
    * @request POST:/get-brick-topoes-connection
    * @secure
-   * @response `200` `BrickTopoConnection` Ok
+   * @response `200` `BrickTopoConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

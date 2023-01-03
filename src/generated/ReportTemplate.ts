@@ -28,7 +28,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name CreateReportTemplate
    * @request POST:/create-report-template
    * @secure
-   * @response `200` `(WithTaskReportTemplate)[]` Ok
+   * @response `200` `(WithTaskReportTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -53,7 +53,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name UpdateReportTemplate
    * @request POST:/update-report-template
    * @secure
-   * @response `200` `(WithTaskReportTemplate)[]` Ok
+   * @response `200` `(WithTaskReportTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -78,7 +78,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name GenerateFromReportTemplate
    * @request POST:/generate-from-report-template
    * @secure
-   * @response `200` `(WithTaskReportTask)[]` Ok
+   * @response `200` `(WithTaskReportTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -103,7 +103,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name DeleteReportTemplate
    * @request POST:/delete-report-template
    * @secure
-   * @response `200` `(WithTaskDeleteReportTemplate)[]` Ok
+   * @response `200` `(WithTaskDeleteReportTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -128,7 +128,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name GetReportTemplates
    * @request POST:/get-report-templates
    * @secure
-   * @response `200` `(ReportTemplate)[]` Ok
+   * @response `200` `(ReportTemplate)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -153,7 +153,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    * @name GetReportTemplatesConnection
    * @request POST:/get-report-templates-connection
    * @secure
-   * @response `200` `ReportTemplateConnection` Ok
+   * @response `200` `ReportTemplateConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

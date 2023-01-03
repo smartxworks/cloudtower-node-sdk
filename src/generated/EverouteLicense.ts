@@ -21,7 +21,7 @@ export class EverouteLicenseApi<SecurityDataType = unknown> {
    * @name GetEverouteLicenses
    * @request POST:/get-everoute-licenses
    * @secure
-   * @response `200` `(EverouteLicense)[]` Ok
+   * @response `200` `(EverouteLicense)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class EverouteLicenseApi<SecurityDataType = unknown> {
    * @name GetEverouteLicensesConnection
    * @request POST:/get-everoute-licenses-connection
    * @secure
-   * @response `200` `EverouteLicenseConnection` Ok
+   * @response `200` `EverouteLicenseConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

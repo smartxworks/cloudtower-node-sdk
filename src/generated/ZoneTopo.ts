@@ -21,7 +21,7 @@ export class ZoneTopoApi<SecurityDataType = unknown> {
    * @name GetZoneTopoes
    * @request POST:/get-zone-topoes
    * @secure
-   * @response `200` `(ZoneTopo)[]` Ok
+   * @response `200` `(ZoneTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ZoneTopoApi<SecurityDataType = unknown> {
    * @name GetZoneTopoesConnection
    * @request POST:/get-zone-topoes-connection
    * @secure
-   * @response `200` `ZoneTopoConnection` Ok
+   * @response `200` `ZoneTopoConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

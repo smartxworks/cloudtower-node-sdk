@@ -25,7 +25,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    * @name CreateNvmfNamespaceSnapshot
    * @request POST:/create-nvmf-namespace-snapshot
    * @secure
-   * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]` Ok
+   * @response `200` `(WithTaskNvmfNamespaceSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    * @name DeleteNvmfNamespaceSnapshot
    * @request POST:/delete-nvmf-namespace-snapshot
    * @secure
-   * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]` Ok
+   * @response `200` `(WithTaskDeleteNvmfNamespaceSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -75,7 +75,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    * @name GetNvmfNamespaceSnapshots
    * @request POST:/get-nvmf-namespace-snapshots
    * @secure
-   * @response `200` `(NvmfNamespaceSnapshot)[]` Ok
+   * @response `200` `(NvmfNamespaceSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -100,7 +100,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    * @name GetNvmfNamespaceSnapshotsConnection
    * @request POST:/get-nvmf-namespace-snapshots-connection
    * @secure
-   * @response `200` `NvmfNamespaceSnapshotConnection` Ok
+   * @response `200` `NvmfNamespaceSnapshotConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

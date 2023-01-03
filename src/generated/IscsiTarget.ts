@@ -26,7 +26,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    * @name CreateIscsiTarget
    * @request POST:/create-iscsi-target
    * @secure
-   * @response `200` `(WithTaskIscsiTarget)[]` Ok
+   * @response `200` `(WithTaskIscsiTarget)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    * @name UpdateIscsiTarget
    * @request POST:/update-iscsi-target
    * @secure
-   * @response `200` `(WithTaskIscsiTarget)[]` Ok
+   * @response `200` `(WithTaskIscsiTarget)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    * @name DeleteIscsiTarget
    * @request POST:/delete-iscsi-target
    * @secure
-   * @response `200` `(WithTaskDeleteIscsiTarget)[]` Ok
+   * @response `200` `(WithTaskDeleteIscsiTarget)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    * @name GetIscsiTargets
    * @request POST:/get-iscsi-targets
    * @secure
-   * @response `200` `(IscsiTarget)[]` Ok
+   * @response `200` `(IscsiTarget)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    * @name GetIscsiTargetsConnection
    * @request POST:/get-iscsi-targets-connection
    * @secure
-   * @response `200` `IscsiTargetConnection` Ok
+   * @response `200` `IscsiTargetConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

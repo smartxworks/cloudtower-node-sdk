@@ -21,7 +21,7 @@ export class ElfDataStoreApi<SecurityDataType = unknown> {
    * @name GetElfDataStores
    * @request POST:/get-elf-data-stores
    * @secure
-   * @response `200` `(ElfDataStore)[]` Ok
+   * @response `200` `(ElfDataStore)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ElfDataStoreApi<SecurityDataType = unknown> {
    * @name GetElfDataStoresConnection
    * @request POST:/get-elf-data-stores-connection
    * @secure
-   * @response `200` `ElfDataStoreConnection` Ok
+   * @response `200` `ElfDataStoreConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

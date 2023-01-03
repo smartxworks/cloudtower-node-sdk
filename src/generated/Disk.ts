@@ -24,7 +24,7 @@ export class DiskApi<SecurityDataType = unknown> {
    * @name MountDisk
    * @request POST:/mount-disk
    * @secure
-   * @response `200` `(WithTaskDisk)[]` Ok
+   * @response `200` `(WithTaskDisk)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class DiskApi<SecurityDataType = unknown> {
    * @name UnmountDisk
    * @request POST:/unmount-disk
    * @secure
-   * @response `200` `(WithTaskDisk)[]` Ok
+   * @response `200` `(WithTaskDisk)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -68,7 +68,7 @@ export class DiskApi<SecurityDataType = unknown> {
    * @name GetDisks
    * @request POST:/get-disks
    * @secure
-   * @response `200` `(Disk)[]` Ok
+   * @response `200` `(Disk)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -90,7 +90,7 @@ export class DiskApi<SecurityDataType = unknown> {
    * @name GetDisksConnection
    * @request POST:/get-disks-connection
    * @secure
-   * @response `200` `DiskConnection` Ok
+   * @response `200` `DiskConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

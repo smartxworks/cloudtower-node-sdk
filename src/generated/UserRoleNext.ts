@@ -26,7 +26,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    * @name CreateRole
    * @request POST:/create-role
    * @secure
-   * @response `200` `(WithTaskUserRoleNext)[]` Ok
+   * @response `200` `(WithTaskUserRoleNext)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    * @name UpdateRole
    * @request POST:/update-role
    * @secure
-   * @response `200` `(WithTaskUserRoleNext)[]` Ok
+   * @response `200` `(WithTaskUserRoleNext)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -70,7 +70,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    * @name DeleteRole
    * @request POST:/delete-role
    * @secure
-   * @response `200` `(WithTaskDeleteRole)[]` Ok
+   * @response `200` `(WithTaskDeleteRole)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -92,7 +92,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    * @name GetUserRoleNexts
    * @request POST:/get-user-role-nexts
    * @secure
-   * @response `200` `(UserRoleNext)[]` Ok
+   * @response `200` `(UserRoleNext)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -117,7 +117,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    * @name GetUserRoleNextsConnection
    * @request POST:/get-user-role-nexts-connection
    * @secure
-   * @response `200` `UserRoleNextConnection` Ok
+   * @response `200` `UserRoleNextConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

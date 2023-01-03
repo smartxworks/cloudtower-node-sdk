@@ -27,7 +27,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name CreateContentLibraryImage
    * @request POST:/upload-content-library-image
    * @secure
-   * @response `200` `(UploadTask)[]` Ok
+   * @response `200` `(UploadTask)[]`
    * @response `304` `void` Not modified
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -61,7 +61,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name UpdateContentLibraryImage
    * @request POST:/update-content-library-image
    * @secure
-   * @response `200` `(WithTaskContentLibraryImage)[]` Ok
+   * @response `200` `(WithTaskContentLibraryImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -86,7 +86,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name DistributeContentLibraryImageClusters
    * @request POST:/distribute-content-library-image-clusters
    * @secure
-   * @response `200` `(WithTaskContentLibraryImage)[]` Ok
+   * @response `200` `(WithTaskContentLibraryImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -111,7 +111,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name RemoveContentLibraryImageClusters
    * @request POST:/remove-content-library-image-clusters
    * @secure
-   * @response `200` `(WithTaskContentLibraryImage)[]` Ok
+   * @response `200` `(WithTaskContentLibraryImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -136,7 +136,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name DeleteContentLibraryImage
    * @request POST:/delete-content-library-image
    * @secure
-   * @response `200` `(WithTaskDeleteContentLibraryImage)[]` Ok
+   * @response `200` `(WithTaskDeleteContentLibraryImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -161,7 +161,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name GetContentLibraryImages
    * @request POST:/get-content-library-images
    * @secure
-   * @response `200` `(ContentLibraryImage)[]` Ok
+   * @response `200` `(ContentLibraryImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -186,7 +186,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @name GetContentLibraryImagesConnection
    * @request POST:/get-content-library-images-connection
    * @secure
-   * @response `200` `ContentLibraryImageConnection` Ok
+   * @response `200` `ContentLibraryImageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

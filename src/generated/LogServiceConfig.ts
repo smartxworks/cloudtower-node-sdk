@@ -19,7 +19,7 @@ export class LogServiceConfigApi<SecurityDataType = unknown> {
    * @name GetLogServiceConfigs
    * @request POST:/get-log-service-configs
    * @secure
-   * @response `200` `(LogServiceConfig)[]` Ok
+   * @response `200` `(LogServiceConfig)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

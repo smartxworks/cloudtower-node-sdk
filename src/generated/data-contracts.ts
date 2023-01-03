@@ -10431,7 +10431,9 @@ export interface UsbDeviceWhereInput {
   usb_type_not_in?: string[] | null;
   usb_type_not_starts_with?: string | null;
   usb_type_starts_with?: string | null;
-  vm?: VmWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
 }
 
 export enum UsbDeviceStatus {
@@ -11111,6 +11113,7 @@ export enum SoftwareEdition {
   COMMUNITY = "COMMUNITY",
   ENTERPRISE = "ENTERPRISE",
   ESSENTIAL = "ESSENTIAL",
+  EXPRESS = "EXPRESS",
   STANDARD = "STANDARD",
   TRIAL = "TRIAL",
 }
@@ -11554,6 +11557,7 @@ export interface NestedDisk {
 
 export interface NestedHost {
   id: string;
+  management_ip: string;
   name: string;
 }
 
@@ -12622,6 +12626,15 @@ export interface ClusterDeletionParams {
   where: ClusterWhereInput;
 }
 
+export interface MetaLeader {
+  meta_leader: string;
+  cluster_id: string;
+}
+
+export interface GetMetaLeaderRequestBody {
+  where: ClusterWhereInput;
+}
+
 export interface NestedIscsiLunSnapshot {
   id: string;
   name: string;
@@ -12998,6 +13011,20 @@ export interface DatacenterCreationParams {
 export interface DatacenterUpdationParams {
   data: { clusters?: ClusterWhereInput; name?: string };
   where: DatacenterWhereInput;
+}
+
+export interface DatacenterWhereUniqueInput {
+  id?: string | null;
+}
+
+export interface AddClustersToDatacenterParams {
+  data: { clusters?: ClusterWhereInput };
+  where: DatacenterWhereUniqueInput;
+}
+
+export interface RemoveClustersFromDatacenterParams {
+  data: { clusters?: ClusterWhereInput };
+  where: DatacenterWhereUniqueInput;
 }
 
 export interface DeleteDatacenter {
@@ -13642,6 +13669,7 @@ export interface HostBatchCreateDiskInput {
 export enum HostBatchCreateIfaceFunction {
   ACCESS = "ACCESS",
   MANAGEMENT = "MANAGEMENT",
+  MIGRATION = "MIGRATION",
   STORAGE = "STORAGE",
   VMWARE_ACCESS = "VMWARE_ACCESS",
 }
@@ -13650,6 +13678,7 @@ export interface HostBatchCreateIfaceInput {
   netmask: string;
   name: string[];
   ip: string;
+  gateway_ip: string;
   function: HostBatchCreateIfaceFunction;
 }
 
@@ -13854,7 +13883,12 @@ export interface WithTaskIscsiLunSnapshot {
   data: IscsiLunSnapshot;
 }
 
+export interface IscsiLunSnapshotCreationEffect {
+  sync?: boolean;
+}
+
 export interface IscsiLunSnapshotCreationParams {
+  effect?: IscsiLunSnapshotCreationEffect;
   iscsi_target_id: string;
   name: string;
   iscsi_lun_id: string;
@@ -14195,6 +14229,9 @@ export interface IscsiTargetCommonParamsInitiatorChaps {
 export interface IscsiTargetCommonParams {
   /** @format int64 */
   bps_wr_max_length?: number;
+  bps_wr_max_unit?: BPSUnit;
+
+  /** @deprecated */
   bps_wr_max_size?: BPSUnit;
 
   /** @format int64 */
@@ -15906,6 +15943,7 @@ export enum ROLE_ACTION {
   MANAGE_DISK = "MANAGE_DISK",
   MANAGE_HARDWARE_TOPO = "MANAGE_HARDWARE_TOPO",
   MANAGE_USB_DEVICE = "MANAGE_USB_DEVICE",
+  MANAGE_GPU_DEVICE = "MANAGE_GPU_DEVICE",
   MANAGE_VDS = "MANAGE_VDS",
   MANAGE_VLAN = "MANAGE_VLAN",
   MANAGE_SYSTEM_VLAN = "MANAGE_SYSTEM_VLAN",
@@ -15923,9 +15961,12 @@ export enum ROLE_ACTION {
   VM_OPERATION_VM_POWER = "VM_OPERATION_VM_POWER",
   VM_OPERATION_CLONE = "VM_OPERATION_CLONE",
   VM_OPERATION_INSTALL_TOOLS = "VM_OPERATION_INSTALL_TOOLS",
+  VM_IMPORT_EXPORT = "VM_IMPORT_EXPORT",
   MANAGE_VM_TEMPLATE = "MANAGE_VM_TEMPLATE",
+  VM_TEMPLATE_IMPORT_EXPORT = "VM_TEMPLATE_IMPORT_EXPORT",
   MANAGE_VM_SNAPSHOT = "MANAGE_VM_SNAPSHOT",
   MANAGE_VM_VOLUME = "MANAGE_VM_VOLUME",
+  VM_VOLUME_IMPORT_EXPORT = "VM_VOLUME_IMPORT_EXPORT",
   MANAGE_ISO = "MANAGE_ISO",
   QUERY_SENSITIVE_RESOURCE_LIST = "QUERY_SENSITIVE_RESOURCE_LIST",
   QUERY_SENSITIVE_RESOURCE = "QUERY_SENSITIVE_RESOURCE",
@@ -15978,6 +16019,17 @@ export enum ROLE_ACTION {
   MANAGE_BACKUP_TASK = "MANAGE_BACKUP_TASK",
   MANAGE_BACKUP_RESTORE_POINT = "MANAGE_BACKUP_RESTORE_POINT",
   MANAGE_BACKUP_RESTORE_POINT_TASK = "MANAGE_BACKUP_RESTORE_POINT_TASK",
+  MANAGE_SECURITY_POLICY = "MANAGE_SECURITY_POLICY",
+  MANAGE_SECURITY_GROUP = "MANAGE_SECURITY_GROUP",
+  ISOLATE_VM = "ISOLATE_VM",
+  MANAGE_EVEROUTE_LICENSE = "MANAGE_EVEROUTE_LICENSE",
+  MANAGE_EVEROUTE_PACKAGE = "MANAGE_EVEROUTE_PACKAGE",
+  DEPLOY_EVEROUTE_CLUSTER = "DEPLOY_EVEROUTE_CLUSTER",
+  UNDEPLOY_EVEROUTE_CLUSTER = "UNDEPLOY_EVEROUTE_CLUSTER",
+  UPGRADE_EVEROUTE_CLUSTER = "UPGRADE_EVEROUTE_CLUSTER",
+  MANAGE_EVEROUTE_CLUSTER_ASSOCIATION = "MANAGE_EVEROUTE_CLUSTER_ASSOCIATION",
+  MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY = "MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY",
+  MANAGE_CLUSTER_STORAGE_POLICY = "MANAGE_CLUSTER_STORAGE_POLICY",
 }
 
 export interface RoleCreationParams {
@@ -16883,6 +16935,9 @@ export interface UsbDevice {
   size: number;
   status: UsbDeviceStatus;
   usb_type: string;
+  vms?: NestedVm[] | null;
+
+  /** @deprecated */
   vm?: NestedVm | null;
 }
 
@@ -16892,17 +16947,61 @@ export interface WithTaskUsbDevice {
 }
 
 export interface UsbDeviceMountParams {
-  data: { vm_id: string };
+  data: { vms?: VmWhereInput; vm_id?: string };
   where: UsbDeviceWhereInput;
 }
 
 export interface UsbDeviceUnmountParams {
+  data?: { vms: VmWhereInput };
   where: UsbDeviceWhereInput;
 }
 
-export interface WithTaskTokenString {
+export enum UsbDeviceOrderByInput {
+  BindedASC = "binded_ASC",
+  BindedDESC = "binded_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ManufacturerASC = "manufacturer_ASC",
+  ManufacturerDESC = "manufacturer_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UsbTypeASC = "usb_type_ASC",
+  UsbTypeDESC = "usb_type_DESC",
+}
+
+export interface GetUsbDevicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: UsbDeviceOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: UsbDeviceWhereInput | null;
+}
+
+export interface LoginResponse {
+  token: string;
+}
+
+export interface WithTaskLoginResponse {
   task_id?: string | null;
-  data: { token: string };
+  data: LoginResponse;
 }
 
 export interface LoginInput {
@@ -18611,6 +18710,7 @@ export interface Metric {
   step: number;
   samples?: MetricSample[] | null;
   sample_streams?: MetricStream[] | null;
+  dropped: boolean;
   __typename?: "Metric";
 }
 
@@ -19224,45 +19324,6 @@ export interface GetNicsRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: NicWhereInput | null;
-}
-
-export enum UsbDeviceOrderByInput {
-  BindedASC = "binded_ASC",
-  BindedDESC = "binded_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  LocalCreatedAtASC = "local_created_at_ASC",
-  LocalCreatedAtDESC = "local_created_at_DESC",
-  LocalIdASC = "local_id_ASC",
-  LocalIdDESC = "local_id_DESC",
-  ManufacturerASC = "manufacturer_ASC",
-  ManufacturerDESC = "manufacturer_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  SizeASC = "size_ASC",
-  SizeDESC = "size_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  UsbTypeASC = "usb_type_ASC",
-  UsbTypeDESC = "usb_type_DESC",
-}
-
-export interface GetUsbDevicesRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: UsbDeviceOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: UsbDeviceWhereInput | null;
 }
 
 export enum IscsiTargetOrderByInput {

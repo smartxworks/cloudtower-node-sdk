@@ -26,7 +26,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    * @name CreateRackTopo
    * @request POST:/create-rack-topo
    * @secure
-   * @response `200` `(WithTaskRackTopo)[]` Ok
+   * @response `200` `(WithTaskRackTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    * @name UpdateRackTopo
    * @request POST:/update-rack-topo
    * @secure
-   * @response `200` `(WithTaskRackTopo)[]` Ok
+   * @response `200` `(WithTaskRackTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -73,7 +73,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    * @name DeleteRackTopo
    * @request POST:/delete-rack-topo
    * @secure
-   * @response `200` `(WithTaskDeleteRackTopo)[]` Ok
+   * @response `200` `(WithTaskDeleteRackTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -95,7 +95,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    * @name GetRackTopoes
    * @request POST:/get-rack-topoes
    * @secure
-   * @response `200` `(RackTopo)[]` Ok
+   * @response `200` `(RackTopo)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -120,7 +120,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    * @name GetRackTopoesConnection
    * @request POST:/get-rack-topoes-connection
    * @secure
-   * @response `200` `RackTopoConnection` Ok
+   * @response `200` `RackTopoConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

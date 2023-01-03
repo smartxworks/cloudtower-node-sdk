@@ -26,7 +26,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    * @name CreateNvmfSubsystem
    * @request POST:/create-nvmf-subsystem
    * @secure
-   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+   * @response `200` `(WithTaskNvmfSubsystem)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    * @name UpdateNvmfSubsystem
    * @request POST:/update-nvmf-subsystem
    * @secure
-   * @response `200` `(WithTaskNvmfSubsystem)[]` Ok
+   * @response `200` `(WithTaskNvmfSubsystem)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    * @name DeleteNvmfSubsystem
    * @request POST:/delete-nvmf-subsystem
    * @secure
-   * @response `200` `(WithTaskDeleteNvmfSubsystem)[]` Ok
+   * @response `200` `(WithTaskDeleteNvmfSubsystem)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    * @name GetNvmfSubsystems
    * @request POST:/get-nvmf-subsystems
    * @secure
-   * @response `200` `(NvmfSubsystem)[]` Ok
+   * @response `200` `(NvmfSubsystem)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    * @name GetNvmfSubsystemsConnection
    * @request POST:/get-nvmf-subsystems-connection
    * @secure
-   * @response `200` `NvmfSubsystemConnection` Ok
+   * @response `200` `NvmfSubsystemConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

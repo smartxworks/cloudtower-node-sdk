@@ -26,7 +26,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    * @name CreateNfsExport
    * @request POST:/create-nfs-export
    * @secure
-   * @response `200` `(WithTaskNfsExport)[]` Ok
+   * @response `200` `(WithTaskNfsExport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    * @name UpdateNfsExport
    * @request POST:/update-nfs-export
    * @secure
-   * @response `200` `(WithTaskNfsExport)[]` Ok
+   * @response `200` `(WithTaskNfsExport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    * @name DeleteNfsExport
    * @request POST:/delete-nfs-export
    * @secure
-   * @response `200` `(WithTaskDeleteNfsExport)[]` Ok
+   * @response `200` `(WithTaskDeleteNfsExport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    * @name GetNfsExports
    * @request POST:/get-nfs-exports
    * @secure
-   * @response `200` `(NfsExport)[]` Ok
+   * @response `200` `(NfsExport)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    * @name GetNfsExportsConnection
    * @request POST:/get-nfs-exports-connection
    * @secure
-   * @response `200` `NfsExportConnection` Ok
+   * @response `200` `NfsExportConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

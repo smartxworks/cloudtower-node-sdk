@@ -29,7 +29,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name CreateSnapshotPlan
    * @request POST:/create-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -54,7 +54,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name UpdateSnapshotPlan
    * @request POST:/update-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -79,7 +79,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name DeleteSnapshotPlan
    * @request POST:/delete-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskDeleteSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskDeleteSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -104,7 +104,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name ExecuteSnapshotPlan
    * @request POST:/execute-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -129,7 +129,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name SuspendSnapshotPlan
    * @request POST:/suspend-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -154,7 +154,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name ResumeSnapshotPlan
    * @request POST:/resume-snapshot-plan
    * @secure
-   * @response `200` `(WithTaskSnapshotPlan)[]` Ok
+   * @response `200` `(WithTaskSnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -179,7 +179,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name GetSnapshotPlans
    * @request POST:/get-snapshot-plans
    * @secure
-   * @response `200` `(SnapshotPlan)[]` Ok
+   * @response `200` `(SnapshotPlan)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -204,7 +204,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    * @name GetSnapshotPlansConnection
    * @request POST:/get-snapshot-plans-connection
    * @secure
-   * @response `200` `SnapshotPlanConnection` Ok
+   * @response `200` `SnapshotPlanConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

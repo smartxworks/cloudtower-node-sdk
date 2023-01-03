@@ -35,7 +35,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetVmMetrics
    * @request POST:/get-vm-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -57,7 +57,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetVmNetWorkMetrics
    * @request POST:/get-vm-network-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -82,7 +82,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetDiskMetrics
    * @request POST:/get-disk-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -104,7 +104,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetVmVolumeMetrics
    * @request POST:/get-vm-volume-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -129,7 +129,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetLunMetrics
    * @request POST:/get-lun-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -151,7 +151,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetNvmfNamespaceMetrics
    * @request POST:/get-nvmf-namespace-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -176,7 +176,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetClusterMetrics
    * @request POST:/get-cluster-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -201,7 +201,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetHostMetrics
    * @request POST:/get-host-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -223,7 +223,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetHostNetworkMetrics
    * @request POST:/get-host-network-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -248,7 +248,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetHostServicekMetrics
    * @request POST:/get-host-service-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -273,7 +273,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetScvmMetrics
    * @request POST:/get-scvm-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -295,7 +295,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetScvmNetworkMetrics
    * @request POST:/get-scvm-network-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -320,7 +320,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetScvmServicekMetrics
    * @request POST:/get-scvm-service-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -345,7 +345,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetScvmDiskMetrics
    * @request POST:/get-scvm-disk-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -370,7 +370,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetZoneMetrics
    * @request POST:/get-zone-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -392,7 +392,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetWitnessMetrics
    * @request POST:/get-witness-metrics
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -417,7 +417,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    * @name GetTopNVmVolumeMetrics
    * @request POST:/get-top-n-metrics-in-clusters
    * @secure
-   * @response `200` `(WithTaskMetric)[]` Ok
+   * @response `200` `(WithTaskMetric)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

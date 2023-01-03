@@ -21,7 +21,7 @@ export class ClusterUpgradeHistoryApi<SecurityDataType = unknown> {
    * @name GetClusterUpgradeHistories
    * @request POST:/get-cluster-upgrade-histories
    * @secure
-   * @response `200` `(ClusterUpgradeHistory)[]` Ok
+   * @response `200` `(ClusterUpgradeHistory)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ClusterUpgradeHistoryApi<SecurityDataType = unknown> {
    * @name GetClusterUpgradeHistoriesConnection
    * @request POST:/get-cluster-upgrade-histories-connection
    * @secure
-   * @response `200` `ClusterUpgradeHistoryConnection` Ok
+   * @response `200` `ClusterUpgradeHistoryConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

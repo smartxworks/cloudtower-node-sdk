@@ -21,7 +21,7 @@ export class NfsInodeApi<SecurityDataType = unknown> {
    * @name GetNfsInodes
    * @request POST:/get-nfs-inodes
    * @secure
-   * @response `200` `(NfsInode)[]` Ok
+   * @response `200` `(NfsInode)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class NfsInodeApi<SecurityDataType = unknown> {
    * @name GetNfsInodesConnection
    * @request POST:/get-nfs-inodes-connection
    * @secure
-   * @response `200` `NfsInodeConnection` Ok
+   * @response `200` `NfsInodeConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

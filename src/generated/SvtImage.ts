@@ -22,7 +22,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
    * @name UploadSvtImage
    * @request POST:/upload-svt-image
    * @secure
-   * @response `200` `(UploadTask)[]` Ok
+   * @response `200` `(UploadTask)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -55,7 +55,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
    * @name GetSvtImages
    * @request POST:/get-svt-images
    * @secure
-   * @response `200` `(SvtImage)[]` Ok
+   * @response `200` `(SvtImage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -77,7 +77,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
    * @name GetSvtImagesConnection
    * @request POST:/get-svt-images-connection
    * @secure
-   * @response `200` `SvtImageConnection` Ok
+   * @response `200` `SvtImageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

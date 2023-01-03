@@ -21,7 +21,7 @@ export class VmNicApi<SecurityDataType = unknown> {
    * @name GetVmNics
    * @request POST:/get-vm-nics
    * @secure
-   * @response `200` `(VmNic)[]` Ok
+   * @response `200` `(VmNic)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -43,7 +43,7 @@ export class VmNicApi<SecurityDataType = unknown> {
    * @name GetVmNicsConnection
    * @request POST:/get-vm-nics-connection
    * @secure
-   * @response `200` `VmNicConnection` Ok
+   * @response `200` `VmNicConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -23,7 +23,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @name GetAlertNotifiers
    * @request POST:/get-alert-notifiers
    * @secure
-   * @response `200` `(AlertNotifier)[]` Ok
+   * @response `200` `(AlertNotifier)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @name GetAlertNotifiersConnection
    * @request POST:/get-alert-notifiers-connection
    * @secure
-   * @response `200` `AlertNotifierConnection` Ok
+   * @response `200` `AlertNotifierConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -72,7 +72,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @tags AlertNotifier
    * @name UpdateAlertNotifier
    * @request POST:/update-alert-notifier
-   * @response `200` `WithTaskAlertNotifier` Ok
+   * @response `200` `WithTaskAlertNotifier`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

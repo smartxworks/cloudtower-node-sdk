@@ -25,7 +25,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    * @name CreateVmSnapshot
    * @request POST:/create-vm-snapshot
    * @secure
-   * @response `200` `(WithTaskVmSnapshot)[]` Ok
+   * @response `200` `(WithTaskVmSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    * @name DeleteVmSnapshot
    * @request POST:/delete-vm-snapshot
    * @secure
-   * @response `200` `(WithTaskDeleteVmSnapshot)[]` Ok
+   * @response `200` `(WithTaskDeleteVmSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -75,7 +75,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    * @name GetVmSnapshots
    * @request POST:/get-vm-snapshots
    * @secure
-   * @response `200` `(VmSnapshot)[]` Ok
+   * @response `200` `(VmSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -100,7 +100,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    * @name GetVmSnapshotsConnection
    * @request POST:/get-vm-snapshots-connection
    * @secure
-   * @response `200` `VmSnapshotConnection` Ok
+   * @response `200` `VmSnapshotConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

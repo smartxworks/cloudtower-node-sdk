@@ -21,7 +21,7 @@ export class EveroutePackageApi<SecurityDataType = unknown> {
    * @name GetEveroutePackages
    * @request POST:/get-everoute-packages
    * @secure
-   * @response `200` `(EveroutePackage)[]` Ok
+   * @response `200` `(EveroutePackage)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class EveroutePackageApi<SecurityDataType = unknown> {
    * @name GetEveroutePackagesConnection
    * @request POST:/get-everoute-packages-connection
    * @secure
-   * @response `200` `EveroutePackageConnection` Ok
+   * @response `200` `EveroutePackageConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

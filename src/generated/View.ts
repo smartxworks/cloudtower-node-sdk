@@ -26,7 +26,7 @@ export class ViewApi<SecurityDataType = unknown> {
    * @name CreateView
    * @request POST:/create-view
    * @secure
-   * @response `200` `(WithTaskView)[]` Ok
+   * @response `200` `(WithTaskView)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -48,7 +48,7 @@ export class ViewApi<SecurityDataType = unknown> {
    * @name UpdateView
    * @request POST:/update-view
    * @secure
-   * @response `200` `(WithTaskView)[]` Ok
+   * @response `200` `(WithTaskView)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -70,7 +70,7 @@ export class ViewApi<SecurityDataType = unknown> {
    * @name DeleteView
    * @request POST:/delete-view
    * @secure
-   * @response `200` `(WithTaskDeleteView)[]` Ok
+   * @response `200` `(WithTaskDeleteView)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -92,7 +92,7 @@ export class ViewApi<SecurityDataType = unknown> {
    * @name GetViews
    * @request POST:/get-views
    * @secure
-   * @response `200` `(View)[]` Ok
+   * @response `200` `(View)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -114,7 +114,7 @@ export class ViewApi<SecurityDataType = unknown> {
    * @name GetViewsConnection
    * @request POST:/get-views-connection
    * @secure
-   * @response `200` `ViewConnection` Ok
+   * @response `200` `ViewConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

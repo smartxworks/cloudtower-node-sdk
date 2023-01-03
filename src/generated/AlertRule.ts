@@ -21,7 +21,7 @@ export class AlertRuleApi<SecurityDataType = unknown> {
    * @name GetAlertRules
    * @request POST:/get-alert-rules
    * @secure
-   * @response `200` `(AlertRule)[]` Ok
+   * @response `200` `(AlertRule)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class AlertRuleApi<SecurityDataType = unknown> {
    * @name GetAlertRulesConnection
    * @request POST:/get-alert-rules-connection
    * @secure
-   * @response `200` `AlertRuleConnection` Ok
+   * @response `200` `AlertRuleConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

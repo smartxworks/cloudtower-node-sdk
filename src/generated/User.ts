@@ -10,7 +10,7 @@ import {
   UserDeletionParams,
   UserUpdationParams,
   WithTaskDeleteUser,
-  WithTaskTokenString,
+  WithTaskLoginResponse,
   WithTaskUser,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -28,13 +28,13 @@ export class UserApi<SecurityDataType = unknown> {
    * @tags User
    * @name Login
    * @request POST:/login
-   * @response `200` `WithTaskTokenString` Ok
+   * @response `200` `WithTaskLoginResponse`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
   login = (data: LoginInput, params: RequestParams = {}) =>
-    this.http.request<WithTaskTokenString, ErrorBody>({
+    this.http.request<WithTaskLoginResponse, ErrorBody>({
       path: `/login`,
       method: "POST",
       body: data,
@@ -49,7 +49,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name CreateUser
    * @request POST:/create-user
    * @secure
-   * @response `200` `(WithTaskUser)[]` Ok
+   * @response `200` `(WithTaskUser)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -71,7 +71,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name UpdateUser
    * @request POST:/update-user
    * @secure
-   * @response `200` `(WithTaskUser)[]` Ok
+   * @response `200` `(WithTaskUser)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -93,7 +93,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name DeleteUser
    * @request POST:/delete-user
    * @secure
-   * @response `200` `(WithTaskDeleteUser)[]` Ok
+   * @response `200` `(WithTaskDeleteUser)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -114,7 +114,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @tags User
    * @name CreateRootUser
    * @request POST:/create-root-user
-   * @response `200` `WithTaskUser` Ok
+   * @response `200` `WithTaskUser`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -134,7 +134,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @tags User
    * @name GetMyInfo
    * @request POST:/get-my-info
-   * @response `200` `User` Ok
+   * @response `200` `User`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -153,7 +153,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name GetUsers
    * @request POST:/get-users
    * @secure
-   * @response `200` `(User)[]` Ok
+   * @response `200` `(User)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -175,7 +175,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name GetUsersConnection
    * @request POST:/get-users-connection
    * @secure
-   * @response `200` `UserConnection` Ok
+   * @response `200` `UserConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

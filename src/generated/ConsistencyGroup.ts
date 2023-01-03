@@ -26,7 +26,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    * @name CreateConsistencyGroup
    * @request POST:/create-consistency-group
    * @secure
-   * @response `200` `(WithTaskConsistencyGroup)[]` Ok
+   * @response `200` `(WithTaskConsistencyGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -51,7 +51,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    * @name UpdateConsistencyGroup
    * @request POST:/update-consistency-group
    * @secure
-   * @response `200` `(WithTaskConsistencyGroup)[]` Ok
+   * @response `200` `(WithTaskConsistencyGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -76,7 +76,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    * @name DeleteConsistencyGroup
    * @request POST:/delete-consistency-group
    * @secure
-   * @response `200` `(WithTaskDeleteConsistencyGroup)[]` Ok
+   * @response `200` `(WithTaskDeleteConsistencyGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -101,7 +101,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    * @name GetConsistencyGroups
    * @request POST:/get-consistency-groups
    * @secure
-   * @response `200` `(ConsistencyGroup)[]` Ok
+   * @response `200` `(ConsistencyGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -126,7 +126,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    * @name GetConsistencyGroupsConnection
    * @request POST:/get-consistency-groups-connection
    * @secure
-   * @response `200` `ConsistencyGroupConnection` Ok
+   * @response `200` `ConsistencyGroupConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

@@ -15,7 +15,7 @@ export class TableReporterApi<SecurityDataType = unknown> {
    * @name ExportCsv
    * @request POST:/export-csv
    * @secure
-   * @response `200` `string` Ok
+   * @response `200` `string`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

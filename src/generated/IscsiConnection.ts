@@ -21,7 +21,7 @@ export class IscsiConnectionApi<SecurityDataType = unknown> {
    * @name GetIscsiConnections
    * @request POST:/get-iscsi-connections
    * @secure
-   * @response `200` `(IscsiConnection)[]` Ok
+   * @response `200` `(IscsiConnection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class IscsiConnectionApi<SecurityDataType = unknown> {
    * @name GetIscsiConnectionsConnection
    * @request POST:/get-iscsi-connections-connection
    * @secure
-   * @response `200` `IscsiConnectionConnection` Ok
+   * @response `200` `IscsiConnectionConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

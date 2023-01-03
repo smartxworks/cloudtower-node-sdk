@@ -21,7 +21,7 @@ export class ElfStoragePolicyApi<SecurityDataType = unknown> {
    * @name GetElfStoragePolicies
    * @request POST:/get-elf-storage-policies
    * @secure
-   * @response `200` `(ElfStoragePolicy)[]` Ok
+   * @response `200` `(ElfStoragePolicy)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -46,7 +46,7 @@ export class ElfStoragePolicyApi<SecurityDataType = unknown> {
    * @name GetElfStoragePoliciesConnection
    * @request POST:/get-elf-storage-policies-connection
    * @secure
-   * @response `200` `ElfStoragePolicyConnection` Ok
+   * @response `200` `ElfStoragePolicyConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

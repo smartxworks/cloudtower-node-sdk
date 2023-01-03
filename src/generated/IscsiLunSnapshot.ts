@@ -25,7 +25,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    * @name CreateIscsiLunSnapshot
    * @request POST:/create-iscsi-lun-snapshot
    * @secure
-   * @response `200` `(WithTaskIscsiLunSnapshot)[]` Ok
+   * @response `200` `(WithTaskIscsiLunSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    * @name DeleteIscsiLunSnapshot
    * @request POST:/delete-iscsi-lun-snapshot
    * @secure
-   * @response `200` `(WithTaskDeleteIscsiLunSnapshot)[]` Ok
+   * @response `200` `(WithTaskDeleteIscsiLunSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -75,7 +75,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    * @name GetIscsiLunSnapshots
    * @request POST:/get-iscsi-lun-snapshots
    * @secure
-   * @response `200` `(IscsiLunSnapshot)[]` Ok
+   * @response `200` `(IscsiLunSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -100,7 +100,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    * @name GetIscsiLunSnapshotsConnection
    * @request POST:/get-iscsi-lun-snapshots-connection
    * @secure
-   * @response `200` `IscsiLunSnapshotConnection` Ok
+   * @response `200` `IscsiLunSnapshotConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

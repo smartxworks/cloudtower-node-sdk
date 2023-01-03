@@ -23,7 +23,7 @@ export class AlertApi<SecurityDataType = unknown> {
    * @name ResolveAlert
    * @request POST:/resolve-alert
    * @secure
-   * @response `200` `(WithTaskAlert)[]` Ok
+   * @response `200` `(WithTaskAlert)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -45,7 +45,7 @@ export class AlertApi<SecurityDataType = unknown> {
    * @name GetAlerts
    * @request POST:/get-alerts
    * @secure
-   * @response `200` `(Alert)[]` Ok
+   * @response `200` `(Alert)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -67,7 +67,7 @@ export class AlertApi<SecurityDataType = unknown> {
    * @name GetAlertsConnection
    * @request POST:/get-alerts-connection
    * @secure
-   * @response `200` `AlertConnection` Ok
+   * @response `200` `AlertConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

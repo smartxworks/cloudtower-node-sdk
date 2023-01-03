@@ -28,7 +28,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name CreateVdsWithMigrateVlan
    * @request POST:/create-vds-with-migrate-vlan
    * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `200` `(WithTaskVds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -53,7 +53,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name CreateVdsWithAccessVlan
    * @request POST:/create-vds-with-access-vlan
    * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `200` `(WithTaskVds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -78,7 +78,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name CreateVds
    * @request POST:/create-vds
    * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `200` `(WithTaskVds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -100,7 +100,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name UpdateVds
    * @request POST:/update-vds
    * @secure
-   * @response `200` `(WithTaskVds)[]` Ok
+   * @response `200` `(WithTaskVds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -122,7 +122,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name DeleteVds
    * @request POST:/delete-vds
    * @secure
-   * @response `200` `(WithTaskDeleteVds)[]` Ok
+   * @response `200` `(WithTaskDeleteVds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -144,7 +144,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name GetVdses
    * @request POST:/get-vdses
    * @secure
-   * @response `200` `(Vds)[]` Ok
+   * @response `200` `(Vds)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -166,7 +166,7 @@ export class VdsApi<SecurityDataType = unknown> {
    * @name GetVdsesConnection
    * @request POST:/get-vdses-connection
    * @secure
-   * @response `200` `VdsConnection` Ok
+   * @response `200` `VdsConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

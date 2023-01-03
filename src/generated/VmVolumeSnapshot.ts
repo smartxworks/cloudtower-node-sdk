@@ -25,7 +25,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    * @name CreateVmVolumeSnapshot
    * @request POST:/create-vm-volume-snapshot
    * @secure
-   * @response `200` `(WithTaskVmVolumeSnapshot)[]` Ok
+   * @response `200` `(WithTaskVmVolumeSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -50,7 +50,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    * @name DeleteVmVolumeSnapshot
    * @request POST:/delete-vm-volume-snapshot
    * @secure
-   * @response `200` `(WithTaskDeleteVmVolumeSnapshot)[]` Ok
+   * @response `200` `(WithTaskDeleteVmVolumeSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -75,7 +75,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    * @name GetVmVolumeSnapshots
    * @request POST:/get-vm-volume-snapshots
    * @secure
-   * @response `200` `(VmVolumeSnapshot)[]` Ok
+   * @response `200` `(VmVolumeSnapshot)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
@@ -100,7 +100,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    * @name GetVmVolumeSnapshotsConnection
    * @request POST:/get-vm-volume-snapshots-connection
    * @secure
-   * @response `200` `VmVolumeSnapshotConnection` Ok
+   * @response `200` `VmVolumeSnapshotConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
