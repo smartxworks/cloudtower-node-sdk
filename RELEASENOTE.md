@@ -1,5 +1,22 @@
 # RELEASE NOTE
 
+## release 日期 2022-03-22
+
+v2.7.0 release
+
+- optimize: VmApi: [delete_vm] 更新参数类型为 `VmDeleteParams`，添加 `effect` 允许删除相关的快照
+- feature: [VmUsage] 枚举添加:
+  - `BUNDLE_APPLICATION`
+- feature: [ROLE_ACTION] 枚举添加:
+  - `MANAGE_OBSERVABILITY_PACKAGE`
+  - `MANAGE_OBSERVABILITY_SERVICE`
+- feature: [SoftwareEdition] 枚举添加：
+  - `ENTERPRISE_PLUS`
+- feature: [UploadResourceType] 枚举添加:
+  - `HOST_PLUGIN_PACKAGE`
+- feature: [TaskType] 枚举添加:
+  - `HOST_PLUGIN`
+
 ## release 日期 2022-02-20
 
 v2.6.0 release
