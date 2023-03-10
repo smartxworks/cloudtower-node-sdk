@@ -17,6 +17,7 @@ import {
   VmCreateVmFromContentLibraryTemplateParams,
   VmCreateVmFromTemplateParams,
   VmCreationParams,
+  VmDeleteParams,
   VmEjectCdRomParams,
   VmExpandVmDiskParams,
   VmMigrateAcrossClusterParams,
@@ -295,7 +296,7 @@ export class VmApi<SecurityDataType = unknown> {
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  deleteVm = (data: VmOperateParams, params: RequestParams = {}) =>
+  deleteVm = (data: VmDeleteParams, params: RequestParams = {}) =>
     this.http.request<WithTaskDeleteVm[], ErrorBody>({
       path: `/delete-vm`,
       method: "POST",
