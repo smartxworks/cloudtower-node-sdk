@@ -15365,7 +15365,7 @@ export interface DataPoint {
   /** @format double */
   v?: number | null;
 
-  /** @format double */
+  /** @format int64 */
   t: number;
   __typename?: "DataPoint";
 }
@@ -20514,16 +20514,21 @@ export interface WithTaskVlan {
   data: Vlan;
 }
 
+/**
+ * @format int32
+ * @min 0
+ * @max 4095
+ */
+export type VlanId = number;
+
 export interface VmVlanCreationParams {
   vds_id: string;
-
-  /** @format int32 */
-  vlan_id: number;
+  vlan_id: VlanId;
   name: string;
 }
 
 export interface VmVlanUpdationParams {
-  data: { vlan_id?: number; name?: string };
+  data: { vlan_id?: VlanId; name?: string };
   where: VlanWhereInput;
 }
 
@@ -20537,7 +20542,7 @@ export interface ManagementVlanUpdationParams {
     extra_ip?: ExtraIp[];
     subnetmask?: string;
     gateway_ip?: string;
-    vlan_id?: number;
+    vlan_id?: VlanId;
   };
   where: VlanWhereInput;
 }
@@ -20547,7 +20552,7 @@ export interface MigrationVlanUpdationParams {
     extra_ip?: ExtraIp[];
     subnetmask?: string;
     gateway_ip?: string;
-    vlan_id?: number;
+    vlan_id?: VlanId;
   };
   where: VlanWhereInput;
 }
