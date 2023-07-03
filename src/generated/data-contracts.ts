@@ -55,6 +55,7 @@ export enum AlertRuleUnit {
   BYTE_PER_SECOND = "BYTE_PER_SECOND",
   CELSIUS = "CELSIUS",
   HERTZ = "HERTZ",
+  MICROSECOND = "MICROSECOND",
   NANOSECOND = "NANOSECOND",
   PERCENT = "PERCENT",
   SECOND = "SECOND",
@@ -2089,6 +2090,10 @@ export interface HostWhereInput {
   disks_every?: DiskWhereInput | null;
   disks_none?: DiskWhereInput | null;
   disks_some?: DiskWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
 
   /** @format int64 */
   failure_data_space?: number | null;
@@ -7297,6 +7302,10 @@ export interface VmVolumeWhereInput {
   elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
   elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
   elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
 
   /** @format double */
   guest_size_usage?: number | null;
@@ -9142,6 +9151,10 @@ export interface NicWhereInput {
   driver_state_in?: NicDriverState[] | null;
   driver_state_not?: NicDriverState | null;
   driver_state_not_in?: NicDriverState[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   gateway_ip?: string | null;
   gateway_ip_contains?: string | null;
   gateway_ip_ends_with?: string | null;
@@ -9485,6 +9498,10 @@ export interface VlanWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
+  mode_type?: VlanModeType | null;
+  mode_type_in?: VlanModeType[] | null;
+  mode_type_not?: VlanModeType | null;
+  mode_type_not_in?: VlanModeType[] | null;
   name?: string | null;
   name_contains?: string | null;
   name_ends_with?: string | null;
@@ -9501,6 +9518,66 @@ export interface VlanWhereInput {
   name_starts_with?: string | null;
   NOT?: VlanWhereInput[] | null;
   OR?: VlanWhereInput[] | null;
+
+  /** @format double */
+  qos_max_bandwidth?: number | null;
+
+  /** @format double */
+  qos_max_bandwidth_gt?: number | null;
+
+  /** @format double */
+  qos_max_bandwidth_gte?: number | null;
+  qos_max_bandwidth_in?: number[] | null;
+
+  /** @format double */
+  qos_max_bandwidth_lt?: number | null;
+
+  /** @format double */
+  qos_max_bandwidth_lte?: number | null;
+
+  /** @format double */
+  qos_max_bandwidth_not?: number | null;
+  qos_max_bandwidth_not_in?: number[] | null;
+
+  /** @format double */
+  qos_min_bandwidth?: number | null;
+
+  /** @format double */
+  qos_min_bandwidth_gt?: number | null;
+
+  /** @format double */
+  qos_min_bandwidth_gte?: number | null;
+  qos_min_bandwidth_in?: number[] | null;
+
+  /** @format double */
+  qos_min_bandwidth_lt?: number | null;
+
+  /** @format double */
+  qos_min_bandwidth_lte?: number | null;
+
+  /** @format double */
+  qos_min_bandwidth_not?: number | null;
+  qos_min_bandwidth_not_in?: number[] | null;
+
+  /** @format int32 */
+  qos_priority?: number | null;
+
+  /** @format int32 */
+  qos_priority_gt?: number | null;
+
+  /** @format int32 */
+  qos_priority_gte?: number | null;
+  qos_priority_in?: number[] | null;
+
+  /** @format int32 */
+  qos_priority_lt?: number | null;
+
+  /** @format int32 */
+  qos_priority_lte?: number | null;
+
+  /** @format int32 */
+  qos_priority_not?: number | null;
+  qos_priority_not_in?: number[] | null;
   subnetmask?: string | null;
   subnetmask_contains?: string | null;
   subnetmask_ends_with?: string | null;
@@ -9543,6 +9620,13 @@ export interface VlanWhereInput {
   vm_nics_every?: VmNicWhereInput | null;
   vm_nics_none?: VmNicWhereInput | null;
   vm_nics_some?: VmNicWhereInput | null;
+}
+
+export enum VlanModeType {
+  GENEVE = "GENEVE",
+  VLAN_ACCESS = "VLAN_ACCESS",
+  VLAN_TRUNK = "VLAN_TRUNK",
+  VXLAN = "VXLAN",
 }
 
 export interface VmNicWhereInput {
@@ -10326,6 +10410,10 @@ export interface UsbDeviceWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   host?: HostWhereInput | null;
   id?: string | null;
   id_contains?: string | null;
@@ -11046,6 +11134,7 @@ export enum VmToolsStatus {
 
 export enum VmUsage {
   ADVANCED_MONITORING = "ADVANCED_MONITORING",
+  AGENT_MESH_NODE = "AGENT_MESH_NODE",
   BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
   BUNDLE_APPLICATION = "BUNDLE_APPLICATION",
   CLOUDTOWER = "CLOUDTOWER",
@@ -11092,6 +11181,10 @@ export interface ClusterSettingsWhereInput {
   cluster?: ClusterWhereInput | null;
   default_ha?: boolean | null;
   default_ha_not?: boolean | null;
+  default_storage_policy?: VmVolumeElfStoragePolicyType | null;
+  default_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  default_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  default_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
   enabled_iscsi?: boolean | null;
   enabled_iscsi_not?: boolean | null;
   id?: string | null;
@@ -11573,7 +11666,7 @@ export interface NestedVm {
 export interface Alert {
   alert_rule?: NestedAlertRule | null;
   cause: string;
-  cluster: NestedCluster;
+  cluster?: NestedCluster | null;
   create_time?: string | null;
   disk?: NestedDisk | null;
   ended: boolean;
@@ -12417,6 +12510,10 @@ export interface CloudTowerApplicationPackageWhereInput {
 
 export interface CloudTowerApplicationWhereInput {
   AND?: CloudTowerApplicationWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   id?: string | null;
   id_contains?: string | null;
   id_ends_with?: string | null;
@@ -12532,6 +12629,34 @@ export enum CloudTowerApplicationState {
 
 export interface UserWhereInput {
   AND?: UserWhereInput[] | null;
+  auth_config_id?: string | null;
+  auth_config_id_contains?: string | null;
+  auth_config_id_ends_with?: string | null;
+  auth_config_id_gt?: string | null;
+  auth_config_id_gte?: string | null;
+  auth_config_id_in?: string[] | null;
+  auth_config_id_lt?: string | null;
+  auth_config_id_lte?: string | null;
+  auth_config_id_not?: string | null;
+  auth_config_id_not_contains?: string | null;
+  auth_config_id_not_ends_with?: string | null;
+  auth_config_id_not_in?: string[] | null;
+  auth_config_id_not_starts_with?: string | null;
+  auth_config_id_starts_with?: string | null;
+  display_username?: string | null;
+  display_username_contains?: string | null;
+  display_username_ends_with?: string | null;
+  display_username_gt?: string | null;
+  display_username_gte?: string | null;
+  display_username_in?: string[] | null;
+  display_username_lt?: string | null;
+  display_username_lte?: string | null;
+  display_username_not?: string | null;
+  display_username_not_contains?: string | null;
+  display_username_not_ends_with?: string | null;
+  display_username_not_in?: string[] | null;
+  display_username_not_starts_with?: string | null;
+  display_username_starts_with?: string | null;
   email_address?: string | null;
   email_address_contains?: string | null;
   email_address_ends_with?: string | null;
@@ -12709,6 +12834,7 @@ export enum UserRolePreset {
 }
 
 export enum UserSource {
+  AUTHN = "AUTHN",
   LDAP = "LDAP",
   LOCAL = "LOCAL",
 }
@@ -12728,6 +12854,7 @@ export interface NestedUser {
 }
 
 export interface CloudTowerApplication {
+  entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
   instanceStatuses: object;
   name: string;
@@ -13154,6 +13281,7 @@ export interface NestedVmRecycleBin {
 export interface ClusterSettings {
   cluster: NestedCluster;
   default_ha?: boolean | null;
+  default_storage_policy?: VmVolumeElfStoragePolicyType | null;
   enabled_iscsi?: boolean | null;
   id: string;
   vm_recycle_bin?: NestedVmRecycleBin | null;
@@ -14242,6 +14370,7 @@ export interface Host {
   cpu_vendor?: string | null;
   data_ip?: string | null;
   disks?: NestedDisk[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
 
   /** @format int64 */
   failure_data_space: number;
@@ -15355,6 +15484,7 @@ export interface MetricLabel {
   _network?: string | null;
   _mac?: string | null;
   _host?: string | null;
+  _esxi_uuid?: string | null;
   _device?: string | null;
   _cluster?: string | null;
   _chunk?: string | null;
@@ -15618,6 +15748,7 @@ export interface NfsExportDeletionParams {
 export interface Nic {
   driver?: string | null;
   driver_state?: NicDriverState | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
   gateway_ip?: string | null;
   host: NestedHost;
   ibdev?: string | null;
@@ -16642,6 +16773,7 @@ export enum ROLE_ACTION {
   VM_OPERATION_CLONE = "VM_OPERATION_CLONE",
   VM_OPERATION_INSTALL_TOOLS = "VM_OPERATION_INSTALL_TOOLS",
   VM_IMPORT_EXPORT = "VM_IMPORT_EXPORT",
+  CREATE_VM_TEMPLATE = "CREATE_VM_TEMPLATE",
   MANAGE_VM_TEMPLATE = "MANAGE_VM_TEMPLATE",
   VM_TEMPLATE_IMPORT_EXPORT = "VM_TEMPLATE_IMPORT_EXPORT",
   MANAGE_VM_SNAPSHOT = "MANAGE_VM_SNAPSHOT",
@@ -16658,7 +16790,8 @@ export enum ROLE_ACTION {
   MANAGE_ENTITY_FILTER = "MANAGE_ENTITY_FILTER",
   MANAGE_CLUSTER_BASIC_INFO = "MANAGE_CLUSTER_BASIC_INFO",
   MANAGE_CLUSTER_LICENCE = "MANAGE_CLUSTER_LICENCE",
-  MANAGE_CLUSTER_SNMP = "MANAGE_CLUSTER_SNMP",
+  MANAGE_CLUSTER_SNMP_TRANSPORT = "MANAGE_CLUSTER_SNMP_TRANSPORT",
+  MANAGE_SNMP_TRAP = "MANAGE_SNMP_TRAP",
   MANAGE_CLUSTER_VIP = "MANAGE_CLUSTER_VIP",
   MANAGE_CLUSTER_MANAGEMENT_IP = "MANAGE_CLUSTER_MANAGEMENT_IP",
   MANAGE_DNS_SERVER = "MANAGE_DNS_SERVER",
@@ -16670,6 +16803,8 @@ export enum ROLE_ACTION {
   MANAGE_CLUSTER_HA = "MANAGE_CLUSTER_HA",
   MANAGE_SSL_CERTIFICATE = "MANAGE_SSL_CERTIFICATE",
   MANAGE_LOG_COLLECTION = "MANAGE_LOG_COLLECTION",
+  MANAGE_SYSLOG = "MANAGE_SYSLOG",
+  MANAGE_LOG_FIND = "MANAGE_LOG_FIND",
   MANAGE_LABEL = "MANAGE_LABEL",
   MANAGE_USER_AND_ROLE = "MANAGE_USER_AND_ROLE",
   MANAGE_PASSWORD_SETTINGS = "MANAGE_PASSWORD_SETTINGS",
@@ -16689,7 +16824,7 @@ export enum ROLE_ACTION {
   MANAGE_ORGANIZATION_NAME = "MANAGE_ORGANIZATION_NAME",
   MANAGE_CLOUD_TOWER_LICENSE = "MANAGE_CLOUD_TOWER_LICENSE",
   MANAGE_CONSISTENCY_GROUP = "MANAGE_CONSISTENCY_GROUP",
-  MANAGE_SR_IOV_NIC = "MANAGE_SR_IOV_NIC",
+  MANAGE_NIC = "MANAGE_NIC",
   MANAGE_CLUSTER_ISCSI = "MANAGE_CLUSTER_ISCSI",
   MANAGE_BACKUP_LICENSE = "MANAGE_BACKUP_LICENSE",
   MANAGE_BACKUP_PACKAGE = "MANAGE_BACKUP_PACKAGE",
@@ -16709,6 +16844,9 @@ export enum ROLE_ACTION {
   UPGRADE_EVEROUTE_CLUSTER = "UPGRADE_EVEROUTE_CLUSTER",
   MANAGE_EVEROUTE_CLUSTER_ASSOCIATION = "MANAGE_EVEROUTE_CLUSTER_ASSOCIATION",
   MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY = "MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY",
+  MANAGE_LDAP_AD_CONFIG = "MANAGE_LDAP_AD_CONFIG",
+  MANAGE_MFA_CONFIG = "MANAGE_MFA_CONFIG",
+  MANAGE_DEFAULT_LOGIN_OPTION = "MANAGE_DEFAULT_LOGIN_OPTION",
   MANAGE_CLUSTER_STORAGE_POLICY = "MANAGE_CLUSTER_STORAGE_POLICY",
   MANAGE_SKS_SERVICE = "MANAGE_SKS_SERVICE",
   MANAGE_SKS_LICENSE = "MANAGE_SKS_LICENSE",
@@ -16719,6 +16857,10 @@ export enum ROLE_ACTION {
   DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG = "DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG",
   MANAGE_OBSERVABILITY_PACKAGE = "MANAGE_OBSERVABILITY_PACKAGE",
   MANAGE_OBSERVABILITY_SERVICE = "MANAGE_OBSERVABILITY_SERVICE",
+  CONFIG_DYNAMIC_RESOURCE_SCHEDULE = "CONFIG_DYNAMIC_RESOURCE_SCHEDULE",
+  GENERATE_DRS_PROPOSALS = "GENERATE_DRS_PROPOSALS",
+  APPLY_DRS_PROPOSAL = "APPLY_DRS_PROPOSAL",
+  MANAGE_AGENT_MESH = "MANAGE_AGENT_MESH",
 }
 
 export interface RoleCreationParams {
@@ -16742,6 +16884,231 @@ export interface WithTaskDeleteRole {
 
 export interface RoleDeletionParams {
   where: UserRoleNextWhereInput;
+}
+
+export interface NestedLabelGroup {
+  labels: NestedLabel[];
+}
+
+export interface SecurityGroup {
+  description?: string | null;
+  everoute_cluster: NestedEverouteCluster;
+  id: string;
+  isolation_policies?: NestedIsolationPolicy[] | null;
+  label_groups?: NestedLabelGroup[] | null;
+  name: string;
+  security_policies?: NestedSecurityPolicy[] | null;
+  vms?: NestedVm[] | null;
+}
+
+export interface WithTaskSecurityGroup {
+  task_id?: string | null;
+  data: SecurityGroup;
+}
+
+export interface SecurityGroupCreateParams {
+  vms?: VmWhereInput;
+  label_groups?: LabelWhereInput[];
+  description?: string;
+  everoute_cluster_id: string;
+  name: string;
+}
+
+export interface DeleteSecurityGroup {
+  id: string;
+}
+
+export interface WithTaskDeleteSecurityGroup {
+  task_id?: string | null;
+  data: DeleteSecurityGroup;
+}
+
+export interface SecurityGroupWhereInput {
+  AND?: SecurityGroupWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  isolation_policies_every?: IsolationPolicyWhereInput | null;
+  isolation_policies_none?: IsolationPolicyWhereInput | null;
+  isolation_policies_some?: IsolationPolicyWhereInput | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: SecurityGroupWhereInput[] | null;
+  OR?: SecurityGroupWhereInput[] | null;
+  security_policies_every?: SecurityPolicyWhereInput | null;
+  security_policies_none?: SecurityPolicyWhereInput | null;
+  security_policies_some?: SecurityPolicyWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export interface SecurityGroupDeleteParams {
+  where: SecurityGroupWhereInput;
+}
+
+export interface SecurityGroupUpdateParams {
+  label_groups?: LabelWhereInput[];
+  vms?: VmWhereInput;
+  description?: string;
+  name?: string;
+}
+
+export interface SecurityGroupUpdateBody {
+  data: SecurityGroupUpdateParams;
+  where: SecurityGroupWhereInput;
+}
+
+export interface NestedSecurityPolicyApply {
+  communicable: boolean;
+  selector: NestedLabel[];
+  selector_ids: string[];
+}
+
+export enum NetworkPolicyRulePortProtocol {
+  ICMP = "ICMP",
+  TCP = "TCP",
+  UDP = "UDP",
+}
+
+export interface NestedNetworkPolicyRulePort {
+  port?: string | null;
+  protocol: NetworkPolicyRulePortProtocol;
+}
+
+export enum NetworkPolicyRuleType {
+  ALL = "ALL",
+  IP_BLOCK = "IP_BLOCK",
+  SECURITY_GROUP = "SECURITY_GROUP",
+  SELECTOR = "SELECTOR",
+}
+
+export interface NestedNetworkPolicyRule {
+  ip_block?: string | null;
+  ports?: NestedNetworkPolicyRulePort[] | null;
+  selector?: NestedLabel[] | null;
+  selector_ids?: string[] | null;
+  type: NetworkPolicyRuleType;
+}
+
+export interface SecurityPolicy {
+  apply_to: NestedSecurityPolicyApply[];
+  description: string;
+  egress?: NestedNetworkPolicyRule[] | null;
+  everoute_cluster: NestedEverouteCluster;
+  id: string;
+  ingress?: NestedNetworkPolicyRule[] | null;
+  name: string;
+  policy_mode?: PolicyMode | null;
+}
+
+export interface WithTaskSecurityPolicy {
+  task_id?: string | null;
+  data: SecurityPolicy;
+}
+
+export interface SecurityPolicyApplyToInputTarget {
+  security_groups?: SecurityGroupWhereInput;
+  label_groups?: LabelWhereInput[];
+}
+
+export interface SecurityPolicyApplyToInput {
+  communicable?: boolean;
+  target: SecurityPolicyApplyToInputTarget;
+}
+
+export interface IPSecurityPolicy {
+  except_ip_block?: string[];
+  ip_block: string;
+}
+
+export interface SecurityPolicyIngressEgressInputTarget {
+  security_groups?: SecurityGroupWhereInput;
+  ips?: IPSecurityPolicy[];
+  label_groups?: LabelWhereInput[];
+}
+
+export interface NetworkPolicyRulePortInput {
+  protocol: NetworkPolicyRulePortProtocol;
+  port?: string;
+}
+
+export interface SecurityPolicyIngressEgressInput {
+  ports?: NetworkPolicyRulePortInput[];
+  target: SecurityPolicyIngressEgressInputTarget;
+}
+
+export interface SecurityPolicyCreateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  apply_to?: SecurityPolicyApplyToInput[];
+  policy_mode?: PolicyMode;
+  everoute_cluster_id: string;
+  description?: string;
+  name: string;
+}
+
+export interface DeleteSecurityPolicy {
+  id: string;
+}
+
+export interface WithTaskDeleteSecurityPolicy {
+  task_id?: string | null;
+  data: DeleteSecurityPolicy;
+}
+
+export interface SecurityPolicyDeleteParams {
+  where: SecurityPolicyWhereInput;
+}
+
+export interface SecurityPolicyUpdateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  apply_to?: SecurityPolicyApplyToInput[];
+  policy_mode?: PolicyMode;
+}
+
+export interface SecurityPolicyUpdateBody {
+  data: SecurityPolicyUpdateParams;
+  where: SecurityPolicyWhereInput;
 }
 
 export interface UpdatePassrodSecurityParams {
@@ -17487,6 +17854,8 @@ export enum HostOrderByInput {
   CpuVendorDESC = "cpu_vendor_DESC",
   DataIpASC = "data_ip_ASC",
   DataIpDESC = "data_ip_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HddDataCapacityASC = "hdd_data_capacity_ASC",
@@ -17796,6 +18165,8 @@ export enum NicOrderByInput {
   DriverDESC = "driver_DESC",
   DriverStateASC = "driver_state_ASC",
   DriverStateDESC = "driver_state_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   GatewayIpASC = "gateway_ip_ASC",
   GatewayIpDESC = "gateway_ip_DESC",
   IbdevASC = "ibdev_ASC",
@@ -17861,6 +18232,8 @@ export enum UsbDeviceOrderByInput {
   BindedDESC = "binded_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalCreatedAtASC = "local_created_at_ASC",
@@ -18414,8 +18787,16 @@ export enum VlanOrderByInput {
   IdDESC = "id_DESC",
   LocalIdASC = "local_id_ASC",
   LocalIdDESC = "local_id_DESC",
+  ModeTypeASC = "mode_type_ASC",
+  ModeTypeDESC = "mode_type_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
+  QosMaxBandwidthASC = "qos_max_bandwidth_ASC",
+  QosMaxBandwidthDESC = "qos_max_bandwidth_DESC",
+  QosMinBandwidthASC = "qos_min_bandwidth_ASC",
+  QosMinBandwidthDESC = "qos_min_bandwidth_DESC",
+  QosPriorityASC = "qos_priority_ASC",
+  QosPriorityDESC = "qos_priority_DESC",
   SubnetmaskASC = "subnetmask_ASC",
   SubnetmaskDESC = "subnetmask_DESC",
   TypeASC = "type_ASC",
@@ -18445,6 +18826,8 @@ export enum VmVolumeOrderByInput {
   DescriptionDESC = "description_DESC",
   ElfStoragePolicyASC = "elf_storage_policy_ASC",
   ElfStoragePolicyDESC = "elf_storage_policy_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   GuestSizeUsageASC = "guest_size_usage_ASC",
   GuestSizeUsageDESC = "guest_size_usage_DESC",
   GuestUsedSizeASC = "guest_used_size_ASC",
@@ -18837,6 +19220,10 @@ export interface GetEntityFiltersRequestBody {
 }
 
 export enum UserOrderByInput {
+  AuthConfigIdASC = "auth_config_id_ASC",
+  AuthConfigIdDESC = "auth_config_id_DESC",
+  DisplayUsernameASC = "display_username_ASC",
+  DisplayUsernameDESC = "display_username_DESC",
   EmailAddressASC = "email_address_ASC",
   EmailAddressDESC = "email_address_DESC",
   IdASC = "id_ASC",
@@ -20197,6 +20584,7 @@ export interface CancelUploadTaskParams {
 export interface UsbDevice {
   binded: boolean;
   description: string;
+  entityAsyncStatus?: EntityAsyncStatus | null;
   host: NestedHost;
   id: string;
   local_created_at: string;
@@ -20238,10 +20626,16 @@ export interface WithTaskLoginResponse {
   data: LoginResponse;
 }
 
+export enum MfaType {
+  Mail = "Mail",
+}
+
 export interface LoginInput {
   username: string;
-  source: UserSource;
+  source?: UserSource | null;
   password: string;
+  mfa_type?: MfaType | null;
+  auth_config_id?: string | null;
 }
 
 export interface NestedPasswordReoverQaItem {
@@ -20259,6 +20653,8 @@ export interface NestedUserRoleNext {
 }
 
 export interface User {
+  auth_config_id?: string | null;
+  display_username: string;
   email_address?: string | null;
   id: string;
   internal: boolean;
@@ -20280,20 +20676,23 @@ export interface WithTaskUser {
 }
 
 export interface UserCreationParams {
+  auth_config_id?: string;
+  ldap_dn?: string;
+  source?: UserSource;
   mobile_phone?: string;
   email_address?: string;
   internal?: boolean;
   role_id: string;
   name: string;
-  password: string;
+  password?: string;
   username: string;
 }
 
 export interface UserUpdationParams {
   data: {
     internal?: boolean;
-    mobile_phone?: string;
-    email_address?: string;
+    mobile_phone?: string | null;
+    email_address?: string | null;
     role_id?: string;
     name?: string;
     password?: string;
@@ -20499,7 +20898,18 @@ export interface Vlan {
   id: string;
   labels?: NestedLabel[] | null;
   local_id: string;
+  mode_type?: VlanModeType | null;
   name: string;
+  network_ids: string[];
+
+  /** @format double */
+  qos_max_bandwidth?: number | null;
+
+  /** @format double */
+  qos_min_bandwidth?: number | null;
+
+  /** @format int32 */
+  qos_priority?: number | null;
   subnetmask?: string | null;
   type: NetworkType;
   vds: NestedVds;
@@ -20521,14 +20931,47 @@ export interface WithTaskVlan {
  */
 export type VlanId = number;
 
+/**
+ * @format double
+ * @min 0
+ */
+export type Priority = number;
+
 export interface VmVlanCreationParams {
+  qos_burst_unit?: ByteUnit;
+
+  /** @format int64 */
+  qos_burst?: number | null;
+  qos_max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  qos_max_bandwidth?: number | null;
+  qos_min_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  qos_min_bandwidth?: number | null;
+  qos_priority?: Priority;
+  mode_type?: VlanModeType;
+  network_ids?: string[];
   vds_id: string;
-  vlan_id: VlanId;
+  vlan_id?: VlanId;
   name: string;
 }
 
 export interface VmVlanUpdationParams {
-  data: { vlan_id?: VlanId; name?: string };
+  data: {
+    qos_burst_unit?: ByteUnit;
+    qos_burst?: number | null;
+    qos_max_bandwidth_unit?: BPSUnit;
+    qos_max_bandwidth?: number | null;
+    qos_min_bandwidth_unit?: BPSUnit;
+    qos_min_bandwidth?: number | null;
+    qos_priority?: Priority;
+    mode_type?: VlanModeType;
+    network_ids?: string[];
+    vlan_id?: VlanId;
+    name?: string;
+  };
   where: VlanWhereInput;
 }
 
@@ -20568,6 +21011,55 @@ export interface WithTaskDeleteVlan {
 
 export interface VlanDeletionParams {
   where: VlanWhereInput;
+}
+
+export interface OvfCpu {
+  /** @format int32 */
+  sockets: number;
+
+  /** @format int32 */
+  cores: number;
+}
+
+export interface OvfNic {
+  mac: string;
+}
+
+export interface OvfDisk {
+  /** @format int64 */
+  size: number;
+  type: VmDiskType;
+  bus: Bus;
+  name: string;
+}
+
+export interface ParsedOVF {
+  firmware: VmFirmware;
+  disks: OvfDisk[];
+  nics: OvfNic[];
+
+  /** @format int64 */
+  memory: number;
+  cpu: OvfCpu;
+
+  /** @format int32 */
+  vcpu: number;
+  description?: string;
+  name: string;
+}
+
+export interface ExportFileDownloadLinks {
+  link: string;
+  filename: string;
+}
+
+export interface VmExportFileWhereUniqueInput {
+  data_port_id?: string | null;
+  id?: string | null;
+}
+
+export interface GetExportFileDownloadLinksParams {
+  where: VmExportFileWhereUniqueInput;
 }
 
 export interface VmFolder {
@@ -20917,6 +21409,7 @@ export interface VmVolumeSnapshot {
   cluster: NestedCluster;
   createAt?: string | null;
   description: string;
+  entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
   local_created_at: string;
   local_id: string;
@@ -20980,6 +21473,10 @@ export interface VmVolumeSnapshotWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   id?: string | null;
   id_contains?: string | null;
   id_ends_with?: string | null;
@@ -21121,6 +21618,7 @@ export interface VmVolume {
   cluster: NestedCluster;
   description?: string | null;
   elf_storage_policy: VmVolumeElfStoragePolicyType;
+  entityAsyncStatus?: EntityAsyncStatus | null;
 
   /** @format double */
   guest_size_usage?: number | null;
@@ -21916,6 +22414,119 @@ export interface VmUpdateIoPolicyParams {
   where: VmWhereInput;
 }
 
+export enum VmExportFileType {
+  OVF = "OVF",
+  QCOW2 = "QCOW2",
+  RAW = "RAW",
+}
+
+export interface VmExportFileFile {
+  md5: string;
+
+  /** @format int64 */
+  fileSize: number;
+  fileSecret: string;
+  fileUUID: string;
+  type: VmExportFileType;
+  fileName: string;
+}
+
+export interface VmExportFile {
+  content_library_vm_template?: NestedContentLibraryVmTemplate | null;
+  createdAt: string;
+  damaged: boolean;
+  data_port_id: string;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  files: VmExportFileFile[];
+  id: string;
+  storage_cluster_id: string;
+  type: VmExportFileType;
+  vm?: NestedVm | null;
+  vm_volume?: NestedVmVolume | null;
+}
+
+export interface WithTaskVmExportFile {
+  task_id?: string | null;
+  data: VmExportFile;
+}
+
+export interface VmExportParamsData {
+  keep_mac?: boolean;
+  type: VmExportFileType;
+}
+
+export interface VmExportParams {
+  data: VmExportParamsData;
+  where: VmWhereInput;
+}
+
+export interface VmdkDiskModify {
+  elf_storage_policy?: VmVolumeElfStoragePolicyType;
+  bus?: Bus;
+  volume_name?: string;
+
+  /** @format int32 */
+  boot?: number;
+  vmdk_name: string;
+}
+
+export interface VmdkCdromModify {
+  removed?: boolean;
+  content_library_image_id?: string;
+  elf_image_id?: string;
+
+  /** @format int32 */
+  boot?: number;
+
+  /** @format int32 */
+  index: number;
+}
+
+export interface OvfDiskOperate {
+  new_disks?: VmDiskParams;
+  modify_cd_roms?: VmdkCdromModify[];
+  modify_vmdk_disks?: VmdkDiskModify[];
+}
+
+export interface VmImportParams {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  disk_operate?: OvfDiskOperate;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id: string;
+  upload_tasks: string[];
+  owner_id?: string;
+  parsed_ovf: ParsedOVF;
+}
+
 export interface VsphereEsxiAccount {
   host: NestedHost;
   id: string;
@@ -21958,11 +22569,14 @@ export enum NotifierSecurityMode {
 }
 
 export interface AlertNotifier {
+  clusters?: NestedCluster[] | null;
   disabled: boolean;
   email_from?: string | null;
   email_tos: string[];
+  entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
   language_code?: NotifierLanguageCode | null;
+  name?: string | null;
   notice_severities: string[];
   security_mode?: NotifierSecurityMode | null;
   smtp_server_host?: string | null;
@@ -21977,10 +22591,14 @@ export enum AlertNotifierOrderByInput {
   DisabledDESC = "disabled_DESC",
   EmailFromASC = "email_from_ASC",
   EmailFromDESC = "email_from_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LanguageCodeASC = "language_code_ASC",
   LanguageCodeDESC = "language_code_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
   SecurityModeASC = "security_mode_ASC",
   SecurityModeDESC = "security_mode_DESC",
   SmtpServerHostASC = "smtp_server_host_ASC",
@@ -21993,6 +22611,9 @@ export enum AlertNotifierOrderByInput {
 
 export interface AlertNotifierWhereInput {
   AND?: AlertNotifierWhereInput[] | null;
+  clusters_every?: ClusterWhereInput | null;
+  clusters_none?: ClusterWhereInput | null;
+  clusters_some?: ClusterWhereInput | null;
   disabled?: boolean | null;
   disabled_not?: boolean | null;
   email_from?: string | null;
@@ -22009,6 +22630,10 @@ export interface AlertNotifierWhereInput {
   email_from_not_in?: string[] | null;
   email_from_not_starts_with?: string | null;
   email_from_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   id?: string | null;
   id_contains?: string | null;
   id_ends_with?: string | null;
@@ -22027,6 +22652,20 @@ export interface AlertNotifierWhereInput {
   language_code_in?: NotifierLanguageCode[] | null;
   language_code_not?: NotifierLanguageCode | null;
   language_code_not_in?: NotifierLanguageCode[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
   NOT?: AlertNotifierWhereInput[] | null;
   OR?: AlertNotifierWhereInput[] | null;
   security_mode?: NotifierSecurityMode | null;
@@ -22130,7 +22769,7 @@ export interface NestedGlobalAlertRule {
 }
 
 export interface AlertRule {
-  cluster: NestedCluster;
+  cluster?: NestedCluster | null;
   customized: boolean;
   disabled: boolean;
   global_alert_rule: NestedGlobalAlertRule;
@@ -22452,6 +23091,8 @@ export interface GetCloudTowerApplicationPackagesConnectionRequestBody {
 }
 
 export enum CloudTowerApplicationOrderByInput {
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   InstanceStatusesASC = "instanceStatuses_ASC",
@@ -22777,6 +23418,8 @@ export interface GetClustersConnectionRequestBody {
 export enum ClusterSettingsOrderByInput {
   DefaultHaASC = "default_ha_ASC",
   DefaultHaDESC = "default_ha_DESC",
+  DefaultStoragePolicyASC = "default_storage_policy_ASC",
+  DefaultStoragePolicyDESC = "default_storage_policy_DESC",
   EnabledIscsiASC = "enabled_iscsi_ASC",
   EnabledIscsiDESC = "enabled_iscsi_DESC",
   IdASC = "id_ASC",
@@ -23818,32 +24461,6 @@ export interface NestedEverouteControllerTemplate {
 
   /** @format int32 */
   vcpu: number;
-}
-
-export enum NetworkPolicyRulePortProtocol {
-  ICMP = "ICMP",
-  TCP = "TCP",
-  UDP = "UDP",
-}
-
-export interface NestedNetworkPolicyRulePort {
-  port?: string | null;
-  protocol: NetworkPolicyRulePortProtocol;
-}
-
-export enum NetworkPolicyRuleType {
-  ALL = "ALL",
-  IP_BLOCK = "IP_BLOCK",
-  SECURITY_GROUP = "SECURITY_GROUP",
-  SELECTOR = "SELECTOR",
-}
-
-export interface NestedNetworkPolicyRule {
-  ip_block?: string | null;
-  ports?: NestedNetworkPolicyRulePort[] | null;
-  selector?: NestedLabel[] | null;
-  selector_ids?: string[] | null;
-  type: NetworkPolicyRuleType;
 }
 
 export interface NestedEverouteClusterWhitelist {
@@ -25622,21 +26239,56 @@ export interface GetReportTemplatesConnectionRequestBody {
   where?: ReportTemplateWhereInput | null;
 }
 
-export interface NestedSecurityPolicyApply {
-  communicable: boolean;
-  selector: NestedLabel[];
-  selector_ids: string[];
+export enum SecurityGroupOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LabelGroupsASC = "label_groups_ASC",
+  LabelGroupsDESC = "label_groups_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
 }
 
-export interface SecurityPolicy {
-  apply_to: NestedSecurityPolicyApply[];
-  description: string;
-  egress?: NestedNetworkPolicyRule[] | null;
-  everoute_cluster: NestedEverouteCluster;
-  id: string;
-  ingress?: NestedNetworkPolicyRule[] | null;
-  name: string;
-  policy_mode?: PolicyMode | null;
+export interface GetSecurityGroupsRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SecurityGroupOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: SecurityGroupWhereInput | null;
+}
+
+export interface NestedAggregateSecurityGroup {
+  /** @format int32 */
+  count: number;
+}
+
+export interface SecurityGroupConnection {
+  aggregate: NestedAggregateSecurityGroup;
+}
+
+export interface GetSecurityGroupsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SecurityGroupOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: SecurityGroupWhereInput | null;
 }
 
 export enum SecurityPolicyOrderByInput {
@@ -26695,6 +27347,135 @@ export interface GetVmEntityFilterResultsConnectionRequestBody {
   where?: VmEntityFilterResultWhereInput | null;
 }
 
+export enum VmExportFileOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DamagedASC = "damaged_ASC",
+  DamagedDESC = "damaged_DESC",
+  DataPortIdASC = "data_port_id_ASC",
+  DataPortIdDESC = "data_port_id_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FilesASC = "files_ASC",
+  FilesDESC = "files_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  StorageClusterIdASC = "storage_cluster_id_ASC",
+  StorageClusterIdDESC = "storage_cluster_id_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+}
+
+export interface VmExportFileWhereInput {
+  AND?: VmExportFileWhereInput[] | null;
+  content_library_vm_template?: ContentLibraryVmTemplateWhereInput | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  damaged?: boolean | null;
+  damaged_not?: boolean | null;
+  data_port_id?: string | null;
+  data_port_id_contains?: string | null;
+  data_port_id_ends_with?: string | null;
+  data_port_id_gt?: string | null;
+  data_port_id_gte?: string | null;
+  data_port_id_in?: string[] | null;
+  data_port_id_lt?: string | null;
+  data_port_id_lte?: string | null;
+  data_port_id_not?: string | null;
+  data_port_id_not_contains?: string | null;
+  data_port_id_not_ends_with?: string | null;
+  data_port_id_not_in?: string[] | null;
+  data_port_id_not_starts_with?: string | null;
+  data_port_id_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  NOT?: VmExportFileWhereInput[] | null;
+  OR?: VmExportFileWhereInput[] | null;
+  storage_cluster_id?: string | null;
+  storage_cluster_id_contains?: string | null;
+  storage_cluster_id_ends_with?: string | null;
+  storage_cluster_id_gt?: string | null;
+  storage_cluster_id_gte?: string | null;
+  storage_cluster_id_in?: string[] | null;
+  storage_cluster_id_lt?: string | null;
+  storage_cluster_id_lte?: string | null;
+  storage_cluster_id_not?: string | null;
+  storage_cluster_id_not_contains?: string | null;
+  storage_cluster_id_not_ends_with?: string | null;
+  storage_cluster_id_not_in?: string[] | null;
+  storage_cluster_id_not_starts_with?: string | null;
+  storage_cluster_id_starts_with?: string | null;
+  type?: VmExportFileType | null;
+  type_in?: VmExportFileType[] | null;
+  type_not?: VmExportFileType | null;
+  type_not_in?: VmExportFileType[] | null;
+  vm?: VmWhereInput | null;
+  vm_volume?: VmVolumeWhereInput | null;
+}
+
+export interface GetVmExportFilesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmExportFileOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmExportFileWhereInput | null;
+}
+
+export interface NestedAggregateVmExportFile {
+  /** @format int32 */
+  count: number;
+}
+
+export interface VmExportFileConnection {
+  aggregate: NestedAggregateVmExportFile;
+}
+
+export interface GetVmExportFilesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: VmExportFileOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: VmExportFileWhereInput | null;
+}
+
 export enum VmFolderOrderByInput {
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
@@ -27027,6 +27808,8 @@ export enum VmVolumeSnapshotOrderByInput {
   CreateAtDESC = "createAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
   LocalCreatedAtASC = "local_created_at_ASC",
