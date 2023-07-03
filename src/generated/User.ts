@@ -93,7 +93,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @name DeleteUser
    * @request POST:/delete-user
    * @secure
-   * @response `200` `(WithTaskDeleteUser)[]`
+   * @response `200` `(WithTaskDeleteUser)[]` Ok
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error

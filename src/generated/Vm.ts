@@ -20,6 +20,8 @@ import {
   VmDeleteParams,
   VmEjectCdRomParams,
   VmExpandVmDiskParams,
+  VmExportParams,
+  VmImportParams,
   VmMigrateAcrossClusterParams,
   VmMigrateParams,
   VmOperateParams,
@@ -42,6 +44,7 @@ import {
   VmUpdateParams,
   WithTaskDeleteVm,
   WithTaskVm,
+  WithTaskVmExportFile,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
@@ -1045,6 +1048,51 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-io-policy`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name ExportVm
+   * @request POST:/export-vm
+   * @secure
+   * @response `200` `(WithTaskVmExportFile)[]`
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  exportVm = (data: VmExportParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskVmExportFile[], void | ErrorBody>({
+      path: `/export-vm`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name ImportVm
+   * @request POST:/import-vm
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  importVm = (data: VmImportParams[], params: RequestParams = {}) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/import-vm`,
       method: "POST",
       body: data,
       secure: true,

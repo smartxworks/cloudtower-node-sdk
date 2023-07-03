@@ -1,18 +1,18 @@
 import {
   ErrorBody,
-  GetSecurityPoliciesConnectionRequestBody,
-  GetSecurityPoliciesRequestBody,
-  SecurityPolicy,
-  SecurityPolicyConnection,
-  SecurityPolicyCreateParams,
-  SecurityPolicyDeleteParams,
-  SecurityPolicyUpdateBody,
-  WithTaskDeleteSecurityPolicy,
-  WithTaskSecurityPolicy,
+  GetSecurityGroupsConnectionRequestBody,
+  GetSecurityGroupsRequestBody,
+  SecurityGroup,
+  SecurityGroupConnection,
+  SecurityGroupCreateParams,
+  SecurityGroupDeleteParams,
+  SecurityGroupUpdateBody,
+  WithTaskDeleteSecurityGroup,
+  WithTaskSecurityGroup,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
-export class SecurityPolicyApi<SecurityDataType = unknown> {
+export class SecurityGroupApi<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;
 
   constructor(http: HttpClient<SecurityDataType>) {
@@ -22,21 +22,21 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags SecurityPolicy
-   * @name CreateSecurityPolicy
-   * @request POST:/create-security-policy
+   * @tags SecurityGroup
+   * @name CreateSecurityGroup
+   * @request POST:/create-security-group
    * @secure
-   * @response `200` `WithTaskSecurityPolicy`
+   * @response `200` `WithTaskSecurityGroup`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  createSecurityPolicy = (
-    data: SecurityPolicyCreateParams,
+  createSecurityGroup = (
+    data: SecurityGroupCreateParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<WithTaskSecurityPolicy, ErrorBody>({
-      path: `/create-security-policy`,
+    this.http.request<WithTaskSecurityGroup, ErrorBody>({
+      path: `/create-security-group`,
       method: "POST",
       body: data,
       secure: true,
@@ -47,21 +47,21 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags SecurityPolicy
-   * @name DeleteSecurityPolicy
-   * @request POST:/delete-security-policy
+   * @tags SecurityGroup
+   * @name DeleteSecurityGroup
+   * @request POST:/delete-security-group
    * @secure
-   * @response `200` `(WithTaskDeleteSecurityPolicy)[]`
+   * @response `200` `(WithTaskDeleteSecurityGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  deleteSecurityPolicy = (
-    data: SecurityPolicyDeleteParams,
+  deleteSecurityGroup = (
+    data: SecurityGroupDeleteParams,
     params: RequestParams = {}
   ) =>
-    this.http.request<WithTaskDeleteSecurityPolicy[], ErrorBody>({
-      path: `/delete-security-policy`,
+    this.http.request<WithTaskDeleteSecurityGroup[], ErrorBody>({
+      path: `/delete-security-group`,
       method: "POST",
       body: data,
       secure: true,
@@ -72,21 +72,21 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags SecurityPolicy
-   * @name UpdateSecurityPolicy
-   * @request POST:/update-security-policy
+   * @tags SecurityGroup
+   * @name UpdateSecurityGroup
+   * @request POST:/update-security-group
    * @secure
-   * @response `200` `(WithTaskSecurityPolicy)[]`
+   * @response `200` `(WithTaskSecurityGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  updateSecurityPolicy = (
-    data: SecurityPolicyUpdateBody,
+  updateSecurityGroup = (
+    data: SecurityGroupUpdateBody,
     params: RequestParams = {}
   ) =>
-    this.http.request<WithTaskSecurityPolicy[], ErrorBody>({
-      path: `/update-security-policy`,
+    this.http.request<WithTaskSecurityGroup[], ErrorBody>({
+      path: `/update-security-group`,
       method: "POST",
       body: data,
       secure: true,
@@ -97,21 +97,21 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags SecurityPolicy
-   * @name GetSecurityPolicies
-   * @request POST:/get-security-policies
+   * @tags SecurityGroup
+   * @name GetSecurityGroups
+   * @request POST:/get-security-groups
    * @secure
-   * @response `200` `(SecurityPolicy)[]`
+   * @response `200` `(SecurityGroup)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  getSecurityPolicies = (
-    data: GetSecurityPoliciesRequestBody,
+  getSecurityGroups = (
+    data: GetSecurityGroupsRequestBody,
     params: RequestParams = {}
   ) =>
-    this.http.request<SecurityPolicy[], ErrorBody>({
-      path: `/get-security-policies`,
+    this.http.request<SecurityGroup[], ErrorBody>({
+      path: `/get-security-groups`,
       method: "POST",
       body: data,
       secure: true,
@@ -122,21 +122,21 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags SecurityPolicy
-   * @name GetSecurityPoliciesConnection
-   * @request POST:/get-security-policies-connection
+   * @tags SecurityGroup
+   * @name GetSecurityGroupsConnection
+   * @request POST:/get-security-groups-connection
    * @secure
-   * @response `200` `SecurityPolicyConnection`
+   * @response `200` `SecurityGroupConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  getSecurityPoliciesConnection = (
-    data: GetSecurityPoliciesConnectionRequestBody,
+  getSecurityGroupsConnection = (
+    data: GetSecurityGroupsConnectionRequestBody,
     params: RequestParams = {}
   ) =>
-    this.http.request<SecurityPolicyConnection, ErrorBody>({
-      path: `/get-security-policies-connection`,
+    this.http.request<SecurityGroupConnection, ErrorBody>({
+      path: `/get-security-groups-connection`,
       method: "POST",
       body: data,
       secure: true,

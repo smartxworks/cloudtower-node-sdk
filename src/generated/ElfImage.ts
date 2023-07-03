@@ -37,6 +37,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
       cluster_id?: string;
       name?: string;
       size?: string;
+      size_unit?: string;
       description?: string;
       upload_task_id?: string;
     },
