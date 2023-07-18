@@ -1,8 +1,9 @@
 # RELEASE NOTE
 
 v2.9.1 release (tower version 3.0.0)
+## release 日期 2023-07-18
 
-- optimize: 优化 LDAP 登陆，当使用 UserSource.LDAP 登陆时，自动切换成当前的 LDAP 登录源进行登陆，减少迁移成本。
+- optimize: 优化 CloudTowerClient LDAP 登陆，当使用 UserSource.LDAP 作为 UserSource 时，自动切换成当前的 LDAP 登录源进行登陆，减少迁移成本。
 
 v2.9.0 release (tower version 3.0.0)
 ## release 日期 2023-07-03
