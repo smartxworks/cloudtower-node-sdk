@@ -1,12 +1,20 @@
 # RELEASE NOTE
 
-v2.9.1 release (tower version 3.0.0)
+## release 日期 2023-08-01
+
+v2.10.0 release (tower version 3.1.0)
+
+- feature: [AlertNotifierApi] 支持更新，删除以及创建新的报警通知配置
+
 ## release 日期 2023-07-18
+
+v2.9.1 release (tower version 3.0.0)
 
 - optimize: 优化 CloudTowerClient LDAP 登陆，当使用 UserSource.LDAP 作为 UserSource 时，自动切换成当前的 LDAP 登录源进行登陆，减少迁移成本。
 
-v2.9.0 release (tower version 3.0.0)
 ## release 日期 2023-07-03
+
+v2.9.0 release (tower version 3.0.0)
 
 - feature: [SecurityGroupApi] 支持创建，更新与删除安全组
 - feature: [SecurityPolicy] 支持创建，更新与删除自定义安全策略

@@ -16844,6 +16844,7 @@ export enum ROLE_ACTION {
   UPGRADE_EVEROUTE_CLUSTER = "UPGRADE_EVEROUTE_CLUSTER",
   MANAGE_EVEROUTE_CLUSTER_ASSOCIATION = "MANAGE_EVEROUTE_CLUSTER_ASSOCIATION",
   MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY = "MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY",
+  MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE = "MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE",
   MANAGE_LDAP_AD_CONFIG = "MANAGE_LDAP_AD_CONFIG",
   MANAGE_MFA_CONFIG = "MANAGE_MFA_CONFIG",
   MANAGE_DEFAULT_LOGIN_OPTION = "MANAGE_DEFAULT_LOGIN_OPTION",
@@ -17004,7 +17005,9 @@ export interface NestedSecurityPolicyApply {
 }
 
 export enum NetworkPolicyRulePortProtocol {
+  ALG = "ALG",
   ICMP = "ICMP",
+  IPIP = "IPIP",
   TCP = "TCP",
   UDP = "UDP",
 }
@@ -22568,6 +22571,11 @@ export enum NotifierSecurityMode {
   UNSPECIFIED = "UNSPECIFIED",
 }
 
+export interface NestedSmtpServer {
+  id: string;
+  name: string;
+}
+
 export interface AlertNotifier {
   clusters?: NestedCluster[] | null;
   disabled: boolean;
@@ -22579,6 +22587,7 @@ export interface AlertNotifier {
   name?: string | null;
   notice_severities: string[];
   security_mode?: NotifierSecurityMode | null;
+  smtp_server_config?: NestedSmtpServer | null;
   smtp_server_host?: string | null;
 
   /** @format int32 */
@@ -22672,6 +22681,7 @@ export interface AlertNotifierWhereInput {
   security_mode_in?: NotifierSecurityMode[] | null;
   security_mode_not?: NotifierSecurityMode | null;
   security_mode_not_in?: NotifierSecurityMode[] | null;
+  smtp_server_config?: SmtpServerWhereInput | null;
   smtp_server_host?: string | null;
   smtp_server_host_contains?: string | null;
   smtp_server_host_ends_with?: string | null;
@@ -22720,6 +22730,128 @@ export interface AlertNotifierWhereInput {
   username_not_in?: string[] | null;
   username_not_starts_with?: string | null;
   username_starts_with?: string | null;
+}
+
+export interface SmtpServerWhereInput {
+  AND?: SmtpServerWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  host?: string | null;
+  host_contains?: string | null;
+  host_ends_with?: string | null;
+  host_gt?: string | null;
+  host_gte?: string | null;
+  host_in?: string[] | null;
+  host_lt?: string | null;
+  host_lte?: string | null;
+  host_not?: string | null;
+  host_not_contains?: string | null;
+  host_not_ends_with?: string | null;
+  host_not_in?: string[] | null;
+  host_not_starts_with?: string | null;
+  host_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  is_record_password?: boolean | null;
+  is_record_password_not?: boolean | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: SmtpServerWhereInput[] | null;
+  OR?: SmtpServerWhereInput[] | null;
+  password?: string | null;
+  password_contains?: string | null;
+  password_ends_with?: string | null;
+  password_gt?: string | null;
+  password_gte?: string | null;
+  password_in?: string[] | null;
+  password_lt?: string | null;
+  password_lte?: string | null;
+  password_not?: string | null;
+  password_not_contains?: string | null;
+  password_not_ends_with?: string | null;
+  password_not_in?: string[] | null;
+  password_not_starts_with?: string | null;
+  password_starts_with?: string | null;
+
+  /** @format int32 */
+  port?: number | null;
+
+  /** @format int32 */
+  port_gt?: number | null;
+
+  /** @format int32 */
+  port_gte?: number | null;
+  port_in?: number[] | null;
+
+  /** @format int32 */
+  port_lt?: number | null;
+
+  /** @format int32 */
+  port_lte?: number | null;
+
+  /** @format int32 */
+  port_not?: number | null;
+  port_not_in?: number[] | null;
+  secure_mode?: SmtpSecureMode | null;
+  secure_mode_in?: SmtpSecureMode[] | null;
+  secure_mode_not?: SmtpSecureMode | null;
+  secure_mode_not_in?: SmtpSecureMode[] | null;
+  username?: string | null;
+  username_contains?: string | null;
+  username_ends_with?: string | null;
+  username_gt?: string | null;
+  username_gte?: string | null;
+  username_in?: string[] | null;
+  username_lt?: string | null;
+  username_lte?: string | null;
+  username_not?: string | null;
+  username_not_contains?: string | null;
+  username_not_ends_with?: string | null;
+  username_not_in?: string[] | null;
+  username_not_starts_with?: string | null;
+  username_starts_with?: string | null;
+}
+
+export enum SmtpSecureMode {
+  SSL = "SSL",
+  STARTTLS = "STARTTLS",
+  UNSPECIFIED = "UNSPECIFIED",
 }
 
 export interface GetAlertNotifiersRequestBody {
@@ -28244,10 +28376,49 @@ export interface WithTaskAlertNotifier {
   data: AlertNotifier;
 }
 
+export interface AlertNotifierCreationParams {
+  notice_severities: ("CRITICAL" | "NOTICE" | "INFO")[];
+  language_code: NotifierLanguageCode;
+  email_tos: string[];
+  email_from: string;
+  disabled: boolean;
+  smtp_server_id: string;
+  name: string;
+  clusters: ClusterWhereInput;
+}
+
 export interface AlertNotifierUpdationParams {
   notice_severities?: ("CRITICAL" | "NOTICE" | "INFO")[];
   language_code?: NotifierLanguageCode;
   email_tos?: string[];
   email_from?: string;
   disabled?: boolean;
+  smtp_server_id?: string;
+  name?: string;
+  clusters?: ClusterWhereInput;
+  id?: string;
+}
+
+export interface AlertNotifierManyUpdationParams {
+  notice_severities?: ("CRITICAL" | "NOTICE" | "INFO")[];
+  language_code?: NotifierLanguageCode;
+  email_tos?: string[];
+  email_from?: string;
+  disabled?: boolean;
+  smtp_server_id?: string;
+  name?: string;
+  where: AlertNotifierWhereInput;
+}
+
+export interface DeleteAlertNotifier {
+  id: string;
+}
+
+export interface WithTaskDeleteAlertNotifier {
+  task_id?: string | null;
+  data: DeleteAlertNotifier;
+}
+
+export interface DeleteAlertNotifierParams {
+  where: AlertNotifierWhereInput;
 }

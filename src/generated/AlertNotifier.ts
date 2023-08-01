@@ -1,11 +1,15 @@
 import {
   AlertNotifier,
   AlertNotifierConnection,
+  AlertNotifierCreationParams,
+  AlertNotifierManyUpdationParams,
   AlertNotifierUpdationParams,
+  DeleteAlertNotifierParams,
   ErrorBody,
   GetAlertNotifiersConnectionRequestBody,
   GetAlertNotifiersRequestBody,
   WithTaskAlertNotifier,
+  WithTaskDeleteAlertNotifier,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
@@ -70,6 +74,29 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * No description
    *
    * @tags AlertNotifier
+   * @name CreateAlertNotifier
+   * @request POST:/create-alert-notifier
+   * @response `200` `(WithTaskAlertNotifier)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  createAlertNotifier = (
+    data: AlertNotifierCreationParams[],
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskAlertNotifier[], ErrorBody>({
+      path: `/create-alert-notifier`,
+      method: "POST",
+      body: data,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AlertNotifier
    * @name UpdateAlertNotifier
    * @request POST:/update-alert-notifier
    * @response `200` `WithTaskAlertNotifier`
@@ -83,6 +110,52 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskAlertNotifier, ErrorBody>({
       path: `/update-alert-notifier`,
+      method: "POST",
+      body: data,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AlertNotifier
+   * @name UpdateManyAlertNotifiers
+   * @request POST:/update-many-alert-notifiers
+   * @response `200` `(WithTaskAlertNotifier)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateManyAlertNotifiers = (
+    data: AlertNotifierManyUpdationParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskAlertNotifier[], ErrorBody>({
+      path: `/update-many-alert-notifiers`,
+      method: "POST",
+      body: data,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AlertNotifier
+   * @name DeleteAlertNotifier
+   * @request POST:/delete-alert-notifier
+   * @response `200` `(WithTaskDeleteAlertNotifier)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  deleteAlertNotifier = (
+    data: DeleteAlertNotifierParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskDeleteAlertNotifier[], ErrorBody>({
+      path: `/delete-alert-notifier`,
       method: "POST",
       body: data,
       type: ContentType.Json,
