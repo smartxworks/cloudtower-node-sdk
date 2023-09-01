@@ -11140,6 +11140,7 @@ export enum VmUsage {
   CLOUDTOWER = "CLOUDTOWER",
   EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
   REGISTRY = "REGISTRY",
+  REPLICATION_CONTROLLER = "REPLICATION_CONTROLLER",
   SKS_MANAGEMENT = "SKS_MANAGEMENT",
 }
 
@@ -13518,6 +13519,1240 @@ export interface ContentLibraryImageDeletionParams {
   where: ContentLibraryImageWhereInput;
 }
 
+export interface OvfCpu {
+  /** @format int32 */
+  sockets: number;
+
+  /** @format int32 */
+  cores: number;
+}
+
+export interface OvfNic {
+  mac: string;
+}
+
+export interface OvfDisk {
+  /** @format int64 */
+  size: number;
+  type: VmDiskType;
+  bus: Bus;
+  name: string;
+}
+
+export interface ParsedOVF {
+  firmware: VmFirmware;
+  disks: OvfDisk[];
+  nics: OvfNic[];
+
+  /** @format int64 */
+  memory: number;
+  cpu: OvfCpu;
+
+  /** @format int32 */
+  vcpu: number;
+  description?: string;
+  name: string;
+}
+
+export interface ExportFileDownloadLinks {
+  link: string;
+  filename: string;
+}
+
+export interface VmExportFileWhereUniqueInput {
+  data_port_id?: string | null;
+  id?: string | null;
+}
+
+export interface GetExportFileDownloadLinksParams {
+  where: VmExportFileWhereUniqueInput;
+}
+
+export interface NestedCpu {
+  /** @format int32 */
+  cores: number;
+
+  /** @format int32 */
+  sockets: number;
+}
+
+export interface NestedVmEntityFilterResult {
+  id: string;
+}
+
+export interface NestedIsolationPolicy {
+  id: string;
+}
+
+export interface NestedSnapshotPlan {
+  id: string;
+  name: string;
+}
+
+export interface NestedUsbDevice {
+  id: string;
+  name: string;
+}
+
+export interface NestedVmNic {
+  id: string;
+}
+
+export interface NestedVmPlacementGroup {
+  id: string;
+  name: string;
+}
+
+export interface Vm {
+  clock_offset: VmClockOffset;
+  cloud_init_supported?: boolean | null;
+  cluster?: NestedCluster | null;
+  cpu: NestedCpu;
+  cpu_model: string;
+
+  /** @format double */
+  cpu_usage?: number | null;
+  deleted_at?: string | null;
+  description: string;
+  dns_servers?: string | null;
+  entity_filter_results?: NestedVmEntityFilterResult[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  firmware: VmFirmware;
+  folder?: NestedVmFolder | null;
+  guest_cpu_model?: string | null;
+  guest_os_type?: VmGuestsOperationSystem | null;
+
+  /** @format double */
+  guest_size_usage?: number | null;
+
+  /** @format int64 */
+  guest_used_size?: number | null;
+  ha: boolean;
+  host?: NestedHost | null;
+  hostname?: string | null;
+  id: string;
+  in_recycle_bin: boolean;
+  internal: boolean;
+  io_policy?: VmDiskIoPolicy | null;
+  ips: string;
+  isolation_policy?: NestedIsolationPolicy | null;
+  kernel_info?: string | null;
+  labels?: NestedLabel[] | null;
+  last_shutdown_time?: string | null;
+  local_created_at?: string | null;
+  local_id: string;
+
+  /** @format int64 */
+  logical_size_bytes?: number | null;
+
+  /** @format int64 */
+  max_bandwidth?: number | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+
+  /** @format int32 */
+  max_iops?: number | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+
+  /** @format int64 */
+  memory: number;
+
+  /** @format double */
+  memory_usage?: number | null;
+  name: string;
+  nested_virtualization: boolean;
+  node_ip: string;
+  original_name?: string | null;
+  os?: string | null;
+  out_uninstall_usb: string[];
+  protected: boolean;
+
+  /** @format int64 */
+  provisioned_size?: number | null;
+
+  /** @format int64 */
+  size?: number | null;
+  snapshot_plan?: NestedSnapshotPlan | null;
+  snapshots?: NestedVmSnapshot[] | null;
+  status: VmStatus;
+
+  /** @format int64 */
+  unique_size?: number | null;
+  usb_devices?: NestedUsbDevice[] | null;
+
+  /** @format int32 */
+  vcpu: number;
+  video_type?: VmVideoType | null;
+  vm_disks?: NestedVmDisk[] | null;
+  vm_nics?: NestedVmNic[] | null;
+  vm_placement_group?: NestedVmPlacementGroup[] | null;
+  vm_tools_status: VmToolsStatus;
+  vm_tools_version?: string | null;
+  vm_usage?: VmUsage | null;
+  win_opt: boolean;
+}
+
+export interface WithTaskVm {
+  task_id?: string | null;
+  data: Vm;
+}
+
+export enum BPSUnit {
+  Bps = "Bps",
+  KBps = "KBps",
+  MBps = "MBps",
+  GBps = "GBps",
+  TBps = "TBps",
+}
+
+export interface MountNewCreateDisksParams {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  vm_volume: {
+    elf_storage_policy: VmVolumeElfStoragePolicyType;
+    path?: string;
+    size_unit?: ByteUnit;
+    size: number;
+    name: string;
+  };
+
+  /** @format int32 */
+  index?: number;
+
+  /** @format int32 */
+  key?: number;
+  bus: Bus;
+
+  /** @format int32 */
+  boot: number;
+}
+
+export interface MountDisksParams {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  vm_volume_id: string;
+
+  /** @format int32 */
+  index?: number;
+
+  /** @format int32 */
+  key?: number;
+  bus: Bus;
+
+  /** @format int32 */
+  boot: number;
+}
+
+export interface VmCdRomParams {
+  content_library_image_id?: string;
+  elf_image_id?: string;
+
+  /** @format int32 */
+  index?: number;
+
+  /** @format int32 */
+  key?: number;
+
+  /** @format int32 */
+  boot: number;
+}
+
+export interface VmDiskParams {
+  mount_cd_roms?: VmCdRomParams[];
+  mount_disks?: MountDisksParams[];
+  mount_new_create_disks?: MountNewCreateDisksParams[];
+}
+
+export enum BitUnit {
+  Bit = "bit",
+  Kb = "Kb",
+  Mb = "Mb",
+  Gb = "Gb",
+  Tb = "Tb",
+  Pb = "Pb",
+}
+
+export enum BitPSUnit {
+  Bps = "bps",
+  Kbps = "Kbps",
+  Mbps = "Mbps",
+  Gbps = "Gbps",
+  Tbps = "Tbps",
+}
+
+export interface VmNicQosTraffic {
+  rate_limit_unit?: BitPSUnit;
+
+  /** @format int64 */
+  rate_limit?: number | null;
+  burst_unit?: BitUnit;
+
+  /** @format int64 */
+  burst?: number | null;
+  enabled: boolean;
+}
+
+export interface VmNicQosOption {
+  egress?: VmNicQosTraffic;
+  ingress?: VmNicQosTraffic;
+}
+
+export interface VmNicParams {
+  qos?: VmNicQosOption;
+  subnet_mask?: string;
+  gateway?: string;
+  ip_address?: string;
+  nic_id?: string;
+  connect_vlan_id: string;
+  mirror?: boolean;
+  model?: VmNicModel;
+  enabled?: boolean;
+  mac_address?: string;
+  local_id?: string;
+}
+
+export interface VmCreationParams {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status: VmStatus;
+  firmware: VmFirmware;
+  ha: boolean;
+  vm_nics: VmNicParams[];
+  vm_disks: VmDiskParams;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory: number;
+
+  /** @format int32 */
+  cpu_cores: number;
+
+  /** @format int32 */
+  cpu_sockets: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id: string;
+}
+
+export interface DiskOperateModifyDisk {
+  vm_volume_id?: string;
+  bus?: Bus;
+
+  /** @format int32 */
+  disk_index: number;
+}
+
+export interface VmDiskOperate {
+  remove_disks?: { disk_index: number[] };
+  modify_disks?: DiskOperateModifyDisk[];
+  new_disks?: VmDiskParams;
+}
+
+export enum CloudInitNetworkTypeEnum {
+  IPV4 = "IPV4",
+  IPV4DHCP = "IPV4_DHCP",
+}
+
+export interface CloudInitNetWorkRoute {
+  network: string;
+  netmask: string;
+  gateway: string;
+}
+
+export interface CloudInitNetWork {
+  routes?: CloudInitNetWorkRoute[];
+  type: CloudInitNetworkTypeEnum;
+
+  /** @format int32 */
+  nic_index: number;
+  netmask?: string;
+  ip_address?: string;
+}
+
+export interface TemplateCloudInit {
+  user_data?: string;
+  public_keys?: string[];
+  hostname?: string;
+  networks?: CloudInitNetWork[];
+  nameservers?: string[];
+  default_user_password?: string;
+}
+
+export interface VmCreateVmFromTemplateParams {
+  cloud_init?: TemplateCloudInit;
+  is_full_copy: boolean;
+  template_id: string;
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+
+  /** @deprecated */
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  firmware?: VmFirmware;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  disk_operate?: VmDiskOperate;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id?: string;
+}
+
+export interface VmCreateVmFromContentLibraryTemplateParams {
+  cloud_init?: TemplateCloudInit;
+  is_full_copy: boolean;
+  template_id: string;
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+
+  /** @deprecated */
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  firmware?: VmFirmware;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  disk_operate?: VmDiskOperate;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id: string;
+}
+
+export interface ConvertVmTemplateToVmParams {
+  name: string;
+  converted_from_template_id: string;
+}
+
+export interface VmCloneParams {
+  is_full_copy?: boolean;
+  src_vm_id: string;
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+
+  /** @deprecated */
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  firmware?: VmFirmware;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  vm_disks?: VmDiskParams;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id?: string;
+}
+
+export interface VmRebuildParams {
+  is_full_copy?: boolean;
+  rebuild_from_snapshot_id: string;
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+
+  /** @deprecated */
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  firmware?: VmFirmware;
+  ha?: boolean;
+  vm_nics?: VmNicParams[];
+  vm_disks?: VmDiskParams;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id?: string;
+}
+
+export interface VmRollbackParams {
+  data: { snapshot_id: string };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateParams {
+  data: {
+    vcpu?: number;
+    ha?: boolean;
+    memory_unit?: ByteUnit;
+    memory?: number;
+    cpu_cores?: number;
+    cpu_sockets?: number;
+    description?: string;
+    name?: string;
+  };
+  where: VmWhereInput;
+}
+
+export interface DeleteVm {
+  id: string;
+}
+
+export interface WithTaskDeleteVm {
+  task_id?: string | null;
+  data: DeleteVm;
+}
+
+export interface VmOperateParams {
+  where: VmWhereInput;
+}
+
+export interface VmDeleteParams {
+  effect?: { include_snapshots?: boolean };
+  where: VmWhereInput;
+}
+
+export interface VmStartParams {
+  data?: { host_id: string };
+  where: VmWhereInput;
+}
+
+export interface VmAddDiskParams {
+  data: {
+    max_bandwidth_policy?: VmDiskIoRestrictType;
+    max_bandwidth_unit?: BPSUnit;
+    max_bandwidth?: number;
+    max_iops_policy?: VmDiskIoRestrictType;
+    max_iops?: number;
+    io_policy?: VmDiskIoPolicy;
+    vm_disks: {
+      mount_disks?: MountDisksParams[];
+      mount_new_create_disks?: MountNewCreateDisksParams[];
+    };
+  };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateDiskParams {
+  data: {
+    content_library_image_id?: string | null;
+    elf_image_id?: string | null;
+    vm_volume_id?: string;
+    vm_disk_id: string;
+    bus?: Bus;
+  };
+  where: VmWhereInput;
+}
+
+export interface VmExpandVmDiskParams {
+  size_unit?: ByteUnit;
+
+  /** @format int64 */
+  size: number;
+  where: VmDiskWhereInput;
+}
+
+export interface VmRemoveDiskParams {
+  data: { disk_ids: string[] };
+  where: VmWhereInput;
+}
+
+export interface VmAddCdRomParams {
+  data: { vm_cd_roms: VmCdRomParams[] };
+  where: VmWhereInput;
+}
+
+export interface VmRemoveCdRomParams {
+  data: { cd_rom_ids: string[] };
+  where: VmWhereInput;
+}
+
+export interface VmEjectCdRomParams {
+  where: VmDiskWhereInput;
+}
+
+export interface VmToggleCdRomDisableParams {
+  disabled: boolean;
+  where: VmDiskWhereInput;
+}
+
+export interface VmAddNicParams {
+  data: { vm_nics: VmNicParams[] };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateNicParams {
+  data: {
+    subnet_mask?: string;
+    gateway?: string;
+    ip_address?: string;
+    nic_id?: string;
+    connect_vlan_id?: string;
+    mirror?: boolean;
+    model?: VmNicModel;
+    enabled?: boolean;
+    mac_address?: string;
+    nic_index: number;
+  };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateNicBasicInfoParams {
+  data: { subnet_mask?: string; gateway?: string; ip_address?: string };
+  where: VmNicWhereInput;
+}
+
+export interface VmUpdateNicAdvanceInfoParams {
+  data: {
+    mirror?: boolean;
+    enabled?: boolean;
+    mac_address?: string;
+    nic_id?: string;
+    connect_vlan_id?: string;
+  };
+  where: VmNicWhereInput;
+}
+
+export interface VmUpdateNicQosOptionsParams {
+  data: { qos?: VmNicQosOption };
+  where: VmNicWhereInput;
+}
+
+export interface VmRemoveNicParams {
+  data: { nic_index: number[] };
+  where: VmWhereInput;
+}
+
+export interface InstallVmtoolsParams {
+  data: { svt_image_id: string; cd_rom_id: string };
+  where: VmWhereInput;
+}
+
+export interface VmMigrateParams {
+  data?: { host_id: string };
+  where: VmWhereInput;
+}
+
+export enum MigrateType {
+  COLD_MIGRATE = "COLD_MIGRATE",
+  CUTOVER_MIGRATE = "CUTOVER_MIGRATE",
+  LIVE_MIGRATE = "LIVE_MIGRATE",
+}
+
+export interface VlanMapping {
+  src_vlan_local_id: string;
+  dest_vlan_local_id: string;
+}
+
+export interface MigrateVmConfig {
+  remove_unmovable_devices?: boolean;
+  new_name?: string;
+  network_mapping: VlanMapping[];
+  migrate_type: MigrateType;
+  elf_storage_policy: VmVolumeElfStoragePolicyType;
+  delete_src_vm?: boolean;
+}
+
+export interface VmMigrateAcrossClusterParams {
+  data: { vm_config: MigrateVmConfig; cluster_id: string; host_id?: string };
+  where: VmWhereInput;
+}
+
+export interface TaskWhereInput {
+  AND?: TaskWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  error_code?: string | null;
+  error_code_contains?: string | null;
+  error_code_ends_with?: string | null;
+  error_code_gt?: string | null;
+  error_code_gte?: string | null;
+  error_code_in?: string[] | null;
+  error_code_lt?: string | null;
+  error_code_lte?: string | null;
+  error_code_not?: string | null;
+  error_code_not_contains?: string | null;
+  error_code_not_ends_with?: string | null;
+  error_code_not_in?: string[] | null;
+  error_code_not_starts_with?: string | null;
+  error_code_starts_with?: string | null;
+  error_message?: string | null;
+  error_message_contains?: string | null;
+  error_message_ends_with?: string | null;
+  error_message_gt?: string | null;
+  error_message_gte?: string | null;
+  error_message_in?: string[] | null;
+  error_message_lt?: string | null;
+  error_message_lte?: string | null;
+  error_message_not?: string | null;
+  error_message_not_contains?: string | null;
+  error_message_not_ends_with?: string | null;
+  error_message_not_in?: string[] | null;
+  error_message_not_starts_with?: string | null;
+  error_message_starts_with?: string | null;
+  finished_at?: string | null;
+  finished_at_gt?: string | null;
+  finished_at_gte?: string | null;
+  finished_at_in?: string[] | null;
+  finished_at_lt?: string | null;
+  finished_at_lte?: string | null;
+  finished_at_not?: string | null;
+  finished_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  key?: string | null;
+  key_contains?: string | null;
+  key_ends_with?: string | null;
+  key_gt?: string | null;
+  key_gte?: string | null;
+  key_in?: string[] | null;
+  key_lt?: string | null;
+  key_lte?: string | null;
+  key_not?: string | null;
+  key_not_contains?: string | null;
+  key_not_ends_with?: string | null;
+  key_not_in?: string[] | null;
+  key_not_starts_with?: string | null;
+  key_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  NOT?: TaskWhereInput[] | null;
+  OR?: TaskWhereInput[] | null;
+
+  /** @format double */
+  progress?: number | null;
+
+  /** @format double */
+  progress_gt?: number | null;
+
+  /** @format double */
+  progress_gte?: number | null;
+  progress_in?: number[] | null;
+
+  /** @format double */
+  progress_lt?: number | null;
+
+  /** @format double */
+  progress_lte?: number | null;
+
+  /** @format double */
+  progress_not?: number | null;
+  progress_not_in?: number[] | null;
+  resource_id?: string | null;
+  resource_id_contains?: string | null;
+  resource_id_ends_with?: string | null;
+  resource_id_gt?: string | null;
+  resource_id_gte?: string | null;
+  resource_id_in?: string[] | null;
+  resource_id_lt?: string | null;
+  resource_id_lte?: string | null;
+  resource_id_not?: string | null;
+  resource_id_not_contains?: string | null;
+  resource_id_not_ends_with?: string | null;
+  resource_id_not_in?: string[] | null;
+  resource_id_not_starts_with?: string | null;
+  resource_id_starts_with?: string | null;
+  resource_mutation?: string | null;
+  resource_mutation_contains?: string | null;
+  resource_mutation_ends_with?: string | null;
+  resource_mutation_gt?: string | null;
+  resource_mutation_gte?: string | null;
+  resource_mutation_in?: string[] | null;
+  resource_mutation_lt?: string | null;
+  resource_mutation_lte?: string | null;
+  resource_mutation_not?: string | null;
+  resource_mutation_not_contains?: string | null;
+  resource_mutation_not_ends_with?: string | null;
+  resource_mutation_not_in?: string[] | null;
+  resource_mutation_not_starts_with?: string | null;
+  resource_mutation_starts_with?: string | null;
+  resource_rollback_error?: string | null;
+  resource_rollback_error_contains?: string | null;
+  resource_rollback_error_ends_with?: string | null;
+  resource_rollback_error_gt?: string | null;
+  resource_rollback_error_gte?: string | null;
+  resource_rollback_error_in?: string[] | null;
+  resource_rollback_error_lt?: string | null;
+  resource_rollback_error_lte?: string | null;
+  resource_rollback_error_not?: string | null;
+  resource_rollback_error_not_contains?: string | null;
+  resource_rollback_error_not_ends_with?: string | null;
+  resource_rollback_error_not_in?: string[] | null;
+  resource_rollback_error_not_starts_with?: string | null;
+  resource_rollback_error_starts_with?: string | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_gt?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_gte?: number | null;
+  resource_rollback_retry_count_in?: number[] | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_lt?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_lte?: number | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count_not?: number | null;
+  resource_rollback_retry_count_not_in?: number[] | null;
+  resource_rollbacked?: boolean | null;
+  resource_rollbacked_not?: boolean | null;
+  resource_type?: string | null;
+  resource_type_contains?: string | null;
+  resource_type_ends_with?: string | null;
+  resource_type_gt?: string | null;
+  resource_type_gte?: string | null;
+  resource_type_in?: string[] | null;
+  resource_type_lt?: string | null;
+  resource_type_lte?: string | null;
+  resource_type_not?: string | null;
+  resource_type_not_contains?: string | null;
+  resource_type_not_ends_with?: string | null;
+  resource_type_not_in?: string[] | null;
+  resource_type_not_starts_with?: string | null;
+  resource_type_starts_with?: string | null;
+  snapshot?: string | null;
+  snapshot_contains?: string | null;
+  snapshot_ends_with?: string | null;
+  snapshot_gt?: string | null;
+  snapshot_gte?: string | null;
+  snapshot_in?: string[] | null;
+  snapshot_lt?: string | null;
+  snapshot_lte?: string | null;
+  snapshot_not?: string | null;
+  snapshot_not_contains?: string | null;
+  snapshot_not_ends_with?: string | null;
+  snapshot_not_in?: string[] | null;
+  snapshot_not_starts_with?: string | null;
+  snapshot_starts_with?: string | null;
+  started_at?: string | null;
+  started_at_gt?: string | null;
+  started_at_gte?: string | null;
+  started_at_in?: string[] | null;
+  started_at_lt?: string | null;
+  started_at_lte?: string | null;
+  started_at_not?: string | null;
+  started_at_not_in?: string[] | null;
+  status?: TaskStatus | null;
+  status_in?: TaskStatus[] | null;
+  status_not?: TaskStatus | null;
+  status_not_in?: TaskStatus[] | null;
+  type?: TaskType | null;
+  type_in?: TaskType[] | null;
+  type_not?: TaskType | null;
+  type_not_in?: TaskType[] | null;
+  user?: UserWhereInput | null;
+}
+
+export enum TaskStatus {
+  EXECUTING = "EXECUTING",
+  FAILED = "FAILED",
+  PAUSED = "PAUSED",
+  PENDING = "PENDING",
+  SUCCESSED = "SUCCESSED",
+}
+
+export enum TaskType {
+  APPLICATION = "APPLICATION",
+  BACKUP = "BACKUP",
+  HOST_PLUGIN = "HOST_PLUGIN",
+  REPLICATION = "REPLICATION",
+  RESOLVER = "RESOLVER",
+}
+
+export interface StopVmInCutoverMigrationParams {
+  force?: boolean;
+  tasks: TaskWhereInput;
+}
+
+export enum StepUnit {
+  BIT = "BIT",
+  BYTE = "BYTE",
+  COUNT = "COUNT",
+  PERCENT = "PERCENT",
+}
+
+export interface NestedStep {
+  /** @format double */
+  current?: number | null;
+  finished?: boolean | null;
+  key?: string | null;
+
+  /** @format double */
+  per_second?: number | null;
+
+  /** @format double */
+  total?: number | null;
+  unit?: StepUnit | null;
+}
+
+export interface Task {
+  args: object;
+  cluster?: NestedCluster | null;
+  description: string;
+  error_code?: string | null;
+  error_message?: string | null;
+  finished_at?: string | null;
+  id: string;
+  internal: boolean;
+  key?: string | null;
+  local_created_at: string;
+
+  /** @format double */
+  progress: number;
+  resource_id?: string | null;
+  resource_mutation?: string | null;
+  resource_rollback_error?: string | null;
+
+  /** @format int32 */
+  resource_rollback_retry_count?: number | null;
+  resource_rollbacked?: boolean | null;
+  resource_type?: string | null;
+  snapshot: string;
+  started_at?: string | null;
+  status: TaskStatus;
+  steps: NestedStep[];
+  type?: TaskType | null;
+  user?: NestedUser | null;
+}
+
+export interface AbortMigrateVmAcrossClusterParams {
+  tasks: TaskWhereInput;
+}
+
+export interface VmAddFolderParams {
+  data: { folder_id: string };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateAdvancedOptionsParams {
+  data: {
+    video_type?: VmVideoType;
+    windows_optimize?: boolean;
+    cpu_model?: string;
+    clock_offset?: VmClockOffset;
+  };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateHostOptionsParams {
+  data: { ntp_servers?: string[]; dns_servers?: string[]; hostname?: string };
+  where: VmWhereInput;
+}
+
+export interface VmResetGuestOsPasswordParams {
+  data: { password: string; username: string };
+  where: VmWhereInput;
+}
+
+export interface VmUpdateOwnerParams {
+  data: { search_for: "username" | "id"; value: string };
+  where: VmWhereInput;
+}
+
+export interface VmRestrictIoParamsData {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+}
+
+export interface VmUpdateEachDiskIoPolicyParams {
+  data: VmRestrictIoParamsData;
+
+  /** @format int32 */
+  boot: number;
+}
+
+export interface VmUpdateIoPolicyParams {
+  data: {
+    each_disk?: VmUpdateEachDiskIoPolicyParams[];
+    whole_vm?: VmRestrictIoParamsData;
+    io_policy?: VmDiskIoPolicy | null;
+  };
+  where: VmWhereInput;
+}
+
+export interface NestedContentLibraryVmTemplate {
+  id: string;
+  name: string;
+}
+
+export enum VmExportFileType {
+  OVF = "OVF",
+  QCOW2 = "QCOW2",
+  RAW = "RAW",
+}
+
+export interface VmExportFileFile {
+  md5: string;
+
+  /** @format int64 */
+  fileSize: number;
+  fileSecret: string;
+  fileUUID: string;
+  type: VmExportFileType;
+  fileName: string;
+}
+
+export interface NestedVmVolume {
+  id: string;
+  name: string;
+}
+
+export interface VmExportFile {
+  content_library_vm_template?: NestedContentLibraryVmTemplate | null;
+  createdAt: string;
+  damaged: boolean;
+  data_port_id: string;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  files: VmExportFileFile[];
+  id: string;
+  storage_cluster_id: string;
+  type: VmExportFileType;
+  vm?: NestedVm | null;
+  vm_volume?: NestedVmVolume | null;
+}
+
+export interface WithTaskVmExportFile {
+  task_id?: string | null;
+  data: VmExportFile;
+}
+
+export interface VmExportParamsData {
+  keep_mac?: boolean;
+  type: VmExportFileType;
+}
+
+export interface VmExportParams {
+  data: VmExportParamsData;
+  where: VmWhereInput;
+}
+
+export interface VmdkDiskModify {
+  elf_storage_policy?: VmVolumeElfStoragePolicyType;
+  bus?: Bus;
+  volume_name?: string;
+
+  /** @format int32 */
+  boot?: number;
+  vmdk_name: string;
+}
+
+export interface VmdkCdromModify {
+  removed?: boolean;
+  content_library_image_id?: string;
+  elf_image_id?: string;
+
+  /** @format int32 */
+  boot?: number;
+
+  /** @format int32 */
+  index: number;
+}
+
+export interface OvfDiskOperate {
+  new_disks?: VmDiskParams;
+  modify_cd_roms?: VmdkCdromModify[];
+  modify_vmdk_disks?: VmdkDiskModify[];
+}
+
+export interface VmImportNicParams {
+  subnet_mask?: string;
+  gateway?: string;
+  ip_address?: string;
+  nic_id?: string;
+  connect_vlan_id: string;
+  mirror?: boolean;
+  model?: VmNicModel;
+  enabled?: boolean;
+  mac_address?: string;
+  local_id?: string;
+}
+
+export interface VmImportParams {
+  max_bandwidth_policy?: VmDiskIoRestrictType;
+  max_bandwidth_unit?: BPSUnit;
+
+  /** @format int64 */
+  max_bandwidth?: number;
+  max_iops_policy?: VmDiskIoRestrictType;
+
+  /** @format int64 */
+  max_iops?: number;
+  io_policy?: VmDiskIoPolicy;
+
+  /** @format int32 */
+  vcpu?: number;
+  status?: VmStatus;
+  ha?: boolean;
+  vm_nics?: VmImportNicParams[];
+  disk_operate?: OvfDiskOperate;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  guest_os_type?: VmGuestsOperationSystem;
+  folder_id?: string;
+  description?: string;
+  name: string;
+  host_id?: string;
+  cluster_id: string;
+  upload_tasks: string[];
+  owner_id?: string;
+  parsed_ovf: ParsedOVF;
+}
+
 export interface ContentLibraryVmTemplate {
   architecture: Architecture;
   cloud_init_supported: boolean;
@@ -13592,6 +14827,64 @@ export interface WithTaskDeleteContentLibraryVmTemplate {
 
 export interface ContentLibraryVmTemplateDeletionParams {
   where: ContentLibraryVmTemplateWhereInput;
+}
+
+export interface ContentLibraryVmTemplateExportParams {
+  where: ContentLibraryVmTemplateWhereInput;
+}
+
+export interface ContentLibraryVmdkCdromModify {
+  enabled?: boolean;
+  removed?: boolean;
+
+  /** @format int32 */
+  boot?: number;
+
+  /** @format int32 */
+  index: number;
+}
+
+export interface ContentLibraryVmdkCdromMount {
+  enabled?: boolean;
+
+  /** @format int32 */
+  boot?: number;
+}
+
+export interface ContentLibraryVmTemplateOvfDiskOperate {
+  mount_new_cd_roms?: ContentLibraryVmdkCdromMount[];
+  modify_cd_roms?: ContentLibraryVmdkCdromModify[];
+  modify_vmdk_disks?: VmdkDiskModify[];
+}
+
+export interface ContentLibraryImportVmNic {
+  mirror?: boolean;
+  model: VmNicModel;
+  enabled?: boolean;
+}
+
+export interface ContentLibraryVmTemplateImportParams {
+  vm_nics?: ContentLibraryImportVmNic[];
+  disk_operate?: ContentLibraryVmTemplateOvfDiskOperate;
+  ha?: boolean;
+  memory_unit?: ByteUnit;
+
+  /** @format int64 */
+  memory?: number;
+
+  /** @format int32 */
+  vcpu?: number;
+
+  /** @format int32 */
+  cpu_cores?: number;
+
+  /** @format int32 */
+  cpu_sockets?: number;
+  description?: string;
+  name: string;
+  upload_tasks: string[];
+  parsed_ovf: ParsedOVF;
+  cluster_id: string;
 }
 
 export interface NestedOrganization {
@@ -13895,15 +15188,6 @@ export enum GraphType {
 }
 
 export interface NestedView {
-  id: string;
-  name: string;
-}
-
-export interface NestedVmNic {
-  id: string;
-}
-
-export interface NestedVmVolume {
   id: string;
   name: string;
 }
@@ -14241,35 +15525,6 @@ export interface GraphDeletionParams {
   where: GraphWhereInput;
 }
 
-export enum TaskStatus {
-  EXECUTING = "EXECUTING",
-  FAILED = "FAILED",
-  PAUSED = "PAUSED",
-  PENDING = "PENDING",
-  SUCCESSED = "SUCCESSED",
-}
-
-export enum StepUnit {
-  BIT = "BIT",
-  BYTE = "BYTE",
-  COUNT = "COUNT",
-  PERCENT = "PERCENT",
-}
-
-export interface NestedStep {
-  /** @format double */
-  current?: number | null;
-  finished?: boolean | null;
-  key?: string | null;
-
-  /** @format double */
-  per_second?: number | null;
-
-  /** @format double */
-  total?: number | null;
-  unit?: StepUnit | null;
-}
-
 export interface NestedTask {
   args: object;
   description: string;
@@ -14340,11 +15595,6 @@ export interface HostCreationParams {
 
 export interface NestedIpmi {
   id: string;
-}
-
-export interface NestedUsbDevice {
-  id: string;
-  name: string;
 }
 
 export interface NestedVsphereEsxiAccount {
@@ -14645,14 +15895,6 @@ export interface IscsiLun {
 export interface WithTaskIscsiLun {
   task_id?: string | null;
   data: IscsiLun;
-}
-
-export enum BPSUnit {
-  Bps = "Bps",
-  KBps = "KBps",
-  MBps = "MBps",
-  GBps = "GBps",
-  TBps = "TBps",
 }
 
 export interface IscsiLunCommonParams {
@@ -15011,15 +16253,6 @@ export interface WithTaskDeleteElfImage {
 
 export interface ElfImageDeletionParams {
   where: ElfImageWhereInput;
-}
-
-export interface NestedContentLibraryVmTemplate {
-  id: string;
-  name: string;
-}
-
-export interface NestedIsolationPolicy {
-  id: string;
 }
 
 export interface NestedNamespaceGroup {
@@ -16841,10 +18074,15 @@ export enum ROLE_ACTION {
   MANAGE_EVEROUTE_PACKAGE = "MANAGE_EVEROUTE_PACKAGE",
   DEPLOY_EVEROUTE_CLUSTER = "DEPLOY_EVEROUTE_CLUSTER",
   UNDEPLOY_EVEROUTE_CLUSTER = "UNDEPLOY_EVEROUTE_CLUSTER",
+  UPDATE_EVEROUTE_CLUSTER = "UPDATE_EVEROUTE_CLUSTER",
   UPGRADE_EVEROUTE_CLUSTER = "UPGRADE_EVEROUTE_CLUSTER",
+  MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE = "MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE",
   MANAGE_EVEROUTE_CLUSTER_ASSOCIATION = "MANAGE_EVEROUTE_CLUSTER_ASSOCIATION",
   MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY = "MANAGE_EVEROUTE_CLUSTER_GLOBAL_POLICY",
-  MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE = "MANAGE_EVEROUTE_NETWORK_POLICY_RULE_SERVICE",
+  MANAGE_MICRO_SEGMENTATION = "MANAGE_MICRO_SEGMENTATION",
+  MANAGE_LOAD_BALANCER_RESOURCE = "MANAGE_LOAD_BALANCER_RESOURCE",
+  MANAGE_LOAD_BALANCER = "MANAGE_LOAD_BALANCER",
+  MANAGE_LOAD_BALANCER_VNET_BOND = "MANAGE_LOAD_BALANCER_VNET_BOND",
   MANAGE_LDAP_AD_CONFIG = "MANAGE_LDAP_AD_CONFIG",
   MANAGE_MFA_CONFIG = "MANAGE_MFA_CONFIG",
   MANAGE_DEFAULT_LOGIN_OPTION = "MANAGE_DEFAULT_LOGIN_OPTION",
@@ -16862,6 +18100,11 @@ export enum ROLE_ACTION {
   GENERATE_DRS_PROPOSALS = "GENERATE_DRS_PROPOSALS",
   APPLY_DRS_PROPOSAL = "APPLY_DRS_PROPOSAL",
   MANAGE_AGENT_MESH = "MANAGE_AGENT_MESH",
+  MANAGE_REPLICATION_SERVICE = "MANAGE_REPLICATION_SERVICE",
+  MANAGE_REPLICATION_RESTORE_POINT = "MANAGE_REPLICATION_RESTORE_POINT",
+  MANAGE_REPLICATION_PLAN = "MANAGE_REPLICATION_PLAN",
+  MANAGE_REPLICATION_TASK = "MANAGE_REPLICATION_TASK",
+  MANAGE_REPLICATION_FAULT_TASK = "MANAGE_REPLICATION_FAULT_TASK",
 }
 
 export interface RoleCreationParams {
@@ -19779,237 +21022,6 @@ export enum TaskOrderByInput {
   TypeDESC = "type_DESC",
 }
 
-export interface TaskWhereInput {
-  AND?: TaskWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  error_code?: string | null;
-  error_code_contains?: string | null;
-  error_code_ends_with?: string | null;
-  error_code_gt?: string | null;
-  error_code_gte?: string | null;
-  error_code_in?: string[] | null;
-  error_code_lt?: string | null;
-  error_code_lte?: string | null;
-  error_code_not?: string | null;
-  error_code_not_contains?: string | null;
-  error_code_not_ends_with?: string | null;
-  error_code_not_in?: string[] | null;
-  error_code_not_starts_with?: string | null;
-  error_code_starts_with?: string | null;
-  error_message?: string | null;
-  error_message_contains?: string | null;
-  error_message_ends_with?: string | null;
-  error_message_gt?: string | null;
-  error_message_gte?: string | null;
-  error_message_in?: string[] | null;
-  error_message_lt?: string | null;
-  error_message_lte?: string | null;
-  error_message_not?: string | null;
-  error_message_not_contains?: string | null;
-  error_message_not_ends_with?: string | null;
-  error_message_not_in?: string[] | null;
-  error_message_not_starts_with?: string | null;
-  error_message_starts_with?: string | null;
-  finished_at?: string | null;
-  finished_at_gt?: string | null;
-  finished_at_gte?: string | null;
-  finished_at_in?: string[] | null;
-  finished_at_lt?: string | null;
-  finished_at_lte?: string | null;
-  finished_at_not?: string | null;
-  finished_at_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  key?: string | null;
-  key_contains?: string | null;
-  key_ends_with?: string | null;
-  key_gt?: string | null;
-  key_gte?: string | null;
-  key_in?: string[] | null;
-  key_lt?: string | null;
-  key_lte?: string | null;
-  key_not?: string | null;
-  key_not_contains?: string | null;
-  key_not_ends_with?: string | null;
-  key_not_in?: string[] | null;
-  key_not_starts_with?: string | null;
-  key_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  NOT?: TaskWhereInput[] | null;
-  OR?: TaskWhereInput[] | null;
-
-  /** @format double */
-  progress?: number | null;
-
-  /** @format double */
-  progress_gt?: number | null;
-
-  /** @format double */
-  progress_gte?: number | null;
-  progress_in?: number[] | null;
-
-  /** @format double */
-  progress_lt?: number | null;
-
-  /** @format double */
-  progress_lte?: number | null;
-
-  /** @format double */
-  progress_not?: number | null;
-  progress_not_in?: number[] | null;
-  resource_id?: string | null;
-  resource_id_contains?: string | null;
-  resource_id_ends_with?: string | null;
-  resource_id_gt?: string | null;
-  resource_id_gte?: string | null;
-  resource_id_in?: string[] | null;
-  resource_id_lt?: string | null;
-  resource_id_lte?: string | null;
-  resource_id_not?: string | null;
-  resource_id_not_contains?: string | null;
-  resource_id_not_ends_with?: string | null;
-  resource_id_not_in?: string[] | null;
-  resource_id_not_starts_with?: string | null;
-  resource_id_starts_with?: string | null;
-  resource_mutation?: string | null;
-  resource_mutation_contains?: string | null;
-  resource_mutation_ends_with?: string | null;
-  resource_mutation_gt?: string | null;
-  resource_mutation_gte?: string | null;
-  resource_mutation_in?: string[] | null;
-  resource_mutation_lt?: string | null;
-  resource_mutation_lte?: string | null;
-  resource_mutation_not?: string | null;
-  resource_mutation_not_contains?: string | null;
-  resource_mutation_not_ends_with?: string | null;
-  resource_mutation_not_in?: string[] | null;
-  resource_mutation_not_starts_with?: string | null;
-  resource_mutation_starts_with?: string | null;
-  resource_rollback_error?: string | null;
-  resource_rollback_error_contains?: string | null;
-  resource_rollback_error_ends_with?: string | null;
-  resource_rollback_error_gt?: string | null;
-  resource_rollback_error_gte?: string | null;
-  resource_rollback_error_in?: string[] | null;
-  resource_rollback_error_lt?: string | null;
-  resource_rollback_error_lte?: string | null;
-  resource_rollback_error_not?: string | null;
-  resource_rollback_error_not_contains?: string | null;
-  resource_rollback_error_not_ends_with?: string | null;
-  resource_rollback_error_not_in?: string[] | null;
-  resource_rollback_error_not_starts_with?: string | null;
-  resource_rollback_error_starts_with?: string | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_gt?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_gte?: number | null;
-  resource_rollback_retry_count_in?: number[] | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_lt?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_lte?: number | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count_not?: number | null;
-  resource_rollback_retry_count_not_in?: number[] | null;
-  resource_rollbacked?: boolean | null;
-  resource_rollbacked_not?: boolean | null;
-  resource_type?: string | null;
-  resource_type_contains?: string | null;
-  resource_type_ends_with?: string | null;
-  resource_type_gt?: string | null;
-  resource_type_gte?: string | null;
-  resource_type_in?: string[] | null;
-  resource_type_lt?: string | null;
-  resource_type_lte?: string | null;
-  resource_type_not?: string | null;
-  resource_type_not_contains?: string | null;
-  resource_type_not_ends_with?: string | null;
-  resource_type_not_in?: string[] | null;
-  resource_type_not_starts_with?: string | null;
-  resource_type_starts_with?: string | null;
-  snapshot?: string | null;
-  snapshot_contains?: string | null;
-  snapshot_ends_with?: string | null;
-  snapshot_gt?: string | null;
-  snapshot_gte?: string | null;
-  snapshot_in?: string[] | null;
-  snapshot_lt?: string | null;
-  snapshot_lte?: string | null;
-  snapshot_not?: string | null;
-  snapshot_not_contains?: string | null;
-  snapshot_not_ends_with?: string | null;
-  snapshot_not_in?: string[] | null;
-  snapshot_not_starts_with?: string | null;
-  snapshot_starts_with?: string | null;
-  started_at?: string | null;
-  started_at_gt?: string | null;
-  started_at_gte?: string | null;
-  started_at_in?: string[] | null;
-  started_at_lt?: string | null;
-  started_at_lte?: string | null;
-  started_at_not?: string | null;
-  started_at_not_in?: string[] | null;
-  status?: TaskStatus | null;
-  status_in?: TaskStatus[] | null;
-  status_not?: TaskStatus | null;
-  status_not_in?: TaskStatus[] | null;
-  type?: TaskType | null;
-  type_in?: TaskType[] | null;
-  type_not?: TaskType | null;
-  type_not_in?: TaskType[] | null;
-  user?: UserWhereInput | null;
-}
-
-export enum TaskType {
-  APPLICATION = "APPLICATION",
-  BACKUP = "BACKUP",
-  HOST_PLUGIN = "HOST_PLUGIN",
-  RESOLVER = "RESOLVER",
-}
-
 export interface GetTasksRequestBody {
   after?: string | null;
   before?: string | null;
@@ -21016,55 +22028,6 @@ export interface VlanDeletionParams {
   where: VlanWhereInput;
 }
 
-export interface OvfCpu {
-  /** @format int32 */
-  sockets: number;
-
-  /** @format int32 */
-  cores: number;
-}
-
-export interface OvfNic {
-  mac: string;
-}
-
-export interface OvfDisk {
-  /** @format int64 */
-  size: number;
-  type: VmDiskType;
-  bus: Bus;
-  name: string;
-}
-
-export interface ParsedOVF {
-  firmware: VmFirmware;
-  disks: OvfDisk[];
-  nics: OvfNic[];
-
-  /** @format int64 */
-  memory: number;
-  cpu: OvfCpu;
-
-  /** @format int32 */
-  vcpu: number;
-  description?: string;
-  name: string;
-}
-
-export interface ExportFileDownloadLinks {
-  link: string;
-  filename: string;
-}
-
-export interface VmExportFileWhereUniqueInput {
-  data_port_id?: string | null;
-  id?: string | null;
-}
-
-export interface GetExportFileDownloadLinksParams {
-  where: VmExportFileWhereUniqueInput;
-}
-
 export interface VmFolder {
   cluster: NestedCluster;
   id: string;
@@ -21175,14 +22138,6 @@ export interface WithTaskDeleteVmPlacementGroup {
 
 export interface VmPlacementGroupDeletionParams {
   where: VmPlacementGroupWhereInput;
-}
-
-export interface NestedCpu {
-  /** @format int32 */
-  cores: number;
-
-  /** @format int32 */
-  sockets: number;
 }
 
 export interface NestedSnapshotGroup {
@@ -21706,828 +22661,21 @@ export interface UpdateVmVolumeParams {
   };
 }
 
-export interface NestedVmEntityFilterResult {
-  id: string;
-}
-
-export interface NestedSnapshotPlan {
-  id: string;
-  name: string;
-}
-
-export interface NestedVmPlacementGroup {
-  id: string;
-  name: string;
-}
-
-export interface Vm {
-  clock_offset: VmClockOffset;
-  cloud_init_supported?: boolean | null;
-  cluster?: NestedCluster | null;
-  cpu: NestedCpu;
-  cpu_model: string;
-
-  /** @format double */
-  cpu_usage?: number | null;
-  deleted_at?: string | null;
-  description: string;
-  dns_servers?: string | null;
-  entity_filter_results?: NestedVmEntityFilterResult[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  firmware: VmFirmware;
-  folder?: NestedVmFolder | null;
-  guest_cpu_model?: string | null;
-  guest_os_type?: VmGuestsOperationSystem | null;
-
-  /** @format double */
-  guest_size_usage?: number | null;
-
-  /** @format int64 */
-  guest_used_size?: number | null;
-  ha: boolean;
-  host?: NestedHost | null;
-  hostname?: string | null;
-  id: string;
-  in_recycle_bin: boolean;
-  internal: boolean;
-  io_policy?: VmDiskIoPolicy | null;
-  ips: string;
-  isolation_policy?: NestedIsolationPolicy | null;
-  kernel_info?: string | null;
-  labels?: NestedLabel[] | null;
-  last_shutdown_time?: string | null;
-  local_created_at?: string | null;
-  local_id: string;
-
-  /** @format int64 */
-  logical_size_bytes?: number | null;
-
-  /** @format int64 */
-  max_bandwidth?: number | null;
-  max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
-  /** @format int32 */
-  max_iops?: number | null;
-  max_iops_policy?: VmDiskIoRestrictType | null;
-
-  /** @format int64 */
-  memory: number;
-
-  /** @format double */
-  memory_usage?: number | null;
-  name: string;
-  nested_virtualization: boolean;
-  node_ip: string;
-  original_name?: string | null;
-  os?: string | null;
-  out_uninstall_usb: string[];
-  protected: boolean;
-
-  /** @format int64 */
-  provisioned_size?: number | null;
-
-  /** @format int64 */
-  size?: number | null;
-  snapshot_plan?: NestedSnapshotPlan | null;
-  snapshots?: NestedVmSnapshot[] | null;
-  status: VmStatus;
-
-  /** @format int64 */
-  unique_size?: number | null;
-  usb_devices?: NestedUsbDevice[] | null;
-
-  /** @format int32 */
-  vcpu: number;
-  video_type?: VmVideoType | null;
-  vm_disks?: NestedVmDisk[] | null;
-  vm_nics?: NestedVmNic[] | null;
-  vm_placement_group?: NestedVmPlacementGroup[] | null;
-  vm_tools_status: VmToolsStatus;
-  vm_tools_version?: string | null;
-  vm_usage?: VmUsage | null;
-  win_opt: boolean;
-}
-
-export interface WithTaskVm {
-  task_id?: string | null;
-  data: Vm;
-}
-
-export interface MountNewCreateDisksParams {
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  vm_volume: {
-    elf_storage_policy: VmVolumeElfStoragePolicyType;
-    path?: string;
-    size_unit?: ByteUnit;
-    size: number;
-    name: string;
-  };
-
-  /** @format int32 */
-  index?: number;
-
-  /** @format int32 */
-  key?: number;
-  bus: Bus;
-
-  /** @format int32 */
-  boot: number;
-}
-
-export interface MountDisksParams {
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  vm_volume_id: string;
-
-  /** @format int32 */
-  index?: number;
-
-  /** @format int32 */
-  key?: number;
-  bus: Bus;
-
-  /** @format int32 */
-  boot: number;
-}
-
-export interface VmCdRomParams {
-  content_library_image_id?: string;
-  elf_image_id?: string;
-
-  /** @format int32 */
-  index?: number;
-
-  /** @format int32 */
-  key?: number;
-
-  /** @format int32 */
-  boot: number;
-}
-
-export interface VmDiskParams {
-  mount_cd_roms?: VmCdRomParams[];
-  mount_disks?: MountDisksParams[];
-  mount_new_create_disks?: MountNewCreateDisksParams[];
-}
-
-export interface VmNicParams {
-  subnet_mask?: string;
-  gateway?: string;
-  ip_address?: string;
-  nic_id?: string;
-  connect_vlan_id: string;
-  mirror?: boolean;
-  model?: VmNicModel;
-  enabled?: boolean;
-  mac_address?: string;
-  local_id?: string;
-}
-
-export interface VmCreationParams {
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status: VmStatus;
-  firmware: VmFirmware;
-  ha: boolean;
-  vm_nics: VmNicParams[];
-  vm_disks: VmDiskParams;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory: number;
-
-  /** @format int32 */
-  cpu_cores: number;
-
-  /** @format int32 */
-  cpu_sockets: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
-  name: string;
-  host_id?: string;
-  cluster_id: string;
-}
-
-export interface DiskOperateModifyDisk {
-  vm_volume_id?: string;
-  bus?: Bus;
-
-  /** @format int32 */
-  disk_index: number;
-}
-
-export interface VmDiskOperate {
-  remove_disks?: { disk_index: number[] };
-  modify_disks?: DiskOperateModifyDisk[];
-  new_disks?: VmDiskParams;
-}
-
-export enum CloudInitNetworkTypeEnum {
-  IPV4 = "IPV4",
-  IPV4DHCP = "IPV4_DHCP",
-}
-
-export interface CloudInitNetWorkRoute {
-  network: string;
-  netmask: string;
-  gateway: string;
-}
-
-export interface CloudInitNetWork {
-  routes?: CloudInitNetWorkRoute[];
-  type: CloudInitNetworkTypeEnum;
-
-  /** @format int32 */
-  nic_index: number;
-  netmask?: string;
-  ip_address?: string;
-}
-
-export interface TemplateCloudInit {
-  user_data?: string;
-  public_keys?: string[];
-  hostname?: string;
-  networks?: CloudInitNetWork[];
-  nameservers?: string[];
-  default_user_password?: string;
-}
-
-export interface VmCreateVmFromTemplateParams {
-  cloud_init?: TemplateCloudInit;
-  is_full_copy: boolean;
-  template_id: string;
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status?: VmStatus;
-  firmware?: VmFirmware;
-  ha?: boolean;
-  vm_nics?: VmNicParams[];
-  disk_operate?: VmDiskOperate;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory?: number;
-
-  /** @format int32 */
-  cpu_cores?: number;
-
-  /** @format int32 */
-  cpu_sockets?: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
-  name: string;
-  host_id?: string;
-  cluster_id?: string;
-}
-
-export interface VmCreateVmFromContentLibraryTemplateParams {
-  cloud_init?: TemplateCloudInit;
-  is_full_copy: boolean;
-  template_id: string;
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status?: VmStatus;
-  firmware?: VmFirmware;
-  ha?: boolean;
-  vm_nics?: VmNicParams[];
-  disk_operate?: VmDiskOperate;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory?: number;
-
-  /** @format int32 */
-  cpu_cores?: number;
-
-  /** @format int32 */
-  cpu_sockets?: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
-  name: string;
-  host_id?: string;
-  cluster_id: string;
-}
-
-export interface ConvertVmTemplateToVmParams {
-  name: string;
-  converted_from_template_id: string;
-}
-
-export interface VmCloneParams {
-  is_full_copy?: boolean;
-  src_vm_id: string;
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status?: VmStatus;
-  firmware?: VmFirmware;
-  ha?: boolean;
-  vm_nics?: VmNicParams[];
-  vm_disks?: VmDiskParams;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory?: number;
-
-  /** @format int32 */
-  cpu_cores?: number;
-
-  /** @format int32 */
-  cpu_sockets?: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
-  name: string;
-  host_id?: string;
-  cluster_id?: string;
-}
-
-export interface VmRebuildParams {
-  is_full_copy?: boolean;
-  rebuild_from_snapshot_id: string;
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status?: VmStatus;
-  firmware?: VmFirmware;
-  ha?: boolean;
-  vm_nics?: VmNicParams[];
-  vm_disks?: VmDiskParams;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory?: number;
-
-  /** @format int32 */
-  cpu_cores?: number;
-
-  /** @format int32 */
-  cpu_sockets?: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
-  name: string;
-  host_id?: string;
-  cluster_id?: string;
-}
-
-export interface VmRollbackParams {
-  data: { snapshot_id: string };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateParams {
-  data: {
-    vcpu?: number;
-    ha?: boolean;
-    memory_unit?: ByteUnit;
-    memory?: number;
-    cpu_cores?: number;
-    cpu_sockets?: number;
-    description?: string;
-    name?: string;
-  };
-  where: VmWhereInput;
-}
-
-export interface DeleteVm {
-  id: string;
-}
-
-export interface WithTaskDeleteVm {
-  task_id?: string | null;
-  data: DeleteVm;
-}
-
-export interface VmOperateParams {
-  where: VmWhereInput;
-}
-
-export interface VmDeleteParams {
-  effect?: { include_snapshots?: boolean };
-  where: VmWhereInput;
-}
-
-export interface VmStartParams {
-  data?: { host_id: string };
-  where: VmWhereInput;
-}
-
-export interface VmAddDiskParams {
-  data: {
-    max_bandwidth_policy?: VmDiskIoRestrictType;
-    max_bandwidth_unit?: BPSUnit;
-    max_bandwidth?: number;
-    max_iops_policy?: VmDiskIoRestrictType;
-    max_iops?: number;
-    io_policy?: VmDiskIoPolicy;
-    vm_disks: {
-      mount_disks?: MountDisksParams[];
-      mount_new_create_disks?: MountNewCreateDisksParams[];
-    };
-  };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateDiskParams {
-  data: {
-    content_library_image_id?: string | null;
-    elf_image_id?: string | null;
-    vm_volume_id?: string;
-    vm_disk_id: string;
-    bus?: Bus;
-  };
-  where: VmWhereInput;
-}
-
-export interface VmExpandVmDiskParams {
-  size_unit?: ByteUnit;
-
-  /** @format int64 */
-  size: number;
-  where: VmDiskWhereInput;
-}
-
-export interface VmRemoveDiskParams {
-  data: { disk_ids: string[] };
-  where: VmWhereInput;
-}
-
-export interface VmAddCdRomParams {
-  data: { vm_cd_roms: VmCdRomParams[] };
-  where: VmWhereInput;
-}
-
-export interface VmRemoveCdRomParams {
-  data: { cd_rom_ids: string[] };
-  where: VmWhereInput;
-}
-
-export interface VmEjectCdRomParams {
-  where: VmDiskWhereInput;
-}
-
-export interface VmToggleCdRomDisableParams {
-  disabled: boolean;
-  where: VmDiskWhereInput;
-}
-
-export interface VmAddNicParams {
-  data: { vm_nics: VmNicParams[] };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateNicParams {
-  data: {
-    subnet_mask?: string;
-    gateway?: string;
-    ip_address?: string;
-    nic_id?: string;
-    connect_vlan_id?: string;
-    mirror?: boolean;
-    model?: VmNicModel;
-    enabled?: boolean;
-    mac_address?: string;
-    nic_index: number;
-  };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateNicBasicInfoParams {
-  data: { subnet_mask?: string; gateway?: string; ip_address?: string };
-  where: VmNicWhereInput;
-}
-
-export interface VmUpdateNicAdvanceInfoParams {
-  data: {
-    mirror?: boolean;
-    enabled?: boolean;
-    mac_address?: string;
-    nic_id?: string;
-    connect_vlan_id?: string;
-  };
-  where: VmNicWhereInput;
-}
-
-export interface VmRemoveNicParams {
-  data: { nic_index: number[] };
-  where: VmWhereInput;
-}
-
-export interface InstallVmtoolsParams {
-  data: { svt_image_id: string; cd_rom_id: string };
-  where: VmWhereInput;
-}
-
-export interface VmMigrateParams {
-  data?: { host_id: string };
-  where: VmWhereInput;
-}
-
-export enum MigrateType {
-  COLD_MIGRATE = "COLD_MIGRATE",
-  CUTOVER_MIGRATE = "CUTOVER_MIGRATE",
-  LIVE_MIGRATE = "LIVE_MIGRATE",
-}
-
-export interface VlanMapping {
-  src_vlan_local_id: string;
-  dest_vlan_local_id: string;
-}
-
-export interface MigrateVmConfig {
-  remove_unmovable_devices?: boolean;
-  new_name?: string;
-  network_mapping: VlanMapping[];
-  migrate_type: MigrateType;
-  elf_storage_policy: VmVolumeElfStoragePolicyType;
-  delete_src_vm?: boolean;
-}
-
-export interface VmMigrateAcrossClusterParams {
-  data: { vm_config: MigrateVmConfig; cluster_id: string; host_id?: string };
-  where: VmWhereInput;
-}
-
-export interface StopVmInCutoverMigrationParams {
-  force?: boolean;
-  tasks: TaskWhereInput;
-}
-
-export interface Task {
-  args: object;
-  cluster?: NestedCluster | null;
-  description: string;
-  error_code?: string | null;
-  error_message?: string | null;
-  finished_at?: string | null;
-  id: string;
-  internal: boolean;
-  key?: string | null;
-  local_created_at: string;
-
-  /** @format double */
-  progress: number;
-  resource_id?: string | null;
-  resource_mutation?: string | null;
-  resource_rollback_error?: string | null;
-
-  /** @format int32 */
-  resource_rollback_retry_count?: number | null;
-  resource_rollbacked?: boolean | null;
-  resource_type?: string | null;
-  snapshot: string;
-  started_at?: string | null;
-  status: TaskStatus;
-  steps: NestedStep[];
-  type?: TaskType | null;
-  user?: NestedUser | null;
-}
-
-export interface AbortMigrateVmAcrossClusterParams {
-  tasks: TaskWhereInput;
-}
-
-export interface VmAddFolderParams {
-  data: { folder_id: string };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateAdvancedOptionsParams {
-  data: {
-    video_type?: VmVideoType;
-    windows_optimize?: boolean;
-    cpu_model?: string;
-    clock_offset?: VmClockOffset;
-  };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateHostOptionsParams {
-  data: { ntp_servers?: string[]; dns_servers?: string[]; hostname?: string };
-  where: VmWhereInput;
-}
-
-export interface VmResetGuestOsPasswordParams {
-  data: { password: string; username: string };
-  where: VmWhereInput;
-}
-
-export interface VmUpdateOwnerParams {
-  data: { search_for: "username" | "id"; value: string };
-  where: VmWhereInput;
-}
-
-export interface VmRestrictIoParamsData {
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-}
-
-export interface VmUpdateEachDiskIoPolicyParams {
-  data: VmRestrictIoParamsData;
-
-  /** @format int32 */
-  boot: number;
-}
-
-export interface VmUpdateIoPolicyParams {
-  data: {
-    each_disk?: VmUpdateEachDiskIoPolicyParams[];
-    whole_vm?: VmRestrictIoParamsData;
-    io_policy?: VmDiskIoPolicy | null;
-  };
-  where: VmWhereInput;
-}
-
-export enum VmExportFileType {
-  OVF = "OVF",
+export enum VmVolumeExportFileType {
   QCOW2 = "QCOW2",
   RAW = "RAW",
 }
 
-export interface VmExportFileFile {
-  md5: string;
-
-  /** @format int64 */
-  fileSize: number;
-  fileSecret: string;
-  fileUUID: string;
-  type: VmExportFileType;
-  fileName: string;
+export interface ExportVmVolumeParams {
+  data: { type: VmVolumeExportFileType };
+  where: VmVolumeWhereInput;
 }
 
-export interface VmExportFile {
-  content_library_vm_template?: NestedContentLibraryVmTemplate | null;
-  createdAt: string;
-  damaged: boolean;
-  data_port_id: string;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  files: VmExportFileFile[];
-  id: string;
-  storage_cluster_id: string;
-  type: VmExportFileType;
-  vm?: NestedVm | null;
-  vm_volume?: NestedVmVolume | null;
-}
-
-export interface WithTaskVmExportFile {
-  task_id?: string | null;
-  data: VmExportFile;
-}
-
-export interface VmExportParamsData {
-  keep_mac?: boolean;
-  type: VmExportFileType;
-}
-
-export interface VmExportParams {
-  data: VmExportParamsData;
-  where: VmWhereInput;
-}
-
-export interface VmdkDiskModify {
-  elf_storage_policy?: VmVolumeElfStoragePolicyType;
-  bus?: Bus;
-  volume_name?: string;
-
-  /** @format int32 */
-  boot?: number;
-  vmdk_name: string;
-}
-
-export interface VmdkCdromModify {
-  removed?: boolean;
-  content_library_image_id?: string;
-  elf_image_id?: string;
-
-  /** @format int32 */
-  boot?: number;
-
-  /** @format int32 */
-  index: number;
-}
-
-export interface OvfDiskOperate {
-  new_disks?: VmDiskParams;
-  modify_cd_roms?: VmdkCdromModify[];
-  modify_vmdk_disks?: VmdkDiskModify[];
-}
-
-export interface VmImportParams {
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-
-  /** @format int64 */
-  max_iops?: number;
-  io_policy?: VmDiskIoPolicy;
-
-  /** @format int32 */
-  vcpu?: number;
-  status?: VmStatus;
-  ha?: boolean;
-  vm_nics?: VmNicParams[];
-  disk_operate?: OvfDiskOperate;
-  memory_unit?: ByteUnit;
-
-  /** @format int64 */
-  memory?: number;
-
-  /** @format int32 */
-  cpu_cores?: number;
-
-  /** @format int32 */
-  cpu_sockets?: number;
-  guest_os_type?: VmGuestsOperationSystem;
-  folder_id?: string;
-  description?: string;
+export interface ImportVmVolumeParams {
+  upload_task_id: string;
   name: string;
-  host_id?: string;
+  storage_policy: VmVolumeElfStoragePolicyType;
   cluster_id: string;
-  upload_tasks: string[];
-  owner_id?: string;
-  parsed_ovf: ParsedOVF;
 }
 
 export interface VsphereEsxiAccount {
@@ -24603,40 +24751,40 @@ export interface NestedEverouteClusterWhitelist {
 
 export interface NestedEverouteAgentStatus {
   host?: NestedHost | null;
-  hostID: string;
-  ipAddr: string;
+  hostID?: string | null;
+  ipAddr?: string | null;
   isHealth: boolean;
-  message: string;
+  message?: string | null;
   phase?: EverouteClusterPhase | null;
-  reason: string;
+  reason?: string | null;
 }
 
 export interface NestedEverouteManageVDSStatus {
-  message: string;
+  message?: string | null;
   phase?: EverouteClusterPhase | null;
-  reason: string;
+  reason?: string | null;
 
   /** @format int32 */
-  retryCount: number;
+  retryCount?: number | null;
   vds?: NestedVds | null;
   vdsID: string;
 }
 
 export interface NestedEverouteClusterAgentStatus {
   /** @format int32 */
-  currentNumber: number;
+  currentNumber?: number | null;
 
   /** @format int32 */
-  expectNumber: number;
+  expectNumber?: number | null;
   instances?: NestedEverouteAgentStatus[] | null;
   manageVDSes?: NestedEverouteManageVDSStatus[] | null;
 
   /** @format int32 */
-  numberHealth: number;
+  numberHealth?: number | null;
 }
 
 export interface NestedEverouteClusterCondition {
-  lastProbeTime: string;
+  lastProbeTime?: string | null;
   type: string;
 }
 
@@ -24653,39 +24801,39 @@ export interface NestedEverouteClusterVMMetrics {
 }
 
 export interface NestedEverouteControllerStatus {
-  ipAddr: string;
+  ipAddr?: string | null;
   isHealth: boolean;
-  message: string;
+  message?: string | null;
   metrics?: NestedEverouteClusterVMMetrics | null;
   phase?: EverouteClusterPhase | null;
-  reason: string;
+  reason?: string | null;
   vm?: NestedVm | null;
-  vmID: string;
+  vmID?: string | null;
 }
 
 export interface NestedEverouteClusterControllerStatus {
   /** @format int32 */
-  currentNumber: number;
+  currentNumber?: number | null;
 
   /** @format int32 */
-  expectNumber: number;
+  expectNumber?: number | null;
   instances?: NestedEverouteControllerStatus[] | null;
 
   /** @format int32 */
-  numberHealth: number;
+  numberHealth?: number | null;
 }
 
 export interface NestedEverouteClusterStatus {
   agents?: NestedEverouteClusterAgentStatus | null;
   conditions?: NestedEverouteClusterCondition[] | null;
   controllers?: NestedEverouteClusterControllerStatus | null;
-  message: string;
+  message?: string | null;
   phase?: EverouteClusterPhase | null;
-  reason: string;
+  reason?: string | null;
 
   /** @format int32 */
-  retryCount: number;
-  version: string;
+  retryCount?: number | null;
+  version?: string | null;
 }
 
 export interface EverouteCluster {
@@ -24700,7 +24848,7 @@ export interface EverouteCluster {
   installed?: boolean | null;
   name: string;
   phase?: EverouteClusterPhase | null;
-  status: NestedEverouteClusterStatus;
+  status?: NestedEverouteClusterStatus | null;
   version: string;
 }
 

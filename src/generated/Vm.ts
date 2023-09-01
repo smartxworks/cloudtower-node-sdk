@@ -40,6 +40,7 @@ import {
   VmUpdateNicAdvanceInfoParams,
   VmUpdateNicBasicInfoParams,
   VmUpdateNicParams,
+  VmUpdateNicQosOptionsParams,
   VmUpdateOwnerParams,
   VmUpdateParams,
   WithTaskDeleteVm,
@@ -735,6 +736,32 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-advance-info`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name UpdateVmNicQosOption
+   * @request POST:/update-vm-nic-qos-option
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateVmNicQosOption = (
+    data: VmUpdateNicQosOptionsParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], void | ErrorBody>({
+      path: `/update-vm-nic-qos-option`,
       method: "POST",
       body: data,
       secure: true,

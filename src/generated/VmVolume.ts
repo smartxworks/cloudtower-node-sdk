@@ -1,8 +1,10 @@
 import {
   CloneVmVolumeParams,
   ErrorBody,
+  ExportVmVolumeParams,
   GetVmVolumesConnectionRequestBody,
   GetVmVolumesRequestBody,
+  ImportVmVolumeParams,
   UpdateVmVolumeParams,
   VmVolume,
   VmVolumeConnection,
@@ -11,6 +13,7 @@ import {
   VmVolumeRebuildParams,
   VmVolumeRollbackParams,
   WithTaskDeleteVmVolume,
+  WithTaskVmExportFile,
   WithTaskVmVolume,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -162,6 +165,50 @@ export class VmVolumeApi<SecurityDataType = unknown> {
   updateVmVolume = (data: UpdateVmVolumeParams, params: RequestParams = {}) =>
     this.http.request<WithTaskVmVolume[], void | ErrorBody>({
       path: `/update-vm-volume`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags VmVolume
+   * @name ExportVmVolume
+   * @request POST:/export-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmExportFile)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  exportVmVolume = (data: ExportVmVolumeParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskVmExportFile[], ErrorBody>({
+      path: `/export-vm-volume`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags VmVolume
+   * @name ImportVmVolume
+   * @request POST:/import-vm-volume
+   * @secure
+   * @response `200` `(WithTaskVmVolume)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  importVmVolume = (data: ImportVmVolumeParams[], params: RequestParams = {}) =>
+    this.http.request<WithTaskVmVolume[], ErrorBody>({
+      path: `/import-vm-volume`,
       method: "POST",
       body: data,
       secure: true,
