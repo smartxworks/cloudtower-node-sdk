@@ -1,5 +1,31 @@
 # RELEASE NOTE
 
+## release 日期 2023-09-01
+
+v2.11.0 release (tower version 3.2.0)
+
+### breaking change
+
+- [VmApi]: [VmImportParams]: 由于 `VmNicParams` 支持配置 qos 配置，现在设计网卡的参数由 `VmNicParams` 更新为了 `VmImportNicParams`，类型和过去一致，没有 qos 支持。
+
+### update
+
+- feature: [VmVolumeApi]: [importVmVolume] [exportVmVolume]: 现在支持虚拟卷的导入与导出
+- feature: [ContentLibraryVmTemplateApi]: [importContentLibraryVmTemplate] [exportContentLibraryVmTemplate]: 现在支持虚拟机模板的导入与导出
+- feature: [VmApi]: [updateVmNicQosOption]: 现在支持通过 api 更新现有虚拟机网卡的 qos 属性
+- optimize: [VmNicParams]: 现在支持配置 `qos` 参数，用于在创建虚拟机（直接创建，模板创建，快照重建，克隆创建）时配置虚拟机网卡的 qos 参数
+
+### bugfix
+
+- [VmApi]: [createVmFromTemplate] [createVmFromContentLibraryTemplate] [cloneVm] [rebuildVmFromSnapshot]: 修复了磁盘限速无法正确配置的问题，
+  目前从模板创建，快照重建，克隆虚拟机时，仅支持配置与模板，快照或源虚拟机一致的 `io_policy` 并进行创建，原参数的 `io_policy` 被弃用
+- [IscsiTargetApi] [IscsiLunApi] [NvmfSubsystemApi] [NvmfNamespaceApi]:
+  [createIscsiTarget] [updateIscsiTarget] [createIscsiLun] [updateIscsiLun]
+  [createNvmfSubsystem] [updateNvmfSubsystem] [createNvmfNamespace] [updateNvmfNamespace]:
+  `bps_wr_maxLength` 可以被正常设置了
+- [VmApi]: [createVmFromTemplate] [createVmFromContentLibraryTemplate]: 修复了单位无法被正常应用的 bug
+- [GlobalAlertRuleApi]: [updateCustomizeAlertRule] 修复了特例报警无法正常更新的问题
+
 ## release 日期 2023-08-01
 
 v2.10.0 release (tower version 3.1.0)
@@ -33,7 +59,7 @@ v2.8.0 release
 
 v2.7.0 release
 
-- optimize: VmApi: [delete_vm] 更新参数类型为 `VmDeleteParams`，添加 `effect` 允许删除相关的快照
+- optimize: VmApi: [deleteVm] 更新参数类型为 `VmDeleteParams`，添加 `effect` 允许删除相关的快照
 - feature: [VmUsage] 枚举添加:
   - `BUNDLE_APPLICATION`
 - feature: [ROLE_ACTION] 枚举添加:

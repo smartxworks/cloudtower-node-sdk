@@ -3,6 +3,8 @@ import {
   ContentLibraryVmTemplateConnection,
   ContentLibraryVmTemplateCreationParams,
   ContentLibraryVmTemplateDeletionParams,
+  ContentLibraryVmTemplateExportParams,
+  ContentLibraryVmTemplateImportParams,
   ContentLibraryVmTemplateUpdationClusterParams,
   ContentLibraryVmTemplateUpdationParams,
   ErrorBody,
@@ -10,6 +12,7 @@ import {
   GetContentLibraryVmTemplatesRequestBody,
   WithTaskContentLibraryVmTemplate,
   WithTaskDeleteContentLibraryVmTemplate,
+  WithTaskVmExportFile,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
@@ -163,6 +166,56 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskDeleteContentLibraryVmTemplate[], ErrorBody>({
       path: `/delete-content-library-vm-template`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags ContentLibraryVmTemplate
+   * @name ExportContentLibraryVmTemplate
+   * @request POST:/export-content-library-vm-template
+   * @secure
+   * @response `200` `(WithTaskVmExportFile)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  exportContentLibraryVmTemplate = (
+    data: ContentLibraryVmTemplateExportParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVmExportFile[], ErrorBody>({
+      path: `/export-content-library-vm-template`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags ContentLibraryVmTemplate
+   * @name ImportContentLibraryVmTemplate
+   * @request POST:/import-content-library-vm-template
+   * @secure
+   * @response `200` `(WithTaskContentLibraryVmTemplate)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  importContentLibraryVmTemplate = (
+    data: ContentLibraryVmTemplateImportParams[],
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
+      path: `/import-content-library-vm-template`,
       method: "POST",
       body: data,
       secure: true,

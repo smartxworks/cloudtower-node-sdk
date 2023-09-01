@@ -85,7 +85,7 @@ export class HttpClient<SecurityDataType = unknown> {
       headers: {
         ...((method &&
           this.instance.defaults.headers[
-          method.toLowerCase() as keyof HeadersDefaults
+            method.toLowerCase() as keyof HeadersDefaults
           ]) ||
           {}),
         ...(params1.headers || {}),
@@ -187,48 +187,11 @@ export class CloudTowerClient extends HttpClient<CloudTowerUser> {
           try {
             this["secure"] = false;
             const userApi = new UserApi(this);
-            let auth_id: string | undefined = undefined;
-            if (user.source === UserSource.LDAP) {
-              let host = config.baseURL;
-              if (host) {
-                if (host.endsWith("/")) {
-                  host = host.substring(0, host.length - 1)
-                }
-                if (host.endsWith("/v2/api")) {
-                  host = host.substring(0, host.length - 7)
-                }
-              }
-              auth_id = await this.request({
-                baseURL: host,
-                path: "/api",
-                method: "POST",
-                body: JSON.stringify({ operationName: null, variables: {}, query: "{authnStrategies{id    type}}" }),
-                headers: {
-                  "Content-Type": "application/json"
-                }
-              }).then((resp) => {
-                if (resp.data.data.authnStrategies) {
-                  for (const auth of resp.data.data.authnStrategies) {
-                    if (auth.type === "LDAP") {
-                      return auth.id
-                    }
-                  }
-                }
-              }).catch((e) => {
-                // for backward compatibility, ignore error
-              })
-            }
-            const loginResponse = await userApi.login(
-              auth_id ? {
-                username: user.username,
-                password: user.password,
-                source: UserSource.AUTHN,
-                auth_config_id: auth_id,
-              } : {
-                username: user.username,
-                password: user.password,
-                source: user.source,
-              });
+            const loginResponse = await userApi.login({
+              username: user.username,
+              password: user.password,
+              source: user.source,
+            });
             this.token = loginResponse.data.data.token;
             this["secure"] = true;
           } catch (e) {
