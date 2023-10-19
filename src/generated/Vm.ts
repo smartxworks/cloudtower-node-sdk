@@ -11,6 +11,7 @@ import {
   VmAddCdRomParams,
   VmAddDiskParams,
   VmAddFolderParams,
+  VmAddGpuDeviceParams,
   VmAddNicParams,
   VmCloneParams,
   VmConnection,
@@ -25,9 +26,12 @@ import {
   VmMigrateAcrossClusterParams,
   VmMigrateParams,
   VmOperateParams,
+  VmOperatePciNicParams,
   VmRebuildParams,
   VmRemoveCdRomParams,
   VmRemoveDiskParams,
+  VmRemoveGpuDeviceParams,
+  VmRemoveNicByWhereParams,
   VmRemoveNicParams,
   VmResetGuestOsPasswordParams,
   VmRollbackParams,
@@ -773,8 +777,55 @@ export class VmApi<SecurityDataType = unknown> {
    * No description
    *
    * @tags Vm
+   * @name AddVmPciNic
+   * @request POST:/add-vm-pci-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  addVmPciNic = (data: VmOperatePciNicParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskVm[], void | ErrorBody>({
+      path: `/add-vm-pci-nic`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name RemoveVmPciNic
+   * @request POST:/remove-vm-pci-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  removeVmPciNic = (data: VmOperatePciNicParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskVm[], void | ErrorBody>({
+      path: `/remove-vm-pci-nic`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
    * @name RemoveVmNic
    * @request POST:/remove-vm-nic
+   * @deprecated
    * @secure
    * @response `200` `(WithTaskVm)[]`
    * @response `400` `ErrorBody` Bad request
@@ -784,6 +835,78 @@ export class VmApi<SecurityDataType = unknown> {
   removeVmNic = (data: VmRemoveNicParams, params: RequestParams = {}) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/remove-vm-nic`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name RemoveVmNicByWhere
+   * @request POST:/remove-vm-nic-by-where
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  removeVmNicByWhere = (
+    data: VmRemoveNicByWhereParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/remove-vm-nic-by-where`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name AddVmGpuDevice
+   * @request POST:/add-vm-gpu-device
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  addVmGpuDevice = (data: VmAddGpuDeviceParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/add-vm-gpu-device`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name RemoveVmGpuDevice
+   * @request POST:/remove-vm-gpu-device
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  removeVmGpuDevice = (
+    data: VmRemoveGpuDeviceParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/remove-vm-gpu-device`,
       method: "POST",
       body: data,
       secure: true,

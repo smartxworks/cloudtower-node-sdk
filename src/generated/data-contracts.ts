@@ -1,4 +1,9 @@
+export enum ErrorCode {
+  ResourceLocked = "ResourceLocked",
+}
+
 export interface ErrorBody {
+  code?: ErrorCode;
   props?: any;
   stack?: string;
   message: string;
@@ -1297,6 +1302,9 @@ export interface VmWhereInput {
   firmware_not?: VmFirmware | null;
   firmware_not_in?: VmFirmware[] | null;
   folder?: VmFolderWhereInput | null;
+  gpu_devices_every?: GpuDeviceWhereInput | null;
+  gpu_devices_none?: GpuDeviceWhereInput | null;
+  gpu_devices_some?: GpuDeviceWhereInput | null;
   guest_cpu_model?: string | null;
   guest_cpu_model_contains?: string | null;
   guest_cpu_model_ends_with?: string | null;
@@ -1624,6 +1632,9 @@ export interface VmWhereInput {
   os_not_in?: string[] | null;
   os_not_starts_with?: string | null;
   os_starts_with?: string | null;
+  pci_nics_every?: NicWhereInput | null;
+  pci_nics_none?: NicWhereInput | null;
+  pci_nics_some?: NicWhereInput | null;
   protected?: boolean | null;
   protected_not?: boolean | null;
 
@@ -1950,10 +1961,229 @@ export interface VmFolderWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
-export enum VmGuestsOperationSystem {
-  LINUX = "LINUX",
-  UNKNOWN = "UNKNOWN",
-  WINDOWS = "WINDOWS",
+export interface GpuDeviceWhereInput {
+  AND?: GpuDeviceWhereInput[] | null;
+
+  /** @format int32 */
+  assigned_vgpus_num?: number | null;
+
+  /** @format int32 */
+  assigned_vgpus_num_gt?: number | null;
+
+  /** @format int32 */
+  assigned_vgpus_num_gte?: number | null;
+  assigned_vgpus_num_in?: number[] | null;
+
+  /** @format int32 */
+  assigned_vgpus_num_lt?: number | null;
+
+  /** @format int32 */
+  assigned_vgpus_num_lte?: number | null;
+
+  /** @format int32 */
+  assigned_vgpus_num_not?: number | null;
+  assigned_vgpus_num_not_in?: number[] | null;
+
+  /** @format int32 */
+  available_vgpus_num?: number | null;
+
+  /** @format int32 */
+  available_vgpus_num_gt?: number | null;
+
+  /** @format int32 */
+  available_vgpus_num_gte?: number | null;
+  available_vgpus_num_in?: number[] | null;
+
+  /** @format int32 */
+  available_vgpus_num_lt?: number | null;
+
+  /** @format int32 */
+  available_vgpus_num_lte?: number | null;
+
+  /** @format int32 */
+  available_vgpus_num_not?: number | null;
+  available_vgpus_num_not_in?: number[] | null;
+  brand?: string | null;
+  brand_contains?: string | null;
+  brand_ends_with?: string | null;
+  brand_gt?: string | null;
+  brand_gte?: string | null;
+  brand_in?: string[] | null;
+  brand_lt?: string | null;
+  brand_lte?: string | null;
+  brand_not?: string | null;
+  brand_not_contains?: string | null;
+  brand_not_ends_with?: string | null;
+  brand_not_in?: string[] | null;
+  brand_not_starts_with?: string | null;
+  brand_starts_with?: string | null;
+  bus_location?: string | null;
+  bus_location_contains?: string | null;
+  bus_location_ends_with?: string | null;
+  bus_location_gt?: string | null;
+  bus_location_gte?: string | null;
+  bus_location_in?: string[] | null;
+  bus_location_lt?: string | null;
+  bus_location_lte?: string | null;
+  bus_location_not?: string | null;
+  bus_location_not_contains?: string | null;
+  bus_location_not_ends_with?: string | null;
+  bus_location_not_in?: string[] | null;
+  bus_location_not_starts_with?: string | null;
+  bus_location_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  host?: HostWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  is_nvidia_tools_ready?: boolean | null;
+  is_nvidia_tools_ready_not?: boolean | null;
+  is_nvidia_vfs_enabled?: boolean | null;
+  is_nvidia_vfs_enabled_not?: boolean | null;
+  is_nvidia_vfs_supported?: boolean | null;
+  is_nvidia_vfs_supported_not?: boolean | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  model?: string | null;
+  model_contains?: string | null;
+  model_ends_with?: string | null;
+  model_gt?: string | null;
+  model_gte?: string | null;
+  model_in?: string[] | null;
+  model_lt?: string | null;
+  model_lte?: string | null;
+  model_not?: string | null;
+  model_not_contains?: string | null;
+  model_not_ends_with?: string | null;
+  model_not_in?: string[] | null;
+  model_not_starts_with?: string | null;
+  model_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: GpuDeviceWhereInput[] | null;
+  OR?: GpuDeviceWhereInput[] | null;
+  status?: GpuDeviceStatus | null;
+  status_in?: GpuDeviceStatus[] | null;
+  status_not?: GpuDeviceStatus | null;
+  status_not_in?: GpuDeviceStatus[] | null;
+  user_usage?: GpuDeviceUsage | null;
+  user_usage_in?: GpuDeviceUsage[] | null;
+  user_usage_not?: GpuDeviceUsage | null;
+  user_usage_not_in?: GpuDeviceUsage[] | null;
+  user_vgpu_type_id?: string | null;
+  user_vgpu_type_id_contains?: string | null;
+  user_vgpu_type_id_ends_with?: string | null;
+  user_vgpu_type_id_gt?: string | null;
+  user_vgpu_type_id_gte?: string | null;
+  user_vgpu_type_id_in?: string[] | null;
+  user_vgpu_type_id_lt?: string | null;
+  user_vgpu_type_id_lte?: string | null;
+  user_vgpu_type_id_not?: string | null;
+  user_vgpu_type_id_not_contains?: string | null;
+  user_vgpu_type_id_not_ends_with?: string | null;
+  user_vgpu_type_id_not_in?: string[] | null;
+  user_vgpu_type_id_not_starts_with?: string | null;
+  user_vgpu_type_id_starts_with?: string | null;
+  user_vgpu_type_name?: string | null;
+  user_vgpu_type_name_contains?: string | null;
+  user_vgpu_type_name_ends_with?: string | null;
+  user_vgpu_type_name_gt?: string | null;
+  user_vgpu_type_name_gte?: string | null;
+  user_vgpu_type_name_in?: string[] | null;
+  user_vgpu_type_name_lt?: string | null;
+  user_vgpu_type_name_lte?: string | null;
+  user_vgpu_type_name_not?: string | null;
+  user_vgpu_type_name_not_contains?: string | null;
+  user_vgpu_type_name_not_ends_with?: string | null;
+  user_vgpu_type_name_not_in?: string[] | null;
+  user_vgpu_type_name_not_starts_with?: string | null;
+  user_vgpu_type_name_starts_with?: string | null;
+
+  /** @format int32 */
+  vgpu_instance_num?: number | null;
+
+  /** @format int32 */
+  vgpu_instance_num_gt?: number | null;
+
+  /** @format int32 */
+  vgpu_instance_num_gte?: number | null;
+  vgpu_instance_num_in?: number[] | null;
+
+  /** @format int32 */
+  vgpu_instance_num_lt?: number | null;
+
+  /** @format int32 */
+  vgpu_instance_num_lte?: number | null;
+
+  /** @format int32 */
+  vgpu_instance_num_not?: number | null;
+  vgpu_instance_num_not_in?: number[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
 }
 
 export interface HostWhereInput {
@@ -1971,6 +2201,26 @@ export interface HostWhereInput {
   access_ip_not_in?: string[] | null;
   access_ip_not_starts_with?: string | null;
   access_ip_starts_with?: string | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive?: number | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_gt?: number | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_gte?: number | null;
+  allocable_cpu_cores_for_vm_exclusive_in?: number[] | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_lt?: number | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_lte?: number | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_not?: number | null;
+  allocable_cpu_cores_for_vm_exclusive_not_in?: number[] | null;
 
   /** @format int64 */
   allocatable_memory_bytes?: number | null;
@@ -2114,6 +2364,9 @@ export interface HostWhereInput {
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
+  gpu_devices_every?: GpuDeviceWhereInput | null;
+  gpu_devices_none?: GpuDeviceWhereInput | null;
+  gpu_devices_some?: GpuDeviceWhereInput | null;
 
   /** @format int64 */
   hdd_data_capacity?: number | null;
@@ -2182,6 +2435,10 @@ export interface HostWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  iommu?: IommuStatus | null;
+  iommu_in?: IommuStatus[] | null;
+  iommu_not?: IommuStatus | null;
+  iommu_not_in?: IommuStatus[] | null;
   ipmi?: IpmiWhereInput | null;
   is_os_in_raid1?: boolean | null;
   is_os_in_raid1_not?: boolean | null;
@@ -3299,6 +3556,29 @@ export interface LabelWhereInput {
   elf_images_some?: ElfImageWhereInput | null;
 
   /** @format int32 */
+  gpu_device_num?: number | null;
+
+  /** @format int32 */
+  gpu_device_num_gt?: number | null;
+
+  /** @format int32 */
+  gpu_device_num_gte?: number | null;
+  gpu_device_num_in?: number[] | null;
+
+  /** @format int32 */
+  gpu_device_num_lt?: number | null;
+
+  /** @format int32 */
+  gpu_device_num_lte?: number | null;
+
+  /** @format int32 */
+  gpu_device_num_not?: number | null;
+  gpu_device_num_not_in?: number[] | null;
+  gpu_devices_every?: GpuDeviceWhereInput | null;
+  gpu_devices_none?: GpuDeviceWhereInput | null;
+  gpu_devices_some?: GpuDeviceWhereInput | null;
+
+  /** @format int32 */
   host_num?: number | null;
 
   /** @format int32 */
@@ -3812,6 +4092,29 @@ export interface LabelWhereInput {
   /** @format int32 */
   vm_volume_num_not?: number | null;
   vm_volume_num_not_in?: number[] | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num?: number | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num_gt?: number | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num_gte?: number | null;
+  vm_volume_snapshot_num_in?: number[] | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num_lt?: number | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num_lte?: number | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num_not?: number | null;
+  vm_volume_snapshot_num_not_in?: number[] | null;
+  vm_volume_snapshots_every?: VmVolumeSnapshotWhereInput | null;
+  vm_volume_snapshots_none?: VmVolumeSnapshotWhereInput | null;
+  vm_volume_snapshots_some?: VmVolumeSnapshotWhereInput | null;
   vm_volumes_every?: VmVolumeWhereInput | null;
   vm_volumes_none?: VmVolumeWhereInput | null;
   vm_volumes_some?: VmVolumeWhereInput | null;
@@ -9415,6 +9718,10 @@ export interface NicWhereInput {
   /** @format int32 */
   used_vf_num_not?: number | null;
   used_vf_num_not_in?: number[] | null;
+  user_usage?: NicUserUsage | null;
+  user_usage_in?: NicUserUsage[] | null;
+  user_usage_not?: NicUserUsage | null;
+  user_usage_not_in?: NicUserUsage[] | null;
   vds?: VdsWhereInput | null;
 }
 
@@ -9431,6 +9738,12 @@ export enum NetworkType {
   MIGRATION = "MIGRATION",
   STORAGE = "STORAGE",
   VM = "VM",
+}
+
+export enum NicUserUsage {
+  DEFAULT = "DEFAULT",
+  PASS_THROUGH = "PASS_THROUGH",
+  SRIOV = "SRIOV",
 }
 
 export interface VlanWhereInput {
@@ -9631,6 +9944,48 @@ export enum VlanModeType {
 
 export interface VmNicWhereInput {
   AND?: VmNicWhereInput[] | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit?: number | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit_gt?: number | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit_gte?: number | null;
+  egress_rate_limit_burst_in_bit_in?: number[] | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit_lt?: number | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit_lte?: number | null;
+
+  /** @format double */
+  egress_rate_limit_burst_in_bit_not?: number | null;
+  egress_rate_limit_burst_in_bit_not_in?: number[] | null;
+  egress_rate_limit_enabled?: boolean | null;
+  egress_rate_limit_enabled_not?: boolean | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps?: number | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_gt?: number | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_gte?: number | null;
+  egress_rate_limit_max_rate_in_bitps_in?: number[] | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_lt?: number | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_lte?: number | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_not?: number | null;
+  egress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
   enabled?: boolean | null;
   enabled_not?: boolean | null;
   gateway?: string | null;
@@ -9661,6 +10016,48 @@ export interface VmNicWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_gt?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_gte?: number | null;
+  ingress_rate_limit_burst_in_bit_in?: number[] | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_lt?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_lte?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_not?: number | null;
+  ingress_rate_limit_burst_in_bit_not_in?: number[] | null;
+  ingress_rate_limit_enabled?: boolean | null;
+  ingress_rate_limit_enabled_not?: boolean | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_gt?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_gte?: number | null;
+  ingress_rate_limit_max_rate_in_bitps_in?: number[] | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_lt?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_lte?: number | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_not?: number | null;
+  ingress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
   interface_id?: string | null;
   interface_id_contains?: string | null;
   interface_id_ends_with?: string | null;
@@ -10133,6 +10530,202 @@ export enum PolicyMode {
   WORK = "WORK",
 }
 
+export interface VmVolumeSnapshotWhereInput {
+  AND?: VmVolumeSnapshotWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  createAt?: string | null;
+  createAt_gt?: string | null;
+  createAt_gte?: string | null;
+  createAt_in?: string[] | null;
+  createAt_lt?: string | null;
+  createAt_lte?: string | null;
+  createAt_not?: string | null;
+  createAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
+  elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  NOT?: VmVolumeSnapshotWhereInput[] | null;
+  OR?: VmVolumeSnapshotWhereInput[] | null;
+
+  /** @format double */
+  shared_size?: number | null;
+
+  /** @format double */
+  shared_size_gt?: number | null;
+
+  /** @format double */
+  shared_size_gte?: number | null;
+  shared_size_in?: number[] | null;
+
+  /** @format double */
+  shared_size_lt?: number | null;
+
+  /** @format double */
+  shared_size_lte?: number | null;
+
+  /** @format double */
+  shared_size_not?: number | null;
+  shared_size_not_in?: number[] | null;
+
+  /** @format double */
+  size?: number | null;
+
+  /** @format double */
+  size_gt?: number | null;
+
+  /** @format double */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+
+  /** @format double */
+  size_lt?: number | null;
+
+  /** @format double */
+  size_lte?: number | null;
+
+  /** @format double */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  type?: VmVolumeSnapshotType | null;
+  type_in?: VmVolumeSnapshotType[] | null;
+  type_not?: VmVolumeSnapshotType | null;
+  type_not_in?: VmVolumeSnapshotType[] | null;
+
+  /** @format double */
+  unique_size?: number | null;
+
+  /** @format double */
+  unique_size_gt?: number | null;
+
+  /** @format double */
+  unique_size_gte?: number | null;
+  unique_size_in?: number[] | null;
+
+  /** @format double */
+  unique_size_lt?: number | null;
+
+  /** @format double */
+  unique_size_lte?: number | null;
+
+  /** @format double */
+  unique_size_not?: number | null;
+  unique_size_not_in?: number[] | null;
+  vm_volume?: VmVolumeWhereInput | null;
+  volume_sharing?: boolean | null;
+  volume_sharing_not?: boolean | null;
+
+  /** @format double */
+  volume_size?: number | null;
+
+  /** @format double */
+  volume_size_gt?: number | null;
+
+  /** @format double */
+  volume_size_gte?: number | null;
+  volume_size_in?: number[] | null;
+
+  /** @format double */
+  volume_size_lt?: number | null;
+
+  /** @format double */
+  volume_size_lte?: number | null;
+
+  /** @format double */
+  volume_size_not?: number | null;
+  volume_size_not_in?: number[] | null;
+  zbs_snapshot_uuid?: string | null;
+  zbs_snapshot_uuid_contains?: string | null;
+  zbs_snapshot_uuid_ends_with?: string | null;
+  zbs_snapshot_uuid_gt?: string | null;
+  zbs_snapshot_uuid_gte?: string | null;
+  zbs_snapshot_uuid_in?: string[] | null;
+  zbs_snapshot_uuid_lt?: string | null;
+  zbs_snapshot_uuid_lte?: string | null;
+  zbs_snapshot_uuid_not?: string | null;
+  zbs_snapshot_uuid_not_contains?: string | null;
+  zbs_snapshot_uuid_not_ends_with?: string | null;
+  zbs_snapshot_uuid_not_in?: string[] | null;
+  zbs_snapshot_uuid_not_starts_with?: string | null;
+  zbs_snapshot_uuid_starts_with?: string | null;
+}
+
+export enum VmVolumeSnapshotType {
+  KVM_VOLUME_ISCSI_SNAPSHOT = "KVM_VOLUME_ISCSI_SNAPSHOT",
+  KVM_VOLUME_SNAPSHOT = "KVM_VOLUME_SNAPSHOT",
+}
+
 export interface PmemDimmWhereInput {
   AND?: PmemDimmWhereInput[] | null;
 
@@ -10310,6 +10903,12 @@ export enum DiskUsageStatus {
   PARTIAL_MOUNTED = "PARTIAL_MOUNTED",
   UNMOUNTED = "UNMOUNTED",
   UNMOUNTING = "UNMOUNTING",
+}
+
+export enum IommuStatus {
+  DISABLE = "DISABLE",
+  ENABLE = "ENABLE",
+  NEED_REBOOT = "NEED_REBOOT",
 }
 
 export interface IpmiWhereInput {
@@ -10993,6 +11592,23 @@ export interface ZoneWhereInput {
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
+}
+
+export enum GpuDeviceStatus {
+  NEED_REBOOT = "NEED_REBOOT",
+  NOT_READY = "NOT_READY",
+  READY = "READY",
+}
+
+export enum GpuDeviceUsage {
+  PASS_THROUGH = "PASS_THROUGH",
+  VGPU = "VGPU",
+}
+
+export enum VmGuestsOperationSystem {
+  LINUX = "LINUX",
+  UNKNOWN = "UNKNOWN",
+  WINDOWS = "WINDOWS",
 }
 
 export enum VmStatus {
@@ -13580,8 +14196,18 @@ export interface NestedVmEntityFilterResult {
   id: string;
 }
 
+export interface NestedGpuDevice {
+  id: string;
+  name: string;
+}
+
 export interface NestedIsolationPolicy {
   id: string;
+}
+
+export interface NestedNic {
+  id: string;
+  name: string;
 }
 
 export interface NestedSnapshotPlan {
@@ -13619,6 +14245,7 @@ export interface Vm {
   entityAsyncStatus?: EntityAsyncStatus | null;
   firmware: VmFirmware;
   folder?: NestedVmFolder | null;
+  gpu_devices?: NestedGpuDevice[] | null;
   guest_cpu_model?: string | null;
   guest_os_type?: VmGuestsOperationSystem | null;
 
@@ -13664,6 +14291,7 @@ export interface Vm {
   original_name?: string | null;
   os?: string | null;
   out_uninstall_usb: string[];
+  pci_nics?: NestedNic[] | null;
   protected: boolean;
 
   /** @format int64 */
@@ -13824,7 +14452,14 @@ export interface VmNicParams {
   local_id?: string;
 }
 
+export interface VmGpuOperationParams {
+  /** @format int32 */
+  amount?: number;
+  gpu_id: string;
+}
+
 export interface VmCreationParams {
+  gpu_devices?: VmGpuOperationParams[];
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
 
@@ -13841,6 +14476,8 @@ export interface VmCreationParams {
   status: VmStatus;
   firmware: VmFirmware;
   ha: boolean;
+  pci_nics?: NicWhereInput;
+  vm_placement_group?: VmPlacementGroupWhereInput;
   vm_nics: VmNicParams[];
   vm_disks: VmDiskParams;
   memory_unit?: ByteUnit;
@@ -13906,6 +14543,7 @@ export interface TemplateCloudInit {
 }
 
 export interface VmCreateVmFromTemplateParams {
+  gpu_devices?: VmGpuOperationParams[];
   cloud_init?: TemplateCloudInit;
   is_full_copy: boolean;
   template_id: string;
@@ -13927,6 +14565,8 @@ export interface VmCreateVmFromTemplateParams {
   status?: VmStatus;
   firmware?: VmFirmware;
   ha?: boolean;
+  pci_nics?: NicWhereInput;
+  vm_placement_group?: VmPlacementGroupWhereInput;
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
   memory_unit?: ByteUnit;
@@ -13948,6 +14588,7 @@ export interface VmCreateVmFromTemplateParams {
 }
 
 export interface VmCreateVmFromContentLibraryTemplateParams {
+  gpu_devices?: VmGpuOperationParams[];
   cloud_init?: TemplateCloudInit;
   is_full_copy: boolean;
   template_id: string;
@@ -13969,6 +14610,8 @@ export interface VmCreateVmFromContentLibraryTemplateParams {
   status?: VmStatus;
   firmware?: VmFirmware;
   ha?: boolean;
+  pci_nics?: NicWhereInput;
+  vm_placement_group?: VmPlacementGroupWhereInput;
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
   memory_unit?: ByteUnit;
@@ -13995,6 +14638,7 @@ export interface ConvertVmTemplateToVmParams {
 }
 
 export interface VmCloneParams {
+  gpu_devices?: VmGpuOperationParams[];
   is_full_copy?: boolean;
   src_vm_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
@@ -14015,6 +14659,8 @@ export interface VmCloneParams {
   status?: VmStatus;
   firmware?: VmFirmware;
   ha?: boolean;
+  pci_nics?: NicWhereInput;
+  vm_placement_group?: VmPlacementGroupWhereInput;
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
   memory_unit?: ByteUnit;
@@ -14036,6 +14682,7 @@ export interface VmCloneParams {
 }
 
 export interface VmRebuildParams {
+  gpu_devices?: VmGpuOperationParams[];
   is_full_copy?: boolean;
   rebuild_from_snapshot_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
@@ -14056,6 +14703,7 @@ export interface VmRebuildParams {
   status?: VmStatus;
   firmware?: VmFirmware;
   ha?: boolean;
+  vm_placement_group?: VmPlacementGroupWhereInput;
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
   memory_unit?: ByteUnit;
@@ -14219,8 +14867,28 @@ export interface VmUpdateNicQosOptionsParams {
   where: VmNicWhereInput;
 }
 
+export interface VmOperatePciNicParams {
+  data: { pci_nics?: NicWhereInput };
+  where: VmWhereInput;
+}
+
 export interface VmRemoveNicParams {
   data: { nic_index: number[] };
+  where: VmWhereInput;
+}
+
+export interface VmRemoveNicByWhereParams {
+  effect: { vm_ids?: string[] };
+  where: VmNicWhereInput;
+}
+
+export interface VmAddGpuDeviceParams {
+  data: VmGpuOperationParams[];
+  where: VmWhereInput;
+}
+
+export interface VmRemoveGpuDeviceParams {
+  data: VmGpuOperationParams[];
   where: VmWhereInput;
 }
 
@@ -15171,15 +15839,83 @@ export interface EntityFilterDeletionParams {
   where: EntityFilterWhereInput;
 }
 
+export interface NestedGpuDriverInfo {
+  filename?: string | null;
+  name?: string | null;
+  rhelversion?: string | null;
+  srcversion?: string | null;
+  supported?: string | null;
+  vermagic?: string | null;
+  version?: string | null;
+}
+
+export interface NestedVgpuType {
+  /** @format double */
+  framebuffer?: number | null;
+
+  /** @format int32 */
+  max_instance?: number | null;
+  max_resolution?: string | null;
+  name?: string | null;
+  vgpu_type_id?: string | null;
+}
+
+export interface GpuDevice {
+  /** @format int32 */
+  assigned_vgpus_num?: number | null;
+
+  /** @format int32 */
+  available_vgpus_num?: number | null;
+  brand: string;
+  bus_location: string;
+  description: string;
+  driver_info?: NestedGpuDriverInfo | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  host: NestedHost;
+  id: string;
+  is_nvidia_tools_ready?: boolean | null;
+  is_nvidia_vfs_enabled?: boolean | null;
+  is_nvidia_vfs_supported?: boolean | null;
+  labels?: NestedLabel[] | null;
+  local_created_at: string;
+  local_id: string;
+  mdev_supported_types?: NestedVgpuType[] | null;
+  model: string;
+  name: string;
+  status: GpuDeviceStatus;
+  user_usage?: GpuDeviceUsage | null;
+  user_vgpu_type_id?: string | null;
+  user_vgpu_type_name?: string | null;
+
+  /** @format int32 */
+  vgpu_instance_num?: number | null;
+  vms?: NestedVm[] | null;
+}
+
+export interface WithTaskGpuDevice {
+  task_id?: string | null;
+  data: GpuDevice;
+}
+
+export interface GpuDeviceUsageUpdationParams {
+  data: { vgpu_spec?: string; usage?: GpuDeviceUsage };
+  where: GpuDeviceWhereInput;
+}
+
+export interface GpuDeviceDescriptionUpdationParams {
+  data: { description: string };
+  where: GpuDeviceWhereInput;
+}
+
+export interface GpuDeviceSriovSwitchParams {
+  data: { enable: boolean };
+  where: GpuDeviceWhereInput;
+}
+
 export enum MetricType {
   BOTTOMK = "BOTTOMK",
   NORMAL = "NORMAL",
   TOPK = "TOPK",
-}
-
-export interface NestedNic {
-  id: string;
-  name: string;
 }
 
 export enum GraphType {
@@ -15593,6 +16329,19 @@ export interface HostCreationParams {
   cluster_id: string;
 }
 
+export enum MaintenanceModeEnum {
+  ENTERING_MAINTENANCE_MODE = "ENTERING_MAINTENANCE_MODE",
+  IN_USE = "IN_USE",
+  MAINTENANCE_MODE = "MAINTENANCE_MODE",
+  REMOVING = "REMOVING",
+}
+
+export interface NestedMaintenanceHostState {
+  enter_maintenance_time: string;
+  maintenance_job_id: string;
+  state: MaintenanceModeEnum;
+}
+
 export interface NestedIpmi {
   id: string;
 }
@@ -15603,6 +16352,9 @@ export interface NestedVsphereEsxiAccount {
 
 export interface Host {
   access_ip?: string | null;
+
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive?: number | null;
 
   /** @format int64 */
   allocatable_memory_bytes: number;
@@ -15624,14 +16376,17 @@ export interface Host {
 
   /** @format int64 */
   failure_data_space: number;
+  gpu_devices?: NestedGpuDevice[] | null;
 
   /** @format int64 */
   hdd_data_capacity: number;
 
   /** @format int32 */
   hdd_disk_count: number;
+  host_state?: NestedMaintenanceHostState | null;
   hypervisor_ip?: string | null;
   id: string;
+  iommu?: IommuStatus | null;
   ipmi?: NestedIpmi | null;
   is_os_in_raid1?: boolean | null;
   labels?: NestedLabel[] | null;
@@ -16285,6 +17040,11 @@ export interface NestedVlan {
   name: string;
 }
 
+export interface NestedVmVolumeSnapshot {
+  id: string;
+  name: string;
+}
+
 export interface Label {
   /** @format int32 */
   cluster_num?: number | null;
@@ -16318,6 +17078,10 @@ export interface Label {
   /** @format int32 */
   elf_image_num?: number | null;
   elf_images?: NestedElfImage[] | null;
+
+  /** @format int32 */
+  gpu_device_num?: number | null;
+  gpu_devices?: NestedGpuDevice[] | null;
 
   /** @format int32 */
   host_num?: number | null;
@@ -16401,6 +17165,10 @@ export interface Label {
 
   /** @format int32 */
   vm_volume_num?: number | null;
+
+  /** @format int32 */
+  vm_volume_snapshot_num?: number | null;
+  vm_volume_snapshots?: NestedVmVolumeSnapshot[] | null;
   vm_volumes?: NestedVmVolume[] | null;
   vms?: NestedVm[] | null;
 }
@@ -16422,11 +17190,13 @@ export interface LabelUpdationParams {
 
 export interface AddLabelsToResourcesParams {
   data: {
+    gpu_devices?: GpuDeviceWhereInput;
     content_library_vm_templates?: ContentLibraryVmTemplateWhereInput;
     content_library_images?: ContentLibraryImageWhereInput;
     isolation_policies?: IsolationPolicyWhereInput;
     security_policies?: SecurityPolicyWhereInput;
     vms?: VmWhereInput;
+    vm_volume_snapshots?: VmVolumeSnapshotWhereInput;
     vm_volumes?: VmVolumeWhereInput;
     vm_templates?: VmTemplateWhereInput;
     vm_snapshots?: VmSnapshotWhereInput;
@@ -17015,6 +17785,7 @@ export interface Nic {
 
   /** @format int32 */
   used_vf_num?: number | null;
+  user_usage?: NicUserUsage | null;
   vds?: NestedVds | null;
 }
 
@@ -17024,7 +17795,7 @@ export interface WithTaskNic {
 }
 
 export interface NicUpdationParams {
-  data: { total_vf_num?: number; mtu?: number };
+  data: { nic_user_usage?: NicUserUsage; total_vf_num?: number; mtu?: number };
   where: NicWhereInput;
 }
 
@@ -18094,6 +18865,7 @@ export enum ROLE_ACTION {
   DELETE_SKS_WORKLOAD_CLUSTER = "DELETE_SKS_WORKLOAD_CLUSTER",
   UPDATE_SKS_WORKLOAD_CLUSTER = "UPDATE_SKS_WORKLOAD_CLUSTER",
   DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG = "DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG",
+  MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE = "MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE",
   MANAGE_OBSERVABILITY_PACKAGE = "MANAGE_OBSERVABILITY_PACKAGE",
   MANAGE_OBSERVABILITY_SERVICE = "MANAGE_OBSERVABILITY_SERVICE",
   CONFIG_DYNAMIC_RESOURCE_SCHEDULE = "CONFIG_DYNAMIC_RESOURCE_SCHEDULE",
@@ -18105,6 +18877,7 @@ export enum ROLE_ACTION {
   MANAGE_REPLICATION_PLAN = "MANAGE_REPLICATION_PLAN",
   MANAGE_REPLICATION_TASK = "MANAGE_REPLICATION_TASK",
   MANAGE_REPLICATION_FAULT_TASK = "MANAGE_REPLICATION_FAULT_TASK",
+  MANAGE_CLUSTER_PRIORITIZED = "MANAGE_CLUSTER_PRIORITIZED",
 }
 
 export interface RoleCreationParams {
@@ -19084,6 +19857,8 @@ export interface ColumnConfig {
 export enum HostOrderByInput {
   AccessIpASC = "access_ip_ASC",
   AccessIpDESC = "access_ip_DESC",
+  AllocableCpuCoresForVmExclusiveASC = "allocable_cpu_cores_for_vm_exclusive_ASC",
+  AllocableCpuCoresForVmExclusiveDESC = "allocable_cpu_cores_for_vm_exclusive_DESC",
   AllocatableMemoryBytesASC = "allocatable_memory_bytes_ASC",
   AllocatableMemoryBytesDESC = "allocatable_memory_bytes_DESC",
   ChunkIdASC = "chunk_id_ASC",
@@ -19108,10 +19883,14 @@ export enum HostOrderByInput {
   HddDataCapacityDESC = "hdd_data_capacity_DESC",
   HddDiskCountASC = "hdd_disk_count_ASC",
   HddDiskCountDESC = "hdd_disk_count_DESC",
+  HostStateASC = "host_state_ASC",
+  HostStateDESC = "host_state_DESC",
   HypervisorIpASC = "hypervisor_ip_ASC",
   HypervisorIpDESC = "hypervisor_ip_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
+  IommuASC = "iommu_ASC",
+  IommuDESC = "iommu_DESC",
   IsOsInRaid1ASC = "is_os_in_raid1_ASC",
   IsOsInRaid1DESC = "is_os_in_raid1_DESC",
   LocalIdASC = "local_id_ASC",
@@ -19455,6 +20234,8 @@ export enum NicOrderByInput {
   UpDESC = "up_DESC",
   UsedVfNumASC = "used_vf_num_ASC",
   UsedVfNumDESC = "used_vf_num_DESC",
+  UserUsageASC = "user_usage_ASC",
+  UserUsageDESC = "user_usage_DESC",
 }
 
 export interface GetNicsRequestBody {
@@ -22358,17 +23139,14 @@ export interface VmTemplateDeletionParams {
   where: VmTemplateWhereInput;
 }
 
-export enum VmVolumeSnapshotType {
-  KVM_VOLUME_ISCSI_SNAPSHOT = "KVM_VOLUME_ISCSI_SNAPSHOT",
-  KVM_VOLUME_SNAPSHOT = "KVM_VOLUME_SNAPSHOT",
-}
-
 export interface VmVolumeSnapshot {
   cluster: NestedCluster;
   createAt?: string | null;
   description: string;
+  elf_storage_policy: VmVolumeElfStoragePolicyType;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
+  labels?: NestedLabel[] | null;
   local_created_at: string;
   local_id: string;
   name: string;
@@ -22383,6 +23161,10 @@ export interface VmVolumeSnapshot {
   /** @format double */
   unique_size?: number | null;
   vm_volume?: NestedVmVolume | null;
+  volume_sharing?: boolean | null;
+
+  /** @format double */
+  volume_size?: number | null;
   zbs_snapshot_uuid?: string | null;
 }
 
@@ -22404,168 +23186,6 @@ export interface DeleteVmVolumeSnapshot {
 export interface WithTaskDeleteVmVolumeSnapshot {
   task_id?: string | null;
   data: DeleteVmVolumeSnapshot;
-}
-
-export interface VmVolumeSnapshotWhereInput {
-  AND?: VmVolumeSnapshotWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  createAt?: string | null;
-  createAt_gt?: string | null;
-  createAt_gte?: string | null;
-  createAt_in?: string[] | null;
-  createAt_lt?: string | null;
-  createAt_lte?: string | null;
-  createAt_not?: string | null;
-  createAt_not_in?: string[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  NOT?: VmVolumeSnapshotWhereInput[] | null;
-  OR?: VmVolumeSnapshotWhereInput[] | null;
-
-  /** @format double */
-  shared_size?: number | null;
-
-  /** @format double */
-  shared_size_gt?: number | null;
-
-  /** @format double */
-  shared_size_gte?: number | null;
-  shared_size_in?: number[] | null;
-
-  /** @format double */
-  shared_size_lt?: number | null;
-
-  /** @format double */
-  shared_size_lte?: number | null;
-
-  /** @format double */
-  shared_size_not?: number | null;
-  shared_size_not_in?: number[] | null;
-
-  /** @format double */
-  size?: number | null;
-
-  /** @format double */
-  size_gt?: number | null;
-
-  /** @format double */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-
-  /** @format double */
-  size_lt?: number | null;
-
-  /** @format double */
-  size_lte?: number | null;
-
-  /** @format double */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  type?: VmVolumeSnapshotType | null;
-  type_in?: VmVolumeSnapshotType[] | null;
-  type_not?: VmVolumeSnapshotType | null;
-  type_not_in?: VmVolumeSnapshotType[] | null;
-
-  /** @format double */
-  unique_size?: number | null;
-
-  /** @format double */
-  unique_size_gt?: number | null;
-
-  /** @format double */
-  unique_size_gte?: number | null;
-  unique_size_in?: number[] | null;
-
-  /** @format double */
-  unique_size_lt?: number | null;
-
-  /** @format double */
-  unique_size_lte?: number | null;
-
-  /** @format double */
-  unique_size_not?: number | null;
-  unique_size_not_in?: number[] | null;
-  vm_volume?: VmVolumeWhereInput | null;
-  zbs_snapshot_uuid?: string | null;
-  zbs_snapshot_uuid_contains?: string | null;
-  zbs_snapshot_uuid_ends_with?: string | null;
-  zbs_snapshot_uuid_gt?: string | null;
-  zbs_snapshot_uuid_gte?: string | null;
-  zbs_snapshot_uuid_in?: string[] | null;
-  zbs_snapshot_uuid_lt?: string | null;
-  zbs_snapshot_uuid_lte?: string | null;
-  zbs_snapshot_uuid_not?: string | null;
-  zbs_snapshot_uuid_not_contains?: string | null;
-  zbs_snapshot_uuid_not_ends_with?: string | null;
-  zbs_snapshot_uuid_not_in?: string[] | null;
-  zbs_snapshot_uuid_not_starts_with?: string | null;
-  zbs_snapshot_uuid_starts_with?: string | null;
 }
 
 export interface VmVolumeSnapshotDeletionParams {
@@ -22627,7 +23247,12 @@ export interface WithTaskDeleteVmVolume {
   data: DeleteVmVolume;
 }
 
+export interface VmVolumeDeletionParamsEffect {
+  include_snapshots?: boolean;
+}
+
 export interface VmVolumeDeletionParams {
+  effect?: VmVolumeDeletionParamsEffect;
   where: VmVolumeWhereInput;
 }
 
@@ -25369,6 +25994,92 @@ export interface GetGlobalSettingsesConnectionRequestBody {
   where?: GlobalSettingsWhereInput | null;
 }
 
+export enum GpuDeviceOrderByInput {
+  AssignedVgpusNumASC = "assigned_vgpus_num_ASC",
+  AssignedVgpusNumDESC = "assigned_vgpus_num_DESC",
+  AvailableVgpusNumASC = "available_vgpus_num_ASC",
+  AvailableVgpusNumDESC = "available_vgpus_num_DESC",
+  BrandASC = "brand_ASC",
+  BrandDESC = "brand_DESC",
+  BusLocationASC = "bus_location_ASC",
+  BusLocationDESC = "bus_location_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  DriverInfoASC = "driver_info_ASC",
+  DriverInfoDESC = "driver_info_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IsNvidiaToolsReadyASC = "is_nvidia_tools_ready_ASC",
+  IsNvidiaToolsReadyDESC = "is_nvidia_tools_ready_DESC",
+  IsNvidiaVfsEnabledASC = "is_nvidia_vfs_enabled_ASC",
+  IsNvidiaVfsEnabledDESC = "is_nvidia_vfs_enabled_DESC",
+  IsNvidiaVfsSupportedASC = "is_nvidia_vfs_supported_ASC",
+  IsNvidiaVfsSupportedDESC = "is_nvidia_vfs_supported_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MdevSupportedTypesASC = "mdev_supported_types_ASC",
+  MdevSupportedTypesDESC = "mdev_supported_types_DESC",
+  ModelASC = "model_ASC",
+  ModelDESC = "model_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  UserUsageASC = "user_usage_ASC",
+  UserUsageDESC = "user_usage_DESC",
+  UserVgpuTypeIdASC = "user_vgpu_type_id_ASC",
+  UserVgpuTypeIdDESC = "user_vgpu_type_id_DESC",
+  UserVgpuTypeNameASC = "user_vgpu_type_name_ASC",
+  UserVgpuTypeNameDESC = "user_vgpu_type_name_DESC",
+  VgpuInstanceNumASC = "vgpu_instance_num_ASC",
+  VgpuInstanceNumDESC = "vgpu_instance_num_DESC",
+}
+
+export interface GetGpuDevicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: GpuDeviceOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: GpuDeviceWhereInput | null;
+}
+
+export interface NestedAggregateGpuDevice {
+  /** @format int32 */
+  count: number;
+}
+
+export interface GpuDeviceConnection {
+  aggregate: NestedAggregateGpuDevice;
+}
+
+export interface GetGpuDevicesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+
+  /** @format int32 */
+  first?: number | null;
+
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: GpuDeviceOrderByInput | null;
+
+  /** @format int32 */
+  skip?: number | null;
+  where?: GpuDeviceWhereInput | null;
+}
+
 export enum GraphOrderByInput {
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
@@ -25694,6 +26405,8 @@ export enum LabelOrderByInput {
   DiskNumDESC = "disk_num_DESC",
   ElfImageNumASC = "elf_image_num_ASC",
   ElfImageNumDESC = "elf_image_num_DESC",
+  GpuDeviceNumASC = "gpu_device_num_ASC",
+  GpuDeviceNumDESC = "gpu_device_num_DESC",
   HostNumASC = "host_num_ASC",
   HostNumDESC = "host_num_DESC",
   IdASC = "id_ASC",
@@ -25742,6 +26455,8 @@ export enum LabelOrderByInput {
   VmVlanNumDESC = "vm_vlan_num_DESC",
   VmVolumeNumASC = "vm_volume_num_ASC",
   VmVolumeNumDESC = "vm_volume_num_DESC",
+  VmVolumeSnapshotNumASC = "vm_volume_snapshot_num_ASC",
+  VmVolumeSnapshotNumDESC = "vm_volume_snapshot_num_DESC",
 }
 
 export interface GetLabelsRequestBody {
@@ -27809,9 +28524,22 @@ export interface GetVmFoldersConnectionRequestBody {
 }
 
 export interface VmNic {
+  /** @format double */
+  egress_rate_limit_burst_in_bit?: number | null;
+  egress_rate_limit_enabled?: boolean | null;
+
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps?: number | null;
   enabled?: boolean | null;
   gateway?: string | null;
   id: string;
+
+  /** @format double */
+  ingress_rate_limit_burst_in_bit?: number | null;
+  ingress_rate_limit_enabled?: boolean | null;
+
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps?: number | null;
   interface_id?: string | null;
   ip_address?: string | null;
   local_id: string;
@@ -27828,12 +28556,24 @@ export interface VmNic {
 }
 
 export enum VmNicOrderByInput {
+  EgressRateLimitBurstInBitASC = "egress_rate_limit_burst_in_bit_ASC",
+  EgressRateLimitBurstInBitDESC = "egress_rate_limit_burst_in_bit_DESC",
+  EgressRateLimitEnabledASC = "egress_rate_limit_enabled_ASC",
+  EgressRateLimitEnabledDESC = "egress_rate_limit_enabled_DESC",
+  EgressRateLimitMaxRateInBitpsASC = "egress_rate_limit_max_rate_in_bitps_ASC",
+  EgressRateLimitMaxRateInBitpsDESC = "egress_rate_limit_max_rate_in_bitps_DESC",
   EnabledASC = "enabled_ASC",
   EnabledDESC = "enabled_DESC",
   GatewayASC = "gateway_ASC",
   GatewayDESC = "gateway_DESC",
   IdASC = "id_ASC",
   IdDESC = "id_DESC",
+  IngressRateLimitBurstInBitASC = "ingress_rate_limit_burst_in_bit_ASC",
+  IngressRateLimitBurstInBitDESC = "ingress_rate_limit_burst_in_bit_DESC",
+  IngressRateLimitEnabledASC = "ingress_rate_limit_enabled_ASC",
+  IngressRateLimitEnabledDESC = "ingress_rate_limit_enabled_DESC",
+  IngressRateLimitMaxRateInBitpsASC = "ingress_rate_limit_max_rate_in_bitps_ASC",
+  IngressRateLimitMaxRateInBitpsDESC = "ingress_rate_limit_max_rate_in_bitps_DESC",
   InterfaceIdASC = "interface_id_ASC",
   InterfaceIdDESC = "interface_id_DESC",
   IpAddressASC = "ip_address_ASC",
@@ -28088,6 +28828,8 @@ export enum VmVolumeSnapshotOrderByInput {
   CreateAtDESC = "createAt_DESC",
   DescriptionASC = "description_ASC",
   DescriptionDESC = "description_DESC",
+  ElfStoragePolicyASC = "elf_storage_policy_ASC",
+  ElfStoragePolicyDESC = "elf_storage_policy_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   IdASC = "id_ASC",
@@ -28106,6 +28848,10 @@ export enum VmVolumeSnapshotOrderByInput {
   TypeDESC = "type_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
+  VolumeSharingASC = "volume_sharing_ASC",
+  VolumeSharingDESC = "volume_sharing_DESC",
+  VolumeSizeASC = "volume_size_ASC",
+  VolumeSizeDESC = "volume_size_DESC",
   ZbsSnapshotUuidASC = "zbs_snapshot_uuid_ASC",
   ZbsSnapshotUuidDESC = "zbs_snapshot_uuid_DESC",
 }
