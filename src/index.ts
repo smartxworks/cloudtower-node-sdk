@@ -14,6 +14,7 @@ export * from "./generated/ContentLibraryVmTemplate";
 export * from "./generated/Datacenter";
 export * from "./generated/Disk";
 export * from "./generated/EntityFilter";
+export * from "./generated/GpuDevice";
 export * from "./generated/Graph";
 export * from "./generated/Host";
 export * from "./generated/IscsiLunSnapshot";
