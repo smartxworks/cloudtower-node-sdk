@@ -1,11 +1,20 @@
 import {
+  EnterMaintenanceModeCheckParams,
+  EnterMaintenanceModeCheckResult,
+  EnterMaintenanceModeParams,
+  EnterMaintenanceModeResult,
+  EnterMaintenanceModeResultParams,
   ErrorBody,
+  ExitMaintenanceModeParams,
+  ExitMaintenanceModeResult,
+  ExitMaintenanceModeResultParams,
   GetHostsConnectionRequestBody,
   GetHostsRequestBody,
   Host,
   HostConnection,
   HostCreationParams,
   HostUpdationParams,
+  OperateHostPowerParams,
   TriggerDiskBlinkParams,
   WithTaskBatchHosts,
   WithTaskHost,
@@ -81,6 +90,153 @@ export class HostApi<SecurityDataType = unknown> {
   updateHost = (data: HostUpdationParams, params: RequestParams = {}) =>
     this.http.request<WithTaskHost[], ErrorBody>({
       path: `/update-host`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name PowerOffHost
+   * @request POST:/operate-host-power
+   * @secure
+   * @response `200` `WithTaskHost`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  powerOffHost = (data: OperateHostPowerParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskHost, ErrorBody>({
+      path: `/operate-host-power`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name EnterMaintenanceModePreCheck
+   * @request POST:/enter-maintenance-mode-precheck
+   * @secure
+   * @response `200` `EnterMaintenanceModeCheckResult`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  enterMaintenanceModePreCheck = (
+    data: EnterMaintenanceModeCheckParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<EnterMaintenanceModeCheckResult, ErrorBody>({
+      path: `/enter-maintenance-mode-precheck`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name EnterMaintenanceModePrecheckResult
+   * @request POST:/enter-maintance-mode-precheck-result
+   * @secure
+   * @response `200` `EnterMaintenanceModeResult`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  enterMaintenanceModePrecheckResult = (
+    data: EnterMaintenanceModeResultParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<EnterMaintenanceModeResult, ErrorBody>({
+      path: `/enter-maintance-mode-precheck-result`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name EnterMaintenanceMode
+   * @request POST:/enter-maintance-mode
+   * @secure
+   * @response `200` `WithTaskHost`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  enterMaintenanceMode = (
+    data: EnterMaintenanceModeParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskHost, ErrorBody>({
+      path: `/enter-maintance-mode`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name ExitMaintenanceModePrecheckResult
+   * @request POST:/exit-maintance-mode-precheck-result
+   * @secure
+   * @response `200` `ExitMaintenanceModeResult`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  exitMaintenanceModePrecheckResult = (
+    data: ExitMaintenanceModeResultParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<ExitMaintenanceModeResult, ErrorBody>({
+      path: `/exit-maintance-mode-precheck-result`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Host
+   * @name ExitMaintenanceMode
+   * @request POST:/exit-maintance-mode
+   * @secure
+   * @response `200` `WithTaskHost`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  exitMaintenanceMode = (
+    data: ExitMaintenanceModeParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskHost, ErrorBody>({
+      path: `/exit-maintance-mode`,
       method: "POST",
       body: data,
       secure: true,

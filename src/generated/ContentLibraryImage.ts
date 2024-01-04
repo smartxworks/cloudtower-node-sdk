@@ -2,6 +2,7 @@ import {
   ContentLibraryImage,
   ContentLibraryImageConnection,
   ContentLibraryImageDeletionParams,
+  ContentLibraryImageImportParams,
   ContentLibraryImageUpdationClusterParams,
   ContentLibraryImageUpdationParams,
   ErrorBody,
@@ -147,6 +148,31 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskDeleteContentLibraryImage[], ErrorBody>({
       path: `/delete-content-library-image`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags ContentLibraryImage
+   * @name ImportContentLibraryImage
+   * @request POST:/import-content-library-image
+   * @secure
+   * @response `200` `UploadTask`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  importContentLibraryImage = (
+    data: ContentLibraryImageImportParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<UploadTask, ErrorBody>({
+      path: `/import-content-library-image`,
       method: "POST",
       body: data,
       secure: true,

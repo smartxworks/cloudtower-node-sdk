@@ -1,5 +1,48 @@
 # RELEASE NOTE
 
+## release 日期 2024-01-04
+
+v2.14.0 release (tower version 4.0.0)
+
+### update
+
+- [ContentLibraryImageApi]:
+  - [importContentLibraryImage]: 新增通过 url 导入内容库镜像 API
+- [GpuDeviceApi]:
+  - [getDetailVmInfoByGpuDevices]: 新增获取 GPU 设备关联的虚拟机 API
+- [HostApi]:
+  - [enterMaintenanceMode]: 新增进入维护模式 API
+  - [enterMaintenanceModePreCheck]: 新增进入维护模式预检 API
+  - [enterMaintenanceModePrecheckResult]: 新增获取进入维护模式预检结果 API
+  - [exitMaintenanceMode]: 新增离开维护模式 API
+  - [exitMaintenanceModePrecheckResult]: 新增离开维护模式预检 API
+  - [powerOffHost]: 新增主机电源操作 API，用于关闭、重启主机
+- [IscsiLunAPi]:
+  - [copyIscsiLun]: 新增复制 iscsi lun API
+- [NicApi]:
+  - [getNics]: 额外返回 iommu_status 以及关联的虚拟机
+- [TaskApi]:
+  - [createTask]: 新增创建 Task API
+  - [updateTask]: 新增更新 Task API
+- [UserAuditLogApi]:
+  - [createUserAuditLog]: 新增创建事件审计 API
+- [VmApi]:
+  - [getVmGpuDeviceInfo]: 新增根据虚拟机获取其挂载的 GPU 设备信息 API
+  - [getVmVncInfo]: 新增获取 vm vnc 信息 API
+  - [migrateVmAcrossCluster]\: 优化了报错逻辑，当目标主机存在且不在目标集群上时，直接报错
+  - [rebuildVmFromSnapshot]: 重建虚拟机 API 支持配置 PCI 网卡
+  - [createVm], [createVmFromTemplate], [createVmFromContentLibraryTemplate], [cloneVm], [rebuildVmFromSnapshot]: 创建虚拟机时支持配置虚拟机所属用户
+
+### bugfix
+
+- [ContentLibraryImageApi]:
+  - [updateContentLibraryImage]: 修复了更新内容库镜像时，没有传递 name 会失败的问题
+- [ElfImageApi]:
+  - [updateElfImage]: 修复了更新镜像时，没有传递 name 会失败的问题
+- [vmApi]:
+  - [createVmFromContentLibraryTemplate]\: 修复模板卷存储策略包含三副本时，非完全克隆虚拟机失败，提示非完全克隆无法修改存储策略的问题
+
+
 ## release 日期 2023-11-07
 
 v2.13.0 release (tower version 3.4.0)

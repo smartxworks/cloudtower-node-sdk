@@ -4,6 +4,7 @@ import {
   ErrorBody,
   GetVmsConnectionRequestBody,
   GetVmsRequestBody,
+  GetVmVncInfoParams,
   InstallVmtoolsParams,
   StopVmInCutoverMigrationParams,
   Task,
@@ -22,6 +23,7 @@ import {
   VmEjectCdRomParams,
   VmExpandVmDiskParams,
   VmExportParams,
+  VmGpuInfo,
   VmImportParams,
   VmMigrateAcrossClusterParams,
   VmMigrateParams,
@@ -47,6 +49,7 @@ import {
   VmUpdateNicQosOptionsParams,
   VmUpdateOwnerParams,
   VmUpdateParams,
+  VmVncInfo,
   WithTaskDeleteVm,
   WithTaskVm,
   WithTaskVmExportFile,
@@ -1243,6 +1246,50 @@ export class VmApi<SecurityDataType = unknown> {
   importVm = (data: VmImportParams[], params: RequestParams = {}) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/import-vm`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name GetVmGpuDeviceInfo
+   * @request POST:/get-vm-gpu-device-info
+   * @secure
+   * @response `200` `(VmGpuInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getVmGpuDeviceInfo = (data: GetVmsRequestBody, params: RequestParams = {}) =>
+    this.http.request<VmGpuInfo[], ErrorBody>({
+      path: `/get-vm-gpu-device-info`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name GetVmVncInfo
+   * @request POST:/get-vm-vnc-info
+   * @secure
+   * @response `200` `VmVncInfo`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getVmVncInfo = (data: GetVmVncInfoParams, params: RequestParams = {}) =>
+    this.http.request<VmVncInfo, ErrorBody>({
+      path: `/get-vm-vnc-info`,
       method: "POST",
       body: data,
       secure: true,

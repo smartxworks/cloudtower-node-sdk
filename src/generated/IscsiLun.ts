@@ -1,4 +1,5 @@
 import {
+  CopyIscsiLunParams,
   ErrorBody,
   GetIscsiLunsConnectionRequestBody,
   GetIscsiLunsRequestBody,
@@ -133,6 +134,28 @@ export class IscsiLunApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskIscsiLun[], ErrorBody>({
       path: `/rollback-iscsi-lun-from-snapshot`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags IscsiLun
+   * @name CopyIscsiLun
+   * @request POST:/copy-iscsi-lun
+   * @secure
+   * @response `200` `(WithTaskIscsiLun)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  copyIscsiLun = (data: CopyIscsiLunParams[], params: RequestParams = {}) =>
+    this.http.request<WithTaskIscsiLun[], ErrorBody>({
+      path: `/copy-iscsi-lun`,
       method: "POST",
       body: data,
       secure: true,
