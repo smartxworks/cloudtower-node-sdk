@@ -1,5 +1,23 @@
 # RELEASE NOTE
 
+## release 日期 2024-05-11
+
+v2.15.0 release (tower version 4.1.0)
+
+### update
+
+- [CommonHeader]: 新增默认返回 Header 类
+- [ContentLanguage]: 新增枚举规范返回语言，用于设置请求头的 `content-language`
+- [NestedLabel], [LabelApi]: `LabelApi` 将会返回一致的 `Label` 相关的属性，NestedLabel 额外返回 `key` 和 `value`。
+- [Vm], [VmVolume], [IscsiLun], [NvmfNameSpace], [NfsInode]: 新增返回 `unique_logical_size` 用于表示资源的独占逻辑容量
+
+### bugfix
+
+- [VmApi]
+  - [addVmNic], [removeVmNic], [removeVmNicByWhere], [updateVmNic], [updateVmNicBasicInfo], [updateVmNicAdvanceInfo], [updateVmNicQosOption]: 修复更新虚拟机网卡类 API 编辑后丢失部分网卡信息的问题
+- [VmPlacementGroupApi]
+  - [createVmPlacementGroup], [updateVmPlacementGroup]: 修复了创建与更新放置组时，`vm_vm_policy_enabled` 为 false 时无法更新组内虚拟机成员
+
 ## release 日期 2024-01-04
 
 v2.14.0 release (tower version 4.0.0)

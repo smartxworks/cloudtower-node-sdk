@@ -14,6 +14,10 @@ export interface ErrorBody {
   path: string;
 }
 
+export interface CommonHeader {
+  "x-tower-request-id": string;
+}
+
 export interface NestedAlertRule {
   id: string;
 }
@@ -41,6 +45,8 @@ export enum AlertRuleObject {
   HYPERVISOR = "HYPERVISOR",
   NETWORK = "NETWORK",
   NTP_SERVER = "NTP_SERVER",
+  OBSERVABILITY_CONNECTED_SYSTEM_SERVICE = "OBSERVABILITY_CONNECTED_SYSTEM_SERVICE",
+  OBSERVABILITY_SERVICE = "OBSERVABILITY_SERVICE",
   PHYSICAL_HOST = "PHYSICAL_HOST",
   SCVM = "SCVM",
   SNAPSHOT_PLAN = "SNAPSHOT_PLAN",
@@ -1804,6 +1810,26 @@ export interface VmWhereInput {
   status_in?: VmStatus[] | null;
   status_not?: VmStatus | null;
   status_not_in?: VmStatus[] | null;
+
+  /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size_lt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_lte?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -5020,6 +5046,26 @@ export interface IscsiLunWhereInput {
   thin_provision_not?: boolean | null;
 
   /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size_lt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_lte?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
+
+  /** @format int64 */
   unique_size?: number | null;
 
   /** @format int64 */
@@ -5763,6 +5809,26 @@ export interface NvmfNamespaceWhereInput {
   stripe_size_not_in?: number[] | null;
   thin_provision?: boolean | null;
   thin_provision_not?: boolean | null;
+
+  /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size_lt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_lte?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -7869,6 +7935,26 @@ export interface VmVolumeWhereInput {
   type_not_in?: VmVolumeType[] | null;
 
   /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size_lt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_lte?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
+
+  /** @format int64 */
   unique_size?: number | null;
 
   /** @format int64 */
@@ -9876,6 +9962,8 @@ export enum NetworkType {
   STORAGE = "STORAGE",
   STORAGE_ACCESS = "STORAGE_ACCESS",
   VM = "VM",
+  VPC_SYS = "VPC_SYS",
+  VPC_VM = "VPC_VM",
 }
 
 export enum NicUserUsage {
@@ -10295,8 +10383,13 @@ export interface VmNicWhereInput {
   subnet_mask_not_in?: string[] | null;
   subnet_mask_not_starts_with?: string | null;
   subnet_mask_starts_with?: string | null;
+  type?: VmNicType | null;
+  type_in?: VmNicType[] | null;
+  type_not?: VmNicType | null;
+  type_not_in?: VmNicType[] | null;
   vlan?: VlanWhereInput | null;
   vm?: VmWhereInput | null;
+  vpc_nic?: VirtualPrivateCloudNicWhereInput | null;
 }
 
 export enum VmNicModel {
@@ -10305,9 +10398,1330 @@ export enum VmNicModel {
   VIRTIO = "VIRTIO",
 }
 
-export enum GlobalPolicyAction {
-  ALLOW = "ALLOW",
-  DROP = "DROP",
+export enum VmNicType {
+  VLAN = "VLAN",
+  VPC = "VPC",
+}
+
+export interface VirtualPrivateCloudNicWhereInput {
+  AND?: VirtualPrivateCloudNicWhereInput[] | null;
+  NOT?: VirtualPrivateCloudNicWhereInput[] | null;
+  OR?: VirtualPrivateCloudNicWhereInput[] | null;
+  floating_ip?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  snapshot?: VirtualPrivateCloudNicSnapshotWhereInput | null;
+  vm_nic?: VmNicWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_subnet?: VirtualPrivateCloudSubnetWhereInput | null;
+}
+
+export interface VirtualPrivateCloudFloatingIpWhereInput {
+  AND?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  NOT?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  OR?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_nic?: VirtualPrivateCloudNicWhereInput | null;
+}
+
+export interface VirtualPrivateCloudExternalSubnetWhereInput {
+  AND?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  NOT?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  OR?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  cidr?: string | null;
+  cidr_contains?: string | null;
+  cidr_ends_with?: string | null;
+  cidr_gt?: string | null;
+  cidr_gte?: string | null;
+  cidr_in?: string[] | null;
+  cidr_lt?: string | null;
+  cidr_lte?: string | null;
+  cidr_not?: string | null;
+  cidr_not_contains?: string | null;
+  cidr_not_ends_with?: string | null;
+  cidr_not_in?: string[] | null;
+  cidr_not_starts_with?: string | null;
+  cidr_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  exclusive?: boolean | null;
+  exclusive_not?: boolean | null;
+  floating_ip_cidr?: string | null;
+  floating_ip_cidr_contains?: string | null;
+  floating_ip_cidr_ends_with?: string | null;
+  floating_ip_cidr_gt?: string | null;
+  floating_ip_cidr_gte?: string | null;
+  floating_ip_cidr_in?: string[] | null;
+  floating_ip_cidr_lt?: string | null;
+  floating_ip_cidr_lte?: string | null;
+  floating_ip_cidr_not?: string | null;
+  floating_ip_cidr_not_contains?: string | null;
+  floating_ip_cidr_not_ends_with?: string | null;
+  floating_ip_cidr_not_in?: string[] | null;
+  floating_ip_cidr_not_starts_with?: string | null;
+  floating_ip_cidr_starts_with?: string | null;
+  floating_ips_every?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_none?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_some?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  load_balancer_gateway_cidr?: string | null;
+  load_balancer_gateway_cidr_contains?: string | null;
+  load_balancer_gateway_cidr_ends_with?: string | null;
+  load_balancer_gateway_cidr_gt?: string | null;
+  load_balancer_gateway_cidr_gte?: string | null;
+  load_balancer_gateway_cidr_in?: string[] | null;
+  load_balancer_gateway_cidr_lt?: string | null;
+  load_balancer_gateway_cidr_lte?: string | null;
+  load_balancer_gateway_cidr_not?: string | null;
+  load_balancer_gateway_cidr_not_contains?: string | null;
+  load_balancer_gateway_cidr_not_ends_with?: string | null;
+  load_balancer_gateway_cidr_not_in?: string[] | null;
+  load_balancer_gateway_cidr_not_starts_with?: string | null;
+  load_balancer_gateway_cidr_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nat_gateway_cidr?: string | null;
+  nat_gateway_cidr_contains?: string | null;
+  nat_gateway_cidr_ends_with?: string | null;
+  nat_gateway_cidr_gt?: string | null;
+  nat_gateway_cidr_gte?: string | null;
+  nat_gateway_cidr_in?: string[] | null;
+  nat_gateway_cidr_lt?: string | null;
+  nat_gateway_cidr_lte?: string | null;
+  nat_gateway_cidr_not?: string | null;
+  nat_gateway_cidr_not_contains?: string | null;
+  nat_gateway_cidr_not_ends_with?: string | null;
+  nat_gateway_cidr_not_in?: string[] | null;
+  nat_gateway_cidr_not_starts_with?: string | null;
+  nat_gateway_cidr_starts_with?: string | null;
+  nat_gateways_every?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_none?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_some?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  router_gateway_cidr?: string | null;
+  router_gateway_cidr_contains?: string | null;
+  router_gateway_cidr_ends_with?: string | null;
+  router_gateway_cidr_gt?: string | null;
+  router_gateway_cidr_gte?: string | null;
+  router_gateway_cidr_in?: string[] | null;
+  router_gateway_cidr_lt?: string | null;
+  router_gateway_cidr_lte?: string | null;
+  router_gateway_cidr_not?: string | null;
+  router_gateway_cidr_not_contains?: string | null;
+  router_gateway_cidr_not_ends_with?: string | null;
+  router_gateway_cidr_not_in?: string[] | null;
+  router_gateway_cidr_not_starts_with?: string | null;
+  router_gateway_cidr_starts_with?: string | null;
+  router_gateways_every?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_none?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_some?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  vlan?: VlanWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudNatGatewayWhereInput {
+  AND?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  enable_dnat?: boolean | null;
+  enable_dnat_not?: boolean | null;
+  enable_snat?: boolean | null;
+  enable_snat_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nexthop_ip?: string | null;
+  nexthop_ip_contains?: string | null;
+  nexthop_ip_ends_with?: string | null;
+  nexthop_ip_gt?: string | null;
+  nexthop_ip_gte?: string | null;
+  nexthop_ip_in?: string[] | null;
+  nexthop_ip_lt?: string | null;
+  nexthop_ip_lte?: string | null;
+  nexthop_ip_not?: string | null;
+  nexthop_ip_not_contains?: string | null;
+  nexthop_ip_not_ends_with?: string | null;
+  nexthop_ip_not_in?: string[] | null;
+  nexthop_ip_not_starts_with?: string | null;
+  nexthop_ip_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudWhereInput {
+  AND?: VirtualPrivateCloudWhereInput[] | null;
+  NOT?: VirtualPrivateCloudWhereInput[] | null;
+  OR?: VirtualPrivateCloudWhereInput[] | null;
+
+  /** @format int32 */
+  associate_external_subnet_num?: number | null;
+
+  /** @format int32 */
+  associate_external_subnet_num_gt?: number | null;
+
+  /** @format int32 */
+  associate_external_subnet_num_gte?: number | null;
+  associate_external_subnet_num_in?: number[] | null;
+
+  /** @format int32 */
+  associate_external_subnet_num_lt?: number | null;
+
+  /** @format int32 */
+  associate_external_subnet_num_lte?: number | null;
+
+  /** @format int32 */
+  associate_external_subnet_num_not?: number | null;
+  associate_external_subnet_num_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  isolation_policies_every?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_none?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_some?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+
+  /** @format int32 */
+  mtu?: number | null;
+
+  /** @format int32 */
+  mtu_gt?: number | null;
+
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+
+  /** @format int32 */
+  mtu_lt?: number | null;
+
+  /** @format int32 */
+  mtu_lte?: number | null;
+
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  route_tables_every?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_none?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_some?: VirtualPrivateCloudRouteTableWhereInput | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudIsolationPolicyWhereInput {
+  AND?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  NOT?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  OR?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mode?: VirtualPrivateCloudIsolationPolicyMode | null;
+  mode_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
+  mode_not?: VirtualPrivateCloudIsolationPolicyMode | null;
+  mode_not_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  vm?: VmWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export enum VirtualPrivateCloudIsolationPolicyMode {
+  ALL = "ALL",
+  PARTIAL = "PARTIAL",
+}
+
+export interface VirtualPrivateCloudSecurityGroupWhereInput {
+  AND?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  isolation_policies_every?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_none?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_some?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudSecurityPolicyWhereInput {
+  AND?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  OR?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  policy_mode?: VirtualPrivateCloudSecurityPolicyMode | null;
+  policy_mode_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
+  policy_mode_not?: VirtualPrivateCloudSecurityPolicyMode | null;
+  policy_mode_not_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export enum VirtualPrivateCloudSecurityPolicyMode {
+  MONITOR = "MONITOR",
+  WORK = "WORK",
+}
+
+export interface VirtualPrivateCloudRouteTableWhereInput {
+  AND?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  routes_every?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_none?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_some?: VirtualPrivateCloudRouteWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouteWhereInput {
+  AND?: VirtualPrivateCloudRouteWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  destination?: string | null;
+  destination_contains?: string | null;
+  destination_ends_with?: string | null;
+  destination_gt?: string | null;
+  destination_gte?: string | null;
+  destination_in?: string[] | null;
+  destination_lt?: string | null;
+  destination_lte?: string | null;
+  destination_not?: string | null;
+  destination_not_contains?: string | null;
+  destination_not_ends_with?: string | null;
+  destination_not_in?: string[] | null;
+  destination_not_starts_with?: string | null;
+  destination_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  nat_gateway?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  next_hop_local_id?: string | null;
+  next_hop_local_id_contains?: string | null;
+  next_hop_local_id_ends_with?: string | null;
+  next_hop_local_id_gt?: string | null;
+  next_hop_local_id_gte?: string | null;
+  next_hop_local_id_in?: string[] | null;
+  next_hop_local_id_lt?: string | null;
+  next_hop_local_id_lte?: string | null;
+  next_hop_local_id_not?: string | null;
+  next_hop_local_id_not_contains?: string | null;
+  next_hop_local_id_not_ends_with?: string | null;
+  next_hop_local_id_not_in?: string[] | null;
+  next_hop_local_id_not_starts_with?: string | null;
+  next_hop_local_id_starts_with?: string | null;
+  next_hop_type?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  next_hop_type_not?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_not_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
+  router_gateway?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  vpc_peering?: VirtualPrivateCloudPeeringWhereInput | null;
+}
+
+export enum VirtualPrivateCloudRouteNextHopType {
+  NAT_GATEWAY = "NAT_GATEWAY",
+  ROUTER_GATEWAY = "ROUTER_GATEWAY",
+  UNKNOWN = "UNKNOWN",
+  VPC_PEERING = "VPC_PEERING",
+}
+
+export interface VirtualPrivateCloudRouterGatewayWhereInput {
+  AND?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  associated_subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  associated_subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  associated_subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nexthop_ip?: string | null;
+  nexthop_ip_contains?: string | null;
+  nexthop_ip_ends_with?: string | null;
+  nexthop_ip_gt?: string | null;
+  nexthop_ip_gte?: string | null;
+  nexthop_ip_in?: string[] | null;
+  nexthop_ip_lt?: string | null;
+  nexthop_ip_lte?: string | null;
+  nexthop_ip_not?: string | null;
+  nexthop_ip_not_contains?: string | null;
+  nexthop_ip_not_ends_with?: string | null;
+  nexthop_ip_not_in?: string[] | null;
+  nexthop_ip_not_starts_with?: string | null;
+  nexthop_ip_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudSubnetWhereInput {
+  AND?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  OR?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  cidr?: string | null;
+  cidr_contains?: string | null;
+  cidr_ends_with?: string | null;
+  cidr_gt?: string | null;
+  cidr_gte?: string | null;
+  cidr_in?: string[] | null;
+  cidr_lt?: string | null;
+  cidr_lte?: string | null;
+  cidr_not?: string | null;
+  cidr_not_contains?: string | null;
+  cidr_not_ends_with?: string | null;
+  cidr_not_in?: string[] | null;
+  cidr_not_starts_with?: string | null;
+  cidr_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  enable_broadcast?: boolean | null;
+  enable_broadcast_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_mac?: string | null;
+  gateway_mac_contains?: string | null;
+  gateway_mac_ends_with?: string | null;
+  gateway_mac_gt?: string | null;
+  gateway_mac_gte?: string | null;
+  gateway_mac_in?: string[] | null;
+  gateway_mac_lt?: string | null;
+  gateway_mac_lte?: string | null;
+  gateway_mac_not?: string | null;
+  gateway_mac_not_contains?: string | null;
+  gateway_mac_not_ends_with?: string | null;
+  gateway_mac_not_in?: string[] | null;
+  gateway_mac_not_starts_with?: string | null;
+  gateway_mac_starts_with?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  layer2_gateway?: VirtualPrivateCloudLayer2GatewayWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
+
+  /** @format int32 */
+  total_ip_count?: number | null;
+
+  /** @format int32 */
+  total_ip_count_gt?: number | null;
+
+  /** @format int32 */
+  total_ip_count_gte?: number | null;
+  total_ip_count_in?: number[] | null;
+
+  /** @format int32 */
+  total_ip_count_lt?: number | null;
+
+  /** @format int32 */
+  total_ip_count_lte?: number | null;
+
+  /** @format int32 */
+  total_ip_count_not?: number | null;
+  total_ip_count_not_in?: number[] | null;
+
+  /** @format int32 */
+  unused_ip_count?: number | null;
+
+  /** @format int32 */
+  unused_ip_count_gt?: number | null;
+
+  /** @format int32 */
+  unused_ip_count_gte?: number | null;
+  unused_ip_count_in?: number[] | null;
+
+  /** @format int32 */
+  unused_ip_count_lt?: number | null;
+
+  /** @format int32 */
+  unused_ip_count_lte?: number | null;
+
+  /** @format int32 */
+  unused_ip_count_not?: number | null;
+  unused_ip_count_not_in?: number[] | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_nics_every?: VirtualPrivateCloudNicWhereInput | null;
+  vpc_nics_none?: VirtualPrivateCloudNicWhereInput | null;
+  vpc_nics_some?: VirtualPrivateCloudNicWhereInput | null;
+}
+
+export interface VirtualPrivateCloudLayer2GatewayWhereInput {
+  AND?: VirtualPrivateCloudLayer2GatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudLayer2GatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudLayer2GatewayWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  vlan?: VlanWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_subnet?: VirtualPrivateCloudSubnetWhereInput | null;
+}
+
+export interface VirtualPrivateCloudPeeringWhereInput {
+  AND?: VirtualPrivateCloudPeeringWhereInput[] | null;
+  NOT?: VirtualPrivateCloudPeeringWhereInput[] | null;
+  OR?: VirtualPrivateCloudPeeringWhereInput[] | null;
+  dst_vpc?: VirtualPrivateCloudWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  src_vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudServiceWhereInput {
+  AND?: VirtualPrivateCloudServiceWhereInput[] | null;
+  NOT?: VirtualPrivateCloudServiceWhereInput[] | null;
+  OR?: VirtualPrivateCloudServiceWhereInput[] | null;
+  cluster_bindings_every?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_none?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_some?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  external_subnets_every?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_none?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_some?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal_cidr?: string | null;
+  internal_cidr_contains?: string | null;
+  internal_cidr_ends_with?: string | null;
+  internal_cidr_gt?: string | null;
+  internal_cidr_gte?: string | null;
+  internal_cidr_in?: string[] | null;
+  internal_cidr_lt?: string | null;
+  internal_cidr_lte?: string | null;
+  internal_cidr_not?: string | null;
+  internal_cidr_not_contains?: string | null;
+  internal_cidr_not_ends_with?: string | null;
+  internal_cidr_not_in?: string[] | null;
+  internal_cidr_not_starts_with?: string | null;
+  internal_cidr_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  vpcs_every?: VirtualPrivateCloudWhereInput | null;
+  vpcs_none?: VirtualPrivateCloudWhereInput | null;
+  vpcs_some?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudClusterBindingWhereInput {
+  AND?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  NOT?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  OR?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  tep_ip_pool_id?: string | null;
+  tep_ip_pool_id_contains?: string | null;
+  tep_ip_pool_id_ends_with?: string | null;
+  tep_ip_pool_id_gt?: string | null;
+  tep_ip_pool_id_gte?: string | null;
+  tep_ip_pool_id_in?: string[] | null;
+  tep_ip_pool_id_lt?: string | null;
+  tep_ip_pool_id_lte?: string | null;
+  tep_ip_pool_id_not?: string | null;
+  tep_ip_pool_id_not_contains?: string | null;
+  tep_ip_pool_id_not_ends_with?: string | null;
+  tep_ip_pool_id_not_in?: string[] | null;
+  tep_ip_pool_id_not_starts_with?: string | null;
+  tep_ip_pool_id_starts_with?: string | null;
+  vds?: VdsWhereInput | null;
+
+  /** @format int32 */
+  vlan_id?: number | null;
+
+  /** @format int32 */
+  vlan_id_gt?: number | null;
+
+  /** @format int32 */
+  vlan_id_gte?: number | null;
+  vlan_id_in?: number[] | null;
+
+  /** @format int32 */
+  vlan_id_lt?: number | null;
+
+  /** @format int32 */
+  vlan_id_lte?: number | null;
+
+  /** @format int32 */
+  vlan_id_not?: number | null;
+  vlan_id_not_in?: number[] | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
 }
 
 export enum EverouteClusterPhase {
@@ -10318,6 +11732,215 @@ export enum EverouteClusterPhase {
   Terminating = "Terminating",
   Updating = "Updating",
   Upgrading = "Upgrading",
+}
+
+export interface VirtualPrivateCloudEdgeGatewayWhereInput {
+  AND?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+
+  /** @format int32 */
+  cpu_number?: number | null;
+
+  /** @format int32 */
+  cpu_number_gt?: number | null;
+
+  /** @format int32 */
+  cpu_number_gte?: number | null;
+  cpu_number_in?: number[] | null;
+
+  /** @format int32 */
+  cpu_number_lt?: number | null;
+
+  /** @format int32 */
+  cpu_number_lte?: number | null;
+
+  /** @format int32 */
+  cpu_number_not?: number | null;
+  cpu_number_not_in?: number[] | null;
+
+  /** @format int32 */
+  data_volume_size?: number | null;
+
+  /** @format int32 */
+  data_volume_size_gt?: number | null;
+
+  /** @format int32 */
+  data_volume_size_gte?: number | null;
+  data_volume_size_in?: number[] | null;
+
+  /** @format int32 */
+  data_volume_size_lt?: number | null;
+
+  /** @format int32 */
+  data_volume_size_lte?: number | null;
+
+  /** @format int32 */
+  data_volume_size_not?: number | null;
+  data_volume_size_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+
+  /** @format int32 */
+  memory_size?: number | null;
+
+  /** @format int32 */
+  memory_size_gt?: number | null;
+
+  /** @format int32 */
+  memory_size_gte?: number | null;
+  memory_size_in?: number[] | null;
+
+  /** @format int32 */
+  memory_size_lt?: number | null;
+
+  /** @format int32 */
+  memory_size_lte?: number | null;
+
+  /** @format int32 */
+  memory_size_not?: number | null;
+  memory_size_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  subnet_mask?: string | null;
+  subnet_mask_contains?: string | null;
+  subnet_mask_ends_with?: string | null;
+  subnet_mask_gt?: string | null;
+  subnet_mask_gte?: string | null;
+  subnet_mask_in?: string[] | null;
+  subnet_mask_lt?: string | null;
+  subnet_mask_lte?: string | null;
+  subnet_mask_not?: string | null;
+  subnet_mask_not_contains?: string | null;
+  subnet_mask_not_ends_with?: string | null;
+  subnet_mask_not_in?: string[] | null;
+  subnet_mask_not_starts_with?: string | null;
+  subnet_mask_starts_with?: string | null;
+  vdses_every?: VdsWhereInput | null;
+  vdses_none?: VdsWhereInput | null;
+  vdses_some?: VdsWhereInput | null;
+  vm_instances_every?: VmWhereInput | null;
+  vm_instances_none?: VmWhereInput | null;
+  vm_instances_some?: VmWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudNicSnapshotWhereInput {
+  AND?: VirtualPrivateCloudNicSnapshotWhereInput[] | null;
+  NOT?: VirtualPrivateCloudNicSnapshotWhereInput[] | null;
+  OR?: VirtualPrivateCloudNicSnapshotWhereInput[] | null;
+  floating_ip?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mac_address?: string | null;
+  mac_address_contains?: string | null;
+  mac_address_ends_with?: string | null;
+  mac_address_gt?: string | null;
+  mac_address_gte?: string | null;
+  mac_address_in?: string[] | null;
+  mac_address_lt?: string | null;
+  mac_address_lte?: string | null;
+  mac_address_not?: string | null;
+  mac_address_not_contains?: string | null;
+  mac_address_not_ends_with?: string | null;
+  mac_address_not_in?: string[] | null;
+  mac_address_not_starts_with?: string | null;
+  mac_address_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_nic?: VirtualPrivateCloudNicWhereInput | null;
+  vpc_subnet?: VirtualPrivateCloudSubnetWhereInput | null;
+}
+
+export enum GlobalPolicyAction {
+  ALLOW = "ALLOW",
+  DROP = "DROP",
 }
 
 export enum IsolationMode {
@@ -10588,6 +12211,26 @@ export interface NfsInodeWhereInput {
   /** @format int32 */
   snapshot_num_not?: number | null;
   snapshot_num_not_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+
+  /** @format int64 */
+  unique_logical_size_lt?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_lte?: number | null;
+
+  /** @format int64 */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -12266,6 +13909,11 @@ export interface GlobalAlertRuleUpdationParams {
   where: GlobalAlertRuleWhereInput;
 }
 
+export enum ContentLanguage {
+  ZhCN = "zh-CN",
+  EnUS = "en-US",
+}
+
 export interface CustomizeAlertRuleUpdationParams {
   data: {
     thresholds?: AlertRuleThresholds[];
@@ -13629,6 +15277,8 @@ export interface NestedEverouteCluster {
 
 export interface NestedLabel {
   id: string;
+  key: string;
+  value?: string | null;
 }
 
 export enum MetroCheckStatusEnum {
@@ -14329,6 +15979,9 @@ export interface Vm {
   snapshot_plan?: NestedSnapshotPlan | null;
   snapshots?: NestedVmSnapshot[] | null;
   status: VmStatus;
+
+  /** @format int64 */
+  unique_logical_size?: number | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -15605,6 +17258,8 @@ export enum VmOrderByInput {
   SizeDESC = "size_DESC",
   StatusASC = "status_ASC",
   StatusDESC = "status_DESC",
+  UniqueLogicalSizeASC = "unique_logical_size_ASC",
+  UniqueLogicalSizeDESC = "unique_logical_size_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
   VcpuASC = "vcpu_ASC",
@@ -17118,6 +18773,9 @@ export interface IscsiLun {
   thin_provision: boolean;
 
   /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
   unique_size: number;
   zbs_volume_id: string;
 }
@@ -18469,6 +20127,9 @@ export interface NvmfNamespace {
   thin_provision: boolean;
 
   /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
   unique_size: number;
   zbs_volume_id: string;
 }
@@ -19339,6 +21000,20 @@ export enum ROLE_ACTION {
   MANAGE_LOAD_BALANCER_RESOURCE = "MANAGE_LOAD_BALANCER_RESOURCE",
   MANAGE_LOAD_BALANCER = "MANAGE_LOAD_BALANCER",
   MANAGE_LOAD_BALANCER_VNET_BOND = "MANAGE_LOAD_BALANCER_VNET_BOND",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_SERVICE = "MANAGE_VIRTUAL_PRIVATE_CLOUD_SERVICE",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_CLUSTER_BINDING = "MANAGE_VIRTUAL_PRIVATE_CLOUD_CLUSTER_BINDING",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_EDGE_GATEWAY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_EDGE_GATEWAY",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_EXTERNAL_SUBNET = "MANAGE_VIRTUAL_PRIVATE_CLOUD_EXTERNAL_SUBNET",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_BASIC_RESOURCE = "MANAGE_VIRTUAL_PRIVATE_CLOUD_BASIC_RESOURCE",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_GROUP = "MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_GROUP",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_POLICY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_SECURITY_POLICY",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_ISOLATION_POLICY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_ISOLATION_POLICY",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_FLOATING_IP = "MANAGE_VIRTUAL_PRIVATE_CLOUD_FLOATING_IP",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_ROUTER_GATEWAY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_ROUTER_GATEWAY",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_NAT_GATEWAY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_NAT_GATEWAY",
+  MANAGEVIRTUALPRIVATECLOUDLAYER2GATEWAY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_LAYER2_GATEWAY",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING = "MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING",
+  MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE = "MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE",
   MANAGE_LDAP_AD_CONFIG = "MANAGE_LDAP_AD_CONFIG",
   MANAGE_MFA_CONFIG = "MANAGE_MFA_CONFIG",
   MANAGE_DEFAULT_LOGIN_OPTION = "MANAGE_DEFAULT_LOGIN_OPTION",
@@ -19349,10 +21024,12 @@ export enum ROLE_ACTION {
   CREATE_SKS_WORKLOAD_CLUSTER = "CREATE_SKS_WORKLOAD_CLUSTER",
   DELETE_SKS_WORKLOAD_CLUSTER = "DELETE_SKS_WORKLOAD_CLUSTER",
   UPDATE_SKS_WORKLOAD_CLUSTER = "UPDATE_SKS_WORKLOAD_CLUSTER",
+  MANAGE_CONTAINER_REGISTRY = "MANAGE_CONTAINER_REGISTRY",
   DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG = "DOWNLOAD_SKS_WORKLOAD_CLUSTER_KUBECONFIG",
   MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE = "MANAGE_SKS_WORKLOAD_CLUSTER_RECONCILE",
   MANAGE_OBSERVABILITY_PACKAGE = "MANAGE_OBSERVABILITY_PACKAGE",
   MANAGE_OBSERVABILITY_SERVICE = "MANAGE_OBSERVABILITY_SERVICE",
+  MANAGE_ALERT_NOTIFIER = "MANAGE_ALERT_NOTIFIER",
   CONFIG_DYNAMIC_RESOURCE_SCHEDULE = "CONFIG_DYNAMIC_RESOURCE_SCHEDULE",
   GENERATE_DRS_PROPOSALS = "GENERATE_DRS_PROPOSALS",
   APPLY_DRS_PROPOSAL = "APPLY_DRS_PROPOSAL",
@@ -19370,6 +21047,7 @@ export enum ROLE_ACTION {
   MANAGE_SFS_FILE_SYSTEM_CONFIG = "MANAGE_SFS_FILE_SYSTEM_CONFIG",
   MANAGE_SFS_FILE_SYSTEM_ACCESSIBILITY = "MANAGE_SFS_FILE_SYSTEM_ACCESSIBILITY",
   MANAGE_SFS_SNAPSHOT = "MANAGE_SFS_SNAPSHOT",
+  MANAGE_CLOUDTOWER_SNMP_TRANSPORT = "MANAGE_CLOUDTOWER_SNMP_TRANSPORT",
 }
 
 export interface RoleCreationParams {
@@ -21256,6 +22934,8 @@ export enum VmVolumeOrderByInput {
   SizeDESC = "size_DESC",
   TypeASC = "type_ASC",
   TypeDESC = "type_DESC",
+  UniqueLogicalSizeASC = "unique_logical_size_ASC",
+  UniqueLogicalSizeDESC = "unique_logical_size_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
 }
@@ -22297,6 +23977,8 @@ export enum IscsiLunOrderByInput {
   StripeSizeDESC = "stripe_size_DESC",
   ThinProvisionASC = "thin_provision_ASC",
   ThinProvisionDESC = "thin_provision_DESC",
+  UniqueLogicalSizeASC = "unique_logical_size_ASC",
+  UniqueLogicalSizeDESC = "unique_logical_size_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
   ZbsVolumeIdASC = "zbs_volume_id_ASC",
@@ -22417,6 +24099,8 @@ export enum NvmfNamespaceOrderByInput {
   StripeSizeDESC = "stripe_size_DESC",
   ThinProvisionASC = "thin_provision_ASC",
   ThinProvisionDESC = "thin_provision_DESC",
+  UniqueLogicalSizeASC = "unique_logical_size_ASC",
+  UniqueLogicalSizeDESC = "unique_logical_size_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
   ZbsVolumeIdASC = "zbs_volume_id_ASC",
@@ -23627,6 +25311,9 @@ export interface VmVolume {
   /** @format int64 */
   size: number;
   type?: VmVolumeType | null;
+
+  /** @format int64 */
+  unique_logical_size?: number | null;
 
   /** @format int64 */
   unique_size?: number | null;
@@ -27157,6 +28844,9 @@ export interface NfsInode {
   snapshot_num: number;
 
   /** @format int64 */
+  unique_logical_size?: number | null;
+
+  /** @format int64 */
   unique_size: number;
 }
 
@@ -27181,6 +28871,8 @@ export enum NfsInodeOrderByInput {
   SharedSizeDESC = "shared_size_DESC",
   SnapshotNumASC = "snapshot_num_ASC",
   SnapshotNumDESC = "snapshot_num_DESC",
+  UniqueLogicalSizeASC = "unique_logical_size_ASC",
+  UniqueLogicalSizeDESC = "unique_logical_size_DESC",
   UniqueSizeASC = "unique_size_ASC",
   UniqueSizeDESC = "unique_size_DESC",
 }
@@ -28952,6 +30644,10 @@ export interface GetVmFoldersConnectionRequestBody {
   where?: VmFolderWhereInput | null;
 }
 
+export interface NestedVirtualPrivateCloudNic {
+  id: string;
+}
+
 export interface VmNic {
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
@@ -28980,8 +30676,10 @@ export interface VmNic {
   /** @format int32 */
   order?: number | null;
   subnet_mask?: string | null;
+  type?: VmNicType | null;
   vlan?: NestedVlan | null;
   vm: NestedVm;
+  vpc_nic?: NestedVirtualPrivateCloudNic | null;
 }
 
 export enum VmNicOrderByInput {
@@ -29019,6 +30717,8 @@ export enum VmNicOrderByInput {
   OrderDESC = "order_DESC",
   SubnetMaskASC = "subnet_mask_ASC",
   SubnetMaskDESC = "subnet_mask_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
 }
 
 export interface GetVmNicsRequestBody {
