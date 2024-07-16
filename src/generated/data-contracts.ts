@@ -1811,23 +1811,23 @@ export interface VmWhereInput {
   status_not?: VmStatus | null;
   status_not_in?: VmStatus[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
 
@@ -5045,23 +5045,23 @@ export interface IscsiLunWhereInput {
   thin_provision?: boolean | null;
   thin_provision_not?: boolean | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
 
@@ -5810,23 +5810,23 @@ export interface NvmfNamespaceWhereInput {
   thin_provision?: boolean | null;
   thin_provision_not?: boolean | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
 
@@ -7934,23 +7934,23 @@ export interface VmVolumeWhereInput {
   type_not?: VmVolumeType | null;
   type_not_in?: VmVolumeType[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
 
@@ -12212,23 +12212,23 @@ export interface NfsInodeWhereInput {
   snapshot_num_not?: number | null;
   snapshot_num_not_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lt?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_lte?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
 
@@ -15980,7 +15980,7 @@ export interface Vm {
   snapshots?: NestedVmSnapshot[] | null;
   status: VmStatus;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
   /** @format int64 */
@@ -18772,7 +18772,7 @@ export interface IscsiLun {
   stripe_size: number;
   thin_provision: boolean;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
   /** @format int64 */
@@ -19637,7 +19637,7 @@ export interface DataPoint {
   /** @format double */
   v?: number | null;
 
-  /** @format int64 */
+  /** @format double */
   t: number;
   __typename?: "DataPoint";
 }
@@ -20126,7 +20126,7 @@ export interface NvmfNamespace {
   stripe_size: number;
   thin_provision: boolean;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
   /** @format int64 */
@@ -25312,7 +25312,7 @@ export interface VmVolume {
   size: number;
   type?: VmVolumeType | null;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
   /** @format int64 */
@@ -28843,7 +28843,7 @@ export interface NfsInode {
   /** @format int32 */
   snapshot_num: number;
 
-  /** @format int64 */
+  /** @format double */
   unique_logical_size?: number | null;
 
   /** @format int64 */
