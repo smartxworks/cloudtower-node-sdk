@@ -1,5 +1,20 @@
 # RELEASE NOTE
 
+## release 日期 2024-07-16
+
+v2.16.0 release (tower version 4.2.0)
+
+### bugfix
+
+- [Vm], [VmVolume], [IscsiLun], [NvmfNameSpace], [NfsInode]: 更新 `unique_logical_size` 类型为 `double` （仅影响 jsdoc，不影响业务）
+
+### update
+
+- [HostApi]:
+  - [create_host]: 新增 `vdses` 字段适配网络融合，新增 `zbsSpec` 字段适配 zbs 560 以上版本集群的添加
+- [VmApi]:
+  - [get_vms]: 新增 `bios_uuid` 字段
+
 ## release 日期 2024-05-11
 
 v2.15.0 release (tower version 4.1.0)
