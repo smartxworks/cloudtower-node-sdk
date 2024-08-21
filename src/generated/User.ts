@@ -134,6 +134,7 @@ export class UserApi<SecurityDataType = unknown> {
    * @tags User
    * @name GetMyInfo
    * @request POST:/get-my-info
+   * @secure
    * @response `200` `User`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -143,6 +144,7 @@ export class UserApi<SecurityDataType = unknown> {
     this.http.request<User, ErrorBody>({
       path: `/get-my-info`,
       method: "POST",
+      secure: true,
       format: "json",
       ...params,
     });
