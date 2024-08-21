@@ -49,6 +49,7 @@ import {
   VmUpdateNicQosOptionsParams,
   VmUpdateOwnerParams,
   VmUpdateParams,
+  VmUpdateVpcNicParams,
   VmVncInfo,
   WithTaskDeleteVm,
   WithTaskVm,
@@ -1290,6 +1291,32 @@ export class VmApi<SecurityDataType = unknown> {
   getVmVncInfo = (data: GetVmVncInfoParams, params: RequestParams = {}) =>
     this.http.request<VmVncInfo, ErrorBody>({
       path: `/get-vm-vnc-info`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name UpdateVmNicVpcInfo
+   * @request POST:/update-vm-vpc-nic
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `304` `void` Not modified
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateVmNicVpcInfo = (
+    data: VmUpdateVpcNicParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], void | ErrorBody>({
+      path: `/update-vm-vpc-nic`,
       method: "POST",
       body: data,
       secure: true,
