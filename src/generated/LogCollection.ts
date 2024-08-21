@@ -25,6 +25,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name CreateLogCollection
    * @request POST:/create-log-collection
+   * @secure
    * @response `200` `(WithTaskLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -38,6 +39,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
       path: `/create-log-collection`,
       method: "POST",
       body: data,
+      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
@@ -48,6 +50,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name ForceStopLogCollection
    * @request POST:/force-stop-log-collection
+   * @secure
    * @response `200` `(WithTaskLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -61,6 +64,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
       path: `/force-stop-log-collection`,
       method: "POST",
       body: data,
+      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
@@ -71,6 +75,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    * @tags LogCollection
    * @name DeleteLogCollection
    * @request POST:/delete-log-collection
+   * @secure
    * @response `200` `(WithTaskDeleteLogCollection)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -84,6 +89,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
       path: `/delete-log-collection`,
       method: "POST",
       body: data,
+      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
