@@ -76,7 +76,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @tags AlertNotifier
    * @name CreateAlertNotifier
    * @request POST:/create-alert-notifier
-   * @secure
    * @response `200` `(WithTaskAlertNotifier)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -90,7 +89,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
       path: `/create-alert-notifier`,
       method: "POST",
       body: data,
-      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
@@ -101,7 +99,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @tags AlertNotifier
    * @name UpdateAlertNotifier
    * @request POST:/update-alert-notifier
-   * @secure
    * @response `200` `WithTaskAlertNotifier`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -115,7 +112,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
       path: `/update-alert-notifier`,
       method: "POST",
       body: data,
-      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
@@ -126,7 +122,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @tags AlertNotifier
    * @name UpdateManyAlertNotifiers
    * @request POST:/update-many-alert-notifiers
-   * @secure
    * @response `200` `(WithTaskAlertNotifier)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -140,7 +135,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
       path: `/update-many-alert-notifiers`,
       method: "POST",
       body: data,
-      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,
@@ -151,7 +145,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    * @tags AlertNotifier
    * @name DeleteAlertNotifier
    * @request POST:/delete-alert-notifier
-   * @secure
    * @response `200` `(WithTaskDeleteAlertNotifier)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
@@ -165,7 +158,6 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
       path: `/delete-alert-notifier`,
       method: "POST",
       body: data,
-      secure: true,
       type: ContentType.Json,
       format: "json",
       ...params,

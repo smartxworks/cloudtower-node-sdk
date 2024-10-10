@@ -4,7 +4,6 @@ import {
   ErrorBody,
   GetVmsConnectionRequestBody,
   GetVmsRequestBody,
-  GetVmVncInfoParams,
   InstallVmtoolsParams,
   StopVmInCutoverMigrationParams,
   Task,
@@ -16,6 +15,7 @@ import {
   VmAddNicParams,
   VmCloneParams,
   VmConnection,
+  VmCreateVmFromContentLibraryTemplateBatchParams,
   VmCreateVmFromContentLibraryTemplateParams,
   VmCreateVmFromTemplateParams,
   VmCreationParams,
@@ -23,7 +23,6 @@ import {
   VmEjectCdRomParams,
   VmExpandVmDiskParams,
   VmExportParams,
-  VmGpuInfo,
   VmImportParams,
   VmMigrateAcrossClusterParams,
   VmMigrateParams,
@@ -49,10 +48,9 @@ import {
   VmUpdateNicQosOptionsParams,
   VmUpdateOwnerParams,
   VmUpdateParams,
-  VmUpdateVpcNicParams,
-  VmVncInfo,
   WithTaskDeleteVm,
   WithTaskVm,
+  WithTaskVmArray,
   WithTaskVmExportFile,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -129,6 +127,31 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/create-vm-from-content-library-template`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name CreateVmFromContentLibraryTemplateBatch
+   * @request POST:/create-vm-from-content-library-template-batch
+   * @secure
+   * @response `200` `WithTaskVmArray`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  createVmFromContentLibraryTemplateBatch = (
+    data: VmCreateVmFromContentLibraryTemplateBatchParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVmArray, ErrorBody>({
+      path: `/create-vm-from-content-library-template-batch`,
       method: "POST",
       body: data,
       secure: true,
@@ -1247,76 +1270,6 @@ export class VmApi<SecurityDataType = unknown> {
   importVm = (data: VmImportParams[], params: RequestParams = {}) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/import-vm`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags Vm
-   * @name GetVmGpuDeviceInfo
-   * @request POST:/get-vm-gpu-device-info
-   * @secure
-   * @response `200` `(VmGpuInfo)[]`
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  getVmGpuDeviceInfo = (data: GetVmsRequestBody, params: RequestParams = {}) =>
-    this.http.request<VmGpuInfo[], ErrorBody>({
-      path: `/get-vm-gpu-device-info`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags Vm
-   * @name GetVmVncInfo
-   * @request POST:/get-vm-vnc-info
-   * @secure
-   * @response `200` `VmVncInfo`
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  getVmVncInfo = (data: GetVmVncInfoParams, params: RequestParams = {}) =>
-    this.http.request<VmVncInfo, ErrorBody>({
-      path: `/get-vm-vnc-info`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags Vm
-   * @name UpdateVmNicVpcInfo
-   * @request POST:/update-vm-vpc-nic
-   * @secure
-   * @response `200` `(WithTaskVm)[]`
-   * @response `304` `void` Not modified
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  updateVmNicVpcInfo = (
-    data: VmUpdateVpcNicParams,
-    params: RequestParams = {}
-  ) =>
-    this.http.request<WithTaskVm[], void | ErrorBody>({
-      path: `/update-vm-vpc-nic`,
       method: "POST",
       body: data,
       secure: true,
