@@ -7,7 +7,6 @@ import {
   GpuDeviceDescriptionUpdationParams,
   GpuDeviceSriovSwitchParams,
   GpuDeviceUsageUpdationParams,
-  GpuVmInfo,
   WithTaskGpuDevice,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -90,32 +89,6 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskGpuDevice[], void | ErrorBody>({
       path: `/switch-gpu-device-sriov`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags GpuDevice
-   * @name GetDetailVmInfoByGpuDevices
-   * @request POST:/get-detail-vm-info-by-gpu-devices
-   * @secure
-   * @response `200` `(GpuVmInfo)[]`
-   * @response `304` `void` Not modified
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  getDetailVmInfoByGpuDevices = (
-    data: GetGpuDevicesRequestBody,
-    params: RequestParams = {}
-  ) =>
-    this.http.request<GpuVmInfo[], void | ErrorBody>({
-      path: `/get-detail-vm-info-by-gpu-devices`,
       method: "POST",
       body: data,
       secure: true,
