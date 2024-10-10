@@ -6,7 +6,6 @@ v2.13.1 release (tower version 3.4.4)
 
 ### update
 
-- 新增 [image_utils] 工具类，支持通过 uploadTask 来获取上传后的 elfImage 与 contentLibraryImage
 - [VmApi]: [createVmFromContentLibraryTemplateBatch]: 支持批量通过内容库模板创建虚拟机
 
 ### bugfix
