@@ -1,5 +1,18 @@
 # RELEASE NOTE
 
+## release 日期 2024-10-10
+
+v2.13.1 release (tower version 3.4.4)
+
+### update
+
+- 新增 [image_utils] 工具类，支持通过 uploadTask 来获取上传后的 elfImage 与 contentLibraryImage
+- [VmApi]: [createVmFromContentLibraryTemplateBatch]: 支持批量通过内容库模板创建虚拟机
+
+### bugfix
+
+- pick 2.14.0 ~ 2.17.0 上修复的已有 api 的 bugfix，详见 master 分支的 [release_note](https://github.com/smartxworks/cloudtower-node-sdk/blob/master/RELEASENOTE.md)
+
 ## release 日期 2023-11-07
 
 v2.13.0 release (tower version 3.4.0)

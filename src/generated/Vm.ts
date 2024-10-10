@@ -15,6 +15,7 @@ import {
   VmAddNicParams,
   VmCloneParams,
   VmConnection,
+  VmCreateVmFromContentLibraryTemplateBatchParams,
   VmCreateVmFromContentLibraryTemplateParams,
   VmCreateVmFromTemplateParams,
   VmCreationParams,
@@ -49,6 +50,7 @@ import {
   VmUpdateParams,
   WithTaskDeleteVm,
   WithTaskVm,
+  WithTaskVmArray,
   WithTaskVmExportFile,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -125,6 +127,31 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/create-vm-from-content-library-template`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name CreateVmFromContentLibraryTemplateBatch
+   * @request POST:/create-vm-from-content-library-template-batch
+   * @secure
+   * @response `200` `WithTaskVmArray`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  createVmFromContentLibraryTemplateBatch = (
+    data: VmCreateVmFromContentLibraryTemplateBatchParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVmArray, ErrorBody>({
+      path: `/create-vm-from-content-library-template-batch`,
       method: "POST",
       body: data,
       secure: true,
