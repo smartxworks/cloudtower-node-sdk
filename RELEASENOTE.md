@@ -23,14 +23,11 @@ v2.18.0 release (tower version 4.4.0)
   - [BackupTargetExecutionApi]: 备份虚拟机执行记录查询
 - [SecurityPolicyApi]: 支持配置 alg_protocol
 - [HostApi]: [createHost]: 支持添加主机时配置主机账户密码
+- [SecurityPolicyIngressEgressInput]: 新增 type 字段以支持配置全部流量
 
 ### bugfix
 
 - [SecurityGroupApi]: [updateSecurityGroup]: 修复无法正确更新安全组名称与描述
-
-### breaking change
-
-- [SecurityPolicyIngressEgressInput]: 修改 type 字段类型为 `SecurityPolicyFlowControlType` 以支持配置全部流量
 
 ## release 日期 2024-08-21
 
