@@ -13,6 +13,8 @@ import {
   ErrorBody,
   GetBackupPlansConnectionRequestBody,
   GetBackupPlansRequestBody,
+  GetBackupRestorePointMetadataRequestBody,
+  VmMetaData,
   WithTaskBackupPlan,
   WithTaskBackupPlanExecution,
   WithTaskBackupRestoreExecution,
@@ -246,6 +248,31 @@ export class BackupPlanApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskDeleteBackupRestorePointArray[], ErrorBody>({
       path: `/delete-backup-restore-point`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags BackupPlan
+   * @name GetBackupRestorePointMetadata
+   * @request POST:/get-backup-restore-point-metadata
+   * @secure
+   * @response `200` `VmMetaData`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getBackupRestorePointMetadata = (
+    data: GetBackupRestorePointMetadataRequestBody,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<VmMetaData, ErrorBody>({
+      path: `/get-backup-restore-point-metadata`,
       method: "POST",
       body: data,
       secure: true,
