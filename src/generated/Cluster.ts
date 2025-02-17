@@ -7,11 +7,13 @@ import {
   ClusterHaUpdationParams,
   ClusterLicenseUpdationParams,
   ClusterNetworkSettingUpdationParams,
+  ClusterStorageInfo,
   ClusterUpdationParams,
   ClusterVirtualizationUpdationParams,
   ErrorBody,
   GetClustersConnectionRequestBody,
   GetClustersRequestBody,
+  GetClusterStorageInfoRequestBody,
   GetMetaLeaderRequestBody,
   MetaLeader,
   WithTaskCluster,
@@ -239,6 +241,31 @@ export class ClusterApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<MetaLeader[], ErrorBody>({
       path: `/get-meta-leader`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
+   * @name GetClusterStorageInfo
+   * @request POST:/get-cluster-storage-info
+   * @secure
+   * @response `200` `(ClusterStorageInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getClusterStorageInfo = (
+    data: GetClusterStorageInfoRequestBody,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<ClusterStorageInfo[], ErrorBody>({
+      path: `/get-cluster-storage-info`,
       method: "POST",
       body: data,
       secure: true,

@@ -40,4 +40,32 @@ export class ObservabilityApi<SecurityDataType = unknown> {
       format: "json",
       ...params,
     });
+  /**
+   * No description
+   *
+   * @tags Observability
+   * @name ClearSystemServiceAlertNotificationConfig
+   * @request POST:/clear-system-service-alert-notification-config
+   * @secure
+   * @response `200` `WithTaskDisassociateSystemServiceFromObsServiceResult`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  clearSystemServiceAlertNotificationConfig = (
+    data: DisassociateSystemServiceFromObsServiceParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<
+      WithTaskDisassociateSystemServiceFromObsServiceResult,
+      ErrorBody
+    >({
+      path: `/clear-system-service-alert-notification-config`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
 }
