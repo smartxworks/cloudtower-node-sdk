@@ -1,5 +1,44 @@
 # RELEASE NOTE
 
+## release 日期 2025-06-09
+
+v2.20.0 release (tower version 4.6.0)
+
+### feature
+
+- [Vm], [VmVolume]: 新增 used_size 与 used_size_usage 字段，用于获取虚拟机与虚拟卷的已使用容量
+- [ResourceChangeApi]: 新增 getResourceChange API 用于获取 Resource Change Events
+- [PciDeviceApi]: 新增 getPciDevices API 用于获取 PCI 设备列表
+- [TaskApi]: 为 createTask 新增 status 字段，用于指定任务状态
+- [ReplicationPlanApi]: 新增 getReplicationPlan API 用于获取复制计划列表
+- [SmtpServerApi]: 新增 getSmtpServer API 用于获取 SMTP 服务器列表
+- [ReplicaVmApi]: 新增 getReplicaVms API 用于获取复制虚拟机列表
+- [NetworkPolicyRuleServiceApi]: 
+  - 新增 getNetworkPolicyRuleServices API 用于获取「网络安全」的服务资源
+  - 新增 createNetworkPolicyRuleService API 用于创建「网络安全」的服务资源
+  - 新增 updateNetworkPolicyRuleService API 用于更新「网络安全」的服务资源
+  - 新增 deleteNetworkPolicyRuleService API 用于删除「网络安全」的服务资源
+- [SecurityPolicyApi]: [SecurityPolicyIngressEgressInput]: 支持配置 `service_ids` 用于指定「网络安全」的服务资源
+- [SecurityPolicyApi]: [IPSecurityPolicy]: 支持配置 `ip_block`，用于从白名单/黑名单中排除部分 IP
+- [IsolationPolicyApi]: 
+  - 新增 createIsolationPolicy API 用于创建「隔离策略」
+  - 新增 updateIsolationPolicy API 用于更新「隔离策略」
+  - 新增 deleteIsolationPolicy API 用于删除「隔离策略」
+- [VirtualPrivateCloudExternalSubnetGroupApi]: 新增 getVirtualPrivateCloudExternalSubnetGroups API 用于获取「外部子网组」
+- [VirtualPrivateCloudEdgeGatewayApi]: 新增 getVirtualPrivateCloudEdgeGateways API 用于获取「边缘网关」
+- [VirtualPrivateCloudEdgeGatewayGroupApi]: 新增 getVirtualPrivateCloudEdgeGatewayGroups API 用于获取「边缘网关组」
+- [VirtualPrivateCloudNatGatewayApi]: [VirtualPrivateCloudNatGatewayCreateParams]: 新增 `external_subnet_group_id` 用于配置外部子网组；新增 `external_ips`，用于配置主备转换地址。
+- [VirtualPrivateCloudNatGatewayApi]: [VirtualPrivateCloudRouteGatewayUpdateParams]: 新增 `external_ips`，用于配置主备转换地址。
+- [VirtualPrivateCloudRouterGatewayApi]: 
+  - [VirtualPrivateCloudRouterGatewayCreateParams]: 新增 `external_subnet_group_id` 用于配置外部子网组；新增 `external_ips`，用于配置主备转换地址。
+  - [VirtualPrivateCloudRouterGatewayUpdateParams]: 新增 `external_ips`，用于配置主备转换地址。
+- [VirtualPrivateCloudFloatingIPApi]: 新增 batchCreateVirtualPrivateCloudFloatingIPs API，用于批量分配浮动 IP。
+
+### bugfix
+
+- [VmApi]: [getVmVncInfo]: 修复生成的 vnc redirect url
+- [VmApi]: [addVmNic] [updateVmNic] [updateVmNicBasicInfo]: 修复虚拟机网卡无法正确编辑 ip
+
 ## release 日期 2025-02-17
 
 v2.19.0 release (tower version 4.5.0)

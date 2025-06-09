@@ -1,4 +1,5 @@
 import {
+  BatchCreateVirtualPrivateCloudFloatingIpsParams,
   ErrorBody,
   GetVirtualPrivateCloudFloatingIpsConnectionRequestBody,
   GetVirtualPrivateCloudFloatingIpsRequestBody,
@@ -6,6 +7,7 @@ import {
   VirtualPrivateCloudFloatingIpConnection,
   VirtualPrivateCloudFloatingIpCreationParams,
   VirtualPrivateCloudFloatingIpDeletionParams,
+  WithTaskBatchCreateVirtualPrivateCloudFloatingIp,
   WithTaskDeleteVirtualPrivateCloudFloatingIp,
   WithTaskVirtualPrivateCloudFloatingIp,
 } from "./data-contracts";
@@ -24,6 +26,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    * @tags VirtualPrivateCloudFloatingIp
    * @name CreateVirtualPrivateCloudFloatingIp
    * @request POST:/create-virtual-private-cloud-floating-ip
+   * @deprecated
    * @secure
    * @response `200` `(WithTaskVirtualPrivateCloudFloatingIp)[]`
    * @response `400` `ErrorBody` Bad request
@@ -70,6 +73,34 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
         ...params,
       }
     );
+  /**
+   * No description
+   *
+   * @tags VirtualPrivateCloudFloatingIp
+   * @name BatchCreateVirtualPrivateCloudFloatingIps
+   * @request POST:/batch-create-virtual-private-cloud-floating-ips
+   * @secure
+   * @response `200` `(WithTaskBatchCreateVirtualPrivateCloudFloatingIp)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  batchCreateVirtualPrivateCloudFloatingIps = (
+    data: BatchCreateVirtualPrivateCloudFloatingIpsParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<
+      WithTaskBatchCreateVirtualPrivateCloudFloatingIp[],
+      ErrorBody
+    >({
+      path: `/batch-create-virtual-private-cloud-floating-ips`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
   /**
    * No description
    *
