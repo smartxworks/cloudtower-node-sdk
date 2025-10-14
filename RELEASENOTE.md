@@ -1,5 +1,33 @@
 # RELEASE NOTE
 
+## release 日期 2025-10-14
+
+v2.21.0 release (tower version 4.7.0)
+
+### features
+
+- 增加 [EcpLicenseApi] 用于 ECP 许可信息的的查询
+- 增加 [ReplicationServiceApi] 用于复制服务的查询
+- 增加 [BusinessHostApi] 与 [BusinessHostGroupApi] 用于业务主机
+- [VmApi]: 创建虚拟机类 API 支持在 ha 字段配置为 true 的情况下配置 ha_priority 字段用于配置
+- [VmApi]: [updateVmBasicInfo] 支持配置编辑虚拟机的 ha_priority 字段，仅当 ha 为 true 或现 vm ha 字段已经为 true 时生效。
+- [VmApi]: 为电源操作类 API 引入前置条件检查，避免未定义行为
+- [VmApi]: 虚拟机支持 EC 存储策略的配置
+- [VmVolumeApi]: 虚拟卷支持 EC 存储策略的配置
+- [IscsiLunApi], [IscsiTargetApi], [NfsExportApi], [NfsInodeApi], [NvmfNamespaceApi], [NvmfSubsystemApi]: 增加 EC 存储策略的支持，允许副本数提升，精简置备转厚置备
+- [ClusterApi]: 支持查询, 编辑集群常驻缓存功能
+- [Host]: 新增字段 merged_status, connect_status 与 commited_memory_bytes 字段
+- [Cluster]: 新增字段 commited_memory_bytes
+
+### bugfix
+
+- [VmApi]: 为创建虚拟机类 API 修复未配置 VPC 网卡的 IP 时创建出错
+- [VmApi]: [createVmFromContentLibraryTemplateBatch] 修复单位未生效的问题
+
+### breaking change
+
+- [IscsiTargetApi]: [updateIscsiTarget] 入参的 data 字段类型由 IscsiTargetCommonParams 改为 IscsiTargetUpdationParamsData
+
 ## release 日期 2025-06-09
 
 v2.20.0 release (tower version 4.6.0)
@@ -13,14 +41,14 @@ v2.20.0 release (tower version 4.6.0)
 - [ReplicationPlanApi]: 新增 getReplicationPlan API 用于获取复制计划列表
 - [SmtpServerApi]: 新增 getSmtpServer API 用于获取 SMTP 服务器列表
 - [ReplicaVmApi]: 新增 getReplicaVms API 用于获取复制虚拟机列表
-- [NetworkPolicyRuleServiceApi]: 
+- [NetworkPolicyRuleServiceApi]:
   - 新增 getNetworkPolicyRuleServices API 用于获取「网络安全」的服务资源
   - 新增 createNetworkPolicyRuleService API 用于创建「网络安全」的服务资源
   - 新增 updateNetworkPolicyRuleService API 用于更新「网络安全」的服务资源
   - 新增 deleteNetworkPolicyRuleService API 用于删除「网络安全」的服务资源
 - [SecurityPolicyApi]: [SecurityPolicyIngressEgressInput]: 支持配置 `service_ids` 用于指定「网络安全」的服务资源
 - [SecurityPolicyApi]: [IPSecurityPolicy]: 支持配置 `ip_block`，用于从白名单/黑名单中排除部分 IP
-- [IsolationPolicyApi]: 
+- [IsolationPolicyApi]:
   - 新增 createIsolationPolicy API 用于创建「隔离策略」
   - 新增 updateIsolationPolicy API 用于更新「隔离策略」
   - 新增 deleteIsolationPolicy API 用于删除「隔离策略」
@@ -29,7 +57,7 @@ v2.20.0 release (tower version 4.6.0)
 - [VirtualPrivateCloudEdgeGatewayGroupApi]: 新增 getVirtualPrivateCloudEdgeGatewayGroups API 用于获取「边缘网关组」
 - [VirtualPrivateCloudNatGatewayApi]: [VirtualPrivateCloudNatGatewayCreateParams]: 新增 `external_subnet_group_id` 用于配置外部子网组；新增 `external_ips`，用于配置主备转换地址。
 - [VirtualPrivateCloudNatGatewayApi]: [VirtualPrivateCloudRouteGatewayUpdateParams]: 新增 `external_ips`，用于配置主备转换地址。
-- [VirtualPrivateCloudRouterGatewayApi]: 
+- [VirtualPrivateCloudRouterGatewayApi]:
   - [VirtualPrivateCloudRouterGatewayCreateParams]: 新增 `external_subnet_group_id` 用于配置外部子网组；新增 `external_ips`，用于配置主备转换地址。
   - [VirtualPrivateCloudRouterGatewayUpdateParams]: 新增 `external_ips`，用于配置主备转换地址。
 - [VirtualPrivateCloudFloatingIPApi]: 新增 batchCreateVirtualPrivateCloudFloatingIPs API，用于批量分配浮动 IP。

@@ -38,6 +38,7 @@ import {
   VmRemoveNicParams,
   VmResetGuestOsPasswordParams,
   VmRollbackParams,
+  VmSetVmDiskResidentInCacheParams,
   VmStartParams,
   VmToggleCdRomDisableParams,
   VmUpdateAdvancedOptionsParams,
@@ -558,6 +559,31 @@ export class VmApi<SecurityDataType = unknown> {
   expandVmDisk = (data: VmExpandVmDiskParams, params: RequestParams = {}) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/expand-vm-disk`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name SetVmDiskResidentInCache
+   * @request POST:/set-vm-disk-resident-in-cache
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  setVmDiskResidentInCache = (
+    data: VmSetVmDiskResidentInCacheParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/set-vm-disk-resident-in-cache`,
       method: "POST",
       body: data,
       secure: true,

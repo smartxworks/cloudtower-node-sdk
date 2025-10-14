@@ -3,20 +3,25 @@ import {
   ClusterConnection,
   ClusterCreationParams,
   ClusterDeletionParams,
+  ClusterDisablePinInPerformanceParams,
   ClusterEnableIscsiUpdationParams,
+  ClusterEnablePinInPerformanceParams,
   ClusterHaUpdationParams,
   ClusterLicenseUpdationParams,
   ClusterNetworkSettingUpdationParams,
+  ClusterPinInPerformanceInfo,
   ClusterStorageInfo,
   ClusterUpdationParams,
   ClusterVirtualizationUpdationParams,
   ErrorBody,
+  GetClusterPinInPerformanceInfoRequestBody,
   GetClustersConnectionRequestBody,
   GetClustersRequestBody,
   GetClusterStorageInfoRequestBody,
   GetMetaLeaderRequestBody,
   MetaLeader,
   WithTaskCluster,
+  WithTaskClusterPinInPerformanceInfo,
   WithTaskClusterSettings,
   WithTaskDeleteCluster,
 } from "./data-contracts";
@@ -266,6 +271,81 @@ export class ClusterApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<ClusterStorageInfo[], ErrorBody>({
       path: `/get-cluster-storage-info`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
+   * @name UpdateClusterEnablePinInPerformance
+   * @request POST:/enable-cluster-pin-in-performance
+   * @secure
+   * @response `200` `(WithTaskClusterPinInPerformanceInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateClusterEnablePinInPerformance = (
+    data: ClusterEnablePinInPerformanceParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskClusterPinInPerformanceInfo[], ErrorBody>({
+      path: `/enable-cluster-pin-in-performance`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
+   * @name UpdateClusterDisablePinInPerformance
+   * @request POST:/disable-cluster-pin-in-performance
+   * @secure
+   * @response `200` `(WithTaskClusterPinInPerformanceInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateClusterDisablePinInPerformance = (
+    data: ClusterDisablePinInPerformanceParams,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<WithTaskClusterPinInPerformanceInfo[], ErrorBody>({
+      path: `/disable-cluster-pin-in-performance`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
+   * @name GetClusterPinInPerformanceInfo
+   * @request POST:/get-cluster-pin-in-performance-info
+   * @secure
+   * @response `200` `(ClusterPinInPerformanceInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getClusterPinInPerformanceInfo = (
+    data: GetClusterPinInPerformanceInfoRequestBody,
+    params: RequestParams = {}
+  ) =>
+    this.http.request<ClusterPinInPerformanceInfo[], ErrorBody>({
+      path: `/get-cluster-pin-in-performance-info`,
       method: "POST",
       body: data,
       secure: true,
