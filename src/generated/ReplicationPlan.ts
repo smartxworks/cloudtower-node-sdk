@@ -18,6 +18,31 @@ export class ReplicationPlanApi<SecurityDataType = unknown> {
    * No description
    *
    * @tags ReplicationPlan
+   * @name GetReplicationPlanWithoutExecutions
+   * @request POST:/get-replication-plans-without-executions
+   * @secure
+   * @response `200` `(ReplicationPlan)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getReplicationPlanWithoutExecutions = (
+    data: GetReplicationPlansRequestBody,
+    params: RequestParams = {},
+  ) =>
+    this.http.request<ReplicationPlan[], ErrorBody>({
+      path: `/get-replication-plans-without-executions`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags ReplicationPlan
    * @name GetReplicationPlans
    * @request POST:/get-replication-plans
    * @secure
@@ -28,7 +53,7 @@ export class ReplicationPlanApi<SecurityDataType = unknown> {
    */
   getReplicationPlans = (
     data: GetReplicationPlansRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicationPlan[], ErrorBody>({
       path: `/get-replication-plans`,
@@ -53,7 +78,7 @@ export class ReplicationPlanApi<SecurityDataType = unknown> {
    */
   getReplicationPlansConnection = (
     data: GetReplicationPlansConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicationPlanConnection, ErrorBody>({
       path: `/get-replication-plans-connection`,

@@ -28,7 +28,7 @@ export class BackupPlanExecutionApi<SecurityDataType = unknown> {
    */
   getBackupPlanExecutions = (
     data: GetBackupPlanExecutionsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupPlanExecution[], ErrorBody>({
       path: `/get-backup-plan-executions`,
@@ -53,7 +53,7 @@ export class BackupPlanExecutionApi<SecurityDataType = unknown> {
    */
   getBackupPlanExecutionsConnection = (
     data: GetBackupPlanExecutionsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupPlanExecutionConnection, ErrorBody>({
       path: `/get-backup-plan-executions-connection`,

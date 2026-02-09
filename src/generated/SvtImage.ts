@@ -29,6 +29,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
    */
   uploadSvtImage = (
     data: {
+      /** @format binary */
       file: File;
       cluster_id?: string;
       name?: string;
@@ -37,7 +38,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
       version?: string;
       upload_task_id?: string;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask[], ErrorBody>({
       path: `/upload-svt-image`,
@@ -84,7 +85,7 @@ export class SvtImageApi<SecurityDataType = unknown> {
    */
   getSvtImagesConnection = (
     data: GetSvtImagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SvtImageConnection, ErrorBody>({
       path: `/get-svt-images-connection`,

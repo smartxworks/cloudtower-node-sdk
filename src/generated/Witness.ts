@@ -50,7 +50,7 @@ export class WitnessApi<SecurityDataType = unknown> {
    */
   getWitnessesConnection = (
     data: GetWitnessesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WitnessConnection, ErrorBody>({
       path: `/get-witnesses-connection`,

@@ -33,7 +33,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    */
   createEntityFilter = (
     data: EntityFilterCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskEntityFilter[], ErrorBody>({
       path: `/create-entity-filter`,
@@ -58,7 +58,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    */
   updateEntityFilter = (
     data: EntityFilterUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskEntityFilter[], ErrorBody>({
       path: `/update-entity-filter`,
@@ -83,7 +83,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    */
   deleteEntityFilter = (
     data: EntityFilterDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteEntityFilter[], ErrorBody>({
       path: `/delete-entity-filter`,
@@ -108,7 +108,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    */
   getEntityFilters = (
     data: GetEntityFiltersRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EntityFilter[], ErrorBody>({
       path: `/get-entity-filters`,
@@ -133,7 +133,7 @@ export class EntityFilterApi<SecurityDataType = unknown> {
    */
   getEntityFiltersConnection = (
     data: GetEntityFiltersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EntityFilterConnection, ErrorBody>({
       path: `/get-entity-filters-connection`,

@@ -50,7 +50,7 @@ export class PmemDimmApi<SecurityDataType = unknown> {
    */
   getPmemDimmsConnection = (
     data: GetPmemDimmsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<PmemDimmConnection, ErrorBody>({
       path: `/get-pmem-dimms-connection`,

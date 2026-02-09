@@ -48,7 +48,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   connectCluster = (
     data: ClusterCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskCluster[], ErrorBody>({
       path: `/connect-cluster`,
@@ -95,7 +95,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterLicense = (
     data: ClusterLicenseUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskCluster[], ErrorBody>({
       path: `/update-cluster-license`,
@@ -120,7 +120,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterNetworkSetting = (
     data: ClusterNetworkSettingUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskCluster[], ErrorBody>({
       path: `/update-cluster-network-setting`,
@@ -145,7 +145,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterVirtualizationSetting = (
     data: ClusterVirtualizationUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskCluster[], ErrorBody>({
       path: `/update-cluster-virtualization-setting`,
@@ -170,7 +170,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterHaSetting = (
     data: ClusterHaUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterSettings[], ErrorBody>({
       path: `/update-cluster-ha-setting`,
@@ -195,7 +195,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterEnableIscsiSetting = (
     data: ClusterEnableIscsiUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterSettings[], ErrorBody>({
       path: `/update-cluster-enable-iscsi-setting`,
@@ -242,7 +242,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   getMetaLeader = (
     data: GetMetaLeaderRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<MetaLeader[], ErrorBody>({
       path: `/get-meta-leader`,
@@ -267,7 +267,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   getClusterStorageInfo = (
     data: GetClusterStorageInfoRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterStorageInfo[], ErrorBody>({
       path: `/get-cluster-storage-info`,
@@ -292,7 +292,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterEnablePinInPerformance = (
     data: ClusterEnablePinInPerformanceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterPinInPerformanceInfo[], ErrorBody>({
       path: `/enable-cluster-pin-in-performance`,
@@ -317,7 +317,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   updateClusterDisablePinInPerformance = (
     data: ClusterDisablePinInPerformanceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterPinInPerformanceInfo[], ErrorBody>({
       path: `/disable-cluster-pin-in-performance`,
@@ -342,7 +342,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   getClusterPinInPerformanceInfo = (
     data: GetClusterPinInPerformanceInfoRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterPinInPerformanceInfo[], ErrorBody>({
       path: `/get-cluster-pin-in-performance-info`,
@@ -389,7 +389,7 @@ export class ClusterApi<SecurityDataType = unknown> {
    */
   getClustersConnection = (
     data: GetClustersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterConnection, ErrorBody>({
       path: `/get-clusters-connection`,

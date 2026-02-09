@@ -35,7 +35,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudFloatingIp = (
     data: VirtualPrivateCloudFloatingIpCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudFloatingIp[], ErrorBody>({
       path: `/create-virtual-private-cloud-floating-ip`,
@@ -60,7 +60,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudFloatingIp = (
     data: VirtualPrivateCloudFloatingIpDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVirtualPrivateCloudFloatingIp[], ErrorBody>(
       {
@@ -71,7 +71,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
         type: ContentType.Json,
         format: "json",
         ...params,
-      }
+      },
     );
   /**
    * No description
@@ -87,7 +87,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    */
   batchCreateVirtualPrivateCloudFloatingIps = (
     data: BatchCreateVirtualPrivateCloudFloatingIpsParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskBatchCreateVirtualPrivateCloudFloatingIp[],
@@ -115,7 +115,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudFloatingIps = (
     data: GetVirtualPrivateCloudFloatingIpsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudFloatingIp[], ErrorBody>({
       path: `/get-virtual-private-cloud-floating-ips`,
@@ -140,7 +140,7 @@ export class VirtualPrivateCloudFloatingIpApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudFloatingIpsConnection = (
     data: GetVirtualPrivateCloudFloatingIpsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudFloatingIpConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-floating-ips-connection`,

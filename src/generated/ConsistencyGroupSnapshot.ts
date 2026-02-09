@@ -33,7 +33,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    */
   createConsistencyGroupSnapshot = (
     data: ConsistencyGroupSnapshotCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskConsistencyGroupSnapshot[], ErrorBody>({
       path: `/create-consistency-snapshot-group`,
@@ -58,7 +58,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    */
   updateConsistencyGroupSnapshot = (
     data: ConsistencyGroupSnapshotUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskConsistencyGroupSnapshot[], ErrorBody>({
       path: `/rollback-consistency-snapshot-group`,
@@ -83,7 +83,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    */
   deleteConsistencyGroupSnapshot = (
     data: ConsistencyGroupSnapshotDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteConsistencyGroupSnapshot[], ErrorBody>({
       path: `/delete-consistency-snapshot-group`,
@@ -108,7 +108,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    */
   getConsistencyGroupSnapshots = (
     data: GetConsistencyGroupSnapshotsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ConsistencyGroupSnapshot[], ErrorBody>({
       path: `/get-consistency-group-snapshots`,
@@ -133,7 +133,7 @@ export class ConsistencyGroupSnapshotApi<SecurityDataType = unknown> {
    */
   getConsistencyGroupSnapshotsConnection = (
     data: GetConsistencyGroupSnapshotsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ConsistencyGroupSnapshotConnection, ErrorBody>({
       path: `/get-consistency-group-snapshots-connection`,

@@ -33,7 +33,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    */
   createSecurityPolicy = (
     data: SecurityPolicyCreateParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSecurityPolicy, ErrorBody>({
       path: `/create-security-policy`,
@@ -58,7 +58,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    */
   deleteSecurityPolicy = (
     data: SecurityPolicyDeleteParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSecurityPolicy[], ErrorBody>({
       path: `/delete-security-policy`,
@@ -83,7 +83,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    */
   updateSecurityPolicy = (
     data: SecurityPolicyUpdateBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSecurityPolicy[], ErrorBody>({
       path: `/update-security-policy`,
@@ -108,7 +108,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    */
   getSecurityPolicies = (
     data: GetSecurityPoliciesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SecurityPolicy[], ErrorBody>({
       path: `/get-security-policies`,
@@ -133,7 +133,7 @@ export class SecurityPolicyApi<SecurityDataType = unknown> {
    */
   getSecurityPoliciesConnection = (
     data: GetSecurityPoliciesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SecurityPolicyConnection, ErrorBody>({
       path: `/get-security-policies-connection`,

@@ -28,7 +28,7 @@ export class ReplicaVmApi<SecurityDataType = unknown> {
    */
   getReplicaVms = (
     data: GetReplicaVmsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicaVm[], ErrorBody>({
       path: `/get-replica-vms`,
@@ -53,7 +53,7 @@ export class ReplicaVmApi<SecurityDataType = unknown> {
    */
   getReplicaVmsConnection = (
     data: GetReplicaVmsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicaVmConnection, ErrorBody>({
       path: `/get-replica-vms-connection`,

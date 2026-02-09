@@ -28,7 +28,7 @@ export class ReportTaskApi<SecurityDataType = unknown> {
    */
   getReportTasks = (
     data: GetReportTasksRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReportTask[], ErrorBody>({
       path: `/get-report-tasks`,
@@ -53,7 +53,7 @@ export class ReportTaskApi<SecurityDataType = unknown> {
    */
   getReportTasksConnection = (
     data: GetReportTasksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReportTaskConnection, ErrorBody>({
       path: `/get-report-tasks-connection`,

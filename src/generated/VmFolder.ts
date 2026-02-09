@@ -33,7 +33,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    */
   createVmFolder = (
     data: VmFolderCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmFolder[], ErrorBody>({
       path: `/create-vm-folder`,
@@ -124,7 +124,7 @@ export class VmFolderApi<SecurityDataType = unknown> {
    */
   getVmFoldersConnection = (
     data: GetVmFoldersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmFolderConnection, ErrorBody>({
       path: `/get-vm-folders-connection`,

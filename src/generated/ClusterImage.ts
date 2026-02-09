@@ -28,7 +28,7 @@ export class ClusterImageApi<SecurityDataType = unknown> {
    */
   getClusterImages = (
     data: GetClusterImagesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterImage[], ErrorBody>({
       path: `/get-cluster-images`,
@@ -53,7 +53,7 @@ export class ClusterImageApi<SecurityDataType = unknown> {
    */
   getClusterImagesConnection = (
     data: GetClusterImagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterImageConnection, ErrorBody>({
       path: `/get-cluster-images-connection`,

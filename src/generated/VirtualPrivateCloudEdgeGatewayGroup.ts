@@ -8,7 +8,7 @@ import {
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class VirtualPrivateCloudEdgeGatewayGroupApi<
-  SecurityDataType = unknown
+  SecurityDataType = unknown,
 > {
   http: HttpClient<SecurityDataType>;
 
@@ -30,7 +30,7 @@ export class VirtualPrivateCloudEdgeGatewayGroupApi<
    */
   getVirtualPrivateCloudEdgeGatewayGroups = (
     data: GetVirtualPrivateCloudEdgeGatewayGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudEdgeGatewayGroup[], ErrorBody>({
       path: `/get-virtual-private-cloud-edge-gateway-groups`,
@@ -55,7 +55,7 @@ export class VirtualPrivateCloudEdgeGatewayGroupApi<
    */
   getVirtualPrivateCloudEdgeGatewayGroupsConnection = (
     data: GetVirtualPrivateCloudEdgeGatewayGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudEdgeGatewayGroupConnection, ErrorBody>(
       {
@@ -66,6 +66,6 @@ export class VirtualPrivateCloudEdgeGatewayGroupApi<
         type: ContentType.Json,
         format: "json",
         ...params,
-      }
+      },
     );
 }

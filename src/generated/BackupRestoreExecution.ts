@@ -28,7 +28,7 @@ export class BackupRestoreExecutionApi<SecurityDataType = unknown> {
    */
   getBackupRestoreExecutions = (
     data: GetBackupRestoreExecutionsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupRestoreExecution[], ErrorBody>({
       path: `/get-backup-restore-executions`,
@@ -53,7 +53,7 @@ export class BackupRestoreExecutionApi<SecurityDataType = unknown> {
    */
   getBackupRestoreExecutionsConnection = (
     data: GetBackupRestoreExecutionsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupRestoreExecutionConnection, ErrorBody>({
       path: `/get-backup-restore-executions-connection`,

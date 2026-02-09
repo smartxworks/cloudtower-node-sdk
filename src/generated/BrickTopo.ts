@@ -34,7 +34,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    */
   createBrickTopo = (
     data: BrickTopoCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBrickTopo[], ErrorBody>({
       path: `/create-brick-topo`,
@@ -59,7 +59,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    */
   updateBrickTopo = (
     data: BrickTopoUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBrickTopo[], ErrorBody>({
       path: `/update-brick-topo`,
@@ -106,7 +106,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    */
   deleteBrickTopo = (
     data: BrickTopoDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteBrickTopo[], ErrorBody>({
       path: `/delete-brick-topo`,
@@ -131,7 +131,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    */
   getBrickTopoes = (
     data: GetBrickTopoesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BrickTopo[], ErrorBody>({
       path: `/get-brick-topoes`,
@@ -156,7 +156,7 @@ export class BrickTopoApi<SecurityDataType = unknown> {
    */
   getBrickTopoesConnection = (
     data: GetBrickTopoesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BrickTopoConnection, ErrorBody>({
       path: `/get-brick-topoes-connection`,

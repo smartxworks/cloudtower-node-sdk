@@ -28,7 +28,7 @@ export class ClusterUpgradeHistoryApi<SecurityDataType = unknown> {
    */
   getClusterUpgradeHistories = (
     data: GetClusterUpgradeHistoriesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterUpgradeHistory[], ErrorBody>({
       path: `/get-cluster-upgrade-histories`,
@@ -53,7 +53,7 @@ export class ClusterUpgradeHistoryApi<SecurityDataType = unknown> {
    */
   getClusterUpgradeHistoriesConnection = (
     data: GetClusterUpgradeHistoriesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterUpgradeHistoryConnection, ErrorBody>({
       path: `/get-cluster-upgrade-histories-connection`,

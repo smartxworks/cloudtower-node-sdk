@@ -74,7 +74,7 @@ export class LicenseApi<SecurityDataType = unknown> {
    */
   getLicensesConnection = (
     data: GetLicensesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<LicenseConnection, ErrorBody>({
       path: `/get-licenses-connection`,

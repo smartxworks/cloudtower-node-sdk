@@ -50,7 +50,7 @@ export class DeployApi<SecurityDataType = unknown> {
    */
   getDeploysConnection = (
     data: GetDeploysConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DeployConnection, ErrorBody>({
       path: `/get-deploys-connection`,

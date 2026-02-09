@@ -33,7 +33,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    */
   createSnmpTrapReceiver = (
     data: SnmpTrapReceiverCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
       path: `/create-snmp-trap-receiver`,
@@ -58,7 +58,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    */
   updateSnmpTrapReceiver = (
     data: SnmpTrapReceiverUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnmpTrapReceiver[], ErrorBody>({
       path: `/update-snmp-trap-receiver`,
@@ -83,7 +83,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    */
   deleteSnmpTrapReceiver = (
     data: SnmpTrapReceiverDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSnmpTrapReceiver[], ErrorBody>({
       path: `/delete-snmp-trap-receiver`,
@@ -108,7 +108,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    */
   getSnmpTrapReceivers = (
     data: GetSnmpTrapReceiversRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnmpTrapReceiver[], ErrorBody>({
       path: `/get-snmp-trap-receivers`,
@@ -133,7 +133,7 @@ export class SnmpTrapReceiverApi<SecurityDataType = unknown> {
    */
   getSnmpTrapReceiversConnection = (
     data: GetSnmpTrapReceiversConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnmpTrapReceiverConnection, ErrorBody>({
       path: `/get-snmp-trap-receivers-connection`,

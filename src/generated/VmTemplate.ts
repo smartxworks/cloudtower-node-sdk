@@ -33,7 +33,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   cloneVmTemplateFromVm = (
     data: VmTemplateCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmTemplate[], ErrorBody>({
       path: `/clone-vm-template-from-vm`,
@@ -58,7 +58,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   convertVmTemplateFromVm = (
     data: VmTemplateCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmTemplate[], ErrorBody>({
       path: `/convert-vm-template-from-vm`,
@@ -83,7 +83,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   updateVmTemplate = (
     data: VmTemplateUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmTemplate[], ErrorBody>({
       path: `/update-vm-template`,
@@ -108,7 +108,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   deleteVmTemplate = (
     data: VmTemplateDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVmTemplate[], ErrorBody>({
       path: `/delete-vm-template`,
@@ -133,7 +133,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   getVmTemplates = (
     data: GetVmTemplatesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmTemplate[], ErrorBody>({
       path: `/get-vm-templates`,
@@ -158,7 +158,7 @@ export class VmTemplateApi<SecurityDataType = unknown> {
    */
   getVmTemplatesConnection = (
     data: GetVmTemplatesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmTemplateConnection, ErrorBody>({
       path: `/get-vm-templates-connection`,

@@ -5,7 +5,7 @@ typescript 编写的 Cloudtower SDK。
 ## 安装
 
 ```
-yarn install cloudtower-node-sdk
+npm install cloudtower-node-sdk
 ```
 
 ## 使用

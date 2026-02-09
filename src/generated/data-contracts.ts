@@ -7,7 +7,6 @@ export interface ErrorBody {
   props?: any;
   stack?: string;
   message: string;
-
   /** @format int32 */
   status: number;
   operationName?: string;
@@ -33,7 +32,6 @@ export interface NestedThresholds {
   /** @format int32 */
   quantile?: number | null;
   severity?: SeverityEnum | null;
-
   /** @format double */
   value?: number | null;
 }
@@ -269,43 +267,31 @@ export interface ClusterWhereInput {
   OR?: ClusterWhereInput[] | null;
   access_write_compress_enabled?: boolean | null;
   access_write_compress_enabled_not?: boolean | null;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_gte?: number | null;
   allocated_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   allocated_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_not?: number | null;
   allocated_prioritized_space_not_in?: number[] | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_gt?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_gte?: number | null;
   allocated_prioritized_space_usage_in?: number[] | null;
-
   /** @format double */
   allocated_prioritized_space_usage_lt?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_lte?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_not?: number | null;
   allocated_prioritized_space_usage_not_in?: number[] | null;
@@ -332,23 +318,17 @@ export interface ClusterWhereInput {
   architecture_not_in?: Architecture[] | null;
   auto_converge?: boolean | null;
   auto_converge_not?: boolean | null;
-
   /** @format int64 */
   commited_memory_bytes?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_gte?: number | null;
   commited_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   commited_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_not?: number | null;
   commited_memory_bytes_not_in?: number[] | null;
@@ -373,49 +353,65 @@ export interface ClusterWhereInput {
   current_cpu_model_not_in?: string[] | null;
   current_cpu_model_not_starts_with?: string | null;
   current_cpu_model_starts_with?: string | null;
-
   /** @format double */
   data_reduction_ratio?: number | null;
-
   /** @format double */
   data_reduction_ratio_gt?: number | null;
-
   /** @format double */
   data_reduction_ratio_gte?: number | null;
   data_reduction_ratio_in?: number[] | null;
-
   /** @format double */
   data_reduction_ratio_lt?: number | null;
-
   /** @format double */
   data_reduction_ratio_lte?: number | null;
-
   /** @format double */
   data_reduction_ratio_not?: number | null;
   data_reduction_ratio_not_in?: number[] | null;
-
   /** @format double */
   data_reduction_saving?: number | null;
-
   /** @format double */
   data_reduction_saving_gt?: number | null;
-
   /** @format double */
   data_reduction_saving_gte?: number | null;
   data_reduction_saving_in?: number[] | null;
-
   /** @format double */
   data_reduction_saving_lt?: number | null;
-
   /** @format double */
   data_reduction_saving_lte?: number | null;
-
   /** @format double */
   data_reduction_saving_not?: number | null;
   data_reduction_saving_not_in?: number[] | null;
   datacenters_every?: DatacenterWhereInput | null;
   datacenters_none?: DatacenterWhereInput | null;
   datacenters_some?: DatacenterWhereInput | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gte?: number | null;
+  dirty_cache_space_in?: number[] | null;
+  /** @format int64 */
+  dirty_cache_space_lt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_lte?: number | null;
+  /** @format int64 */
+  dirty_cache_space_not?: number | null;
+  dirty_cache_space_not_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
+  /** @format double */
+  dirty_cache_usage_gt?: number | null;
+  /** @format double */
+  dirty_cache_usage_gte?: number | null;
+  dirty_cache_usage_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage_lt?: number | null;
+  /** @format double */
+  dirty_cache_usage_lte?: number | null;
+  /** @format double */
+  dirty_cache_usage_not?: number | null;
+  dirty_cache_usage_not_in?: number[] | null;
   disconnected_date?: string | null;
   disconnected_date_gt?: string | null;
   disconnected_date_gte?: string | null;
@@ -428,23 +424,17 @@ export interface ClusterWhereInput {
   disconnected_reason_in?: ClusterConnectorErrorCode[] | null;
   disconnected_reason_not?: ClusterConnectorErrorCode | null;
   disconnected_reason_not_in?: ClusterConnectorErrorCode[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gte?: number | null;
   downgraded_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_not?: number | null;
   downgraded_prioritized_space_not_in?: number[] | null;
@@ -456,45 +446,47 @@ export interface ClusterWhereInput {
   entityAsyncStatus_not?: EntityAsyncStatus | null;
   entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   everoute_cluster?: EverouteClusterWhereInput | null;
-
+  /** @format int64 */
+  failure_cache_space?: number | null;
+  /** @format int64 */
+  failure_cache_space_gt?: number | null;
+  /** @format int64 */
+  failure_cache_space_gte?: number | null;
+  failure_cache_space_in?: number[] | null;
+  /** @format int64 */
+  failure_cache_space_lt?: number | null;
+  /** @format int64 */
+  failure_cache_space_lte?: number | null;
+  /** @format int64 */
+  failure_cache_space_not?: number | null;
+  failure_cache_space_not_in?: number[] | null;
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int64 */
   failure_data_space_gt?: number | null;
-
   /** @format int64 */
   failure_data_space_gte?: number | null;
   failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space_lt?: number | null;
-
   /** @format int64 */
   failure_data_space_lte?: number | null;
-
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
   has_metrox?: boolean | null;
   has_metrox_not?: boolean | null;
-
   /** @format int32 */
   host_num?: number | null;
-
   /** @format int32 */
   host_num_gt?: number | null;
-
   /** @format int32 */
   host_num_gte?: number | null;
   host_num_in?: number[] | null;
-
   /** @format int32 */
   host_num_lt?: number | null;
-
   /** @format int32 */
   host_num_lte?: number | null;
-
   /** @format int32 */
   host_num_not?: number | null;
   host_num_not_in?: number[] | null;
@@ -600,23 +592,17 @@ export interface ClusterWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   logical_used_data_space?: number | null;
-
   /** @format int64 */
   logical_used_data_space_gt?: number | null;
-
   /** @format int64 */
   logical_used_data_space_gte?: number | null;
   logical_used_data_space_in?: number[] | null;
-
   /** @format int64 */
   logical_used_data_space_lt?: number | null;
-
   /** @format int64 */
   logical_used_data_space_lte?: number | null;
-
   /** @format int64 */
   logical_used_data_space_not?: number | null;
   logical_used_data_space_not_in?: number[] | null;
@@ -650,63 +636,45 @@ export interface ClusterWhereInput {
   management_vip_not_in?: string[] | null;
   management_vip_not_starts_with?: string | null;
   management_vip_starts_with?: string | null;
-
   /** @format int32 */
   max_chunk_num?: number | null;
-
   /** @format int32 */
   max_chunk_num_gt?: number | null;
-
   /** @format int32 */
   max_chunk_num_gte?: number | null;
   max_chunk_num_in?: number[] | null;
-
   /** @format int32 */
   max_chunk_num_lt?: number | null;
-
   /** @format int32 */
   max_chunk_num_lte?: number | null;
-
   /** @format int32 */
   max_chunk_num_not?: number | null;
   max_chunk_num_not_in?: number[] | null;
-
   /** @format int64 */
   max_physical_data_capacity?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_gt?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_gte?: number | null;
   max_physical_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   max_physical_data_capacity_lt?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_lte?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_not?: number | null;
   max_physical_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node_gt?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node_gte?: number | null;
   max_physical_data_capacity_per_node_in?: number[] | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node_lt?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node_lte?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node_not?: number | null;
   max_physical_data_capacity_per_node_not_in?: number[] | null;
@@ -738,43 +706,31 @@ export interface ClusterWhereInput {
   mgt_netmask_not_in?: string[] | null;
   mgt_netmask_not_starts_with?: string | null;
   mgt_netmask_starts_with?: string | null;
-
   /** @format int64 */
   migration_data_size?: number | null;
-
   /** @format int64 */
   migration_data_size_gt?: number | null;
-
   /** @format int64 */
   migration_data_size_gte?: number | null;
   migration_data_size_in?: number[] | null;
-
   /** @format int64 */
   migration_data_size_lt?: number | null;
-
   /** @format int64 */
   migration_data_size_lte?: number | null;
-
   /** @format int64 */
   migration_data_size_not?: number | null;
   migration_data_size_not_in?: number[] | null;
-
   /** @format int64 */
   migration_speed?: number | null;
-
   /** @format int64 */
   migration_speed_gt?: number | null;
-
   /** @format int64 */
   migration_speed_gte?: number | null;
   migration_speed_in?: number[] | null;
-
   /** @format int64 */
   migration_speed_lt?: number | null;
-
   /** @format int64 */
   migration_speed_lte?: number | null;
-
   /** @format int64 */
   migration_speed_not?: number | null;
   migration_speed_not_in?: number[] | null;
@@ -804,349 +760,247 @@ export interface ClusterWhereInput {
   nvme_over_tcp_enabled_not?: boolean | null;
   nvmf_enabled?: boolean | null;
   nvmf_enabled_not?: boolean | null;
-
   /** @format double */
   overall_efficiency?: number | null;
-
   /** @format double */
   overall_efficiency_gt?: number | null;
-
   /** @format double */
   overall_efficiency_gte?: number | null;
   overall_efficiency_in?: number[] | null;
-
   /** @format double */
   overall_efficiency_lt?: number | null;
-
   /** @format double */
   overall_efficiency_lte?: number | null;
-
   /** @format double */
   overall_efficiency_not?: number | null;
   overall_efficiency_not_in?: number[] | null;
-
   /** @format int64 */
   perf_allocated_data_space?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gte?: number | null;
   perf_allocated_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_allocated_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_not?: number | null;
   perf_allocated_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gte?: number | null;
   perf_failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_not?: number | null;
   perf_failure_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gte?: number | null;
   perf_total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_not?: number | null;
   perf_total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gte?: number | null;
   perf_used_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_used_data_space_not?: number | null;
   perf_used_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gte?: number | null;
   perf_valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_not?: number | null;
   perf_valid_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gte?: number | null;
   planned_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_not?: number | null;
   planned_prioritized_space_not_in?: number[] | null;
   pmem_enabled?: boolean | null;
   pmem_enabled_not?: boolean | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format double */
   prio_space_percentage_gt?: number | null;
-
   /** @format double */
   prio_space_percentage_gte?: number | null;
   prio_space_percentage_in?: number[] | null;
-
   /** @format double */
   prio_space_percentage_lt?: number | null;
-
   /** @format double */
   prio_space_percentage_lte?: number | null;
-
   /** @format double */
   prio_space_percentage_not?: number | null;
   prio_space_percentage_not_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_gt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_gte?: number | null;
   provisioned_cpu_cores_for_active_vm_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_lt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_lte?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_not?: number | null;
   provisioned_cpu_cores_for_active_vm_not_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gte?: number | null;
   provisioned_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_not?: number | null;
   provisioned_cpu_cores_not_in?: number[] | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio?: number | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio_gt?: number | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio_gte?: number | null;
   provisioned_for_active_vm_ratio_in?: number[] | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio_lt?: number | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio_lte?: number | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio_not?: number | null;
   provisioned_for_active_vm_ratio_not_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gte?: number | null;
   provisioned_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_not?: number | null;
   provisioned_memory_bytes_not_in?: number[] | null;
-
   /** @format double */
   provisioned_ratio?: number | null;
-
   /** @format double */
   provisioned_ratio_gt?: number | null;
-
   /** @format double */
   provisioned_ratio_gte?: number | null;
   provisioned_ratio_in?: number[] | null;
-
   /** @format double */
   provisioned_ratio_lt?: number | null;
-
   /** @format double */
   provisioned_ratio_lte?: number | null;
-
   /** @format double */
   provisioned_ratio_not?: number | null;
   provisioned_ratio_not_in?: number[] | null;
   rdma_enabled?: boolean | null;
   rdma_enabled_not?: boolean | null;
-
   /** @format int64 */
   recover_data_size?: number | null;
-
   /** @format int64 */
   recover_data_size_gt?: number | null;
-
   /** @format int64 */
   recover_data_size_gte?: number | null;
   recover_data_size_in?: number[] | null;
-
   /** @format int64 */
   recover_data_size_lt?: number | null;
-
   /** @format int64 */
   recover_data_size_lte?: number | null;
-
   /** @format int64 */
   recover_data_size_not?: number | null;
   recover_data_size_not_in?: number[] | null;
-
   /** @format int64 */
   recover_speed?: number | null;
-
   /** @format int64 */
   recover_speed_gt?: number | null;
-
   /** @format int64 */
   recover_speed_gte?: number | null;
   recover_speed_in?: number[] | null;
-
   /** @format int64 */
   recover_speed_lt?: number | null;
-
   /** @format int64 */
   recover_speed_lte?: number | null;
-
   /** @format int64 */
   recover_speed_not?: number | null;
   recover_speed_not_in?: number[] | null;
   replica_capacity_only?: boolean | null;
   replica_capacity_only_not?: boolean | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service?: number | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service_gt?: number | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service_gte?: number | null;
   reserved_cpu_cores_for_system_service_in?: number[] | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service_lt?: number | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service_lte?: number | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service_not?: number | null;
   reserved_cpu_cores_for_system_service_not_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num?: number | null;
-
   /** @format int32 */
   running_vm_num_gt?: number | null;
-
   /** @format int32 */
   running_vm_num_gte?: number | null;
   running_vm_num_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num_lt?: number | null;
-
   /** @format int32 */
   running_vm_num_lte?: number | null;
-
   /** @format int32 */
   running_vm_num_not?: number | null;
   running_vm_num_not_in?: number[] | null;
@@ -1155,205 +1009,145 @@ export interface ClusterWhereInput {
   software_edition_in?: SoftwareEdition[] | null;
   software_edition_not?: SoftwareEdition | null;
   software_edition_not_in?: SoftwareEdition[] | null;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gte?: number | null;
   stopped_vm_num_in?: number[] | null;
-
   /** @format int32 */
   stopped_vm_num_lt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_lte?: number | null;
-
   /** @format int32 */
   stopped_vm_num_not?: number | null;
   stopped_vm_num_not_in?: number[] | null;
   stretch?: boolean | null;
   stretch_not?: boolean | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gte?: number | null;
   suspended_vm_num_in?: number[] | null;
-
   /** @format int32 */
   suspended_vm_num_lt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_lte?: number | null;
-
   /** @format int32 */
   suspended_vm_num_not?: number | null;
   suspended_vm_num_not_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gte?: number | null;
   total_cache_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity_lt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_lte?: number | null;
-
   /** @format int64 */
   total_cache_capacity_not?: number | null;
   total_cache_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gte?: number | null;
   total_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   total_cpu_cores_not?: number | null;
   total_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gte?: number | null;
   total_cpu_hz_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz_lt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_lte?: number | null;
-
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_sockets?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_gt?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_gte?: number | null;
   total_cpu_sockets_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_sockets_lt?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_lte?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_not?: number | null;
   total_cpu_sockets_not_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   total_data_capacity_gte?: number | null;
   total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gte?: number | null;
   total_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   total_prio_volume_size?: number | null;
-
   /** @format int64 */
   total_prio_volume_size_gt?: number | null;
-
   /** @format int64 */
   total_prio_volume_size_gte?: number | null;
   total_prio_volume_size_in?: number[] | null;
-
   /** @format int64 */
   total_prio_volume_size_lt?: number | null;
-
   /** @format int64 */
   total_prio_volume_size_lte?: number | null;
-
   /** @format int64 */
   total_prio_volume_size_not?: number | null;
   total_prio_volume_size_not_in?: number[] | null;
-
   /** @format double */
   total_prio_volume_size_usage?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage_gt?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage_gte?: number | null;
   total_prio_volume_size_usage_in?: number[] | null;
-
   /** @format double */
   total_prio_volume_size_usage_lt?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage_lte?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage_not?: number | null;
   total_prio_volume_size_usage_not_in?: number[] | null;
@@ -1377,123 +1171,87 @@ export interface ClusterWhereInput {
   upgrade_tool_version_not_in?: string[] | null;
   upgrade_tool_version_not_starts_with?: string | null;
   upgrade_tool_version_starts_with?: string | null;
-
   /** @format int64 */
   used_cache_space?: number | null;
-
   /** @format int64 */
   used_cache_space_gt?: number | null;
-
   /** @format int64 */
   used_cache_space_gte?: number | null;
   used_cache_space_in?: number[] | null;
-
   /** @format int64 */
   used_cache_space_lt?: number | null;
-
   /** @format int64 */
   used_cache_space_lte?: number | null;
-
   /** @format int64 */
   used_cache_space_not?: number | null;
   used_cache_space_not_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format double */
   used_cpu_hz_gt?: number | null;
-
   /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz_lt?: number | null;
-
   /** @format double */
   used_cpu_hz_lte?: number | null;
-
   /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format double */
   used_memory_bytes_gt?: number | null;
-
   /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes_lt?: number | null;
-
   /** @format double */
   used_memory_bytes_lte?: number | null;
-
   /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space?: number | null;
-
   /** @format int64 */
   valid_cache_space_gt?: number | null;
-
   /** @format int64 */
   valid_cache_space_gte?: number | null;
   valid_cache_space_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space_lt?: number | null;
-
   /** @format int64 */
   valid_cache_space_lte?: number | null;
-
   /** @format int64 */
   valid_cache_space_not?: number | null;
   valid_cache_space_not_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
-
   /** @format int64 */
   valid_data_space_gt?: number | null;
-
   /** @format int64 */
   valid_data_space_gte?: number | null;
   valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space_lt?: number | null;
-
   /** @format int64 */
   valid_data_space_lte?: number | null;
-
   /** @format int64 */
   valid_data_space_not?: number | null;
   valid_data_space_not_in?: number[] | null;
@@ -1520,23 +1278,17 @@ export interface ClusterWhereInput {
   vm_folders_every?: VmFolderWhereInput | null;
   vm_folders_none?: VmFolderWhereInput | null;
   vm_folders_some?: VmFolderWhereInput | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
@@ -1613,23 +1365,17 @@ export interface ApplicationWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   memory?: number | null;
-
   /** @format int64 */
   memory_gt?: number | null;
-
   /** @format int64 */
   memory_gte?: number | null;
   memory_in?: number[] | null;
-
   /** @format int64 */
   memory_lt?: number | null;
-
   /** @format int64 */
   memory_lte?: number | null;
-
   /** @format int64 */
   memory_not?: number | null;
   memory_not_in?: number[] | null;
@@ -1663,23 +1409,17 @@ export interface ApplicationWhereInput {
   update_time_lte?: string | null;
   update_time_not?: string | null;
   update_time_not_in?: string[] | null;
-
   /** @format int32 */
   vcpu?: number | null;
-
   /** @format int32 */
   vcpu_gt?: number | null;
-
   /** @format int32 */
   vcpu_gte?: number | null;
   vcpu_in?: number[] | null;
-
   /** @format int32 */
   vcpu_lt?: number | null;
-
   /** @format int32 */
   vcpu_lte?: number | null;
-
   /** @format int32 */
   vcpu_not?: number | null;
   vcpu_not_in?: number[] | null;
@@ -1698,23 +1438,17 @@ export interface ApplicationWhereInput {
   version_not_starts_with?: string | null;
   version_starts_with?: string | null;
   vm?: VmWhereInput | null;
-
   /** @format int64 */
   volume_size?: number | null;
-
   /** @format int64 */
   volume_size_gt?: number | null;
-
   /** @format int64 */
   volume_size_gte?: number | null;
   volume_size_in?: number[] | null;
-
   /** @format int64 */
   volume_size_lt?: number | null;
-
   /** @format int64 */
   volume_size_lte?: number | null;
-
   /** @format int64 */
   volume_size_not?: number | null;
   volume_size_not_in?: number[] | null;
@@ -1740,6 +1474,8 @@ export interface VmWhereInput {
   AND?: VmWhereInput[] | null;
   NOT?: VmWhereInput[] | null;
   OR?: VmWhereInput[] | null;
+  anti_malware_enabled?: boolean | null;
+  anti_malware_enabled_not?: boolean | null;
   backup_plans_every?: BackupPlanWhereInput | null;
   backup_plans_none?: BackupPlanWhereInput | null;
   backup_plans_some?: BackupPlanWhereInput | null;
@@ -1778,23 +1514,17 @@ export interface VmWhereInput {
   cpu_model_not_in?: string[] | null;
   cpu_model_not_starts_with?: string | null;
   cpu_model_starts_with?: string | null;
-
   /** @format double */
   cpu_usage?: number | null;
-
   /** @format double */
   cpu_usage_gt?: number | null;
-
   /** @format double */
   cpu_usage_gte?: number | null;
   cpu_usage_in?: number[] | null;
-
   /** @format double */
   cpu_usage_lt?: number | null;
-
   /** @format double */
   cpu_usage_lte?: number | null;
-
   /** @format double */
   cpu_usage_not?: number | null;
   cpu_usage_not_in?: number[] | null;
@@ -1834,6 +1564,8 @@ export interface VmWhereInput {
   dns_servers_not_in?: string[] | null;
   dns_servers_not_starts_with?: string | null;
   dns_servers_starts_with?: string | null;
+  dpi_enabled?: boolean | null;
+  dpi_enabled_not?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
@@ -1867,43 +1599,31 @@ export interface VmWhereInput {
   guest_os_type_in?: VmGuestsOperationSystem[] | null;
   guest_os_type_not?: VmGuestsOperationSystem | null;
   guest_os_type_not_in?: VmGuestsOperationSystem[] | null;
-
   /** @format double */
   guest_size_usage?: number | null;
-
   /** @format double */
   guest_size_usage_gt?: number | null;
-
   /** @format double */
   guest_size_usage_gte?: number | null;
   guest_size_usage_in?: number[] | null;
-
   /** @format double */
   guest_size_usage_lt?: number | null;
-
   /** @format double */
   guest_size_usage_lte?: number | null;
-
   /** @format double */
   guest_size_usage_not?: number | null;
   guest_size_usage_not_in?: number[] | null;
-
   /** @format int64 */
   guest_used_size?: number | null;
-
   /** @format int64 */
   guest_used_size_gt?: number | null;
-
   /** @format int64 */
   guest_used_size_gte?: number | null;
   guest_used_size_in?: number[] | null;
-
   /** @format int64 */
   guest_used_size_lt?: number | null;
-
   /** @format int64 */
   guest_used_size_lte?: number | null;
-
   /** @format int64 */
   guest_used_size_not?: number | null;
   guest_used_size_not_in?: number[] | null;
@@ -1946,6 +1666,34 @@ export interface VmWhereInput {
   in_recycle_bin_not?: boolean | null;
   internal?: boolean | null;
   internal_not?: boolean | null;
+  internal_product?: string | null;
+  internal_product_contains?: string | null;
+  internal_product_ends_with?: string | null;
+  internal_product_gt?: string | null;
+  internal_product_gte?: string | null;
+  internal_product_in?: string[] | null;
+  internal_product_lt?: string | null;
+  internal_product_lte?: string | null;
+  internal_product_name?: string | null;
+  internal_product_name_contains?: string | null;
+  internal_product_name_ends_with?: string | null;
+  internal_product_name_gt?: string | null;
+  internal_product_name_gte?: string | null;
+  internal_product_name_in?: string[] | null;
+  internal_product_name_lt?: string | null;
+  internal_product_name_lte?: string | null;
+  internal_product_name_not?: string | null;
+  internal_product_name_not_contains?: string | null;
+  internal_product_name_not_ends_with?: string | null;
+  internal_product_name_not_in?: string[] | null;
+  internal_product_name_not_starts_with?: string | null;
+  internal_product_name_starts_with?: string | null;
+  internal_product_not?: string | null;
+  internal_product_not_contains?: string | null;
+  internal_product_not_ends_with?: string | null;
+  internal_product_not_in?: string[] | null;
+  internal_product_not_starts_with?: string | null;
+  internal_product_starts_with?: string | null;
   io_policy?: VmDiskIoPolicy | null;
   io_policy_in?: VmDiskIoPolicy[] | null;
   io_policy_not?: VmDiskIoPolicy | null;
@@ -2012,43 +1760,31 @@ export interface VmWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   logical_size_bytes?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gte?: number | null;
   logical_size_bytes_in?: number[] | null;
-
   /** @format int64 */
   logical_size_bytes_lt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_lte?: number | null;
-
   /** @format int64 */
   logical_size_bytes_not?: number | null;
   logical_size_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   max_bandwidth_gt?: number | null;
-
   /** @format int64 */
   max_bandwidth_gte?: number | null;
   max_bandwidth_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth_lt?: number | null;
-
   /** @format int64 */
   max_bandwidth_lte?: number | null;
-
   /** @format int64 */
   max_bandwidth_not?: number | null;
   max_bandwidth_not_in?: number[] | null;
@@ -2056,23 +1792,17 @@ export interface VmWhereInput {
   max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
   max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
   max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int32 */
   max_iops?: number | null;
-
   /** @format int32 */
   max_iops_gt?: number | null;
-
   /** @format int32 */
   max_iops_gte?: number | null;
   max_iops_in?: number[] | null;
-
   /** @format int32 */
   max_iops_lt?: number | null;
-
   /** @format int32 */
   max_iops_lte?: number | null;
-
   /** @format int32 */
   max_iops_not?: number | null;
   max_iops_not_in?: number[] | null;
@@ -2080,43 +1810,31 @@ export interface VmWhereInput {
   max_iops_policy_in?: VmDiskIoRestrictType[] | null;
   max_iops_policy_not?: VmDiskIoRestrictType | null;
   max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int64 */
   memory?: number | null;
-
   /** @format int64 */
   memory_gt?: number | null;
-
   /** @format int64 */
   memory_gte?: number | null;
   memory_in?: number[] | null;
-
   /** @format int64 */
   memory_lt?: number | null;
-
   /** @format int64 */
   memory_lte?: number | null;
-
   /** @format int64 */
   memory_not?: number | null;
   memory_not_in?: number[] | null;
-
   /** @format double */
   memory_usage?: number | null;
-
   /** @format double */
   memory_usage_gt?: number | null;
-
   /** @format double */
   memory_usage_gte?: number | null;
   memory_usage_in?: number[] | null;
-
   /** @format double */
   memory_usage_lt?: number | null;
-
   /** @format double */
   memory_usage_lte?: number | null;
-
   /** @format double */
   memory_usage_not?: number | null;
   memory_usage_not_in?: number[] | null;
@@ -2183,43 +1901,31 @@ export interface VmWhereInput {
   pci_nics_some?: NicWhereInput | null;
   protected?: boolean | null;
   protected_not?: boolean | null;
-
   /** @format int64 */
   provisioned_size?: number | null;
-
   /** @format int64 */
   provisioned_size_gt?: number | null;
-
   /** @format int64 */
   provisioned_size_gte?: number | null;
   provisioned_size_in?: number[] | null;
-
   /** @format int64 */
   provisioned_size_lt?: number | null;
-
   /** @format int64 */
   provisioned_size_lte?: number | null;
-
   /** @format int64 */
   provisioned_size_not?: number | null;
   provisioned_size_not_in?: number[] | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -2231,106 +1937,76 @@ export interface VmWhereInput {
   status_in?: VmStatus[] | null;
   status_not?: VmStatus | null;
   status_not_in?: VmStatus[] | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format double */
   unique_logical_size_gt?: number | null;
-
   /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
-
   /** @format double */
   unique_logical_size_lt?: number | null;
-
   /** @format double */
   unique_logical_size_lte?: number | null;
-
   /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
   usb_devices_every?: UsbDeviceWhereInput | null;
   usb_devices_none?: UsbDeviceWhereInput | null;
   usb_devices_some?: UsbDeviceWhereInput | null;
-
   /** @format int64 */
   used_size?: number | null;
-
   /** @format int64 */
   used_size_gt?: number | null;
-
   /** @format int64 */
   used_size_gte?: number | null;
   used_size_in?: number[] | null;
-
   /** @format int64 */
   used_size_lt?: number | null;
-
   /** @format int64 */
   used_size_lte?: number | null;
-
   /** @format int64 */
   used_size_not?: number | null;
   used_size_not_in?: number[] | null;
-
   /** @format double */
   used_size_usage?: number | null;
-
   /** @format double */
   used_size_usage_gt?: number | null;
-
   /** @format double */
   used_size_usage_gte?: number | null;
   used_size_usage_in?: number[] | null;
-
   /** @format double */
   used_size_usage_lt?: number | null;
-
   /** @format double */
   used_size_usage_lte?: number | null;
-
   /** @format double */
   used_size_usage_not?: number | null;
   used_size_usage_not_in?: number[] | null;
-
   /** @format int32 */
   vcpu?: number | null;
-
   /** @format int32 */
   vcpu_gt?: number | null;
-
   /** @format int32 */
   vcpu_gte?: number | null;
   vcpu_in?: number[] | null;
-
   /** @format int32 */
   vcpu_lt?: number | null;
-
   /** @format int32 */
   vcpu_lte?: number | null;
-
   /** @format int32 */
   vcpu_not?: number | null;
   vcpu_not_in?: number[] | null;
@@ -2384,23 +2060,17 @@ export interface BackupPlanWhereInput {
   backup_plan_executions_every?: BackupPlanExecutionWhereInput | null;
   backup_plan_executions_none?: BackupPlanExecutionWhereInput | null;
   backup_plan_executions_some?: BackupPlanExecutionWhereInput | null;
-
   /** @format int32 */
   backup_restore_point_count?: number | null;
-
   /** @format int32 */
   backup_restore_point_count_gt?: number | null;
-
   /** @format int32 */
   backup_restore_point_count_gte?: number | null;
   backup_restore_point_count_in?: number[] | null;
-
   /** @format int32 */
   backup_restore_point_count_lt?: number | null;
-
   /** @format int32 */
   backup_restore_point_count_lte?: number | null;
-
   /** @format int32 */
   backup_restore_point_count_not?: number | null;
   backup_restore_point_count_not_in?: number[] | null;
@@ -2409,45 +2079,33 @@ export interface BackupPlanWhereInput {
   backup_restore_points_some?: BackupRestorePointWhereInput | null;
   backup_service?: BackupServiceWhereInput | null;
   backup_store_repository?: BackupStoreRepositoryWhereInput | null;
-
   /** @format int64 */
   backup_total_size?: number | null;
-
   /** @format int64 */
   backup_total_size_gt?: number | null;
-
   /** @format int64 */
   backup_total_size_gte?: number | null;
   backup_total_size_in?: number[] | null;
-
   /** @format int64 */
   backup_total_size_lt?: number | null;
-
   /** @format int64 */
   backup_total_size_lte?: number | null;
-
   /** @format int64 */
   backup_total_size_not?: number | null;
   backup_total_size_not_in?: number[] | null;
   compression?: boolean | null;
   compression_not?: boolean | null;
-
   /** @format double */
   compression_ratio?: number | null;
-
   /** @format double */
   compression_ratio_gt?: number | null;
-
   /** @format double */
   compression_ratio_gte?: number | null;
   compression_ratio_in?: number[] | null;
-
   /** @format double */
   compression_ratio_lt?: number | null;
-
   /** @format double */
   compression_ratio_lte?: number | null;
-
   /** @format double */
   compression_ratio_not?: number | null;
   compression_ratio_not_in?: number[] | null;
@@ -2483,23 +2141,17 @@ export interface BackupPlanWhereInput {
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
   entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-
   /** @format int32 */
   full_interval?: number | null;
-
   /** @format int32 */
   full_interval_gt?: number | null;
-
   /** @format int32 */
   full_interval_gte?: number | null;
   full_interval_in?: number[] | null;
-
   /** @format int32 */
   full_interval_lt?: number | null;
-
   /** @format int32 */
   full_interval_lte?: number | null;
-
   /** @format int32 */
   full_interval_not?: number | null;
   full_interval_not_in?: number[] | null;
@@ -2521,23 +2173,17 @@ export interface BackupPlanWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int32 */
   incremental_interval?: number | null;
-
   /** @format int32 */
   incremental_interval_gt?: number | null;
-
   /** @format int32 */
   incremental_interval_gte?: number | null;
   incremental_interval_in?: number[] | null;
-
   /** @format int32 */
   incremental_interval_lt?: number | null;
-
   /** @format int32 */
   incremental_interval_lte?: number | null;
-
   /** @format int32 */
   incremental_interval_not?: number | null;
   incremental_interval_not_in?: number[] | null;
@@ -2549,23 +2195,17 @@ export interface BackupPlanWhereInput {
   keep_policy_in?: BackupPlanKeepPolicy[] | null;
   keep_policy_not?: BackupPlanKeepPolicy | null;
   keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
-
   /** @format int32 */
   keep_policy_value?: number | null;
-
   /** @format int32 */
   keep_policy_value_gt?: number | null;
-
   /** @format int32 */
   keep_policy_value_gte?: number | null;
   keep_policy_value_in?: number[] | null;
-
   /** @format int32 */
   keep_policy_value_lt?: number | null;
-
   /** @format int32 */
   keep_policy_value_lte?: number | null;
-
   /** @format int32 */
   keep_policy_value_not?: number | null;
   keep_policy_value_not_in?: number[] | null;
@@ -2587,43 +2227,31 @@ export interface BackupPlanWhereInput {
   last_execute_status_message_starts_with?: string | null;
   last_execute_status_not?: BackupPlanExecutionStatus | null;
   last_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
-
   /** @format int32 */
   last_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_gt?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_gte?: number | null;
   last_execute_success_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_execute_success_job_count_lt?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_lte?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_not?: number | null;
   last_execute_success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   last_execute_total_job_count?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_gt?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_gte?: number | null;
   last_execute_total_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_execute_total_job_count_lt?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_lte?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_not?: number | null;
   last_execute_total_job_count_not_in?: number[] | null;
@@ -2653,43 +2281,31 @@ export interface BackupPlanWhereInput {
   last_manual_execute_status_message_starts_with?: string | null;
   last_manual_execute_status_not?: BackupPlanExecutionStatus | null;
   last_manual_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_gt?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_gte?: number | null;
   last_manual_execute_success_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_lt?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_lte?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_not?: number | null;
   last_manual_execute_success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_gt?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_gte?: number | null;
   last_manual_execute_total_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_lt?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_lte?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_not?: number | null;
   last_manual_execute_total_job_count_not_in?: number[] | null;
@@ -2701,23 +2317,17 @@ export interface BackupPlanWhereInput {
   last_manual_executed_at_lte?: string | null;
   last_manual_executed_at_not?: string | null;
   last_manual_executed_at_not_in?: string[] | null;
-
   /** @format int64 */
   logical_size?: number | null;
-
   /** @format int64 */
   logical_size_gt?: number | null;
-
   /** @format int64 */
   logical_size_gte?: number | null;
   logical_size_in?: number[] | null;
-
   /** @format int64 */
   logical_size_lt?: number | null;
-
   /** @format int64 */
   logical_size_lte?: number | null;
-
   /** @format int64 */
   logical_size_not?: number | null;
   logical_size_not_in?: number[] | null;
@@ -2747,23 +2357,17 @@ export interface BackupPlanWhereInput {
   phase_in?: BackupPlanPhase[] | null;
   phase_not?: BackupPlanPhase | null;
   phase_not_in?: BackupPlanPhase[] | null;
-
   /** @format int64 */
   physical_size?: number | null;
-
   /** @format int64 */
   physical_size_gt?: number | null;
-
   /** @format int64 */
   physical_size_gte?: number | null;
   physical_size_in?: number[] | null;
-
   /** @format int64 */
   physical_size_lt?: number | null;
-
   /** @format int64 */
   physical_size_lte?: number | null;
-
   /** @format int64 */
   physical_size_not?: number | null;
   physical_size_not_in?: number[] | null;
@@ -2775,43 +2379,31 @@ export interface BackupPlanWhereInput {
   status_in?: BackupPlanStatus[] | null;
   status_not?: BackupPlanStatus | null;
   status_not_in?: BackupPlanStatus[] | null;
-
   /** @format int64 */
   valid_size_of_backup_object?: number | null;
-
   /** @format int64 */
   valid_size_of_backup_object_gt?: number | null;
-
   /** @format int64 */
   valid_size_of_backup_object_gte?: number | null;
   valid_size_of_backup_object_in?: number[] | null;
-
   /** @format int64 */
   valid_size_of_backup_object_lt?: number | null;
-
   /** @format int64 */
   valid_size_of_backup_object_lte?: number | null;
-
   /** @format int64 */
   valid_size_of_backup_object_not?: number | null;
   valid_size_of_backup_object_not_in?: number[] | null;
-
   /** @format int64 */
   valid_size_of_restore_point?: number | null;
-
   /** @format int64 */
   valid_size_of_restore_point_gt?: number | null;
-
   /** @format int64 */
   valid_size_of_restore_point_gte?: number | null;
   valid_size_of_restore_point_in?: number[] | null;
-
   /** @format int64 */
   valid_size_of_restore_point_lt?: number | null;
-
   /** @format int64 */
   valid_size_of_restore_point_lte?: number | null;
-
   /** @format int64 */
   valid_size_of_restore_point_not?: number | null;
   valid_size_of_restore_point_not_in?: number[] | null;
@@ -2860,23 +2452,17 @@ export interface BackupPlanExecutionWhereInput {
   backup_plan?: BackupPlanWhereInput | null;
   deletable_flag_marked?: boolean | null;
   deletable_flag_marked_not?: boolean | null;
-
   /** @format int32 */
   duration?: number | null;
-
   /** @format int32 */
   duration_gt?: number | null;
-
   /** @format int32 */
   duration_gte?: number | null;
   duration_in?: number[] | null;
-
   /** @format int32 */
   duration_lt?: number | null;
-
   /** @format int32 */
   duration_lte?: number | null;
-
   /** @format int32 */
   duration_not?: number | null;
   duration_not_in?: number[] | null;
@@ -2940,43 +2526,31 @@ export interface BackupPlanExecutionWhereInput {
   status_in?: BackupPlanExecutionStatus[] | null;
   status_not?: BackupPlanExecutionStatus | null;
   status_not_in?: BackupPlanExecutionStatus[] | null;
-
   /** @format int32 */
   success_job_count?: number | null;
-
   /** @format int32 */
   success_job_count_gt?: number | null;
-
   /** @format int32 */
   success_job_count_gte?: number | null;
   success_job_count_in?: number[] | null;
-
   /** @format int32 */
   success_job_count_lt?: number | null;
-
   /** @format int32 */
   success_job_count_lte?: number | null;
-
   /** @format int32 */
   success_job_count_not?: number | null;
   success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   total_job_count?: number | null;
-
   /** @format int32 */
   total_job_count_gt?: number | null;
-
   /** @format int32 */
   total_job_count_gte?: number | null;
   total_job_count_in?: number[] | null;
-
   /** @format int32 */
   total_job_count_lt?: number | null;
-
   /** @format int32 */
   total_job_count_lte?: number | null;
-
   /** @format int32 */
   total_job_count_not?: number | null;
   total_job_count_not_in?: number[] | null;
@@ -3047,23 +2621,17 @@ export interface BackupRestorePointWhereInput {
   cluster_local_id_starts_with?: string | null;
   compressed?: boolean | null;
   compressed_not?: boolean | null;
-
   /** @format double */
   compression_ratio?: number | null;
-
   /** @format double */
   compression_ratio_gt?: number | null;
-
   /** @format double */
   compression_ratio_gte?: number | null;
   compression_ratio_in?: number[] | null;
-
   /** @format double */
   compression_ratio_lt?: number | null;
-
   /** @format double */
   compression_ratio_lte?: number | null;
-
   /** @format double */
   compression_ratio_not?: number | null;
   compression_ratio_not_in?: number[] | null;
@@ -3111,23 +2679,17 @@ export interface BackupRestorePointWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   logical_size?: number | null;
-
   /** @format int64 */
   logical_size_gt?: number | null;
-
   /** @format int64 */
   logical_size_gte?: number | null;
   logical_size_in?: number[] | null;
-
   /** @format int64 */
   logical_size_lt?: number | null;
-
   /** @format int64 */
   logical_size_lte?: number | null;
-
   /** @format int64 */
   logical_size_not?: number | null;
   logical_size_not_in?: number[] | null;
@@ -3145,43 +2707,31 @@ export interface BackupRestorePointWhereInput {
   parent_restore_point_not_in?: string[] | null;
   parent_restore_point_not_starts_with?: string | null;
   parent_restore_point_starts_with?: string | null;
-
   /** @format int64 */
   physical_size?: number | null;
-
   /** @format int64 */
   physical_size_gt?: number | null;
-
   /** @format int64 */
   physical_size_gte?: number | null;
   physical_size_in?: number[] | null;
-
   /** @format int64 */
   physical_size_lt?: number | null;
-
   /** @format int64 */
   physical_size_lte?: number | null;
-
   /** @format int64 */
   physical_size_not?: number | null;
   physical_size_not_in?: number[] | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -3207,43 +2757,31 @@ export interface BackupRestorePointWhereInput {
   type_in?: BackupRestorePointType[] | null;
   type_not?: BackupRestorePointType | null;
   type_not_in?: BackupRestorePointType[] | null;
-
   /** @format int64 */
   valid_capacity?: number | null;
-
   /** @format int64 */
   valid_capacity_gt?: number | null;
-
   /** @format int64 */
   valid_capacity_gte?: number | null;
   valid_capacity_in?: number[] | null;
-
   /** @format int64 */
   valid_capacity_lt?: number | null;
-
   /** @format int64 */
   valid_capacity_lte?: number | null;
-
   /** @format int64 */
   valid_capacity_not?: number | null;
   valid_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   valid_size?: number | null;
-
   /** @format int64 */
   valid_size_gt?: number | null;
-
   /** @format int64 */
   valid_size_gte?: number | null;
   valid_size_in?: number[] | null;
-
   /** @format int64 */
   valid_size_lt?: number | null;
-
   /** @format int64 */
   valid_size_lte?: number | null;
-
   /** @format int64 */
   valid_size_not?: number | null;
   valid_size_not_in?: number[] | null;
@@ -3283,23 +2821,17 @@ export interface BackupRestoreExecutionWhereInput {
   NOT?: BackupRestoreExecutionWhereInput[] | null;
   OR?: BackupRestoreExecutionWhereInput[] | null;
   backup_restore_point?: BackupRestorePointWhereInput | null;
-
   /** @format int32 */
   duration?: number | null;
-
   /** @format int32 */
   duration_gt?: number | null;
-
   /** @format int32 */
   duration_gte?: number | null;
   duration_in?: number[] | null;
-
   /** @format int32 */
   duration_lt?: number | null;
-
   /** @format int32 */
   duration_lte?: number | null;
-
   /** @format int32 */
   duration_not?: number | null;
   duration_not_in?: number[] | null;
@@ -3347,23 +2879,17 @@ export interface BackupRestoreExecutionWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   read_bytes?: number | null;
-
   /** @format int64 */
   read_bytes_gt?: number | null;
-
   /** @format int64 */
   read_bytes_gte?: number | null;
   read_bytes_in?: number[] | null;
-
   /** @format int64 */
   read_bytes_lt?: number | null;
-
   /** @format int64 */
   read_bytes_lte?: number | null;
-
   /** @format int64 */
   read_bytes_not?: number | null;
   read_bytes_not_in?: number[] | null;
@@ -3395,23 +2921,17 @@ export interface BackupRestoreExecutionWhereInput {
   rebuild_target_cluster_not_in?: string[] | null;
   rebuild_target_cluster_not_starts_with?: string | null;
   rebuild_target_cluster_starts_with?: string | null;
-
   /** @format int32 */
   retry_times?: number | null;
-
   /** @format int32 */
   retry_times_gt?: number | null;
-
   /** @format int32 */
   retry_times_gte?: number | null;
   retry_times_in?: number[] | null;
-
   /** @format int32 */
   retry_times_lt?: number | null;
-
   /** @format int32 */
   retry_times_lte?: number | null;
-
   /** @format int32 */
   retry_times_not?: number | null;
   retry_times_not_in?: number[] | null;
@@ -3421,23 +2941,17 @@ export interface BackupRestoreExecutionWhereInput {
   status_in?: BackupExecutionStatus[] | null;
   status_not?: BackupExecutionStatus | null;
   status_not_in?: BackupExecutionStatus[] | null;
-
   /** @format int64 */
   total_bytes?: number | null;
-
   /** @format int64 */
   total_bytes_gt?: number | null;
-
   /** @format int64 */
   total_bytes_gte?: number | null;
   total_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_bytes_lt?: number | null;
-
   /** @format int64 */
   total_bytes_lte?: number | null;
-
   /** @format int64 */
   total_bytes_not?: number | null;
   total_bytes_not_in?: number[] | null;
@@ -3492,23 +3006,17 @@ export interface BackupTargetExecutionWhereInput {
   cluster_local_id_not_in?: string[] | null;
   cluster_local_id_not_starts_with?: string | null;
   cluster_local_id_starts_with?: string | null;
-
   /** @format int32 */
   duration?: number | null;
-
   /** @format int32 */
   duration_gt?: number | null;
-
   /** @format int32 */
   duration_gte?: number | null;
   duration_in?: number[] | null;
-
   /** @format int32 */
   duration_lt?: number | null;
-
   /** @format int32 */
   duration_lte?: number | null;
-
   /** @format int32 */
   duration_not?: number | null;
   duration_not_in?: number[] | null;
@@ -3566,43 +3074,31 @@ export interface BackupTargetExecutionWhereInput {
   parent_backup_not_in?: string[] | null;
   parent_backup_not_starts_with?: string | null;
   parent_backup_starts_with?: string | null;
-
   /** @format int64 */
   read_bytes?: number | null;
-
   /** @format int64 */
   read_bytes_gt?: number | null;
-
   /** @format int64 */
   read_bytes_gte?: number | null;
   read_bytes_in?: number[] | null;
-
   /** @format int64 */
   read_bytes_lt?: number | null;
-
   /** @format int64 */
   read_bytes_lte?: number | null;
-
   /** @format int64 */
   read_bytes_not?: number | null;
   read_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   retry_times?: number | null;
-
   /** @format int32 */
   retry_times_gt?: number | null;
-
   /** @format int32 */
   retry_times_gte?: number | null;
   retry_times_in?: number[] | null;
-
   /** @format int32 */
   retry_times_lt?: number | null;
-
   /** @format int32 */
   retry_times_lte?: number | null;
-
   /** @format int32 */
   retry_times_not?: number | null;
   retry_times_not_in?: number[] | null;
@@ -3610,23 +3106,17 @@ export interface BackupTargetExecutionWhereInput {
   status_in?: BackupExecutionStatus[] | null;
   status_not?: BackupExecutionStatus | null;
   status_not_in?: BackupExecutionStatus[] | null;
-
   /** @format int64 */
   total_bytes?: number | null;
-
   /** @format int64 */
   total_bytes_gt?: number | null;
-
   /** @format int64 */
   total_bytes_gte?: number | null;
   total_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_bytes_lt?: number | null;
-
   /** @format int64 */
   total_bytes_lte?: number | null;
-
   /** @format int64 */
   total_bytes_not?: number | null;
   total_bytes_not_in?: number[] | null;
@@ -3671,6 +3161,10 @@ export enum BackupRestorePointCreation {
   FAILOVER = "FAILOVER",
   FAILOVER_TEST = "FAILOVER_TEST",
   MANUAL = "MANUAL",
+  SYNC_REPLICATION = "SYNC_REPLICATION",
+  SYNC_REPLICATION_ERROR = "SYNC_REPLICATION_ERROR",
+  SYNC_REPLICATION_INITIALIZATION = "SYNC_REPLICATION_INITIALIZATION",
+  SYNC_REPLICATION_SYNCING = "SYNC_REPLICATION_SYNCING",
 }
 
 export enum ConsistentType {
@@ -3754,46 +3248,34 @@ export interface BackupServiceWhereInput {
   backup_plans_every?: BackupPlanWhereInput | null;
   backup_plans_none?: BackupPlanWhereInput | null;
   backup_plans_some?: BackupPlanWhereInput | null;
-
   /** @format int64 */
   backup_rd_iops_max?: number | null;
-
   /** @format int64 */
   backup_rd_iops_max_gt?: number | null;
-
   /** @format int64 */
   backup_rd_iops_max_gte?: number | null;
   backup_rd_iops_max_in?: number[] | null;
-
   /** @format int64 */
   backup_rd_iops_max_lt?: number | null;
-
   /** @format int64 */
   backup_rd_iops_max_lte?: number | null;
-
   /** @format int64 */
   backup_rd_iops_max_not?: number | null;
   backup_rd_iops_max_not_in?: number[] | null;
   backup_store_repositories_every?: BackupStoreRepositoryWhereInput | null;
   backup_store_repositories_none?: BackupStoreRepositoryWhereInput | null;
   backup_store_repositories_some?: BackupStoreRepositoryWhereInput | null;
-
   /** @format int64 */
   backup_wr_iops_max?: number | null;
-
   /** @format int64 */
   backup_wr_iops_max_gt?: number | null;
-
   /** @format int64 */
   backup_wr_iops_max_gte?: number | null;
   backup_wr_iops_max_in?: number[] | null;
-
   /** @format int64 */
   backup_wr_iops_max_lt?: number | null;
-
   /** @format int64 */
   backup_wr_iops_max_lte?: number | null;
-
   /** @format int64 */
   backup_wr_iops_max_not?: number | null;
   backup_wr_iops_max_not_in?: number[] | null;
@@ -3899,63 +3381,45 @@ export interface BackupServiceWhereInput {
   management_network_vlan_not_in?: string[] | null;
   management_network_vlan_not_starts_with?: string | null;
   management_network_vlan_starts_with?: string | null;
-
   /** @format int32 */
   max_job_retry_times?: number | null;
-
   /** @format int32 */
   max_job_retry_times_gt?: number | null;
-
   /** @format int32 */
   max_job_retry_times_gte?: number | null;
   max_job_retry_times_in?: number[] | null;
-
   /** @format int32 */
   max_job_retry_times_lt?: number | null;
-
   /** @format int32 */
   max_job_retry_times_lte?: number | null;
-
   /** @format int32 */
   max_job_retry_times_not?: number | null;
   max_job_retry_times_not_in?: number[] | null;
-
   /** @format int32 */
   max_parallel_backup_jobs?: number | null;
-
   /** @format int32 */
   max_parallel_backup_jobs_gt?: number | null;
-
   /** @format int32 */
   max_parallel_backup_jobs_gte?: number | null;
   max_parallel_backup_jobs_in?: number[] | null;
-
   /** @format int32 */
   max_parallel_backup_jobs_lt?: number | null;
-
   /** @format int32 */
   max_parallel_backup_jobs_lte?: number | null;
-
   /** @format int32 */
   max_parallel_backup_jobs_not?: number | null;
   max_parallel_backup_jobs_not_in?: number[] | null;
-
   /** @format int32 */
   max_parallel_restore_jobs?: number | null;
-
   /** @format int32 */
   max_parallel_restore_jobs_gt?: number | null;
-
   /** @format int32 */
   max_parallel_restore_jobs_gte?: number | null;
   max_parallel_restore_jobs_in?: number[] | null;
-
   /** @format int32 */
   max_parallel_restore_jobs_lt?: number | null;
-
   /** @format int32 */
   max_parallel_restore_jobs_lte?: number | null;
-
   /** @format int32 */
   max_parallel_restore_jobs_not?: number | null;
   max_parallel_restore_jobs_not_in?: number[] | null;
@@ -3973,63 +3437,45 @@ export interface BackupServiceWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   restore_rd_iops_max?: number | null;
-
   /** @format int64 */
   restore_rd_iops_max_gt?: number | null;
-
   /** @format int64 */
   restore_rd_iops_max_gte?: number | null;
   restore_rd_iops_max_in?: number[] | null;
-
   /** @format int64 */
   restore_rd_iops_max_lt?: number | null;
-
   /** @format int64 */
   restore_rd_iops_max_lte?: number | null;
-
   /** @format int64 */
   restore_rd_iops_max_not?: number | null;
   restore_rd_iops_max_not_in?: number[] | null;
-
   /** @format int64 */
   restore_wr_iops_max?: number | null;
-
   /** @format int64 */
   restore_wr_iops_max_gt?: number | null;
-
   /** @format int64 */
   restore_wr_iops_max_gte?: number | null;
   restore_wr_iops_max_in?: number[] | null;
-
   /** @format int64 */
   restore_wr_iops_max_lt?: number | null;
-
   /** @format int64 */
   restore_wr_iops_max_lte?: number | null;
-
   /** @format int64 */
   restore_wr_iops_max_not?: number | null;
   restore_wr_iops_max_not_in?: number[] | null;
-
   /** @format int32 */
   retry_interval?: number | null;
-
   /** @format int32 */
   retry_interval_gt?: number | null;
-
   /** @format int32 */
   retry_interval_gte?: number | null;
   retry_interval_in?: number[] | null;
-
   /** @format int32 */
   retry_interval_lt?: number | null;
-
   /** @format int32 */
   retry_interval_lte?: number | null;
-
   /** @format int32 */
   retry_interval_not?: number | null;
   retry_interval_not_in?: number[] | null;
@@ -4165,23 +3611,17 @@ export interface CloudTowerApplicationWhereInput {
   placementVerb_not_in?: string[] | null;
   placementVerb_not_starts_with?: string | null;
   placementVerb_starts_with?: string | null;
-
   /** @format int32 */
   resourceVersion?: number | null;
-
   /** @format int32 */
   resourceVersion_gt?: number | null;
-
   /** @format int32 */
   resourceVersion_gte?: number | null;
   resourceVersion_in?: number[] | null;
-
   /** @format int32 */
   resourceVersion_lt?: number | null;
-
   /** @format int32 */
   resourceVersion_lte?: number | null;
-
   /** @format int32 */
   resourceVersion_not?: number | null;
   resourceVersion_not_in?: number[] | null;
@@ -4636,23 +4076,17 @@ export interface BackupStoreRepositoryWhereInput {
   iscsi_lun_id_not_in?: string[] | null;
   iscsi_lun_id_not_starts_with?: string | null;
   iscsi_lun_id_starts_with?: string | null;
-
   /** @format int32 */
   iscsi_port?: number | null;
-
   /** @format int32 */
   iscsi_port_gt?: number | null;
-
   /** @format int32 */
   iscsi_port_gte?: number | null;
   iscsi_port_in?: number[] | null;
-
   /** @format int32 */
   iscsi_port_lt?: number | null;
-
   /** @format int32 */
   iscsi_port_lte?: number | null;
-
   /** @format int32 */
   iscsi_port_not?: number | null;
   iscsi_port_not_in?: number[] | null;
@@ -4716,23 +4150,17 @@ export interface BackupStoreRepositoryWhereInput {
   status_in?: BackupStoreStatus[] | null;
   status_not?: BackupStoreStatus | null;
   status_not_in?: BackupStoreStatus[] | null;
-
   /** @format int64 */
   total_capacity?: number | null;
-
   /** @format int64 */
   total_capacity_gt?: number | null;
-
   /** @format int64 */
   total_capacity_gte?: number | null;
   total_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_capacity_lt?: number | null;
-
   /** @format int64 */
   total_capacity_lte?: number | null;
-
   /** @format int64 */
   total_capacity_not?: number | null;
   total_capacity_not_in?: number[] | null;
@@ -4754,63 +4182,45 @@ export interface BackupStoreRepositoryWhereInput {
   update_timestamp_not_in?: string[] | null;
   update_timestamp_not_starts_with?: string | null;
   update_timestamp_starts_with?: string | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format double */
   used_data_space_usage?: number | null;
-
   /** @format double */
   used_data_space_usage_gt?: number | null;
-
   /** @format double */
   used_data_space_usage_gte?: number | null;
   used_data_space_usage_in?: number[] | null;
-
   /** @format double */
   used_data_space_usage_lt?: number | null;
-
   /** @format double */
   used_data_space_usage_lte?: number | null;
-
   /** @format double */
   used_data_space_usage_not?: number | null;
   used_data_space_usage_not_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
-
   /** @format int64 */
   valid_data_space_gt?: number | null;
-
   /** @format int64 */
   valid_data_space_gte?: number | null;
   valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space_lt?: number | null;
-
   /** @format int64 */
   valid_data_space_lte?: number | null;
-
   /** @format int64 */
   valid_data_space_not?: number | null;
   valid_data_space_not_in?: number[] | null;
@@ -5041,23 +4451,17 @@ export interface VmFolderWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
@@ -5070,43 +4474,31 @@ export interface GpuDeviceWhereInput {
   AND?: GpuDeviceWhereInput[] | null;
   NOT?: GpuDeviceWhereInput[] | null;
   OR?: GpuDeviceWhereInput[] | null;
-
   /** @format int32 */
   assigned_vgpus_num?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num_gt?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num_gte?: number | null;
   assigned_vgpus_num_in?: number[] | null;
-
   /** @format int32 */
   assigned_vgpus_num_lt?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num_lte?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num_not?: number | null;
   assigned_vgpus_num_not_in?: number[] | null;
-
   /** @format int32 */
   available_vgpus_num?: number | null;
-
   /** @format int32 */
   available_vgpus_num_gt?: number | null;
-
   /** @format int32 */
   available_vgpus_num_gte?: number | null;
   available_vgpus_num_in?: number[] | null;
-
   /** @format int32 */
   available_vgpus_num_lt?: number | null;
-
   /** @format int32 */
   available_vgpus_num_lte?: number | null;
-
   /** @format int32 */
   available_vgpus_num_not?: number | null;
   available_vgpus_num_not_in?: number[] | null;
@@ -5266,23 +4658,17 @@ export interface GpuDeviceWhereInput {
   user_vgpu_type_name_not_in?: string[] | null;
   user_vgpu_type_name_not_starts_with?: string | null;
   user_vgpu_type_name_starts_with?: string | null;
-
   /** @format int32 */
   vgpu_instance_num?: number | null;
-
   /** @format int32 */
   vgpu_instance_num_gt?: number | null;
-
   /** @format int32 */
   vgpu_instance_num_gte?: number | null;
   vgpu_instance_num_in?: number[] | null;
-
   /** @format int32 */
   vgpu_instance_num_lt?: number | null;
-
   /** @format int32 */
   vgpu_instance_num_lte?: number | null;
-
   /** @format int32 */
   vgpu_instance_num_not?: number | null;
   vgpu_instance_num_not_in?: number[] | null;
@@ -5309,83 +4695,59 @@ export interface HostWhereInput {
   access_ip_not_in?: string[] | null;
   access_ip_not_starts_with?: string | null;
   access_ip_starts_with?: string | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive?: number | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive_gt?: number | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive_gte?: number | null;
   allocable_cpu_cores_for_vm_exclusive_in?: number[] | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive_lt?: number | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive_lte?: number | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive_not?: number | null;
   allocable_cpu_cores_for_vm_exclusive_not_in?: number[] | null;
-
   /** @format int64 */
   allocatable_memory_bytes?: number | null;
-
   /** @format int64 */
   allocatable_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   allocatable_memory_bytes_gte?: number | null;
   allocatable_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   allocatable_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   allocatable_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   allocatable_memory_bytes_not?: number | null;
   allocatable_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_gte?: number | null;
   allocated_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   allocated_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space_not?: number | null;
   allocated_prioritized_space_not_in?: number[] | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_gt?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_gte?: number | null;
   allocated_prioritized_space_usage_in?: number[] | null;
-
   /** @format double */
   allocated_prioritized_space_usage_lt?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_lte?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage_not?: number | null;
   allocated_prioritized_space_usage_not_in?: number[] | null;
@@ -5404,23 +4766,17 @@ export interface HostWhereInput {
   chunk_id_not_starts_with?: string | null;
   chunk_id_starts_with?: string | null;
   cluster?: ClusterWhereInput | null;
-
   /** @format int64 */
   commited_memory_bytes?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_gte?: number | null;
   commited_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   commited_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   commited_memory_bytes_not?: number | null;
   commited_memory_bytes_not_in?: number[] | null;
@@ -5446,23 +4802,17 @@ export interface HostWhereInput {
   cpu_fan_speed_unit_in?: CpuFanSpeedUnit[] | null;
   cpu_fan_speed_unit_not?: CpuFanSpeedUnit | null;
   cpu_fan_speed_unit_not_in?: CpuFanSpeedUnit[] | null;
-
   /** @format int64 */
   cpu_hz_per_core?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_gt?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_gte?: number | null;
   cpu_hz_per_core_in?: number[] | null;
-
   /** @format int64 */
   cpu_hz_per_core_lt?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_lte?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_not?: number | null;
   cpu_hz_per_core_not_in?: number[] | null;
@@ -5508,29 +4858,51 @@ export interface HostWhereInput {
   data_ip_not_in?: string[] | null;
   data_ip_not_starts_with?: string | null;
   data_ip_starts_with?: string | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gte?: number | null;
+  dirty_cache_space_in?: number[] | null;
+  /** @format int64 */
+  dirty_cache_space_lt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_lte?: number | null;
+  /** @format int64 */
+  dirty_cache_space_not?: number | null;
+  dirty_cache_space_not_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
+  /** @format double */
+  dirty_cache_usage_gt?: number | null;
+  /** @format double */
+  dirty_cache_usage_gte?: number | null;
+  dirty_cache_usage_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage_lt?: number | null;
+  /** @format double */
+  dirty_cache_usage_lte?: number | null;
+  /** @format double */
+  dirty_cache_usage_not?: number | null;
+  dirty_cache_usage_not_in?: number[] | null;
   disk_pools_every?: DiskPoolWhereInput | null;
   disk_pools_none?: DiskPoolWhereInput | null;
   disk_pools_some?: DiskPoolWhereInput | null;
   disks_every?: DiskWhereInput | null;
   disks_none?: DiskWhereInput | null;
   disks_some?: DiskWhereInput | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gte?: number | null;
   downgraded_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_not?: number | null;
   downgraded_prioritized_space_not_in?: number[] | null;
@@ -5538,66 +4910,62 @@ export interface HostWhereInput {
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
   entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-
+  /** @format int64 */
+  failure_cache_space?: number | null;
+  /** @format int64 */
+  failure_cache_space_gt?: number | null;
+  /** @format int64 */
+  failure_cache_space_gte?: number | null;
+  failure_cache_space_in?: number[] | null;
+  /** @format int64 */
+  failure_cache_space_lt?: number | null;
+  /** @format int64 */
+  failure_cache_space_lte?: number | null;
+  /** @format int64 */
+  failure_cache_space_not?: number | null;
+  failure_cache_space_not_in?: number[] | null;
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int64 */
   failure_data_space_gt?: number | null;
-
   /** @format int64 */
   failure_data_space_gte?: number | null;
   failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space_lt?: number | null;
-
   /** @format int64 */
   failure_data_space_lte?: number | null;
-
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
   gpu_devices_every?: GpuDeviceWhereInput | null;
   gpu_devices_none?: GpuDeviceWhereInput | null;
   gpu_devices_some?: GpuDeviceWhereInput | null;
-
   /** @format int64 */
   hdd_data_capacity?: number | null;
-
   /** @format int64 */
   hdd_data_capacity_gt?: number | null;
-
   /** @format int64 */
   hdd_data_capacity_gte?: number | null;
   hdd_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   hdd_data_capacity_lt?: number | null;
-
   /** @format int64 */
   hdd_data_capacity_lte?: number | null;
-
   /** @format int64 */
   hdd_data_capacity_not?: number | null;
   hdd_data_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   hdd_disk_count?: number | null;
-
   /** @format int32 */
   hdd_disk_count_gt?: number | null;
-
   /** @format int32 */
   hdd_disk_count_gte?: number | null;
   hdd_disk_count_in?: number[] | null;
-
   /** @format int32 */
   hdd_disk_count_lt?: number | null;
-
   /** @format int32 */
   hdd_disk_count_lte?: number | null;
-
   /** @format int32 */
   hdd_disk_count_not?: number | null;
   hdd_disk_count_not_in?: number[] | null;
@@ -5703,23 +5071,17 @@ export interface HostWhereInput {
   name_starts_with?: string | null;
   nested_virtualization?: boolean | null;
   nested_virtualization_not?: boolean | null;
-
   /** @format int32 */
   nic_count?: number | null;
-
   /** @format int32 */
   nic_count_gt?: number | null;
-
   /** @format int32 */
   nic_count_gte?: number | null;
   nic_count_in?: number[] | null;
-
   /** @format int32 */
   nic_count_lt?: number | null;
-
   /** @format int32 */
   nic_count_lte?: number | null;
-
   /** @format int32 */
   nic_count_not?: number | null;
   nic_count_not_in?: number[] | null;
@@ -5740,23 +5102,17 @@ export interface HostWhereInput {
   node_topo_local_id_not_in?: string[] | null;
   node_topo_local_id_not_starts_with?: string | null;
   node_topo_local_id_starts_with?: string | null;
-
   /** @format int64 */
   os_memory_bytes?: number | null;
-
   /** @format int64 */
   os_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   os_memory_bytes_gte?: number | null;
   os_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   os_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   os_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   os_memory_bytes_not?: number | null;
   os_memory_bytes_not_in?: number[] | null;
@@ -5774,326 +5130,230 @@ export interface HostWhereInput {
   os_version_not_in?: string[] | null;
   os_version_not_starts_with?: string | null;
   os_version_starts_with?: string | null;
-
   /** @format int64 */
   perf_allocated_data_space?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gte?: number | null;
   perf_allocated_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_allocated_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_not?: number | null;
   perf_allocated_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gte?: number | null;
   perf_failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_not?: number | null;
   perf_failure_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gte?: number | null;
   perf_total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_not?: number | null;
   perf_total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gte?: number | null;
   perf_used_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_used_data_space_not?: number | null;
   perf_used_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gte?: number | null;
   perf_valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_not?: number | null;
   perf_valid_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gte?: number | null;
   planned_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_not?: number | null;
   planned_prioritized_space_not_in?: number[] | null;
-
   /** @format int64 */
   pmem_dimm_capacity?: number | null;
-
   /** @format int64 */
   pmem_dimm_capacity_gt?: number | null;
-
   /** @format int64 */
   pmem_dimm_capacity_gte?: number | null;
   pmem_dimm_capacity_in?: number[] | null;
-
   /** @format int64 */
   pmem_dimm_capacity_lt?: number | null;
-
   /** @format int64 */
   pmem_dimm_capacity_lte?: number | null;
-
   /** @format int64 */
   pmem_dimm_capacity_not?: number | null;
   pmem_dimm_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   pmem_dimm_count?: number | null;
-
   /** @format int32 */
   pmem_dimm_count_gt?: number | null;
-
   /** @format int32 */
   pmem_dimm_count_gte?: number | null;
   pmem_dimm_count_in?: number[] | null;
-
   /** @format int32 */
   pmem_dimm_count_lt?: number | null;
-
   /** @format int32 */
   pmem_dimm_count_lte?: number | null;
-
   /** @format int32 */
   pmem_dimm_count_not?: number | null;
   pmem_dimm_count_not_in?: number[] | null;
   pmem_dimms_every?: PmemDimmWhereInput | null;
   pmem_dimms_none?: PmemDimmWhereInput | null;
   pmem_dimms_some?: PmemDimmWhereInput | null;
-
   /** @format int32 */
   pmem_disk_count?: number | null;
-
   /** @format int32 */
   pmem_disk_count_gt?: number | null;
-
   /** @format int32 */
   pmem_disk_count_gte?: number | null;
   pmem_disk_count_in?: number[] | null;
-
   /** @format int32 */
   pmem_disk_count_lt?: number | null;
-
   /** @format int32 */
   pmem_disk_count_lte?: number | null;
-
   /** @format int32 */
   pmem_disk_count_not?: number | null;
   pmem_disk_count_not_in?: number[] | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format double */
   prio_space_percentage_gt?: number | null;
-
   /** @format double */
   prio_space_percentage_gte?: number | null;
   prio_space_percentage_in?: number[] | null;
-
   /** @format double */
   prio_space_percentage_lt?: number | null;
-
   /** @format double */
   prio_space_percentage_lte?: number | null;
-
   /** @format double */
   prio_space_percentage_not?: number | null;
   prio_space_percentage_not_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gte?: number | null;
   provisioned_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_not?: number | null;
   provisioned_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gte?: number | null;
   provisioned_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_not?: number | null;
   provisioned_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes?: number | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes_gte?: number | null;
   running_pause_vm_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   running_pause_vm_memory_bytes_not?: number | null;
   running_pause_vm_memory_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num?: number | null;
-
   /** @format int32 */
   running_vm_num_gt?: number | null;
-
   /** @format int32 */
   running_vm_num_gte?: number | null;
   running_vm_num_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num_lt?: number | null;
-
   /** @format int32 */
   running_vm_num_lte?: number | null;
-
   /** @format int32 */
   running_vm_num_not?: number | null;
   running_vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   scvm_cpu?: number | null;
-
   /** @format int32 */
   scvm_cpu_gt?: number | null;
-
   /** @format int32 */
   scvm_cpu_gte?: number | null;
   scvm_cpu_in?: number[] | null;
-
   /** @format int32 */
   scvm_cpu_lt?: number | null;
-
   /** @format int32 */
   scvm_cpu_lte?: number | null;
-
   /** @format int32 */
   scvm_cpu_not?: number | null;
   scvm_cpu_not_in?: number[] | null;
-
   /** @format int64 */
   scvm_memory?: number | null;
-
   /** @format int64 */
   scvm_memory_gt?: number | null;
-
   /** @format int64 */
   scvm_memory_gte?: number | null;
   scvm_memory_in?: number[] | null;
-
   /** @format int64 */
   scvm_memory_lt?: number | null;
-
   /** @format int64 */
   scvm_memory_lte?: number | null;
-
   /** @format int64 */
   scvm_memory_not?: number | null;
   scvm_memory_not_in?: number[] | null;
@@ -6125,43 +5385,31 @@ export interface HostWhereInput {
   serial_not_in?: string[] | null;
   serial_not_starts_with?: string | null;
   serial_starts_with?: string | null;
-
   /** @format int64 */
   ssd_data_capacity?: number | null;
-
   /** @format int64 */
   ssd_data_capacity_gt?: number | null;
-
   /** @format int64 */
   ssd_data_capacity_gte?: number | null;
   ssd_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   ssd_data_capacity_lt?: number | null;
-
   /** @format int64 */
   ssd_data_capacity_lte?: number | null;
-
   /** @format int64 */
   ssd_data_capacity_not?: number | null;
   ssd_data_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   ssd_disk_count?: number | null;
-
   /** @format int32 */
   ssd_disk_count_gt?: number | null;
-
   /** @format int32 */
   ssd_disk_count_gte?: number | null;
   ssd_disk_count_in?: number[] | null;
-
   /** @format int32 */
   ssd_disk_count_lt?: number | null;
-
   /** @format int32 */
   ssd_disk_count_lte?: number | null;
-
   /** @format int32 */
   ssd_disk_count_not?: number | null;
   ssd_disk_count_not_in?: number[] | null;
@@ -6173,306 +5421,216 @@ export interface HostWhereInput {
   status_in?: HostStatus[] | null;
   status_not?: HostStatus | null;
   status_not_in?: HostStatus[] | null;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gte?: number | null;
   stopped_vm_num_in?: number[] | null;
-
   /** @format int32 */
   stopped_vm_num_lt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_lte?: number | null;
-
   /** @format int32 */
   stopped_vm_num_not?: number | null;
   stopped_vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gte?: number | null;
   suspended_vm_num_in?: number[] | null;
-
   /** @format int32 */
   suspended_vm_num_lt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_lte?: number | null;
-
   /** @format int32 */
   suspended_vm_num_not?: number | null;
   suspended_vm_num_not_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gte?: number | null;
   total_cache_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity_lt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_lte?: number | null;
-
   /** @format int64 */
   total_cache_capacity_not?: number | null;
   total_cache_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gte?: number | null;
   total_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   total_cpu_cores_not?: number | null;
   total_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gte?: number | null;
   total_cpu_hz_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz_lt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_lte?: number | null;
-
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_sockets?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_gt?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_gte?: number | null;
   total_cpu_sockets_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_sockets_lt?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_lte?: number | null;
-
   /** @format int32 */
   total_cpu_sockets_not?: number | null;
   total_cpu_sockets_not_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   total_data_capacity_gte?: number | null;
   total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gte?: number | null;
   total_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
   usb_devices_every?: UsbDeviceWhereInput | null;
   usb_devices_none?: UsbDeviceWhereInput | null;
   usb_devices_some?: UsbDeviceWhereInput | null;
-
   /** @format int64 */
   used_cache_space?: number | null;
-
   /** @format int64 */
   used_cache_space_gt?: number | null;
-
   /** @format int64 */
   used_cache_space_gte?: number | null;
   used_cache_space_in?: number[] | null;
-
   /** @format int64 */
   used_cache_space_lt?: number | null;
-
   /** @format int64 */
   used_cache_space_lte?: number | null;
-
   /** @format int64 */
   used_cache_space_not?: number | null;
   used_cache_space_not_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format double */
   used_cpu_hz_gt?: number | null;
-
   /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz_lt?: number | null;
-
   /** @format double */
   used_cpu_hz_lte?: number | null;
-
   /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format double */
   used_memory_bytes_gt?: number | null;
-
   /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes_lt?: number | null;
-
   /** @format double */
   used_memory_bytes_lte?: number | null;
-
   /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space?: number | null;
-
   /** @format int64 */
   valid_cache_space_gt?: number | null;
-
   /** @format int64 */
   valid_cache_space_gte?: number | null;
   valid_cache_space_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space_lt?: number | null;
-
   /** @format int64 */
   valid_cache_space_lte?: number | null;
-
   /** @format int64 */
   valid_cache_space_not?: number | null;
   valid_cache_space_not_in?: number[] | null;
-
   /** @format int64 */
   valid_free_cache_space?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_gt?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_gte?: number | null;
   valid_free_cache_space_in?: number[] | null;
-
   /** @format int64 */
   valid_free_cache_space_lt?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_lte?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_not?: number | null;
   valid_free_cache_space_not_in?: number[] | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
@@ -6513,166 +5671,118 @@ export interface DiskPoolWhereInput {
   AND?: DiskPoolWhereInput[] | null;
   NOT?: DiskPoolWhereInput[] | null;
   OR?: DiskPoolWhereInput[] | null;
-
   /** @format int32 */
   chunk_id?: number | null;
-
   /** @format int32 */
   chunk_id_gt?: number | null;
-
   /** @format int32 */
   chunk_id_gte?: number | null;
   chunk_id_in?: number[] | null;
-
   /** @format int32 */
   chunk_id_lt?: number | null;
-
   /** @format int32 */
   chunk_id_lte?: number | null;
-
   /** @format int32 */
   chunk_id_not?: number | null;
   chunk_id_not_in?: number[] | null;
-
   /** @format int32 */
   chunk_ins_id?: number | null;
-
   /** @format int32 */
   chunk_ins_id_gt?: number | null;
-
   /** @format int32 */
   chunk_ins_id_gte?: number | null;
   chunk_ins_id_in?: number[] | null;
-
   /** @format int32 */
   chunk_ins_id_lt?: number | null;
-
   /** @format int32 */
   chunk_ins_id_lte?: number | null;
-
   /** @format int32 */
   chunk_ins_id_not?: number | null;
   chunk_ins_id_not_in?: number[] | null;
-
   /** @format double */
   data_space_usage?: number | null;
-
   /** @format double */
   data_space_usage_gt?: number | null;
-
   /** @format double */
   data_space_usage_gte?: number | null;
   data_space_usage_in?: number[] | null;
-
   /** @format double */
   data_space_usage_lt?: number | null;
-
   /** @format double */
   data_space_usage_lte?: number | null;
-
   /** @format double */
   data_space_usage_not?: number | null;
   data_space_usage_not_in?: number[] | null;
-
   /** @format int64 */
   dirty_cache_space?: number | null;
-
   /** @format int64 */
   dirty_cache_space_gt?: number | null;
-
   /** @format int64 */
   dirty_cache_space_gte?: number | null;
   dirty_cache_space_in?: number[] | null;
-
   /** @format int64 */
   dirty_cache_space_lt?: number | null;
-
   /** @format int64 */
   dirty_cache_space_lte?: number | null;
-
   /** @format int64 */
   dirty_cache_space_not?: number | null;
   dirty_cache_space_not_in?: number[] | null;
-
   /** @format double */
   dirty_cache_usage?: number | null;
-
   /** @format double */
   dirty_cache_usage_gt?: number | null;
-
   /** @format double */
   dirty_cache_usage_gte?: number | null;
   dirty_cache_usage_in?: number[] | null;
-
   /** @format double */
   dirty_cache_usage_lt?: number | null;
-
   /** @format double */
   dirty_cache_usage_lte?: number | null;
-
   /** @format double */
   dirty_cache_usage_not?: number | null;
   dirty_cache_usage_not_in?: number[] | null;
   disks_every?: DiskWhereInput | null;
   disks_none?: DiskWhereInput | null;
   disks_some?: DiskWhereInput | null;
-
   /** @format int64 */
   failure_cache_space?: number | null;
-
   /** @format int64 */
   failure_cache_space_gt?: number | null;
-
   /** @format int64 */
   failure_cache_space_gte?: number | null;
   failure_cache_space_in?: number[] | null;
-
   /** @format int64 */
   failure_cache_space_lt?: number | null;
-
   /** @format int64 */
   failure_cache_space_lte?: number | null;
-
   /** @format int64 */
   failure_cache_space_not?: number | null;
   failure_cache_space_not_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int64 */
   failure_data_space_gt?: number | null;
-
   /** @format int64 */
   failure_data_space_gte?: number | null;
   failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space_lt?: number | null;
-
   /** @format int64 */
   failure_data_space_lte?: number | null;
-
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
-
   /** @format int32 */
   hdd_disk_count?: number | null;
-
   /** @format int32 */
   hdd_disk_count_gt?: number | null;
-
   /** @format int32 */
   hdd_disk_count_gte?: number | null;
   hdd_disk_count_in?: number[] | null;
-
   /** @format int32 */
   hdd_disk_count_lt?: number | null;
-
   /** @format int32 */
   hdd_disk_count_lte?: number | null;
-
   /** @format int32 */
   hdd_disk_count_not?: number | null;
   hdd_disk_count_not_in?: number[] | null;
@@ -6722,183 +5832,129 @@ export interface DiskPoolWhereInput {
   numa_node_not_in?: string[] | null;
   numa_node_not_starts_with?: string | null;
   numa_node_starts_with?: string | null;
-
   /** @format int32 */
   nvme_ssd_disk_count?: number | null;
-
   /** @format int32 */
   nvme_ssd_disk_count_gt?: number | null;
-
   /** @format int32 */
   nvme_ssd_disk_count_gte?: number | null;
   nvme_ssd_disk_count_in?: number[] | null;
-
   /** @format int32 */
   nvme_ssd_disk_count_lt?: number | null;
-
   /** @format int32 */
   nvme_ssd_disk_count_lte?: number | null;
-
   /** @format int32 */
   nvme_ssd_disk_count_not?: number | null;
   nvme_ssd_disk_count_not_in?: number[] | null;
-
   /** @format int64 */
   perf_allocated_data_space?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_gte?: number | null;
   perf_allocated_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_allocated_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space_not?: number | null;
   perf_allocated_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_gte?: number | null;
   perf_failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_failure_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_failure_data_space_not?: number | null;
   perf_failure_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_gte?: number | null;
   perf_total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   perf_total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity_not?: number | null;
   perf_total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_gte?: number | null;
   perf_used_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_used_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_used_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_used_data_space_not?: number | null;
   perf_used_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_gte?: number | null;
   perf_valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   perf_valid_data_space_lt?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_lte?: number | null;
-
   /** @format int64 */
   perf_valid_data_space_not?: number | null;
   perf_valid_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_gte?: number | null;
   planned_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   planned_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   planned_prioritized_space_not?: number | null;
   planned_prioritized_space_not_in?: number[] | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format double */
   prio_space_percentage_gt?: number | null;
-
   /** @format double */
   prio_space_percentage_gte?: number | null;
   prio_space_percentage_in?: number[] | null;
-
   /** @format double */
   prio_space_percentage_lt?: number | null;
-
   /** @format double */
   prio_space_percentage_lte?: number | null;
-
   /** @format double */
   prio_space_percentage_not?: number | null;
   prio_space_percentage_not_in?: number[] | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count?: number | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count_gt?: number | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count_gte?: number | null;
   sata_or_sas_ssd_disk_count_in?: number[] | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count_lt?: number | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count_lte?: number | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count_not?: number | null;
   sata_or_sas_ssd_disk_count_not_in?: number[] | null;
@@ -6906,43 +5962,31 @@ export interface DiskPoolWhereInput {
   status_in?: DiskPoolStatus[] | null;
   status_not?: DiskPoolStatus | null;
   status_not_in?: DiskPoolStatus[] | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gte?: number | null;
   total_cache_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity_lt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_lte?: number | null;
-
   /** @format int64 */
   total_cache_capacity_not?: number | null;
   total_cache_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   total_data_capacity_gte?: number | null;
   total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
@@ -6950,83 +5994,59 @@ export interface DiskPoolWhereInput {
   use_state_in?: DiskPoolUseState[] | null;
   use_state_not?: DiskPoolUseState | null;
   use_state_not_in?: DiskPoolUseState[] | null;
-
   /** @format int64 */
   used_cache_space?: number | null;
-
   /** @format int64 */
   used_cache_space_gt?: number | null;
-
   /** @format int64 */
   used_cache_space_gte?: number | null;
   used_cache_space_in?: number[] | null;
-
   /** @format int64 */
   used_cache_space_lt?: number | null;
-
   /** @format int64 */
   used_cache_space_lte?: number | null;
-
   /** @format int64 */
   used_cache_space_not?: number | null;
   used_cache_space_not_in?: number[] | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space?: number | null;
-
   /** @format int64 */
   valid_cache_space_gt?: number | null;
-
   /** @format int64 */
   valid_cache_space_gte?: number | null;
   valid_cache_space_in?: number[] | null;
-
   /** @format int64 */
   valid_cache_space_lt?: number | null;
-
   /** @format int64 */
   valid_cache_space_lte?: number | null;
-
   /** @format int64 */
   valid_cache_space_not?: number | null;
   valid_cache_space_not_in?: number[] | null;
-
   /** @format int64 */
   valid_free_cache_space?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_gt?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_gte?: number | null;
   valid_free_cache_space_in?: number[] | null;
-
   /** @format int64 */
   valid_free_cache_space_lt?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_lte?: number | null;
-
   /** @format int64 */
   valid_free_cache_space_not?: number | null;
   valid_free_cache_space_not_in?: number[] | null;
@@ -7126,23 +6146,17 @@ export interface DiskWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   numa_node?: number | null;
-
   /** @format int32 */
   numa_node_gt?: number | null;
-
   /** @format int32 */
   numa_node_gte?: number | null;
   numa_node_in?: number[] | null;
-
   /** @format int32 */
   numa_node_lt?: number | null;
-
   /** @format int32 */
   numa_node_lte?: number | null;
-
   /** @format int32 */
   numa_node_not?: number | null;
   numa_node_not_in?: number[] | null;
@@ -7176,23 +6190,17 @@ export interface DiskWhereInput {
   persistent_memory_type_not_in?: string[] | null;
   persistent_memory_type_not_starts_with?: string | null;
   persistent_memory_type_starts_with?: string | null;
-
   /** @format int32 */
   physical_slot_on_brick?: number | null;
-
   /** @format int32 */
   physical_slot_on_brick_gt?: number | null;
-
   /** @format int32 */
   physical_slot_on_brick_gte?: number | null;
   physical_slot_on_brick_in?: number[] | null;
-
   /** @format int32 */
   physical_slot_on_brick_lt?: number | null;
-
   /** @format int32 */
   physical_slot_on_brick_lte?: number | null;
-
   /** @format int32 */
   physical_slot_on_brick_not?: number | null;
   physical_slot_on_brick_not_in?: number[] | null;
@@ -7203,23 +6211,17 @@ export interface DiskWhereInput {
   recommended_usage_in?: DiskUsage[] | null;
   recommended_usage_not?: DiskUsage | null;
   recommended_usage_not_in?: DiskUsage[] | null;
-
   /** @format int32 */
   remaining_life_percent?: number | null;
-
   /** @format int32 */
   remaining_life_percent_gt?: number | null;
-
   /** @format int32 */
   remaining_life_percent_gte?: number | null;
   remaining_life_percent_in?: number[] | null;
-
   /** @format int32 */
   remaining_life_percent_lt?: number | null;
-
   /** @format int32 */
   remaining_life_percent_lte?: number | null;
-
   /** @format int32 */
   remaining_life_percent_not?: number | null;
   remaining_life_percent_not_in?: number[] | null;
@@ -7237,23 +6239,17 @@ export interface DiskWhereInput {
   serial_not_in?: string[] | null;
   serial_not_starts_with?: string | null;
   serial_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -7291,66 +6287,48 @@ export interface LabelWhereInput {
   AND?: LabelWhereInput[] | null;
   NOT?: LabelWhereInput[] | null;
   OR?: LabelWhereInput[] | null;
-
   /** @format int32 */
   cluster_num?: number | null;
-
   /** @format int32 */
   cluster_num_gt?: number | null;
-
   /** @format int32 */
   cluster_num_gte?: number | null;
   cluster_num_in?: number[] | null;
-
   /** @format int32 */
   cluster_num_lt?: number | null;
-
   /** @format int32 */
   cluster_num_lte?: number | null;
-
   /** @format int32 */
   cluster_num_not?: number | null;
   cluster_num_not_in?: number[] | null;
   clusters_every?: ClusterWhereInput | null;
   clusters_none?: ClusterWhereInput | null;
   clusters_some?: ClusterWhereInput | null;
-
   /** @format int32 */
   consistency_group_num?: number | null;
-
   /** @format int32 */
   consistency_group_num_gt?: number | null;
-
   /** @format int32 */
   consistency_group_num_gte?: number | null;
   consistency_group_num_in?: number[] | null;
-
   /** @format int32 */
   consistency_group_num_lt?: number | null;
-
   /** @format int32 */
   consistency_group_num_lte?: number | null;
-
   /** @format int32 */
   consistency_group_num_not?: number | null;
   consistency_group_num_not_in?: number[] | null;
-
   /** @format int32 */
   consistency_group_snapshot_num?: number | null;
-
   /** @format int32 */
   consistency_group_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   consistency_group_snapshot_num_gte?: number | null;
   consistency_group_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   consistency_group_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   consistency_group_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   consistency_group_snapshot_num_not?: number | null;
   consistency_group_snapshot_num_not_in?: number[] | null;
@@ -7360,46 +6338,34 @@ export interface LabelWhereInput {
   consistency_groups_every?: ConsistencyGroupWhereInput | null;
   consistency_groups_none?: ConsistencyGroupWhereInput | null;
   consistency_groups_some?: ConsistencyGroupWhereInput | null;
-
   /** @format int32 */
   content_library_image_num?: number | null;
-
   /** @format int32 */
   content_library_image_num_gt?: number | null;
-
   /** @format int32 */
   content_library_image_num_gte?: number | null;
   content_library_image_num_in?: number[] | null;
-
   /** @format int32 */
   content_library_image_num_lt?: number | null;
-
   /** @format int32 */
   content_library_image_num_lte?: number | null;
-
   /** @format int32 */
   content_library_image_num_not?: number | null;
   content_library_image_num_not_in?: number[] | null;
   content_library_images_every?: ContentLibraryImageWhereInput | null;
   content_library_images_none?: ContentLibraryImageWhereInput | null;
   content_library_images_some?: ContentLibraryImageWhereInput | null;
-
   /** @format int32 */
   content_library_vm_template_num?: number | null;
-
   /** @format int32 */
   content_library_vm_template_num_gt?: number | null;
-
   /** @format int32 */
   content_library_vm_template_num_gte?: number | null;
   content_library_vm_template_num_in?: number[] | null;
-
   /** @format int32 */
   content_library_vm_template_num_lt?: number | null;
-
   /** @format int32 */
   content_library_vm_template_num_lte?: number | null;
-
   /** @format int32 */
   content_library_vm_template_num_not?: number | null;
   content_library_vm_template_num_not_in?: number[] | null;
@@ -7414,115 +6380,85 @@ export interface LabelWhereInput {
   createdAt_lte?: string | null;
   createdAt_not?: string | null;
   createdAt_not_in?: string[] | null;
-
   /** @format int32 */
   datacenter_num?: number | null;
-
   /** @format int32 */
   datacenter_num_gt?: number | null;
-
   /** @format int32 */
   datacenter_num_gte?: number | null;
   datacenter_num_in?: number[] | null;
-
   /** @format int32 */
   datacenter_num_lt?: number | null;
-
   /** @format int32 */
   datacenter_num_lte?: number | null;
-
   /** @format int32 */
   datacenter_num_not?: number | null;
   datacenter_num_not_in?: number[] | null;
   datacenters_every?: DatacenterWhereInput | null;
   datacenters_none?: DatacenterWhereInput | null;
   datacenters_some?: DatacenterWhereInput | null;
-
   /** @format int32 */
   disk_num?: number | null;
-
   /** @format int32 */
   disk_num_gt?: number | null;
-
   /** @format int32 */
   disk_num_gte?: number | null;
   disk_num_in?: number[] | null;
-
   /** @format int32 */
   disk_num_lt?: number | null;
-
   /** @format int32 */
   disk_num_lte?: number | null;
-
   /** @format int32 */
   disk_num_not?: number | null;
   disk_num_not_in?: number[] | null;
   disks_every?: DiskWhereInput | null;
   disks_none?: DiskWhereInput | null;
   disks_some?: DiskWhereInput | null;
-
   /** @format int32 */
   elf_image_num?: number | null;
-
   /** @format int32 */
   elf_image_num_gt?: number | null;
-
   /** @format int32 */
   elf_image_num_gte?: number | null;
   elf_image_num_in?: number[] | null;
-
   /** @format int32 */
   elf_image_num_lt?: number | null;
-
   /** @format int32 */
   elf_image_num_lte?: number | null;
-
   /** @format int32 */
   elf_image_num_not?: number | null;
   elf_image_num_not_in?: number[] | null;
   elf_images_every?: ElfImageWhereInput | null;
   elf_images_none?: ElfImageWhereInput | null;
   elf_images_some?: ElfImageWhereInput | null;
-
   /** @format int32 */
   gpu_device_num?: number | null;
-
   /** @format int32 */
   gpu_device_num_gt?: number | null;
-
   /** @format int32 */
   gpu_device_num_gte?: number | null;
   gpu_device_num_in?: number[] | null;
-
   /** @format int32 */
   gpu_device_num_lt?: number | null;
-
   /** @format int32 */
   gpu_device_num_lte?: number | null;
-
   /** @format int32 */
   gpu_device_num_not?: number | null;
   gpu_device_num_not_in?: number[] | null;
   gpu_devices_every?: GpuDeviceWhereInput | null;
   gpu_devices_none?: GpuDeviceWhereInput | null;
   gpu_devices_some?: GpuDeviceWhereInput | null;
-
   /** @format int32 */
   host_num?: number | null;
-
   /** @format int32 */
   host_num_gt?: number | null;
-
   /** @format int32 */
   host_num_gte?: number | null;
   host_num_in?: number[] | null;
-
   /** @format int32 */
   host_num_lt?: number | null;
-
   /** @format int32 */
   host_num_lte?: number | null;
-
   /** @format int32 */
   host_num_not?: number | null;
   host_num_not_in?: number[] | null;
@@ -7543,43 +6479,31 @@ export interface LabelWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int32 */
   iscsi_lun_num?: number | null;
-
   /** @format int32 */
   iscsi_lun_num_gt?: number | null;
-
   /** @format int32 */
   iscsi_lun_num_gte?: number | null;
   iscsi_lun_num_in?: number[] | null;
-
   /** @format int32 */
   iscsi_lun_num_lt?: number | null;
-
   /** @format int32 */
   iscsi_lun_num_lte?: number | null;
-
   /** @format int32 */
   iscsi_lun_num_not?: number | null;
   iscsi_lun_num_not_in?: number[] | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num?: number | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num_gte?: number | null;
   iscsi_lun_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num_not?: number | null;
   iscsi_lun_snapshot_num_not_in?: number[] | null;
@@ -7589,23 +6513,17 @@ export interface LabelWhereInput {
   iscsi_luns_every?: IscsiLunWhereInput | null;
   iscsi_luns_none?: IscsiLunWhereInput | null;
   iscsi_luns_some?: IscsiLunWhereInput | null;
-
   /** @format int32 */
   iscsi_target_num?: number | null;
-
   /** @format int32 */
   iscsi_target_num_gt?: number | null;
-
   /** @format int32 */
   iscsi_target_num_gte?: number | null;
   iscsi_target_num_in?: number[] | null;
-
   /** @format int32 */
   iscsi_target_num_lt?: number | null;
-
   /** @format int32 */
   iscsi_target_num_lte?: number | null;
-
   /** @format int32 */
   iscsi_target_num_not?: number | null;
   iscsi_target_num_not_in?: number[] | null;
@@ -7615,23 +6533,17 @@ export interface LabelWhereInput {
   isolation_policies_every?: IsolationPolicyWhereInput | null;
   isolation_policies_none?: IsolationPolicyWhereInput | null;
   isolation_policies_some?: IsolationPolicyWhereInput | null;
-
   /** @format int32 */
   isolation_policy_num?: number | null;
-
   /** @format int32 */
   isolation_policy_num_gt?: number | null;
-
   /** @format int32 */
   isolation_policy_num_gte?: number | null;
   isolation_policy_num_in?: number[] | null;
-
   /** @format int32 */
   isolation_policy_num_lt?: number | null;
-
   /** @format int32 */
   isolation_policy_num_lte?: number | null;
-
   /** @format int32 */
   isolation_policy_num_not?: number | null;
   isolation_policy_num_not_in?: number[] | null;
@@ -7649,135 +6561,99 @@ export interface LabelWhereInput {
   key_not_in?: string[] | null;
   key_not_starts_with?: string | null;
   key_starts_with?: string | null;
-
   /** @format int32 */
   namespace_group_num?: number | null;
-
   /** @format int32 */
   namespace_group_num_gt?: number | null;
-
   /** @format int32 */
   namespace_group_num_gte?: number | null;
   namespace_group_num_in?: number[] | null;
-
   /** @format int32 */
   namespace_group_num_lt?: number | null;
-
   /** @format int32 */
   namespace_group_num_lte?: number | null;
-
   /** @format int32 */
   namespace_group_num_not?: number | null;
   namespace_group_num_not_in?: number[] | null;
   namespace_groups_every?: NamespaceGroupWhereInput | null;
   namespace_groups_none?: NamespaceGroupWhereInput | null;
   namespace_groups_some?: NamespaceGroupWhereInput | null;
-
   /** @format int32 */
   nfs_export_num?: number | null;
-
   /** @format int32 */
   nfs_export_num_gt?: number | null;
-
   /** @format int32 */
   nfs_export_num_gte?: number | null;
   nfs_export_num_in?: number[] | null;
-
   /** @format int32 */
   nfs_export_num_lt?: number | null;
-
   /** @format int32 */
   nfs_export_num_lte?: number | null;
-
   /** @format int32 */
   nfs_export_num_not?: number | null;
   nfs_export_num_not_in?: number[] | null;
   nfs_exports_every?: NfsExportWhereInput | null;
   nfs_exports_none?: NfsExportWhereInput | null;
   nfs_exports_some?: NfsExportWhereInput | null;
-
   /** @format int32 */
   nfs_inode_num?: number | null;
-
   /** @format int32 */
   nfs_inode_num_gt?: number | null;
-
   /** @format int32 */
   nfs_inode_num_gte?: number | null;
   nfs_inode_num_in?: number[] | null;
-
   /** @format int32 */
   nfs_inode_num_lt?: number | null;
-
   /** @format int32 */
   nfs_inode_num_lte?: number | null;
-
   /** @format int32 */
   nfs_inode_num_not?: number | null;
   nfs_inode_num_not_in?: number[] | null;
   nfs_inodes_every?: NfsInodeWhereInput | null;
   nfs_inodes_none?: NfsInodeWhereInput | null;
   nfs_inodes_some?: NfsInodeWhereInput | null;
-
   /** @format int32 */
   nic_num?: number | null;
-
   /** @format int32 */
   nic_num_gt?: number | null;
-
   /** @format int32 */
   nic_num_gte?: number | null;
   nic_num_in?: number[] | null;
-
   /** @format int32 */
   nic_num_lt?: number | null;
-
   /** @format int32 */
   nic_num_lte?: number | null;
-
   /** @format int32 */
   nic_num_not?: number | null;
   nic_num_not_in?: number[] | null;
   nics_every?: NicWhereInput | null;
   nics_none?: NicWhereInput | null;
   nics_some?: NicWhereInput | null;
-
   /** @format int32 */
   nvmf_namespace_num?: number | null;
-
   /** @format int32 */
   nvmf_namespace_num_gt?: number | null;
-
   /** @format int32 */
   nvmf_namespace_num_gte?: number | null;
   nvmf_namespace_num_in?: number[] | null;
-
   /** @format int32 */
   nvmf_namespace_num_lt?: number | null;
-
   /** @format int32 */
   nvmf_namespace_num_lte?: number | null;
-
   /** @format int32 */
   nvmf_namespace_num_not?: number | null;
   nvmf_namespace_num_not_in?: number[] | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num?: number | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num_gte?: number | null;
   nvmf_namespace_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num_not?: number | null;
   nvmf_namespace_snapshot_num_not_in?: number[] | null;
@@ -7787,23 +6663,17 @@ export interface LabelWhereInput {
   nvmf_namespaces_every?: NvmfNamespaceWhereInput | null;
   nvmf_namespaces_none?: NvmfNamespaceWhereInput | null;
   nvmf_namespaces_some?: NvmfNamespaceWhereInput | null;
-
   /** @format int32 */
   nvmf_subsystem_num?: number | null;
-
   /** @format int32 */
   nvmf_subsystem_num_gt?: number | null;
-
   /** @format int32 */
   nvmf_subsystem_num_gte?: number | null;
   nvmf_subsystem_num_in?: number[] | null;
-
   /** @format int32 */
   nvmf_subsystem_num_lt?: number | null;
-
   /** @format int32 */
   nvmf_subsystem_num_lte?: number | null;
-
   /** @format int32 */
   nvmf_subsystem_num_not?: number | null;
   nvmf_subsystem_num_not_in?: number[] | null;
@@ -7813,63 +6683,45 @@ export interface LabelWhereInput {
   security_policies_every?: SecurityPolicyWhereInput | null;
   security_policies_none?: SecurityPolicyWhereInput | null;
   security_policies_some?: SecurityPolicyWhereInput | null;
-
   /** @format int32 */
   security_policy_num?: number | null;
-
   /** @format int32 */
   security_policy_num_gt?: number | null;
-
   /** @format int32 */
   security_policy_num_gte?: number | null;
   security_policy_num_in?: number[] | null;
-
   /** @format int32 */
   security_policy_num_lt?: number | null;
-
   /** @format int32 */
   security_policy_num_lte?: number | null;
-
   /** @format int32 */
   security_policy_num_not?: number | null;
   security_policy_num_not_in?: number[] | null;
-
   /** @format int32 */
   system_vlan_num?: number | null;
-
   /** @format int32 */
   system_vlan_num_gt?: number | null;
-
   /** @format int32 */
   system_vlan_num_gte?: number | null;
   system_vlan_num_in?: number[] | null;
-
   /** @format int32 */
   system_vlan_num_lt?: number | null;
-
   /** @format int32 */
   system_vlan_num_lte?: number | null;
-
   /** @format int32 */
   system_vlan_num_not?: number | null;
   system_vlan_num_not_in?: number[] | null;
-
   /** @format int32 */
   total_num?: number | null;
-
   /** @format int32 */
   total_num_gt?: number | null;
-
   /** @format int32 */
   total_num_gte?: number | null;
   total_num_in?: number[] | null;
-
   /** @format int32 */
   total_num_lt?: number | null;
-
   /** @format int32 */
   total_num_lte?: number | null;
-
   /** @format int32 */
   total_num_not?: number | null;
   total_num_not_in?: number[] | null;
@@ -7887,23 +6739,17 @@ export interface LabelWhereInput {
   value_not_in?: string[] | null;
   value_not_starts_with?: string | null;
   value_starts_with?: string | null;
-
   /** @format int32 */
   vds_num?: number | null;
-
   /** @format int32 */
   vds_num_gt?: number | null;
-
   /** @format int32 */
   vds_num_gte?: number | null;
   vds_num_in?: number[] | null;
-
   /** @format int32 */
   vds_num_lt?: number | null;
-
   /** @format int32 */
   vds_num_lte?: number | null;
-
   /** @format int32 */
   vds_num_not?: number | null;
   vds_num_not_in?: number[] | null;
@@ -7913,129 +6759,93 @@ export interface LabelWhereInput {
   vlans_every?: VlanWhereInput | null;
   vlans_none?: VlanWhereInput | null;
   vlans_some?: VlanWhereInput | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   vm_snapshot_num?: number | null;
-
   /** @format int32 */
   vm_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   vm_snapshot_num_gte?: number | null;
   vm_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   vm_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   vm_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   vm_snapshot_num_not?: number | null;
   vm_snapshot_num_not_in?: number[] | null;
   vm_snapshots_every?: VmSnapshotWhereInput | null;
   vm_snapshots_none?: VmSnapshotWhereInput | null;
   vm_snapshots_some?: VmSnapshotWhereInput | null;
-
   /** @format int32 */
   vm_template_num?: number | null;
-
   /** @format int32 */
   vm_template_num_gt?: number | null;
-
   /** @format int32 */
   vm_template_num_gte?: number | null;
   vm_template_num_in?: number[] | null;
-
   /** @format int32 */
   vm_template_num_lt?: number | null;
-
   /** @format int32 */
   vm_template_num_lte?: number | null;
-
   /** @format int32 */
   vm_template_num_not?: number | null;
   vm_template_num_not_in?: number[] | null;
   vm_templates_every?: VmTemplateWhereInput | null;
   vm_templates_none?: VmTemplateWhereInput | null;
   vm_templates_some?: VmTemplateWhereInput | null;
-
   /** @format int32 */
   vm_vlan_num?: number | null;
-
   /** @format int32 */
   vm_vlan_num_gt?: number | null;
-
   /** @format int32 */
   vm_vlan_num_gte?: number | null;
   vm_vlan_num_in?: number[] | null;
-
   /** @format int32 */
   vm_vlan_num_lt?: number | null;
-
   /** @format int32 */
   vm_vlan_num_lte?: number | null;
-
   /** @format int32 */
   vm_vlan_num_not?: number | null;
   vm_vlan_num_not_in?: number[] | null;
-
   /** @format int32 */
   vm_volume_num?: number | null;
-
   /** @format int32 */
   vm_volume_num_gt?: number | null;
-
   /** @format int32 */
   vm_volume_num_gte?: number | null;
   vm_volume_num_in?: number[] | null;
-
   /** @format int32 */
   vm_volume_num_lt?: number | null;
-
   /** @format int32 */
   vm_volume_num_lte?: number | null;
-
   /** @format int32 */
   vm_volume_num_not?: number | null;
   vm_volume_num_not_in?: number[] | null;
-
   /** @format int32 */
   vm_volume_snapshot_num?: number | null;
-
   /** @format int32 */
   vm_volume_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   vm_volume_snapshot_num_gte?: number | null;
   vm_volume_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   vm_volume_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   vm_volume_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   vm_volume_snapshot_num_not?: number | null;
   vm_volume_snapshot_num_not_in?: number[] | null;
@@ -8118,23 +6928,17 @@ export interface ConsistencyGroupSnapshotWhereInput {
   nvmf_namespace_snapshots_every?: NvmfNamespaceSnapshotWhereInput | null;
   nvmf_namespace_snapshots_none?: NvmfNamespaceSnapshotWhereInput | null;
   nvmf_namespace_snapshots_some?: NvmfNamespaceSnapshotWhereInput | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -8145,43 +6949,31 @@ export interface IscsiLunSnapshotWhereInput {
   NOT?: IscsiLunSnapshotWhereInput[] | null;
   OR?: IscsiLunSnapshotWhereInput[] | null;
   consistency_group_snapshot?: ConsistencyGroupSnapshotWhereInput | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -8249,23 +7041,17 @@ export interface IscsiLunSnapshotWhereInput {
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
   snapshot_group?: SnapshotGroupWhereInput | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -8289,203 +7075,143 @@ export interface IscsiLunWhereInput {
   allowed_initiators_not_in?: string[] | null;
   allowed_initiators_not_starts_with?: string | null;
   allowed_initiators_starts_with?: string | null;
-
   /** @format int64 */
   assigned_size?: number | null;
-
   /** @format int64 */
   assigned_size_gt?: number | null;
-
   /** @format int64 */
   assigned_size_gte?: number | null;
   assigned_size_in?: number[] | null;
-
   /** @format int64 */
   assigned_size_lt?: number | null;
-
   /** @format int64 */
   assigned_size_lte?: number | null;
-
   /** @format int64 */
   assigned_size_not?: number | null;
   assigned_size_not_in?: number[] | null;
-
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_gt?: number | null;
-
   /** @format int64 */
   bps_gte?: number | null;
   bps_in?: number[] | null;
-
   /** @format int64 */
   bps_lt?: number | null;
-
   /** @format int64 */
   bps_lte?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_gt?: number | null;
-
   /** @format int64 */
   bps_max_gte?: number | null;
   bps_max_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_max_length_gte?: number | null;
   bps_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_max_length_not?: number | null;
   bps_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_max_lt?: number | null;
-
   /** @format int64 */
   bps_max_lte?: number | null;
-
   /** @format int64 */
   bps_max_not?: number | null;
   bps_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_not?: number | null;
   bps_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_gt?: number | null;
-
   /** @format int64 */
   bps_rd_gte?: number | null;
   bps_rd_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_lt?: number | null;
-
   /** @format int64 */
   bps_rd_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_gte?: number | null;
   bps_rd_max_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gte?: number | null;
   bps_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_not?: number | null;
   bps_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_not?: number | null;
   bps_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_not?: number | null;
   bps_rd_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_gt?: number | null;
-
   /** @format int64 */
   bps_wr_gte?: number | null;
   bps_wr_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_lt?: number | null;
-
   /** @format int64 */
   bps_wr_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_gte?: number | null;
   bps_wr_max_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gte?: number | null;
   bps_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_not?: number | null;
   bps_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_not?: number | null;
   bps_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_not?: number | null;
   bps_wr_not_in?: number[] | null;
@@ -8502,63 +7228,45 @@ export interface IscsiLunWhereInput {
   configuration_method_not?: ConfigurationMethod | null;
   configuration_method_not_in?: ConfigurationMethod[] | null;
   consistency_group?: ConsistencyGroupWhereInput | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gte?: number | null;
   downgraded_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_not?: number | null;
   downgraded_prioritized_space_not_in?: number[] | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -8584,203 +7292,143 @@ export interface IscsiLunWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   io_size_gt?: number | null;
-
   /** @format int64 */
   io_size_gte?: number | null;
   io_size_in?: number[] | null;
-
   /** @format int64 */
   io_size_lt?: number | null;
-
   /** @format int64 */
   io_size_lte?: number | null;
-
   /** @format int64 */
   io_size_not?: number | null;
   io_size_not_in?: number[] | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_gt?: number | null;
-
   /** @format int64 */
   iops_gte?: number | null;
   iops_in?: number[] | null;
-
   /** @format int64 */
   iops_lt?: number | null;
-
   /** @format int64 */
   iops_lte?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_gt?: number | null;
-
   /** @format int64 */
   iops_max_gte?: number | null;
   iops_max_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_max_length_gte?: number | null;
   iops_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_max_length_not?: number | null;
   iops_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_max_lt?: number | null;
-
   /** @format int64 */
   iops_max_lte?: number | null;
-
   /** @format int64 */
   iops_max_not?: number | null;
   iops_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_not?: number | null;
   iops_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_gt?: number | null;
-
   /** @format int64 */
   iops_rd_gte?: number | null;
   iops_rd_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_lt?: number | null;
-
   /** @format int64 */
   iops_rd_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_gte?: number | null;
   iops_rd_max_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gte?: number | null;
   iops_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_not?: number | null;
   iops_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_not?: number | null;
   iops_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_not?: number | null;
   iops_rd_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_gt?: number | null;
-
   /** @format int64 */
   iops_wr_gte?: number | null;
   iops_wr_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_lt?: number | null;
-
   /** @format int64 */
   iops_wr_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_gte?: number | null;
   iops_wr_max_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gte?: number | null;
   iops_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_not?: number | null;
   iops_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_not?: number | null;
   iops_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_not?: number | null;
   iops_wr_not_in?: number[] | null;
@@ -8810,23 +7458,17 @@ export interface IscsiLunWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int32 */
   lun_id?: number | null;
-
   /** @format int32 */
   lun_id_gt?: number | null;
-
   /** @format int32 */
   lun_id_gte?: number | null;
   lun_id_in?: number[] | null;
-
   /** @format int32 */
   lun_id_lt?: number | null;
-
   /** @format int32 */
   lun_id_lte?: number | null;
-
   /** @format int32 */
   lun_id_not?: number | null;
   lun_id_not_in?: number[] | null;
@@ -8846,23 +7488,17 @@ export interface IscsiLunWhereInput {
   name_starts_with?: string | null;
   prioritized?: boolean | null;
   prioritized_not?: boolean | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -8873,128 +7509,92 @@ export interface IscsiLunWhereInput {
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
-
   /** @format int64 */
   shared_size?: number | null;
-
   /** @format int64 */
   shared_size_gt?: number | null;
-
   /** @format int64 */
   shared_size_gte?: number | null;
   shared_size_in?: number[] | null;
-
   /** @format int64 */
   shared_size_lt?: number | null;
-
   /** @format int64 */
   shared_size_lte?: number | null;
-
   /** @format int64 */
   shared_size_not?: number | null;
   shared_size_not_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num?: number | null;
-
   /** @format int32 */
   snapshot_num_gt?: number | null;
-
   /** @format int32 */
   snapshot_num_gte?: number | null;
   snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num_lt?: number | null;
-
   /** @format int32 */
   snapshot_num_lte?: number | null;
-
   /** @format int32 */
   snapshot_num_not?: number | null;
   snapshot_num_not_in?: number[] | null;
   snapshot_plans_every?: SnapshotPlanWhereInput | null;
   snapshot_plans_none?: SnapshotPlanWhereInput | null;
   snapshot_plans_some?: SnapshotPlanWhereInput | null;
-
   /** @format int32 */
   stripe_num?: number | null;
-
   /** @format int32 */
   stripe_num_gt?: number | null;
-
   /** @format int32 */
   stripe_num_gte?: number | null;
   stripe_num_in?: number[] | null;
-
   /** @format int32 */
   stripe_num_lt?: number | null;
-
   /** @format int32 */
   stripe_num_lte?: number | null;
-
   /** @format int32 */
   stripe_num_not?: number | null;
   stripe_num_not_in?: number[] | null;
-
   /** @format int64 */
   stripe_size?: number | null;
-
   /** @format int64 */
   stripe_size_gt?: number | null;
-
   /** @format int64 */
   stripe_size_gte?: number | null;
   stripe_size_in?: number[] | null;
-
   /** @format int64 */
   stripe_size_lt?: number | null;
-
   /** @format int64 */
   stripe_size_lte?: number | null;
-
   /** @format int64 */
   stripe_size_not?: number | null;
   stripe_size_not_in?: number[] | null;
   thin_provision?: boolean | null;
   thin_provision_not?: boolean | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format double */
   unique_logical_size_gt?: number | null;
-
   /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
-
   /** @format double */
   unique_logical_size_lt?: number | null;
-
   /** @format double */
   unique_logical_size_lte?: number | null;
-
   /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -9183,183 +7783,129 @@ export interface IscsiTargetWhereInput {
   AND?: IscsiTargetWhereInput[] | null;
   NOT?: IscsiTargetWhereInput[] | null;
   OR?: IscsiTargetWhereInput[] | null;
-
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_gt?: number | null;
-
   /** @format int64 */
   bps_gte?: number | null;
   bps_in?: number[] | null;
-
   /** @format int64 */
   bps_lt?: number | null;
-
   /** @format int64 */
   bps_lte?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_gt?: number | null;
-
   /** @format int64 */
   bps_max_gte?: number | null;
   bps_max_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_max_length_gte?: number | null;
   bps_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_max_length_not?: number | null;
   bps_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_max_lt?: number | null;
-
   /** @format int64 */
   bps_max_lte?: number | null;
-
   /** @format int64 */
   bps_max_not?: number | null;
   bps_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_not?: number | null;
   bps_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_gt?: number | null;
-
   /** @format int64 */
   bps_rd_gte?: number | null;
   bps_rd_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_lt?: number | null;
-
   /** @format int64 */
   bps_rd_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_gte?: number | null;
   bps_rd_max_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gte?: number | null;
   bps_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_not?: number | null;
   bps_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_not?: number | null;
   bps_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_not?: number | null;
   bps_rd_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_gt?: number | null;
-
   /** @format int64 */
   bps_wr_gte?: number | null;
   bps_wr_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_lt?: number | null;
-
   /** @format int64 */
   bps_wr_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_gte?: number | null;
   bps_wr_max_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gte?: number | null;
   bps_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_not?: number | null;
   bps_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_not?: number | null;
   bps_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_not?: number | null;
   bps_wr_not_in?: number[] | null;
@@ -9420,43 +7966,31 @@ export interface IscsiTargetWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -9486,203 +8020,143 @@ export interface IscsiTargetWhereInput {
   id_starts_with?: string | null;
   internal?: boolean | null;
   internal_not?: boolean | null;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   io_size_gt?: number | null;
-
   /** @format int64 */
   io_size_gte?: number | null;
   io_size_in?: number[] | null;
-
   /** @format int64 */
   io_size_lt?: number | null;
-
   /** @format int64 */
   io_size_lte?: number | null;
-
   /** @format int64 */
   io_size_not?: number | null;
   io_size_not_in?: number[] | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_gt?: number | null;
-
   /** @format int64 */
   iops_gte?: number | null;
   iops_in?: number[] | null;
-
   /** @format int64 */
   iops_lt?: number | null;
-
   /** @format int64 */
   iops_lte?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_gt?: number | null;
-
   /** @format int64 */
   iops_max_gte?: number | null;
   iops_max_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_max_length_gte?: number | null;
   iops_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_max_length_not?: number | null;
   iops_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_max_lt?: number | null;
-
   /** @format int64 */
   iops_max_lte?: number | null;
-
   /** @format int64 */
   iops_max_not?: number | null;
   iops_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_not?: number | null;
   iops_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_gt?: number | null;
-
   /** @format int64 */
   iops_rd_gte?: number | null;
   iops_rd_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_lt?: number | null;
-
   /** @format int64 */
   iops_rd_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_gte?: number | null;
   iops_rd_max_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gte?: number | null;
   iops_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_not?: number | null;
   iops_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_not?: number | null;
   iops_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_not?: number | null;
   iops_rd_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_gt?: number | null;
-
   /** @format int64 */
   iops_wr_gte?: number | null;
   iops_wr_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_lt?: number | null;
-
   /** @format int64 */
   iops_wr_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_gte?: number | null;
   iops_wr_max_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gte?: number | null;
   iops_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_not?: number | null;
   iops_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_not?: number | null;
   iops_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_not?: number | null;
   iops_wr_not_in?: number[] | null;
@@ -9731,23 +8205,17 @@ export interface IscsiTargetWhereInput {
   iscsi_connections_every?: IscsiConnectionWhereInput | null;
   iscsi_connections_none?: IscsiConnectionWhereInput | null;
   iscsi_connections_some?: IscsiConnectionWhereInput | null;
-
   /** @format int32 */
   iscsi_luns_num?: number | null;
-
   /** @format int32 */
   iscsi_luns_num_gt?: number | null;
-
   /** @format int32 */
   iscsi_luns_num_gte?: number | null;
   iscsi_luns_num_in?: number[] | null;
-
   /** @format int32 */
   iscsi_luns_num_lt?: number | null;
-
   /** @format int32 */
   iscsi_luns_num_lte?: number | null;
-
   /** @format int32 */
   iscsi_luns_num_not?: number | null;
   iscsi_luns_num_not_in?: number[] | null;
@@ -9787,23 +8255,17 @@ export interface IscsiTargetWhereInput {
   name_starts_with?: string | null;
   prioritized?: boolean | null;
   prioritized_not?: boolean | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -9811,43 +8273,31 @@ export interface IscsiTargetWhereInput {
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
-
   /** @format int32 */
   stripe_num?: number | null;
-
   /** @format int32 */
   stripe_num_gt?: number | null;
-
   /** @format int32 */
   stripe_num_gte?: number | null;
   stripe_num_in?: number[] | null;
-
   /** @format int32 */
   stripe_num_lt?: number | null;
-
   /** @format int32 */
   stripe_num_lte?: number | null;
-
   /** @format int32 */
   stripe_num_not?: number | null;
   stripe_num_not_in?: number[] | null;
-
   /** @format int64 */
   stripe_size?: number | null;
-
   /** @format int64 */
   stripe_size_gt?: number | null;
-
   /** @format int64 */
   stripe_size_gte?: number | null;
   stripe_size_in?: number[] | null;
-
   /** @format int64 */
   stripe_size_lt?: number | null;
-
   /** @format int64 */
   stripe_size_lte?: number | null;
-
   /** @format int64 */
   stripe_size_not?: number | null;
   stripe_size_not_in?: number[] | null;
@@ -9869,23 +8319,17 @@ export interface IscsiConnectionWhereInput {
   AND?: IscsiConnectionWhereInput[] | null;
   NOT?: IscsiConnectionWhereInput[] | null;
   OR?: IscsiConnectionWhereInput[] | null;
-
   /** @format int32 */
   client_port?: number | null;
-
   /** @format int32 */
   client_port_gt?: number | null;
-
   /** @format int32 */
   client_port_gte?: number | null;
   client_port_in?: number[] | null;
-
   /** @format int32 */
   client_port_lt?: number | null;
-
   /** @format int32 */
   client_port_lte?: number | null;
-
   /** @format int32 */
   client_port_not?: number | null;
   client_port_not_in?: number[] | null;
@@ -9935,183 +8379,129 @@ export interface NvmfSubsystemWhereInput {
   AND?: NvmfSubsystemWhereInput[] | null;
   NOT?: NvmfSubsystemWhereInput[] | null;
   OR?: NvmfSubsystemWhereInput[] | null;
-
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_gt?: number | null;
-
   /** @format int64 */
   bps_gte?: number | null;
   bps_in?: number[] | null;
-
   /** @format int64 */
   bps_lt?: number | null;
-
   /** @format int64 */
   bps_lte?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_gt?: number | null;
-
   /** @format int64 */
   bps_max_gte?: number | null;
   bps_max_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_max_length_gte?: number | null;
   bps_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_max_length_not?: number | null;
   bps_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_max_lt?: number | null;
-
   /** @format int64 */
   bps_max_lte?: number | null;
-
   /** @format int64 */
   bps_max_not?: number | null;
   bps_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_not?: number | null;
   bps_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_gt?: number | null;
-
   /** @format int64 */
   bps_rd_gte?: number | null;
   bps_rd_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_lt?: number | null;
-
   /** @format int64 */
   bps_rd_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_gte?: number | null;
   bps_rd_max_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gte?: number | null;
   bps_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_not?: number | null;
   bps_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_not?: number | null;
   bps_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_not?: number | null;
   bps_rd_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_gt?: number | null;
-
   /** @format int64 */
   bps_wr_gte?: number | null;
   bps_wr_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_lt?: number | null;
-
   /** @format int64 */
   bps_wr_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_gte?: number | null;
   bps_wr_max_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gte?: number | null;
   bps_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_not?: number | null;
   bps_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_not?: number | null;
   bps_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_not?: number | null;
   bps_wr_not_in?: number[] | null;
@@ -10142,43 +8532,31 @@ export interface NvmfSubsystemWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -10208,203 +8586,143 @@ export interface NvmfSubsystemWhereInput {
   id_starts_with?: string | null;
   internal?: boolean | null;
   internal_not?: boolean | null;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   io_size_gt?: number | null;
-
   /** @format int64 */
   io_size_gte?: number | null;
   io_size_in?: number[] | null;
-
   /** @format int64 */
   io_size_lt?: number | null;
-
   /** @format int64 */
   io_size_lte?: number | null;
-
   /** @format int64 */
   io_size_not?: number | null;
   io_size_not_in?: number[] | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_gt?: number | null;
-
   /** @format int64 */
   iops_gte?: number | null;
   iops_in?: number[] | null;
-
   /** @format int64 */
   iops_lt?: number | null;
-
   /** @format int64 */
   iops_lte?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_gt?: number | null;
-
   /** @format int64 */
   iops_max_gte?: number | null;
   iops_max_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_max_length_gte?: number | null;
   iops_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_max_length_not?: number | null;
   iops_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_max_lt?: number | null;
-
   /** @format int64 */
   iops_max_lte?: number | null;
-
   /** @format int64 */
   iops_max_not?: number | null;
   iops_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_not?: number | null;
   iops_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_gt?: number | null;
-
   /** @format int64 */
   iops_rd_gte?: number | null;
   iops_rd_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_lt?: number | null;
-
   /** @format int64 */
   iops_rd_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_gte?: number | null;
   iops_rd_max_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gte?: number | null;
   iops_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_not?: number | null;
   iops_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_not?: number | null;
   iops_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_not?: number | null;
   iops_rd_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_gt?: number | null;
-
   /** @format int64 */
   iops_wr_gte?: number | null;
   iops_wr_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_lt?: number | null;
-
   /** @format int64 */
   iops_wr_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_gte?: number | null;
   iops_wr_max_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gte?: number | null;
   iops_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_not?: number | null;
   iops_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_not?: number | null;
   iops_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_not?: number | null;
   iops_wr_not_in?: number[] | null;
@@ -10490,23 +8808,17 @@ export interface NvmfSubsystemWhereInput {
   nqn_whitelist_not_in?: string[] | null;
   nqn_whitelist_not_starts_with?: string | null;
   nqn_whitelist_starts_with?: string | null;
-
   /** @format int32 */
   nvmf_namespaces_num?: number | null;
-
   /** @format int32 */
   nvmf_namespaces_num_gt?: number | null;
-
   /** @format int32 */
   nvmf_namespaces_num_gte?: number | null;
   nvmf_namespaces_num_in?: number[] | null;
-
   /** @format int32 */
   nvmf_namespaces_num_lt?: number | null;
-
   /** @format int32 */
   nvmf_namespaces_num_lte?: number | null;
-
   /** @format int32 */
   nvmf_namespaces_num_not?: number | null;
   nvmf_namespaces_num_not_in?: number[] | null;
@@ -10516,23 +8828,17 @@ export interface NvmfSubsystemWhereInput {
   policy_not_in?: NvmfSubsystemPolicyType[] | null;
   prioritized?: boolean | null;
   prioritized_not?: boolean | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -10540,43 +8846,31 @@ export interface NvmfSubsystemWhereInput {
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
-
   /** @format int32 */
   stripe_num?: number | null;
-
   /** @format int32 */
   stripe_num_gt?: number | null;
-
   /** @format int32 */
   stripe_num_gte?: number | null;
   stripe_num_in?: number[] | null;
-
   /** @format int32 */
   stripe_num_lt?: number | null;
-
   /** @format int32 */
   stripe_num_lte?: number | null;
-
   /** @format int32 */
   stripe_num_not?: number | null;
   stripe_num_not_in?: number[] | null;
-
   /** @format int64 */
   stripe_size?: number | null;
-
   /** @format int64 */
   stripe_size_gt?: number | null;
-
   /** @format int64 */
   stripe_size_gte?: number | null;
   stripe_size_in?: number[] | null;
-
   /** @format int64 */
   stripe_size_lt?: number | null;
-
   /** @format int64 */
   stripe_size_lte?: number | null;
-
   /** @format int64 */
   stripe_size_not?: number | null;
   stripe_size_not_in?: number[] | null;
@@ -10655,203 +8949,143 @@ export interface NvmfNamespaceWhereInput {
   AND?: NvmfNamespaceWhereInput[] | null;
   NOT?: NvmfNamespaceWhereInput[] | null;
   OR?: NvmfNamespaceWhereInput[] | null;
-
   /** @format int64 */
   assigned_size?: number | null;
-
   /** @format int64 */
   assigned_size_gt?: number | null;
-
   /** @format int64 */
   assigned_size_gte?: number | null;
   assigned_size_in?: number[] | null;
-
   /** @format int64 */
   assigned_size_lt?: number | null;
-
   /** @format int64 */
   assigned_size_lte?: number | null;
-
   /** @format int64 */
   assigned_size_not?: number | null;
   assigned_size_not_in?: number[] | null;
-
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_gt?: number | null;
-
   /** @format int64 */
   bps_gte?: number | null;
   bps_in?: number[] | null;
-
   /** @format int64 */
   bps_lt?: number | null;
-
   /** @format int64 */
   bps_lte?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_gt?: number | null;
-
   /** @format int64 */
   bps_max_gte?: number | null;
   bps_max_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_max_length_gte?: number | null;
   bps_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_max_length_not?: number | null;
   bps_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_max_lt?: number | null;
-
   /** @format int64 */
   bps_max_lte?: number | null;
-
   /** @format int64 */
   bps_max_not?: number | null;
   bps_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_not?: number | null;
   bps_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_gt?: number | null;
-
   /** @format int64 */
   bps_rd_gte?: number | null;
   bps_rd_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_lt?: number | null;
-
   /** @format int64 */
   bps_rd_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_gte?: number | null;
   bps_rd_max_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_gte?: number | null;
   bps_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_length_not?: number | null;
   bps_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_max_lt?: number | null;
-
   /** @format int64 */
   bps_rd_max_lte?: number | null;
-
   /** @format int64 */
   bps_rd_max_not?: number | null;
   bps_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_rd_not?: number | null;
   bps_rd_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_gt?: number | null;
-
   /** @format int64 */
   bps_wr_gte?: number | null;
   bps_wr_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_lt?: number | null;
-
   /** @format int64 */
   bps_wr_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_gte?: number | null;
   bps_wr_max_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_gte?: number | null;
   bps_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_length_not?: number | null;
   bps_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_max_lt?: number | null;
-
   /** @format int64 */
   bps_wr_max_lte?: number | null;
-
   /** @format int64 */
   bps_wr_max_not?: number | null;
   bps_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   bps_wr_not?: number | null;
   bps_wr_not_in?: number[] | null;
@@ -10868,63 +9102,45 @@ export interface NvmfNamespaceWhereInput {
   configuration_method_not?: ConfigurationMethod | null;
   configuration_method_not_in?: ConfigurationMethod[] | null;
   consistency_group?: ConsistencyGroupWhereInput | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gte?: number | null;
   downgraded_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_not?: number | null;
   downgraded_prioritized_space_not_in?: number[] | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -10950,203 +9166,143 @@ export interface NvmfNamespaceWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   io_size_gt?: number | null;
-
   /** @format int64 */
   io_size_gte?: number | null;
   io_size_in?: number[] | null;
-
   /** @format int64 */
   io_size_lt?: number | null;
-
   /** @format int64 */
   io_size_lte?: number | null;
-
   /** @format int64 */
   io_size_not?: number | null;
   io_size_not_in?: number[] | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_gt?: number | null;
-
   /** @format int64 */
   iops_gte?: number | null;
   iops_in?: number[] | null;
-
   /** @format int64 */
   iops_lt?: number | null;
-
   /** @format int64 */
   iops_lte?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_gt?: number | null;
-
   /** @format int64 */
   iops_max_gte?: number | null;
   iops_max_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_max_length_gte?: number | null;
   iops_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_max_length_not?: number | null;
   iops_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_max_lt?: number | null;
-
   /** @format int64 */
   iops_max_lte?: number | null;
-
   /** @format int64 */
   iops_max_not?: number | null;
   iops_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_not?: number | null;
   iops_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_gt?: number | null;
-
   /** @format int64 */
   iops_rd_gte?: number | null;
   iops_rd_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_lt?: number | null;
-
   /** @format int64 */
   iops_rd_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_gte?: number | null;
   iops_rd_max_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_gte?: number | null;
   iops_rd_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_length_not?: number | null;
   iops_rd_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_max_lt?: number | null;
-
   /** @format int64 */
   iops_rd_max_lte?: number | null;
-
   /** @format int64 */
   iops_rd_max_not?: number | null;
   iops_rd_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_rd_not?: number | null;
   iops_rd_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_gt?: number | null;
-
   /** @format int64 */
   iops_wr_gte?: number | null;
   iops_wr_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_lt?: number | null;
-
   /** @format int64 */
   iops_wr_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_gte?: number | null;
   iops_wr_max_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_gte?: number | null;
   iops_wr_max_length_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_length_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_length_not?: number | null;
   iops_wr_max_length_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_max_lt?: number | null;
-
   /** @format int64 */
   iops_wr_max_lte?: number | null;
-
   /** @format int64 */
   iops_wr_max_not?: number | null;
   iops_wr_max_not_in?: number[] | null;
-
   /** @format int64 */
   iops_wr_not?: number | null;
   iops_wr_not_in?: number[] | null;
@@ -11192,23 +9348,17 @@ export interface NvmfNamespaceWhereInput {
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
   namespace_group?: NamespaceGroupWhereInput | null;
-
   /** @format int32 */
   namespace_id?: number | null;
-
   /** @format int32 */
   namespace_id_gt?: number | null;
-
   /** @format int32 */
   namespace_id_gte?: number | null;
   namespace_id_in?: number[] | null;
-
   /** @format int32 */
   namespace_id_lt?: number | null;
-
   /** @format int32 */
   namespace_id_lte?: number | null;
-
   /** @format int32 */
   namespace_id_not?: number | null;
   namespace_id_not_in?: number[] | null;
@@ -11229,23 +9379,17 @@ export interface NvmfNamespaceWhereInput {
   nvmf_subsystem?: NvmfSubsystemWhereInput | null;
   prioritized?: boolean | null;
   prioritized_not?: boolean | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -11253,128 +9397,92 @@ export interface NvmfNamespaceWhereInput {
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
-
   /** @format int64 */
   shared_size?: number | null;
-
   /** @format int64 */
   shared_size_gt?: number | null;
-
   /** @format int64 */
   shared_size_gte?: number | null;
   shared_size_in?: number[] | null;
-
   /** @format int64 */
   shared_size_lt?: number | null;
-
   /** @format int64 */
   shared_size_lte?: number | null;
-
   /** @format int64 */
   shared_size_not?: number | null;
   shared_size_not_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num?: number | null;
-
   /** @format int32 */
   snapshot_num_gt?: number | null;
-
   /** @format int32 */
   snapshot_num_gte?: number | null;
   snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num_lt?: number | null;
-
   /** @format int32 */
   snapshot_num_lte?: number | null;
-
   /** @format int32 */
   snapshot_num_not?: number | null;
   snapshot_num_not_in?: number[] | null;
   snapshot_plans_every?: SnapshotPlanWhereInput | null;
   snapshot_plans_none?: SnapshotPlanWhereInput | null;
   snapshot_plans_some?: SnapshotPlanWhereInput | null;
-
   /** @format int32 */
   stripe_num?: number | null;
-
   /** @format int32 */
   stripe_num_gt?: number | null;
-
   /** @format int32 */
   stripe_num_gte?: number | null;
   stripe_num_in?: number[] | null;
-
   /** @format int32 */
   stripe_num_lt?: number | null;
-
   /** @format int32 */
   stripe_num_lte?: number | null;
-
   /** @format int32 */
   stripe_num_not?: number | null;
   stripe_num_not_in?: number[] | null;
-
   /** @format int64 */
   stripe_size?: number | null;
-
   /** @format int64 */
   stripe_size_gt?: number | null;
-
   /** @format int64 */
   stripe_size_gte?: number | null;
   stripe_size_in?: number[] | null;
-
   /** @format int64 */
   stripe_size_lt?: number | null;
-
   /** @format int64 */
   stripe_size_lte?: number | null;
-
   /** @format int64 */
   stripe_size_not?: number | null;
   stripe_size_not_in?: number[] | null;
   thin_provision?: boolean | null;
   thin_provision_not?: boolean | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format double */
   unique_logical_size_gt?: number | null;
-
   /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
-
   /** @format double */
   unique_logical_size_lt?: number | null;
-
   /** @format double */
   unique_logical_size_lte?: number | null;
-
   /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -11479,23 +9587,17 @@ export interface ConsistencyGroupWhereInput {
   namespaces_every?: NvmfNamespaceWhereInput | null;
   namespaces_none?: NvmfNamespaceWhereInput | null;
   namespaces_some?: NvmfNamespaceWhereInput | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -11510,43 +9612,31 @@ export interface SnapshotPlanWhereInput {
   AND?: SnapshotPlanWhereInput[] | null;
   NOT?: SnapshotPlanWhereInput[] | null;
   OR?: SnapshotPlanWhereInput[] | null;
-
   /** @format int32 */
   auto_delete_num?: number | null;
-
   /** @format int32 */
   auto_delete_num_gt?: number | null;
-
   /** @format int32 */
   auto_delete_num_gte?: number | null;
   auto_delete_num_in?: number[] | null;
-
   /** @format int32 */
   auto_delete_num_lt?: number | null;
-
   /** @format int32 */
   auto_delete_num_lte?: number | null;
-
   /** @format int32 */
   auto_delete_num_not?: number | null;
   auto_delete_num_not_in?: number[] | null;
-
   /** @format int32 */
   auto_execute_num?: number | null;
-
   /** @format int32 */
   auto_execute_num_gt?: number | null;
-
   /** @format int32 */
   auto_execute_num_gte?: number | null;
   auto_execute_num_in?: number[] | null;
-
   /** @format int32 */
   auto_execute_num_lt?: number | null;
-
   /** @format int32 */
   auto_execute_num_lte?: number | null;
-
   /** @format int32 */
   auto_execute_num_not?: number | null;
   auto_execute_num_not_in?: number[] | null;
@@ -11634,63 +9724,45 @@ export interface SnapshotPlanWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   logical_size_bytes?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gte?: number | null;
   logical_size_bytes_in?: number[] | null;
-
   /** @format int64 */
   logical_size_bytes_lt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_lte?: number | null;
-
   /** @format int64 */
   logical_size_bytes_not?: number | null;
   logical_size_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   manual_delete_num?: number | null;
-
   /** @format int32 */
   manual_delete_num_gt?: number | null;
-
   /** @format int32 */
   manual_delete_num_gte?: number | null;
   manual_delete_num_in?: number[] | null;
-
   /** @format int32 */
   manual_delete_num_lt?: number | null;
-
   /** @format int32 */
   manual_delete_num_lte?: number | null;
-
   /** @format int32 */
   manual_delete_num_not?: number | null;
   manual_delete_num_not_in?: number[] | null;
-
   /** @format int32 */
   manual_execute_num?: number | null;
-
   /** @format int32 */
   manual_execute_num_gt?: number | null;
-
   /** @format int32 */
   manual_execute_num_gte?: number | null;
   manual_execute_num_in?: number[] | null;
-
   /** @format int32 */
   manual_execute_num_lt?: number | null;
-
   /** @format int32 */
   manual_execute_num_lte?: number | null;
-
   /** @format int32 */
   manual_execute_num_not?: number | null;
   manual_execute_num_not_in?: number[] | null;
@@ -11718,83 +9790,59 @@ export interface SnapshotPlanWhereInput {
   next_execute_time_lte?: string | null;
   next_execute_time_not?: string | null;
   next_execute_time_not_in?: string[] | null;
-
   /** @format int32 */
   object_num?: number | null;
-
   /** @format int32 */
   object_num_gt?: number | null;
-
   /** @format int32 */
   object_num_gte?: number | null;
   object_num_in?: number[] | null;
-
   /** @format int32 */
   object_num_lt?: number | null;
-
   /** @format int32 */
   object_num_lte?: number | null;
-
   /** @format int32 */
   object_num_not?: number | null;
   object_num_not_in?: number[] | null;
-
   /** @format int64 */
   physical_size_bytes?: number | null;
-
   /** @format int64 */
   physical_size_bytes_gt?: number | null;
-
   /** @format int64 */
   physical_size_bytes_gte?: number | null;
   physical_size_bytes_in?: number[] | null;
-
   /** @format int64 */
   physical_size_bytes_lt?: number | null;
-
   /** @format int64 */
   physical_size_bytes_lte?: number | null;
-
   /** @format int64 */
   physical_size_bytes_not?: number | null;
   physical_size_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   remain_snapshot_num?: number | null;
-
   /** @format int32 */
   remain_snapshot_num_gt?: number | null;
-
   /** @format int32 */
   remain_snapshot_num_gte?: number | null;
   remain_snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   remain_snapshot_num_lt?: number | null;
-
   /** @format int32 */
   remain_snapshot_num_lte?: number | null;
-
   /** @format int32 */
   remain_snapshot_num_not?: number | null;
   remain_snapshot_num_not_in?: number[] | null;
-
   /** @format int32 */
   snapshot_group_num?: number | null;
-
   /** @format int32 */
   snapshot_group_num_gt?: number | null;
-
   /** @format int32 */
   snapshot_group_num_gte?: number | null;
   snapshot_group_num_in?: number[] | null;
-
   /** @format int32 */
   snapshot_group_num_lt?: number | null;
-
   /** @format int32 */
   snapshot_group_num_lte?: number | null;
-
   /** @format int32 */
   snapshot_group_num_not?: number | null;
   snapshot_group_num_not_in?: number[] | null;
@@ -11949,23 +9997,17 @@ export interface SnapshotGroupWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   logical_size_bytes?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_gte?: number | null;
   logical_size_bytes_in?: number[] | null;
-
   /** @format int64 */
   logical_size_bytes_lt?: number | null;
-
   /** @format int64 */
   logical_size_bytes_lte?: number | null;
-
   /** @format int64 */
   logical_size_bytes_not?: number | null;
   logical_size_bytes_not_in?: number[] | null;
@@ -11983,23 +10025,17 @@ export interface SnapshotGroupWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   object_num?: number | null;
-
   /** @format int32 */
   object_num_gt?: number | null;
-
   /** @format int32 */
   object_num_gte?: number | null;
   object_num_in?: number[] | null;
-
   /** @format int32 */
   object_num_lt?: number | null;
-
   /** @format int32 */
   object_num_lte?: number | null;
-
   /** @format int32 */
   object_num_not?: number | null;
   object_num_not_in?: number[] | null;
@@ -12107,23 +10143,17 @@ export interface VmSnapshotWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   max_bandwidth_gt?: number | null;
-
   /** @format int64 */
   max_bandwidth_gte?: number | null;
   max_bandwidth_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth_lt?: number | null;
-
   /** @format int64 */
   max_bandwidth_lte?: number | null;
-
   /** @format int64 */
   max_bandwidth_not?: number | null;
   max_bandwidth_not_in?: number[] | null;
@@ -12131,23 +10161,17 @@ export interface VmSnapshotWhereInput {
   max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
   max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
   max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int32 */
   max_iops?: number | null;
-
   /** @format int32 */
   max_iops_gt?: number | null;
-
   /** @format int32 */
   max_iops_gte?: number | null;
   max_iops_in?: number[] | null;
-
   /** @format int32 */
   max_iops_lt?: number | null;
-
   /** @format int32 */
   max_iops_lte?: number | null;
-
   /** @format int32 */
   max_iops_not?: number | null;
   max_iops_not_in?: number[] | null;
@@ -12155,23 +10179,17 @@ export interface VmSnapshotWhereInput {
   max_iops_policy_in?: VmDiskIoRestrictType[] | null;
   max_iops_policy_not?: VmDiskIoRestrictType | null;
   max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int64 */
   memory?: number | null;
-
   /** @format int64 */
   memory_gt?: number | null;
-
   /** @format int64 */
   memory_gte?: number | null;
   memory_in?: number[] | null;
-
   /** @format int64 */
   memory_lt?: number | null;
-
   /** @format int64 */
   memory_lte?: number | null;
-
   /** @format int64 */
   memory_not?: number | null;
   memory_not_in?: number[] | null;
@@ -12189,44 +10207,32 @@ export interface VmSnapshotWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
   snapshot_group?: SnapshotGroupWhereInput | null;
-
   /** @format int32 */
   vcpu?: number | null;
-
   /** @format int32 */
   vcpu_gt?: number | null;
-
   /** @format int32 */
   vcpu_gte?: number | null;
   vcpu_in?: number[] | null;
-
   /** @format int32 */
   vcpu_lt?: number | null;
-
   /** @format int32 */
   vcpu_lte?: number | null;
-
   /** @format int32 */
   vcpu_not?: number | null;
   vcpu_not_in?: number[] | null;
@@ -12328,43 +10334,31 @@ export interface ReplicationPlanWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -12391,23 +10385,17 @@ export interface ReplicationPlanWhereInput {
   id_starts_with?: string | null;
   inbound?: boolean | null;
   inbound_not?: boolean | null;
-
   /** @format int32 */
   interval?: number | null;
-
   /** @format int32 */
   interval_gt?: number | null;
-
   /** @format int32 */
   interval_gte?: number | null;
   interval_in?: number[] | null;
-
   /** @format int32 */
   interval_lt?: number | null;
-
   /** @format int32 */
   interval_lte?: number | null;
-
   /** @format int32 */
   interval_not?: number | null;
   interval_not_in?: number[] | null;
@@ -12420,23 +10408,17 @@ export interface ReplicationPlanWhereInput {
   keep_policy_in?: BackupPlanKeepPolicy[] | null;
   keep_policy_not?: BackupPlanKeepPolicy | null;
   keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
-
   /** @format int32 */
   keep_policy_value?: number | null;
-
   /** @format int32 */
   keep_policy_value_gt?: number | null;
-
   /** @format int32 */
   keep_policy_value_gte?: number | null;
   keep_policy_value_in?: number[] | null;
-
   /** @format int32 */
   keep_policy_value_lt?: number | null;
-
   /** @format int32 */
   keep_policy_value_lte?: number | null;
-
   /** @format int32 */
   keep_policy_value_not?: number | null;
   keep_policy_value_not_in?: number[] | null;
@@ -12458,43 +10440,31 @@ export interface ReplicationPlanWhereInput {
   last_execute_status_message_starts_with?: string | null;
   last_execute_status_not?: BackupPlanExecutionStatus | null;
   last_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
-
   /** @format int32 */
   last_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_gt?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_gte?: number | null;
   last_execute_success_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_execute_success_job_count_lt?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_lte?: number | null;
-
   /** @format int32 */
   last_execute_success_job_count_not?: number | null;
   last_execute_success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   last_execute_total_job_count?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_gt?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_gte?: number | null;
   last_execute_total_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_execute_total_job_count_lt?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_lte?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count_not?: number | null;
   last_execute_total_job_count_not_in?: number[] | null;
@@ -12524,43 +10494,31 @@ export interface ReplicationPlanWhereInput {
   last_manual_execute_status_message_starts_with?: string | null;
   last_manual_execute_status_not?: BackupPlanExecutionStatus | null;
   last_manual_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_gt?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_gte?: number | null;
   last_manual_execute_success_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_lt?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_lte?: number | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count_not?: number | null;
   last_manual_execute_success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_gt?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_gte?: number | null;
   last_manual_execute_total_job_count_in?: number[] | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_lt?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_lte?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count_not?: number | null;
   last_manual_execute_total_job_count_not_in?: number[] | null;
@@ -12620,23 +10578,17 @@ export interface ReplicationPlanWhereInput {
   replica_name_setting_not_in?: string[] | null;
   replica_name_setting_not_starts_with?: string | null;
   replica_name_setting_starts_with?: string | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -12836,6 +10788,9 @@ export interface ExternalCloudTowerWhereInput {
   status_in?: ExternalCloudTowerStatus[] | null;
   status_not?: ExternalCloudTowerStatus | null;
   status_not_in?: ExternalCloudTowerStatus[] | null;
+  sync_replication_plans_every?: SyncReplicationPlanWhereInput | null;
+  sync_replication_plans_none?: SyncReplicationPlanWhereInput | null;
+  sync_replication_plans_some?: SyncReplicationPlanWhereInput | null;
   updatedAt?: string | null;
   updatedAt_gt?: string | null;
   updatedAt_gte?: string | null;
@@ -12886,27 +10841,23 @@ export interface FailbackExecutionWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  is_sync_replication?: boolean | null;
+  is_sync_replication_not?: boolean | null;
   replication_failback_target_executions_every?: ReplicationFailbackTargetExecutionWhereInput | null;
   replication_failback_target_executions_none?: ReplicationFailbackTargetExecutionWhereInput | null;
   replication_failback_target_executions_some?: ReplicationFailbackTargetExecutionWhereInput | null;
   replication_service?: ReplicationServiceWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -12914,43 +10865,31 @@ export interface FailbackExecutionWhereInput {
   state_in?: BackupExecutionState[] | null;
   state_not?: BackupExecutionState | null;
   state_not_in?: BackupExecutionState[] | null;
-
   /** @format int32 */
   success_job_count?: number | null;
-
   /** @format int32 */
   success_job_count_gt?: number | null;
-
   /** @format int32 */
   success_job_count_gte?: number | null;
   success_job_count_in?: number[] | null;
-
   /** @format int32 */
   success_job_count_lt?: number | null;
-
   /** @format int32 */
   success_job_count_lte?: number | null;
-
   /** @format int32 */
   success_job_count_not?: number | null;
   success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   total_job_count?: number | null;
-
   /** @format int32 */
   total_job_count_gt?: number | null;
-
   /** @format int32 */
   total_job_count_gte?: number | null;
   total_job_count_in?: number[] | null;
-
   /** @format int32 */
   total_job_count_lt?: number | null;
-
   /** @format int32 */
   total_job_count_lte?: number | null;
-
   /** @format int32 */
   total_job_count_not?: number | null;
   total_job_count_not_in?: number[] | null;
@@ -13009,23 +10948,17 @@ export interface ReplicationFailbackTargetExecutionWhereInput {
   phase_in?: BackupJobPhase[] | null;
   phase_not?: BackupJobPhase | null;
   phase_not_in?: BackupJobPhase[] | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13112,103 +11045,73 @@ export interface ReplicationServiceWhereInput {
   kube_config_not_in?: string[] | null;
   kube_config_not_starts_with?: string | null;
   kube_config_starts_with?: string | null;
-
   /** @format int32 */
   max_failback_jobs?: number | null;
-
   /** @format int32 */
   max_failback_jobs_gt?: number | null;
-
   /** @format int32 */
   max_failback_jobs_gte?: number | null;
   max_failback_jobs_in?: number[] | null;
-
   /** @format int32 */
   max_failback_jobs_lt?: number | null;
-
   /** @format int32 */
   max_failback_jobs_lte?: number | null;
-
   /** @format int32 */
   max_failback_jobs_not?: number | null;
   max_failback_jobs_not_in?: number[] | null;
-
   /** @format double */
   max_failback_speed_limit?: number | null;
-
   /** @format double */
   max_failback_speed_limit_gt?: number | null;
-
   /** @format double */
   max_failback_speed_limit_gte?: number | null;
   max_failback_speed_limit_in?: number[] | null;
-
   /** @format double */
   max_failback_speed_limit_lt?: number | null;
-
   /** @format double */
   max_failback_speed_limit_lte?: number | null;
-
   /** @format double */
   max_failback_speed_limit_not?: number | null;
   max_failback_speed_limit_not_in?: number[] | null;
-
   /** @format int32 */
   max_replication_jobs?: number | null;
-
   /** @format int32 */
   max_replication_jobs_gt?: number | null;
-
   /** @format int32 */
   max_replication_jobs_gte?: number | null;
   max_replication_jobs_in?: number[] | null;
-
   /** @format int32 */
   max_replication_jobs_lt?: number | null;
-
   /** @format int32 */
   max_replication_jobs_lte?: number | null;
-
   /** @format int32 */
   max_replication_jobs_not?: number | null;
   max_replication_jobs_not_in?: number[] | null;
-
   /** @format double */
   max_replication_speed_limit?: number | null;
-
   /** @format double */
   max_replication_speed_limit_gt?: number | null;
-
   /** @format double */
   max_replication_speed_limit_gte?: number | null;
   max_replication_speed_limit_in?: number[] | null;
-
   /** @format double */
   max_replication_speed_limit_lt?: number | null;
-
   /** @format double */
   max_replication_speed_limit_lte?: number | null;
-
   /** @format double */
   max_replication_speed_limit_not?: number | null;
   max_replication_speed_limit_not_in?: number[] | null;
-
   /** @format int32 */
   max_retry_times?: number | null;
-
   /** @format int32 */
   max_retry_times_gt?: number | null;
-
   /** @format int32 */
   max_retry_times_gte?: number | null;
   max_retry_times_in?: number[] | null;
-
   /** @format int32 */
   max_retry_times_lt?: number | null;
-
   /** @format int32 */
   max_retry_times_lte?: number | null;
-
   /** @format int32 */
   max_retry_times_not?: number | null;
   max_retry_times_not_in?: number[] | null;
@@ -13235,23 +11138,17 @@ export interface ReplicationServiceWhereInput {
   replication_plans_every?: ReplicationPlanWhereInput | null;
   replication_plans_none?: ReplicationPlanWhereInput | null;
   replication_plans_some?: ReplicationPlanWhereInput | null;
-
   /** @format int32 */
   retry_interval?: number | null;
-
   /** @format int32 */
   retry_interval_gt?: number | null;
-
   /** @format int32 */
   retry_interval_gte?: number | null;
   retry_interval_in?: number[] | null;
-
   /** @format int32 */
   retry_interval_lt?: number | null;
-
   /** @format int32 */
   retry_interval_lte?: number | null;
-
   /** @format int32 */
   retry_interval_not?: number | null;
   retry_interval_not_in?: number[] | null;
@@ -13304,29 +11201,25 @@ export interface FailoverExecutionWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  is_sync_replication?: boolean | null;
+  is_sync_replication_not?: boolean | null;
   is_test_mode?: boolean | null;
   is_test_mode_not?: boolean | null;
   replication_failover_target_executions_every?: ReplicationFailoverTargetExecutionWhereInput | null;
   replication_failover_target_executions_none?: ReplicationFailoverTargetExecutionWhereInput | null;
   replication_failover_target_executions_some?: ReplicationFailoverTargetExecutionWhereInput | null;
   replication_service?: ReplicationServiceWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13338,43 +11231,31 @@ export interface FailoverExecutionWhereInput {
   state_in?: BackupExecutionState[] | null;
   state_not?: BackupExecutionState | null;
   state_not_in?: BackupExecutionState[] | null;
-
   /** @format int32 */
   success_job_count?: number | null;
-
   /** @format int32 */
   success_job_count_gt?: number | null;
-
   /** @format int32 */
   success_job_count_gte?: number | null;
   success_job_count_in?: number[] | null;
-
   /** @format int32 */
   success_job_count_lt?: number | null;
-
   /** @format int32 */
   success_job_count_lte?: number | null;
-
   /** @format int32 */
   success_job_count_not?: number | null;
   success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   total_job_count?: number | null;
-
   /** @format int32 */
   total_job_count_gt?: number | null;
-
   /** @format int32 */
   total_job_count_gte?: number | null;
   total_job_count_in?: number[] | null;
-
   /** @format int32 */
   total_job_count_lt?: number | null;
-
   /** @format int32 */
   total_job_count_lte?: number | null;
-
   /** @format int32 */
   total_job_count_not?: number | null;
   total_job_count_not_in?: number[] | null;
@@ -13433,23 +11314,17 @@ export interface ReplicationFailoverTargetExecutionWhereInput {
   phase_in?: BackupJobPhase[] | null;
   phase_not?: BackupJobPhase | null;
   phase_not_in?: BackupJobPhase[] | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13515,6 +11390,8 @@ export interface PermanentFailoverExecutionWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  is_sync_replication?: boolean | null;
+  is_sync_replication_not?: boolean | null;
   permanent_failover_target_executions_every?: PermanentFailoverTargetExecutionWhereInput | null;
   permanent_failover_target_executions_none?: PermanentFailoverTargetExecutionWhereInput | null;
   permanent_failover_target_executions_some?: PermanentFailoverTargetExecutionWhereInput | null;
@@ -13576,6 +11453,8 @@ export interface PermanentFailoverTargetExecutionWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  is_sync_replication?: boolean | null;
+  is_sync_replication_not?: boolean | null;
   keep_snapshot?: boolean | null;
   keep_snapshot_not?: boolean | null;
   keep_test_vm?: boolean | null;
@@ -13586,23 +11465,17 @@ export interface PermanentFailoverTargetExecutionWhereInput {
   phase_not?: BackupJobPhase | null;
   phase_not_in?: BackupJobPhase[] | null;
   replica_vm?: ReplicaVmWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13843,23 +11716,17 @@ export interface ReplicationTargetExecutionWhereInput {
   replica_vm?: ReplicaVmWhereInput | null;
   replication_plan?: ReplicationPlanWhereInput | null;
   replication_plan_execution?: ReplicationPlanExecutionWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13871,6 +11738,7 @@ export interface ReplicationTargetExecutionWhereInput {
   started_at_lte?: string | null;
   started_at_not?: string | null;
   started_at_not_in?: string[] | null;
+  sync_replication_plan?: SyncReplicationPlanWhereInput | null;
   type?: BackupExecutionType | null;
   type_in?: BackupExecutionType[] | null;
   type_not?: BackupExecutionType | null;
@@ -13881,6 +11749,7 @@ export enum ReplicationTargetExecutionCreation {
   FAILBACK = "FAILBACK",
   FAILOVER = "FAILOVER",
   REPLICATION = "REPLICATION",
+  SYNC_REPLICATION = "SYNC_REPLICATION",
 }
 
 export interface ReplicationPlanExecutionWhereInput {
@@ -13955,23 +11824,17 @@ export interface ReplicationPlanExecutionWhereInput {
   replication_target_executions_every?: ReplicationTargetExecutionWhereInput | null;
   replication_target_executions_none?: ReplicationTargetExecutionWhereInput | null;
   replication_target_executions_some?: ReplicationTargetExecutionWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -13979,43 +11842,31 @@ export interface ReplicationPlanExecutionWhereInput {
   state_in?: BackupExecutionState[] | null;
   state_not?: BackupExecutionState | null;
   state_not_in?: BackupExecutionState[] | null;
-
   /** @format int32 */
   success_job_count?: number | null;
-
   /** @format int32 */
   success_job_count_gt?: number | null;
-
   /** @format int32 */
   success_job_count_gte?: number | null;
   success_job_count_in?: number[] | null;
-
   /** @format int32 */
   success_job_count_lt?: number | null;
-
   /** @format int32 */
   success_job_count_lte?: number | null;
-
   /** @format int32 */
   success_job_count_not?: number | null;
   success_job_count_not_in?: number[] | null;
-
   /** @format int32 */
   total_job_count?: number | null;
-
   /** @format int32 */
   total_job_count_gt?: number | null;
-
   /** @format int32 */
   total_job_count_gte?: number | null;
   total_job_count_in?: number[] | null;
-
   /** @format int32 */
   total_job_count_lt?: number | null;
-
   /** @format int32 */
   total_job_count_lte?: number | null;
-
   /** @format int32 */
   total_job_count_not?: number | null;
   total_job_count_not_in?: number[] | null;
@@ -14031,6 +11882,307 @@ export interface ReplicationPlanExecutionWhereInput {
   updatedAt_lte?: string | null;
   updatedAt_not?: string | null;
   updatedAt_not_in?: string[] | null;
+}
+
+export interface SyncReplicationPlanWhereInput {
+  AND?: SyncReplicationPlanWhereInput[] | null;
+  NOT?: SyncReplicationPlanWhereInput[] | null;
+  OR?: SyncReplicationPlanWhereInput[] | null;
+  activation_timestamp?: string | null;
+  activation_timestamp_gt?: string | null;
+  activation_timestamp_gte?: string | null;
+  activation_timestamp_in?: string[] | null;
+  activation_timestamp_lt?: string | null;
+  activation_timestamp_lte?: string | null;
+  activation_timestamp_not?: string | null;
+  activation_timestamp_not_in?: string[] | null;
+  compression?: boolean | null;
+  compression_not?: boolean | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  /** @format int32 */
+  data_version?: number | null;
+  /** @format int32 */
+  data_version_gt?: number | null;
+  /** @format int32 */
+  data_version_gte?: number | null;
+  data_version_in?: number[] | null;
+  /** @format int32 */
+  data_version_lt?: number | null;
+  /** @format int32 */
+  data_version_lte?: number | null;
+  /** @format int32 */
+  data_version_not?: number | null;
+  data_version_not_in?: number[] | null;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  delete_strategy_in?: BackupPlanDeleteStrategy[] | null;
+  delete_strategy_not?: BackupPlanDeleteStrategy | null;
+  delete_strategy_not_in?: BackupPlanDeleteStrategy[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_k_gt?: number | null;
+  /** @format int32 */
+  ec_k_gte?: number | null;
+  ec_k_in?: number[] | null;
+  /** @format int32 */
+  ec_k_lt?: number | null;
+  /** @format int32 */
+  ec_k_lte?: number | null;
+  /** @format int32 */
+  ec_k_not?: number | null;
+  ec_k_not_in?: number[] | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  /** @format int32 */
+  ec_m_gt?: number | null;
+  /** @format int32 */
+  ec_m_gte?: number | null;
+  ec_m_in?: number[] | null;
+  /** @format int32 */
+  ec_m_lt?: number | null;
+  /** @format int32 */
+  ec_m_lte?: number | null;
+  /** @format int32 */
+  ec_m_not?: number | null;
+  ec_m_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_cloudtower?: ExternalCloudTowerWhereInput | null;
+  failover_test_keep_mac_address?: boolean | null;
+  failover_test_keep_mac_address_not?: boolean | null;
+  failover_test_name_rule?: ReplicaNameRule | null;
+  failover_test_name_rule_in?: ReplicaNameRule[] | null;
+  failover_test_name_rule_not?: ReplicaNameRule | null;
+  failover_test_name_rule_not_in?: ReplicaNameRule[] | null;
+  failover_test_name_setting?: string | null;
+  failover_test_name_setting_contains?: string | null;
+  failover_test_name_setting_ends_with?: string | null;
+  failover_test_name_setting_gt?: string | null;
+  failover_test_name_setting_gte?: string | null;
+  failover_test_name_setting_in?: string[] | null;
+  failover_test_name_setting_lt?: string | null;
+  failover_test_name_setting_lte?: string | null;
+  failover_test_name_setting_not?: string | null;
+  failover_test_name_setting_not_contains?: string | null;
+  failover_test_name_setting_not_ends_with?: string | null;
+  failover_test_name_setting_not_in?: string[] | null;
+  failover_test_name_setting_not_starts_with?: string | null;
+  failover_test_name_setting_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  inbound?: boolean | null;
+  inbound_not?: boolean | null;
+  initialization_time_point?: string | null;
+  initialization_time_point_contains?: string | null;
+  initialization_time_point_ends_with?: string | null;
+  initialization_time_point_gt?: string | null;
+  initialization_time_point_gte?: string | null;
+  initialization_time_point_in?: string[] | null;
+  initialization_time_point_lt?: string | null;
+  initialization_time_point_lte?: string | null;
+  initialization_time_point_not?: string | null;
+  initialization_time_point_not_contains?: string | null;
+  initialization_time_point_not_ends_with?: string | null;
+  initialization_time_point_not_in?: string[] | null;
+  initialization_time_point_not_starts_with?: string | null;
+  initialization_time_point_starts_with?: string | null;
+  /** @format int32 */
+  interval?: number | null;
+  /** @format int32 */
+  interval_gt?: number | null;
+  /** @format int32 */
+  interval_gte?: number | null;
+  interval_in?: number[] | null;
+  /** @format int32 */
+  interval_lt?: number | null;
+  /** @format int32 */
+  interval_lte?: number | null;
+  /** @format int32 */
+  interval_not?: number | null;
+  interval_not_in?: number[] | null;
+  keep_mac_address?: boolean | null;
+  keep_mac_address_not?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  keep_policy_in?: BackupPlanKeepPolicy[] | null;
+  keep_policy_not?: BackupPlanKeepPolicy | null;
+  keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  /** @format int32 */
+  keep_policy_value_gt?: number | null;
+  /** @format int32 */
+  keep_policy_value_gte?: number | null;
+  keep_policy_value_in?: number[] | null;
+  /** @format int32 */
+  keep_policy_value_lt?: number | null;
+  /** @format int32 */
+  keep_policy_value_lte?: number | null;
+  /** @format int32 */
+  keep_policy_value_not?: number | null;
+  keep_policy_value_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  period?: ReplicationPlanPeriod | null;
+  period_in?: ReplicationPlanPeriod[] | null;
+  period_not?: ReplicationPlanPeriod | null;
+  period_not_in?: ReplicationPlanPeriod[] | null;
+  phase?: BackupPlanPhase | null;
+  phase_in?: BackupPlanPhase[] | null;
+  phase_not?: BackupPlanPhase | null;
+  phase_not_in?: BackupPlanPhase[] | null;
+  replica_name_rule?: ReplicaNameRule | null;
+  replica_name_rule_in?: ReplicaNameRule[] | null;
+  replica_name_rule_not?: ReplicaNameRule | null;
+  replica_name_rule_not_in?: ReplicaNameRule[] | null;
+  replica_name_setting?: string | null;
+  replica_name_setting_contains?: string | null;
+  replica_name_setting_ends_with?: string | null;
+  replica_name_setting_gt?: string | null;
+  replica_name_setting_gte?: string | null;
+  replica_name_setting_in?: string[] | null;
+  replica_name_setting_lt?: string | null;
+  replica_name_setting_lte?: string | null;
+  replica_name_setting_not?: string | null;
+  replica_name_setting_not_contains?: string | null;
+  replica_name_setting_not_ends_with?: string | null;
+  replica_name_setting_not_in?: string[] | null;
+  replica_name_setting_not_starts_with?: string | null;
+  replica_name_setting_starts_with?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  /** @format int32 */
+  replica_num_gt?: number | null;
+  /** @format int32 */
+  replica_num_gte?: number | null;
+  replica_num_in?: number[] | null;
+  /** @format int32 */
+  replica_num_lt?: number | null;
+  /** @format int32 */
+  replica_num_lte?: number | null;
+  /** @format int32 */
+  replica_num_not?: number | null;
+  replica_num_not_in?: number[] | null;
+  replica_vms_every?: ReplicaVmWhereInput | null;
+  replica_vms_none?: ReplicaVmWhereInput | null;
+  replica_vms_some?: ReplicaVmWhereInput | null;
+  replication_restore_points_every?: ReplicationRestorePointWhereInput | null;
+  replication_restore_points_none?: ReplicationRestorePointWhereInput | null;
+  replication_restore_points_some?: ReplicationRestorePointWhereInput | null;
+  replication_target_executions_every?: ReplicationTargetExecutionWhereInput | null;
+  replication_target_executions_none?: ReplicationTargetExecutionWhereInput | null;
+  replication_target_executions_some?: ReplicationTargetExecutionWhereInput | null;
+  resiliency_type?: ResiliencyType | null;
+  resiliency_type_in?: ResiliencyType[] | null;
+  resiliency_type_not?: ResiliencyType | null;
+  resiliency_type_not_in?: ResiliencyType[] | null;
+  /** @format int32 */
+  resource_version?: number | null;
+  /** @format int32 */
+  resource_version_gt?: number | null;
+  /** @format int32 */
+  resource_version_gte?: number | null;
+  resource_version_in?: number[] | null;
+  /** @format int32 */
+  resource_version_lt?: number | null;
+  /** @format int32 */
+  resource_version_lte?: number | null;
+  /** @format int32 */
+  resource_version_not?: number | null;
+  resource_version_not_in?: number[] | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  snapshot_consistent_type_in?: ConsistentType[] | null;
+  snapshot_consistent_type_not?: ConsistentType | null;
+  snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  status?: BackupPlanStatus | null;
+  status_in?: BackupPlanStatus[] | null;
+  status_not?: BackupPlanStatus | null;
+  status_not_in?: BackupPlanStatus[] | null;
+  storage_encrypted?: boolean | null;
+  storage_encrypted_not?: boolean | null;
+  storage_policy?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  target_cluster?: ClusterWhereInput | null;
+  target_replication_service?: ReplicationServiceWhereInput | null;
+  thin_provision?: boolean | null;
+  thin_provision_not?: boolean | null;
+  type?: ReplicationPlanType | null;
+  type_in?: ReplicationPlanType[] | null;
+  type_not?: ReplicationPlanType | null;
+  type_not_in?: ReplicationPlanType[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export enum ReplicaNameRule {
+  ORIGIN = "ORIGIN",
+  PREFIX = "PREFIX",
+  SUFFIX = "SUFFIX",
+}
+
+export enum ReplicationPlanPeriod {
+  DAILY = "DAILY",
+  HOURLY = "HOURLY",
+  MINUTELY = "MINUTELY",
+  MONTHLY = "MONTHLY",
+  WEEKLY = "WEEKLY",
 }
 
 export interface ReplicationRestorePointWhereInput {
@@ -14121,23 +12273,17 @@ export interface ReplicationRestorePointWhereInput {
   replication_plan?: ReplicationPlanWhereInput | null;
   replication_service?: ReplicationServiceWhereInput | null;
   replication_target_execution?: ReplicationTargetExecutionWhereInput | null;
-
   /** @format int32 */
   resource_version?: number | null;
-
   /** @format int32 */
   resource_version_gt?: number | null;
-
   /** @format int32 */
   resource_version_gte?: number | null;
   resource_version_in?: number[] | null;
-
   /** @format int32 */
   resource_version_lt?: number | null;
-
   /** @format int32 */
   resource_version_lte?: number | null;
-
   /** @format int32 */
   resource_version_not?: number | null;
   resource_version_not_in?: number[] | null;
@@ -14159,6 +12305,7 @@ export interface ReplicationRestorePointWhereInput {
   snapshot_consistent_type_in?: ConsistentType[] | null;
   snapshot_consistent_type_not?: ConsistentType | null;
   snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  sync_replication_plan?: SyncReplicationPlanWhereInput | null;
   tower_deploy_id?: string | null;
   tower_deploy_id_contains?: string | null;
   tower_deploy_id_ends_with?: string | null;
@@ -14211,6 +12358,25 @@ export interface ReplicationRestorePointWhereInput {
 export enum BackupDedupMode {
   CHAIN = "CHAIN",
   NONE = "NONE",
+}
+
+export enum VmVolumeElfStoragePolicyType {
+  EC = "EC",
+  ELFCPREPLICA2THICKPROVISION = "ELF_CP_REPLICA_2_THICK_PROVISION",
+  ELFCPREPLICA2THINPROVISION = "ELF_CP_REPLICA_2_THIN_PROVISION",
+  ELFCPREPLICA3THICKPROVISION = "ELF_CP_REPLICA_3_THICK_PROVISION",
+  ELFCPREPLICA3THINPROVISION = "ELF_CP_REPLICA_3_THIN_PROVISION",
+  REPLICA1THICKPROVISION = "REPLICA_1_THICK_PROVISION",
+  REPLICA1THINPROVISION = "REPLICA_1_THIN_PROVISION",
+  REPLICA2THICKPROVISION = "REPLICA_2_THICK_PROVISION",
+  REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
+  REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
+  REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
+}
+
+export enum ReplicationPlanType {
+  STORAGE_VOLUME = "STORAGE_VOLUME",
+  VM = "VM",
 }
 
 export enum ReplicaVmState {
@@ -14321,81 +12487,36 @@ export interface ApiKeyWhereInput {
   username_starts_with?: string | null;
 }
 
-export enum ReplicationPlanPeriod {
-  DAILY = "DAILY",
-  HOURLY = "HOURLY",
-  MINUTELY = "MINUTELY",
-  MONTHLY = "MONTHLY",
-  WEEKLY = "WEEKLY",
-}
-
-export enum ReplicaNameRule {
-  ORIGIN = "ORIGIN",
-  PREFIX = "PREFIX",
-  SUFFIX = "SUFFIX",
-}
-
-export enum VmVolumeElfStoragePolicyType {
-  EC = "EC",
-  ELFCPREPLICA2THICKPROVISION = "ELF_CP_REPLICA_2_THICK_PROVISION",
-  ELFCPREPLICA2THINPROVISION = "ELF_CP_REPLICA_2_THIN_PROVISION",
-  ELFCPREPLICA3THICKPROVISION = "ELF_CP_REPLICA_3_THICK_PROVISION",
-  ELFCPREPLICA3THINPROVISION = "ELF_CP_REPLICA_3_THIN_PROVISION",
-  REPLICA1THICKPROVISION = "REPLICA_1_THICK_PROVISION",
-  REPLICA1THINPROVISION = "REPLICA_1_THIN_PROVISION",
-  REPLICA2THICKPROVISION = "REPLICA_2_THICK_PROVISION",
-  REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
-  REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
-  REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
-}
-
-export enum ReplicationPlanType {
-  STORAGE_VOLUME = "STORAGE_VOLUME",
-  VM = "VM",
-}
-
 export interface NvmfNamespaceSnapshotWhereInput {
   AND?: NvmfNamespaceSnapshotWhereInput[] | null;
   NOT?: NvmfNamespaceSnapshotWhereInput[] | null;
   OR?: NvmfNamespaceSnapshotWhereInput[] | null;
   consistency_group_snapshot?: ConsistencyGroupSnapshotWhereInput | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -14463,23 +12584,17 @@ export interface NvmfNamespaceSnapshotWhereInput {
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
   snapshot_group?: SnapshotGroupWhereInput | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -14569,23 +12684,17 @@ export interface ContentLibraryImageWhereInput {
   path_not_in?: string[] | null;
   path_not_starts_with?: string | null;
   path_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -14691,23 +12800,17 @@ export interface ElfImageWhereInput {
   path_not_in?: string[] | null;
   path_not_starts_with?: string | null;
   path_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -14726,23 +12829,17 @@ export interface VmDiskWhereInput {
   AND?: VmDiskWhereInput[] | null;
   NOT?: VmDiskWhereInput[] | null;
   OR?: VmDiskWhereInput[] | null;
-
   /** @format int32 */
   boot?: number | null;
-
   /** @format int32 */
   boot_gt?: number | null;
-
   /** @format int32 */
   boot_gte?: number | null;
   boot_in?: number[] | null;
-
   /** @format int32 */
   boot_lt?: number | null;
-
   /** @format int32 */
   boot_lte?: number | null;
-
   /** @format int32 */
   boot_not?: number | null;
   boot_not_in?: number[] | null;
@@ -14809,43 +12906,31 @@ export interface VmDiskWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int32 */
   key?: number | null;
-
   /** @format int32 */
   key_gt?: number | null;
-
   /** @format int32 */
   key_gte?: number | null;
   key_in?: number[] | null;
-
   /** @format int32 */
   key_lt?: number | null;
-
   /** @format int32 */
   key_lte?: number | null;
-
   /** @format int32 */
   key_not?: number | null;
   key_not_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   max_bandwidth_gt?: number | null;
-
   /** @format int64 */
   max_bandwidth_gte?: number | null;
   max_bandwidth_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth_lt?: number | null;
-
   /** @format int64 */
   max_bandwidth_lte?: number | null;
-
   /** @format int64 */
   max_bandwidth_not?: number | null;
   max_bandwidth_not_in?: number[] | null;
@@ -14853,23 +12938,17 @@ export interface VmDiskWhereInput {
   max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
   max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
   max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int32 */
   max_iops?: number | null;
-
   /** @format int32 */
   max_iops_gt?: number | null;
-
   /** @format int32 */
   max_iops_gte?: number | null;
   max_iops_in?: number[] | null;
-
   /** @format int32 */
   max_iops_lt?: number | null;
-
   /** @format int32 */
   max_iops_lte?: number | null;
-
   /** @format int32 */
   max_iops_not?: number | null;
   max_iops_not_in?: number[] | null;
@@ -15022,43 +13101,31 @@ export interface SvtImageWhereInput {
   path_not_in?: string[] | null;
   path_not_starts_with?: string | null;
   path_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
-
   /** @format int32 */
   version?: number | null;
-
   /** @format int32 */
   version_gt?: number | null;
-
   /** @format int32 */
   version_gte?: number | null;
   version_in?: number[] | null;
-
   /** @format int32 */
   version_lt?: number | null;
-
   /** @format int32 */
   version_lte?: number | null;
-
   /** @format int32 */
   version_not?: number | null;
   version_not_in?: number[] | null;
@@ -15092,112 +13159,96 @@ export interface VmVolumeWhereInput {
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
   elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_gte?: number | null;
   elf_storage_policy_ec_k_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_not?: number | null;
   elf_storage_policy_ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_gte?: number | null;
   elf_storage_policy_ec_m_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_not?: number | null;
   elf_storage_policy_ec_m_not_in?: number[] | null;
   elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
   elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
   elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_gte?: number | null;
   elf_storage_policy_replica_num_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_not?: number | null;
   elf_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gte?: number | null;
+  elf_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_not?: number | null;
+  elf_storage_policy_stripe_num_not_in?: number[] | null;
   elf_storage_policy_thin_provision?: boolean | null;
   elf_storage_policy_thin_provision_not?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
   entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-
   /** @format double */
   guest_size_usage?: number | null;
-
   /** @format double */
   guest_size_usage_gt?: number | null;
-
   /** @format double */
   guest_size_usage_gte?: number | null;
   guest_size_usage_in?: number[] | null;
-
   /** @format double */
   guest_size_usage_lt?: number | null;
-
   /** @format double */
   guest_size_usage_lte?: number | null;
-
   /** @format double */
   guest_size_usage_not?: number | null;
   guest_size_usage_not_in?: number[] | null;
-
   /** @format int64 */
   guest_used_size?: number | null;
-
   /** @format int64 */
   guest_used_size_gt?: number | null;
-
   /** @format int64 */
   guest_used_size_gte?: number | null;
   guest_used_size_in?: number[] | null;
-
   /** @format int64 */
   guest_used_size_lt?: number | null;
-
   /** @format int64 */
   guest_used_size_lte?: number | null;
-
   /** @format int64 */
   guest_used_size_not?: number | null;
   guest_used_size_not_in?: number[] | null;
@@ -15275,23 +13326,17 @@ export interface VmVolumeWhereInput {
   resident_in_cache_not?: boolean | null;
   sharing?: boolean | null;
   sharing_not?: boolean | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -15299,83 +13344,59 @@ export interface VmVolumeWhereInput {
   type_in?: VmVolumeType[] | null;
   type_not?: VmVolumeType | null;
   type_not_in?: VmVolumeType[] | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format double */
   unique_logical_size_gt?: number | null;
-
   /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
-
   /** @format double */
   unique_logical_size_lt?: number | null;
-
   /** @format double */
   unique_logical_size_lte?: number | null;
-
   /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
-
   /** @format int64 */
   used_size?: number | null;
-
   /** @format int64 */
   used_size_gt?: number | null;
-
   /** @format int64 */
   used_size_gte?: number | null;
   used_size_in?: number[] | null;
-
   /** @format int64 */
   used_size_lt?: number | null;
-
   /** @format int64 */
   used_size_lte?: number | null;
-
   /** @format int64 */
   used_size_not?: number | null;
   used_size_not_in?: number[] | null;
-
   /** @format double */
   used_size_usage?: number | null;
-
   /** @format double */
   used_size_usage_gt?: number | null;
-
   /** @format double */
   used_size_usage_gte?: number | null;
   used_size_usage_in?: number[] | null;
-
   /** @format double */
   used_size_usage_lt?: number | null;
-
   /** @format double */
   used_size_usage_lte?: number | null;
-
   /** @format double */
   used_size_usage_not?: number | null;
   used_size_usage_not_in?: number[] | null;
@@ -15482,23 +13503,17 @@ export interface VmTemplateWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   max_bandwidth_gt?: number | null;
-
   /** @format int64 */
   max_bandwidth_gte?: number | null;
   max_bandwidth_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth_lt?: number | null;
-
   /** @format int64 */
   max_bandwidth_lte?: number | null;
-
   /** @format int64 */
   max_bandwidth_not?: number | null;
   max_bandwidth_not_in?: number[] | null;
@@ -15506,23 +13521,17 @@ export interface VmTemplateWhereInput {
   max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
   max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
   max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int32 */
   max_iops?: number | null;
-
   /** @format int32 */
   max_iops_gt?: number | null;
-
   /** @format int32 */
   max_iops_gte?: number | null;
   max_iops_in?: number[] | null;
-
   /** @format int32 */
   max_iops_lt?: number | null;
-
   /** @format int32 */
   max_iops_lte?: number | null;
-
   /** @format int32 */
   max_iops_not?: number | null;
   max_iops_not_in?: number[] | null;
@@ -15530,23 +13539,17 @@ export interface VmTemplateWhereInput {
   max_iops_policy_in?: VmDiskIoRestrictType[] | null;
   max_iops_policy_not?: VmDiskIoRestrictType | null;
   max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int64 */
   memory?: number | null;
-
   /** @format int64 */
   memory_gt?: number | null;
-
   /** @format int64 */
   memory_gte?: number | null;
   memory_in?: number[] | null;
-
   /** @format int64 */
   memory_lt?: number | null;
-
   /** @format int64 */
   memory_lte?: number | null;
-
   /** @format int64 */
   memory_not?: number | null;
   memory_not_in?: number[] | null;
@@ -15564,43 +13567,31 @@ export interface VmTemplateWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
-
   /** @format int32 */
   vcpu?: number | null;
-
   /** @format int32 */
   vcpu_gt?: number | null;
-
   /** @format int32 */
   vcpu_gte?: number | null;
   vcpu_in?: number[] | null;
-
   /** @format int32 */
   vcpu_lt?: number | null;
-
   /** @format int32 */
   vcpu_lte?: number | null;
-
   /** @format int32 */
   vcpu_not?: number | null;
   vcpu_not_in?: number[] | null;
@@ -15706,23 +13697,17 @@ export interface ContentLibraryVmTemplateWhereInput {
   labels_every?: LabelWhereInput | null;
   labels_none?: LabelWhereInput | null;
   labels_some?: LabelWhereInput | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   max_bandwidth_gt?: number | null;
-
   /** @format int64 */
   max_bandwidth_gte?: number | null;
   max_bandwidth_in?: number[] | null;
-
   /** @format int64 */
   max_bandwidth_lt?: number | null;
-
   /** @format int64 */
   max_bandwidth_lte?: number | null;
-
   /** @format int64 */
   max_bandwidth_not?: number | null;
   max_bandwidth_not_in?: number[] | null;
@@ -15730,23 +13715,17 @@ export interface ContentLibraryVmTemplateWhereInput {
   max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
   max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
   max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int32 */
   max_iops?: number | null;
-
   /** @format int32 */
   max_iops_gt?: number | null;
-
   /** @format int32 */
   max_iops_gte?: number | null;
   max_iops_in?: number[] | null;
-
   /** @format int32 */
   max_iops_lt?: number | null;
-
   /** @format int32 */
   max_iops_lte?: number | null;
-
   /** @format int32 */
   max_iops_not?: number | null;
   max_iops_not_in?: number[] | null;
@@ -15754,23 +13733,17 @@ export interface ContentLibraryVmTemplateWhereInput {
   max_iops_policy_in?: VmDiskIoRestrictType[] | null;
   max_iops_policy_not?: VmDiskIoRestrictType | null;
   max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-
   /** @format int64 */
   memory?: number | null;
-
   /** @format int64 */
   memory_gt?: number | null;
-
   /** @format int64 */
   memory_gte?: number | null;
   memory_in?: number[] | null;
-
   /** @format int64 */
   memory_lt?: number | null;
-
   /** @format int64 */
   memory_lte?: number | null;
-
   /** @format int64 */
   memory_not?: number | null;
   memory_not_in?: number[] | null;
@@ -15802,43 +13775,35 @@ export interface ContentLibraryVmTemplateWhereInput {
   os_not_in?: string[] | null;
   os_not_starts_with?: string | null;
   os_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
-
+  usage?: ContentLibraryVmTemplateUsage | null;
+  usage_in?: ContentLibraryVmTemplateUsage[] | null;
+  usage_not?: ContentLibraryVmTemplateUsage | null;
+  usage_not_in?: ContentLibraryVmTemplateUsage[] | null;
   /** @format int32 */
   vcpu?: number | null;
-
   /** @format int32 */
   vcpu_gt?: number | null;
-
   /** @format int32 */
   vcpu_gte?: number | null;
   vcpu_in?: number[] | null;
-
   /** @format int32 */
   vcpu_lt?: number | null;
-
   /** @format int32 */
   vcpu_lte?: number | null;
-
   /** @format int32 */
   vcpu_not?: number | null;
   vcpu_not_in?: number[] | null;
@@ -15863,70 +13828,56 @@ export interface ContentLibraryVmTemplateWhereInput {
   win_opt_not?: boolean | null;
 }
 
+export enum ContentLibraryVmTemplateUsage {
+  SVM = "SVM",
+}
+
 export interface DatacenterWhereInput {
   AND?: DatacenterWhereInput[] | null;
   NOT?: DatacenterWhereInput[] | null;
   OR?: DatacenterWhereInput[] | null;
-
   /** @format int32 */
   cluster_num?: number | null;
-
   /** @format int32 */
   cluster_num_gt?: number | null;
-
   /** @format int32 */
   cluster_num_gte?: number | null;
   cluster_num_in?: number[] | null;
-
   /** @format int32 */
   cluster_num_lt?: number | null;
-
   /** @format int32 */
   cluster_num_lte?: number | null;
-
   /** @format int32 */
   cluster_num_not?: number | null;
   cluster_num_not_in?: number[] | null;
   clusters_every?: ClusterWhereInput | null;
   clusters_none?: ClusterWhereInput | null;
   clusters_some?: ClusterWhereInput | null;
-
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int64 */
   failure_data_space_gt?: number | null;
-
   /** @format int64 */
   failure_data_space_gte?: number | null;
   failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space_lt?: number | null;
-
   /** @format int64 */
   failure_data_space_lte?: number | null;
-
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
-
   /** @format int32 */
   host_num?: number | null;
-
   /** @format int32 */
   host_num_gt?: number | null;
-
   /** @format int32 */
   host_num_gte?: number | null;
   host_num_in?: number[] | null;
-
   /** @format int32 */
   host_num_lt?: number | null;
-
   /** @format int32 */
   host_num_lte?: number | null;
-
   /** @format int32 */
   host_num_not?: number | null;
   host_num_not_in?: number[] | null;
@@ -15962,143 +13913,101 @@ export interface DatacenterWhereInput {
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
   organization?: OrganizationWhereInput | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gte?: number | null;
   total_cpu_hz_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz_lt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_lte?: number | null;
-
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   total_data_capacity_gte?: number | null;
   total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gte?: number | null;
   total_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format double */
   used_cpu_hz_gt?: number | null;
-
   /** @format double */
   used_cpu_hz_gte?: number | null;
   used_cpu_hz_in?: number[] | null;
-
   /** @format double */
   used_cpu_hz_lt?: number | null;
-
   /** @format double */
   used_cpu_hz_lte?: number | null;
-
   /** @format double */
   used_cpu_hz_not?: number | null;
   used_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format double */
   used_memory_bytes_gt?: number | null;
-
   /** @format double */
   used_memory_bytes_gte?: number | null;
   used_memory_bytes_in?: number[] | null;
-
   /** @format double */
   used_memory_bytes_lt?: number | null;
-
   /** @format double */
   used_memory_bytes_lte?: number | null;
-
   /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
@@ -16335,23 +14244,17 @@ export interface VdsWhereInput {
   type_not_in?: NetworkType[] | null;
   vlans_every?: VlanWhereInput | null;
   vlans_none?: VlanWhereInput | null;
-
   /** @format int32 */
   vlans_num?: number | null;
-
   /** @format int32 */
   vlans_num_gt?: number | null;
-
   /** @format int32 */
   vlans_num_gte?: number | null;
   vlans_num_in?: number[] | null;
-
   /** @format int32 */
   vlans_num_lt?: number | null;
-
   /** @format int32 */
   vlans_num_lte?: number | null;
-
   /** @format int32 */
   vlans_num_not?: number | null;
   vlans_num_not_in?: number[] | null;
@@ -16492,23 +14395,17 @@ export interface NicWhereInput {
   mac_address_not_in?: string[] | null;
   mac_address_not_starts_with?: string | null;
   mac_address_starts_with?: string | null;
-
   /** @format int32 */
   max_vf_num?: number | null;
-
   /** @format int32 */
   max_vf_num_gt?: number | null;
-
   /** @format int32 */
   max_vf_num_gte?: number | null;
   max_vf_num_in?: number[] | null;
-
   /** @format int32 */
   max_vf_num_lt?: number | null;
-
   /** @format int32 */
   max_vf_num_lte?: number | null;
-
   /** @format int32 */
   max_vf_num_not?: number | null;
   max_vf_num_not_in?: number[] | null;
@@ -16526,23 +14423,17 @@ export interface NicWhereInput {
   model_not_in?: string[] | null;
   model_not_starts_with?: string | null;
   model_starts_with?: string | null;
-
   /** @format int32 */
   mtu?: number | null;
-
   /** @format int32 */
   mtu_gt?: number | null;
-
   /** @format int32 */
   mtu_gte?: number | null;
   mtu_in?: number[] | null;
-
   /** @format int32 */
   mtu_lt?: number | null;
-
   /** @format int32 */
   mtu_lte?: number | null;
-
   /** @format int32 */
   mtu_not?: number | null;
   mtu_not_in?: number[] | null;
@@ -16580,23 +14471,17 @@ export interface NicWhereInput {
   rdma_enabled_not?: boolean | null;
   running?: boolean | null;
   running_not?: boolean | null;
-
   /** @format int64 */
   speed?: number | null;
-
   /** @format int64 */
   speed_gt?: number | null;
-
   /** @format int64 */
   speed_gte?: number | null;
   speed_in?: number[] | null;
-
   /** @format int64 */
   speed_lt?: number | null;
-
   /** @format int64 */
   speed_lte?: number | null;
-
   /** @format int64 */
   speed_not?: number | null;
   speed_not_in?: number[] | null;
@@ -16614,23 +14499,17 @@ export interface NicWhereInput {
   subnet_mask_not_in?: string[] | null;
   subnet_mask_not_starts_with?: string | null;
   subnet_mask_starts_with?: string | null;
-
   /** @format int32 */
   total_vf_num?: number | null;
-
   /** @format int32 */
   total_vf_num_gt?: number | null;
-
   /** @format int32 */
   total_vf_num_gte?: number | null;
   total_vf_num_in?: number[] | null;
-
   /** @format int32 */
   total_vf_num_lt?: number | null;
-
   /** @format int32 */
   total_vf_num_lte?: number | null;
-
   /** @format int32 */
   total_vf_num_not?: number | null;
   total_vf_num_not_in?: number[] | null;
@@ -16640,23 +14519,17 @@ export interface NicWhereInput {
   type_not_in?: NetworkType[] | null;
   up?: boolean | null;
   up_not?: boolean | null;
-
   /** @format int32 */
   used_vf_num?: number | null;
-
   /** @format int32 */
   used_vf_num_gt?: number | null;
-
   /** @format int32 */
   used_vf_num_gte?: number | null;
   used_vf_num_in?: number[] | null;
-
   /** @format int32 */
   used_vf_num_lt?: number | null;
-
   /** @format int32 */
   used_vf_num_lte?: number | null;
-
   /** @format int32 */
   used_vf_num_not?: number | null;
   used_vf_num_not_in?: number[] | null;
@@ -16685,6 +14558,7 @@ export enum IommuStatus {
 
 export enum NetworkType {
   ACCESS = "ACCESS",
+  ERSPAN = "ERSPAN",
   MANAGEMENT = "MANAGEMENT",
   MIGRATION = "MIGRATION",
   STORAGE = "STORAGE",
@@ -16785,83 +14659,59 @@ export interface VlanWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format double */
   qos_burst?: number | null;
-
   /** @format double */
   qos_burst_gt?: number | null;
-
   /** @format double */
   qos_burst_gte?: number | null;
   qos_burst_in?: number[] | null;
-
   /** @format double */
   qos_burst_lt?: number | null;
-
   /** @format double */
   qos_burst_lte?: number | null;
-
   /** @format double */
   qos_burst_not?: number | null;
   qos_burst_not_in?: number[] | null;
-
   /** @format double */
   qos_max_bandwidth?: number | null;
-
   /** @format double */
   qos_max_bandwidth_gt?: number | null;
-
   /** @format double */
   qos_max_bandwidth_gte?: number | null;
   qos_max_bandwidth_in?: number[] | null;
-
   /** @format double */
   qos_max_bandwidth_lt?: number | null;
-
   /** @format double */
   qos_max_bandwidth_lte?: number | null;
-
   /** @format double */
   qos_max_bandwidth_not?: number | null;
   qos_max_bandwidth_not_in?: number[] | null;
-
   /** @format double */
   qos_min_bandwidth?: number | null;
-
   /** @format double */
   qos_min_bandwidth_gt?: number | null;
-
   /** @format double */
   qos_min_bandwidth_gte?: number | null;
   qos_min_bandwidth_in?: number[] | null;
-
   /** @format double */
   qos_min_bandwidth_lt?: number | null;
-
   /** @format double */
   qos_min_bandwidth_lte?: number | null;
-
   /** @format double */
   qos_min_bandwidth_not?: number | null;
   qos_min_bandwidth_not_in?: number[] | null;
-
   /** @format int32 */
   qos_priority?: number | null;
-
   /** @format int32 */
   qos_priority_gt?: number | null;
-
   /** @format int32 */
   qos_priority_gte?: number | null;
   qos_priority_in?: number[] | null;
-
   /** @format int32 */
   qos_priority_lt?: number | null;
-
   /** @format int32 */
   qos_priority_lte?: number | null;
-
   /** @format int32 */
   qos_priority_not?: number | null;
   qos_priority_not_in?: number[] | null;
@@ -16884,23 +14734,17 @@ export interface VlanWhereInput {
   type_not?: NetworkType | null;
   type_not_in?: NetworkType[] | null;
   vds?: VdsWhereInput | null;
-
   /** @format int32 */
   vlan_id?: number | null;
-
   /** @format int32 */
   vlan_id_gt?: number | null;
-
   /** @format int32 */
   vlan_id_gte?: number | null;
   vlan_id_in?: number[] | null;
-
   /** @format int32 */
   vlan_id_lt?: number | null;
-
   /** @format int32 */
   vlan_id_lte?: number | null;
-
   /** @format int32 */
   vlan_id_not?: number | null;
   vlan_id_not_in?: number[] | null;
@@ -16920,45 +14764,35 @@ export interface VmNicWhereInput {
   AND?: VmNicWhereInput[] | null;
   NOT?: VmNicWhereInput[] | null;
   OR?: VmNicWhereInput[] | null;
-
+  dpi_enabled?: boolean | null;
+  dpi_enabled_not?: boolean | null;
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit_gt?: number | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit_gte?: number | null;
   egress_rate_limit_burst_in_bit_in?: number[] | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit_lt?: number | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit_lte?: number | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit_not?: number | null;
   egress_rate_limit_burst_in_bit_not_in?: number[] | null;
   egress_rate_limit_enabled?: boolean | null;
   egress_rate_limit_enabled_not?: boolean | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps?: number | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps_gt?: number | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps_gte?: number | null;
   egress_rate_limit_max_rate_in_bitps_in?: number[] | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps_lt?: number | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps_lte?: number | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps_not?: number | null;
   egress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
@@ -16992,45 +14826,33 @@ export interface VmNicWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit?: number | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit_gt?: number | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit_gte?: number | null;
   ingress_rate_limit_burst_in_bit_in?: number[] | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit_lt?: number | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit_lte?: number | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit_not?: number | null;
   ingress_rate_limit_burst_in_bit_not_in?: number[] | null;
   ingress_rate_limit_enabled?: boolean | null;
   ingress_rate_limit_enabled_not?: boolean | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps?: number | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps_gt?: number | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps_gte?: number | null;
   ingress_rate_limit_max_rate_in_bitps_in?: number[] | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps_lt?: number | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps_lte?: number | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps_not?: number | null;
   ingress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
@@ -17097,23 +14919,17 @@ export interface VmNicWhereInput {
   model_not?: VmNicModel | null;
   model_not_in?: VmNicModel[] | null;
   nic?: NicWhereInput | null;
-
   /** @format int32 */
   order?: number | null;
-
   /** @format int32 */
   order_gt?: number | null;
-
   /** @format int32 */
   order_gte?: number | null;
   order_in?: number[] | null;
-
   /** @format int32 */
   order_lt?: number | null;
-
   /** @format int32 */
   order_lte?: number | null;
-
   /** @format int32 */
   order_not?: number | null;
   order_not_in?: number[] | null;
@@ -17419,6 +15235,7 @@ export interface VirtualPrivateCloudEdgeGatewayWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
+  edge_gateway_group?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
@@ -17454,6 +15271,600 @@ export interface VirtualPrivateCloudEdgeGatewayWhereInput {
   vdses_every?: VdsWhereInput | null;
   vdses_none?: VdsWhereInput | null;
   vdses_some?: VdsWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudEdgeGatewayGroupWhereInput {
+  AND?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  primary_edge_gateway_id?: string | null;
+  primary_edge_gateway_id_contains?: string | null;
+  primary_edge_gateway_id_ends_with?: string | null;
+  primary_edge_gateway_id_gt?: string | null;
+  primary_edge_gateway_id_gte?: string | null;
+  primary_edge_gateway_id_in?: string[] | null;
+  primary_edge_gateway_id_lt?: string | null;
+  primary_edge_gateway_id_lte?: string | null;
+  primary_edge_gateway_id_not?: string | null;
+  primary_edge_gateway_id_not_contains?: string | null;
+  primary_edge_gateway_id_not_ends_with?: string | null;
+  primary_edge_gateway_id_not_in?: string[] | null;
+  primary_edge_gateway_id_not_starts_with?: string | null;
+  primary_edge_gateway_id_starts_with?: string | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudServiceWhereInput {
+  AND?: VirtualPrivateCloudServiceWhereInput[] | null;
+  NOT?: VirtualPrivateCloudServiceWhereInput[] | null;
+  OR?: VirtualPrivateCloudServiceWhereInput[] | null;
+  cluster_bindings_every?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_none?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_some?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  edge_gateway_groups_every?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateway_groups_none?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateway_groups_some?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  external_subnets_every?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_none?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_some?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal_cidr?: string | null;
+  internal_cidr_contains?: string | null;
+  internal_cidr_ends_with?: string | null;
+  internal_cidr_gt?: string | null;
+  internal_cidr_gte?: string | null;
+  internal_cidr_in?: string[] | null;
+  internal_cidr_lt?: string | null;
+  internal_cidr_lte?: string | null;
+  internal_cidr_not?: string | null;
+  internal_cidr_not_contains?: string | null;
+  internal_cidr_not_ends_with?: string | null;
+  internal_cidr_not_in?: string[] | null;
+  internal_cidr_not_starts_with?: string | null;
+  internal_cidr_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  vpcs_every?: VirtualPrivateCloudWhereInput | null;
+  vpcs_none?: VirtualPrivateCloudWhereInput | null;
+  vpcs_some?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudClusterBindingWhereInput {
+  AND?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  NOT?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  OR?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format int32 */
+  mtu?: number | null;
+  /** @format int32 */
+  mtu_gt?: number | null;
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+  /** @format int32 */
+  mtu_lt?: number | null;
+  /** @format int32 */
+  mtu_lte?: number | null;
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  vds?: VdsWhereInput | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  /** @format int32 */
+  vlan_id_gt?: number | null;
+  /** @format int32 */
+  vlan_id_gte?: number | null;
+  vlan_id_in?: number[] | null;
+  /** @format int32 */
+  vlan_id_lt?: number | null;
+  /** @format int32 */
+  vlan_id_lte?: number | null;
+  /** @format int32 */
+  vlan_id_not?: number | null;
+  vlan_id_not_in?: number[] | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export enum EverouteClusterPhase {
+  Associated = "Associated",
+  Failed = "Failed",
+  Init = "Init",
+  Running = "Running",
+  Terminating = "Terminating",
+  Updating = "Updating",
+  Upgrading = "Upgrading",
+}
+
+export interface VirtualPrivateCloudWhereInput {
+  AND?: VirtualPrivateCloudWhereInput[] | null;
+  NOT?: VirtualPrivateCloudWhereInput[] | null;
+  OR?: VirtualPrivateCloudWhereInput[] | null;
+  /** @format int32 */
+  associate_external_subnet_num?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_gt?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_gte?: number | null;
+  associate_external_subnet_num_in?: number[] | null;
+  /** @format int32 */
+  associate_external_subnet_num_lt?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_lte?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_not?: number | null;
+  associate_external_subnet_num_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  isolation_policies_every?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_none?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  isolation_policies_some?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int32 */
+  mtu?: number | null;
+  /** @format int32 */
+  mtu_gt?: number | null;
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+  /** @format int32 */
+  mtu_lt?: number | null;
+  /** @format int32 */
+  mtu_lte?: number | null;
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  route_tables_every?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_none?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_some?: VirtualPrivateCloudRouteTableWhereInput | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudIsolationPolicyWhereInput {
+  AND?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  NOT?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  OR?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mode?: VirtualPrivateCloudIsolationPolicyMode | null;
+  mode_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
+  mode_not?: VirtualPrivateCloudIsolationPolicyMode | null;
+  mode_not_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  vm?: VmWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export enum VirtualPrivateCloudIsolationPolicyMode {
+  ALL = "ALL",
+  PARTIAL = "PARTIAL",
+}
+
+export interface VirtualPrivateCloudSecurityGroupWhereInput {
+  AND?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouteTableWhereInput {
+  AND?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  routes_every?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_none?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_some?: VirtualPrivateCloudRouteWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouteWhereInput {
+  AND?: VirtualPrivateCloudRouteWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  destination?: string | null;
+  destination_contains?: string | null;
+  destination_ends_with?: string | null;
+  destination_gt?: string | null;
+  destination_gte?: string | null;
+  destination_in?: string[] | null;
+  destination_lt?: string | null;
+  destination_lte?: string | null;
+  destination_not?: string | null;
+  destination_not_contains?: string | null;
+  destination_not_ends_with?: string | null;
+  destination_not_in?: string[] | null;
+  destination_not_starts_with?: string | null;
+  destination_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  nat_gateway?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  next_hop_local_id?: string | null;
+  next_hop_local_id_contains?: string | null;
+  next_hop_local_id_ends_with?: string | null;
+  next_hop_local_id_gt?: string | null;
+  next_hop_local_id_gte?: string | null;
+  next_hop_local_id_in?: string[] | null;
+  next_hop_local_id_lt?: string | null;
+  next_hop_local_id_lte?: string | null;
+  next_hop_local_id_not?: string | null;
+  next_hop_local_id_not_contains?: string | null;
+  next_hop_local_id_not_ends_with?: string | null;
+  next_hop_local_id_not_in?: string[] | null;
+  next_hop_local_id_not_starts_with?: string | null;
+  next_hop_local_id_starts_with?: string | null;
+  next_hop_type?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  next_hop_type_not?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_not_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
+  router_gateway?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  vpc_peering?: VirtualPrivateCloudPeeringWhereInput | null;
 }
 
 export interface VirtualPrivateCloudNatGatewayWhereInput {
@@ -17608,75 +16019,6 @@ export interface VirtualPrivateCloudExternalSubnetGroupWhereInput {
   shared_in_edge_gateway_group?: boolean | null;
   shared_in_edge_gateway_group_not?: boolean | null;
   vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudEdgeGatewayGroupWhereInput {
-  AND?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  NOT?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  OR?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  primary_edge_gateway_id?: string | null;
-  primary_edge_gateway_id_contains?: string | null;
-  primary_edge_gateway_id_ends_with?: string | null;
-  primary_edge_gateway_id_gt?: string | null;
-  primary_edge_gateway_id_gte?: string | null;
-  primary_edge_gateway_id_in?: string[] | null;
-  primary_edge_gateway_id_lt?: string | null;
-  primary_edge_gateway_id_lte?: string | null;
-  primary_edge_gateway_id_not?: string | null;
-  primary_edge_gateway_id_not_contains?: string | null;
-  primary_edge_gateway_id_not_ends_with?: string | null;
-  primary_edge_gateway_id_not_in?: string[] | null;
-  primary_edge_gateway_id_not_starts_with?: string | null;
-  primary_edge_gateway_id_starts_with?: string | null;
 }
 
 export interface VirtualPrivateCloudRouterGatewayWhereInput {
@@ -17858,210 +16200,35 @@ export interface VirtualPrivateCloudSubnetWhereInput {
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
   route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
-
   /** @format int32 */
   total_ip_count?: number | null;
-
   /** @format int32 */
   total_ip_count_gt?: number | null;
-
   /** @format int32 */
   total_ip_count_gte?: number | null;
   total_ip_count_in?: number[] | null;
-
   /** @format int32 */
   total_ip_count_lt?: number | null;
-
   /** @format int32 */
   total_ip_count_lte?: number | null;
-
   /** @format int32 */
   total_ip_count_not?: number | null;
   total_ip_count_not_in?: number[] | null;
-
   /** @format int32 */
   unused_ip_count?: number | null;
-
   /** @format int32 */
   unused_ip_count_gt?: number | null;
-
   /** @format int32 */
   unused_ip_count_gte?: number | null;
   unused_ip_count_in?: number[] | null;
-
   /** @format int32 */
   unused_ip_count_lt?: number | null;
-
   /** @format int32 */
   unused_ip_count_lte?: number | null;
-
   /** @format int32 */
   unused_ip_count_not?: number | null;
   unused_ip_count_not_in?: number[] | null;
   vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudRouteTableWhereInput {
-  AND?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  NOT?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  OR?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  default_for_vpc?: boolean | null;
-  default_for_vpc_not?: boolean | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  routes_every?: VirtualPrivateCloudRouteWhereInput | null;
-  routes_none?: VirtualPrivateCloudRouteWhereInput | null;
-  routes_some?: VirtualPrivateCloudRouteWhereInput | null;
-  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudRouteWhereInput {
-  AND?: VirtualPrivateCloudRouteWhereInput[] | null;
-  NOT?: VirtualPrivateCloudRouteWhereInput[] | null;
-  OR?: VirtualPrivateCloudRouteWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  destination?: string | null;
-  destination_contains?: string | null;
-  destination_ends_with?: string | null;
-  destination_gt?: string | null;
-  destination_gte?: string | null;
-  destination_in?: string[] | null;
-  destination_lt?: string | null;
-  destination_lte?: string | null;
-  destination_not?: string | null;
-  destination_not_contains?: string | null;
-  destination_not_ends_with?: string | null;
-  destination_not_in?: string[] | null;
-  destination_not_starts_with?: string | null;
-  destination_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  nat_gateway?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  next_hop_local_id?: string | null;
-  next_hop_local_id_contains?: string | null;
-  next_hop_local_id_ends_with?: string | null;
-  next_hop_local_id_gt?: string | null;
-  next_hop_local_id_gte?: string | null;
-  next_hop_local_id_in?: string[] | null;
-  next_hop_local_id_lt?: string | null;
-  next_hop_local_id_lte?: string | null;
-  next_hop_local_id_not?: string | null;
-  next_hop_local_id_not_contains?: string | null;
-  next_hop_local_id_not_ends_with?: string | null;
-  next_hop_local_id_not_in?: string[] | null;
-  next_hop_local_id_not_starts_with?: string | null;
-  next_hop_local_id_starts_with?: string | null;
-  next_hop_type?: VirtualPrivateCloudRouteNextHopType | null;
-  next_hop_type_in?: VirtualPrivateCloudRouteNextHopType[] | null;
-  next_hop_type_not?: VirtualPrivateCloudRouteNextHopType | null;
-  next_hop_type_not_in?: VirtualPrivateCloudRouteNextHopType[] | null;
-  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
-  router_gateway?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  vpc_peering?: VirtualPrivateCloudPeeringWhereInput | null;
 }
 
 export enum VirtualPrivateCloudRouteNextHopType {
@@ -18123,255 +16290,6 @@ export interface VirtualPrivateCloudPeeringWhereInput {
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
   src_vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudWhereInput {
-  AND?: VirtualPrivateCloudWhereInput[] | null;
-  NOT?: VirtualPrivateCloudWhereInput[] | null;
-  OR?: VirtualPrivateCloudWhereInput[] | null;
-
-  /** @format int32 */
-  associate_external_subnet_num?: number | null;
-
-  /** @format int32 */
-  associate_external_subnet_num_gt?: number | null;
-
-  /** @format int32 */
-  associate_external_subnet_num_gte?: number | null;
-  associate_external_subnet_num_in?: number[] | null;
-
-  /** @format int32 */
-  associate_external_subnet_num_lt?: number | null;
-
-  /** @format int32 */
-  associate_external_subnet_num_lte?: number | null;
-
-  /** @format int32 */
-  associate_external_subnet_num_not?: number | null;
-  associate_external_subnet_num_not_in?: number[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  isolation_policies_every?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
-  isolation_policies_none?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
-  isolation_policies_some?: VirtualPrivateCloudIsolationPolicyWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-
-  /** @format int32 */
-  mtu?: number | null;
-
-  /** @format int32 */
-  mtu_gt?: number | null;
-
-  /** @format int32 */
-  mtu_gte?: number | null;
-  mtu_in?: number[] | null;
-
-  /** @format int32 */
-  mtu_lt?: number | null;
-
-  /** @format int32 */
-  mtu_lte?: number | null;
-
-  /** @format int32 */
-  mtu_not?: number | null;
-  mtu_not_in?: number[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  route_tables_every?: VirtualPrivateCloudRouteTableWhereInput | null;
-  route_tables_none?: VirtualPrivateCloudRouteTableWhereInput | null;
-  route_tables_some?: VirtualPrivateCloudRouteTableWhereInput | null;
-  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
-  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
-}
-
-export interface VirtualPrivateCloudIsolationPolicyWhereInput {
-  AND?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
-  NOT?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
-  OR?: VirtualPrivateCloudIsolationPolicyWhereInput[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  mode?: VirtualPrivateCloudIsolationPolicyMode | null;
-  mode_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
-  mode_not?: VirtualPrivateCloudIsolationPolicyMode | null;
-  mode_not_in?: VirtualPrivateCloudIsolationPolicyMode[] | null;
-  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  vm?: VmWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export enum VirtualPrivateCloudIsolationPolicyMode {
-  ALL = "ALL",
-  PARTIAL = "PARTIAL",
-}
-
-export interface VirtualPrivateCloudSecurityGroupWhereInput {
-  AND?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  NOT?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  OR?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  default_for_vpc?: boolean | null;
-  default_for_vpc_not?: boolean | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
 }
 
 export interface VirtualPrivateCloudSecurityPolicyWhereInput {
@@ -18448,141 +16366,6 @@ export interface VirtualPrivateCloudSecurityPolicyWhereInput {
 export enum VirtualPrivateCloudSecurityPolicyMode {
   MONITOR = "MONITOR",
   WORK = "WORK",
-}
-
-export interface VirtualPrivateCloudServiceWhereInput {
-  AND?: VirtualPrivateCloudServiceWhereInput[] | null;
-  NOT?: VirtualPrivateCloudServiceWhereInput[] | null;
-  OR?: VirtualPrivateCloudServiceWhereInput[] | null;
-  cluster_bindings_every?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  cluster_bindings_none?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  cluster_bindings_some?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  edge_gateway_groups_every?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateway_groups_none?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateway_groups_some?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  external_subnets_every?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnets_none?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnets_some?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal_cidr?: string | null;
-  internal_cidr_contains?: string | null;
-  internal_cidr_ends_with?: string | null;
-  internal_cidr_gt?: string | null;
-  internal_cidr_gte?: string | null;
-  internal_cidr_in?: string[] | null;
-  internal_cidr_lt?: string | null;
-  internal_cidr_lte?: string | null;
-  internal_cidr_not?: string | null;
-  internal_cidr_not_contains?: string | null;
-  internal_cidr_not_ends_with?: string | null;
-  internal_cidr_not_in?: string[] | null;
-  internal_cidr_not_starts_with?: string | null;
-  internal_cidr_starts_with?: string | null;
-  phase?: EverouteClusterPhase | null;
-  phase_in?: EverouteClusterPhase[] | null;
-  phase_not?: EverouteClusterPhase | null;
-  phase_not_in?: EverouteClusterPhase[] | null;
-  vpcs_every?: VirtualPrivateCloudWhereInput | null;
-  vpcs_none?: VirtualPrivateCloudWhereInput | null;
-  vpcs_some?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudClusterBindingWhereInput {
-  AND?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  NOT?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  OR?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-
-  /** @format int32 */
-  mtu?: number | null;
-
-  /** @format int32 */
-  mtu_gt?: number | null;
-
-  /** @format int32 */
-  mtu_gte?: number | null;
-  mtu_in?: number[] | null;
-
-  /** @format int32 */
-  mtu_lt?: number | null;
-
-  /** @format int32 */
-  mtu_lte?: number | null;
-
-  /** @format int32 */
-  mtu_not?: number | null;
-  mtu_not_in?: number[] | null;
-  vds?: VdsWhereInput | null;
-
-  /** @format int32 */
-  vlan_id?: number | null;
-
-  /** @format int32 */
-  vlan_id_gt?: number | null;
-
-  /** @format int32 */
-  vlan_id_gte?: number | null;
-  vlan_id_in?: number[] | null;
-
-  /** @format int32 */
-  vlan_id_lt?: number | null;
-
-  /** @format int32 */
-  vlan_id_lte?: number | null;
-
-  /** @format int32 */
-  vlan_id_not?: number | null;
-  vlan_id_not_in?: number[] | null;
-  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
-}
-
-export enum EverouteClusterPhase {
-  Associated = "Associated",
-  Failed = "Failed",
-  Init = "Init",
-  Running = "Running",
-  Terminating = "Terminating",
-  Updating = "Updating",
-  Upgrading = "Upgrading",
 }
 
 export interface VirtualPrivateCloudNicSnapshotWhereInput {
@@ -18665,6 +16448,12 @@ export interface LoadBalancerServiceWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  load_balancer_instance_groups_every?: LoadBalancerInstanceGroupWhereInput | null;
+  load_balancer_instance_groups_none?: LoadBalancerInstanceGroupWhereInput | null;
+  load_balancer_instance_groups_some?: LoadBalancerInstanceGroupWhereInput | null;
+  load_balancer_instances_every?: LoadBalancerInstanceWhereInput | null;
+  load_balancer_instances_none?: LoadBalancerInstanceWhereInput | null;
+  load_balancer_instances_some?: LoadBalancerInstanceWhereInput | null;
   phase?: EverouteClusterPhase | null;
   phase_in?: EverouteClusterPhase[] | null;
   phase_not?: EverouteClusterPhase | null;
@@ -18677,14 +16466,46 @@ export interface LoadBalancerServiceWhereInput {
   vnet_bonds_some?: VnetBondWhereInput | null;
 }
 
-export interface VnetBondWhereInput {
-  AND?: VnetBondWhereInput[] | null;
-  NOT?: VnetBondWhereInput[] | null;
-  OR?: VnetBondWhereInput[] | null;
-  bond_for_client?: boolean | null;
-  bond_for_client_not?: boolean | null;
-  bond_for_server?: boolean | null;
-  bond_for_server_not?: boolean | null;
+export interface LoadBalancerInstanceGroupWhereInput {
+  AND?: LoadBalancerInstanceGroupWhereInput[] | null;
+  NOT?: LoadBalancerInstanceGroupWhereInput[] | null;
+  OR?: LoadBalancerInstanceGroupWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  display_name?: string | null;
+  display_name_contains?: string | null;
+  display_name_ends_with?: string | null;
+  display_name_gt?: string | null;
+  display_name_gte?: string | null;
+  display_name_in?: string[] | null;
+  display_name_lt?: string | null;
+  display_name_lte?: string | null;
+  display_name_not?: string | null;
+  display_name_not_contains?: string | null;
+  display_name_not_ends_with?: string | null;
+  display_name_not_in?: string[] | null;
+  display_name_not_starts_with?: string | null;
+  display_name_starts_with?: string | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   entityAsyncStatus_in?: EntityAsyncStatus[] | null;
   entityAsyncStatus_not?: EntityAsyncStatus | null;
@@ -18732,6 +16553,168 @@ export interface VnetBondWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
+  primary_load_balancer_instances_every?: LoadBalancerInstanceWhereInput | null;
+  primary_load_balancer_instances_none?: LoadBalancerInstanceWhereInput | null;
+  primary_load_balancer_instances_some?: LoadBalancerInstanceWhereInput | null;
+  secondary_load_balancer_instances_every?: LoadBalancerInstanceWhereInput | null;
+  secondary_load_balancer_instances_none?: LoadBalancerInstanceWhereInput | null;
+  secondary_load_balancer_instances_some?: LoadBalancerInstanceWhereInput | null;
+  vnet_bond_groups_every?: VnetBondGroupWhereInput | null;
+  vnet_bond_groups_none?: VnetBondGroupWhereInput | null;
+  vnet_bond_groups_some?: VnetBondGroupWhereInput | null;
+}
+
+export interface LoadBalancerInstanceWhereInput {
+  AND?: LoadBalancerInstanceWhereInput[] | null;
+  NOT?: LoadBalancerInstanceWhereInput[] | null;
+  OR?: LoadBalancerInstanceWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  load_balancer_service?: LoadBalancerServiceWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  primary_in_load_balancer_group?: LoadBalancerInstanceGroupWhereInput | null;
+  secondary_in_load_balancer_group?: LoadBalancerInstanceGroupWhereInput | null;
+  vm_instances_every?: VmWhereInput | null;
+  vm_instances_none?: VmWhereInput | null;
+  vm_instances_some?: VmWhereInput | null;
+  vnet_bonds_every?: VnetBondWhereInput | null;
+  vnet_bonds_none?: VnetBondWhereInput | null;
+  vnet_bonds_some?: VnetBondWhereInput | null;
+}
+
+export interface VnetBondWhereInput {
+  AND?: VnetBondWhereInput[] | null;
+  NOT?: VnetBondWhereInput[] | null;
+  OR?: VnetBondWhereInput[] | null;
+  bond_for_client?: boolean | null;
+  bond_for_client_not?: boolean | null;
+  bond_for_server?: boolean | null;
+  bond_for_server_not?: boolean | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  load_balancer_instance?: LoadBalancerInstanceWhereInput | null;
+  load_balancer_service?: LoadBalancerServiceWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
   namespace?: string | null;
   namespace_contains?: string | null;
   namespace_ends_with?: string | null;
@@ -18746,7 +16729,101 @@ export interface VnetBondWhereInput {
   namespace_not_in?: string[] | null;
   namespace_not_starts_with?: string | null;
   namespace_starts_with?: string | null;
+  network_type?: VnetBondNetworkType | null;
+  network_type_in?: VnetBondNetworkType[] | null;
+  network_type_not?: VnetBondNetworkType | null;
+  network_type_not_in?: VnetBondNetworkType[] | null;
   vlan?: VlanWhereInput | null;
+  vnet_bond_group?: VnetBondGroupWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+  vpc_subnet?: VirtualPrivateCloudSubnetWhereInput | null;
+}
+
+export enum VnetBondNetworkType {
+  VLAN = "VLAN",
+  VPC = "VPC",
+}
+
+export interface VnetBondGroupWhereInput {
+  AND?: VnetBondGroupWhereInput[] | null;
+  NOT?: VnetBondGroupWhereInput[] | null;
+  OR?: VnetBondGroupWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  display_name?: string | null;
+  display_name_contains?: string | null;
+  display_name_ends_with?: string | null;
+  display_name_gt?: string | null;
+  display_name_gte?: string | null;
+  display_name_in?: string[] | null;
+  display_name_lt?: string | null;
+  display_name_lte?: string | null;
+  display_name_not?: string | null;
+  display_name_not_contains?: string | null;
+  display_name_not_ends_with?: string | null;
+  display_name_not_in?: string[] | null;
+  display_name_not_starts_with?: string | null;
+  display_name_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  load_balancer_instance_group?: LoadBalancerInstanceGroupWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  network_type?: VnetBondNetworkType | null;
+  network_type_in?: VnetBondNetworkType[] | null;
+  network_type_not?: VnetBondNetworkType | null;
+  network_type_not_in?: VnetBondNetworkType[] | null;
+  vnet_bonds_every?: VnetBondWhereInput | null;
+  vnet_bonds_none?: VnetBondWhereInput | null;
+  vnet_bonds_some?: VnetBondWhereInput | null;
 }
 
 export enum IsolationMode {
@@ -18802,123 +16879,87 @@ export interface SecurityPolicyStatisticsWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int32 */
   match_allow_count?: number | null;
-
   /** @format int32 */
   match_allow_count_gt?: number | null;
-
   /** @format int32 */
   match_allow_count_gte?: number | null;
   match_allow_count_in?: number[] | null;
-
   /** @format int32 */
   match_allow_count_lt?: number | null;
-
   /** @format int32 */
   match_allow_count_lte?: number | null;
-
   /** @format int32 */
   match_allow_count_not?: number | null;
   match_allow_count_not_in?: number[] | null;
-
   /** @format int32 */
   match_default_allow_count?: number | null;
-
   /** @format int32 */
   match_default_allow_count_gt?: number | null;
-
   /** @format int32 */
   match_default_allow_count_gte?: number | null;
   match_default_allow_count_in?: number[] | null;
-
   /** @format int32 */
   match_default_allow_count_lt?: number | null;
-
   /** @format int32 */
   match_default_allow_count_lte?: number | null;
-
   /** @format int32 */
   match_default_allow_count_not?: number | null;
   match_default_allow_count_not_in?: number[] | null;
-
   /** @format int32 */
   match_default_drop_count?: number | null;
-
   /** @format int32 */
   match_default_drop_count_gt?: number | null;
-
   /** @format int32 */
   match_default_drop_count_gte?: number | null;
   match_default_drop_count_in?: number[] | null;
-
   /** @format int32 */
   match_default_drop_count_lt?: number | null;
-
   /** @format int32 */
   match_default_drop_count_lte?: number | null;
-
   /** @format int32 */
   match_default_drop_count_not?: number | null;
   match_default_drop_count_not_in?: number[] | null;
-
   /** @format int32 */
   match_drop_count?: number | null;
-
   /** @format int32 */
   match_drop_count_gt?: number | null;
-
   /** @format int32 */
   match_drop_count_gte?: number | null;
   match_drop_count_in?: number[] | null;
-
   /** @format int32 */
   match_drop_count_lt?: number | null;
-
   /** @format int32 */
   match_drop_count_lte?: number | null;
-
   /** @format int32 */
   match_drop_count_not?: number | null;
   match_drop_count_not_in?: number[] | null;
-
   /** @format int32 */
   match_whitelist_count?: number | null;
-
   /** @format int32 */
   match_whitelist_count_gt?: number | null;
-
   /** @format int32 */
   match_whitelist_count_gte?: number | null;
   match_whitelist_count_in?: number[] | null;
-
   /** @format int32 */
   match_whitelist_count_lt?: number | null;
-
   /** @format int32 */
   match_whitelist_count_lte?: number | null;
-
   /** @format int32 */
   match_whitelist_count_not?: number | null;
   match_whitelist_count_not_in?: number[] | null;
-
   /** @format int32 */
   total_count?: number | null;
-
   /** @format int32 */
   total_count_gt?: number | null;
-
   /** @format int32 */
   total_count_gte?: number | null;
   total_count_in?: number[] | null;
-
   /** @format int32 */
   total_count_lt?: number | null;
-
   /** @format int32 */
   total_count_lte?: number | null;
-
   /** @format int32 */
   total_count_not?: number | null;
   total_count_not_in?: number[] | null;
@@ -18943,43 +16984,31 @@ export interface NfsExportWhereInput {
   description_not_in?: string[] | null;
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -19071,23 +17100,17 @@ export interface NfsExportWhereInput {
   name_starts_with?: string | null;
   prioritized?: boolean | null;
   prioritized_not?: boolean | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -19103,83 +17126,59 @@ export interface NfsInodeWhereInput {
   AND?: NfsInodeWhereInput[] | null;
   NOT?: NfsInodeWhereInput[] | null;
   OR?: NfsInodeWhereInput[] | null;
-
   /** @format int64 */
   assigned_size?: number | null;
-
   /** @format int64 */
   assigned_size_gt?: number | null;
-
   /** @format int64 */
   assigned_size_gte?: number | null;
   assigned_size_in?: number[] | null;
-
   /** @format int64 */
   assigned_size_lt?: number | null;
-
   /** @format int64 */
   assigned_size_lte?: number | null;
-
   /** @format int64 */
   assigned_size_not?: number | null;
   assigned_size_not_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_gte?: number | null;
   downgraded_prioritized_space_in?: number[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lt?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_lte?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space_not?: number | null;
   downgraded_prioritized_space_not_in?: number[] | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_k_gt?: number | null;
-
   /** @format int32 */
   ec_k_gte?: number | null;
   ec_k_in?: number[] | null;
-
   /** @format int32 */
   ec_k_lt?: number | null;
-
   /** @format int32 */
   ec_k_lte?: number | null;
-
   /** @format int32 */
   ec_k_not?: number | null;
   ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   ec_m_gt?: number | null;
-
   /** @format int32 */
   ec_m_gte?: number | null;
   ec_m_in?: number[] | null;
-
   /** @format int32 */
   ec_m_lt?: number | null;
-
   /** @format int32 */
   ec_m_lte?: number | null;
-
   /** @format int32 */
   ec_m_not?: number | null;
   ec_m_not_in?: number[] | null;
@@ -19267,83 +17266,59 @@ export interface NfsInodeWhereInput {
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
   resiliency_type_not_in?: ResiliencyType[] | null;
-
   /** @format int64 */
   shared_size?: number | null;
-
   /** @format int64 */
   shared_size_gt?: number | null;
-
   /** @format int64 */
   shared_size_gte?: number | null;
   shared_size_in?: number[] | null;
-
   /** @format int64 */
   shared_size_lt?: number | null;
-
   /** @format int64 */
   shared_size_lte?: number | null;
-
   /** @format int64 */
   shared_size_not?: number | null;
   shared_size_not_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num?: number | null;
-
   /** @format int32 */
   snapshot_num_gt?: number | null;
-
   /** @format int32 */
   snapshot_num_gte?: number | null;
   snapshot_num_in?: number[] | null;
-
   /** @format int32 */
   snapshot_num_lt?: number | null;
-
   /** @format int32 */
   snapshot_num_lte?: number | null;
-
   /** @format int32 */
   snapshot_num_not?: number | null;
   snapshot_num_not_in?: number[] | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format double */
   unique_logical_size_gt?: number | null;
-
   /** @format double */
   unique_logical_size_gte?: number | null;
   unique_logical_size_in?: number[] | null;
-
   /** @format double */
   unique_logical_size_lt?: number | null;
-
   /** @format double */
   unique_logical_size_lte?: number | null;
-
   /** @format double */
   unique_logical_size_not?: number | null;
   unique_logical_size_not_in?: number[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   unique_size_gt?: number | null;
-
   /** @format int64 */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format int64 */
   unique_size_lt?: number | null;
-
   /** @format int64 */
   unique_size_lte?: number | null;
-
   /** @format int64 */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
@@ -19438,69 +17413,65 @@ export interface VmVolumeSnapshotWhereInput {
   description_not_starts_with?: string | null;
   description_starts_with?: string | null;
   elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_gte?: number | null;
   elf_storage_policy_ec_k_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k_not?: number | null;
   elf_storage_policy_ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_gte?: number | null;
   elf_storage_policy_ec_m_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m_not?: number | null;
   elf_storage_policy_ec_m_not_in?: number[] | null;
   elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
   elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
   elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_gt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_gte?: number | null;
   elf_storage_policy_replica_num_in?: number[] | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_lt?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_lte?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num_not?: number | null;
   elf_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gte?: number | null;
+  elf_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_not?: number | null;
+  elf_storage_policy_stripe_num_not_in?: number[] | null;
   elf_storage_policy_thin_provision?: boolean | null;
   elf_storage_policy_thin_provision_not?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -19562,43 +17533,31 @@ export interface VmVolumeSnapshotWhereInput {
   name_starts_with?: string | null;
   resident_in_cache?: boolean | null;
   resident_in_cache_not?: boolean | null;
-
   /** @format double */
   shared_size?: number | null;
-
   /** @format double */
   shared_size_gt?: number | null;
-
   /** @format double */
   shared_size_gte?: number | null;
   shared_size_in?: number[] | null;
-
   /** @format double */
   shared_size_lt?: number | null;
-
   /** @format double */
   shared_size_lte?: number | null;
-
   /** @format double */
   shared_size_not?: number | null;
   shared_size_not_in?: number[] | null;
-
   /** @format double */
   size?: number | null;
-
   /** @format double */
   size_gt?: number | null;
-
   /** @format double */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format double */
   size_lt?: number | null;
-
   /** @format double */
   size_lte?: number | null;
-
   /** @format double */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -19606,46 +17565,34 @@ export interface VmVolumeSnapshotWhereInput {
   type_in?: VmVolumeSnapshotType[] | null;
   type_not?: VmVolumeSnapshotType | null;
   type_not_in?: VmVolumeSnapshotType[] | null;
-
   /** @format double */
   unique_size?: number | null;
-
   /** @format double */
   unique_size_gt?: number | null;
-
   /** @format double */
   unique_size_gte?: number | null;
   unique_size_in?: number[] | null;
-
   /** @format double */
   unique_size_lt?: number | null;
-
   /** @format double */
   unique_size_lte?: number | null;
-
   /** @format double */
   unique_size_not?: number | null;
   unique_size_not_in?: number[] | null;
   vm_volume?: VmVolumeWhereInput | null;
   volume_sharing?: boolean | null;
   volume_sharing_not?: boolean | null;
-
   /** @format double */
   volume_size?: number | null;
-
   /** @format double */
   volume_size_gt?: number | null;
-
   /** @format double */
   volume_size_gte?: number | null;
   volume_size_in?: number[] | null;
-
   /** @format double */
   volume_size_lt?: number | null;
-
   /** @format double */
   volume_size_lte?: number | null;
-
   /** @format double */
   volume_size_not?: number | null;
   volume_size_not_in?: number[] | null;
@@ -19674,23 +17621,17 @@ export interface PmemDimmWhereInput {
   AND?: PmemDimmWhereInput[] | null;
   NOT?: PmemDimmWhereInput[] | null;
   OR?: PmemDimmWhereInput[] | null;
-
   /** @format int64 */
   capacity?: number | null;
-
   /** @format int64 */
   capacity_gt?: number | null;
-
   /** @format int64 */
   capacity_gte?: number | null;
   capacity_in?: number[] | null;
-
   /** @format int64 */
   capacity_lt?: number | null;
-
   /** @format int64 */
   capacity_lte?: number | null;
-
   /** @format int64 */
   capacity_not?: number | null;
   capacity_not_in?: number[] | null;
@@ -19756,23 +17697,17 @@ export interface PmemDimmWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   numa_node?: number | null;
-
   /** @format int32 */
   numa_node_gt?: number | null;
-
   /** @format int32 */
   numa_node_gte?: number | null;
   numa_node_in?: number[] | null;
-
   /** @format int32 */
   numa_node_lt?: number | null;
-
   /** @format int32 */
   numa_node_lte?: number | null;
-
   /** @format int32 */
   numa_node_not?: number | null;
   numa_node_not_in?: number[] | null;
@@ -19790,23 +17725,17 @@ export interface PmemDimmWhereInput {
   part_number_not_in?: string[] | null;
   part_number_not_starts_with?: string | null;
   part_number_starts_with?: string | null;
-
   /** @format int32 */
   remaining_life_percent?: number | null;
-
   /** @format int32 */
   remaining_life_percent_gt?: number | null;
-
   /** @format int32 */
   remaining_life_percent_gte?: number | null;
   remaining_life_percent_in?: number[] | null;
-
   /** @format int32 */
   remaining_life_percent_lt?: number | null;
-
   /** @format int32 */
   remaining_life_percent_lte?: number | null;
-
   /** @format int32 */
   remaining_life_percent_not?: number | null;
   remaining_life_percent_not_in?: number[] | null;
@@ -20040,23 +17969,17 @@ export interface UsbDeviceWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -20137,23 +18060,17 @@ export interface VsphereEsxiAccountWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int32 */
   port?: number | null;
-
   /** @format int32 */
   port_gt?: number | null;
-
   /** @format int32 */
   port_gte?: number | null;
   port_in?: number[] | null;
-
   /** @format int32 */
   port_lt?: number | null;
-
   /** @format int32 */
   port_lte?: number | null;
-
   /** @format int32 */
   port_not?: number | null;
   port_not_in?: number[] | null;
@@ -20179,43 +18096,31 @@ export interface ZoneWhereInput {
   OR?: ZoneWhereInput[] | null;
   cluster?: ClusterWhereInput | null;
   datacenter?: DatacenterWhereInput | null;
-
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int64 */
   failure_data_space_gt?: number | null;
-
   /** @format int64 */
   failure_data_space_gte?: number | null;
   failure_data_space_in?: number[] | null;
-
   /** @format int64 */
   failure_data_space_lt?: number | null;
-
   /** @format int64 */
   failure_data_space_lte?: number | null;
-
   /** @format int64 */
   failure_data_space_not?: number | null;
   failure_data_space_not_in?: number[] | null;
-
   /** @format int32 */
   host_num?: number | null;
-
   /** @format int32 */
   host_num_gt?: number | null;
-
   /** @format int32 */
   host_num_gte?: number | null;
   host_num_in?: number[] | null;
-
   /** @format int32 */
   host_num_lt?: number | null;
-
   /** @format int32 */
   host_num_lte?: number | null;
-
   /** @format int32 */
   host_num_not?: number | null;
   host_num_not_in?: number[] | null;
@@ -20252,303 +18157,213 @@ export interface ZoneWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int32 */
   provisioned_cpu_cores?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_gt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_gte?: number | null;
   provisioned_cpu_cores_for_active_vm_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_lt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_lte?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm_not?: number | null;
   provisioned_cpu_cores_for_active_vm_not_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_gte?: number | null;
   provisioned_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_not?: number | null;
   provisioned_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   provisioned_data_space?: number | null;
-
   /** @format int64 */
   provisioned_data_space_gt?: number | null;
-
   /** @format int64 */
   provisioned_data_space_gte?: number | null;
   provisioned_data_space_in?: number[] | null;
-
   /** @format int64 */
   provisioned_data_space_lt?: number | null;
-
   /** @format int64 */
   provisioned_data_space_lte?: number | null;
-
   /** @format int64 */
   provisioned_data_space_not?: number | null;
   provisioned_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_gte?: number | null;
   provisioned_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes_not?: number | null;
   provisioned_memory_bytes_not_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num?: number | null;
-
   /** @format int32 */
   running_vm_num_gt?: number | null;
-
   /** @format int32 */
   running_vm_num_gte?: number | null;
   running_vm_num_in?: number[] | null;
-
   /** @format int32 */
   running_vm_num_lt?: number | null;
-
   /** @format int32 */
   running_vm_num_lte?: number | null;
-
   /** @format int32 */
   running_vm_num_not?: number | null;
   running_vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_gte?: number | null;
   stopped_vm_num_in?: number[] | null;
-
   /** @format int32 */
   stopped_vm_num_lt?: number | null;
-
   /** @format int32 */
   stopped_vm_num_lte?: number | null;
-
   /** @format int32 */
   stopped_vm_num_not?: number | null;
   stopped_vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_gte?: number | null;
   suspended_vm_num_in?: number[] | null;
-
   /** @format int32 */
   suspended_vm_num_lt?: number | null;
-
   /** @format int32 */
   suspended_vm_num_lte?: number | null;
-
   /** @format int32 */
   suspended_vm_num_not?: number | null;
   suspended_vm_num_not_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_gte?: number | null;
   total_cache_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_cache_capacity_lt?: number | null;
-
   /** @format int64 */
   total_cache_capacity_lte?: number | null;
-
   /** @format int64 */
   total_cache_capacity_not?: number | null;
   total_cache_capacity_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gte?: number | null;
   total_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   total_cpu_cores_not?: number | null;
   total_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gte?: number | null;
   total_cpu_hz_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz_lt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_lte?: number | null;
-
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_data_capacity_gt?: number | null;
-
   /** @format int64 */
   total_data_capacity_gte?: number | null;
   total_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   total_data_capacity_lt?: number | null;
-
   /** @format int64 */
   total_data_capacity_lte?: number | null;
-
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gte?: number | null;
   total_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   used_data_space_gt?: number | null;
-
   /** @format int64 */
   used_data_space_gte?: number | null;
   used_data_space_in?: number[] | null;
-
   /** @format int64 */
   used_data_space_lt?: number | null;
-
   /** @format int64 */
   used_data_space_lte?: number | null;
-
   /** @format int64 */
   used_data_space_not?: number | null;
   used_data_space_not_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
-
   /** @format int64 */
   valid_data_space_gt?: number | null;
-
   /** @format int64 */
   valid_data_space_gte?: number | null;
   valid_data_space_in?: number[] | null;
-
   /** @format int64 */
   valid_data_space_lt?: number | null;
-
   /** @format int64 */
   valid_data_space_lte?: number | null;
-
   /** @format int64 */
   valid_data_space_not?: number | null;
   valid_data_space_not_in?: number[] | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_num_gt?: number | null;
-
   /** @format int32 */
   vm_num_gte?: number | null;
   vm_num_in?: number[] | null;
-
   /** @format int32 */
   vm_num_lt?: number | null;
-
   /** @format int32 */
   vm_num_lte?: number | null;
-
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
@@ -20669,6 +18484,10 @@ export interface VmPlacementGroupWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
+  usage?: VmPlacementGroupUsage | null;
+  usage_in?: VmPlacementGroupUsage[] | null;
+  usage_not?: VmPlacementGroupUsage | null;
+  usage_not_in?: VmPlacementGroupUsage[] | null;
   vm_host_must_enabled?: boolean | null;
   vm_host_must_enabled_not?: boolean | null;
   vm_host_must_host_uuids_every?: HostWhereInput | null;
@@ -20694,6 +18513,10 @@ export interface VmPlacementGroupWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
+export enum VmPlacementGroupUsage {
+  SVM = "SVM",
+}
+
 export enum VmVmPolicy {
   MUST_DIFFERENT = "MUST_DIFFERENT",
   MUST_SAME = "MUST_SAME",
@@ -20714,6 +18537,8 @@ export enum VmUsage {
   BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
   BUNDLE_APPLICATION = "BUNDLE_APPLICATION",
   CLOUDTOWER = "CLOUDTOWER",
+  CLOUDTOWER_PASSIVE = "CLOUDTOWER_PASSIVE",
+  CLOUDTOWER_WITNESS = "CLOUDTOWER_WITNESS",
   EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
   REGISTRY = "REGISTRY",
   REPLICATION_CONTROLLER = "REPLICATION_CONTROLLER",
@@ -20724,6 +18549,7 @@ export enum VmUsage {
 
 export enum ConnectState {
   CONNECTED = "CONNECTED",
+  CONNECTED_ERROR = "CONNECTED_ERROR",
   DISCONNECTED = "DISCONNECTED",
   INITIALIZING = "INITIALIZING",
   REMOVING = "REMOVING",
@@ -20790,43 +18616,31 @@ export interface EcpLicenseWhereInput {
   license_type_in?: LicenseType[] | null;
   license_type_not?: LicenseType | null;
   license_type_not_in?: LicenseType[] | null;
-
   /** @format int32 */
   max_core_num?: number | null;
-
   /** @format int32 */
   max_core_num_gt?: number | null;
-
   /** @format int32 */
   max_core_num_gte?: number | null;
   max_core_num_in?: number[] | null;
-
   /** @format int32 */
   max_core_num_lt?: number | null;
-
   /** @format int32 */
   max_core_num_lte?: number | null;
-
   /** @format int32 */
   max_core_num_not?: number | null;
   max_core_num_not_in?: number[] | null;
-
   /** @format double */
   max_physical_data_capacity?: number | null;
-
   /** @format double */
   max_physical_data_capacity_gt?: number | null;
-
   /** @format double */
   max_physical_data_capacity_gte?: number | null;
   max_physical_data_capacity_in?: number[] | null;
-
   /** @format double */
   max_physical_data_capacity_lt?: number | null;
-
   /** @format double */
   max_physical_data_capacity_lte?: number | null;
-
   /** @format double */
   max_physical_data_capacity_not?: number | null;
   max_physical_data_capacity_not_in?: number[] | null;
@@ -20910,23 +18724,17 @@ export interface EcpLicenseWhereInput {
   vendor_not_in?: string[] | null;
   vendor_not_starts_with?: string | null;
   vendor_starts_with?: string | null;
-
   /** @format int32 */
   version?: number | null;
-
   /** @format int32 */
   version_gt?: number | null;
-
   /** @format int32 */
   version_gte?: number | null;
   version_in?: number[] | null;
-
   /** @format int32 */
   version_lt?: number | null;
-
   /** @format int32 */
   version_lte?: number | null;
-
   /** @format int32 */
   version_not?: number | null;
   version_not_in?: number[] | null;
@@ -20965,69 +18773,65 @@ export interface ClusterSettingsWhereInput {
   default_ha?: boolean | null;
   default_ha_not?: boolean | null;
   default_storage_policy?: VmVolumeElfStoragePolicyType | null;
-
   /** @format int32 */
   default_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_k_gt?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_k_gte?: number | null;
   default_storage_policy_ec_k_in?: number[] | null;
-
   /** @format int32 */
   default_storage_policy_ec_k_lt?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_k_lte?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_k_not?: number | null;
   default_storage_policy_ec_k_not_in?: number[] | null;
-
   /** @format int32 */
   default_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_m_gt?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_m_gte?: number | null;
   default_storage_policy_ec_m_in?: number[] | null;
-
   /** @format int32 */
   default_storage_policy_ec_m_lt?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_m_lte?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_m_not?: number | null;
   default_storage_policy_ec_m_not_in?: number[] | null;
   default_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
   default_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
   default_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
-
   /** @format int32 */
   default_storage_policy_replica_num?: number | null;
-
   /** @format int32 */
   default_storage_policy_replica_num_gt?: number | null;
-
   /** @format int32 */
   default_storage_policy_replica_num_gte?: number | null;
   default_storage_policy_replica_num_in?: number[] | null;
-
   /** @format int32 */
   default_storage_policy_replica_num_lt?: number | null;
-
   /** @format int32 */
   default_storage_policy_replica_num_lte?: number | null;
-
   /** @format int32 */
   default_storage_policy_replica_num_not?: number | null;
   default_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num_gte?: number | null;
+  default_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num_not?: number | null;
+  default_storage_policy_stripe_num_not_in?: number[] | null;
   default_storage_policy_thin_provision?: boolean | null;
   default_storage_policy_thin_provision_not?: boolean | null;
   enabled_iscsi?: boolean | null;
@@ -21114,23 +18918,17 @@ export interface VcenterAccountWhereInput {
   local_id_not_in?: string[] | null;
   local_id_not_starts_with?: string | null;
   local_id_starts_with?: string | null;
-
   /** @format int32 */
   port?: number | null;
-
   /** @format int32 */
   port_gt?: number | null;
-
   /** @format int32 */
   port_gte?: number | null;
   port_in?: number[] | null;
-
   /** @format int32 */
   port_lt?: number | null;
-
   /** @format int32 */
   port_lte?: number | null;
-
   /** @format int32 */
   port_not?: number | null;
   port_not_in?: number[] | null;
@@ -21155,23 +18953,17 @@ export interface WitnessWhereInput {
   NOT?: WitnessWhereInput[] | null;
   OR?: WitnessWhereInput[] | null;
   cluster?: ClusterWhereInput | null;
-
   /** @format int64 */
   cpu_hz_per_core?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_gt?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_gte?: number | null;
   cpu_hz_per_core_in?: number[] | null;
-
   /** @format int64 */
   cpu_hz_per_core_lt?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_lte?: number | null;
-
   /** @format int64 */
   cpu_hz_per_core_not?: number | null;
   cpu_hz_per_core_not_in?: number[] | null;
@@ -21245,103 +19037,73 @@ export interface WitnessWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   system_data_capacity?: number | null;
-
   /** @format int64 */
   system_data_capacity_gt?: number | null;
-
   /** @format int64 */
   system_data_capacity_gte?: number | null;
   system_data_capacity_in?: number[] | null;
-
   /** @format int64 */
   system_data_capacity_lt?: number | null;
-
   /** @format int64 */
   system_data_capacity_lte?: number | null;
-
   /** @format int64 */
   system_data_capacity_not?: number | null;
   system_data_capacity_not_in?: number[] | null;
-
   /** @format int64 */
   system_used_data_space?: number | null;
-
   /** @format int64 */
   system_used_data_space_gt?: number | null;
-
   /** @format int64 */
   system_used_data_space_gte?: number | null;
   system_used_data_space_in?: number[] | null;
-
   /** @format int64 */
   system_used_data_space_lt?: number | null;
-
   /** @format int64 */
   system_used_data_space_lte?: number | null;
-
   /** @format int64 */
   system_used_data_space_not?: number | null;
   system_used_data_space_not_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_gte?: number | null;
   total_cpu_cores_in?: number[] | null;
-
   /** @format int32 */
   total_cpu_cores_lt?: number | null;
-
   /** @format int32 */
   total_cpu_cores_lte?: number | null;
-
   /** @format int32 */
   total_cpu_cores_not?: number | null;
   total_cpu_cores_not_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_gte?: number | null;
   total_cpu_hz_in?: number[] | null;
-
   /** @format int64 */
   total_cpu_hz_lt?: number | null;
-
   /** @format int64 */
   total_cpu_hz_lte?: number | null;
-
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_gte?: number | null;
   total_memory_bytes_in?: number[] | null;
-
   /** @format int64 */
   total_memory_bytes_lt?: number | null;
-
   /** @format int64 */
   total_memory_bytes_lte?: number | null;
-
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
@@ -21354,7 +19116,10 @@ export interface AlertRuleThresholds {
 }
 
 export interface GlobalAlertRuleUpdationParams {
-  data: { thresholds?: AlertRuleThresholds[]; disabled?: boolean };
+  data: {
+    thresholds?: AlertRuleThresholds[];
+    disabled?: boolean;
+  };
   where: GlobalAlertRuleWhereInput;
 }
 
@@ -21413,10 +19178,8 @@ export interface Alert {
   message: string;
   severity: string;
   solution: string;
-
   /** @format double */
   threshold: number;
-
   /** @format double */
   value: number;
   vms?: NestedVm[] | null;
@@ -21593,43 +19356,31 @@ export interface AlertWhereInput {
   solution_not_in?: string[] | null;
   solution_not_starts_with?: string | null;
   solution_starts_with?: string | null;
-
   /** @format double */
   threshold?: number | null;
-
   /** @format double */
   threshold_gt?: number | null;
-
   /** @format double */
   threshold_gte?: number | null;
   threshold_in?: number[] | null;
-
   /** @format double */
   threshold_lt?: number | null;
-
   /** @format double */
   threshold_lte?: number | null;
-
   /** @format double */
   threshold_not?: number | null;
   threshold_not_in?: number[] | null;
-
   /** @format double */
   value?: number | null;
-
   /** @format double */
   value_gt?: number | null;
-
   /** @format double */
   value_gte?: number | null;
   value_in?: number[] | null;
-
   /** @format double */
   value_lt?: number | null;
-
   /** @format double */
   value_lte?: number | null;
-
   /** @format double */
   value_not?: number | null;
   value_not_in?: number[] | null;
@@ -21727,10 +19478,8 @@ export interface NestedBackupPlanTimePoint {
   /** @format int32 */
   date?: number | null;
   date_position?: number[] | null;
-
   /** @format int32 */
   hour: number;
-
   /** @format int32 */
   minute: number;
   weekday?: WeekdayTypeEnum | null;
@@ -21739,17 +19488,14 @@ export interface NestedBackupPlanTimePoint {
 export interface BackupPlan {
   backup_delay_option?: BackupPlanDelayOption | null;
   backup_plan_executions?: NestedBackupPlanExecution[] | null;
-
   /** @format int32 */
   backup_restore_point_count?: number | null;
   backup_restore_points?: NestedBackupRestorePoint[] | null;
   backup_service: NestedBackupService;
   backup_store_repository: NestedBackupStoreRepository;
-
   /** @format int64 */
   backup_total_size?: number | null;
   compression?: boolean | null;
-
   /** @format double */
   compression_ratio?: number | null;
   createdAt: string;
@@ -21757,55 +19503,44 @@ export interface BackupPlan {
   description?: string | null;
   enable_window: boolean;
   entityAsyncStatus?: EntityAsyncStatus | null;
-
   /** @format int32 */
   full_interval: number;
   full_period: BackupPlanPeriod;
   full_time_point: NestedBackupPlanTimePoint;
   id: string;
-
   /** @format int32 */
   incremental_interval?: number | null;
   incremental_period: BackupPlanPeriod;
   incremental_time_points: NestedBackupPlanTimePoint[];
   incremental_weekdays?: WeekdayTypeEnum[] | null;
   keep_policy?: BackupPlanKeepPolicy | null;
-
   /** @format int32 */
   keep_policy_value?: number | null;
   last_execute_status: BackupPlanExecutionStatus;
   last_execute_status_message?: string | null;
-
   /** @format int32 */
   last_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_execute_total_job_count?: number | null;
   last_executed_at?: string | null;
   last_manual_execute_status: BackupPlanExecutionStatus;
   last_manual_execute_status_message?: string | null;
-
   /** @format int32 */
   last_manual_execute_success_job_count?: number | null;
-
   /** @format int32 */
   last_manual_execute_total_job_count?: number | null;
   last_manual_executed_at?: string | null;
-
   /** @format int64 */
   logical_size: number;
   name: string;
   next_execute_time?: string | null;
   phase?: BackupPlanPhase | null;
-
   /** @format int64 */
   physical_size: number;
   snapshot_consistent_type?: ConsistentType | null;
   status: BackupPlanStatus;
-
   /** @format int64 */
   valid_size_of_backup_object: number;
-
   /** @format int64 */
   valid_size_of_restore_point: number;
   vms?: NestedVm[] | null;
@@ -21820,14 +19555,11 @@ export interface WithTaskBackupPlan {
 
 export interface BackupPlanTimePoint {
   weekday?: WeekdayTypeEnum | null;
-
   /** @format int32 */
   minute: number;
-
   /** @format int32 */
   hour: number;
   date_position?: number[] | null;
-
   /** @format int32 */
   date?: number | null;
 }
@@ -21842,12 +19574,10 @@ export interface BackupPlanCreationParams {
   enable_window: boolean;
   full_time_point: BackupPlanTimePoint;
   full_period: BackupPlanPeriod;
-
   /** @format int32 */
   full_interval: number;
   incremental_weekdays?: WeekdayTypeEnum[];
   incremental_time_points?: BackupPlanTimePoint[];
-
   /** @format int32 */
   incremental_interval: number;
   incremental_period: BackupPlanPeriod;
@@ -21863,6 +19593,7 @@ export interface BackupPlanCreationParams {
 export interface BackupPlanUpdationParams {
   data: {
     disconnect_strategy?: BackupPlanDeleteStrategy;
+    /** @format int32 */
     keep_policy_value?: number;
     keep_policy?: BackupPlanKeepPolicy;
     backup_delay_option?: BackupPlanDelayOption;
@@ -21871,9 +19602,11 @@ export interface BackupPlanUpdationParams {
     enable_window?: boolean;
     full_time_point?: BackupPlanTimePoint;
     full_period?: BackupPlanPeriod;
+    /** @format int32 */
     full_interval?: number;
     incremental_weekdays?: WeekdayTypeEnum[];
     incremental_time_points?: BackupPlanTimePoint[];
+    /** @format int32 */
     incremental_interval?: number;
     incremental_period?: BackupPlanPeriod;
     snapshot_consistent_type?: ConsistentType;
@@ -21896,7 +19629,9 @@ export interface WithTaskDeleteBackupPlan {
 }
 
 export interface BackupPlanDeletionParams {
-  data: { delete_strategy: BackupPlanDeleteStrategy };
+  data: {
+    delete_strategy: BackupPlanDeleteStrategy;
+  };
   where: BackupPlanWhereInput;
 }
 
@@ -21916,7 +19651,6 @@ export interface NestedBackupPlan {
 export interface BackupPlanExecution {
   backup_plan?: NestedBackupPlan | null;
   deletable_flag_marked?: boolean | null;
-
   /** @format int32 */
   duration?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -21927,10 +19661,8 @@ export interface BackupPlanExecution {
   method: BackupExecutionMethod;
   state?: BackupPlanExecutionState | null;
   status: BackupPlanExecutionStatus;
-
   /** @format int32 */
   success_job_count?: number | null;
-
   /** @format int32 */
   total_job_count?: number | null;
   type: BackupExecutionType;
@@ -21942,7 +19674,9 @@ export interface WithTaskBackupPlanExecution {
 }
 
 export interface BackupPlanExecuteParams {
-  data: { type: BackupExecutionType };
+  data: {
+    type: BackupExecutionType;
+  };
   where: BackupPlanWhereInput;
 }
 
@@ -21953,7 +19687,6 @@ export interface NestedBackupRestoreExecutionNetworkMapping {
 
 export interface BackupRestoreExecution {
   backup_restore_point?: NestedBackupRestorePoint | null;
-
   /** @format int32 */
   duration?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -21961,18 +19694,15 @@ export interface BackupRestoreExecution {
   id: string;
   mode: BackupRestoreExecutionMode;
   name: string;
-
   /** @format int64 */
   read_bytes?: number | null;
   rebuild_name?: string | null;
   rebuild_network_mapping?: NestedBackupRestoreExecutionNetworkMapping[] | null;
   rebuild_target_cluster?: string | null;
-
   /** @format int32 */
   retry_times?: number | null;
   startup_after_restore: boolean;
   status: BackupExecutionStatus;
-
   /** @format int64 */
   total_bytes?: number | null;
 }
@@ -22010,7 +19740,9 @@ export interface BackupRestorePointRebuildParams {
 }
 
 export interface BackupRestorePointRestoreInPlaceParams {
-  data: { startup_after_restore: boolean };
+  data: {
+    startup_after_restore: boolean;
+  };
   where: BackupRestorePointWhereInput;
 }
 
@@ -22039,16 +19771,13 @@ export interface VmDiskMetaData {
   vm_volume_elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
   type?: VmDiskType | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format double */
   max_bandwidth?: number | null;
   disabled?: boolean | null;
   bus?: Bus | null;
-
   /** @format int32 */
   boot?: number | null;
 }
@@ -22061,19 +19790,15 @@ export interface VmNicMetaData {
   mirror?: boolean | null;
   mac_address?: string | null;
   local_id?: string | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps?: number | null;
   ingress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit?: number | null;
   enabled?: boolean | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps?: number | null;
   egress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
 }
@@ -22084,22 +19809,18 @@ export interface VmMetaData {
   vm_nics?: VmNicMetaData[] | null;
   vm_disks?: VmDiskMetaData[] | null;
   video_type?: VmVideoType | null;
-
   /** @format int32 */
   vcpu?: number | null;
   sync_vm_time_on_resume?: boolean | null;
   protected?: boolean | null;
   nested_virtualization?: boolean | null;
   name?: string | null;
-
   /** @format double */
   memory?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format double */
   max_bandwidth?: number | null;
   local_id?: string | null;
@@ -22111,12 +19832,10 @@ export interface VmMetaData {
   guest_os_type?: VmGuestsOperationSystem | null;
   firmware?: VmFirmware | null;
   description?: string | null;
-
   /** @format int32 */
   cpu_sockets?: number | null;
   cpu_model?: string | null;
   cpu_exclusive_expected_enabled?: boolean | null;
-
   /** @format int32 */
   cpu_cores?: number | null;
   cluster_vhost_enabled?: boolean | null;
@@ -22137,10 +19856,105 @@ export interface GetBackupRestorePointMetadataRequestBody {
   where: BackupRestorePointWhereUniqueInput;
 }
 
+export enum BackupPlanOrderByInput {
+  BackupDelayOptionASC = "backup_delay_option_ASC",
+  BackupDelayOptionDESC = "backup_delay_option_DESC",
+  BackupRestorePointCountASC = "backup_restore_point_count_ASC",
+  BackupRestorePointCountDESC = "backup_restore_point_count_DESC",
+  BackupTotalSizeASC = "backup_total_size_ASC",
+  BackupTotalSizeDESC = "backup_total_size_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CompressionRatioASC = "compression_ratio_ASC",
+  CompressionRatioDESC = "compression_ratio_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EnableWindowASC = "enable_window_ASC",
+  EnableWindowDESC = "enable_window_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FullIntervalASC = "full_interval_ASC",
+  FullIntervalDESC = "full_interval_DESC",
+  FullPeriodASC = "full_period_ASC",
+  FullPeriodDESC = "full_period_DESC",
+  FullTimePointASC = "full_time_point_ASC",
+  FullTimePointDESC = "full_time_point_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IncrementalIntervalASC = "incremental_interval_ASC",
+  IncrementalIntervalDESC = "incremental_interval_DESC",
+  IncrementalPeriodASC = "incremental_period_ASC",
+  IncrementalPeriodDESC = "incremental_period_DESC",
+  IncrementalTimePointsASC = "incremental_time_points_ASC",
+  IncrementalTimePointsDESC = "incremental_time_points_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
+  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
+  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
+  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
+  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
+  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
+  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
+  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
+  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
+  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
+  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
+  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
+  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
+  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
+  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
+  LogicalSizeASC = "logical_size_ASC",
+  LogicalSizeDESC = "logical_size_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NextExecuteTimeASC = "next_execute_time_ASC",
+  NextExecuteTimeDESC = "next_execute_time_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  PhysicalSizeASC = "physical_size_ASC",
+  PhysicalSizeDESC = "physical_size_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  ValidSizeOfBackupObjectASC = "valid_size_of_backup_object_ASC",
+  ValidSizeOfBackupObjectDESC = "valid_size_of_backup_object_DESC",
+  ValidSizeOfRestorePointASC = "valid_size_of_restore_point_ASC",
+  ValidSizeOfRestorePointDESC = "valid_size_of_restore_point_DESC",
+  WindowEndASC = "window_end_ASC",
+  WindowEndDESC = "window_end_DESC",
+  WindowStartASC = "window_start_ASC",
+  WindowStartDESC = "window_start_DESC",
+}
+
+export interface GetBackupPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupPlanWhereInput | null;
+}
+
 export interface NestedCapacity {
   /** @format int32 */
   column?: number | null;
-
   /** @format int32 */
   row?: number | null;
 }
@@ -22165,7 +19979,6 @@ export interface NestedBrickDiskLayout {
   column: number;
   direction: Direction;
   phase: BrickPhaseEnum;
-
   /** @format int32 */
   row: number;
 }
@@ -22193,7 +20006,6 @@ export interface NestedRackTopo {
 export interface NestedTagPosition {
   /** @format int32 */
   column: number;
-
   /** @format int32 */
   row: number;
   tag: string;
@@ -22204,7 +20016,6 @@ export interface BrickTopo {
   cluster: NestedCluster;
   cluster_topo?: NestedClusterTopo | null;
   disk_layout?: NestedBrickDiskLayout | null;
-
   /** @format int32 */
   height: number;
   id: string;
@@ -22212,7 +20023,6 @@ export interface BrickTopo {
   model?: string | null;
   name: string;
   node_topoes?: NestedNodeTopo[] | null;
-
   /** @format int32 */
   position: number;
   power_layout?: Direction | null;
@@ -22285,23 +20095,17 @@ export interface BrickTopoWhereInput {
   OR?: BrickTopoWhereInput[] | null;
   cluster?: ClusterWhereInput | null;
   cluster_topo?: ClusterTopoWhereInput | null;
-
   /** @format int32 */
   height?: number | null;
-
   /** @format int32 */
   height_gt?: number | null;
-
   /** @format int32 */
   height_gte?: number | null;
   height_in?: number[] | null;
-
   /** @format int32 */
   height_lt?: number | null;
-
   /** @format int32 */
   height_lte?: number | null;
-
   /** @format int32 */
   height_not?: number | null;
   height_not_in?: number[] | null;
@@ -22364,23 +20168,17 @@ export interface BrickTopoWhereInput {
   node_topoes_every?: NodeTopoWhereInput | null;
   node_topoes_none?: NodeTopoWhereInput | null;
   node_topoes_some?: NodeTopoWhereInput | null;
-
   /** @format int32 */
   position?: number | null;
-
   /** @format int32 */
   position_gt?: number | null;
-
   /** @format int32 */
   position_gte?: number | null;
   position_in?: number[] | null;
-
   /** @format int32 */
   position_lt?: number | null;
-
   /** @format int32 */
   position_lte?: number | null;
-
   /** @format int32 */
   position_not?: number | null;
   position_not_in?: number[] | null;
@@ -22500,23 +20298,17 @@ export interface RackTopoWhereInput {
   brick_topoes_none?: BrickTopoWhereInput | null;
   brick_topoes_some?: BrickTopoWhereInput | null;
   cluster?: ClusterWhereInput | null;
-
   /** @format int32 */
   height?: number | null;
-
   /** @format int32 */
   height_gt?: number | null;
-
   /** @format int32 */
   height_gte?: number | null;
   height_in?: number[] | null;
-
   /** @format int32 */
   height_lt?: number | null;
-
   /** @format int32 */
   height_lte?: number | null;
-
   /** @format int32 */
   height_not?: number | null;
   height_not_in?: number[] | null;
@@ -22571,11 +20363,9 @@ export interface BrickTopoCreationParams {
   rack_topo_id?: string;
   capacity?: NestedCapacity;
   cluster_id: string;
-
   /** @format int32 */
   height: number;
   name: string;
-
   /** @format int32 */
   position: number;
 }
@@ -22585,15 +20375,21 @@ export interface BrickTopoUpdationParams {
     tag_position_in_brick?: NestedTagPosition[] | null;
     node_topoes?: NodeTopoWhereInput;
     capacity?: NestedCapacity;
+    /** @format int32 */
     height?: number;
     name?: string;
+    /** @format int32 */
     position?: number;
   };
   where: BrickTopoWhereInput;
 }
 
 export interface BrickTopoMoveParams {
-  data: { rack_topo_id?: string; position: number };
+  data: {
+    rack_topo_id?: string;
+    /** @format int32 */
+    position: number;
+  };
   where: BrickTopoWhereInput;
 }
 
@@ -22637,16 +20433,13 @@ export enum UploadTaskStatus {
 
 export interface UploadTask {
   args: object;
-
   /** @format int64 */
   chunk_size: number;
-
   /** @format int32 */
   current_chunk: number;
   finished_at?: string | null;
   id: string;
   resource_type: UploadResourceType;
-
   /** @format int64 */
   size: number;
   started_at?: string | null;
@@ -22684,7 +20477,6 @@ export interface CloudTowerApplication {
   package?: NestedCloudTowerApplicationPackage | null;
   placementSituation?: string | null;
   placementVerb?: string | null;
-
   /** @format int32 */
   resourceVersion: number;
   state?: CloudTowerApplicationState | null;
@@ -22718,7 +20510,6 @@ export interface ApplicationVmSpecStatus {
 
 export interface ApplicationVmSpecStorage {
   size_unit?: ByteUnit;
-
   /** @format int64 */
   size?: number;
 }
@@ -22731,14 +20522,12 @@ export interface ApplicationVmSpec {
   network?: ApplicationVmSpecNetwork;
   name?: string;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
   internal?: boolean;
   image?: string;
   host?: string;
   env?: ApplicationVmSpecEnv[];
-
   /** @format int32 */
   cpu?: number;
   cluster?: string;
@@ -22785,7 +20574,9 @@ export interface CloudTowerApplicationWhereUniqueInput {
 }
 
 export interface UpgradeCloudTowerApplicationParams {
-  data: { targetPackage: string };
+  data: {
+    targetPackage: string;
+  };
   where: CloudTowerApplicationWhereUniqueInput;
 }
 
@@ -22841,11 +20632,9 @@ export interface NestedMetroCheckItem {
 export interface NestedMetroCheckResult {
   /** @format int32 */
   critical: number;
-
   /** @format int32 */
   info: number;
   items: NestedMetroCheckItem[];
-
   /** @format int32 */
   notice: number;
   status: MetroCheckStatusEnum;
@@ -22894,44 +20683,42 @@ export interface NestedZone {
 
 export interface Cluster {
   access_write_compress_enabled?: boolean | null;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
   application_highest_version?: string | null;
   applications?: NestedApplication[] | null;
   architecture: Architecture;
   auto_converge?: boolean | null;
-
   /** @format int64 */
   commited_memory_bytes?: number | null;
   connect_state: ConnectState;
   consistency_groups?: NestedConsistencyGroup[] | null;
   current_cpu_model?: string | null;
-
   /** @format double */
   data_reduction_ratio?: number | null;
-
   /** @format double */
   data_reduction_saving?: number | null;
   datacenters?: NestedDatacenter[] | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
   disconnected_date?: string | null;
   disconnected_reason?: ClusterConnectorErrorCode | null;
   dns: string[];
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
   ecp_license?: NestedEcpLicense | null;
   enable_tiering?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   everoute_cluster?: NestedEverouteCluster | null;
-
+  /** @format int64 */
+  failure_cache_space?: number | null;
   /** @format int64 */
   failure_data_space?: number | null;
   has_metrox?: boolean | null;
-
   /** @format int32 */
   host_num?: number | null;
   hosts?: NestedHost[] | null;
@@ -22946,28 +20733,22 @@ export interface Cluster {
   license_sign_date?: string | null;
   license_type?: LicenseType | null;
   local_id?: string | null;
-
   /** @format int64 */
   logical_used_data_space?: number | null;
   maintenance_end_date?: string | null;
   maintenance_start_date?: string | null;
   management_vip?: string | null;
-
   /** @format int32 */
   max_chunk_num?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity?: number | null;
-
   /** @format int64 */
   max_physical_data_capacity_per_node?: number | null;
   metro_availability_checklist?: NestedMetroAvailabilityChecklist | null;
   mgt_gateway?: string | null;
   mgt_netmask?: string | null;
-
   /** @format int64 */
   migration_data_size?: number | null;
-
   /** @format int64 */
   migration_speed?: number | null;
   name: string;
@@ -22977,114 +20758,81 @@ export interface Cluster {
   nvme_over_rdma_enabled?: boolean | null;
   nvme_over_tcp_enabled?: boolean | null;
   nvmf_enabled?: boolean | null;
-
   /** @format double */
   overall_efficiency?: number | null;
-
   /** @format int64 */
   perf_allocated_data_space?: number | null;
-
   /** @format int64 */
   perf_failure_data_space?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity?: number | null;
-
   /** @format int64 */
   perf_used_data_space?: number | null;
-
   /** @format int64 */
   perf_valid_data_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
   pmem_enabled?: boolean | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm?: number | null;
-
   /** @format double */
   provisioned_for_active_vm_ratio?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes?: number | null;
-
   /** @format double */
   provisioned_ratio?: number | null;
   rdma_enabled?: boolean | null;
   recommended_cpu_models: string[];
-
   /** @format int64 */
   recover_data_size?: number | null;
-
   /** @format int64 */
   recover_speed?: number | null;
   replica_capacity_only?: boolean | null;
-
   /** @format int32 */
   reserved_cpu_cores_for_system_service?: number | null;
-
   /** @format int32 */
   running_vm_num?: number | null;
   settings?: NestedClusterSettings | null;
   software_edition?: SoftwareEdition | null;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
   stretch?: boolean | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
   total_cpu_models: string[];
-
   /** @format int32 */
   total_cpu_sockets?: number | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   total_prio_volume_size?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage?: number | null;
   type: ClusterType;
   upgrade_for_tiering?: boolean | null;
   upgrade_tool_version?: string | null;
-
   /** @format int64 */
   used_cache_space?: number | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format int64 */
   valid_cache_space?: number | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
   vcenterAccount?: NestedVcenterAccount | null;
@@ -23092,7 +20840,6 @@ export interface Cluster {
   version: string;
   vhost_enabled?: boolean | null;
   vm_folders?: NestedVmFolder[] | null;
-
   /** @format int32 */
   vm_num?: number | null;
   vm_templates?: NestedVmTemplate[] | null;
@@ -23130,7 +20877,9 @@ export interface ClusterUpdationParams {
 }
 
 export interface ClusterLicenseUpdationParams {
-  data: { license: string };
+  data: {
+    license: string;
+  };
   where: ClusterWhereInput;
 }
 
@@ -23154,13 +20903,15 @@ export interface ClusterNetworkSettingUpdationParams {
 }
 
 export interface ClusterVirtualizationUpdationParams {
-  data: { auto_converge?: boolean; current_cpu_model?: string };
+  data: {
+    auto_converge?: boolean;
+    current_cpu_model?: string;
+  };
   where: ClusterWhereInput;
 }
 
 export interface NestedVmRecycleBin {
   enabled: boolean;
-
   /** @format int32 */
   retain: number;
 }
@@ -23169,15 +20920,14 @@ export interface ClusterSettings {
   cluster: NestedCluster;
   default_ha?: boolean | null;
   default_storage_policy?: VmVolumeElfStoragePolicyType | null;
-
   /** @format int32 */
   default_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   default_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   default_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  default_storage_policy_stripe_num?: number | null;
   default_storage_policy_thin_provision?: boolean | null;
   enabled_iscsi?: boolean | null;
   id: string;
@@ -23224,16 +20974,12 @@ export interface GetMetaLeaderRequestBody {
 
 export interface ClusterStorageInfo {
   allocable_storage_capacity?: AllocatableStorageCapacity;
-
   /** @format int64 */
   free_data_space?: number;
-
   /** @format int64 */
   failure_data_space?: number;
-
   /** @format int64 */
   used_data_space?: number;
-
   /** @format int64 */
   total_data_capacity?: number;
   storage_cluster?: ClusterStorageInfo[];
@@ -23246,7 +20992,6 @@ export interface ClusterStorageInfo {
 export interface AllocatableReplicaStorageCapacity {
   /** @format double */
   capacity: number;
-
   /** @format int32 */
   replica_num: number;
 }
@@ -23254,10 +20999,8 @@ export interface AllocatableReplicaStorageCapacity {
 export interface AllocatableEcStorageCapacity {
   /** @format double */
   capacity: number;
-
   /** @format int32 */
   m: number;
-
   /** @format int32 */
   k: number;
 }
@@ -23277,7 +21020,6 @@ export type ReplicaNum = number;
 export interface ClusterStorageInfoEcConfig {
   /** @format int32 */
   m: number;
-
   /** @format int32 */
   k: number;
 }
@@ -23295,7 +21037,6 @@ export interface GetClusterStorageInfoRequestBody {
 export interface DiskPoolPinInPerformanceInfo {
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
   id: string;
@@ -23303,16 +21044,12 @@ export interface DiskPoolPinInPerformanceInfo {
 
 export interface HostPinInPerformanceInfo {
   disk_pools?: DiskPoolPinInPerformanceInfo[] | null;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
   with_faster_ssd_as_cache?: boolean | null;
@@ -23323,25 +21060,18 @@ export interface HostPinInPerformanceInfo {
 export interface ClusterPinInPerformanceInfo {
   pin_in_performance_enabled?: boolean | null;
   hosts?: HostPinInPerformanceInfo[] | null;
-
   /** @format int64 */
   total_prio_volume_size?: number | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format double */
   total_prio_volume_size_usage?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
-
   /** @format double */
   prio_space_percentage?: number | null;
   name: string;
@@ -23373,7 +21103,6 @@ export interface ClusterEnablePinInPerformanceDiskPoolType {
 
 export interface ClusterEnablePinInPerformanceHostType {
   disk_pools?: ClusterEnablePinInPerformanceDiskPoolType[];
-
   /** @format double */
   percentage: number;
   where: HostWhereUniqueInput;
@@ -23382,6 +21111,7 @@ export interface ClusterEnablePinInPerformanceHostType {
 export interface ClusterEnablePinInPerformanceParams {
   data: {
     hosts: ClusterEnablePinInPerformanceHostType[];
+    /** @format double */
     cluster_default_prio_percentage: number;
   };
   where: ClusterWhereInput;
@@ -23415,7 +21145,6 @@ export interface ConsistencyGroupSnapshot {
   local_id: string;
   name: string;
   nvmf_namespace_snapshots?: NestedNvmfNamespaceSnapshot[] | null;
-
   /** @format int64 */
   unique_size: number;
 }
@@ -23444,7 +21173,9 @@ export interface WithTaskDeleteConsistencyGroupSnapshot {
 }
 
 export interface ConsistencyGroupSnapshotDeletionParams {
-  data: { remain_volume_snapshot: boolean };
+  data: {
+    remain_volume_snapshot: boolean;
+  };
   where: ConsistencyGroupSnapshotWhereInput;
 }
 
@@ -23475,7 +21206,6 @@ export interface ConsistencyGroup {
   local_id: string;
   name: string;
   namespaces?: NestedNvmfNamespace[] | null;
-
   /** @format int64 */
   unique_size: number;
 }
@@ -23514,7 +21244,9 @@ export interface WithTaskDeleteConsistencyGroup {
 }
 
 export interface ConsistencyGroupDeletionParams {
-  data: { remain_volume_snapshot?: boolean };
+  data: {
+    remain_volume_snapshot?: boolean;
+  };
   where: ConsistencyGroupWhereInput;
 }
 
@@ -23544,7 +21276,6 @@ export interface ContentLibraryImage {
   labels?: NestedLabel[] | null;
   name: string;
   path: string;
-
   /** @format int64 */
   size: number;
   vm_disks?: NestedVmDisk[] | null;
@@ -23604,7 +21335,6 @@ export interface ContentLibraryImageImportParams {
 export interface OvfCpu {
   /** @format int32 */
   sockets: number;
-
   /** @format int32 */
   cores: number;
 }
@@ -23625,11 +21355,9 @@ export interface ParsedOVF {
   firmware: VmFirmware;
   disks: OvfDisk[];
   nics: OvfNic[];
-
   /** @format int64 */
   memory: number;
   cpu: OvfCpu;
-
   /** @format int32 */
   vcpu: number;
   description?: string;
@@ -23653,7 +21381,6 @@ export interface GetExportFileDownloadLinksParams {
 export interface NestedCpu {
   /** @format int32 */
   cores: number;
-
   /** @format int32 */
   sockets: number;
 }
@@ -23696,6 +21423,7 @@ export interface NestedVmPlacementGroup {
 }
 
 export interface Vm {
+  anti_malware_enabled?: boolean | null;
   backup_plans?: NestedBackupPlan[] | null;
   bios_uuid?: string | null;
   clock_offset: VmClockOffset;
@@ -23703,12 +21431,12 @@ export interface Vm {
   cluster?: NestedCluster | null;
   cpu: NestedCpu;
   cpu_model: string;
-
   /** @format double */
   cpu_usage?: number | null;
   deleted_at?: string | null;
   description: string;
   dns_servers?: string | null;
+  dpi_enabled?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   entity_filter_results?: NestedVmEntityFilterResult[] | null;
   firmware: VmFirmware;
@@ -23716,10 +21444,8 @@ export interface Vm {
   gpu_devices?: NestedGpuDevice[] | null;
   guest_cpu_model?: string | null;
   guest_os_type?: VmGuestsOperationSystem | null;
-
   /** @format double */
   guest_size_usage?: number | null;
-
   /** @format int64 */
   guest_used_size?: number | null;
   ha: boolean;
@@ -23729,6 +21455,8 @@ export interface Vm {
   id: string;
   in_recycle_bin: boolean;
   internal: boolean;
+  internal_product?: string | null;
+  internal_product_name?: string | null;
   io_policy?: VmDiskIoPolicy | null;
   ips: string;
   isolation_policy?: NestedIsolationPolicy | null;
@@ -23737,21 +21465,16 @@ export interface Vm {
   last_shutdown_time?: string | null;
   local_created_at?: string | null;
   local_id: string;
-
   /** @format int64 */
   logical_size_bytes?: number | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int64 */
   memory: number;
-
   /** @format double */
   memory_usage?: number | null;
   name: string;
@@ -23762,29 +21485,22 @@ export interface Vm {
   out_uninstall_usb: string[];
   pci_nics?: NestedNic[] | null;
   protected: boolean;
-
   /** @format int64 */
   provisioned_size?: number | null;
-
   /** @format int64 */
   size?: number | null;
   snapshot_plan?: NestedSnapshotPlan | null;
   snapshots?: NestedVmSnapshot[] | null;
   status: VmStatus;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format int64 */
   unique_size?: number | null;
   usb_devices?: NestedUsbDevice[] | null;
-
   /** @format int64 */
   used_size?: number | null;
-
   /** @format double */
   used_size_usage?: number | null;
-
   /** @format int32 */
   vcpu: number;
   video_type?: VmVideoType | null;
@@ -23813,35 +21529,34 @@ export enum BPSUnit {
 export interface MountNewCreateDisksParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
   vm_volume: {
     resident_in_cache?: boolean;
     elf_ec_storage_policy?: {
       thin_provision?: boolean;
+      /** @format int32 */
       ec_m?: number;
+      /** @format int32 */
       ec_k?: number;
     };
     elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
+    /** @deprecated */
     elf_storage_policy?: VmVolumeElfStoragePolicyType;
     path?: string;
     size_unit?: ByteUnit;
+    /** @format int64 */
     size: number;
     name: string;
   };
-
   /** @format int32 */
   index?: number;
-
   /** @format int32 */
   key?: number;
   bus: Bus;
-
   /** @format int32 */
   boot: number;
 }
@@ -23849,22 +21564,17 @@ export interface MountNewCreateDisksParams {
 export interface MountDisksParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
   vm_volume_id: string;
-
   /** @format int32 */
   index?: number;
-
   /** @format int32 */
   key?: number;
   bus: Bus;
-
   /** @format int32 */
   boot: number;
 }
@@ -23872,13 +21582,10 @@ export interface MountDisksParams {
 export interface VmCdRomParams {
   content_library_image_id?: string;
   elf_image_id?: string;
-
   /** @format int32 */
   index?: number;
-
   /** @format int32 */
   key?: number;
-
   /** @format int32 */
   boot: number;
 }
@@ -23908,11 +21615,9 @@ export enum BitPSUnit {
 
 export interface VmNicQosTraffic {
   rate_limit_unit?: BitPSUnit;
-
   /** @format int64 */
   rate_limit?: number | null;
   burst_unit?: BitUnit;
-
   /** @format int64 */
   burst?: number | null;
   enabled: boolean;
@@ -23962,15 +21667,12 @@ export interface VmCreationParams {
   gpu_devices?: VmGpuOperationParams[];
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status: VmStatus;
@@ -23982,13 +21684,10 @@ export interface VmCreationParams {
   vm_nics: VmNicParams[];
   vm_disks: VmDiskParams;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory: number;
-
   /** @format int32 */
   cpu_cores: number;
-
   /** @format int32 */
   cpu_sockets: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24002,13 +21701,14 @@ export interface VmCreationParams {
 export interface DiskOperateModifyDisk {
   vm_volume_id?: string;
   bus?: Bus;
-
   /** @format int32 */
   disk_index: number;
 }
 
 export interface VmDiskOperate {
-  remove_disks?: { disk_index: number[] };
+  remove_disks?: {
+    disk_index: number[];
+  };
   modify_disks?: DiskOperateModifyDisk[];
   new_disks?: VmDiskParams;
 }
@@ -24027,7 +21727,6 @@ export interface CloudInitNetWorkRoute {
 export interface CloudInitNetWork {
   routes?: CloudInitNetWorkRoute[];
   type: CloudInitNetworkTypeEnum;
-
   /** @format int32 */
   nic_index: number;
   netmask?: string;
@@ -24051,17 +21750,13 @@ export interface VmCreateVmFromTemplateParams {
   template_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
-
   /** @deprecated */
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24073,13 +21768,10 @@ export interface VmCreateVmFromTemplateParams {
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24087,7 +21779,6 @@ export interface VmCreateVmFromTemplateParams {
   description?: string;
   name: string;
   host_id?: string;
-
   /** @deprecated */
   cluster_id?: string;
 }
@@ -24100,17 +21791,13 @@ export interface VmCreateVmFromContentLibraryTemplateParams {
   template_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
-
   /** @deprecated */
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24122,13 +21809,10 @@ export interface VmCreateVmFromContentLibraryTemplateParams {
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24151,14 +21835,11 @@ export interface VmCreateVmFromContentLibraryTemplateBatchVmParams {
   is_full_copy: boolean;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24170,13 +21851,10 @@ export interface VmCreateVmFromContentLibraryTemplateBatchVmParams {
   vm_nics?: VmNicParams[];
   disk_operate?: VmDiskOperate;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24204,17 +21882,13 @@ export interface VmCloneParams {
   src_vm_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
-
   /** @deprecated */
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24226,13 +21900,10 @@ export interface VmCloneParams {
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24250,17 +21921,13 @@ export interface VmRebuildParams {
   rebuild_from_snapshot_id: string;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
-
   /** @deprecated */
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24272,13 +21939,10 @@ export interface VmRebuildParams {
   vm_nics?: VmNicParams[];
   vm_disks?: VmDiskParams;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -24290,18 +21954,24 @@ export interface VmRebuildParams {
 }
 
 export interface VmRollbackParams {
-  data: { snapshot_id: string };
+  data: {
+    snapshot_id: string;
+  };
   where: VmWhereInput;
 }
 
 export interface VmUpdateParams {
   data: {
+    /** @format int32 */
     vcpu?: number;
     ha_priority?: VmHaPriority;
     ha?: boolean;
     memory_unit?: ByteUnit;
+    /** @format int64 */
     memory?: number;
+    /** @format int32 */
     cpu_cores?: number;
+    /** @format int32 */
     cpu_sockets?: number;
     description?: string;
     name?: string;
@@ -24323,12 +21993,16 @@ export interface VmOperateParams {
 }
 
 export interface VmDeleteParams {
-  effect?: { include_snapshots?: boolean };
+  effect?: {
+    include_snapshots?: boolean;
+  };
   where: VmWhereInput;
 }
 
 export interface VmStartParams {
-  data?: { host_id: string };
+  data?: {
+    host_id: string;
+  };
   where: VmWhereInput;
 }
 
@@ -24336,8 +22010,10 @@ export interface VmAddDiskParams {
   data: {
     max_bandwidth_policy?: VmDiskIoRestrictType;
     max_bandwidth_unit?: BPSUnit;
+    /** @format int64 */
     max_bandwidth?: number;
     max_iops_policy?: VmDiskIoRestrictType;
+    /** @format int64 */
     max_iops?: number;
     io_policy?: VmDiskIoPolicy;
     vm_disks: {
@@ -24361,7 +22037,6 @@ export interface VmUpdateDiskParams {
 
 export interface VmExpandVmDiskParams {
   size_unit?: ByteUnit;
-
   /** @format int64 */
   size: number;
   where: VmDiskWhereInput;
@@ -24373,17 +22048,23 @@ export interface VmSetVmDiskResidentInCacheParams {
 }
 
 export interface VmRemoveDiskParams {
-  data: { disk_ids: string[] };
+  data: {
+    disk_ids: string[];
+  };
   where: VmWhereInput;
 }
 
 export interface VmAddCdRomParams {
-  data: { vm_cd_roms: VmCdRomParams[] };
+  data: {
+    vm_cd_roms: VmCdRomParams[];
+  };
   where: VmWhereInput;
 }
 
 export interface VmRemoveCdRomParams {
-  data: { cd_rom_ids: string[] };
+  data: {
+    cd_rom_ids: string[];
+  };
   where: VmWhereInput;
 }
 
@@ -24397,7 +22078,9 @@ export interface VmToggleCdRomDisableParams {
 }
 
 export interface VmAddNicParams {
-  data: { vm_nics: VmNicParams[] };
+  data: {
+    vm_nics: VmNicParams[];
+  };
   where: VmWhereInput;
 }
 
@@ -24419,13 +22102,18 @@ export interface VmUpdateNicParams {
     model?: VmNicModel;
     enabled?: boolean;
     mac_address?: string;
+    /** @format int32 */
     nic_index: number;
   };
   where: VmWhereInput;
 }
 
 export interface VmUpdateNicBasicInfoParams {
-  data: { subnet_mask?: string; gateway?: string; ip_address?: string };
+  data: {
+    subnet_mask?: string;
+    gateway?: string;
+    ip_address?: string;
+  };
   where: VmNicWhereInput;
 }
 
@@ -24441,22 +22129,30 @@ export interface VmUpdateNicAdvanceInfoParams {
 }
 
 export interface VmUpdateNicQosOptionsParams {
-  data: { qos?: VmNicQosOption };
+  data: {
+    qos?: VmNicQosOption;
+  };
   where: VmNicWhereInput;
 }
 
 export interface VmOperatePciNicParams {
-  data: { pci_nics?: NicWhereInput };
+  data: {
+    pci_nics?: NicWhereInput;
+  };
   where: VmWhereInput;
 }
 
 export interface VmRemoveNicParams {
-  data: { nic_index: number[] };
+  data: {
+    nic_index: number[];
+  };
   where: VmWhereInput;
 }
 
 export interface VmRemoveNicByWhereParams {
-  effect: { vm_ids?: string[] };
+  effect: {
+    vm_ids?: string[];
+  };
   where: VmNicWhereInput;
 }
 
@@ -24472,12 +22168,17 @@ export interface VmRemoveGpuDeviceParams {
 
 export interface InstallVmtoolsParams {
   /** @deprecated */
-  data?: { svt_image_id: string; cd_rom_id: string };
+  data?: {
+    svt_image_id: string;
+    cd_rom_id: string;
+  };
   where: VmWhereInput;
 }
 
 export interface VmMigrateParams {
-  data?: { host_id: string };
+  data?: {
+    host_id: string;
+  };
   where: VmWhereInput;
 }
 
@@ -24499,18 +22200,23 @@ export interface MigrateVmConfig {
   migrate_type: MigrateType;
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
+    /** @format int32 */
     ec_m?: number;
+    /** @format int32 */
     ec_k?: number;
   };
   elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
-
   /** @deprecated */
   elf_storage_policy?: VmVolumeElfStoragePolicyType;
   delete_src_vm?: boolean;
 }
 
 export interface VmMigrateAcrossClusterParams {
-  data: { vm_config: MigrateVmConfig; cluster_id: string; host_id?: string };
+  data: {
+    vm_config: MigrateVmConfig;
+    cluster_id: string;
+    host_id?: string;
+  };
   where: VmWhereInput;
 }
 
@@ -24607,23 +22313,17 @@ export interface TaskWhereInput {
   local_created_at_lte?: string | null;
   local_created_at_not?: string | null;
   local_created_at_not_in?: string[] | null;
-
   /** @format double */
   progress?: number | null;
-
   /** @format double */
   progress_gt?: number | null;
-
   /** @format double */
   progress_gte?: number | null;
   progress_in?: number[] | null;
-
   /** @format double */
   progress_lt?: number | null;
-
   /** @format double */
   progress_lte?: number | null;
-
   /** @format double */
   progress_not?: number | null;
   progress_not_in?: number[] | null;
@@ -24669,23 +22369,17 @@ export interface TaskWhereInput {
   resource_rollback_error_not_in?: string[] | null;
   resource_rollback_error_not_starts_with?: string | null;
   resource_rollback_error_starts_with?: string | null;
-
   /** @format int32 */
   resource_rollback_retry_count?: number | null;
-
   /** @format int32 */
   resource_rollback_retry_count_gt?: number | null;
-
   /** @format int32 */
   resource_rollback_retry_count_gte?: number | null;
   resource_rollback_retry_count_in?: number[] | null;
-
   /** @format int32 */
   resource_rollback_retry_count_lt?: number | null;
-
   /** @format int32 */
   resource_rollback_retry_count_lte?: number | null;
-
   /** @format int32 */
   resource_rollback_retry_count_not?: number | null;
   resource_rollback_retry_count_not_in?: number[] | null;
@@ -24772,10 +22466,8 @@ export interface NestedStep {
   current?: number | null;
   finished?: boolean | null;
   key?: string | null;
-
   /** @format double */
   per_second?: number | null;
-
   /** @format double */
   total?: number | null;
   unit?: StepUnit | null;
@@ -24792,13 +22484,11 @@ export interface Task {
   internal: boolean;
   key?: string | null;
   local_created_at: string;
-
   /** @format double */
   progress: number;
   resource_id?: string | null;
   resource_mutation?: string | null;
   resource_rollback_error?: string | null;
-
   /** @format int32 */
   resource_rollback_retry_count?: number | null;
   resource_rollbacked?: boolean | null;
@@ -24816,7 +22506,9 @@ export interface AbortMigrateVmAcrossClusterParams {
 }
 
 export interface VmAddFolderParams {
-  data: { folder_id: string };
+  data: {
+    folder_id: string;
+  };
   where: VmWhereInput;
 }
 
@@ -24831,35 +22523,42 @@ export interface VmUpdateAdvancedOptionsParams {
 }
 
 export interface VmUpdateHostOptionsParams {
-  data: { ntp_servers?: string[]; dns_servers?: string[]; hostname?: string };
+  data: {
+    ntp_servers?: string[];
+    dns_servers?: string[];
+    hostname?: string;
+  };
   where: VmWhereInput;
 }
 
 export interface VmResetGuestOsPasswordParams {
-  data: { password: string; username: string };
+  data: {
+    password: string;
+    username: string;
+  };
   where: VmWhereInput;
 }
 
 export interface VmUpdateOwnerParams {
-  data: { search_for: "username" | "id"; value: string };
+  data: {
+    search_for: "username" | "id";
+    value: string;
+  };
   where: VmWhereInput;
 }
 
 export interface VmRestrictIoParamsData {
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
 }
 
 export interface VmUpdateEachDiskIoPolicyParams {
   data: VmRestrictIoParamsData;
-
   /** @format int32 */
   boot: number;
 }
@@ -24887,7 +22586,6 @@ export enum VmExportFileType {
 
 export interface VmExportFileFile {
   md5: string;
-
   /** @format int64 */
   fileSize: number;
   fileSecret: string;
@@ -24933,16 +22631,16 @@ export interface VmExportParams {
 export interface VmdkDiskModify {
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
+    /** @format int32 */
     ec_m?: number;
+    /** @format int32 */
     ec_k?: number;
   };
   elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
-
   /** @deprecated */
   elf_storage_policy?: VmVolumeElfStoragePolicyType;
   bus?: Bus;
   volume_name?: string;
-
   /** @format int32 */
   boot?: number;
   vmdk_name: string;
@@ -24952,10 +22650,8 @@ export interface VmdkCdromModify {
   removed?: boolean;
   content_library_image_id?: string;
   elf_image_id?: string;
-
   /** @format int32 */
   boot?: number;
-
   /** @format int32 */
   index: number;
 }
@@ -24982,15 +22678,12 @@ export interface VmImportNicParams {
 export interface VmImportParams {
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   max_bandwidth?: number;
   max_iops_policy?: VmDiskIoRestrictType;
-
   /** @format int64 */
   max_iops?: number;
   io_policy?: VmDiskIoPolicy;
-
   /** @format int32 */
   vcpu?: number;
   status?: VmStatus;
@@ -24998,13 +22691,10 @@ export interface VmImportParams {
   vm_nics?: VmImportNicParams[];
   disk_operate?: OvfDiskOperate;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   guest_os_type?: VmGuestsOperationSystem;
@@ -25031,7 +22721,6 @@ export interface NestedGpuDriverInfo {
 export interface NestedVgpuType {
   /** @format double */
   framebuffer?: number | null;
-
   /** @format int32 */
   max_instance?: number | null;
   max_resolution?: string | null;
@@ -25042,7 +22731,6 @@ export interface NestedVgpuType {
 export interface VmGpuDetail {
   /** @format int32 */
   vgpu_instance_on_vm_num?: number | null;
-
   /** @format int32 */
   vgpu_instance_num?: number | null;
   user_vgpu_type_name?: string | null;
@@ -25065,10 +22753,8 @@ export interface VmGpuDetail {
   description: string;
   bus_location: string;
   brand: string;
-
   /** @format int32 */
   available_vgpus_num?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num?: number | null;
 }
@@ -25081,6 +22767,8 @@ export interface VmGpuInfo {
 }
 
 export enum VmOrderByInput {
+  AntiMalwareEnabledASC = "anti_malware_enabled_ASC",
+  AntiMalwareEnabledDESC = "anti_malware_enabled_DESC",
   BiosUuidASC = "bios_uuid_ASC",
   BiosUuidDESC = "bios_uuid_DESC",
   ClockOffsetASC = "clock_offset_ASC",
@@ -25099,6 +22787,8 @@ export enum VmOrderByInput {
   DescriptionDESC = "description_DESC",
   DnsServersASC = "dns_servers_ASC",
   DnsServersDESC = "dns_servers_DESC",
+  DpiEnabledASC = "dpi_enabled_ASC",
+  DpiEnabledDESC = "dpi_enabled_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   FirmwareASC = "firmware_ASC",
@@ -25123,6 +22813,10 @@ export enum VmOrderByInput {
   InRecycleBinDESC = "in_recycle_bin_DESC",
   InternalASC = "internal_ASC",
   InternalDESC = "internal_DESC",
+  InternalProductASC = "internal_product_ASC",
+  InternalProductDESC = "internal_product_DESC",
+  InternalProductNameASC = "internal_product_name_ASC",
+  InternalProductNameDESC = "internal_product_name_DESC",
   IoPolicyASC = "io_policy_ASC",
   IoPolicyDESC = "io_policy_DESC",
   IpsASC = "ips_ASC",
@@ -25192,14 +22886,11 @@ export enum VmOrderByInput {
 export interface GetVmsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmWhereInput | null;
@@ -25223,7 +22914,9 @@ export interface GetVmVncInfoParams {
 }
 
 export interface VmUpdateVpcNicParams {
-  data: { vpc_nic: UpdateVpcNicPayloads };
+  data: {
+    vpc_nic: UpdateVpcNicPayloads;
+  };
   where: VmNicWhereInput;
 }
 
@@ -25241,30 +22934,23 @@ export interface NestedContentLibraryVmTemplateDisk {
   content_library_image_id?: string | null;
   disabled?: boolean | null;
   disk_name?: string | null;
-
   /** @format int32 */
   elf_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
   elf_storage_policy_thin_provision?: boolean | null;
-
   /** @format int32 */
   index: number;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
   path?: string | null;
   resident_in_cache?: boolean | null;
-
   /** @format int64 */
   size?: number | null;
   storage_encrypted?: boolean | null;
@@ -25276,7 +22962,6 @@ export interface NestedFrozenVlan {
   name: string;
   network_ids?: string[] | null;
   vds_ovs: string;
-
   /** @format int32 */
   vlan_id: number;
   vlan_local_id: string;
@@ -25292,18 +22977,14 @@ export interface NestedContentLibraryVmTemplateNic {
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
   egress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps?: number | null;
   enabled?: boolean | null;
-
   /** @format int32 */
   index: number;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit?: number | null;
   ingress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps?: number | null;
   mirror?: boolean | null;
@@ -25316,10 +22997,8 @@ export interface NestedContentLibraryVmTemplateNic {
 export interface NestedStoragePolicyConfig {
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
-
   /** @format int32 */
   replica_num?: number | null;
   resiliency_type?: ResiliencyType | null;
@@ -25354,24 +23033,20 @@ export interface ContentLibraryVmTemplate {
   id: string;
   io_policy?: VmDiskIoPolicy | null;
   labels?: NestedLabel[] | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int64 */
   memory: number;
   name: string;
   os?: string | null;
-
   /** @format int64 */
   size: number;
   template_config?: NestedTemplateConfig | null;
-
+  usage?: ContentLibraryVmTemplateUsage | null;
   /** @format int32 */
   vcpu: number;
   video_type?: string | null;
@@ -25437,17 +23112,14 @@ export interface ContentLibraryVmTemplateExportParams {
 export interface ContentLibraryVmdkCdromModify {
   enabled?: boolean;
   removed?: boolean;
-
   /** @format int32 */
   boot?: number;
-
   /** @format int32 */
   index: number;
 }
 
 export interface ContentLibraryVmdkCdromMount {
   enabled?: boolean;
-
   /** @format int32 */
   boot?: number;
 }
@@ -25469,16 +23141,12 @@ export interface ContentLibraryVmTemplateImportParams {
   disk_operate?: ContentLibraryVmTemplateOvfDiskOperate;
   ha?: boolean;
   memory_unit?: ByteUnit;
-
   /** @format int64 */
   memory?: number;
-
   /** @format int32 */
   vcpu?: number;
-
   /** @format int32 */
   cpu_cores?: number;
-
   /** @format int32 */
   cpu_sockets?: number;
   description?: string;
@@ -25497,35 +23165,26 @@ export interface Datacenter {
   /** @format int32 */
   cluster_num?: number | null;
   clusters?: NestedCluster[] | null;
-
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int32 */
   host_num?: number | null;
   id: string;
   labels?: NestedLabel[] | null;
   name: string;
   organization: NestedOrganization;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format int32 */
   vm_num?: number | null;
 }
@@ -25542,7 +23201,10 @@ export interface DatacenterCreationParams {
 }
 
 export interface DatacenterUpdationParams {
-  data: { clusters?: ClusterWhereInput; name?: string };
+  data: {
+    clusters?: ClusterWhereInput;
+    name?: string;
+  };
   where: DatacenterWhereInput;
 }
 
@@ -25551,12 +23213,16 @@ export interface DatacenterWhereUniqueInput {
 }
 
 export interface AddClustersToDatacenterParams {
-  data: { clusters?: ClusterWhereInput };
+  data: {
+    clusters?: ClusterWhereInput;
+  };
   where: DatacenterWhereUniqueInput;
 }
 
 export interface RemoveClustersFromDatacenterParams {
-  data: { clusters?: ClusterWhereInput };
+  data: {
+    clusters?: ClusterWhereInput;
+  };
   where: DatacenterWhereUniqueInput;
 }
 
@@ -25579,7 +23245,6 @@ export interface NestedDiskFailureInformation {
   chunk_io_error?: boolean | null;
   chunk_warnflag?: boolean | null;
   iostat_latency?: boolean | null;
-
   /** @format int64 */
   iostat_latency_ms?: number | null;
   smart_check?: boolean | null;
@@ -25602,11 +23267,9 @@ export enum PartitionUsage {
 export interface NestedPartition {
   name?: string | null;
   path?: string | null;
-
   /** @format int64 */
   size: number;
   usage: PartitionUsage;
-
   /** @format int64 */
   used_size: number;
 }
@@ -25630,23 +23293,19 @@ export interface Disk {
   model: string;
   mounted: boolean;
   name: string;
-
   /** @format int32 */
   numa_node?: number | null;
   offline: boolean;
   partitions: NestedPartition[];
   path: string;
   persistent_memory_type?: string | null;
-
   /** @format int32 */
   physical_slot_on_brick?: number | null;
   pmem_dimms?: NestedPmemDimm[] | null;
   recommended_usage?: DiskUsage | null;
-
   /** @format int32 */
   remaining_life_percent?: number | null;
   serial: string;
-
   /** @format int64 */
   size: number;
   type: DiskType;
@@ -25660,7 +23319,9 @@ export interface WithTaskDisk {
 }
 
 export interface DiskMountParams {
-  data: { function: DiskFunction };
+  data: {
+    function: DiskFunction;
+  };
   where: DiskWhereInput;
 }
 
@@ -25693,15 +23354,12 @@ export enum FilterRuleOpEnum {
 
 export interface NestedFilterRule {
   aggregation: FilterRuleAggregationEnum;
-
   /** @format int32 */
   duration: number;
   metric: FilterRuleMetricEnum;
   op: FilterRuleOpEnum;
-
   /** @format int32 */
   quantile: number;
-
   /** @format double */
   threshold: number;
 }
@@ -25730,12 +23388,10 @@ export interface WithTaskEntityFilter {
 export interface FilterRuleInput {
   /** @format double */
   threshold: number;
-
   /** @format int32 */
   quantile: number;
   op: FilterRuleOpEnum;
   metric: FilterRuleMetricEnum;
-
   /** @format int32 */
   duration: number;
   aggregation: FilterRuleAggregationEnum;
@@ -25776,7 +23432,6 @@ export interface EntityFilterDeletionParams {
 export interface GpuDevice {
   /** @format int32 */
   assigned_vgpus_num?: number | null;
-
   /** @format int32 */
   available_vgpus_num?: number | null;
   brand: string;
@@ -25799,7 +23454,6 @@ export interface GpuDevice {
   user_usage?: GpuDeviceUsage | null;
   user_vgpu_type_id?: string | null;
   user_vgpu_type_name?: string | null;
-
   /** @format int32 */
   vgpu_instance_num?: number | null;
   vms?: NestedVm[] | null;
@@ -25811,17 +23465,24 @@ export interface WithTaskGpuDevice {
 }
 
 export interface GpuDeviceUsageUpdationParams {
-  data: { vgpu_spec?: string; usage?: GpuDeviceUsage };
+  data: {
+    vgpu_spec?: string;
+    usage?: GpuDeviceUsage;
+  };
   where: GpuDeviceWhereInput;
 }
 
 export interface GpuDeviceDescriptionUpdationParams {
-  data: { description: string };
+  data: {
+    description: string;
+  };
   where: GpuDeviceWhereInput;
 }
 
 export interface GpuDeviceSriovSwitchParams {
-  data: { enable: boolean };
+  data: {
+    enable: boolean;
+  };
   where: GpuDeviceWhereInput;
 }
 
@@ -25836,20 +23497,16 @@ export interface GpuVmDetail {
   vm_nics?: NestedVmNic[] | null;
   vm_disks?: NestedVmDisk[] | null;
   video_type?: VmVideoType | null;
-
   /** @format int32 */
   vcpu: number;
   usb_devices?: NestedUsbDevice[] | null;
-
   /** @format int64 */
   unique_size?: number | null;
   status: VmStatus;
   snapshots?: NestedVmSnapshot[] | null;
   snapshot_plan?: NestedSnapshotPlan | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   provisioned_size?: number | null;
   protected: boolean;
@@ -25860,21 +23517,16 @@ export interface GpuVmDetail {
   node_ip: string;
   nested_virtualization: boolean;
   name: string;
-
   /** @format double */
   memory_usage?: number | null;
-
   /** @format int64 */
   memory: number;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
-
   /** @format int64 */
   logical_size_bytes?: number | null;
   local_id: string;
@@ -25891,10 +23543,8 @@ export interface GpuVmDetail {
   hostname?: string | null;
   host?: NestedHost | null;
   ha: boolean;
-
   /** @format int64 */
   guest_used_size?: number | null;
-
   /** @format double */
   guest_size_usage?: number | null;
   guest_os_type?: VmGuestsOperationSystem | null;
@@ -25907,7 +23557,6 @@ export interface GpuVmDetail {
   dns_servers?: string | null;
   description: string;
   deleted_at?: string | null;
-
   /** @format double */
   cpu_usage?: number | null;
   cpu_model: string;
@@ -25919,7 +23568,6 @@ export interface GpuVmDetail {
 
 export interface GpuVmInfo {
   vms: GpuVmDetail[];
-
   /** @format int32 */
   vgpu_instance_num?: number | null;
   user_vgpu_type_name?: string | null;
@@ -25942,10 +23590,8 @@ export interface GpuVmInfo {
   description: string;
   bus_location: string;
   brand: string;
-
   /** @format int32 */
   available_vgpus_num?: number | null;
-
   /** @format int32 */
   assigned_vgpus_num?: number | null;
 }
@@ -25998,14 +23644,11 @@ export enum GpuDeviceOrderByInput {
 export interface GetGpuDevicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GpuDeviceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GpuDeviceWhereInput | null;
@@ -26036,7 +23679,6 @@ export interface Graph {
   instance_ids: string[];
   local_id: string;
   luns?: NestedIscsiLun[] | null;
-
   /** @format int32 */
   metric_count: number;
   metric_name: string;
@@ -26067,7 +23709,6 @@ export interface GraphCreationParams {
   network?: NetworkType;
   service?: string;
   metric_type?: MetricType;
-
   /** @format int32 */
   metric_count?: number;
   type: GraphType;
@@ -26125,23 +23766,17 @@ export interface GraphWhereInput {
   luns_every?: IscsiLunWhereInput | null;
   luns_none?: IscsiLunWhereInput | null;
   luns_some?: IscsiLunWhereInput | null;
-
   /** @format int32 */
   metric_count?: number | null;
-
   /** @format int32 */
   metric_count_gt?: number | null;
-
   /** @format int32 */
   metric_count_gte?: number | null;
   metric_count_in?: number[] | null;
-
   /** @format int32 */
   metric_count_lt?: number | null;
-
   /** @format int32 */
   metric_count_lte?: number | null;
-
   /** @format int32 */
   metric_count_not?: number | null;
   metric_count_not_in?: number[] | null;
@@ -26291,23 +23926,17 @@ export interface ViewWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   time_span?: number | null;
-
   /** @format int32 */
   time_span_gt?: number | null;
-
   /** @format int32 */
   time_span_gte?: number | null;
   time_span_in?: number[] | null;
-
   /** @format int32 */
   time_span_lt?: number | null;
-
   /** @format int32 */
   time_span_lte?: number | null;
-
   /** @format int32 */
   time_span_not?: number | null;
   time_span_not_in?: number[] | null;
@@ -26338,6 +23967,7 @@ export interface GraphUpdationParams {
     cluster?: ClusterWhereInput;
     service?: string;
     metric_type?: MetricType;
+    /** @format int32 */
     metric_count?: number;
     type?: GraphType;
     resource_type?: string;
@@ -26367,7 +23997,6 @@ export interface NestedTask {
   id: string;
   internal: boolean;
   local_created_at: string;
-
   /** @format double */
   progress: number;
   snapshot: string;
@@ -26392,18 +24021,17 @@ export interface HostBatchCreateIpmiInput {
 
 export interface HostBatchCreateDiskInput {
   type?: DiskType | null;
-
   /** @format double */
   size?: number | null;
   function?: DiskFunction | null;
   drive: string;
-
   /** @format int32 */
   chunk_ins_id?: number | null;
 }
 
 export enum HostBatchCreateIfaceFunction {
   ACCESS = "ACCESS",
+  ERSPAN = "ERSPAN",
   MANAGEMENT = "MANAGEMENT",
   MIGRATION = "MIGRATION",
   STORAGE = "STORAGE",
@@ -26480,21 +24108,16 @@ export interface NestedVsphereEsxiAccount {
 
 export interface Host {
   access_ip?: string | null;
-
   /** @format int32 */
   allocable_cpu_cores_for_vm_exclusive?: number | null;
-
   /** @format int64 */
   allocatable_memory_bytes: number;
-
   /** @format int64 */
   allocated_prioritized_space?: number | null;
-
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
   chunk_id: string;
   cluster: NestedCluster;
-
   /** @format int64 */
   commited_memory_bytes?: number | null;
   compatible_cpu_models: string[];
@@ -26502,27 +24125,28 @@ export interface Host {
   cpu_brand: string;
   cpu_fan_speed: number[];
   cpu_fan_speed_unit?: CpuFanSpeedUnit | null;
-
   /** @format int64 */
   cpu_hz_per_core: number;
   cpu_model: string;
   cpu_temperature_celsius: number[];
   cpu_vendor?: string | null;
   data_ip?: string | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
   disk_pools?: NestedDiskPool[] | null;
   disks?: NestedDisk[] | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
-
+  /** @format int64 */
+  failure_cache_space?: number | null;
   /** @format int64 */
   failure_data_space: number;
   gpu_devices?: NestedGpuDevice[] | null;
-
   /** @format int64 */
   hdd_data_capacity: number;
-
   /** @format int32 */
   hdd_disk_count: number;
   host_state?: NestedMaintenanceHostState | null;
@@ -26539,118 +24163,83 @@ export interface Host {
   model: string;
   name: string;
   nested_virtualization: boolean;
-
   /** @format int32 */
   nic_count: number;
   nics?: NestedNic[] | null;
   node_topo_local_id?: string | null;
-
   /** @format int64 */
   os_memory_bytes: number;
   os_version?: string | null;
-
   /** @format int64 */
   perf_allocated_data_space?: number | null;
-
   /** @format int64 */
   perf_failure_data_space?: number | null;
-
   /** @format int64 */
   perf_total_data_capacity?: number | null;
-
   /** @format int64 */
   perf_used_data_space?: number | null;
-
   /** @format int64 */
   perf_valid_data_space?: number | null;
-
   /** @format int64 */
   planned_prioritized_space?: number | null;
-
   /** @format int64 */
   pmem_dimm_capacity: number;
-
   /** @format int32 */
   pmem_dimm_count: number;
   pmem_dimms?: NestedPmemDimm[] | null;
-
   /** @format int32 */
   pmem_disk_count: number;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores: number;
-
   /** @format int64 */
   provisioned_memory_bytes: number;
-
   /** @format int64 */
   running_pause_vm_memory_bytes: number;
-
   /** @format int32 */
   running_vm_num?: number | null;
-
   /** @format int32 */
   scvm_cpu?: number | null;
-
   /** @format int64 */
   scvm_memory?: number | null;
   scvm_name?: string | null;
   serial?: string | null;
-
   /** @format int64 */
   ssd_data_capacity: number;
-
   /** @format int32 */
   ssd_disk_count: number;
   state: HostState;
   status: HostStatus;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int32 */
   total_cpu_cores: number;
-
   /** @format int64 */
   total_cpu_hz: number;
-
   /** @format int32 */
   total_cpu_sockets?: number | null;
-
   /** @format int64 */
   total_data_capacity: number;
-
   /** @format int64 */
   total_memory_bytes: number;
   usb_devices?: NestedUsbDevice[] | null;
-
   /** @format int64 */
   used_cache_space?: number | null;
-
   /** @format double */
   used_cpu_hz?: number | null;
-
   /** @format int64 */
   used_data_space: number;
-
   /** @format double */
   used_memory_bytes?: number | null;
-
   /** @format int64 */
   valid_cache_space?: number | null;
-
   /** @format int64 */
   valid_free_cache_space?: number | null;
-
   /** @format int32 */
   vm_num?: number | null;
   vmotion_ip?: string | null;
@@ -26672,7 +24261,11 @@ export interface TriggerDiskBlinkParams {
 }
 
 export interface HostUpdationParams {
-  data: { ipmi?: HostBatchCreateIpmiInput; scvm_name?: string; name?: string };
+  data: {
+    ipmi?: HostBatchCreateIpmiInput;
+    scvm_name?: string;
+    name?: string;
+  };
   where: HostWhereInput;
 }
 
@@ -26689,7 +24282,9 @@ export interface OperateHostPowerData {
 
 export interface OperateHostPowerParams {
   data: OperateHostPowerData;
-  where: { host_id: string };
+  where: {
+    host_id: string;
+  };
 }
 
 export interface EnterMaintenanceModeCheckResult {
@@ -26710,7 +24305,9 @@ export interface EnterMaintenanceModeResult {
 }
 
 export interface EnterMaintenanceModeResultParams {
-  where: { task_id: string };
+  where: {
+    task_id: string;
+  };
 }
 
 export interface EnterMaintenanceModeInput {
@@ -26719,7 +24316,9 @@ export interface EnterMaintenanceModeInput {
 
 export interface EnterMaintenanceModeParams {
   data: EnterMaintenanceModeInput;
-  where: { host_id: string };
+  where: {
+    host_id: string;
+  };
 }
 
 export interface MaintenanceModeVerify {
@@ -26755,7 +24354,9 @@ export interface ExitMaintenanceModeInput {
 
 export interface ExitMaintenanceModeParams {
   data: ExitMaintenanceModeInput;
-  where: { host_id: string };
+  where: {
+    host_id: string;
+  };
 }
 
 export interface NestedIscsiTarget {
@@ -26770,10 +24371,8 @@ export interface NestedSnapshotGroup {
 
 export interface IscsiLunSnapshot {
   consistency_group_snapshot?: NestedConsistencyGroupSnapshot | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -26786,7 +24385,6 @@ export interface IscsiLunSnapshot {
   name: string;
   resiliency_type?: ResiliencyType | null;
   snapshot_group?: NestedSnapshotGroup | null;
-
   /** @format int64 */
   unique_size: number;
 }
@@ -26837,34 +24435,24 @@ export interface NestedReplicationPlan {
 
 export interface IscsiLun {
   allowed_initiators: string;
-
   /** @format int64 */
   assigned_size: number;
-
   /** @format int64 */
   bps: number;
-
   /** @format int64 */
   bps_max: number;
-
   /** @format int64 */
   bps_max_length: number;
-
   /** @format int64 */
   bps_rd: number;
-
   /** @format int64 */
   bps_rd_max: number;
-
   /** @format int64 */
   bps_rd_max_length: number;
-
   /** @format int64 */
   bps_wr: number;
-
   /** @format int64 */
   bps_wr_max: number;
-
   /** @format int64 */
   bps_wr_max_length: number;
   business_host_groups?: NestedBusinessHostGroup[] | null;
@@ -26872,80 +24460,59 @@ export interface IscsiLun {
   business_hosts?: NestedBusinessHost[] | null;
   configuration_method?: ConfigurationMethod | null;
   consistency_group?: NestedConsistencyGroup | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
-
   /** @format int64 */
   io_size: number;
-
   /** @format int64 */
   iops: number;
-
   /** @format int64 */
   iops_max: number;
-
   /** @format int64 */
   iops_max_length: number;
-
   /** @format int64 */
   iops_rd: number;
-
   /** @format int64 */
   iops_rd_max: number;
-
   /** @format int64 */
   iops_rd_max_length: number;
-
   /** @format int64 */
   iops_wr: number;
-
   /** @format int64 */
   iops_wr_max: number;
-
   /** @format int64 */
   iops_wr_max_length: number;
   iscsi_target: NestedIscsiTarget;
   labels?: NestedLabel[] | null;
   local_created_at: string;
   local_id: string;
-
   /** @format int32 */
   lun_id: number;
   name: string;
   prioritized?: boolean | null;
-
   /** @format int32 */
   replica_num: number;
   replication_plans?: NestedReplicationPlan[] | null;
   resiliency_type?: ResiliencyType | null;
-
   /** @format int64 */
   shared_size: number;
-
   /** @format int32 */
   snapshot_num: number;
   snapshot_plans?: NestedSnapshotPlan[] | null;
-
   /** @format int32 */
   stripe_num: number;
-
   /** @format int64 */
   stripe_size: number;
   thin_provision: boolean;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format int64 */
   unique_size: number;
   zbs_volume_id: string;
@@ -26963,86 +24530,75 @@ export interface IscsiLunCommonParams {
   configuration_method?: ConfigurationMethod;
   encrypt_method?: EncryptMethod;
   prioritized?: boolean;
-
   /** @format int64 */
   bps_wr_max_length?: number;
   bps_wr_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr_max?: number;
-
   /** @format int64 */
   bps_rd_max_length?: number;
   bps_rd_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd_max?: number;
-
   /** @format int64 */
   bps_max_length?: number;
   bps_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_max?: number;
-
   /** @format int64 */
   iops_wr_max_length?: number;
-
   /** @format int64 */
   iops_wr_max?: number;
-
   /** @format int64 */
   iops_rd_max_length?: number;
-
   /** @format int64 */
   iops_rd_max?: number;
-
   /** @format int64 */
   iops_max_length?: number;
-
   /** @format int64 */
   iops_max?: number;
   bps_wr_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr?: number;
   bps_rd_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd?: number;
   bps_unit?: BPSUnit;
-
   /** @format int64 */
   bps?: number;
-
   /** @format int64 */
   iops_wr?: number;
-
   /** @format int64 */
   iops_rd?: number;
-
   /** @format int64 */
   iops?: number;
   allowed_initiators?: string;
 }
 
 export type IscsiLunCreationParams = {
+  /** @format double */
   ec_m?: number;
+  /** @format double */
   ec_k?: number;
   resiliency_type?: ResiliencyType;
   thin_provision?: boolean;
+  /** @format int32 */
   lun_id?: number;
   assigned_size_unit?: ByteUnit;
+  /** @format int64 */
   assigned_size: number;
+  /** @format int32 */
   replica_num: number;
   iscsi_target_id: string;
   name: string;
 } & IscsiLunCommonParams;
 
 export type IscsiLunUpdationParamsData = {
+  /** @format int32 */
   replica_num?: number;
   thin_provision?: boolean;
   assigned_size_unit?: ByteUnit;
+  /** @format int64 */
   assigned_size?: number;
   name?: string;
 } & IscsiLunCommonParams;
@@ -27062,7 +24618,9 @@ export interface WithTaskDeleteIscsiLun {
 }
 
 export interface IscsiLunDeletionParams {
-  data: { remove_snapshot: boolean };
+  data: {
+    remove_snapshot: boolean;
+  };
   where: IscsiLunWhereInput;
 }
 
@@ -27096,28 +24654,20 @@ export interface NestedIscsiConnection {
 export interface IscsiTarget {
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
   business_host_groups?: NestedBusinessHostGroup[] | null;
@@ -27129,10 +24679,8 @@ export interface IscsiTarget {
   configuration_adaptive?: boolean | null;
   configuration_method?: ConfigurationMethod | null;
   description: string;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
@@ -27141,41 +24689,30 @@ export interface IscsiTarget {
   id: string;
   initiator_chaps?: NestedInitiatorChap[] | null;
   internal: boolean;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
   ip_whitelist: string;
   iqn_name: string;
   iqn_whitelist: string;
   iscsi_connections?: NestedIscsiConnection[] | null;
-
   /** @format int32 */
   iscsi_luns_num?: number | null;
   labels?: NestedLabel[] | null;
@@ -27183,14 +24720,11 @@ export interface IscsiTarget {
   luns?: NestedIscsiLun[] | null;
   name: string;
   prioritized?: boolean | null;
-
   /** @format int32 */
   replica_num: number;
   resiliency_type?: ResiliencyType | null;
-
   /** @format int32 */
   stripe_num: number;
-
   /** @format int64 */
   stripe_size: number;
   thin_provision: boolean;
@@ -27214,74 +24748,53 @@ export interface IscsiTargetCommonParams {
   configuration_method?: ConfigurationMethod;
   encrypt_method?: EncryptMethod;
   prioritized?: boolean;
-
   /** @format double */
   ec_m?: number;
-
   /** @format double */
   ec_k?: number;
   resiliency_type?: ResiliencyType;
-
   /** @format int64 */
   bps_wr_max_length?: number;
   bps_wr_max_unit?: BPSUnit;
-
   /** @deprecated */
   bps_wr_max_size?: BPSUnit;
-
   /** @format int64 */
   bps_wr_max?: number;
-
   /** @format int64 */
   bps_rd_max_length?: number;
   bps_rd_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd_max?: number;
-
   /** @format int64 */
   bps_max_length?: number;
   bps_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_max?: number;
-
   /** @format int64 */
   iops_wr_max_length?: number;
-
   /** @format int64 */
   iops_wr_max?: number;
-
   /** @format int64 */
   iops_rd_max_length?: number;
-
   /** @format int64 */
   iops_rd_max?: number;
-
   /** @format int64 */
   iops_max_length?: number;
-
   /** @format int64 */
   iops_max?: number;
   bps_wr_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr?: number;
   bps_rd_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd?: number;
   bps_unit?: BPSUnit;
-
   /** @format int64 */
   bps?: number;
-
   /** @format int64 */
   iops_wr?: number;
-
   /** @format int64 */
   iops_rd?: number;
-
   /** @format int64 */
   iops?: number;
   initiator_chaps?: IscsiTargetCommonParamsInitiatorChaps[];
@@ -27295,8 +24808,11 @@ export interface IscsiTargetCommonParams {
 
 export type IscsiTargetCreationParams = {
   stripe_size_unit?: ByteUnit;
+  /** @format int64 */
   stripe_size: number;
+  /** @format int32 */
   stripe_num: number;
+  /** @format int32 */
   replica_num: number;
   thin_provision: boolean;
   cluster_id: string;
@@ -27304,6 +24820,7 @@ export type IscsiTargetCreationParams = {
 } & IscsiTargetCommonParams;
 
 export type IscsiTargetUpdationParamsData = {
+  /** @format int32 */
   replica_num?: number;
   thin_provision?: boolean;
 } & IscsiTargetCommonParams;
@@ -27342,7 +24859,6 @@ export interface ElfImage {
   local_id: string;
   name: string;
   path: string;
-
   /** @format int64 */
   size: number;
   vm_disks?: NestedVmDisk[] | null;
@@ -27356,7 +24872,10 @@ export interface WithTaskElfImage {
 }
 
 export interface ElfImageUpdationParams {
-  data: { description?: string; name?: string };
+  data: {
+    description?: string;
+    name?: string;
+  };
   where: ElfImageWhereInput;
 }
 
@@ -27412,123 +24931,93 @@ export interface Label {
   /** @format int32 */
   cluster_num?: number | null;
   clusters?: NestedCluster[] | null;
-
   /** @format int32 */
   consistency_group_num?: number | null;
-
   /** @format int32 */
   consistency_group_snapshot_num?: number | null;
   consistency_group_snapshots?: NestedConsistencyGroupSnapshot[] | null;
   consistency_groups?: NestedConsistencyGroup[] | null;
-
   /** @format int32 */
   content_library_image_num?: number | null;
   content_library_images?: NestedContentLibraryImage[] | null;
-
   /** @format int32 */
   content_library_vm_template_num?: number | null;
   content_library_vm_templates?: NestedContentLibraryVmTemplate[] | null;
   createdAt: string;
-
   /** @format int32 */
   datacenter_num?: number | null;
   datacenters?: NestedDatacenter[] | null;
-
   /** @format int32 */
   disk_num?: number | null;
   disks?: NestedDisk[] | null;
-
   /** @format int32 */
   elf_image_num?: number | null;
   elf_images?: NestedElfImage[] | null;
-
   /** @format int32 */
   gpu_device_num?: number | null;
   gpu_devices?: NestedGpuDevice[] | null;
-
   /** @format int32 */
   host_num?: number | null;
   hosts?: NestedHost[] | null;
   id: string;
-
   /** @format int32 */
   iscsi_lun_num?: number | null;
-
   /** @format int32 */
   iscsi_lun_snapshot_num?: number | null;
   iscsi_lun_snapshots?: NestedIscsiLunSnapshot[] | null;
   iscsi_luns?: NestedIscsiLun[] | null;
-
   /** @format int32 */
   iscsi_target_num?: number | null;
   iscsi_targets?: NestedIscsiTarget[] | null;
   isolation_policies?: NestedIsolationPolicy[] | null;
-
   /** @format int32 */
   isolation_policy_num?: number | null;
   key: string;
-
   /** @format int32 */
   namespace_group_num?: number | null;
   namespace_groups?: NestedNamespaceGroup[] | null;
-
   /** @format int32 */
   nfs_export_num?: number | null;
   nfs_exports?: NestedNfsExport[] | null;
-
   /** @format int32 */
   nfs_inode_num?: number | null;
   nfs_inodes?: NestedNfsInode[] | null;
-
   /** @format int32 */
   nic_num?: number | null;
   nics?: NestedNic[] | null;
-
   /** @format int32 */
   nvmf_namespace_num?: number | null;
-
   /** @format int32 */
   nvmf_namespace_snapshot_num?: number | null;
   nvmf_namespace_snapshots?: NestedNvmfNamespaceSnapshot[] | null;
   nvmf_namespaces?: NestedNvmfNamespace[] | null;
-
   /** @format int32 */
   nvmf_subsystem_num?: number | null;
   nvmf_subsystems?: NestedNvmfSubsystem[] | null;
   security_policies?: NestedSecurityPolicy[] | null;
-
   /** @format int32 */
   security_policy_num?: number | null;
-
   /** @format int32 */
   system_vlan_num?: number | null;
-
   /** @format int32 */
   total_num?: number | null;
   value?: string | null;
-
   /** @format int32 */
   vds_num?: number | null;
   vdses?: NestedVds[] | null;
   vlans?: NestedVlan[] | null;
-
   /** @format int32 */
   vm_num?: number | null;
-
   /** @format int32 */
   vm_snapshot_num?: number | null;
   vm_snapshots?: NestedVmSnapshot[] | null;
-
   /** @format int32 */
   vm_template_num?: number | null;
   vm_templates?: NestedVmTemplate[] | null;
-
   /** @format int32 */
   vm_vlan_num?: number | null;
-
   /** @format int32 */
   vm_volume_num?: number | null;
-
   /** @format int32 */
   vm_volume_snapshot_num?: number | null;
   vm_volume_snapshots?: NestedVmVolumeSnapshot[] | null;
@@ -27547,7 +25036,10 @@ export interface LabelCreationParams {
 }
 
 export interface LabelUpdationParams {
-  data: { value?: string; key?: string };
+  data: {
+    value?: string;
+    key?: string;
+  };
   where: LabelWhereInput;
 }
 
@@ -27607,10 +25099,8 @@ export interface License {
   license_serial: string;
   maintenance_end_date?: string | null;
   maintenance_start_date?: string | null;
-
   /** @format int32 */
   max_chunk_num: number;
-
   /** @format int32 */
   max_cluster_num: number;
   sign_date: string;
@@ -27624,7 +25114,9 @@ export interface WithTaskLicense {
 }
 
 export interface LicenseUpdationParams {
-  data: { license: string };
+  data: {
+    license: string;
+  };
 }
 
 export enum LogCollectionStatus {
@@ -27644,12 +25136,10 @@ export interface LogCollection {
   log_started_at: string;
   owner: string;
   path: string;
-
   /** @format double */
   progress: number;
   service_groups?: object | null;
   services: string[];
-
   /** @format int64 */
   size: number;
   started_at: string;
@@ -27670,10 +25160,8 @@ export interface LogCollectionServiceGroupParams {
 export interface LogCollectionCreationParams {
   witness_id?: string;
   service_groups?: LogCollectionServiceGroupParams[];
-
   /** @format date-time */
   log_ended_at: string;
-
   /** @format date-time */
   log_started_at: string;
   cluster_id: string;
@@ -27760,43 +25248,31 @@ export interface LogCollectionWhereInput {
   path_not_in?: string[] | null;
   path_not_starts_with?: string | null;
   path_starts_with?: string | null;
-
   /** @format double */
   progress?: number | null;
-
   /** @format double */
   progress_gt?: number | null;
-
   /** @format double */
   progress_gte?: number | null;
   progress_in?: number[] | null;
-
   /** @format double */
   progress_lt?: number | null;
-
   /** @format double */
   progress_lte?: number | null;
-
   /** @format double */
   progress_not?: number | null;
   progress_not_in?: number[] | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -27861,7 +25337,6 @@ export interface MetricLabel {
 export interface DataPoint {
   /** @format double */
   v?: number | null;
-
   /** @format int64 */
   t: number;
   __typename?: "DataPoint";
@@ -27895,7 +25370,6 @@ export enum MetricUnit {
 
 export interface Metric {
   unit: MetricUnit;
-
   /** @format int32 */
   step: number;
   samples?: MetricSample[] | null;
@@ -28017,7 +25491,6 @@ export interface GetTopNMetricInput {
   metrics: string[];
   clusters: ClusterWhereInput;
   type: "top" | "bottom";
-
   /** @format int32 */
   n: number;
   range: string;
@@ -28045,7 +25518,9 @@ export interface NamespaceGroupCreationParams {
 }
 
 export interface NamespaceGroupUpdationParams {
-  data: { name?: string };
+  data: {
+    name?: string;
+  };
   where: NamespaceGroupWhereInput;
 }
 
@@ -28065,10 +25540,8 @@ export interface NamespaceGroupDeletionParams {
 export interface NfsExport {
   cluster: NestedCluster;
   description: string;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
@@ -28082,7 +25555,6 @@ export interface NfsExport {
   local_id: string;
   name: string;
   prioritized?: boolean | null;
-
   /** @format int32 */
   replica_num: number;
   resiliency_type?: ResiliencyType | null;
@@ -28096,17 +25568,14 @@ export interface WithTaskNfsExport {
 
 export interface NfsExportCreationParams {
   encrypt_method?: EncryptMethod;
-
   /** @format double */
   ec_m?: number;
-
   /** @format double */
   ec_k?: number;
   resiliency_type?: ResiliencyType;
   cluster_id: string;
   ip_whitelist?: string;
   thin_provision: boolean;
-
   /** @format int32 */
   replica_num: number;
   name: string;
@@ -28114,9 +25583,12 @@ export interface NfsExportCreationParams {
 
 export interface NfsExportUpdationParams {
   data?: {
+    /** @format double */
     ec_m?: number;
+    /** @format double */
     ec_k?: number;
     resiliency_type?: ResiliencyType;
+    /** @format double */
     replica_num?: number;
     ip_whitelist?: string;
     name?: string;
@@ -28151,11 +25623,9 @@ export interface Nic {
   labels?: NestedLabel[] | null;
   local_id: string;
   mac_address: string;
-
   /** @format int32 */
   max_vf_num?: number | null;
   model?: string | null;
-
   /** @format int32 */
   mtu: number;
   name: string;
@@ -28163,16 +25633,13 @@ export interface Nic {
   physical: boolean;
   rdma_enabled?: boolean | null;
   running: boolean;
-
   /** @format int64 */
   speed?: number | null;
   subnet_mask?: string | null;
-
   /** @format int32 */
   total_vf_num?: number | null;
   type?: NetworkType | null;
   up: boolean;
-
   /** @format int32 */
   used_vf_num?: number | null;
   user_usage?: NicUserUsage | null;
@@ -28186,7 +25653,13 @@ export interface WithTaskNic {
 }
 
 export interface NicUpdationParams {
-  data: { nic_user_usage?: NicUserUsage; total_vf_num?: number; mtu?: number };
+  data: {
+    nic_user_usage?: NicUserUsage;
+    /** @format int32 */
+    total_vf_num?: number;
+    /** @format int32 */
+    mtu?: number;
+  };
   where: NicWhereInput;
 }
 
@@ -28198,7 +25671,6 @@ export interface NestedBrickTopo {
 export interface NestedPosition {
   /** @format int32 */
   column?: number | null;
-
   /** @format int32 */
   row?: number | null;
 }
@@ -28227,7 +25699,6 @@ export interface NodeTopoWhereUniqueInput {
 export interface Position {
   /** @format int32 */
   row?: number | null;
-
   /** @format int32 */
   column?: number | null;
   __typename?: "position";
@@ -28248,10 +25719,8 @@ export type NodeTopoUpdationParams = NodeTopUpdationParam[];
 
 export interface NvmfNamespaceSnapshot {
   consistency_group_snapshot?: NestedConsistencyGroupSnapshot | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -28264,7 +25733,6 @@ export interface NvmfNamespaceSnapshot {
   nvmf_subsystem: NestedNvmfSubsystem;
   resiliency_type?: ResiliencyType | null;
   snapshot_group?: NestedSnapshotGroup | null;
-
   /** @format int64 */
   unique_size: number;
 }
@@ -28296,31 +25764,22 @@ export interface NvmfNamespaceSnapshotDeletionParams {
 export interface NvmfNamespace {
   /** @format int64 */
   assigned_size: number;
-
   /** @format int64 */
   bps: number;
-
   /** @format int64 */
   bps_max: number;
-
   /** @format int64 */
   bps_max_length: number;
-
   /** @format int64 */
   bps_rd: number;
-
   /** @format int64 */
   bps_rd_max: number;
-
   /** @format int64 */
   bps_rd_max_length: number;
-
   /** @format int64 */
   bps_wr: number;
-
   /** @format int64 */
   bps_wr_max: number;
-
   /** @format int64 */
   bps_wr_max_length: number;
   business_host_groups?: NestedBusinessHostGroup[] | null;
@@ -28328,46 +25787,33 @@ export interface NvmfNamespace {
   business_hosts?: NestedBusinessHost[] | null;
   configuration_method?: ConfigurationMethod | null;
   consistency_group?: NestedConsistencyGroup | null;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
-
   /** @format int64 */
   io_size: number;
-
   /** @format int64 */
   iops: number;
-
   /** @format int64 */
   iops_max: number;
-
   /** @format int64 */
   iops_max_length: number;
-
   /** @format int64 */
   iops_rd: number;
-
   /** @format int64 */
   iops_rd_max: number;
-
   /** @format int64 */
   iops_rd_max_length: number;
-
   /** @format int64 */
   iops_wr: number;
-
   /** @format int64 */
   iops_wr_max: number;
-
   /** @format int64 */
   iops_wr_max_length: number;
   is_shared: boolean;
@@ -28376,34 +25822,26 @@ export interface NvmfNamespace {
   local_id: string;
   name: string;
   namespace_group?: NestedNamespaceGroup | null;
-
   /** @format int32 */
   namespace_id: number;
   nqn_whitelist: string;
   nvmf_subsystem: NestedNvmfSubsystem;
   prioritized?: boolean | null;
-
   /** @format int32 */
   replica_num: number;
   resiliency_type?: ResiliencyType | null;
-
   /** @format int64 */
   shared_size: number;
-
   /** @format int32 */
   snapshot_num: number;
   snapshot_plans?: NestedSnapshotPlan[] | null;
-
   /** @format int32 */
   stripe_num: number;
-
   /** @format int64 */
   stripe_size: number;
   thin_provision: boolean;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format int64 */
   unique_size: number;
   zbs_volume_id: string;
@@ -28421,88 +25859,77 @@ export interface NvmfNamespaceCommonParams {
   configuration_method?: ConfigurationMethod;
   encrypt_method?: EncryptMethod;
   prioritized?: boolean;
-
   /** @format int64 */
   bps_wr_max_length?: number;
   bps_wr_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr_max?: number;
-
   /** @format int64 */
   bps_rd_max_length?: number;
   bps_rd_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd_max?: number;
-
   /** @format int64 */
   bps_max_length?: number;
   bps_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_max?: number;
-
   /** @format int64 */
   iops_wr_max_length?: number;
-
   /** @format int64 */
   iops_wr_max?: number;
-
   /** @format int64 */
   iops_rd_max_length?: number;
-
   /** @format int64 */
   iops_rd_max?: number;
-
   /** @format int64 */
   iops_max_length?: number;
-
   /** @format int64 */
   iops_max?: number;
   bps_wr_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr?: number;
   bps_rd_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd?: number;
   bps_unit?: BPSUnit;
-
   /** @format int64 */
   bps?: number;
-
   /** @format int64 */
   iops_wr?: number;
-
   /** @format int64 */
   iops_rd?: number;
-
   /** @format int64 */
   iops?: number;
   nqn_whitelist?: string;
 }
 
 export type NvmfNamespaceCreationParams = {
+  /** @format double */
   ec_m?: number;
+  /** @format double */
   ec_k?: number;
   resiliency_type?: ResiliencyType;
   thin_provision?: boolean;
+  /** @format int32 */
   namespace_id?: number;
   group_id?: string;
   is_shared?: boolean;
   assigned_size_unit?: ByteUnit;
+  /** @format int64 */
   assigned_size: number;
+  /** @format int32 */
   replica_num: number;
   nvmf_subsystem_id: string;
   name: string;
 } & NvmfNamespaceCommonParams;
 
 export type NvmfNamespaceUpdationParamsData = {
+  /** @format int32 */
   replica_num?: number;
   thin_provision?: boolean;
   assigned_size_unit?: ByteUnit;
+  /** @format int64 */
   assigned_size?: number;
   name?: string;
 } & NvmfNamespaceCommonParams;
@@ -28522,7 +25949,9 @@ export interface WithTaskDeleteNvmfNamespace {
 }
 
 export interface NvmfNamespaceDeletionParams {
-  data: { remove_snapshot: boolean };
+  data: {
+    remove_snapshot: boolean;
+  };
   where: NvmfNamespaceWhereInput;
 }
 
@@ -28541,28 +25970,20 @@ export interface NvmfNamespaceRollbackParams {
 export interface NvmfSubsystem {
   /** @format int64 */
   bps?: number | null;
-
   /** @format int64 */
   bps_max?: number | null;
-
   /** @format int64 */
   bps_max_length?: number | null;
-
   /** @format int64 */
   bps_rd?: number | null;
-
   /** @format int64 */
   bps_rd_max?: number | null;
-
   /** @format int64 */
   bps_rd_max_length?: number | null;
-
   /** @format int64 */
   bps_wr?: number | null;
-
   /** @format int64 */
   bps_wr_max?: number | null;
-
   /** @format int64 */
   bps_wr_max_length?: number | null;
   business_host_groups?: NestedBusinessHostGroup[] | null;
@@ -28571,10 +25992,8 @@ export interface NvmfSubsystem {
   configuration_adaptive?: boolean | null;
   configuration_method?: ConfigurationMethod | null;
   description: string;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
@@ -28582,34 +26001,24 @@ export interface NvmfSubsystem {
   external_use: boolean;
   id: string;
   internal: boolean;
-
   /** @format int64 */
   io_size?: number | null;
-
   /** @format int64 */
   iops?: number | null;
-
   /** @format int64 */
   iops_max?: number | null;
-
   /** @format int64 */
   iops_max_length?: number | null;
-
   /** @format int64 */
   iops_rd?: number | null;
-
   /** @format int64 */
   iops_rd_max?: number | null;
-
   /** @format int64 */
   iops_rd_max_length?: number | null;
-
   /** @format int64 */
   iops_wr?: number | null;
-
   /** @format int64 */
   iops_wr_max?: number | null;
-
   /** @format int64 */
   iops_wr_max_length?: number | null;
   ip_whitelist: string;
@@ -28621,19 +26030,15 @@ export interface NvmfSubsystem {
   namespaces?: NestedNvmfNamespace[] | null;
   nqn_name: string;
   nqn_whitelist: string;
-
   /** @format int32 */
   nvmf_namespaces_num?: number | null;
   policy: NvmfSubsystemPolicyType;
   prioritized?: boolean | null;
-
   /** @format int32 */
   replica_num: number;
   resiliency_type?: ResiliencyType | null;
-
   /** @format int32 */
   stripe_num: number;
-
   /** @format int64 */
   stripe_size: number;
   thin_provision: boolean;
@@ -28651,71 +26056,51 @@ export interface NvmfSubsystemCommonParams {
   configuration_method?: ConfigurationMethod;
   encrypt_method?: EncryptMethod;
   prioritized?: boolean;
-
   /** @format double */
   ec_m?: number;
-
   /** @format double */
   ec_k?: number;
   resiliency_type?: ResiliencyType;
-
   /** @format int64 */
   bps_wr_max_length?: number;
   bps_wr_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr_max?: number;
-
   /** @format int64 */
   bps_rd_max_length?: number;
   bps_rd_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd_max?: number;
-
   /** @format int64 */
   bps_max_length?: number;
   bps_max_unit?: BPSUnit;
-
   /** @format int64 */
   bps_max?: number;
-
   /** @format int64 */
   iops_wr_max_length?: number;
-
   /** @format int64 */
   iops_wr_max?: number;
-
   /** @format int64 */
   iops_rd_max_length?: number;
-
   /** @format int64 */
   iops_rd_max?: number;
-
   /** @format int64 */
   iops_max_length?: number;
-
   /** @format int64 */
   iops_max?: number;
   bps_wr_unit?: BPSUnit;
-
   /** @format int64 */
   bps_wr?: number;
   bps_rd_unit?: BPSUnit;
-
   /** @format int64 */
   bps_rd?: number;
   bps_unit?: BPSUnit;
-
   /** @format int64 */
   bps?: number;
-
   /** @format int64 */
   iops_wr?: number;
-
   /** @format int64 */
   iops_rd?: number;
-
   /** @format int64 */
   iops?: number;
   description?: string;
@@ -28724,10 +26109,13 @@ export interface NvmfSubsystemCommonParams {
 }
 
 export type NvmfSubsystemCreationParams = {
+  /** @format int32 */
   replica_num: number;
   thin_provision: boolean;
   stripe_size_unit?: ByteUnit;
+  /** @format int64 */
   stripe_size: number;
+  /** @format int32 */
   stripe_num: number;
   policy: NvmfSubsystemPolicyType;
   cluster_id: string;
@@ -28735,6 +26123,7 @@ export type NvmfSubsystemCreationParams = {
 } & NvmfSubsystemCommonParams;
 
 export type NvmfSubsystemUpdationParamsData = {
+  /** @format int32 */
   replica_num?: number;
   thin_provision?: boolean;
 } & NvmfSubsystemCommonParams;
@@ -28804,7 +26193,9 @@ export interface OrganizationCreationParams {
 }
 
 export interface OrganizationUpdationParams {
-  data: { name?: string };
+  data: {
+    name?: string;
+  };
   where: OrganizationWhereInput;
 }
 
@@ -28828,7 +26219,6 @@ export interface NestedZoneTopo {
 export interface RackTopo {
   brick_topoes?: NestedBrickTopo[] | null;
   cluster: NestedCluster;
-
   /** @format int32 */
   height: number;
   id: string;
@@ -28846,7 +26236,6 @@ export interface RackTopoCreationParams {
   brick_topoes?: BrickTopoWhereInput;
   cluster_id: string;
   zone_topo_id: string;
-
   /** @format int32 */
   height: number;
   name: string;
@@ -28857,6 +26246,7 @@ export interface RackTopoUpdationParams {
     brick_topoes?: BrickTopoWhereInput;
     cluster_id?: string;
     zone_topo_id?: string;
+    /** @format int32 */
     height?: number;
     name?: string;
   };
@@ -28892,17 +26282,13 @@ export interface NestedAuthSettings {
   access_list?: string[] | null;
   access_mode?: AccessMode | null;
   enable_single_session_login?: boolean | null;
-
   /** @format int32 */
   login_miss_num_threshold?: number | null;
-
   /** @format int32 */
   login_miss_time_threshold?: number | null;
   password_complexity?: PasswordComplexity | null;
-
   /** @format int32 */
   password_expire_days?: number | null;
-
   /** @format int32 */
   session_max_age?: number | null;
 }
@@ -28925,12 +26311,20 @@ export interface GlobalRecycleBinUpdationParams {
 }
 
 export interface ClusterRecycleBinCreationParams {
-  data: { retain: number; enabled: boolean };
+  data: {
+    /** @format int32 */
+    retain: number;
+    enabled: boolean;
+  };
   where: ClusterWhereInput;
 }
 
 export interface ClusterRecycleBinUpdationParams {
-  data: { retain: number; enabled: boolean };
+  data: {
+    /** @format int32 */
+    retain: number;
+    enabled: boolean;
+  };
   where: ClusterWhereInput;
 }
 
@@ -28951,7 +26345,6 @@ export interface NestedExecutePlan {
   enabled: boolean;
   id: string;
   period: string;
-
   /** @format int32 */
   retain: number;
   start_at: string;
@@ -28994,7 +26387,6 @@ export interface ReportTemplate {
   name: string;
   preset?: string | null;
   resource_meta: NestedResourceMeta[];
-
   /** @format int32 */
   task_num: number;
   tasks?: NestedReportTask[] | null;
@@ -29007,7 +26399,6 @@ export interface WithTaskReportTemplate {
 
 export interface ExecutePlan {
   start_at: string;
-
   /** @format int32 */
   retain: number;
   period: string;
@@ -29099,23 +26490,17 @@ export interface ReportTemplateWhereInput {
   preset_not_in?: string[] | null;
   preset_not_starts_with?: string | null;
   preset_starts_with?: string | null;
-
   /** @format int32 */
   task_num?: number | null;
-
   /** @format int32 */
   task_num_gt?: number | null;
-
   /** @format int32 */
   task_num_gte?: number | null;
   task_num_in?: number[] | null;
-
   /** @format int32 */
   task_num_lt?: number | null;
-
   /** @format int32 */
   task_num_lte?: number | null;
-
   /** @format int32 */
   task_num_not?: number | null;
   task_num_not_in?: number[] | null;
@@ -29253,19 +26638,21 @@ export enum ROLE_ACTION {
   MANAGE_DATA_CENTER = "MANAGE_DATA_CENTER",
   MANAGE_CLUSTER_CONNECTION = "MANAGE_CLUSTER_CONNECTION",
   MANAGE_STORAGE_CLUSTER_CONNECTION = "MANAGE_STORAGE_CLUSTER_CONNECTION",
-  MANAGE_PORT_ACCESS_CONTROL = "MANAGE_PORT_ACCESS_CONTROL",
   MANAGE_HOST = "MANAGE_HOST",
   MANAGE_NIC_MTU = "MANAGE_NIC_MTU",
   MANAGE_DISK = "MANAGE_DISK",
   MANAGE_HARDWARE_TOPO = "MANAGE_HARDWARE_TOPO",
   MANAGE_USB_DEVICE = "MANAGE_USB_DEVICE",
   MANAGE_GPU_DEVICE = "MANAGE_GPU_DEVICE",
+  MANAGE_PCI_DEVICE = "MANAGE_PCI_DEVICE",
   MANAGE_VDS = "MANAGE_VDS",
   MANAGE_VLAN = "MANAGE_VLAN",
   MANAGE_SYSTEM_VLAN = "MANAGE_SYSTEM_VLAN",
+  MANAGE_TRAFFIC_MIRROR = "MANAGE_TRAFFIC_MIRROR",
   MANAGE_ISCSI_DATA_STORE = "MANAGE_ISCSI_DATA_STORE",
   MANAGE_NFS_DATA_STORE = "MANAGE_NFS_DATA_STORE",
   MANAGE_NVMF_DATA_STORE = "MANAGE_NVMF_DATA_STORE",
+  VM_FOLDER_OPERATION = "VM_FOLDER_OPERATION",
   CREATE_VM = "CREATE_VM",
   UPDATE_VM = "UPDATE_VM",
   DELETE_VM = "DELETE_VM",
@@ -29307,6 +26694,7 @@ export enum ROLE_ACTION {
   MANAGE_CLUSTER_VM_TOOLS = "MANAGE_CLUSTER_VM_TOOLS",
   MANAGE_CLUSTER_HOT_MIGRATION = "MANAGE_CLUSTER_HOT_MIGRATION",
   MANAGE_CLUSTER_HA = "MANAGE_CLUSTER_HA",
+  MANAGE_CLUSTER_FULL_COPY_MAX_BPS = "MANAGE_CLUSTER_FULL_COPY_MAX_BPS",
   MANAGE_SSL_CERTIFICATE = "MANAGE_SSL_CERTIFICATE",
   MANAGE_LOG_COLLECTION = "MANAGE_LOG_COLLECTION",
   MANAGE_SYSLOG = "MANAGE_SYSLOG",
@@ -29374,6 +26762,8 @@ export enum ROLE_ACTION {
   MANAGEVIRTUALPRIVATECLOUDLAYER2GATEWAY = "MANAGE_VIRTUAL_PRIVATE_CLOUD_LAYER2_GATEWAY",
   MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING = "MANAGE_VIRTUAL_PRIVATE_CLOUD_PEERING",
   MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE = "MANAGE_VIRTUAL_PRIVATE_CLOUD_LOAD_BALANCER_RESOURCE",
+  MANAGE_TRAFFIC_REDIRECT_SERVICE = "MANAGE_TRAFFIC_REDIRECT_SERVICE",
+  MANAGE_TRAFFIC_REDIRECT_CLUSTER_BINDING = "MANAGE_TRAFFIC_REDIRECT_CLUSTER_BINDING",
   MANAGE_LDAP_AD_CONFIG = "MANAGE_LDAP_AD_CONFIG",
   MANAGE_MFA_CONFIG = "MANAGE_MFA_CONFIG",
   MANAGE_DEFAULT_LOGIN_OPTION = "MANAGE_DEFAULT_LOGIN_OPTION",
@@ -29419,7 +26809,12 @@ export enum ROLE_ACTION {
   MANAGE_SSO_LOGIN = "MANAGE_SSO_LOGIN",
   MANAGE_SYSTEM_DNS = "MANAGE_SYSTEM_DNS",
   MANAGE_SYSTEM_UPGRADE = "MANAGE_SYSTEM_UPGRADE",
+  MANAGE_OPERATION_CENTER_HA = "MANAGE_OPERATION_CENTER_HA",
   MANAGE_BUSINESS_HOST = "MANAGE_BUSINESS_HOST",
+  MANAGE_PORT_ACCESS_CONTROL = "MANAGE_PORT_ACCESS_CONTROL",
+  MANAGE_CLUSTER_ANTI_MALWARE = "MANAGE_CLUSTER_ANTI_MALWARE",
+  MANAGE_CLOUDTOWER_APPLICATION = "MANAGE_CLOUDTOWER_APPLICATION",
+  MANAGE_SERVER_PORT = "MANAGE_SERVER_PORT",
 }
 
 export interface RoleCreationParams {
@@ -29428,7 +26823,10 @@ export interface RoleCreationParams {
 }
 
 export interface RoleUpdationParams {
-  data: { actions?: ROLE_ACTION[]; name?: string };
+  data: {
+    actions?: ROLE_ACTION[];
+    name?: string;
+  };
   where: UserRoleNextWhereInput;
 }
 
@@ -29616,22 +27014,16 @@ export interface NestedNetworkPolicyRule {
 export interface NestedSecurityPolicyStatistics {
   count_reset_timestamp?: string | null;
   count_update_timestamp?: string | null;
-
   /** @format int32 */
   match_allow_count?: number | null;
-
   /** @format int32 */
   match_default_allow_count?: number | null;
-
   /** @format int32 */
   match_default_drop_count?: number | null;
-
   /** @format int32 */
   match_drop_count?: number | null;
-
   /** @format int32 */
   match_whitelist_count?: number | null;
-
   /** @format int32 */
   total_count?: number | null;
 }
@@ -29733,10 +27125,8 @@ export interface UpdatePassrodSecurityParams {
   /** @format int32 */
   password_expire_days?: number;
   password_complexity?: PasswordComplexity;
-
   /** @format int32 */
   login_miss_time_threshold?: number;
-
   /** @format int32 */
   login_miss_num_threshold?: number;
 }
@@ -29784,11 +27174,9 @@ export interface SnapshotGroup {
   keep: boolean;
   local_created_at: string;
   local_id: string;
-
   /** @format int64 */
   logical_size_bytes: number;
   name: string;
-
   /** @format int32 */
   object_num: number;
   snapshotPlanTask: NestedSnapshotPlanTask;
@@ -29835,7 +27223,6 @@ export interface SnapshotGroupDeletionParams {
 export interface SnapshotPlan {
   /** @format int32 */
   auto_delete_num: number;
-
   /** @format int32 */
   auto_execute_num: number;
   cluster: NestedCluster;
@@ -29852,28 +27239,21 @@ export interface SnapshotPlan {
   last_execute_status: SnapshotPlanExecuteStatus;
   last_execute_time?: string | null;
   local_id: string;
-
   /** @format int64 */
   logical_size_bytes: number;
-
   /** @format int32 */
   manual_delete_num: number;
-
   /** @format int32 */
   manual_execute_num: number;
   mirror: boolean;
   name: string;
   next_execute_time?: string | null;
-
   /** @format int32 */
   object_num: number;
-
   /** @format int64 */
   physical_size_bytes: number;
-
   /** @format int32 */
   remain_snapshot_num: number;
-
   /** @format int32 */
   snapshot_group_num: number;
   start_time: string;
@@ -29893,7 +27273,6 @@ export interface SnapshotPlanCreationParams {
   exec_h_m?: string;
   end_time?: string;
   start_time: string;
-
   /** @format int32 */
   remain_snapshot_num: number;
   cluster_id: string;
@@ -29907,6 +27286,7 @@ export interface SnapshotPlanUpdationParams {
     execute_plan_type?: SnapshotPlanExecuteType;
     exec_h_m?: string;
     end_time?: string;
+    /** @format int32 */
     remain_snapshot_num?: number;
     name?: string;
   };
@@ -29927,7 +27307,9 @@ export interface SnapshotPlanDeletionParams {
 }
 
 export interface SnapshotPlanExecutionParams {
-  data: { task_name: string };
+  data: {
+    task_name: string;
+  };
   where: SnapshotPlanWhereInput;
 }
 
@@ -29969,7 +27351,6 @@ export interface SnmpTransport {
   id: string;
   local_id: string;
   name: string;
-
   /** @format int32 */
   port: number;
   privacy_pass_phrase?: string | null;
@@ -29992,7 +27373,6 @@ export interface SnmpTransportCreationParams {
   auth_pass_phrase?: string;
   username?: string;
   community?: string;
-
   /** @format int32 */
   port: number;
   protocol: SnmpProtocol;
@@ -30086,23 +27466,17 @@ export interface SnmpTransportWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   port?: number | null;
-
   /** @format int32 */
   port_gt?: number | null;
-
   /** @format int32 */
   port_gte?: number | null;
   port_in?: number[] | null;
-
   /** @format int32 */
   port_lt?: number | null;
-
   /** @format int32 */
   port_lte?: number | null;
-
   /** @format int32 */
   port_not?: number | null;
   port_not_in?: number[] | null;
@@ -30157,6 +27531,7 @@ export interface SnmpTransportUpdationParams {
     auth_pass_phrase?: string;
     username?: string;
     community?: string;
+    /** @format int32 */
     port?: number;
     protocol?: SnmpProtocol;
     version?: SnmpVersion;
@@ -30197,7 +27572,6 @@ export interface SnmpTrapReceiver {
   language_code: SnmpLanguageCode;
   local_id: string;
   name: string;
-
   /** @format int32 */
   port: number;
   privacy_pass_phrase?: string | null;
@@ -30223,7 +27597,6 @@ export interface SnmpTrapReceiverCreationParams {
   username?: string;
   community?: string;
   language_code: SnmpLanguageCode;
-
   /** @format int32 */
   port: number;
   host: string;
@@ -30352,23 +27725,17 @@ export interface SnmpTrapReceiverWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   port?: number | null;
-
   /** @format int32 */
   port_gt?: number | null;
-
   /** @format int32 */
   port_gte?: number | null;
   port_in?: number[] | null;
-
   /** @format int32 */
   port_lt?: number | null;
-
   /** @format int32 */
   port_lte?: number | null;
-
   /** @format int32 */
   port_not?: number | null;
   port_not_in?: number[] | null;
@@ -30426,6 +27793,7 @@ export interface SnmpTrapReceiverUpdationParams {
     username?: string;
     community?: string;
     language_code?: SnmpLanguageCode;
+    /** @format int32 */
     port?: number;
     host?: string;
     protocol?: SnmpProtocol;
@@ -30482,10 +27850,16 @@ export enum HostOrderByInput {
   CpuVendorDESC = "cpu_vendor_DESC",
   DataIpASC = "data_ip_ASC",
   DataIpDESC = "data_ip_DESC",
+  DirtyCacheSpaceASC = "dirty_cache_space_ASC",
+  DirtyCacheSpaceDESC = "dirty_cache_space_DESC",
+  DirtyCacheUsageASC = "dirty_cache_usage_ASC",
+  DirtyCacheUsageDESC = "dirty_cache_usage_DESC",
   DowngradedPrioritizedSpaceASC = "downgraded_prioritized_space_ASC",
   DowngradedPrioritizedSpaceDESC = "downgraded_prioritized_space_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureCacheSpaceASC = "failure_cache_space_ASC",
+  FailureCacheSpaceDESC = "failure_cache_space_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HddDataCapacityASC = "hdd_data_capacity_ASC",
@@ -30607,14 +27981,11 @@ export enum HostOrderByInput {
 export interface GetHostsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: HostOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: HostWhereInput | null;
@@ -30650,14 +28021,11 @@ export enum DatacenterOrderByInput {
 export interface GetDatacentersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DatacenterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DatacenterWhereInput | null;
@@ -30686,6 +28054,10 @@ export enum ClusterOrderByInput {
   DataReductionRatioDESC = "data_reduction_ratio_DESC",
   DataReductionSavingASC = "data_reduction_saving_ASC",
   DataReductionSavingDESC = "data_reduction_saving_DESC",
+  DirtyCacheSpaceASC = "dirty_cache_space_ASC",
+  DirtyCacheSpaceDESC = "dirty_cache_space_DESC",
+  DirtyCacheUsageASC = "dirty_cache_usage_ASC",
+  DirtyCacheUsageDESC = "dirty_cache_usage_DESC",
   DisconnectedDateASC = "disconnected_date_ASC",
   DisconnectedDateDESC = "disconnected_date_DESC",
   DisconnectedReasonASC = "disconnected_reason_ASC",
@@ -30696,6 +28068,8 @@ export enum ClusterOrderByInput {
   EnableTieringDESC = "enable_tiering_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureCacheSpaceASC = "failure_cache_space_ASC",
+  FailureCacheSpaceDESC = "failure_cache_space_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HasMetroxASC = "has_metrox_ASC",
@@ -30851,14 +28225,11 @@ export enum ClusterOrderByInput {
 export interface GetClustersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterWhereInput | null;
@@ -30922,14 +28293,11 @@ export enum NicOrderByInput {
 export interface GetNicsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NicOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NicWhereInput | null;
@@ -30963,14 +28331,11 @@ export enum UsbDeviceOrderByInput {
 export interface GetUsbDevicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UsbDeviceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UsbDeviceWhereInput | null;
@@ -31072,14 +28437,11 @@ export enum IscsiTargetOrderByInput {
 export interface GetIscsiTargetsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiTargetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiTargetWhereInput | null;
@@ -31121,14 +28483,11 @@ export enum NfsExportOrderByInput {
 export interface GetNfsExportsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NfsExportOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NfsExportWhereInput | null;
@@ -31239,23 +28598,17 @@ export interface ElfDataStoreWhereInput {
   name_starts_with?: string | null;
   nfs_export?: NfsExportWhereInput | null;
   nvmf_subsystem?: NvmfSubsystemWhereInput | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
@@ -31276,14 +28629,11 @@ export enum ElfDataStoreType {
 export interface GetElfDataStoresRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfDataStoreOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfDataStoreWhereInput | null;
@@ -31315,14 +28665,11 @@ export enum VdsOrderByInput {
 export interface GetVdsesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VdsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VdsWhereInput | null;
@@ -31382,14 +28729,11 @@ export enum DiskOrderByInput {
 export interface GetDisksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DiskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DiskWhereInput | null;
@@ -31429,14 +28773,11 @@ export enum VlanOrderByInput {
 export interface GetVlansRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VlanWhereInput | null;
@@ -31453,6 +28794,8 @@ export enum VmVolumeOrderByInput {
   ElfStoragePolicyEcMDESC = "elf_storage_policy_ec_m_DESC",
   ElfStoragePolicyReplicaNumASC = "elf_storage_policy_replica_num_ASC",
   ElfStoragePolicyReplicaNumDESC = "elf_storage_policy_replica_num_DESC",
+  ElfStoragePolicyStripeNumASC = "elf_storage_policy_stripe_num_ASC",
+  ElfStoragePolicyStripeNumDESC = "elf_storage_policy_stripe_num_DESC",
   ElfStoragePolicyThinProvisionASC = "elf_storage_policy_thin_provision_ASC",
   ElfStoragePolicyThinProvisionDESC = "elf_storage_policy_thin_provision_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -31494,14 +28837,11 @@ export enum VmVolumeOrderByInput {
 export interface GetVmVolumesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmVolumeOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmVolumeWhereInput | null;
@@ -31529,14 +28869,11 @@ export enum ElfImageOrderByInput {
 export interface GetElfImagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfImageWhereInput | null;
@@ -31596,14 +28933,11 @@ export enum VmTemplateOrderByInput {
 export interface GetVmTemplatesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmTemplateWhereInput | null;
@@ -31626,6 +28960,8 @@ export enum VmPlacementGroupOrderByInput {
   LocalUpdatedAtDESC = "local_updated_at_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
   VmHostMustEnabledASC = "vm_host_must_enabled_ASC",
   VmHostMustEnabledDESC = "vm_host_must_enabled_DESC",
   VmHostMustPolicyASC = "vm_host_must_policy_ASC",
@@ -31643,14 +28979,11 @@ export enum VmPlacementGroupOrderByInput {
 export interface GetVmPlacementGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmPlacementGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmPlacementGroupWhereInput | null;
@@ -31694,14 +29027,11 @@ export enum AlertOrderByInput {
 export interface GetAlertsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertWhereInput | null;
@@ -31739,14 +29069,11 @@ export enum GlobalAlertRuleOrderByInput {
 export interface GetGlobalAlertRulesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GlobalAlertRuleOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GlobalAlertRuleWhereInput | null;
@@ -31808,14 +29135,11 @@ export enum SnapshotPlanOrderByInput {
 export interface GetSnapshotPlansRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotPlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotPlanWhereInput | null;
@@ -31843,14 +29167,11 @@ export enum EntityFilterOrderByInput {
 export interface GetEntityFiltersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EntityFilterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EntityFilterWhereInput | null;
@@ -31890,14 +29211,11 @@ export enum UserOrderByInput {
 export interface GetUsersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserWhereInput | null;
@@ -31923,14 +29241,11 @@ export enum ConsistencyGroupOrderByInput {
 export interface GetConsistencyGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ConsistencyGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ConsistencyGroupWhereInput | null;
@@ -31952,14 +29267,11 @@ export enum IscsiConnectionOrderByInput {
 export interface GetIscsiConnectionsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiConnectionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiConnectionWhereInput | null;
@@ -31989,14 +29301,11 @@ export enum IscsiLunSnapshotOrderByInput {
 export interface GetIscsiLunSnapshotsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiLunSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiLunSnapshotWhereInput | null;
@@ -32121,14 +29430,11 @@ export interface SystemAuditLogWhereInput {
 export interface GetSystemAuditLogsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SystemAuditLogOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SystemAuditLogWhereInput | null;
@@ -32312,14 +29618,11 @@ export interface UserAuditLogWhereInput {
 export interface GetUserAuditLogsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserAuditLogOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserAuditLogWhereInput | null;
@@ -32373,14 +29676,11 @@ export enum TaskOrderByInput {
 export interface GetTasksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: TaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: TaskWhereInput | null;
@@ -32480,14 +29780,11 @@ export enum IscsiLunOrderByInput {
 export interface GetIscsiLunsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiLunOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiLunWhereInput | null;
@@ -32509,14 +29806,11 @@ export enum NamespaceGroupOrderByInput {
 export interface GetNamespaceGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NamespaceGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NamespaceGroupWhereInput | null;
@@ -32618,14 +29912,11 @@ export enum NvmfNamespaceOrderByInput {
 export interface GetNvmfNamespacesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfNamespaceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfNamespaceWhereInput | null;
@@ -32651,14 +29942,11 @@ export enum ContentLibraryImageOrderByInput {
 export interface GetContentLibraryImagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ContentLibraryImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ContentLibraryImageWhereInput | null;
@@ -32688,14 +29976,11 @@ export enum NvmfNamespaceSnapshotOrderByInput {
 export interface GetNvmfNamespaceSnapshotsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfNamespaceSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfNamespaceSnapshotWhereInput | null;
@@ -32744,6 +30029,8 @@ export enum ContentLibraryVmTemplateOrderByInput {
   SizeDESC = "size_DESC",
   TemplateConfigASC = "template_config_ASC",
   TemplateConfigDESC = "template_config_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
   VcpuASC = "vcpu_ASC",
   VcpuDESC = "vcpu_DESC",
   VideoTypeASC = "video_type_ASC",
@@ -32761,14 +30048,11 @@ export enum ContentLibraryVmTemplateOrderByInput {
 export interface GetContentLibraryVmTemplatesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ContentLibraryVmTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ContentLibraryVmTemplateWhereInput | null;
@@ -32864,14 +30148,11 @@ export enum NvmfSubsystemOrderByInput {
 export interface GetNvmfSubsystemsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfSubsystemOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfSubsystemWhereInput | null;
@@ -32904,6 +30185,7 @@ export interface TableReporterParams {
     vlans?: GetVlansRequestBody;
     disks?: GetDisksRequestBody;
     vdses?: GetVdsesRequestBody;
+    /** @deprecated */
     elfDataStores?: GetElfDataStoresRequestBody;
     vms?: GetVmsRequestBody;
     nfsExports?: GetNfsExportsRequestBody;
@@ -32958,12 +30240,14 @@ export interface TaskUpdateParams {
   data: {
     finished_at?: string;
     started_at?: string;
+    /** @format int32 */
     resource_rollback_retry_count?: number;
     resource_rollback_error?: string;
     resource_rollbacked?: boolean;
     steps?: TaskStepCreationParams[];
     error_message?: string;
     error_code?: string;
+    /** @format float */
     progress?: number;
     status?: TaskStatus;
     snapshot?: string;
@@ -32984,43 +30268,31 @@ export interface UploadTaskWhereInput {
   AND?: UploadTaskWhereInput[] | null;
   NOT?: UploadTaskWhereInput[] | null;
   OR?: UploadTaskWhereInput[] | null;
-
   /** @format int64 */
   chunk_size?: number | null;
-
   /** @format int64 */
   chunk_size_gt?: number | null;
-
   /** @format int64 */
   chunk_size_gte?: number | null;
   chunk_size_in?: number[] | null;
-
   /** @format int64 */
   chunk_size_lt?: number | null;
-
   /** @format int64 */
   chunk_size_lte?: number | null;
-
   /** @format int64 */
   chunk_size_not?: number | null;
   chunk_size_not_in?: number[] | null;
-
   /** @format int32 */
   current_chunk?: number | null;
-
   /** @format int32 */
   current_chunk_gt?: number | null;
-
   /** @format int32 */
   current_chunk_gte?: number | null;
   current_chunk_in?: number[] | null;
-
   /** @format int32 */
   current_chunk_lt?: number | null;
-
   /** @format int32 */
   current_chunk_lte?: number | null;
-
   /** @format int32 */
   current_chunk_not?: number | null;
   current_chunk_not_in?: number[] | null;
@@ -33050,23 +30322,17 @@ export interface UploadTaskWhereInput {
   resource_type_in?: UploadResourceType[] | null;
   resource_type_not?: UploadResourceType | null;
   resource_type_not_in?: UploadResourceType[] | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -33106,13 +30372,11 @@ export interface UsbDevice {
   local_id: string;
   manufacturer: string;
   name: string;
-
   /** @format int64 */
   size: number;
   status: UsbDeviceStatus;
   usb_type: string;
   vms?: NestedVm[] | null;
-
   /** @deprecated */
   vm?: NestedVm | null;
 }
@@ -33123,12 +30387,18 @@ export interface WithTaskUsbDevice {
 }
 
 export interface UsbDeviceMountParams {
-  data: { vms?: VmWhereInput; vm_id?: string };
+  data: {
+    vms?: VmWhereInput;
+    /** @deprecated */
+    vm_id?: string;
+  };
   where: UsbDeviceWhereInput;
 }
 
 export interface UsbDeviceUnmountParams {
-  data?: { vms: VmWhereInput };
+  data?: {
+    vms: VmWhereInput;
+  };
   where: UsbDeviceWhereInput;
 }
 
@@ -33240,7 +30510,6 @@ export interface VcenterAccount {
   ip: string;
   is_valid: boolean;
   local_id: string;
-
   /** @format int32 */
   port: number;
   username: string;
@@ -33296,7 +30565,6 @@ export interface Vds {
   ovsbr_name: string;
   type: NetworkType;
   vlans?: NestedVlan[] | null;
-
   /** @format int32 */
   vlans_num: number;
   work_mode?: string | null;
@@ -33317,20 +30585,28 @@ export interface VdsCreationParams {
 
 export type VdsCreationWithMigrateVlanParams = VdsCreationParams & {
   vlan: {
-    extra_ip: { management_ip: string; host_id: string }[];
+    extra_ip: {
+      management_ip: string;
+      host_id: string;
+    }[];
     subnetmask: string;
     gateway_subnetmask?: string;
     gateway_ip?: string;
+    /** @format int32 */
     vlan_id: number;
   };
 };
 
 export type VdsCreationWithMAccessVlanParams = VdsCreationParams & {
   vlan: {
-    extra_ip: { management_ip: string; host_id: string }[];
+    extra_ip: {
+      management_ip: string;
+      host_id: string;
+    }[];
     subnetmask: string;
     gateway_subnetmask?: string;
     gateway_ip?: string;
+    /** @format int32 */
     vlan_id: number;
   };
 };
@@ -33369,7 +30645,6 @@ export interface View {
   id: string;
   local_id: string;
   name: string;
-
   /** @format int32 */
   time_span: number;
   time_unit: TimeUnit;
@@ -33382,7 +30657,6 @@ export interface WithTaskView {
 
 export interface ViewCreationParams {
   time_unit: TimeUnit;
-
   /** @format int32 */
   time_span: number;
   cluster_id: string;
@@ -33390,7 +30664,12 @@ export interface ViewCreationParams {
 }
 
 export interface ViewUpdationParams {
-  data?: { time_unit?: TimeUnit; time_span?: number; name?: string };
+  data?: {
+    time_unit?: TimeUnit;
+    /** @format int32 */
+    time_span?: number;
+    name?: string;
+  };
   where: ViewWhereInput;
 }
 
@@ -33505,7 +30784,6 @@ export interface NestedVpcDnatRuleType {
   /** @format int32 */
   port: number;
   target_ip: string;
-
   /** @format int32 */
   target_port: number;
 }
@@ -33533,7 +30811,6 @@ export interface WithTaskVirtualPrivateCloudNatGateway {
 export interface VirtualPrivateCloudDnatRuleParams {
   /** @format int32 */
   target_port: number;
-
   /** @format int32 */
   port: number;
   target_ip: string;
@@ -33909,10 +31186,8 @@ export interface VirtualPrivateCloudSubnet {
   local_id: string;
   name: string;
   route_table: NestedVirtualPrivateCloudRouteTable;
-
   /** @format int32 */
   total_ip_count?: number | null;
-
   /** @format int32 */
   unused_ip_count?: number | null;
   vpc: NestedVirtualPrivateCloud;
@@ -33984,6 +31259,7 @@ export interface NestedVirtualPrivateCloudServiceTepIpPool {
 }
 
 export interface NestedVirtualPrivateCloudService {
+  everoute_cluster: NestedEverouteCluster;
   id: string;
   internal_cidr: string;
   tep_ip_pools: NestedVirtualPrivateCloudServiceTepIpPool[];
@@ -33997,7 +31273,6 @@ export interface VirtualPrivateCloud {
   id: string;
   isolation_policies?: NestedVirtualPrivateCloudIsolationPolicy[] | null;
   local_id: string;
-
   /** @format int32 */
   mtu?: number | null;
   name: string;
@@ -34056,22 +31331,17 @@ export interface Vlan {
   mode_type?: VlanModeType | null;
   name: string;
   network_ids: string[];
-
   /** @format double */
   qos_burst?: number | null;
-
   /** @format double */
   qos_max_bandwidth?: number | null;
-
   /** @format double */
   qos_min_bandwidth?: number | null;
-
   /** @format int32 */
   qos_priority?: number | null;
   subnetmask?: string | null;
   type: NetworkType;
   vds: NestedVds;
-
   /** @format int32 */
   vlan_id: number;
   vm_nics?: NestedVmNic[] | null;
@@ -34097,15 +31367,12 @@ export type Priority = number;
 
 export interface VmVlanCreationParams {
   qos_burst_unit?: ByteUnit;
-
   /** @format int64 */
   qos_burst?: number | null;
   qos_max_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   qos_max_bandwidth?: number | null;
   qos_min_bandwidth_unit?: BPSUnit;
-
   /** @format int64 */
   qos_min_bandwidth?: number | null;
   qos_priority?: Priority;
@@ -34119,10 +31386,13 @@ export interface VmVlanCreationParams {
 export interface VmVlanUpdationParams {
   data: {
     qos_burst_unit?: ByteUnit;
+    /** @format int64 */
     qos_burst?: number | null;
     qos_max_bandwidth_unit?: BPSUnit;
+    /** @format int64 */
     qos_max_bandwidth?: number | null;
     qos_min_bandwidth_unit?: BPSUnit;
+    /** @format int64 */
     qos_min_bandwidth?: number | null;
     qos_priority?: Priority;
     mode_type?: VlanModeType;
@@ -34176,7 +31446,6 @@ export interface VmFolder {
   id: string;
   local_id?: string | null;
   name: string;
-
   /** @format int32 */
   vm_num?: number | null;
   vms?: NestedVm[] | null;
@@ -34193,7 +31462,9 @@ export interface VmFolderCreationParams {
 }
 
 export interface VmFolderUpdationParams {
-  data: { name: string };
+  data: {
+    name: string;
+  };
   where: VmFolderWhereInput;
 }
 
@@ -34220,6 +31491,7 @@ export interface VmPlacementGroup {
   local_id: string;
   local_updated_at: string;
   name: string;
+  usage?: VmPlacementGroupUsage | null;
   vm_host_must_enabled: boolean;
   vm_host_must_host_uuids?: NestedHost[] | null;
   vm_host_must_policy: boolean;
@@ -34291,23 +31563,18 @@ export interface NestedFrozenDisks {
   disk_name?: string | null;
   elf_image_local_id: string;
   image_name?: string | null;
-
   /** @format int32 */
   index: number;
-
   /** @format int32 */
   key?: number | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
   path: string;
   resident_in_cache?: boolean | null;
-
   /** @format int64 */
   size: number;
   snapshot_local_id?: string | null;
@@ -34322,7 +31589,6 @@ export interface NestedFrozenDisks {
 export interface NestedFrozenNic {
   enabled?: boolean | null;
   gateway: string;
-
   /** @format int32 */
   index: number;
   ip_address: string;
@@ -34349,23 +31615,18 @@ export interface VmSnapshot {
   labels?: NestedLabel[] | null;
   local_created_at?: string | null;
   local_id: string;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int64 */
   memory: number;
   name: string;
-
   /** @format int64 */
   size: number;
   snapshot_group?: NestedSnapshotGroup | null;
-
   /** @format int32 */
   vcpu: number;
   vm?: NestedVm | null;
@@ -34404,7 +31665,6 @@ export interface VmSnapshotDeletionParams {
 
 export interface NestedTemplateNic {
   enabled?: boolean | null;
-
   /** @format int32 */
   index: number;
   ip_address?: string | null;
@@ -34432,22 +31692,17 @@ export interface VmTemplate {
   labels?: NestedLabel[] | null;
   local_created_at?: string | null;
   local_id: string;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
-
   /** @format int64 */
   memory: number;
   name: string;
-
   /** @format int64 */
   size: number;
-
   /** @format int32 */
   vcpu: number;
   video_type?: string | null;
@@ -34496,15 +31751,14 @@ export interface VmVolumeSnapshot {
   createAt?: string | null;
   description: string;
   elf_storage_policy: VmVolumeElfStoragePolicyType;
-
   /** @format int32 */
   elf_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
   elf_storage_policy_thin_provision?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
@@ -34513,19 +31767,15 @@ export interface VmVolumeSnapshot {
   local_id: string;
   name: string;
   resident_in_cache?: boolean | null;
-
   /** @format double */
   shared_size?: number | null;
-
   /** @format double */
   size?: number | null;
   type: VmVolumeSnapshotType;
-
   /** @format double */
   unique_size?: number | null;
   vm_volume?: NestedVmVolume | null;
   volume_sharing?: boolean | null;
-
   /** @format double */
   volume_size?: number | null;
   zbs_snapshot_uuid?: string | null;
@@ -34559,21 +31809,18 @@ export interface VmVolume {
   cluster: NestedCluster;
   description?: string | null;
   elf_storage_policy: VmVolumeElfStoragePolicyType;
-
   /** @format int32 */
   elf_storage_policy_ec_k?: number | null;
-
   /** @format int32 */
   elf_storage_policy_ec_m?: number | null;
-
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
   elf_storage_policy_thin_provision?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
-
   /** @format double */
   guest_size_usage?: number | null;
-
   /** @format int64 */
   guest_used_size?: number | null;
   id: string;
@@ -34586,20 +31833,15 @@ export interface VmVolume {
   path: string;
   resident_in_cache?: boolean | null;
   sharing: boolean;
-
   /** @format int64 */
   size: number;
   type?: VmVolumeType | null;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format int64 */
   unique_size?: number | null;
-
   /** @format int64 */
   used_size?: number | null;
-
   /** @format double */
   used_size_usage?: number | null;
   vm_disks?: NestedVmDisk[] | null;
@@ -34614,15 +31856,15 @@ export interface VmVolumeCreationParams {
   resident_in_cache?: boolean;
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
+    /** @format int32 */
     ec_m?: number;
+    /** @format int32 */
     ec_k?: number;
   };
   elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
-
   /** @deprecated */
   elf_storage_policy?: VmVolumeElfStoragePolicyType;
   size_unit?: ByteUnit;
-
   /** @format int64 */
   size: number;
   sharing: boolean;
@@ -34665,13 +31907,17 @@ export interface VmVolumeWhereUniqueInput {
 
 export interface CloneVmVolumeParams {
   where: VmVolumeWhereUniqueInput;
-  data: { description?: string; name: string };
+  data: {
+    description?: string;
+    name: string;
+  };
 }
 
 export interface UpdateVmVolumeParams {
   where: VmVolumeWhereInput;
   data: {
     size_unit?: ByteUnit;
+    /** @format int64 */
     size?: number;
     description?: string;
     name?: string;
@@ -34684,7 +31930,9 @@ export enum VmVolumeExportFileType {
 }
 
 export interface ExportVmVolumeParams {
-  data: { type: VmVolumeExportFileType };
+  data: {
+    type: VmVolumeExportFileType;
+  };
   where: VmVolumeWhereInput;
 }
 
@@ -34693,11 +31941,12 @@ export interface ImportVmVolumeParams {
   name: string;
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
+    /** @format int32 */
     ec_m?: number;
+    /** @format int32 */
     ec_k?: number;
   };
   elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
-
   /** @deprecated */
   storage_policy?: VmVolumeElfStoragePolicyType;
   cluster_id: string;
@@ -34709,7 +31958,6 @@ export interface VsphereEsxiAccount {
   ip: string;
   is_valid: boolean;
   local_id: string;
-
   /** @format int32 */
   port: number;
   username: string;
@@ -34901,13 +32149,10 @@ export type ResourceChangeLimit = number;
 export interface NfsInode {
   /** @format int64 */
   assigned_size: number;
-
   /** @format int64 */
   downgraded_prioritized_space?: number | null;
-
   /** @format int32 */
   ec_k?: number | null;
-
   /** @format int32 */
   ec_m?: number | null;
   encrypt_method?: EncryptMethod | null;
@@ -34922,16 +32167,12 @@ export interface NfsInode {
   parent_id: string;
   prioritized?: boolean | null;
   resiliency_type?: ResiliencyType | null;
-
   /** @format int64 */
   shared_size: number;
-
   /** @format int32 */
   snapshot_num: number;
-
   /** @format double */
   unique_logical_size?: number | null;
-
   /** @format int64 */
   unique_size: number;
 }
@@ -34948,6 +32189,255 @@ export interface NfsInodeUpdationParamsData {
 export interface NfsInodeUpdationParams {
   data: NfsInodeUpdationParamsData;
   where: NfsInodeWhereInput;
+}
+
+export interface NestedExternalCloudTower {
+  id: string;
+  name: string;
+}
+
+export interface NestedReplicationNetworkConfigure {
+  gateway?: string | null;
+  ip: string;
+  subnet_mask?: string | null;
+}
+
+export interface NestedReplicationIPAddressMapping {
+  source: NestedReplicationNetworkConfigure;
+  target: NestedReplicationNetworkConfigure;
+}
+
+export interface NestedReplicationNetworkInformation {
+  cluster_local_id: string;
+  cluster_name: string;
+  network_ids?: string[] | null;
+  vds_name?: string | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  vlan_local_id: string;
+  vlan_mode_type: VlanModeType;
+  vlan_name: string;
+}
+
+export interface NestedReplicationPlanNetworkMapping {
+  source: NestedReplicationNetworkInformation;
+  target: NestedReplicationNetworkInformation;
+}
+
+export interface NestedReplicationObjectDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  object_local_id: string;
+  object_name?: string | null;
+  parent_object_local_id?: string | null;
+  parent_object_name?: string | null;
+  tower_deploy_id?: string | null;
+  zbs_volume_id?: string | null;
+}
+
+export interface NestedReplicaVm {
+  id: string;
+}
+
+export interface NestedReplicationPlanExecution {
+  id: string;
+}
+
+export interface NestedReplicationRestorePoint {
+  id: string;
+}
+
+export interface NestedReplicationTargetExecution {
+  id: string;
+}
+
+export interface NestedReplicationClusterDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  tower_deploy_id?: string | null;
+}
+
+export interface NestedReplicationService {
+  id: string;
+}
+
+export interface ReplicationPlan {
+  abort_window_unfinished?: boolean | null;
+  activation_timestamp?: string | null;
+  compression: boolean;
+  createdAt: string;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  description?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  enable_window: boolean;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  external_cloudtower?: NestedExternalCloudTower | null;
+  id: string;
+  inbound?: boolean | null;
+  /** @format int32 */
+  interval: number;
+  ip_mapping: NestedReplicationIPAddressMapping[];
+  iscsi_luns?: NestedIscsiLun[] | null;
+  keep_mac_address?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  last_execute_status: BackupPlanExecutionStatus;
+  last_execute_status_message?: string | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  last_executed_at?: string | null;
+  last_manual_execute_status: BackupPlanExecutionStatus;
+  last_manual_execute_status_message?: string | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  last_manual_executed_at?: string | null;
+  name: string;
+  network_mapping: NestedReplicationPlanNetworkMapping[];
+  next_execution_time?: string | null;
+  objects_descriptor: NestedReplicationObjectDescriptor[];
+  period: ReplicationPlanPeriod;
+  phase?: BackupPlanPhase | null;
+  replica_name_rule: ReplicaNameRule;
+  replica_name_setting?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  replica_vms?: NestedReplicaVm[] | null;
+  replication_plan_executions?: NestedReplicationPlanExecution[] | null;
+  replication_restore_points?: NestedReplicationRestorePoint[] | null;
+  replication_target_executions?: NestedReplicationTargetExecution[] | null;
+  resiliency_type?: ResiliencyType | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  status: BackupPlanStatus;
+  storage_policy: VmVolumeElfStoragePolicyType;
+  target_cluster?: NestedCluster | null;
+  target_cluster_descriptor: NestedReplicationClusterDescriptor;
+  target_replication_service: NestedReplicationService;
+  thin_provision?: boolean | null;
+  time_points: NestedBackupPlanTimePoint[];
+  type: ReplicationPlanType;
+  updatedAt: string;
+  vms?: NestedVm[] | null;
+  weekdays?: WeekdayTypeEnum[] | null;
+  window_end?: string | null;
+  window_start?: string | null;
+}
+
+export enum ReplicationPlanOrderByInput {
+  AbortWindowUnfinishedASC = "abort_window_unfinished_ASC",
+  AbortWindowUnfinishedDESC = "abort_window_unfinished_DESC",
+  ActivationTimestampASC = "activation_timestamp_ASC",
+  ActivationTimestampDESC = "activation_timestamp_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EcKASC = "ec_k_ASC",
+  EcKDESC = "ec_k_DESC",
+  EcMASC = "ec_m_ASC",
+  EcMDESC = "ec_m_DESC",
+  EnableWindowASC = "enable_window_ASC",
+  EnableWindowDESC = "enable_window_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InboundASC = "inbound_ASC",
+  InboundDESC = "inbound_DESC",
+  IntervalASC = "interval_ASC",
+  IntervalDESC = "interval_DESC",
+  IpMappingASC = "ip_mapping_ASC",
+  IpMappingDESC = "ip_mapping_DESC",
+  KeepMacAddressASC = "keep_mac_address_ASC",
+  KeepMacAddressDESC = "keep_mac_address_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
+  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
+  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
+  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
+  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
+  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
+  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
+  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
+  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
+  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
+  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
+  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
+  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
+  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
+  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NetworkMappingASC = "network_mapping_ASC",
+  NetworkMappingDESC = "network_mapping_DESC",
+  NextExecutionTimeASC = "next_execution_time_ASC",
+  NextExecutionTimeDESC = "next_execution_time_DESC",
+  ObjectsDescriptorASC = "objects_descriptor_ASC",
+  ObjectsDescriptorDESC = "objects_descriptor_DESC",
+  PeriodASC = "period_ASC",
+  PeriodDESC = "period_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  ReplicaNameRuleASC = "replica_name_rule_ASC",
+  ReplicaNameRuleDESC = "replica_name_rule_DESC",
+  ReplicaNameSettingASC = "replica_name_setting_ASC",
+  ReplicaNameSettingDESC = "replica_name_setting_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ResiliencyTypeASC = "resiliency_type_ASC",
+  ResiliencyTypeDESC = "resiliency_type_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StoragePolicyASC = "storage_policy_ASC",
+  StoragePolicyDESC = "storage_policy_DESC",
+  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
+  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TimePointsASC = "time_points_ASC",
+  TimePointsDESC = "time_points_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  WindowEndASC = "window_end_ASC",
+  WindowEndDESC = "window_end_DESC",
+  WindowStartASC = "window_start_ASC",
+  WindowStartDESC = "window_start_DESC",
+}
+
+export interface GetReplicationPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationPlanWhereInput | null;
 }
 
 export enum NotifierLanguageCode {
@@ -34979,7 +32469,6 @@ export interface AlertNotifier {
   security_mode?: NotifierSecurityMode | null;
   smtp_server_config?: NestedSmtpServer | null;
   smtp_server_host?: string | null;
-
   /** @format int32 */
   smtp_server_port?: number | null;
   username?: string | null;
@@ -35086,23 +32575,17 @@ export interface AlertNotifierWhereInput {
   smtp_server_host_not_in?: string[] | null;
   smtp_server_host_not_starts_with?: string | null;
   smtp_server_host_starts_with?: string | null;
-
   /** @format int32 */
   smtp_server_port?: number | null;
-
   /** @format int32 */
   smtp_server_port_gt?: number | null;
-
   /** @format int32 */
   smtp_server_port_gte?: number | null;
   smtp_server_port_in?: number[] | null;
-
   /** @format int32 */
   smtp_server_port_lt?: number | null;
-
   /** @format int32 */
   smtp_server_port_lte?: number | null;
-
   /** @format int32 */
   smtp_server_port_not?: number | null;
   smtp_server_port_not_in?: number[] | null;
@@ -35182,23 +32665,17 @@ export interface SmtpServerWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   port?: number | null;
-
   /** @format int32 */
   port_gt?: number | null;
-
   /** @format int32 */
   port_gte?: number | null;
   port_in?: number[] | null;
-
   /** @format int32 */
   port_lt?: number | null;
-
   /** @format int32 */
   port_lte?: number | null;
-
   /** @format int32 */
   port_not?: number | null;
   port_not_in?: number[] | null;
@@ -35231,14 +32708,11 @@ export enum SmtpSecureMode {
 export interface GetAlertNotifiersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertNotifierOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertNotifierWhereInput | null;
@@ -35256,14 +32730,11 @@ export interface AlertNotifierConnection {
 export interface GetAlertNotifiersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertNotifierOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertNotifierWhereInput | null;
@@ -35300,14 +32771,11 @@ export enum AlertRuleOrderByInput {
 export interface GetAlertRulesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertRuleOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertRuleWhereInput | null;
@@ -35325,14 +32793,11 @@ export interface AlertRuleConnection {
 export interface GetAlertRulesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertRuleOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertRuleWhereInput | null;
@@ -35350,14 +32815,11 @@ export interface AlertConnection {
 export interface GetAlertsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: AlertOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: AlertWhereInput | null;
@@ -35369,19 +32831,16 @@ export interface Application {
   id: string;
   image_name?: string | null;
   local_id: string;
-
   /** @format int64 */
   memory: number;
   state: ApplicationState;
   storage_ip: string;
   type: ApplicationType;
   update_time?: string | null;
-
   /** @format int32 */
   vcpu: number;
   version: string;
   vm?: NestedVm | null;
-
   /** @format int64 */
   volume_size: number;
 }
@@ -35416,14 +32875,11 @@ export enum ApplicationOrderByInput {
 export interface GetApplicationsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ApplicationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ApplicationWhereInput | null;
@@ -35441,14 +32897,11 @@ export interface ApplicationConnection {
 export interface GetApplicationsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ApplicationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ApplicationWhereInput | null;
@@ -35486,14 +32939,11 @@ export enum BackupPlanExecutionOrderByInput {
 export interface GetBackupPlanExecutionsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupPlanExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupPlanExecutionWhereInput | null;
@@ -35511,116 +32961,14 @@ export interface BackupPlanExecutionConnection {
 export interface GetBackupPlanExecutionsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupPlanExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupPlanExecutionWhereInput | null;
-}
-
-export enum BackupPlanOrderByInput {
-  BackupDelayOptionASC = "backup_delay_option_ASC",
-  BackupDelayOptionDESC = "backup_delay_option_DESC",
-  BackupRestorePointCountASC = "backup_restore_point_count_ASC",
-  BackupRestorePointCountDESC = "backup_restore_point_count_DESC",
-  BackupTotalSizeASC = "backup_total_size_ASC",
-  BackupTotalSizeDESC = "backup_total_size_DESC",
-  CompressionASC = "compression_ASC",
-  CompressionDESC = "compression_DESC",
-  CompressionRatioASC = "compression_ratio_ASC",
-  CompressionRatioDESC = "compression_ratio_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DeleteStrategyASC = "delete_strategy_ASC",
-  DeleteStrategyDESC = "delete_strategy_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EnableWindowASC = "enable_window_ASC",
-  EnableWindowDESC = "enable_window_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  FullIntervalASC = "full_interval_ASC",
-  FullIntervalDESC = "full_interval_DESC",
-  FullPeriodASC = "full_period_ASC",
-  FullPeriodDESC = "full_period_DESC",
-  FullTimePointASC = "full_time_point_ASC",
-  FullTimePointDESC = "full_time_point_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IncrementalIntervalASC = "incremental_interval_ASC",
-  IncrementalIntervalDESC = "incremental_interval_DESC",
-  IncrementalPeriodASC = "incremental_period_ASC",
-  IncrementalPeriodDESC = "incremental_period_DESC",
-  IncrementalTimePointsASC = "incremental_time_points_ASC",
-  IncrementalTimePointsDESC = "incremental_time_points_DESC",
-  KeepPolicyASC = "keep_policy_ASC",
-  KeepPolicyDESC = "keep_policy_DESC",
-  KeepPolicyValueASC = "keep_policy_value_ASC",
-  KeepPolicyValueDESC = "keep_policy_value_DESC",
-  LastExecuteStatusASC = "last_execute_status_ASC",
-  LastExecuteStatusDESC = "last_execute_status_DESC",
-  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
-  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
-  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
-  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
-  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
-  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
-  LastExecutedAtASC = "last_executed_at_ASC",
-  LastExecutedAtDESC = "last_executed_at_DESC",
-  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
-  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
-  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
-  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
-  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
-  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
-  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
-  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
-  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
-  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
-  LogicalSizeASC = "logical_size_ASC",
-  LogicalSizeDESC = "logical_size_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NextExecuteTimeASC = "next_execute_time_ASC",
-  NextExecuteTimeDESC = "next_execute_time_DESC",
-  PhaseASC = "phase_ASC",
-  PhaseDESC = "phase_DESC",
-  PhysicalSizeASC = "physical_size_ASC",
-  PhysicalSizeDESC = "physical_size_DESC",
-  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
-  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  ValidSizeOfBackupObjectASC = "valid_size_of_backup_object_ASC",
-  ValidSizeOfBackupObjectDESC = "valid_size_of_backup_object_DESC",
-  ValidSizeOfRestorePointASC = "valid_size_of_restore_point_ASC",
-  ValidSizeOfRestorePointDESC = "valid_size_of_restore_point_DESC",
-  WindowEndASC = "window_end_ASC",
-  WindowEndDESC = "window_end_DESC",
-  WindowStartASC = "window_start_ASC",
-  WindowStartDESC = "window_start_DESC",
-}
-
-export interface GetBackupPlansRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: BackupPlanOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: BackupPlanWhereInput | null;
 }
 
 export interface NestedAggregateBackupPlan {
@@ -35635,14 +32983,11 @@ export interface BackupPlanConnection {
 export interface GetBackupPlansConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupPlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupPlanWhereInput | null;
@@ -35682,14 +33027,11 @@ export enum BackupRestoreExecutionOrderByInput {
 export interface GetBackupRestoreExecutionsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupRestoreExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupRestoreExecutionWhereInput | null;
@@ -35707,14 +33049,11 @@ export interface BackupRestoreExecutionConnection {
 export interface GetBackupRestoreExecutionsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupRestoreExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupRestoreExecutionWhereInput | null;
@@ -35734,7 +33073,6 @@ export interface BackupRestorePoint {
   backup_target_execution: NestedBackupTargetExecution;
   cluster_local_id?: string | null;
   compressed?: boolean | null;
-
   /** @format double */
   compression_ratio?: number | null;
   creation?: BackupRestorePointCreation | null;
@@ -35742,23 +33080,18 @@ export interface BackupRestorePoint {
   id: string;
   local_created_at?: string | null;
   local_id: string;
-
   /** @format int64 */
   logical_size?: number | null;
   parent_restore_point?: string | null;
-
   /** @format int64 */
   physical_size?: number | null;
-
   /** @format int64 */
   size?: number | null;
   slice: string;
   snapshot_consistent_type?: ConsistentType | null;
   type?: BackupRestorePointType | null;
-
   /** @format int64 */
   valid_capacity?: number | null;
-
   /** @format int64 */
   valid_size?: number | null;
   vm?: NestedVm | null;
@@ -35810,14 +33143,11 @@ export enum BackupRestorePointOrderByInput {
 export interface GetBackupRestorePointsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupRestorePointOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupRestorePointWhereInput | null;
@@ -35835,14 +33165,11 @@ export interface BackupRestorePointConnection {
 export interface GetBackupRestorePointsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupRestorePointOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupRestorePointWhereInput | null;
@@ -35872,11 +33199,9 @@ export interface BackupService {
   backup_network_type?: BackupServiceNetworkType | null;
   backup_network_vlan?: string | null;
   backup_plans?: NestedBackupPlan[] | null;
-
   /** @format int64 */
   backup_rd_iops_max?: number | null;
   backup_store_repositories?: NestedBackupStoreRepository[] | null;
-
   /** @format int64 */
   backup_wr_iops_max?: number | null;
   description?: string | null;
@@ -35887,24 +33212,18 @@ export interface BackupService {
   management_network_ip?: string | null;
   management_network_subnet_mask?: string | null;
   management_network_vlan?: string | null;
-
   /** @format int32 */
   max_job_retry_times?: number | null;
-
   /** @format int32 */
   max_parallel_backup_jobs?: number | null;
-
   /** @format int32 */
   max_parallel_restore_jobs?: number | null;
   name: string;
   network_status?: NestedBackupServiceNetworkStatus[] | null;
-
   /** @format int64 */
   restore_rd_iops_max?: number | null;
-
   /** @format int64 */
   restore_wr_iops_max?: number | null;
-
   /** @format int32 */
   retry_interval?: number | null;
   running_vm?: NestedVm | null;
@@ -35980,14 +33299,11 @@ export enum BackupServiceOrderByInput {
 export interface GetBackupServicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupServiceWhereInput | null;
@@ -36005,14 +33321,11 @@ export interface BackupServiceConnection {
 export interface GetBackupServicesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupServiceWhereInput | null;
@@ -36031,7 +33344,6 @@ export interface BackupStoreRepository {
   iscsi_chap_secret?: string | null;
   iscsi_ip?: string | null;
   iscsi_lun_id?: string | null;
-
   /** @format int32 */
   iscsi_port?: number | null;
   iscsi_target_iqn?: string | null;
@@ -36039,18 +33351,14 @@ export interface BackupStoreRepository {
   nfs_path?: string | null;
   nfs_server?: string | null;
   status: BackupStoreStatus;
-
   /** @format int64 */
   total_capacity: number;
   type: BackupStoreType;
   update_timestamp?: string | null;
-
   /** @format int64 */
   used_data_space: number;
-
   /** @format double */
   used_data_space_usage?: number | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
 }
@@ -36103,14 +33411,11 @@ export enum BackupStoreRepositoryOrderByInput {
 export interface GetBackupStoreRepositoriesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupStoreRepositoryOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupStoreRepositoryWhereInput | null;
@@ -36128,14 +33433,11 @@ export interface BackupStoreRepositoryConnection {
 export interface GetBackupStoreRepositoriesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupStoreRepositoryOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupStoreRepositoryWhereInput | null;
@@ -36146,7 +33448,6 @@ export interface BackupTargetExecution {
   backup_plan_execution?: NestedBackupPlanExecution | null;
   backup_restore_point?: NestedBackupRestorePoint | null;
   cluster_local_id?: string | null;
-
   /** @format int32 */
   duration?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -36154,14 +33455,11 @@ export interface BackupTargetExecution {
   id: string;
   local_id: string;
   parent_backup: string;
-
   /** @format int64 */
   read_bytes?: number | null;
-
   /** @format int32 */
   retry_times?: number | null;
   status?: BackupExecutionStatus | null;
-
   /** @format int64 */
   total_bytes?: number | null;
   type: BackupExecutionType;
@@ -36206,14 +33504,11 @@ export enum BackupTargetExecutionOrderByInput {
 export interface GetBackupTargetExecutionsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupTargetExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupTargetExecutionWhereInput | null;
@@ -36231,14 +33526,11 @@ export interface BackupTargetExecutionConnection {
 export interface GetBackupTargetExecutionsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BackupTargetExecutionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BackupTargetExecutionWhereInput | null;
@@ -36274,14 +33566,11 @@ export enum BrickTopoOrderByInput {
 export interface GetBrickTopoesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BrickTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BrickTopoWhereInput | null;
@@ -36299,14 +33588,11 @@ export interface BrickTopoConnection {
 export interface GetBrickTopoesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BrickTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BrickTopoWhereInput | null;
@@ -36342,14 +33628,11 @@ export enum BusinessHostGroupOrderByInput {
 export interface GetBusinessHostGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BusinessHostGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BusinessHostGroupWhereInput | null;
@@ -36367,14 +33650,11 @@ export interface BusinessHostGroupConnection {
 export interface GetBusinessHostGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BusinessHostGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BusinessHostGroupWhereInput | null;
@@ -36422,14 +33702,11 @@ export enum BusinessHostOrderByInput {
 export interface GetBusinessHostsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BusinessHostOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BusinessHostWhereInput | null;
@@ -36447,14 +33724,11 @@ export interface BusinessHostConnection {
 export interface GetBusinessHostsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: BusinessHostOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: BusinessHostWhereInput | null;
@@ -36491,14 +33765,11 @@ export enum CloudTowerApplicationPackageOrderByInput {
 export interface GetCloudTowerApplicationPackagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: CloudTowerApplicationPackageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: CloudTowerApplicationPackageWhereInput | null;
@@ -36516,14 +33787,11 @@ export interface CloudTowerApplicationPackageConnection {
 export interface GetCloudTowerApplicationPackagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: CloudTowerApplicationPackageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: CloudTowerApplicationPackageWhereInput | null;
@@ -36555,14 +33823,11 @@ export enum CloudTowerApplicationOrderByInput {
 export interface GetCloudTowerApplicationsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: CloudTowerApplicationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: CloudTowerApplicationWhereInput | null;
@@ -36580,14 +33845,11 @@ export interface CloudTowerApplicationConnection {
 export interface GetCloudTowerApplicationsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: CloudTowerApplicationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: CloudTowerApplicationWhereInput | null;
@@ -36599,11 +33861,9 @@ export interface ClusterImage {
   id: string;
   local_id?: string | null;
   meta_name: string;
-
   /** @format int64 */
   meta_size: number;
   name: string;
-
   /** @format int64 */
   size: number;
   upgrade_from: string[];
@@ -36686,23 +33946,17 @@ export interface ClusterImageWhereInput {
   meta_name_not_in?: string[] | null;
   meta_name_not_starts_with?: string | null;
   meta_name_starts_with?: string | null;
-
   /** @format int64 */
   meta_size?: number | null;
-
   /** @format int64 */
   meta_size_gt?: number | null;
-
   /** @format int64 */
   meta_size_gte?: number | null;
   meta_size_in?: number[] | null;
-
   /** @format int64 */
   meta_size_lt?: number | null;
-
   /** @format int64 */
   meta_size_lte?: number | null;
-
   /** @format int64 */
   meta_size_not?: number | null;
   meta_size_not_in?: number[] | null;
@@ -36720,23 +33974,17 @@ export interface ClusterImageWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -36791,14 +34039,11 @@ export interface ClusterImageWhereInput {
 export interface GetClusterImagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterImageWhereInput | null;
@@ -36816,14 +34061,11 @@ export interface ClusterImageConnection {
 export interface GetClusterImagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterImageWhereInput | null;
@@ -36840,6 +34082,8 @@ export enum ClusterSettingsOrderByInput {
   DefaultStoragePolicyEcMDESC = "default_storage_policy_ec_m_DESC",
   DefaultStoragePolicyReplicaNumASC = "default_storage_policy_replica_num_ASC",
   DefaultStoragePolicyReplicaNumDESC = "default_storage_policy_replica_num_DESC",
+  DefaultStoragePolicyStripeNumASC = "default_storage_policy_stripe_num_ASC",
+  DefaultStoragePolicyStripeNumDESC = "default_storage_policy_stripe_num_DESC",
   DefaultStoragePolicyThinProvisionASC = "default_storage_policy_thin_provision_ASC",
   DefaultStoragePolicyThinProvisionDESC = "default_storage_policy_thin_provision_DESC",
   EnabledIscsiASC = "enabled_iscsi_ASC",
@@ -36853,14 +34097,11 @@ export enum ClusterSettingsOrderByInput {
 export interface GetClusterSettingsesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterSettingsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterSettingsWhereInput | null;
@@ -36878,14 +34119,11 @@ export interface ClusterSettingsConnection {
 export interface GetClusterSettingsesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterSettingsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterSettingsWhereInput | null;
@@ -36913,14 +34151,11 @@ export enum ClusterTopoOrderByInput {
 export interface GetClusterTopoesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterTopoWhereInput | null;
@@ -36938,14 +34173,11 @@ export interface ClusterTopoConnection {
 export interface GetClusterTopoesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterTopoWhereInput | null;
@@ -37067,14 +34299,11 @@ export interface ClusterUpgradeHistoryWhereInput {
 export interface GetClusterUpgradeHistoriesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterUpgradeHistoryOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterUpgradeHistoryWhereInput | null;
@@ -37092,14 +34321,11 @@ export interface ClusterUpgradeHistoryConnection {
 export interface GetClusterUpgradeHistoriesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterUpgradeHistoryOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterUpgradeHistoryWhereInput | null;
@@ -37117,14 +34343,11 @@ export interface ClusterConnection {
 export interface GetClustersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ClusterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ClusterWhereInput | null;
@@ -37148,14 +34371,11 @@ export enum ConsistencyGroupSnapshotOrderByInput {
 export interface GetConsistencyGroupSnapshotsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ConsistencyGroupSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ConsistencyGroupSnapshotWhereInput | null;
@@ -37173,14 +34393,11 @@ export interface ConsistencyGroupSnapshotConnection {
 export interface GetConsistencyGroupSnapshotsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ConsistencyGroupSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ConsistencyGroupSnapshotWhereInput | null;
@@ -37198,14 +34415,11 @@ export interface ConsistencyGroupConnection {
 export interface GetConsistencyGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ConsistencyGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ConsistencyGroupWhereInput | null;
@@ -37223,14 +34437,11 @@ export interface ContentLibraryImageConnection {
 export interface GetContentLibraryImagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ContentLibraryImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ContentLibraryImageWhereInput | null;
@@ -37248,14 +34459,11 @@ export interface ContentLibraryVmTemplateConnection {
 export interface GetContentLibraryVmTemplatesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ContentLibraryVmTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ContentLibraryVmTemplateWhereInput | null;
@@ -37273,14 +34481,11 @@ export interface DatacenterConnection {
 export interface GetDatacentersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DatacenterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DatacenterWhereInput | null;
@@ -37394,43 +34599,31 @@ export interface LicenseWhereInput {
   maintenance_start_date_lte?: string | null;
   maintenance_start_date_not?: string | null;
   maintenance_start_date_not_in?: string[] | null;
-
   /** @format int32 */
   max_chunk_num?: number | null;
-
   /** @format int32 */
   max_chunk_num_gt?: number | null;
-
   /** @format int32 */
   max_chunk_num_gte?: number | null;
   max_chunk_num_in?: number[] | null;
-
   /** @format int32 */
   max_chunk_num_lt?: number | null;
-
   /** @format int32 */
   max_chunk_num_lte?: number | null;
-
   /** @format int32 */
   max_chunk_num_not?: number | null;
   max_chunk_num_not_in?: number[] | null;
-
   /** @format int32 */
   max_cluster_num?: number | null;
-
   /** @format int32 */
   max_cluster_num_gt?: number | null;
-
   /** @format int32 */
   max_cluster_num_gte?: number | null;
   max_cluster_num_in?: number[] | null;
-
   /** @format int32 */
   max_cluster_num_lt?: number | null;
-
   /** @format int32 */
   max_cluster_num_lte?: number | null;
-
   /** @format int32 */
   max_cluster_num_not?: number | null;
   max_cluster_num_not_in?: number[] | null;
@@ -37455,14 +34648,11 @@ export interface LicenseWhereInput {
 export interface GetDeploysRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DeployOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DeployWhereInput | null;
@@ -37480,14 +34670,11 @@ export interface DeployConnection {
 export interface GetDeploysConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DeployOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DeployWhereInput | null;
@@ -37505,12 +34692,10 @@ export interface NestedDiscoveredHostDisk {
   drive: string;
   function?: DiskFunction | null;
   model: string;
-
   /** @format int32 */
   numa_node?: number | null;
   persistent_memory_type?: string | null;
   serial: string;
-
   /** @format int64 */
   size: number;
   type: DiskType;
@@ -37520,13 +34705,11 @@ export interface NestedDiscoveredHostIface {
   ipv4?: string | null;
   ipv6?: string | null;
   mac_address: string;
-
   /** @format int32 */
   mtu: number;
   name: string;
   pci_slot_name?: string | null;
   rdma_enabled?: boolean | null;
-
   /** @format double */
   speed?: number | null;
   up: boolean;
@@ -37545,7 +34728,6 @@ export interface DiscoveredHost {
   is_os_in_raid1?: boolean | null;
   product?: string | null;
   serial: string;
-
   /** @format int32 */
   sockets: number;
   version: string;
@@ -37565,26 +34747,19 @@ export interface GetDiscoverHostsRequestBody {
 export interface DiskPool {
   /** @format int32 */
   chunk_id: number;
-
   /** @format int32 */
   chunk_ins_id: number;
-
   /** @format double */
   data_space_usage: number;
-
   /** @format int64 */
   dirty_cache_space: number;
-
   /** @format double */
   dirty_cache_usage: number;
   disks?: NestedDisk[] | null;
-
   /** @format int64 */
   failure_cache_space: number;
-
   /** @format int64 */
   failure_data_space: number;
-
   /** @format int32 */
   hdd_disk_count: number;
   host: NestedHost;
@@ -37592,51 +34767,36 @@ export interface DiskPool {
   labels?: NestedLabel[] | null;
   local_id: string;
   numa_node: string;
-
   /** @format int32 */
   nvme_ssd_disk_count: number;
-
   /** @format int64 */
   perf_allocated_data_space: number;
-
   /** @format int64 */
   perf_failure_data_space: number;
-
   /** @format int64 */
   perf_total_data_capacity: number;
-
   /** @format int64 */
   perf_used_data_space: number;
-
   /** @format int64 */
   perf_valid_data_space: number;
-
   /** @format int64 */
   planned_prioritized_space: number;
-
   /** @format double */
   prio_space_percentage?: number | null;
-
   /** @format int32 */
   sata_or_sas_ssd_disk_count: number;
   status: DiskPoolStatus;
-
   /** @format int64 */
   total_cache_capacity: number;
-
   /** @format int64 */
   total_data_capacity: number;
   use_state: DiskPoolUseState;
-
   /** @format int64 */
   used_cache_space: number;
-
   /** @format int64 */
   used_data_space: number;
-
   /** @format int64 */
   valid_cache_space: number;
-
   /** @format int64 */
   valid_free_cache_space: number;
 }
@@ -37703,14 +34863,11 @@ export enum DiskPoolOrderByInput {
 export interface GetDiskPoolsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DiskPoolOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DiskPoolWhereInput | null;
@@ -37728,14 +34885,11 @@ export interface DiskPoolConnection {
 export interface GetDiskPoolsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DiskPoolOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DiskPoolWhereInput | null;
@@ -37753,14 +34907,11 @@ export interface DiskConnection {
 export interface GetDisksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: DiskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: DiskWhereInput | null;
@@ -37775,10 +34926,8 @@ export interface EcpLicense {
   has_remote_backup?: boolean | null;
   id: string;
   license_type?: LicenseType | null;
-
   /** @format int32 */
   max_core_num: number;
-
   /** @format double */
   max_physical_data_capacity?: number | null;
   original_code?: string | null;
@@ -37788,7 +34937,6 @@ export interface EcpLicense {
   subscription_expire_date?: string | null;
   subscription_start_date?: string | null;
   vendor?: string | null;
-
   /** @format int32 */
   version: number;
 }
@@ -37833,14 +34981,11 @@ export enum EcpLicenseOrderByInput {
 export interface GetEcpLicensesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EcpLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EcpLicenseWhereInput | null;
@@ -37858,14 +35003,11 @@ export interface EcpLicenseConnection {
 export interface GetEcpLicensesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EcpLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EcpLicenseWhereInput | null;
@@ -37883,7 +35025,6 @@ export interface ElfDataStore {
   name: string;
   nfs_export?: NestedNfsExport | null;
   nvmf_subsystem?: NestedNvmfSubsystem | null;
-
   /** @format int32 */
   replica_num: number;
   thin_provision: boolean;
@@ -37902,14 +35043,11 @@ export interface ElfDataStoreConnection {
 export interface GetElfDataStoresConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfDataStoreOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfDataStoreWhereInput | null;
@@ -37927,14 +35065,11 @@ export interface ElfImageConnection {
 export interface GetElfImagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfImageWhereInput | null;
@@ -37947,13 +35082,10 @@ export interface ElfStoragePolicy {
   id: string;
   local_id: string;
   name: string;
-
   /** @format int32 */
   replica_num: number;
-
   /** @format int32 */
   stripe_num: number;
-
   /** @format int64 */
   stripe_size: number;
   thin_provision: boolean;
@@ -38045,63 +35177,45 @@ export interface ElfStoragePolicyWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int32 */
   replica_num?: number | null;
-
   /** @format int32 */
   replica_num_gt?: number | null;
-
   /** @format int32 */
   replica_num_gte?: number | null;
   replica_num_in?: number[] | null;
-
   /** @format int32 */
   replica_num_lt?: number | null;
-
   /** @format int32 */
   replica_num_lte?: number | null;
-
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
-
   /** @format int32 */
   stripe_num?: number | null;
-
   /** @format int32 */
   stripe_num_gt?: number | null;
-
   /** @format int32 */
   stripe_num_gte?: number | null;
   stripe_num_in?: number[] | null;
-
   /** @format int32 */
   stripe_num_lt?: number | null;
-
   /** @format int32 */
   stripe_num_lte?: number | null;
-
   /** @format int32 */
   stripe_num_not?: number | null;
   stripe_num_not_in?: number[] | null;
-
   /** @format int64 */
   stripe_size?: number | null;
-
   /** @format int64 */
   stripe_size_gt?: number | null;
-
   /** @format int64 */
   stripe_size_gte?: number | null;
   stripe_size_in?: number[] | null;
-
   /** @format int64 */
   stripe_size_lt?: number | null;
-
   /** @format int64 */
   stripe_size_lte?: number | null;
-
   /** @format int64 */
   stripe_size_not?: number | null;
   stripe_size_not_in?: number[] | null;
@@ -38112,14 +35226,11 @@ export interface ElfStoragePolicyWhereInput {
 export interface GetElfStoragePoliciesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfStoragePolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfStoragePolicyWhereInput | null;
@@ -38137,14 +35248,11 @@ export interface ElfStoragePolicyConnection {
 export interface GetElfStoragePoliciesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ElfStoragePolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ElfStoragePolicyWhereInput | null;
@@ -38162,35 +35270,29 @@ export interface EntityFilterConnection {
 export interface GetEntityFiltersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EntityFilterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EntityFilterWhereInput | null;
 }
 
 export interface NestedEverouteControllerInstance {
-  ipAddr: string;
-  vlan: string;
+  ipAddr?: string | null;
+  vlan?: string | null;
 }
 
 export interface NestedEverouteControllerTemplate {
   cluster: string;
   gateway: string;
-
   /** @format int64 */
   memory: number;
   netmask: string;
-
   /** @format int64 */
   size: number;
-
   /** @format int32 */
   vcpu: number;
 }
@@ -38219,7 +35321,6 @@ export interface NestedEverouteManageVDSStatus {
   message?: string | null;
   phase?: EverouteClusterPhase | null;
   reason?: string | null;
-
   /** @format int32 */
   retryCount?: number | null;
   vds?: NestedVds | null;
@@ -38229,12 +35330,10 @@ export interface NestedEverouteManageVDSStatus {
 export interface NestedEverouteClusterAgentStatus {
   /** @format int32 */
   currentNumber?: number | null;
-
   /** @format int32 */
   expectNumber?: number | null;
   instances?: NestedEverouteAgentStatus[] | null;
   manageVDSes?: NestedEverouteManageVDSStatus[] | null;
-
   /** @format int32 */
   numberHealth?: number | null;
 }
@@ -38247,11 +35346,9 @@ export interface NestedEverouteClusterCondition {
 export interface NestedEverouteClusterVMMetrics {
   /** @format double */
   cpuUsage: number;
-
   /** @format double */
   dataVolumeUsage: number;
   lastAcquisitionTime: string;
-
   /** @format double */
   memoryUsage: number;
 }
@@ -38270,11 +35367,9 @@ export interface NestedEverouteControllerStatus {
 export interface NestedEverouteClusterControllerStatus {
   /** @format int32 */
   currentNumber?: number | null;
-
   /** @format int32 */
   expectNumber?: number | null;
   instances?: NestedEverouteControllerStatus[] | null;
-
   /** @format int32 */
   numberHealth?: number | null;
 }
@@ -38286,7 +35381,6 @@ export interface NestedEverouteClusterStatus {
   message?: string | null;
   phase?: EverouteClusterPhase | null;
   reason?: string | null;
-
   /** @format int32 */
   retryCount?: number | null;
   version?: string | null;
@@ -38296,7 +35390,7 @@ export interface EverouteCluster {
   agent_elf_clusters?: NestedCluster[] | null;
   agent_elf_vdses?: NestedVds[] | null;
   controller_instances: NestedEverouteControllerInstance[];
-  controller_template: NestedEverouteControllerTemplate;
+  controller_template?: NestedEverouteControllerTemplate | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   global_default_action: GlobalPolicyAction;
   global_whitelist?: NestedEverouteClusterWhitelist | null;
@@ -38338,14 +35432,11 @@ export enum EverouteClusterOrderByInput {
 export interface GetEverouteClustersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EverouteClusterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EverouteClusterWhereInput | null;
@@ -38363,14 +35454,11 @@ export interface EverouteClusterConnection {
 export interface GetEverouteClustersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EverouteClusterOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EverouteClusterWhereInput | null;
@@ -38380,7 +35468,6 @@ export interface EverouteLicense {
   code: string;
   expire_date: string;
   id: string;
-
   /** @format int32 */
   max_socket_num: number;
   serial: string;
@@ -38451,23 +35538,17 @@ export interface EverouteLicenseWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int32 */
   max_socket_num?: number | null;
-
   /** @format int32 */
   max_socket_num_gt?: number | null;
-
   /** @format int32 */
   max_socket_num_gte?: number | null;
   max_socket_num_in?: number[] | null;
-
   /** @format int32 */
   max_socket_num_lt?: number | null;
-
   /** @format int32 */
   max_socket_num_lte?: number | null;
-
   /** @format int32 */
   max_socket_num_not?: number | null;
   max_socket_num_not_in?: number[] | null;
@@ -38520,14 +35601,11 @@ export interface EverouteLicenseWhereInput {
 export interface GetEverouteLicensesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EverouteLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EverouteLicenseWhereInput | null;
@@ -38545,14 +35623,11 @@ export interface EverouteLicenseConnection {
 export interface GetEverouteLicensesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EverouteLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EverouteLicenseWhereInput | null;
@@ -38566,7 +35641,6 @@ export interface EveroutePackage {
   local_created_at: string;
   name: string;
   package_info: object;
-
   /** @format int64 */
   size: number;
   version: string;
@@ -38655,23 +35729,17 @@ export interface EveroutePackageWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-
   /** @format int64 */
   size?: number | null;
-
   /** @format int64 */
   size_gt?: number | null;
-
   /** @format int64 */
   size_gte?: number | null;
   size_in?: number[] | null;
-
   /** @format int64 */
   size_lt?: number | null;
-
   /** @format int64 */
   size_lte?: number | null;
-
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
@@ -38694,14 +35762,11 @@ export interface EveroutePackageWhereInput {
 export interface GetEveroutePackagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EveroutePackageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EveroutePackageWhereInput | null;
@@ -38719,14 +35784,11 @@ export interface EveroutePackageConnection {
 export interface GetEveroutePackagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: EveroutePackageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: EveroutePackageWhereInput | null;
@@ -38744,14 +35806,11 @@ export interface GlobalAlertRuleConnection {
 export interface GetGlobalAlertRulesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GlobalAlertRuleOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GlobalAlertRuleWhereInput | null;
@@ -38789,14 +35848,11 @@ export interface GlobalSettingsWhereInput {
 export interface GetGlobalSettingsesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GlobalSettingsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GlobalSettingsWhereInput | null;
@@ -38814,14 +35870,11 @@ export interface GlobalSettingsConnection {
 export interface GetGlobalSettingsesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GlobalSettingsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GlobalSettingsWhereInput | null;
@@ -38839,14 +35892,11 @@ export interface GpuDeviceConnection {
 export interface GetGpuDevicesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GpuDeviceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GpuDeviceWhereInput | null;
@@ -38882,14 +35932,11 @@ export enum GraphOrderByInput {
 export interface GetGraphsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GraphOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GraphWhereInput | null;
@@ -38907,14 +35954,11 @@ export interface GraphConnection {
 export interface GetGraphsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: GraphOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: GraphWhereInput | null;
@@ -38932,14 +35976,11 @@ export interface HostConnection {
 export interface GetHostsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: HostOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: HostWhereInput | null;
@@ -38970,14 +36011,11 @@ export enum IpmiOrderByInput {
 export interface GetIpmisRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IpmiOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IpmiWhereInput | null;
@@ -39008,14 +36046,11 @@ export interface IscsiConnectionConnection {
 export interface GetIscsiConnectionsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiConnectionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiConnectionWhereInput | null;
@@ -39033,14 +36068,11 @@ export interface IscsiLunSnapshotConnection {
 export interface GetIscsiLunSnapshotsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiLunSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiLunSnapshotWhereInput | null;
@@ -39058,14 +36090,11 @@ export interface IscsiLunConnection {
 export interface GetIscsiLunsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiLunOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiLunWhereInput | null;
@@ -39083,14 +36112,11 @@ export interface IscsiTargetConnection {
 export interface GetIscsiTargetsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IscsiTargetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IscsiTargetWhereInput | null;
@@ -39110,14 +36136,11 @@ export enum IsolationPolicyOrderByInput {
 export interface GetIsolationPoliciesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IsolationPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IsolationPolicyWhereInput | null;
@@ -39135,14 +36158,11 @@ export interface IsolationPolicyConnection {
 export interface GetIsolationPoliciesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: IsolationPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: IsolationPolicyWhereInput | null;
@@ -39224,14 +36244,11 @@ export enum LabelOrderByInput {
 export interface GetLabelsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LabelOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LabelWhereInput | null;
@@ -39249,14 +36266,11 @@ export interface LabelConnection {
 export interface GetLabelsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LabelOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LabelWhereInput | null;
@@ -39288,14 +36302,11 @@ export enum LicenseOrderByInput {
 export interface GetLicensesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LicenseWhereInput | null;
@@ -39313,14 +36324,11 @@ export interface LicenseConnection {
 export interface GetLicensesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LicenseWhereInput | null;
@@ -39354,14 +36362,11 @@ export enum LogCollectionOrderByInput {
 export interface GetLogCollectionsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LogCollectionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LogCollectionWhereInput | null;
@@ -39379,14 +36384,11 @@ export interface LogCollectionConnection {
 export interface GetLogCollectionsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: LogCollectionOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: LogCollectionWhereInput | null;
@@ -39417,14 +36419,11 @@ export interface NamespaceGroupConnection {
 export interface GetNamespaceGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NamespaceGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NamespaceGroupWhereInput | null;
@@ -39446,14 +36445,11 @@ export enum NetworkPolicyRuleServiceOrderByInput {
 export interface GetNetworkPolicyRuleServicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NetworkPolicyRuleServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NetworkPolicyRuleServiceWhereInput | null;
@@ -39471,14 +36467,11 @@ export interface NetworkPolicyRuleServiceConnection {
 export interface GetNetworkPolicyRuleServicesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NetworkPolicyRuleServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NetworkPolicyRuleServiceWhereInput | null;
@@ -39496,14 +36489,11 @@ export interface NfsExportConnection {
 export interface GetNfsExportsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NfsExportOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NfsExportWhereInput | null;
@@ -39551,14 +36541,11 @@ export enum NfsInodeOrderByInput {
 export interface GetNfsInodesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NfsInodeOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NfsInodeWhereInput | null;
@@ -39576,14 +36563,11 @@ export interface NfsInodeConnection {
 export interface GetNfsInodesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NfsInodeOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NfsInodeWhereInput | null;
@@ -39601,14 +36585,11 @@ export interface NicConnection {
 export interface GetNicsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NicOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NicWhereInput | null;
@@ -39628,14 +36609,11 @@ export enum NodeTopoOrderByInput {
 export interface GetNodeTopoesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NodeTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NodeTopoWhereInput | null;
@@ -39653,14 +36631,11 @@ export interface NodeTopoConnection {
 export interface GetNodeTopoesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NodeTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NodeTopoWhereInput | null;
@@ -39678,14 +36653,11 @@ export interface NvmfNamespaceSnapshotConnection {
 export interface GetNvmfNamespaceSnapshotsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfNamespaceSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfNamespaceSnapshotWhereInput | null;
@@ -39703,14 +36675,11 @@ export interface NvmfNamespaceConnection {
 export interface GetNvmfNamespacesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfNamespaceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfNamespaceWhereInput | null;
@@ -39728,14 +36697,11 @@ export interface NvmfSubsystemConnection {
 export interface GetNvmfSubsystemsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: NvmfSubsystemOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: NvmfSubsystemWhereInput | null;
@@ -39751,14 +36717,11 @@ export enum OrganizationOrderByInput {
 export interface GetOrganizationsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: OrganizationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: OrganizationWhereInput | null;
@@ -39776,14 +36739,11 @@ export interface OrganizationConnection {
 export interface GetOrganizationsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: OrganizationOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: OrganizationWhereInput | null;
@@ -39815,6 +36775,7 @@ export enum PciDeviceUsage {
   MDEV = "MDEV",
   PASS_THROUGH = "PASS_THROUGH",
   SRIOV_VF = "SRIOV_VF",
+  UNKNOWN = "UNKNOWN",
 }
 
 export interface PciDevice {
@@ -39837,23 +36798,17 @@ export interface PciDevice {
   sriov_state?: PciDeviceSriovState | null;
   subsystem_product_id: string;
   subsystem_vendor_id: string;
-
   /** @format int32 */
   total_mdev_num?: number | null;
-
   /** @format int32 */
   total_partitioning_num?: number | null;
-
   /** @format int32 */
   total_vf_num?: number | null;
   usage_type?: PciDeviceType | null;
-
   /** @format int32 */
   used_mdev_num?: number | null;
-
   /** @format int32 */
   used_partitioning_num?: number | null;
-
   /** @format int32 */
   used_vf_num?: number | null;
   user_usage?: PciDeviceUsage | null;
@@ -40127,63 +37082,45 @@ export interface PciDeviceWhereInput {
   subsystem_vendor_id_not_in?: string[] | null;
   subsystem_vendor_id_not_starts_with?: string | null;
   subsystem_vendor_id_starts_with?: string | null;
-
   /** @format int32 */
   total_mdev_num?: number | null;
-
   /** @format int32 */
   total_mdev_num_gt?: number | null;
-
   /** @format int32 */
   total_mdev_num_gte?: number | null;
   total_mdev_num_in?: number[] | null;
-
   /** @format int32 */
   total_mdev_num_lt?: number | null;
-
   /** @format int32 */
   total_mdev_num_lte?: number | null;
-
   /** @format int32 */
   total_mdev_num_not?: number | null;
   total_mdev_num_not_in?: number[] | null;
-
   /** @format int32 */
   total_partitioning_num?: number | null;
-
   /** @format int32 */
   total_partitioning_num_gt?: number | null;
-
   /** @format int32 */
   total_partitioning_num_gte?: number | null;
   total_partitioning_num_in?: number[] | null;
-
   /** @format int32 */
   total_partitioning_num_lt?: number | null;
-
   /** @format int32 */
   total_partitioning_num_lte?: number | null;
-
   /** @format int32 */
   total_partitioning_num_not?: number | null;
   total_partitioning_num_not_in?: number[] | null;
-
   /** @format int32 */
   total_vf_num?: number | null;
-
   /** @format int32 */
   total_vf_num_gt?: number | null;
-
   /** @format int32 */
   total_vf_num_gte?: number | null;
   total_vf_num_in?: number[] | null;
-
   /** @format int32 */
   total_vf_num_lt?: number | null;
-
   /** @format int32 */
   total_vf_num_lte?: number | null;
-
   /** @format int32 */
   total_vf_num_not?: number | null;
   total_vf_num_not_in?: number[] | null;
@@ -40191,63 +37128,45 @@ export interface PciDeviceWhereInput {
   usage_type_in?: PciDeviceType[] | null;
   usage_type_not?: PciDeviceType | null;
   usage_type_not_in?: PciDeviceType[] | null;
-
   /** @format int32 */
   used_mdev_num?: number | null;
-
   /** @format int32 */
   used_mdev_num_gt?: number | null;
-
   /** @format int32 */
   used_mdev_num_gte?: number | null;
   used_mdev_num_in?: number[] | null;
-
   /** @format int32 */
   used_mdev_num_lt?: number | null;
-
   /** @format int32 */
   used_mdev_num_lte?: number | null;
-
   /** @format int32 */
   used_mdev_num_not?: number | null;
   used_mdev_num_not_in?: number[] | null;
-
   /** @format int32 */
   used_partitioning_num?: number | null;
-
   /** @format int32 */
   used_partitioning_num_gt?: number | null;
-
   /** @format int32 */
   used_partitioning_num_gte?: number | null;
   used_partitioning_num_in?: number[] | null;
-
   /** @format int32 */
   used_partitioning_num_lt?: number | null;
-
   /** @format int32 */
   used_partitioning_num_lte?: number | null;
-
   /** @format int32 */
   used_partitioning_num_not?: number | null;
   used_partitioning_num_not_in?: number[] | null;
-
   /** @format int32 */
   used_vf_num?: number | null;
-
   /** @format int32 */
   used_vf_num_gt?: number | null;
-
   /** @format int32 */
   used_vf_num_gte?: number | null;
   used_vf_num_in?: number[] | null;
-
   /** @format int32 */
   used_vf_num_lt?: number | null;
-
   /** @format int32 */
   used_vf_num_lte?: number | null;
-
   /** @format int32 */
   used_vf_num_not?: number | null;
   used_vf_num_not_in?: number[] | null;
@@ -40288,14 +37207,11 @@ export interface PciDeviceWhereInput {
 export interface GetPciDevicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: PciDeviceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: PciDeviceWhereInput | null;
@@ -40311,11 +37227,9 @@ export interface PmemDimm {
   id: string;
   local_id?: string | null;
   name: string;
-
   /** @format int32 */
   numa_node: number;
   part_number: string;
-
   /** @format int32 */
   remaining_life_percent?: number | null;
   version: string;
@@ -40347,14 +37261,11 @@ export enum PmemDimmOrderByInput {
 export interface GetPmemDimmsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: PmemDimmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: PmemDimmWhereInput | null;
@@ -40372,14 +37283,11 @@ export interface PmemDimmConnection {
 export interface GetPmemDimmsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: PmemDimmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: PmemDimmWhereInput | null;
@@ -40399,14 +37307,11 @@ export enum RackTopoOrderByInput {
 export interface GetRackTopoesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: RackTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: RackTopoWhereInput | null;
@@ -40424,45 +37329,150 @@ export interface RackTopoConnection {
 export interface GetRackTopoesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: RackTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: RackTopoWhereInput | null;
 }
 
-export interface NestedExternalCloudTower {
+export enum RegistryServiceUsage {
+  SKS = "SKS",
+  USER = "USER",
+}
+
+export interface RegistryService {
+  application?: NestedCloudTowerApplication | null;
+  description?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  hostname: string;
   id: string;
   name: string;
+  usage: RegistryServiceUsage;
 }
 
-export interface NestedReplicationObjectDescriptor {
-  cluster_local_id: string;
-  cluster_name?: string | null;
-  object_local_id: string;
-  object_name?: string | null;
-  parent_object_local_id?: string | null;
-  parent_object_name?: string | null;
-  tower_deploy_id?: string | null;
-  zbs_volume_id?: string | null;
+export enum RegistryServiceOrderByInput {
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  HostnameASC = "hostname_ASC",
+  HostnameDESC = "hostname_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
 }
 
-export interface NestedReplicationService {
-  id: string;
+export interface RegistryServiceWhereInput {
+  AND?: RegistryServiceWhereInput[] | null;
+  NOT?: RegistryServiceWhereInput[] | null;
+  OR?: RegistryServiceWhereInput[] | null;
+  application?: CloudTowerApplicationWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  hostname?: string | null;
+  hostname_contains?: string | null;
+  hostname_ends_with?: string | null;
+  hostname_gt?: string | null;
+  hostname_gte?: string | null;
+  hostname_in?: string[] | null;
+  hostname_lt?: string | null;
+  hostname_lte?: string | null;
+  hostname_not?: string | null;
+  hostname_not_contains?: string | null;
+  hostname_not_ends_with?: string | null;
+  hostname_not_in?: string[] | null;
+  hostname_not_starts_with?: string | null;
+  hostname_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  usage?: RegistryServiceUsage | null;
+  usage_in?: RegistryServiceUsage[] | null;
+  usage_not?: RegistryServiceUsage | null;
+  usage_not_in?: RegistryServiceUsage[] | null;
 }
 
-export interface NestedReplicationTargetExecution {
-  id: string;
+export interface GetRegistryServicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: RegistryServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: RegistryServiceWhereInput | null;
 }
 
-export interface NestedReplicationRestorePoint {
-  id: string;
+export interface NestedAggregateRegistryService {
+  /** @format int32 */
+  count: number;
+}
+
+export interface RegistryServiceConnection {
+  aggregate: NestedAggregateRegistryService;
+}
+
+export interface GetRegistryServicesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: RegistryServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: RegistryServiceWhereInput | null;
 }
 
 export interface ReplicaVm {
@@ -40538,14 +37548,11 @@ export enum ReplicaVmOrderByInput {
 export interface GetReplicaVmsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReplicaVmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReplicaVmWhereInput | null;
@@ -40563,251 +37570,14 @@ export interface ReplicaVmConnection {
 export interface GetReplicaVmsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReplicaVmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReplicaVmWhereInput | null;
-}
-
-export interface NestedReplicationNetworkConfigure {
-  gateway?: string | null;
-  ip: string;
-  subnet_mask?: string | null;
-}
-
-export interface NestedReplicationIPAddressMapping {
-  source: NestedReplicationNetworkConfigure;
-  target: NestedReplicationNetworkConfigure;
-}
-
-export interface NestedReplicationNetworkInformation {
-  cluster_local_id: string;
-  cluster_name: string;
-  network_ids?: string[] | null;
-  vds_name?: string | null;
-
-  /** @format int32 */
-  vlan_id?: number | null;
-  vlan_local_id: string;
-  vlan_mode_type: VlanModeType;
-  vlan_name: string;
-}
-
-export interface NestedReplicationPlanNetworkMapping {
-  source: NestedReplicationNetworkInformation;
-  target: NestedReplicationNetworkInformation;
-}
-
-export interface NestedReplicaVm {
-  id: string;
-}
-
-export interface NestedReplicationPlanExecution {
-  id: string;
-}
-
-export interface NestedReplicationClusterDescriptor {
-  cluster_local_id: string;
-  cluster_name?: string | null;
-  tower_deploy_id?: string | null;
-}
-
-export interface ReplicationPlan {
-  abort_window_unfinished?: boolean | null;
-  activation_timestamp?: string | null;
-  compression: boolean;
-  createdAt: string;
-  delete_strategy?: BackupPlanDeleteStrategy | null;
-  description?: string | null;
-
-  /** @format int32 */
-  ec_k?: number | null;
-
-  /** @format int32 */
-  ec_m?: number | null;
-  enable_window: boolean;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  external_cloudtower?: NestedExternalCloudTower | null;
-  id: string;
-  inbound?: boolean | null;
-
-  /** @format int32 */
-  interval: number;
-  ip_mapping: NestedReplicationIPAddressMapping[];
-  iscsi_luns?: NestedIscsiLun[] | null;
-  keep_mac_address?: boolean | null;
-  keep_policy?: BackupPlanKeepPolicy | null;
-
-  /** @format int32 */
-  keep_policy_value?: number | null;
-  last_execute_status: BackupPlanExecutionStatus;
-  last_execute_status_message?: string | null;
-
-  /** @format int32 */
-  last_execute_success_job_count?: number | null;
-
-  /** @format int32 */
-  last_execute_total_job_count?: number | null;
-  last_executed_at?: string | null;
-  last_manual_execute_status: BackupPlanExecutionStatus;
-  last_manual_execute_status_message?: string | null;
-
-  /** @format int32 */
-  last_manual_execute_success_job_count?: number | null;
-
-  /** @format int32 */
-  last_manual_execute_total_job_count?: number | null;
-  last_manual_executed_at?: string | null;
-  name: string;
-  network_mapping: NestedReplicationPlanNetworkMapping[];
-  next_execution_time?: string | null;
-  objects_descriptor: NestedReplicationObjectDescriptor[];
-  period: ReplicationPlanPeriod;
-  phase?: BackupPlanPhase | null;
-  replica_name_rule: ReplicaNameRule;
-  replica_name_setting?: string | null;
-
-  /** @format int32 */
-  replica_num?: number | null;
-  replica_vms?: NestedReplicaVm[] | null;
-  replication_plan_executions?: NestedReplicationPlanExecution[] | null;
-  replication_restore_points?: NestedReplicationRestorePoint[] | null;
-  replication_target_executions?: NestedReplicationTargetExecution[] | null;
-  resiliency_type?: ResiliencyType | null;
-  snapshot_consistent_type?: ConsistentType | null;
-  status: BackupPlanStatus;
-  storage_policy: VmVolumeElfStoragePolicyType;
-  target_cluster?: NestedCluster | null;
-  target_cluster_descriptor: NestedReplicationClusterDescriptor;
-  target_replication_service: NestedReplicationService;
-  thin_provision?: boolean | null;
-  time_points: NestedBackupPlanTimePoint[];
-  type: ReplicationPlanType;
-  updatedAt: string;
-  vms?: NestedVm[] | null;
-  weekdays?: WeekdayTypeEnum[] | null;
-  window_end?: string | null;
-  window_start?: string | null;
-}
-
-export enum ReplicationPlanOrderByInput {
-  AbortWindowUnfinishedASC = "abort_window_unfinished_ASC",
-  AbortWindowUnfinishedDESC = "abort_window_unfinished_DESC",
-  ActivationTimestampASC = "activation_timestamp_ASC",
-  ActivationTimestampDESC = "activation_timestamp_DESC",
-  CompressionASC = "compression_ASC",
-  CompressionDESC = "compression_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DeleteStrategyASC = "delete_strategy_ASC",
-  DeleteStrategyDESC = "delete_strategy_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EcKASC = "ec_k_ASC",
-  EcKDESC = "ec_k_DESC",
-  EcMASC = "ec_m_ASC",
-  EcMDESC = "ec_m_DESC",
-  EnableWindowASC = "enable_window_ASC",
-  EnableWindowDESC = "enable_window_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InboundASC = "inbound_ASC",
-  InboundDESC = "inbound_DESC",
-  IntervalASC = "interval_ASC",
-  IntervalDESC = "interval_DESC",
-  IpMappingASC = "ip_mapping_ASC",
-  IpMappingDESC = "ip_mapping_DESC",
-  KeepMacAddressASC = "keep_mac_address_ASC",
-  KeepMacAddressDESC = "keep_mac_address_DESC",
-  KeepPolicyASC = "keep_policy_ASC",
-  KeepPolicyDESC = "keep_policy_DESC",
-  KeepPolicyValueASC = "keep_policy_value_ASC",
-  KeepPolicyValueDESC = "keep_policy_value_DESC",
-  LastExecuteStatusASC = "last_execute_status_ASC",
-  LastExecuteStatusDESC = "last_execute_status_DESC",
-  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
-  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
-  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
-  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
-  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
-  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
-  LastExecutedAtASC = "last_executed_at_ASC",
-  LastExecutedAtDESC = "last_executed_at_DESC",
-  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
-  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
-  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
-  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
-  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
-  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
-  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
-  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
-  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
-  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NetworkMappingASC = "network_mapping_ASC",
-  NetworkMappingDESC = "network_mapping_DESC",
-  NextExecutionTimeASC = "next_execution_time_ASC",
-  NextExecutionTimeDESC = "next_execution_time_DESC",
-  ObjectsDescriptorASC = "objects_descriptor_ASC",
-  ObjectsDescriptorDESC = "objects_descriptor_DESC",
-  PeriodASC = "period_ASC",
-  PeriodDESC = "period_DESC",
-  PhaseASC = "phase_ASC",
-  PhaseDESC = "phase_DESC",
-  ReplicaNameRuleASC = "replica_name_rule_ASC",
-  ReplicaNameRuleDESC = "replica_name_rule_DESC",
-  ReplicaNameSettingASC = "replica_name_setting_ASC",
-  ReplicaNameSettingDESC = "replica_name_setting_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  ResiliencyTypeASC = "resiliency_type_ASC",
-  ResiliencyTypeDESC = "resiliency_type_DESC",
-  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
-  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  StoragePolicyASC = "storage_policy_ASC",
-  StoragePolicyDESC = "storage_policy_DESC",
-  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
-  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  TimePointsASC = "time_points_ASC",
-  TimePointsDESC = "time_points_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  WindowEndASC = "window_end_ASC",
-  WindowEndDESC = "window_end_DESC",
-  WindowStartASC = "window_start_ASC",
-  WindowStartDESC = "window_start_DESC",
-}
-
-export interface GetReplicationPlansRequestBody {
-  after?: string | null;
-  before?: string | null;
-
-  /** @format int32 */
-  first?: number | null;
-
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ReplicationPlanOrderByInput | null;
-
-  /** @format int32 */
-  skip?: number | null;
-  where?: ReplicationPlanWhereInput | null;
 }
 
 export interface NestedAggregateReplicationPlan {
@@ -40822,14 +37592,11 @@ export interface ReplicationPlanConnection {
 export interface GetReplicationPlansConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReplicationPlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReplicationPlanWhereInput | null;
@@ -40860,19 +37627,14 @@ export interface ReplicationService {
   id: string;
   kube_config: string;
   management_network: NestedReplicationServiceNetwork;
-
   /** @format int32 */
   max_failback_jobs?: number | null;
-
   /** @format double */
   max_failback_speed_limit?: number | null;
-
   /** @format int32 */
   max_replication_jobs?: number | null;
-
   /** @format double */
   max_replication_speed_limit?: number | null;
-
   /** @format int32 */
   max_retry_times?: number | null;
   name: string;
@@ -40881,7 +37643,6 @@ export interface ReplicationService {
   replication_clusters_descriptor: NestedReplicationClusterDescriptor[];
   replication_network: NestedReplicationServiceNetwork;
   replication_plans?: NestedReplicationPlan[] | null;
-
   /** @format int32 */
   retry_interval?: number | null;
   storage_network: NestedReplicationServiceNetwork;
@@ -40928,14 +37689,11 @@ export enum ReplicationServiceOrderByInput {
 export interface GetReplicationServicesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReplicationServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReplicationServiceWhereInput | null;
@@ -40953,14 +37711,11 @@ export interface ReplicationServiceConnection {
 export interface GetReplicationServicesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReplicationServiceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReplicationServiceWhereInput | null;
@@ -40984,14 +37739,11 @@ export enum ReportTaskOrderByInput {
 export interface GetReportTasksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReportTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReportTaskWhereInput | null;
@@ -41009,14 +37761,11 @@ export interface ReportTaskConnection {
 export interface GetReportTasksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReportTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReportTaskWhereInput | null;
@@ -41044,14 +37793,11 @@ export enum ReportTemplateOrderByInput {
 export interface GetReportTemplatesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReportTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReportTemplateWhereInput | null;
@@ -41069,14 +37815,11 @@ export interface ReportTemplateConnection {
 export interface GetReportTemplatesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ReportTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ReportTemplateWhereInput | null;
@@ -41096,14 +37839,11 @@ export enum SecurityGroupOrderByInput {
 export interface GetSecurityGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SecurityGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SecurityGroupWhereInput | null;
@@ -41121,14 +37861,11 @@ export interface SecurityGroupConnection {
 export interface GetSecurityGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SecurityGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SecurityGroupWhereInput | null;
@@ -41156,14 +37893,11 @@ export enum SecurityPolicyOrderByInput {
 export interface GetSecurityPoliciesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SecurityPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SecurityPolicyWhereInput | null;
@@ -41181,14 +37915,11 @@ export interface SecurityPolicyConnection {
 export interface GetSecurityPoliciesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SecurityPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SecurityPolicyWhereInput | null;
@@ -41199,7 +37930,6 @@ export interface SmtpServer {
   host: string;
   id: string;
   name: string;
-
   /** @format int32 */
   port: number;
   secure_mode?: SmtpSecureMode | null;
@@ -41226,14 +37956,11 @@ export enum SmtpServerOrderByInput {
 export interface GetSmtpServersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SmtpServerOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SmtpServerWhereInput | null;
@@ -41251,14 +37978,11 @@ export interface SmtpServerConnection {
 export interface GetSmtpServersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SmtpServerOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SmtpServerWhereInput | null;
@@ -41294,14 +38018,11 @@ export enum SnapshotGroupOrderByInput {
 export interface GetSnapshotGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotGroupWhereInput | null;
@@ -41319,14 +38040,11 @@ export interface SnapshotGroupConnection {
 export interface GetSnapshotGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotGroupWhereInput | null;
@@ -41368,14 +38086,11 @@ export enum SnapshotPlanTaskOrderByInput {
 export interface GetSnapshotPlanTasksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotPlanTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotPlanTaskWhereInput | null;
@@ -41393,14 +38108,11 @@ export interface SnapshotPlanTaskConnection {
 export interface GetSnapshotPlanTasksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotPlanTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotPlanTaskWhereInput | null;
@@ -41418,14 +38130,11 @@ export interface SnapshotPlanConnection {
 export interface GetSnapshotPlansConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnapshotPlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnapshotPlanWhereInput | null;
@@ -41465,14 +38174,11 @@ export enum SnmpTransportOrderByInput {
 export interface GetSnmpTransportsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnmpTransportOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnmpTransportWhereInput | null;
@@ -41490,14 +38196,11 @@ export interface SnmpTransportConnection {
 export interface GetSnmpTransportsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnmpTransportOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnmpTransportWhereInput | null;
@@ -41545,14 +38248,11 @@ export enum SnmpTrapReceiverOrderByInput {
 export interface GetSnmpTrapReceiversRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnmpTrapReceiverOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnmpTrapReceiverWhereInput | null;
@@ -41570,14 +38270,11 @@ export interface SnmpTrapReceiverConnection {
 export interface GetSnmpTrapReceiversConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SnmpTrapReceiverOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SnmpTrapReceiverWhereInput | null;
@@ -41591,10 +38288,8 @@ export interface SvtImage {
   local_id: string;
   name: string;
   path: string;
-
   /** @format int64 */
   size: number;
-
   /** @format int32 */
   version: number;
   vm_disks?: NestedVmDisk[] | null;
@@ -41622,14 +38317,11 @@ export enum SvtImageOrderByInput {
 export interface GetSvtImagesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SvtImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SvtImageWhereInput | null;
@@ -41647,14 +38339,11 @@ export interface SvtImageConnection {
 export interface GetSvtImagesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SvtImageOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SvtImageWhereInput | null;
@@ -41684,14 +38373,11 @@ export interface SystemAuditLogConnection {
 export interface GetSystemAuditLogsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: SystemAuditLogOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: SystemAuditLogWhereInput | null;
@@ -41709,14 +38395,11 @@ export interface TaskConnection {
 export interface GetTasksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: TaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: TaskWhereInput | null;
@@ -41748,14 +38431,11 @@ export enum UploadTaskOrderByInput {
 export interface GetUploadTasksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UploadTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UploadTaskWhereInput | null;
@@ -41773,14 +38453,11 @@ export interface UploadTaskConnection {
 export interface GetUploadTasksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UploadTaskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UploadTaskWhereInput | null;
@@ -41798,14 +38475,11 @@ export interface UsbDeviceConnection {
 export interface GetUsbDevicesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UsbDeviceOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UsbDeviceWhereInput | null;
@@ -41823,14 +38497,11 @@ export interface UserAuditLogConnection {
 export interface GetUserAuditLogsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserAuditLogOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserAuditLogWhereInput | null;
@@ -41850,14 +38521,11 @@ export enum UserRoleNextOrderByInput {
 export interface GetUserRoleNextsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserRoleNextOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserRoleNextWhereInput | null;
@@ -41875,14 +38543,11 @@ export interface UserRoleNextConnection {
 export interface GetUserRoleNextsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserRoleNextOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserRoleNextWhereInput | null;
@@ -41900,14 +38565,11 @@ export interface UserConnection {
 export interface GetUsersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: UserOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: UserWhereInput | null;
@@ -41921,6 +38583,7 @@ export enum EverouteFeatureType {
 
 export enum EverouteLicensePricingType {
   CPU_SLOT_NUM = "CPU_SLOT_NUM",
+  VCPU_NUM = "VCPU_NUM",
   VM_NUM = "VM_NUM",
 }
 
@@ -41929,16 +38592,12 @@ export interface V2EverouteLicense {
   expire_date: string;
   feature_type: EverouteFeatureType;
   id: string;
-
   /** @format int32 */
   max_socket_num?: number | null;
-
   /** @format int32 */
   max_vcpu_num?: number | null;
-
   /** @format int32 */
   max_vm_num?: number | null;
-
   /** @format int32 */
   max_vpc_socket_num?: number | null;
   pricing_type?: EverouteLicensePricingType | null;
@@ -41947,7 +38606,6 @@ export interface V2EverouteLicense {
   software_edition: SoftwareEdition;
   type: LicenseType;
   uid: string;
-
   /** @format int32 */
   version: number;
 }
@@ -42029,83 +38687,59 @@ export interface V2EverouteLicenseWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
-
   /** @format int32 */
   max_socket_num?: number | null;
-
   /** @format int32 */
   max_socket_num_gt?: number | null;
-
   /** @format int32 */
   max_socket_num_gte?: number | null;
   max_socket_num_in?: number[] | null;
-
   /** @format int32 */
   max_socket_num_lt?: number | null;
-
   /** @format int32 */
   max_socket_num_lte?: number | null;
-
   /** @format int32 */
   max_socket_num_not?: number | null;
   max_socket_num_not_in?: number[] | null;
-
   /** @format int32 */
   max_vcpu_num?: number | null;
-
   /** @format int32 */
   max_vcpu_num_gt?: number | null;
-
   /** @format int32 */
   max_vcpu_num_gte?: number | null;
   max_vcpu_num_in?: number[] | null;
-
   /** @format int32 */
   max_vcpu_num_lt?: number | null;
-
   /** @format int32 */
   max_vcpu_num_lte?: number | null;
-
   /** @format int32 */
   max_vcpu_num_not?: number | null;
   max_vcpu_num_not_in?: number[] | null;
-
   /** @format int32 */
   max_vm_num?: number | null;
-
   /** @format int32 */
   max_vm_num_gt?: number | null;
-
   /** @format int32 */
   max_vm_num_gte?: number | null;
   max_vm_num_in?: number[] | null;
-
   /** @format int32 */
   max_vm_num_lt?: number | null;
-
   /** @format int32 */
   max_vm_num_lte?: number | null;
-
   /** @format int32 */
   max_vm_num_not?: number | null;
   max_vm_num_not_in?: number[] | null;
-
   /** @format int32 */
   max_vpc_socket_num?: number | null;
-
   /** @format int32 */
   max_vpc_socket_num_gt?: number | null;
-
   /** @format int32 */
   max_vpc_socket_num_gte?: number | null;
   max_vpc_socket_num_in?: number[] | null;
-
   /** @format int32 */
   max_vpc_socket_num_lt?: number | null;
-
   /** @format int32 */
   max_vpc_socket_num_lte?: number | null;
-
   /** @format int32 */
   max_vpc_socket_num_not?: number | null;
   max_vpc_socket_num_not_in?: number[] | null;
@@ -42157,23 +38791,17 @@ export interface V2EverouteLicenseWhereInput {
   uid_not_in?: string[] | null;
   uid_not_starts_with?: string | null;
   uid_starts_with?: string | null;
-
   /** @format int32 */
   version?: number | null;
-
   /** @format int32 */
   version_gt?: number | null;
-
   /** @format int32 */
   version_gte?: number | null;
   version_in?: number[] | null;
-
   /** @format int32 */
   version_lt?: number | null;
-
   /** @format int32 */
   version_lte?: number | null;
-
   /** @format int32 */
   version_not?: number | null;
   version_not_in?: number[] | null;
@@ -42182,14 +38810,11 @@ export interface V2EverouteLicenseWhereInput {
 export interface GetV2EverouteLicensesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: V2EverouteLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: V2EverouteLicenseWhereInput | null;
@@ -42207,14 +38832,11 @@ export interface V2EverouteLicenseConnection {
 export interface GetV2EverouteLicensesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: V2EverouteLicenseOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: V2EverouteLicenseWhereInput | null;
@@ -42238,14 +38860,11 @@ export enum VcenterAccountOrderByInput {
 export interface GetVcenterAccountsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VcenterAccountOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VcenterAccountWhereInput | null;
@@ -42263,14 +38882,11 @@ export interface VcenterAccountConnection {
 export interface GetVcenterAccountsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VcenterAccountOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VcenterAccountWhereInput | null;
@@ -42288,14 +38904,11 @@ export interface VdsConnection {
 export interface GetVdsesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VdsOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VdsWhereInput | null;
@@ -42319,14 +38932,11 @@ export enum ViewOrderByInput {
 export interface GetViewsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ViewOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ViewWhereInput | null;
@@ -42344,14 +38954,11 @@ export interface ViewConnection {
 export interface GetViewsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ViewOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ViewWhereInput | null;
@@ -42361,11 +38968,9 @@ export interface VirtualPrivateCloudClusterBinding {
   cluster: NestedCluster;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
-
   /** @format int32 */
   mtu?: number | null;
   vds: NestedVds;
-
   /** @format int32 */
   vlan_id: number;
   vpc_service: NestedVirtualPrivateCloudService;
@@ -42385,14 +38990,11 @@ export enum VirtualPrivateCloudClusterBindingOrderByInput {
 export interface GetVirtualPrivateCloudClusterBindingsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudClusterBindingOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudClusterBindingWhereInput | null;
@@ -42410,14 +39012,11 @@ export interface VirtualPrivateCloudClusterBindingConnection {
 export interface GetVirtualPrivateCloudClusterBindingsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudClusterBindingOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudClusterBindingWhereInput | null;
@@ -42431,6 +39030,7 @@ export interface VirtualPrivateCloudEdgeGatewayGroup {
   id: string;
   name: string;
   primary_edge_gateway_id?: string | null;
+  vpc_service: NestedVirtualPrivateCloudService;
 }
 
 export enum VirtualPrivateCloudEdgeGatewayGroupOrderByInput {
@@ -42449,14 +39049,11 @@ export enum VirtualPrivateCloudEdgeGatewayGroupOrderByInput {
 export interface GetVirtualPrivateCloudEdgeGatewayGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudEdgeGatewayGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
@@ -42474,14 +39071,11 @@ export interface VirtualPrivateCloudEdgeGatewayGroupConnection {
 export interface GetVirtualPrivateCloudEdgeGatewayGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudEdgeGatewayGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
@@ -42497,11 +39091,13 @@ export interface NestedVirtualPrivateCloudEdgeGatewayStatus {
 
 export interface VirtualPrivateCloudEdgeGateway {
   description?: string | null;
+  edge_gateway_group?: NestedVirtualPrivateCloudEdgeGatewayGroup | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
   name: string;
   status?: NestedVirtualPrivateCloudEdgeGatewayStatus | null;
   vdses?: NestedVds[] | null;
+  vpc_service: NestedVirtualPrivateCloudService;
 }
 
 export enum VirtualPrivateCloudEdgeGatewayOrderByInput {
@@ -42520,14 +39116,11 @@ export enum VirtualPrivateCloudEdgeGatewayOrderByInput {
 export interface GetVirtualPrivateCloudEdgeGatewaysRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudEdgeGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
@@ -42545,14 +39138,11 @@ export interface VirtualPrivateCloudEdgeGatewayConnection {
 export interface GetVirtualPrivateCloudEdgeGatewaysConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudEdgeGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
@@ -42627,14 +39217,11 @@ export enum VirtualPrivateCloudExternalSubnetGroupOrderByInput {
 export interface GetVirtualPrivateCloudExternalSubnetGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudExternalSubnetGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
@@ -42652,14 +39239,11 @@ export interface VirtualPrivateCloudExternalSubnetGroupConnection {
 export interface GetVirtualPrivateCloudExternalSubnetGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudExternalSubnetGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
@@ -42713,14 +39297,11 @@ export enum VirtualPrivateCloudExternalSubnetOrderByInput {
 export interface GetVirtualPrivateCloudExternalSubnetsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudExternalSubnetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudExternalSubnetWhereInput | null;
@@ -42738,14 +39319,11 @@ export interface VirtualPrivateCloudExternalSubnetConnection {
 export interface GetVirtualPrivateCloudExternalSubnetsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudExternalSubnetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudExternalSubnetWhereInput | null;
@@ -42767,14 +39345,11 @@ export enum VirtualPrivateCloudFloatingIpOrderByInput {
 export interface GetVirtualPrivateCloudFloatingIpsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudFloatingIpOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudFloatingIpWhereInput | null;
@@ -42792,14 +39367,11 @@ export interface VirtualPrivateCloudFloatingIpConnection {
 export interface GetVirtualPrivateCloudFloatingIpsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudFloatingIpOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudFloatingIpWhereInput | null;
@@ -42829,14 +39401,11 @@ export enum VirtualPrivateCloudNatGatewayOrderByInput {
 export interface GetVirtualPrivateCloudNatGatewaysRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudNatGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudNatGatewayWhereInput | null;
@@ -42854,14 +39423,11 @@ export interface VirtualPrivateCloudNatGatewayConnection {
 export interface GetVirtualPrivateCloudNatGatewaysConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudNatGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudNatGatewayWhereInput | null;
@@ -42885,14 +39451,11 @@ export enum VirtualPrivateCloudRouteTableOrderByInput {
 export interface GetVirtualPrivateCloudRouteTablesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudRouteTableOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudRouteTableWhereInput | null;
@@ -42910,14 +39473,11 @@ export interface VirtualPrivateCloudRouteTableConnection {
 export interface GetVirtualPrivateCloudRouteTablesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudRouteTableOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudRouteTableWhereInput | null;
@@ -42945,14 +39505,11 @@ export enum VirtualPrivateCloudRouterGatewayOrderByInput {
 export interface GetVirtualPrivateCloudRouterGatewaysRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudRouterGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudRouterGatewayWhereInput | null;
@@ -42970,14 +39527,11 @@ export interface VirtualPrivateCloudRouterGatewayConnection {
 export interface GetVirtualPrivateCloudRouterGatewaysConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudRouterGatewayOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudRouterGatewayWhereInput | null;
@@ -43003,14 +39557,11 @@ export enum VirtualPrivateCloudSecurityGroupOrderByInput {
 export interface GetVirtualPrivateCloudSecurityGroupsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSecurityGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSecurityGroupWhereInput | null;
@@ -43028,14 +39579,11 @@ export interface VirtualPrivateCloudSecurityGroupConnection {
 export interface GetVirtualPrivateCloudSecurityGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSecurityGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSecurityGroupWhereInput | null;
@@ -43065,14 +39613,11 @@ export enum VirtualPrivateCloudSecurityPolicyOrderByInput {
 export interface GetVirtualPrivateCloudSecurityPoliciesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSecurityPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
@@ -43090,14 +39635,11 @@ export interface VirtualPrivateCloudSecurityPolicyConnection {
 export interface GetVirtualPrivateCloudSecurityPoliciesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSecurityPolicyOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
@@ -43129,14 +39671,11 @@ export enum VirtualPrivateCloudSubnetOrderByInput {
 export interface GetVirtualPrivateCloudSubnetsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSubnetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSubnetWhereInput | null;
@@ -43154,14 +39693,11 @@ export interface VirtualPrivateCloudSubnetConnection {
 export interface GetVirtualPrivateCloudSubnetsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudSubnetOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudSubnetWhereInput | null;
@@ -43187,14 +39723,11 @@ export enum VirtualPrivateCloudOrderByInput {
 export interface GetVirtualPrivateCloudsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudWhereInput | null;
@@ -43212,14 +39745,11 @@ export interface VirtualPrivateCloudConnection {
 export interface GetVirtualPrivateCloudsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VirtualPrivateCloudOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VirtualPrivateCloudWhereInput | null;
@@ -43237,14 +39767,11 @@ export interface VlanConnection {
 export interface GetVlansConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VlanOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VlanWhereInput | null;
@@ -43265,14 +39792,11 @@ export interface VmDisk {
   disabled?: boolean | null;
   elf_image?: NestedElfImage | null;
   id: string;
-
   /** @format int32 */
   key?: number | null;
-
   /** @format int64 */
   max_bandwidth?: number | null;
   max_bandwidth_policy?: VmDiskIoRestrictType | null;
-
   /** @format int32 */
   max_iops?: number | null;
   max_iops_policy?: VmDiskIoRestrictType | null;
@@ -43326,14 +39850,11 @@ export enum VmDiskOrderByInput {
 export interface GetVmDisksRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmDiskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmDiskWhereInput | null;
@@ -43351,14 +39872,11 @@ export interface VmDiskConnection {
 export interface GetVmDisksConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmDiskOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmDiskWhereInput | null;
@@ -43384,14 +39902,11 @@ export enum VmEntityFilterResultOrderByInput {
 export interface GetVmEntityFilterResultsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmEntityFilterResultOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmEntityFilterResultWhereInput | null;
@@ -43409,14 +39924,11 @@ export interface VmEntityFilterResultConnection {
 export interface GetVmEntityFilterResultsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmEntityFilterResultOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmEntityFilterResultWhereInput | null;
@@ -43513,14 +40025,11 @@ export interface VmExportFileWhereInput {
 export interface GetVmExportFilesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmExportFileOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmExportFileWhereInput | null;
@@ -43538,14 +40047,11 @@ export interface VmExportFileConnection {
 export interface GetVmExportFilesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmExportFileOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmExportFileWhereInput | null;
@@ -43565,14 +40071,11 @@ export enum VmFolderOrderByInput {
 export interface GetVmFoldersRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmFolderOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmFolderWhereInput | null;
@@ -43590,14 +40093,11 @@ export interface VmFolderConnection {
 export interface GetVmFoldersConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmFolderOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmFolderWhereInput | null;
@@ -43613,20 +40113,20 @@ export interface NestedVirtualPrivateCloudNic {
 }
 
 export interface VmNic {
+  dpi_enabled?: boolean | null;
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
   egress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   egress_rate_limit_max_rate_in_bitps?: number | null;
   enabled?: boolean | null;
   gateway?: string | null;
+  guest_info_ip_addresses: string[];
+  guest_info_ip_addresses_v6: string[];
   id: string;
-
   /** @format double */
   ingress_rate_limit_burst_in_bit?: number | null;
   ingress_rate_limit_enabled?: boolean | null;
-
   /** @format double */
   ingress_rate_limit_max_rate_in_bitps?: number | null;
   interface_id?: string | null;
@@ -43636,7 +40136,6 @@ export interface VmNic {
   mirror?: boolean | null;
   model?: VmNicModel | null;
   nic?: NestedNic | null;
-
   /** @format int32 */
   order?: number | null;
   subnet_mask?: string | null;
@@ -43647,6 +40146,8 @@ export interface VmNic {
 }
 
 export enum VmNicOrderByInput {
+  DpiEnabledASC = "dpi_enabled_ASC",
+  DpiEnabledDESC = "dpi_enabled_DESC",
   EgressRateLimitBurstInBitASC = "egress_rate_limit_burst_in_bit_ASC",
   EgressRateLimitBurstInBitDESC = "egress_rate_limit_burst_in_bit_DESC",
   EgressRateLimitEnabledASC = "egress_rate_limit_enabled_ASC",
@@ -43688,14 +40189,11 @@ export enum VmNicOrderByInput {
 export interface GetVmNicsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmNicOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmNicWhereInput | null;
@@ -43713,14 +40211,11 @@ export interface VmNicConnection {
 export interface GetVmNicsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmNicOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmNicWhereInput | null;
@@ -43738,14 +40233,11 @@ export interface VmPlacementGroupConnection {
 export interface GetVmPlacementGroupsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmPlacementGroupOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmPlacementGroupWhereInput | null;
@@ -43805,14 +40297,11 @@ export enum VmSnapshotOrderByInput {
 export interface GetVmSnapshotsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmSnapshotWhereInput | null;
@@ -43830,14 +40319,11 @@ export interface VmSnapshotConnection {
 export interface GetVmSnapshotsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmSnapshotWhereInput | null;
@@ -43855,14 +40341,11 @@ export interface VmTemplateConnection {
 export interface GetVmTemplatesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmTemplateOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmTemplateWhereInput | null;
@@ -43881,6 +40364,8 @@ export enum VmVolumeSnapshotOrderByInput {
   ElfStoragePolicyEcMDESC = "elf_storage_policy_ec_m_DESC",
   ElfStoragePolicyReplicaNumASC = "elf_storage_policy_replica_num_ASC",
   ElfStoragePolicyReplicaNumDESC = "elf_storage_policy_replica_num_DESC",
+  ElfStoragePolicyStripeNumASC = "elf_storage_policy_stripe_num_ASC",
+  ElfStoragePolicyStripeNumDESC = "elf_storage_policy_stripe_num_DESC",
   ElfStoragePolicyThinProvisionASC = "elf_storage_policy_thin_provision_ASC",
   ElfStoragePolicyThinProvisionDESC = "elf_storage_policy_thin_provision_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -43914,14 +40399,11 @@ export enum VmVolumeSnapshotOrderByInput {
 export interface GetVmVolumeSnapshotsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmVolumeSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmVolumeSnapshotWhereInput | null;
@@ -43939,14 +40421,11 @@ export interface VmVolumeSnapshotConnection {
 export interface GetVmVolumeSnapshotsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmVolumeSnapshotOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmVolumeSnapshotWhereInput | null;
@@ -43964,14 +40443,11 @@ export interface VmVolumeConnection {
 export interface GetVmVolumesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmVolumeOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmVolumeWhereInput | null;
@@ -43989,14 +40465,11 @@ export interface VmConnection {
 export interface GetVmsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VmOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VmWhereInput | null;
@@ -44020,14 +40493,11 @@ export enum VsphereEsxiAccountOrderByInput {
 export interface GetVsphereEsxiAccountsRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VsphereEsxiAccountOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VsphereEsxiAccountWhereInput | null;
@@ -44045,14 +40515,11 @@ export interface VsphereEsxiAccountConnection {
 export interface GetVsphereEsxiAccountsConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: VsphereEsxiAccountOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: VsphereEsxiAccountWhereInput | null;
@@ -44063,7 +40530,6 @@ export interface WitnessService {
   name: string;
   role: string;
   state: string;
-
   /** @format double */
   state_duration: number;
 }
@@ -44079,7 +40545,6 @@ export interface GetWitnessServicesRequestBody {
 
 export interface Witness {
   cluster: NestedCluster;
-
   /** @format int64 */
   cpu_hz_per_core: number;
   data_ip: string;
@@ -44087,19 +40552,14 @@ export interface Witness {
   local_id?: string | null;
   management_ip: string;
   name: string;
-
   /** @format int64 */
   system_data_capacity: number;
-
   /** @format int64 */
   system_used_data_space: number;
-
   /** @format int32 */
   total_cpu_cores: number;
-
   /** @format int64 */
   total_cpu_hz: number;
-
   /** @format int64 */
   total_memory_bytes: number;
 }
@@ -44132,14 +40592,11 @@ export enum WitnessOrderByInput {
 export interface GetWitnessesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: WitnessOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: WitnessWhereInput | null;
@@ -44157,14 +40614,11 @@ export interface WitnessConnection {
 export interface GetWitnessesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: WitnessOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: WitnessWhereInput | null;
@@ -44188,14 +40642,11 @@ export enum ZoneTopoOrderByInput {
 export interface GetZoneTopoesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ZoneTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ZoneTopoWhereInput | null;
@@ -44213,14 +40664,11 @@ export interface ZoneTopoConnection {
 export interface GetZoneTopoesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ZoneTopoOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ZoneTopoWhereInput | null;
@@ -44229,59 +40677,42 @@ export interface GetZoneTopoesConnectionRequestBody {
 export interface Zone {
   cluster: NestedCluster;
   datacenter: NestedDatacenter;
-
   /** @format int64 */
   failure_data_space?: number | null;
-
   /** @format int32 */
   host_num?: number | null;
   hosts?: NestedHost[] | null;
   id: string;
   is_preferred: boolean;
   local_id?: string | null;
-
   /** @format int32 */
   provisioned_cpu_cores?: number | null;
-
   /** @format int32 */
   provisioned_cpu_cores_for_active_vm?: number | null;
-
   /** @format int64 */
   provisioned_data_space?: number | null;
-
   /** @format int64 */
   provisioned_memory_bytes?: number | null;
-
   /** @format int32 */
   running_vm_num?: number | null;
-
   /** @format int32 */
   stopped_vm_num?: number | null;
-
   /** @format int32 */
   suspended_vm_num?: number | null;
-
   /** @format int64 */
   total_cache_capacity?: number | null;
-
   /** @format int32 */
   total_cpu_cores?: number | null;
-
   /** @format int64 */
   total_cpu_hz?: number | null;
-
   /** @format int64 */
   total_data_capacity?: number | null;
-
   /** @format int64 */
   total_memory_bytes?: number | null;
-
   /** @format int64 */
   used_data_space?: number | null;
-
   /** @format int64 */
   valid_data_space?: number | null;
-
   /** @format int32 */
   vm_num?: number | null;
 }
@@ -44332,14 +40763,11 @@ export enum ZoneOrderByInput {
 export interface GetZonesRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ZoneOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ZoneWhereInput | null;
@@ -44357,14 +40785,11 @@ export interface ZoneConnection {
 export interface GetZonesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
-
   /** @format int32 */
   first?: number | null;
-
   /** @format int32 */
   last?: number | null;
   orderBy?: ZoneOrderByInput | null;
-
   /** @format int32 */
   skip?: number | null;
   where?: ZoneWhereInput | null;

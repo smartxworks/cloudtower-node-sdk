@@ -31,7 +31,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    */
   updateGlobalAlertRule = (
     data: GlobalAlertRuleUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalAlertRule[], ErrorBody>({
       path: `/update-global-alert-rule`,
@@ -56,7 +56,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    */
   updateCustomizeAlertRule = (
     data: CustomizeAlertRuleUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalAlertRule[], ErrorBody>({
       path: `/update-customize-alert-rule`,
@@ -81,7 +81,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    */
   getGlobalAlertRules = (
     data: GetGlobalAlertRulesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GlobalAlertRule[], ErrorBody>({
       path: `/get-global-alert-rules`,
@@ -106,7 +106,7 @@ export class GlobalAlertRuleApi<SecurityDataType = unknown> {
    */
   getGlobalAlertRulesConnection = (
     data: GetGlobalAlertRulesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GlobalAlertRuleConnection, ErrorBody>({
       path: `/get-global-alert-rules-connection`,

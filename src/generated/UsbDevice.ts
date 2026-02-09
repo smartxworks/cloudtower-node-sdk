@@ -53,7 +53,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    */
   unmountUsbDevice = (
     data: UsbDeviceUnmountParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskUsbDevice[], ErrorBody>({
       path: `/unmount-usb-device`,
@@ -78,7 +78,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    */
   getUsbDevices = (
     data: GetUsbDevicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UsbDevice[], ErrorBody>({
       path: `/get-usb-devices`,
@@ -103,7 +103,7 @@ export class UsbDeviceApi<SecurityDataType = unknown> {
    */
   getUsbDevicesConnection = (
     data: GetUsbDevicesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UsbDeviceConnection, ErrorBody>({
       path: `/get-usb-devices-connection`,

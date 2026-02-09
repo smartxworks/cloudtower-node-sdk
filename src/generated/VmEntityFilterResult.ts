@@ -28,7 +28,7 @@ export class VmEntityFilterResultApi<SecurityDataType = unknown> {
    */
   getVmEntityFilterResults = (
     data: GetVmEntityFilterResultsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmEntityFilterResult[], ErrorBody>({
       path: `/get-vm-entity-filter-results`,
@@ -53,7 +53,7 @@ export class VmEntityFilterResultApi<SecurityDataType = unknown> {
    */
   getVmEntityFilterResultsConnection = (
     data: GetVmEntityFilterResultsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmEntityFilterResultConnection, ErrorBody>({
       path: `/get-vm-entity-filter-results-connection`,

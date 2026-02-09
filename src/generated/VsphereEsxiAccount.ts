@@ -31,7 +31,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    */
   updateVsphereEsxiAccount = (
     data: UpdateVsphereEsxiAccountParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVsphereEsxiAccountArray[], void | ErrorBody>({
       path: `/update-vsphere-esxi-account`,
@@ -56,7 +56,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    */
   getVsphereEsxiAccounts = (
     data: GetVsphereEsxiAccountsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VsphereEsxiAccount[], ErrorBody>({
       path: `/get-vsphere-esxi-accounts`,
@@ -81,7 +81,7 @@ export class VsphereEsxiAccountApi<SecurityDataType = unknown> {
    */
   getVsphereEsxiAccountsConnection = (
     data: GetVsphereEsxiAccountsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VsphereEsxiAccountConnection, ErrorBody>({
       path: `/get-vsphere-esxi-accounts-connection`,

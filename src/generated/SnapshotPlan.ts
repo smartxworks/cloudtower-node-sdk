@@ -36,7 +36,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   createSnapshotPlan = (
     data: SnapshotPlanCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
       path: `/create-snapshot-plan`,
@@ -61,7 +61,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   updateSnapshotPlan = (
     data: SnapshotPlanUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
       path: `/update-snapshot-plan`,
@@ -86,7 +86,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   deleteSnapshotPlan = (
     data: SnapshotPlanDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSnapshotPlan[], ErrorBody>({
       path: `/delete-snapshot-plan`,
@@ -111,7 +111,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   executeSnapshotPlan = (
     data: SnapshotPlanExecutionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
       path: `/execute-snapshot-plan`,
@@ -136,7 +136,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   suspendSnapshotPlan = (
     data: SnapshotPlanSuspendedParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
       path: `/suspend-snapshot-plan`,
@@ -161,7 +161,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   resumeSnapshotPlan = (
     data: SnapshotPlanResumeParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotPlan[], ErrorBody>({
       path: `/resume-snapshot-plan`,
@@ -186,7 +186,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   getSnapshotPlans = (
     data: GetSnapshotPlansRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotPlan[], ErrorBody>({
       path: `/get-snapshot-plans`,
@@ -211,7 +211,7 @@ export class SnapshotPlanApi<SecurityDataType = unknown> {
    */
   getSnapshotPlansConnection = (
     data: GetSnapshotPlansConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotPlanConnection, ErrorBody>({
       path: `/get-snapshot-plans-connection`,

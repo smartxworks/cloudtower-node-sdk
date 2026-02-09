@@ -33,7 +33,7 @@ export class VirtualPrivateCloudApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloud = (
     data: VirtualPrivateCloudCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloud[], ErrorBody>({
       path: `/create-virtual-private-cloud`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloud = (
     data: VirtualPrivateCloudUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloud[], ErrorBody>({
       path: `/update-virtual-private-cloud`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloud = (
     data: VirtualPrivateCloudDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVirtualPrivateCloud[], ErrorBody>({
       path: `/delete-virtual-private-cloud`,
@@ -108,7 +108,7 @@ export class VirtualPrivateCloudApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateClouds = (
     data: GetVirtualPrivateCloudsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloud[], ErrorBody>({
       path: `/get-virtual-private-clouds`,
@@ -133,7 +133,7 @@ export class VirtualPrivateCloudApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudsConnection = (
     data: GetVirtualPrivateCloudsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudConnection, ErrorBody>({
       path: `/get-virtual-private-clouds-connection`,
