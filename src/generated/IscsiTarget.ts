@@ -33,7 +33,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    */
   createIscsiTarget = (
     data: IscsiTargetCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiTarget[], ErrorBody>({
       path: `/create-iscsi-target`,
@@ -58,7 +58,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    */
   updateIscsiTarget = (
     data: IscsiTargetUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiTarget[], ErrorBody>({
       path: `/update-iscsi-target`,
@@ -83,7 +83,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    */
   deleteIscsiTarget = (
     data: IscsiTargetDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteIscsiTarget[], ErrorBody>({
       path: `/delete-iscsi-target`,
@@ -108,7 +108,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    */
   getIscsiTargets = (
     data: GetIscsiTargetsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiTarget[], ErrorBody>({
       path: `/get-iscsi-targets`,
@@ -133,7 +133,7 @@ export class IscsiTargetApi<SecurityDataType = unknown> {
    */
   getIscsiTargetsConnection = (
     data: GetIscsiTargetsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiTargetConnection, ErrorBody>({
       path: `/get-iscsi-targets-connection`,

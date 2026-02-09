@@ -74,7 +74,7 @@ export class NfsInodeApi<SecurityDataType = unknown> {
    */
   getNfsInodesConnection = (
     data: GetNfsInodesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NfsInodeConnection, ErrorBody>({
       path: `/get-nfs-inodes-connection`,

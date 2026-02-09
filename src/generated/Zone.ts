@@ -50,7 +50,7 @@ export class ZoneApi<SecurityDataType = unknown> {
    */
   getZonesConnection = (
     data: GetZonesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ZoneConnection, ErrorBody>({
       path: `/get-zones-connection`,

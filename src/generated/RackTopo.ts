@@ -33,7 +33,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    */
   createRackTopo = (
     data: RackTopoCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskRackTopo[], ErrorBody>({
       path: `/create-rack-topo`,
@@ -102,7 +102,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    */
   getRackTopoes = (
     data: GetRackTopoesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<RackTopo[], ErrorBody>({
       path: `/get-rack-topoes`,
@@ -127,7 +127,7 @@ export class RackTopoApi<SecurityDataType = unknown> {
    */
   getRackTopoesConnection = (
     data: GetRackTopoesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<RackTopoConnection, ErrorBody>({
       path: `/get-rack-topoes-connection`,

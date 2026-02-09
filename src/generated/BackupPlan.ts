@@ -44,7 +44,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   createBackupPlan = (
     data: BackupPlanCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupPlan[], ErrorBody>({
       path: `/create-backup-plan`,
@@ -69,7 +69,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   updateBackupPlan = (
     data: BackupPlanUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupPlan[], ErrorBody>({
       path: `/update-backup-plan`,
@@ -94,7 +94,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   deleteBackupPlan = (
     data: BackupPlanDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteBackupPlan[], ErrorBody>({
       path: `/delete-backup-plan`,
@@ -119,7 +119,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   suspendBackupPlan = (
     data: BackupPlanSuspendParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupPlan[], ErrorBody>({
       path: `/suspend-backup-plan`,
@@ -144,7 +144,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   resumeBackupPlan = (
     data: BackupPlanResumeParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupPlan[], ErrorBody>({
       path: `/resume-backup-plan`,
@@ -169,7 +169,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   executeBackupPlan = (
     data: BackupPlanExecuteParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupPlanExecution[], ErrorBody>({
       path: `/execute-backup-plan`,
@@ -194,7 +194,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   backupRebuildVm = (
     data: BackupRestorePointRebuildParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupRestoreExecution[], ErrorBody>({
       path: `/backup-rebuild-vm`,
@@ -219,7 +219,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   backupRestoreVmInPlace = (
     data: BackupRestorePointRestoreInPlaceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskBackupRestoreExecution[], ErrorBody>({
       path: `/backup-restore-vm-in-place`,
@@ -244,7 +244,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   deleteBackupRestorePoint = (
     data: BackupRestorePointDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteBackupRestorePointArray[], ErrorBody>({
       path: `/delete-backup-restore-point`,
@@ -269,10 +269,35 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   getBackupRestorePointMetadata = (
     data: GetBackupRestorePointMetadataRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmMetaData, ErrorBody>({
       path: `/get-backup-restore-point-metadata`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags BackupPlan
+   * @name GetBackupPlanWithoutExecutions
+   * @request POST:/get-backup-plans-without-executions
+   * @secure
+   * @response `200` `(BackupPlan)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getBackupPlanWithoutExecutions = (
+    data: GetBackupPlansRequestBody,
+    params: RequestParams = {},
+  ) =>
+    this.http.request<BackupPlan[], ErrorBody>({
+      path: `/get-backup-plans-without-executions`,
       method: "POST",
       body: data,
       secure: true,
@@ -294,7 +319,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   getBackupPlans = (
     data: GetBackupPlansRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupPlan[], ErrorBody>({
       path: `/get-backup-plans`,
@@ -319,7 +344,7 @@ export class BackupPlanApi<SecurityDataType = unknown> {
    */
   getBackupPlansConnection = (
     data: GetBackupPlansConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupPlanConnection, ErrorBody>({
       path: `/get-backup-plans-connection`,

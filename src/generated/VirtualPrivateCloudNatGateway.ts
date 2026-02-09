@@ -33,7 +33,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudNatGateway = (
     data: VirtualPrivateCloudNatGatewayCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudNatGateway[], ErrorBody>({
       path: `/create-virtual-private-cloud-nat-gateway`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudNatGateway = (
     data: VirtualPrivateCloudNatGatewayUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudNatGateway[], ErrorBody>({
       path: `/update-virtual-private-cloud-nat-gateway`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudNatGateway = (
     data: VirtualPrivateCloudNatGatewayDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVirtualPrivateCloudNatGateway[], ErrorBody>(
       {
@@ -94,7 +94,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
         type: ContentType.Json,
         format: "json",
         ...params,
-      }
+      },
     );
   /**
    * No description
@@ -110,7 +110,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudNatGateways = (
     data: GetVirtualPrivateCloudNatGatewaysRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudNatGateway[], ErrorBody>({
       path: `/get-virtual-private-cloud-nat-gateways`,
@@ -135,7 +135,7 @@ export class VirtualPrivateCloudNatGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudNatGatewaysConnection = (
     data: GetVirtualPrivateCloudNatGatewaysConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudNatGatewayConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-nat-gateways-connection`,

@@ -32,7 +32,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    */
   createVmVolumeSnapshot = (
     data: VmVolumeSnapshotCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmVolumeSnapshot[], ErrorBody>({
       path: `/create-vm-volume-snapshot`,
@@ -57,7 +57,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    */
   deleteVmVolumeSnapshot = (
     data: VmVolumeSnapshotDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVmVolumeSnapshot[], ErrorBody>({
       path: `/delete-vm-volume-snapshot`,
@@ -82,7 +82,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    */
   getVmVolumeSnapshots = (
     data: GetVmVolumeSnapshotsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmVolumeSnapshot[], ErrorBody>({
       path: `/get-vm-volume-snapshots`,
@@ -107,7 +107,7 @@ export class VmVolumeSnapshotApi<SecurityDataType = unknown> {
    */
   getVmVolumeSnapshotsConnection = (
     data: GetVmVolumeSnapshotsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmVolumeSnapshotConnection, ErrorBody>({
       path: `/get-vm-volume-snapshots-connection`,

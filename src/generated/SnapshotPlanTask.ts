@@ -28,7 +28,7 @@ export class SnapshotPlanTaskApi<SecurityDataType = unknown> {
    */
   getSnapshotPlanTasks = (
     data: GetSnapshotPlanTasksRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotPlanTask[], ErrorBody>({
       path: `/get-snapshot-plan-tasks`,
@@ -53,7 +53,7 @@ export class SnapshotPlanTaskApi<SecurityDataType = unknown> {
    */
   getSnapshotPlanTasksConnection = (
     data: GetSnapshotPlanTasksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotPlanTaskConnection, ErrorBody>({
       path: `/get-snapshot-plan-tasks-connection`,

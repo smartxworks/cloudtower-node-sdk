@@ -31,7 +31,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    */
   createVcenterAccount = (
     data: CreateVcenterAccountParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVcenterAccount, ErrorBody>({
       path: `/create-vcenter-account`,
@@ -56,7 +56,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    */
   updateVcenterAccount = (
     data: UpdateVcenterAccountParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVcenterAccount, ErrorBody>({
       path: `/update-vcenter-account`,
@@ -81,7 +81,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    */
   getVcenterAccounts = (
     data: GetVcenterAccountsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VcenterAccount[], ErrorBody>({
       path: `/get-vcenter-accounts`,
@@ -106,7 +106,7 @@ export class VcenterAccountApi<SecurityDataType = unknown> {
    */
   getVcenterAccountsConnection = (
     data: GetVcenterAccountsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VcenterAccountConnection, ErrorBody>({
       path: `/get-vcenter-accounts-connection`,

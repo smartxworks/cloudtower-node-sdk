@@ -33,7 +33,7 @@ export class VirtualPrivateCloudSecurityPolicyApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudSecurityPolicy = (
     data: VirtualPrivateCloudSecurityPolicyCreateParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSecurityPolicy[], ErrorBody>({
       path: `/create-virtual-private-cloud-security-policy`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudSecurityPolicyApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudSecurityPolicy = (
     data: VirtualPrivateCloudSecurityPolicyDeleteParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskDeleteVirtualPrivateCloudSecurityPolicy[],
@@ -86,7 +86,7 @@ export class VirtualPrivateCloudSecurityPolicyApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudSecurityPolicy = (
     data: VirtualPrivateCloudSecurityPolicyUpdateBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSecurityPolicy[], ErrorBody>({
       path: `/update-virtual-private-cloud-security-policy`,
@@ -111,7 +111,7 @@ export class VirtualPrivateCloudSecurityPolicyApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSecurityPolicies = (
     data: GetVirtualPrivateCloudSecurityPoliciesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSecurityPolicy[], ErrorBody>({
       path: `/get-virtual-private-cloud-security-policies`,
@@ -136,7 +136,7 @@ export class VirtualPrivateCloudSecurityPolicyApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSecurityPoliciesConnection = (
     data: GetVirtualPrivateCloudSecurityPoliciesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSecurityPolicyConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-security-policies-connection`,

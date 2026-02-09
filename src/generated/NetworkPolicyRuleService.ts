@@ -33,7 +33,7 @@ export class NetworkPolicyRuleServiceApi<SecurityDataType = unknown> {
    */
   createNetworkPolicyRuleService = (
     data: NetworkPolicyRuleServiceCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNetworkPolicyRuleService[], ErrorBody>({
       path: `/create-network-policy-rule-service`,
@@ -58,7 +58,7 @@ export class NetworkPolicyRuleServiceApi<SecurityDataType = unknown> {
    */
   updateNetworkPolicyRuleService = (
     data: NetworkPolicyRuleServiceUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNetworkPolicyRuleService[], ErrorBody>({
       path: `/update-network-policy-rule-service`,
@@ -83,7 +83,7 @@ export class NetworkPolicyRuleServiceApi<SecurityDataType = unknown> {
    */
   deleteNetworkPolicyRuleService = (
     data: NetworkPolicyRuleServiceDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNetworkPolicyRuleService[], ErrorBody>({
       path: `/delete-network-policy-rule-service`,
@@ -108,7 +108,7 @@ export class NetworkPolicyRuleServiceApi<SecurityDataType = unknown> {
    */
   getNetworkPolicyRuleServices = (
     data: GetNetworkPolicyRuleServicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NetworkPolicyRuleService[], ErrorBody>({
       path: `/get-network-policy-rule-services`,
@@ -133,7 +133,7 @@ export class NetworkPolicyRuleServiceApi<SecurityDataType = unknown> {
    */
   getNetworkPolicyRuleServicesConnection = (
     data: GetNetworkPolicyRuleServicesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NetworkPolicyRuleServiceConnection, ErrorBody>({
       path: `/get-network-policy-rule-services-connection`,

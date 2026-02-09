@@ -33,7 +33,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudRouteTable = (
     data: VirtualPrivateCloudRouteTableCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudRouteTable[], ErrorBody>({
       path: `/create-virtual-private-cloud-route-table`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudRouteTable = (
     data: VirtualPrivateCloudRouteTableUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudRouteTable[], ErrorBody>({
       path: `/update-virtual-private-cloud-route-table`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudRouteTable = (
     data: VirtualPrivateCloudRouteTableDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVirtualPrivateCloudRouteTable[], ErrorBody>(
       {
@@ -94,7 +94,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
         type: ContentType.Json,
         format: "json",
         ...params,
-      }
+      },
     );
   /**
    * No description
@@ -110,7 +110,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudRouteTables = (
     data: GetVirtualPrivateCloudRouteTablesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudRouteTable[], ErrorBody>({
       path: `/get-virtual-private-cloud-route-tables`,
@@ -135,7 +135,7 @@ export class VirtualPrivateCloudRouteTableApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudRouteTablesConnection = (
     data: GetVirtualPrivateCloudRouteTablesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudRouteTableConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-route-tables-connection`,

@@ -33,7 +33,7 @@ export class SecurityGroupApi<SecurityDataType = unknown> {
    */
   createSecurityGroup = (
     data: SecurityGroupCreateParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSecurityGroup, ErrorBody>({
       path: `/create-security-group`,
@@ -58,7 +58,7 @@ export class SecurityGroupApi<SecurityDataType = unknown> {
    */
   deleteSecurityGroup = (
     data: SecurityGroupDeleteParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSecurityGroup[], ErrorBody>({
       path: `/delete-security-group`,
@@ -83,7 +83,7 @@ export class SecurityGroupApi<SecurityDataType = unknown> {
    */
   updateSecurityGroup = (
     data: SecurityGroupUpdateBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSecurityGroup[], ErrorBody>({
       path: `/update-security-group`,
@@ -108,7 +108,7 @@ export class SecurityGroupApi<SecurityDataType = unknown> {
    */
   getSecurityGroups = (
     data: GetSecurityGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SecurityGroup[], ErrorBody>({
       path: `/get-security-groups`,
@@ -133,7 +133,7 @@ export class SecurityGroupApi<SecurityDataType = unknown> {
    */
   getSecurityGroupsConnection = (
     data: GetSecurityGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SecurityGroupConnection, ErrorBody>({
       path: `/get-security-groups-connection`,

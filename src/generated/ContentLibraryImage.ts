@@ -36,6 +36,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   createContentLibraryImage = (
     data: {
+      /** @format binary */
       file: File;
       clusters: string;
       name?: string;
@@ -44,7 +45,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
       description?: string;
       upload_task_id?: string;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask[], void | ErrorBody>({
       path: `/upload-content-library-image`,
@@ -69,7 +70,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   updateContentLibraryImage = (
     data: ContentLibraryImageUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryImage[], ErrorBody>({
       path: `/update-content-library-image`,
@@ -94,7 +95,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   distributeContentLibraryImageClusters = (
     data: ContentLibraryImageUpdationClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryImage[], ErrorBody>({
       path: `/distribute-content-library-image-clusters`,
@@ -119,7 +120,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   removeContentLibraryImageClusters = (
     data: ContentLibraryImageUpdationClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryImage[], ErrorBody>({
       path: `/remove-content-library-image-clusters`,
@@ -144,7 +145,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   deleteContentLibraryImage = (
     data: ContentLibraryImageDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteContentLibraryImage[], ErrorBody>({
       path: `/delete-content-library-image`,
@@ -169,7 +170,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   importContentLibraryImage = (
     data: ContentLibraryImageImportParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask, ErrorBody>({
       path: `/import-content-library-image`,
@@ -194,7 +195,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   getContentLibraryImages = (
     data: GetContentLibraryImagesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ContentLibraryImage[], ErrorBody>({
       path: `/get-content-library-images`,
@@ -219,7 +220,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    */
   getContentLibraryImagesConnection = (
     data: GetContentLibraryImagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ContentLibraryImageConnection, ErrorBody>({
       path: `/get-content-library-images-connection`,

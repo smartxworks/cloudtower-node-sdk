@@ -1,13 +1,13 @@
 import {
-  BusinessHostGroup,
-  BusinessHostGroupConnection,
   ErrorBody,
-  GetBusinessHostGroupsConnectionRequestBody,
-  GetBusinessHostGroupsRequestBody,
+  GetRegistryServicesConnectionRequestBody,
+  GetRegistryServicesRequestBody,
+  RegistryService,
+  RegistryServiceConnection,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
-export class BusinessHostGroupApi<SecurityDataType = unknown> {
+export class RegistryServiceApi<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;
 
   constructor(http: HttpClient<SecurityDataType>) {
@@ -17,21 +17,21 @@ export class BusinessHostGroupApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags BusinessHostGroup
-   * @name GetBusinessHostGroups
-   * @request POST:/get-business-host-groups
+   * @tags RegistryService
+   * @name GetRegistryServices
+   * @request POST:/get-registry-services
    * @secure
-   * @response `200` `(BusinessHostGroup)[]`
+   * @response `200` `(RegistryService)[]`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  getBusinessHostGroups = (
-    data: GetBusinessHostGroupsRequestBody,
+  getRegistryServices = (
+    data: GetRegistryServicesRequestBody,
     params: RequestParams = {},
   ) =>
-    this.http.request<BusinessHostGroup[], ErrorBody>({
-      path: `/get-business-host-groups`,
+    this.http.request<RegistryService[], ErrorBody>({
+      path: `/get-registry-services`,
       method: "POST",
       body: data,
       secure: true,
@@ -42,21 +42,21 @@ export class BusinessHostGroupApi<SecurityDataType = unknown> {
   /**
    * No description
    *
-   * @tags BusinessHostGroup
-   * @name GetBusinessHostGroupsConnection
-   * @request POST:/get-business-host-groups-connection
+   * @tags RegistryService
+   * @name GetRegistryServicesConnection
+   * @request POST:/get-registry-services-connection
    * @secure
-   * @response `200` `BusinessHostGroupConnection`
+   * @response `200` `RegistryServiceConnection`
    * @response `400` `ErrorBody` Bad request
    * @response `404` `ErrorBody` Not found
    * @response `500` `ErrorBody` Server error
    */
-  getBusinessHostGroupsConnection = (
-    data: GetBusinessHostGroupsConnectionRequestBody,
+  getRegistryServicesConnection = (
+    data: GetRegistryServicesConnectionRequestBody,
     params: RequestParams = {},
   ) =>
-    this.http.request<BusinessHostGroupConnection, ErrorBody>({
-      path: `/get-business-host-groups-connection`,
+    this.http.request<RegistryServiceConnection, ErrorBody>({
+      path: `/get-registry-services-connection`,
       method: "POST",
       body: data,
       secure: true,

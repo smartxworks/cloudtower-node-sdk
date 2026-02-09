@@ -28,7 +28,7 @@ export class ClusterSettingsApi<SecurityDataType = unknown> {
    */
   getClusterSettingses = (
     data: GetClusterSettingsesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterSettings[], ErrorBody>({
       path: `/get-cluster-settingses`,
@@ -53,7 +53,7 @@ export class ClusterSettingsApi<SecurityDataType = unknown> {
    */
   getClusterSettingsesConnection = (
     data: GetClusterSettingsesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterSettingsConnection, ErrorBody>({
       path: `/get-cluster-settingses-connection`,

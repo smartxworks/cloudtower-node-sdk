@@ -1,7 +1,7 @@
 {
   "name": "cloudtower-node-sdk",
-  "version": "2.21.0",
-  "description": "cloudtower operation api",
+  "version": "2.22.0",
+  "description": "CloudTower Node.js SDK in TypeScript",
   "main": "lib/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smartxwork/cloudtower-node-sdk.git"
+    "url": "git+https://github.com/smartxworks/cloudtower-node-sdk.git"
   },
   "files": ["lib", "typings"],
-  "keywords": ["swagger", "codegen", "cloudtower", "typescript", "nodejs"],
+  "keywords": ["swagger", "codegen", "typescript", "nodejs"],
   "author": "",
   "license": "ISC",
   "bugs": {

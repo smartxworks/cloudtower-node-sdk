@@ -33,7 +33,7 @@ export class VirtualPrivateCloudSecurityGroupApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudSecurityGroup = (
     data: VirtualPrivateCloudSecurityGroupCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSecurityGroup[], ErrorBody>({
       path: `/create-virtual-private-cloud-security-group`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudSecurityGroupApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudSecurityGroup = (
     data: VirtualPrivateCloudSecurityGroupUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSecurityGroup[], ErrorBody>({
       path: `/update-virtual-private-cloud-security-group`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudSecurityGroupApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudSecurityGroup = (
     data: VirtualPrivateCloudSecurityGroupDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskDeleteVirtualPrivateCloudSecurityGroup[],
@@ -111,7 +111,7 @@ export class VirtualPrivateCloudSecurityGroupApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSecurityGroups = (
     data: GetVirtualPrivateCloudSecurityGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSecurityGroup[], ErrorBody>({
       path: `/get-virtual-private-cloud-security-groups`,
@@ -136,7 +136,7 @@ export class VirtualPrivateCloudSecurityGroupApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSecurityGroupsConnection = (
     data: GetVirtualPrivateCloudSecurityGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSecurityGroupConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-security-groups-connection`,

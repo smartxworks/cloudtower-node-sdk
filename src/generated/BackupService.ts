@@ -28,7 +28,7 @@ export class BackupServiceApi<SecurityDataType = unknown> {
    */
   getBackupServices = (
     data: GetBackupServicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupService[], ErrorBody>({
       path: `/get-backup-services`,
@@ -53,7 +53,7 @@ export class BackupServiceApi<SecurityDataType = unknown> {
    */
   getBackupServicesConnection = (
     data: GetBackupServicesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupServiceConnection, ErrorBody>({
       path: `/get-backup-services-connection`,

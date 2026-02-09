@@ -26,7 +26,7 @@ export class DiscoveredHostApi<SecurityDataType = unknown> {
    */
   getDiscoverHosts = (
     data: GetDiscoverHostsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DiscoveredHost[], ErrorBody>({
       path: `/get-discover-hosts`,

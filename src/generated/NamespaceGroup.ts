@@ -33,7 +33,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    */
   createNamespaceGroup = (
     data: NamespaceGroupCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
       path: `/create-namespace-group`,
@@ -58,7 +58,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    */
   updateNamespaceGroup = (
     data: NamespaceGroupUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNamespaceGroup[], ErrorBody>({
       path: `/update-namespace-group`,
@@ -83,7 +83,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    */
   deleteNamespaceGroup = (
     data: NamespaceGroupDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNamespaceGroup[], ErrorBody>({
       path: `/delete-namespace-group`,
@@ -108,7 +108,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    */
   getNamespaceGroups = (
     data: GetNamespaceGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NamespaceGroup[], ErrorBody>({
       path: `/get-namespace-groups`,
@@ -133,7 +133,7 @@ export class NamespaceGroupApi<SecurityDataType = unknown> {
    */
   getNamespaceGroupsConnection = (
     data: GetNamespaceGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NamespaceGroupConnection, ErrorBody>({
       path: `/get-namespace-groups-connection`,

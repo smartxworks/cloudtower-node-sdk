@@ -50,7 +50,7 @@ export class VmDiskApi<SecurityDataType = unknown> {
    */
   getVmDisksConnection = (
     data: GetVmDisksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmDiskConnection, ErrorBody>({
       path: `/get-vm-disks-connection`,

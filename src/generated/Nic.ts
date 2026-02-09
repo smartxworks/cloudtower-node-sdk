@@ -74,7 +74,7 @@ export class NicApi<SecurityDataType = unknown> {
    */
   getNicsConnection = (
     data: GetNicsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NicConnection, ErrorBody>({
       path: `/get-nics-connection`,

@@ -28,7 +28,7 @@ export class SmtpServerApi<SecurityDataType = unknown> {
    */
   getSmtpServers = (
     data: GetSmtpServersRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SmtpServer[], ErrorBody>({
       path: `/get-smtp-servers`,
@@ -53,7 +53,7 @@ export class SmtpServerApi<SecurityDataType = unknown> {
    */
   getSmtpServersConnection = (
     data: GetSmtpServersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SmtpServerConnection, ErrorBody>({
       path: `/get-smtp-servers-connection`,

@@ -64,7 +64,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getVmNetWorkMetrics = (
     data: GetVmNetWorkMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-vm-network-metrics`,
@@ -111,7 +111,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getVmVolumeMetrics = (
     data: GetVmVolumeMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-vm-volume-metrics`,
@@ -158,7 +158,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getNvmfNamespaceMetrics = (
     data: GetNvmfNamespaceMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-nvmf-namespace-metrics`,
@@ -183,7 +183,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getClusterMetrics = (
     data: GetClusterMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-cluster-metrics`,
@@ -230,7 +230,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getHostNetworkMetrics = (
     data: GetHostNetworkMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-host-network-metrics`,
@@ -255,7 +255,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getHostServicekMetrics = (
     data: GetHostServiceMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-host-service-metrics`,
@@ -302,7 +302,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getScvmNetworkMetrics = (
     data: GetScvmNetworkInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-scvm-network-metrics`,
@@ -327,7 +327,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getScvmServicekMetrics = (
     data: GetScvmServiceMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-scvm-service-metrics`,
@@ -352,7 +352,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getScvmDiskMetrics = (
     data: GetSCVMDiskMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-scvm-disk-metrics`,
@@ -399,7 +399,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getWitnessMetrics = (
     data: GetWitnessMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-witness-metrics`,
@@ -424,7 +424,7 @@ export class MetricsApi<SecurityDataType = unknown> {
    */
   getTopNVmVolumeMetrics = (
     data: GetTopNMetricInput,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskMetric[], ErrorBody>({
       path: `/get-top-n-metrics-in-clusters`,

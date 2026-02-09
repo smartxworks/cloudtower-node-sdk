@@ -34,13 +34,14 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   uploadCloudTowerApplicationPackage = (
     data: {
+      /** @format binary */
       file: File;
       name?: string;
       size?: string;
       size_unit?: string;
       upload_task_id?: string;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask[], ErrorBody>({
       path: `/upload-cloudtower-application-package`,
@@ -65,7 +66,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   deleteCloudTowerApplicationPackage = (
     data: DeleteCloudTowerApplicationPackageParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DeleteCloudTowerApplicationPackage[], ErrorBody>({
       path: `/delete-cloudtower-application-package`,
@@ -90,7 +91,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   deployCloudTowerApplication = (
     data: DeployCloudTowerApplicationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplication, ErrorBody>({
       path: `/deploy-cloudtower-application`,
@@ -115,7 +116,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   upgradeCloudTowerApplication = (
     data: UpgradeCloudTowerApplicationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplication, ErrorBody>({
       path: `/upgrade-cloudtower-application`,
@@ -140,7 +141,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   uninstallCloudTowerApplication = (
     data: UninstallCloudTowerApplicationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplication[], ErrorBody>({
       path: `/uninstall-cloudtower-application`,
@@ -165,7 +166,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   getCloudTowerApplications = (
     data: GetCloudTowerApplicationsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplication[], ErrorBody>({
       path: `/get-cloudtower-applications`,
@@ -190,7 +191,7 @@ export class CloudTowerApplicationApi<SecurityDataType = unknown> {
    */
   getCloudTowerApplicationsConnection = (
     data: GetCloudTowerApplicationsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplicationConnection, ErrorBody>({
       path: `/get-cloud-tower-applications-connection`,

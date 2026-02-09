@@ -26,7 +26,7 @@ export class ObservabilityApi<SecurityDataType = unknown> {
    */
   disassociateSystemServiceFromObsService = (
     data: DisassociateSystemServiceFromObsServiceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskDisassociateSystemServiceFromObsServiceResult,
@@ -54,7 +54,7 @@ export class ObservabilityApi<SecurityDataType = unknown> {
    */
   clearSystemServiceAlertNotificationConfig = (
     data: DisassociateSystemServiceFromObsServiceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskDisassociateSystemServiceFromObsServiceResult,

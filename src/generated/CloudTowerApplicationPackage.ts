@@ -28,7 +28,7 @@ export class CloudTowerApplicationPackageApi<SecurityDataType = unknown> {
    */
   getCloudTowerApplicationPackages = (
     data: GetCloudTowerApplicationPackagesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplicationPackage[], ErrorBody>({
       path: `/get-cloudtower-application-packages`,
@@ -53,7 +53,7 @@ export class CloudTowerApplicationPackageApi<SecurityDataType = unknown> {
    */
   getCloudTowerApplicationPackagesConnection = (
     data: GetCloudTowerApplicationPackagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<CloudTowerApplicationPackageConnection, ErrorBody>({
       path: `/get-cloud-tower-application-packages-connection`,

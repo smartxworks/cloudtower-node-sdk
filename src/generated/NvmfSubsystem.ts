@@ -33,7 +33,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    */
   createNvmfSubsystem = (
     data: NvmfSubsystemCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
       path: `/create-nvmf-subsystem`,
@@ -58,7 +58,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    */
   updateNvmfSubsystem = (
     data: NvmfSubsystemUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfSubsystem[], ErrorBody>({
       path: `/update-nvmf-subsystem`,
@@ -83,7 +83,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    */
   deleteNvmfSubsystem = (
     data: NvmfSubsystemDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNvmfSubsystem[], ErrorBody>({
       path: `/delete-nvmf-subsystem`,
@@ -108,7 +108,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    */
   getNvmfSubsystems = (
     data: GetNvmfSubsystemsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfSubsystem[], ErrorBody>({
       path: `/get-nvmf-subsystems`,
@@ -133,7 +133,7 @@ export class NvmfSubsystemApi<SecurityDataType = unknown> {
    */
   getNvmfSubsystemsConnection = (
     data: GetNvmfSubsystemsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfSubsystemConnection, ErrorBody>({
       path: `/get-nvmf-subsystems-connection`,

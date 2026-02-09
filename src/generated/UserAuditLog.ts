@@ -30,7 +30,7 @@ export class UserAuditLogApi<SecurityDataType = unknown> {
    */
   createUserAuditLog = (
     data: UserAuditLogCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskUserAuditLog[], ErrorBody>({
       path: `/create-user-audit-log`,
@@ -55,7 +55,7 @@ export class UserAuditLogApi<SecurityDataType = unknown> {
    */
   getUserAuditLogs = (
     data: GetUserAuditLogsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UserAuditLog[], ErrorBody>({
       path: `/get-user-audit-logs`,
@@ -80,7 +80,7 @@ export class UserAuditLogApi<SecurityDataType = unknown> {
    */
   getUserAuditLogsConnection = (
     data: GetUserAuditLogsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UserAuditLogConnection, ErrorBody>({
       path: `/get-user-audit-logs-connection`,

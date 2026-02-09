@@ -97,7 +97,7 @@ export class DiskApi<SecurityDataType = unknown> {
    */
   getDisksConnection = (
     data: GetDisksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DiskConnection, ErrorBody>({
       path: `/get-disks-connection`,

@@ -36,7 +36,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    */
   createIscsiLun = (
     data: IscsiLunCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiLun[], ErrorBody>({
       path: `/create-iscsi-lun`,
@@ -105,7 +105,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    */
   cloneIscsiLunFromSnapshot = (
     data: IscsiLunCloneParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiLun[], ErrorBody>({
       path: `/clone-iscsi-lun-from-snapshot`,
@@ -130,7 +130,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    */
   rollbackIscsiLunFromSnapshot = (
     data: IscsiLunRollbackParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiLun[], ErrorBody>({
       path: `/rollback-iscsi-lun-from-snapshot`,
@@ -199,7 +199,7 @@ export class IscsiLunApi<SecurityDataType = unknown> {
    */
   getIscsiLunsConnection = (
     data: GetIscsiLunsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiLunConnection, ErrorBody>({
       path: `/get-iscsi-luns-connection`,

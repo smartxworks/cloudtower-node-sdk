@@ -74,7 +74,7 @@ export class AlertApi<SecurityDataType = unknown> {
    */
   getAlertsConnection = (
     data: GetAlertsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<AlertConnection, ErrorBody>({
       path: `/get-alerts-connection`,

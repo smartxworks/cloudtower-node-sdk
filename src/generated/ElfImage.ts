@@ -33,6 +33,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    */
   createElfImage = (
     data: {
+      /** @format binary */
       file: File;
       cluster_id?: string;
       name?: string;
@@ -41,7 +42,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
       description?: string;
       upload_task_id?: string;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask[], ErrorBody>({
       path: `/upload-elf-image`,
@@ -132,7 +133,7 @@ export class ElfImageApi<SecurityDataType = unknown> {
    */
   getElfImagesConnection = (
     data: GetElfImagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ElfImageConnection, ErrorBody>({
       path: `/get-elf-images-connection`,

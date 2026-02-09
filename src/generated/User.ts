@@ -184,7 +184,7 @@ export class UserApi<SecurityDataType = unknown> {
    */
   getUsersConnection = (
     data: GetUsersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UserConnection, ErrorBody>({
       path: `/get-users-connection`,
