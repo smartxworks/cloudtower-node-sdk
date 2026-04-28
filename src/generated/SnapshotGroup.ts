@@ -34,7 +34,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   rollbackSnapshotGroup = (
     data: SnapshotGroupRollbackParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
       path: `/rollback-snapshot-group`,
@@ -59,7 +59,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   cloneSnapshotGroup = (
     data: SnapshotGroupCloneParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
       path: `/clone-snapshot-group`,
@@ -84,7 +84,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   keepSnapshotGroup = (
     data: SnapshotGroupKeepParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnapshotGroup[], ErrorBody>({
       path: `/keep-snapshot-group`,
@@ -109,7 +109,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   deleteSnapshotGroup = (
     data: SnapshotGroupDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSnapshotGroup[], ErrorBody>({
       path: `/delete-snapshot-group`,
@@ -134,7 +134,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   getSnapshotGroups = (
     data: GetSnapshotGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotGroup[], ErrorBody>({
       path: `/get-snapshot-groups`,
@@ -159,7 +159,7 @@ export class SnapshotGroupApi<SecurityDataType = unknown> {
    */
   getSnapshotGroupsConnection = (
     data: GetSnapshotGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnapshotGroupConnection, ErrorBody>({
       path: `/get-snapshot-groups-connection`,

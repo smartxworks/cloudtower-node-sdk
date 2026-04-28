@@ -28,7 +28,7 @@ export class ZoneTopoApi<SecurityDataType = unknown> {
    */
   getZoneTopoes = (
     data: GetZoneTopoesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ZoneTopo[], ErrorBody>({
       path: `/get-zone-topoes`,
@@ -53,7 +53,7 @@ export class ZoneTopoApi<SecurityDataType = unknown> {
    */
   getZoneTopoesConnection = (
     data: GetZoneTopoesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ZoneTopoConnection, ErrorBody>({
       path: `/get-zone-topoes-connection`,

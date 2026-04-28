@@ -33,7 +33,7 @@ export class VirtualPrivateCloudSubnetApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudSubnet = (
     data: VirtualPrivateCloudSubnetCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSubnet[], ErrorBody>({
       path: `/create-virtual-private-cloud-subnet`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudSubnetApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudSubnet = (
     data: VirtualPrivateCloudSubnetUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudSubnet[], ErrorBody>({
       path: `/update-virtual-private-cloud-subnet`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudSubnetApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudSubnet = (
     data: VirtualPrivateCloudSubnetDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVirtualPrivateCloudSubnet[], ErrorBody>({
       path: `/delete-virtual-private-cloud-subnet`,
@@ -108,7 +108,7 @@ export class VirtualPrivateCloudSubnetApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSubnets = (
     data: GetVirtualPrivateCloudSubnetsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSubnet[], ErrorBody>({
       path: `/get-virtual-private-cloud-subnets`,
@@ -133,7 +133,7 @@ export class VirtualPrivateCloudSubnetApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudSubnetsConnection = (
     data: GetVirtualPrivateCloudSubnetsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudSubnetConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-subnets-connection`,

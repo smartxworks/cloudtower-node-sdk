@@ -28,7 +28,7 @@ export class BackupStoreRepositoryApi<SecurityDataType = unknown> {
    */
   getBackupStoreRepositories = (
     data: GetBackupStoreRepositoriesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupStoreRepository[], ErrorBody>({
       path: `/get-backup-store-repositories`,
@@ -53,7 +53,7 @@ export class BackupStoreRepositoryApi<SecurityDataType = unknown> {
    */
   getBackupStoreRepositoriesConnection = (
     data: GetBackupStoreRepositoriesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupStoreRepositoryConnection, ErrorBody>({
       path: `/get-backup-store-repositories-connection`,

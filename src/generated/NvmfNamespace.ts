@@ -35,7 +35,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   createNvmfNamespace = (
     data: NvmfNamespaceCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
       path: `/create-nvmf-namespace`,
@@ -60,7 +60,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   updateNvmfNamespace = (
     data: NvmfNamespaceUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
       path: `/update-nvmf-namespace`,
@@ -85,7 +85,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   deleteNvmfNamespace = (
     data: NvmfNamespaceDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNvmfNamespace[], ErrorBody>({
       path: `/delete-nvmf-namespace`,
@@ -110,7 +110,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   cloneNvmfNamespaceFromSnapshot = (
     data: NvmfNamespaceCloneParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
       path: `/clone-nvmf-namespace-from-snapshot`,
@@ -135,7 +135,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   rollbackNvmfNamespaceFromSnapshot = (
     data: NvmfNamespaceRollbackParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfNamespace[], ErrorBody>({
       path: `/rollback-nvmf-namespace-from-snapshot`,
@@ -160,7 +160,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   getNvmfNamespaces = (
     data: GetNvmfNamespacesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfNamespace[], ErrorBody>({
       path: `/get-nvmf-namespaces`,
@@ -185,7 +185,7 @@ export class NvmfNamespaceApi<SecurityDataType = unknown> {
    */
   getNvmfNamespacesConnection = (
     data: GetNvmfNamespacesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfNamespaceConnection, ErrorBody>({
       path: `/get-nvmf-namespaces-connection`,

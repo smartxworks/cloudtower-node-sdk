@@ -99,7 +99,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    */
   getUserRoleNexts = (
     data: GetUserRoleNextsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UserRoleNext[], ErrorBody>({
       path: `/get-user-role-nexts`,
@@ -124,7 +124,7 @@ export class UserRoleNextApi<SecurityDataType = unknown> {
    */
   getUserRoleNextsConnection = (
     data: GetUserRoleNextsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UserRoleNextConnection, ErrorBody>({
       path: `/get-user-role-nexts-connection`,

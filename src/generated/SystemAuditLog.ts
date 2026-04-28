@@ -28,7 +28,7 @@ export class SystemAuditLogApi<SecurityDataType = unknown> {
    */
   getSystemAuditLogs = (
     data: GetSystemAuditLogsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SystemAuditLog[], ErrorBody>({
       path: `/get-system-audit-logs`,
@@ -53,7 +53,7 @@ export class SystemAuditLogApi<SecurityDataType = unknown> {
    */
   getSystemAuditLogsConnection = (
     data: GetSystemAuditLogsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SystemAuditLogConnection, ErrorBody>({
       path: `/get-system-audit-logs-connection`,

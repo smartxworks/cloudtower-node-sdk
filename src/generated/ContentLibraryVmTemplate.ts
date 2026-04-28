@@ -37,7 +37,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   cloneContentLibraryVmTemplateFromVm = (
     data: ContentLibraryVmTemplateCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/clone-content-library-vm-template-from-vm`,
@@ -62,7 +62,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   convertContentLibraryVmTemplateFromVm = (
     data: ContentLibraryVmTemplateCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/convert-content-library-vm-template-from-vm`,
@@ -87,7 +87,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   updateContentLibraryVmTemplate = (
     data: ContentLibraryVmTemplateUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/update-content-library-vm-template`,
@@ -112,7 +112,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   distributeContentLibraryVmtemplateClusters = (
     data: ContentLibraryVmTemplateUpdationClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/distribute-content-library-vm-template-clusters`,
@@ -137,7 +137,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   removeContentLibraryVmTemplateClusters = (
     data: ContentLibraryVmTemplateUpdationClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/remove-content-library-vm-template-clusters`,
@@ -162,7 +162,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   deleteContentLibraryVmTemplate = (
     data: ContentLibraryVmTemplateDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteContentLibraryVmTemplate[], ErrorBody>({
       path: `/delete-content-library-vm-template`,
@@ -187,7 +187,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   exportContentLibraryVmTemplate = (
     data: ContentLibraryVmTemplateExportParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmExportFile[], ErrorBody>({
       path: `/export-content-library-vm-template`,
@@ -212,7 +212,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   importContentLibraryVmTemplate = (
     data: ContentLibraryVmTemplateImportParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskContentLibraryVmTemplate[], ErrorBody>({
       path: `/import-content-library-vm-template`,
@@ -237,7 +237,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   getContentLibraryVmTemplates = (
     data: GetContentLibraryVmTemplatesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ContentLibraryVmTemplate[], ErrorBody>({
       path: `/get-content-library-vm-templates`,
@@ -262,7 +262,7 @@ export class ContentLibraryVmTemplateApi<SecurityDataType = unknown> {
    */
   getContentLibraryVmTemplatesConnection = (
     data: GetContentLibraryVmTemplatesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ContentLibraryVmTemplateConnection, ErrorBody>({
       path: `/get-content-library-vm-templates-connection`,

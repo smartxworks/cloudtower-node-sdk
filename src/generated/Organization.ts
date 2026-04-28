@@ -33,7 +33,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    */
   createOrganization = (
     data: OrganizationCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskOrganization[], ErrorBody>({
       path: `/create-organization`,
@@ -58,7 +58,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    */
   updateOrganization = (
     data: OrganizationUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskOrganization[], ErrorBody>({
       path: `/update-organization`,
@@ -83,7 +83,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    */
   deleteOrganization = (
     data: OrganizationDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteOrganization[], ErrorBody>({
       path: `/delete-organization`,
@@ -108,7 +108,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    */
   getOrganizations = (
     data: GetOrganizationsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<Organization[], ErrorBody>({
       path: `/get-organizations`,
@@ -133,7 +133,7 @@ export class OrganizationApi<SecurityDataType = unknown> {
    */
   getOrganizationsConnection = (
     data: GetOrganizationsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<OrganizationConnection, ErrorBody>({
       path: `/get-organizations-connection`,

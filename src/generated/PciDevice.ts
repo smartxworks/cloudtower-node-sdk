@@ -26,7 +26,7 @@ export class PciDeviceApi<SecurityDataType = unknown> {
    */
   getPciDevices = (
     data: GetPciDevicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<PciDevice[], ErrorBody>({
       path: `/get-pci-devices`,

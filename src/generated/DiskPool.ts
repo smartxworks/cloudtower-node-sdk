@@ -50,7 +50,7 @@ export class DiskPoolApi<SecurityDataType = unknown> {
    */
   getDiskPoolsConnection = (
     data: GetDiskPoolsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DiskPoolConnection, ErrorBody>({
       path: `/get-disk-pools-connection`,

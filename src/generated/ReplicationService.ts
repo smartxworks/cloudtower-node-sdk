@@ -28,7 +28,7 @@ export class ReplicationServiceApi<SecurityDataType = unknown> {
    */
   getReplicationServices = (
     data: GetReplicationServicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicationService[], ErrorBody>({
       path: `/get-replication-services`,
@@ -53,7 +53,7 @@ export class ReplicationServiceApi<SecurityDataType = unknown> {
    */
   getReplicationServicesConnection = (
     data: GetReplicationServicesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReplicationServiceConnection, ErrorBody>({
       path: `/get-replication-services-connection`,

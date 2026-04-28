@@ -32,7 +32,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    */
   createIsolationPolicy = (
     data: IsolationPolicyCreateParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IsolationPolicy, ErrorBody>({
       path: `/create-isolation-policy`,
@@ -57,7 +57,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    */
   updateIsolationPolicy = (
     data: IsolationPolicyUpdateBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IsolationPolicy[], ErrorBody>({
       path: `/update-isolation-policy`,
@@ -82,7 +82,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    */
   deleteIsolationPolicy = (
     data: IsolationPolicyDeleteParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DeleteIsolationPolicy[], ErrorBody>({
       path: `/delete-isolation-policy`,
@@ -107,7 +107,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    */
   getIsolationPolicies = (
     data: GetIsolationPoliciesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IsolationPolicy[], ErrorBody>({
       path: `/get-isolation-policies`,
@@ -132,7 +132,7 @@ export class IsolationPolicyApi<SecurityDataType = unknown> {
    */
   getIsolationPoliciesConnection = (
     data: GetIsolationPoliciesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IsolationPolicyConnection, ErrorBody>({
       path: `/get-isolation-policies-connection`,

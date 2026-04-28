@@ -30,7 +30,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    */
   cancelUploadTask = (
     data: CancelUploadTaskParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<string[], void | ErrorBody>({
       path: `/cancel-upload-task`,
@@ -55,7 +55,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    */
   getUploadTasks = (
     data: GetUploadTasksRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask[], ErrorBody>({
       path: `/get-upload-tasks`,
@@ -80,7 +80,7 @@ export class UploadTaskApi<SecurityDataType = unknown> {
    */
   getUploadTasksConnection = (
     data: GetUploadTasksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTaskConnection, ErrorBody>({
       path: `/get-upload-tasks-connection`,

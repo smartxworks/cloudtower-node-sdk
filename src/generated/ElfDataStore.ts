@@ -28,7 +28,7 @@ export class ElfDataStoreApi<SecurityDataType = unknown> {
    */
   getElfDataStores = (
     data: GetElfDataStoresRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ElfDataStore[], ErrorBody>({
       path: `/get-elf-data-stores`,
@@ -53,7 +53,7 @@ export class ElfDataStoreApi<SecurityDataType = unknown> {
    */
   getElfDataStoresConnection = (
     data: GetElfDataStoresConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ElfDataStoreConnection, ErrorBody>({
       path: `/get-elf-data-stores-connection`,

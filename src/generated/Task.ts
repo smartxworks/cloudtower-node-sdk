@@ -97,7 +97,7 @@ export class TaskApi<SecurityDataType = unknown> {
    */
   getTasksConnection = (
     data: GetTasksConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<TaskConnection, ErrorBody>({
       path: `/get-tasks-connection`,

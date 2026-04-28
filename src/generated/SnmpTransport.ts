@@ -33,7 +33,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    */
   createSnmpTransport = (
     data: SnmpTransportCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnmpTransport[], ErrorBody>({
       path: `/create-snmp-transport`,
@@ -58,7 +58,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    */
   updateSnmpTransport = (
     data: SnmpTransportUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskSnmpTransport[], ErrorBody>({
       path: `/update-snmp-transport`,
@@ -83,7 +83,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    */
   deleteSnmpTransport = (
     data: SnmpTransportDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteSnmpTransport[], ErrorBody>({
       path: `/delete-snmp-transport`,
@@ -108,7 +108,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    */
   getSnmpTransports = (
     data: GetSnmpTransportsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnmpTransport[], ErrorBody>({
       path: `/get-snmp-transports`,
@@ -133,7 +133,7 @@ export class SnmpTransportApi<SecurityDataType = unknown> {
    */
   getSnmpTransportsConnection = (
     data: GetSnmpTransportsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<SnmpTransportConnection, ErrorBody>({
       path: `/get-snmp-transports-connection`,

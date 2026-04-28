@@ -64,7 +64,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   triggerDiskBlink = (
     data: TriggerDiskBlinkParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskHost[], ErrorBody>({
       path: `/trigger-disk-blink`,
@@ -133,7 +133,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   enterMaintenanceModePreCheck = (
     data: EnterMaintenanceModeCheckParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EnterMaintenanceModeCheckResult, ErrorBody>({
       path: `/enter-maintenance-mode-precheck`,
@@ -158,7 +158,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   enterMaintenanceModePrecheckResult = (
     data: EnterMaintenanceModeResultParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EnterMaintenanceModeResult, ErrorBody>({
       path: `/enter-maintance-mode-precheck-result`,
@@ -183,7 +183,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   enterMaintenanceMode = (
     data: EnterMaintenanceModeParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskHost, ErrorBody>({
       path: `/enter-maintance-mode`,
@@ -208,7 +208,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   exitMaintenanceModePrecheckResult = (
     data: ExitMaintenanceModeResultParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ExitMaintenanceModeResult, ErrorBody>({
       path: `/exit-maintance-mode-precheck-result`,
@@ -233,7 +233,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   exitMaintenanceMode = (
     data: ExitMaintenanceModeParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskHost, ErrorBody>({
       path: `/exit-maintance-mode`,
@@ -280,7 +280,7 @@ export class HostApi<SecurityDataType = unknown> {
    */
   getHostsConnection = (
     data: GetHostsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<HostConnection, ErrorBody>({
       path: `/get-hosts-connection`,

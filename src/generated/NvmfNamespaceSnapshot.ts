@@ -32,7 +32,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    */
   createNvmfNamespaceSnapshot = (
     data: NvmfNamespaceSnapshotCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNvmfNamespaceSnapshot[], ErrorBody>({
       path: `/create-nvmf-namespace-snapshot`,
@@ -57,7 +57,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    */
   deleteNvmfNamespaceSnapshot = (
     data: NvmfNamespaceSnapshotDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNvmfNamespaceSnapshot[], ErrorBody>({
       path: `/delete-nvmf-namespace-snapshot`,
@@ -82,7 +82,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    */
   getNvmfNamespaceSnapshots = (
     data: GetNvmfNamespaceSnapshotsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfNamespaceSnapshot[], ErrorBody>({
       path: `/get-nvmf-namespace-snapshots`,
@@ -107,7 +107,7 @@ export class NvmfNamespaceSnapshotApi<SecurityDataType = unknown> {
    */
   getNvmfNamespaceSnapshotsConnection = (
     data: GetNvmfNamespaceSnapshotsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NvmfNamespaceSnapshotConnection, ErrorBody>({
       path: `/get-nvmf-namespace-snapshots-connection`,

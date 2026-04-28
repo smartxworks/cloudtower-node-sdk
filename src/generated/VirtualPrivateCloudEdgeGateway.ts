@@ -28,7 +28,7 @@ export class VirtualPrivateCloudEdgeGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudEdgeGateways = (
     data: GetVirtualPrivateCloudEdgeGatewaysRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudEdgeGateway[], ErrorBody>({
       path: `/get-virtual-private-cloud-edge-gateways`,
@@ -53,7 +53,7 @@ export class VirtualPrivateCloudEdgeGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudEdgeGatewaysConnection = (
     data: GetVirtualPrivateCloudEdgeGatewaysConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudEdgeGatewayConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-edge-gateways-connection`,

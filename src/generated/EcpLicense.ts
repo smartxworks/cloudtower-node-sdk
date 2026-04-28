@@ -28,7 +28,7 @@ export class EcpLicenseApi<SecurityDataType = unknown> {
    */
   getEcpLicenses = (
     data: GetEcpLicensesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EcpLicense[], ErrorBody>({
       path: `/get-ecp-licenses`,
@@ -53,7 +53,7 @@ export class EcpLicenseApi<SecurityDataType = unknown> {
    */
   getEcpLicensesConnection = (
     data: GetEcpLicensesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EcpLicenseConnection, ErrorBody>({
       path: `/get-ecp-licenses-connection`,

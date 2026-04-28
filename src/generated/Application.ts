@@ -28,7 +28,7 @@ export class ApplicationApi<SecurityDataType = unknown> {
    */
   getApplications = (
     data: GetApplicationsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<Application[], ErrorBody>({
       path: `/get-applications`,
@@ -53,7 +53,7 @@ export class ApplicationApi<SecurityDataType = unknown> {
    */
   getApplicationsConnection = (
     data: GetApplicationsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ApplicationConnection, ErrorBody>({
       path: `/get-applications-connection`,

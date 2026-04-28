@@ -33,7 +33,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    */
   createLogCollection = (
     data: LogCollectionCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskLogCollection[], ErrorBody>({
       path: `/create-log-collection`,
@@ -58,7 +58,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    */
   forceStopLogCollection = (
     data: ForceStopLogCollectionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskLogCollection[], ErrorBody>({
       path: `/force-stop-log-collection`,
@@ -83,7 +83,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    */
   deleteLogCollection = (
     data: LogCollectionDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteLogCollection[], ErrorBody>({
       path: `/delete-log-collection`,
@@ -108,7 +108,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    */
   getLogCollections = (
     data: GetLogCollectionsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<LogCollection[], ErrorBody>({
       path: `/get-log-collections`,
@@ -133,7 +133,7 @@ export class LogCollectionApi<SecurityDataType = unknown> {
    */
   getLogCollectionsConnection = (
     data: GetLogCollectionsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<LogCollectionConnection, ErrorBody>({
       path: `/get-log-collections-connection`,

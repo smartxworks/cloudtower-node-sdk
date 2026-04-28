@@ -28,7 +28,7 @@ export class EveroutePackageApi<SecurityDataType = unknown> {
    */
   getEveroutePackages = (
     data: GetEveroutePackagesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EveroutePackage[], ErrorBody>({
       path: `/get-everoute-packages`,
@@ -53,7 +53,7 @@ export class EveroutePackageApi<SecurityDataType = unknown> {
    */
   getEveroutePackagesConnection = (
     data: GetEveroutePackagesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EveroutePackageConnection, ErrorBody>({
       path: `/get-everoute-packages-connection`,

@@ -52,7 +52,7 @@ export class NodeTopoApi<SecurityDataType = unknown> {
    */
   getNodeTopoes = (
     data: GetNodeTopoesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NodeTopo[], ErrorBody>({
       path: `/get-node-topoes`,
@@ -77,7 +77,7 @@ export class NodeTopoApi<SecurityDataType = unknown> {
    */
   getNodeTopoesConnection = (
     data: GetNodeTopoesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NodeTopoConnection, ErrorBody>({
       path: `/get-node-topoes-connection`,

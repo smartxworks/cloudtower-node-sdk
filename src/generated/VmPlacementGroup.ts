@@ -33,7 +33,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    */
   createVmPlacementGroup = (
     data: VmPlacementGroupCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
       path: `/create-vm-placement-group`,
@@ -58,7 +58,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    */
   updateVmPlacementGroup = (
     data: VmPlacementGroupUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmPlacementGroup[], ErrorBody>({
       path: `/update-vm-placement-group`,
@@ -83,7 +83,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    */
   deleteVmPlacementGroup = (
     data: VmPlacementGroupDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVmPlacementGroup[], ErrorBody>({
       path: `/delete-vm-placement-group`,
@@ -108,7 +108,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    */
   getVmPlacementGroups = (
     data: GetVmPlacementGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmPlacementGroup[], ErrorBody>({
       path: `/get-vm-placement-groups`,
@@ -133,7 +133,7 @@ export class VmPlacementGroupApi<SecurityDataType = unknown> {
    */
   getVmPlacementGroupsConnection = (
     data: GetVmPlacementGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmPlacementGroupConnection, ErrorBody>({
       path: `/get-vm-placement-groups-connection`,

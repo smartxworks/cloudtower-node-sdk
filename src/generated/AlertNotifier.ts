@@ -34,7 +34,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   getAlertNotifiers = (
     data: GetAlertNotifiersRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<AlertNotifier[], ErrorBody>({
       path: `/get-alert-notifiers`,
@@ -59,7 +59,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   getAlertNotifiersConnection = (
     data: GetAlertNotifiersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<AlertNotifierConnection, ErrorBody>({
       path: `/get-alert-notifiers-connection`,
@@ -84,7 +84,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   createAlertNotifier = (
     data: AlertNotifierCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskAlertNotifier[], ErrorBody>({
       path: `/create-alert-notifier`,
@@ -109,7 +109,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   updateAlertNotifier = (
     data: AlertNotifierUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskAlertNotifier, ErrorBody>({
       path: `/update-alert-notifier`,
@@ -134,7 +134,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   updateManyAlertNotifiers = (
     data: AlertNotifierManyUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskAlertNotifier[], ErrorBody>({
       path: `/update-many-alert-notifiers`,
@@ -159,7 +159,7 @@ export class AlertNotifierApi<SecurityDataType = unknown> {
    */
   deleteAlertNotifier = (
     data: DeleteAlertNotifierParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteAlertNotifier[], ErrorBody>({
       path: `/delete-alert-notifier`,

@@ -121,7 +121,7 @@ export class ViewApi<SecurityDataType = unknown> {
    */
   getViewsConnection = (
     data: GetViewsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ViewConnection, ErrorBody>({
       path: `/get-views-connection`,

@@ -28,7 +28,7 @@ export class BackupRestorePointApi<SecurityDataType = unknown> {
    */
   getBackupRestorePoints = (
     data: GetBackupRestorePointsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupRestorePoint[], ErrorBody>({
       path: `/get-backup-restore-points`,
@@ -53,7 +53,7 @@ export class BackupRestorePointApi<SecurityDataType = unknown> {
    */
   getBackupRestorePointsConnection = (
     data: GetBackupRestorePointsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BackupRestorePointConnection, ErrorBody>({
       path: `/get-backup-restore-points-connection`,

@@ -28,7 +28,7 @@ export class EverouteClusterApi<SecurityDataType = unknown> {
    */
   getEverouteClusters = (
     data: GetEverouteClustersRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EverouteCluster[], ErrorBody>({
       path: `/get-everoute-clusters`,
@@ -53,7 +53,7 @@ export class EverouteClusterApi<SecurityDataType = unknown> {
    */
   getEverouteClustersConnection = (
     data: GetEverouteClustersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EverouteClusterConnection, ErrorBody>({
       path: `/get-everoute-clusters-connection`,

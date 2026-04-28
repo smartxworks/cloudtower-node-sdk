@@ -28,7 +28,7 @@ export class VirtualPrivateCloudExternalSubnetApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudExternalSubnets = (
     data: GetVirtualPrivateCloudExternalSubnetsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudExternalSubnet[], ErrorBody>({
       path: `/get-virtual-private-cloud-external-subnets`,
@@ -53,7 +53,7 @@ export class VirtualPrivateCloudExternalSubnetApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudExternalSubnetsConnection = (
     data: GetVirtualPrivateCloudExternalSubnetsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudExternalSubnetConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-external-subnets-connection`,

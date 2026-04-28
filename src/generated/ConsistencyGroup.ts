@@ -33,7 +33,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    */
   createConsistencyGroup = (
     data: ConsistencyGroupCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskConsistencyGroup[], ErrorBody>({
       path: `/create-consistency-group`,
@@ -58,7 +58,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    */
   updateConsistencyGroup = (
     data: ConsistencyGroupUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskConsistencyGroup[], ErrorBody>({
       path: `/update-consistency-group`,
@@ -83,7 +83,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    */
   deleteConsistencyGroup = (
     data: ConsistencyGroupDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteConsistencyGroup[], ErrorBody>({
       path: `/delete-consistency-group`,
@@ -108,7 +108,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    */
   getConsistencyGroups = (
     data: GetConsistencyGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ConsistencyGroup[], ErrorBody>({
       path: `/get-consistency-groups`,
@@ -133,7 +133,7 @@ export class ConsistencyGroupApi<SecurityDataType = unknown> {
    */
   getConsistencyGroupsConnection = (
     data: GetConsistencyGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ConsistencyGroupConnection, ErrorBody>({
       path: `/get-consistency-groups-connection`,

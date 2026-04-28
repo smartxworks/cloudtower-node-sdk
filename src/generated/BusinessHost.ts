@@ -28,7 +28,7 @@ export class BusinessHostApi<SecurityDataType = unknown> {
    */
   getBusinessHosts = (
     data: GetBusinessHostsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BusinessHost[], ErrorBody>({
       path: `/get-business-hosts`,
@@ -53,7 +53,7 @@ export class BusinessHostApi<SecurityDataType = unknown> {
    */
   getBusinessHostsConnection = (
     data: GetBusinessHostsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BusinessHostConnection, ErrorBody>({
       path: `/get-business-hosts-connection`,

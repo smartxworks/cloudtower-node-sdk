@@ -33,7 +33,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    */
   createNfsExport = (
     data: NfsExportCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNfsExport[], ErrorBody>({
       path: `/create-nfs-export`,
@@ -58,7 +58,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    */
   updateNfsExport = (
     data: NfsExportUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskNfsExport[], ErrorBody>({
       path: `/update-nfs-export`,
@@ -83,7 +83,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    */
   deleteNfsExport = (
     data: NfsExportDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteNfsExport[], ErrorBody>({
       path: `/delete-nfs-export`,
@@ -108,7 +108,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    */
   getNfsExports = (
     data: GetNfsExportsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NfsExport[], ErrorBody>({
       path: `/get-nfs-exports`,
@@ -133,7 +133,7 @@ export class NfsExportApi<SecurityDataType = unknown> {
    */
   getNfsExportsConnection = (
     data: GetNfsExportsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<NfsExportConnection, ErrorBody>({
       path: `/get-nfs-exports-connection`,

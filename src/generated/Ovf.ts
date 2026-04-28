@@ -28,6 +28,7 @@ export class OvfApi<SecurityDataType = unknown> {
    */
   uploadElfFile = (
     data: {
+      /** @format binary */
       file: File;
       cluster_id?: string;
       name?: string;
@@ -35,7 +36,7 @@ export class OvfApi<SecurityDataType = unknown> {
       size_unit?: string;
       upload_task_id?: string;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<UploadTask, ErrorBody>({
       path: `/upload-elf-file`,
@@ -59,8 +60,12 @@ export class OvfApi<SecurityDataType = unknown> {
    * @response `500` `ErrorBody` Server error
    */
   parseOvf = (
-    data: { file: File; cluster_id: string },
-    params: RequestParams = {}
+    data: {
+      /** @format binary */
+      file: File;
+      cluster_id: string;
+    },
+    params: RequestParams = {},
   ) =>
     this.http.request<ParsedOVF, ErrorBody>({
       path: `/parse-ovf`,
@@ -85,7 +90,7 @@ export class OvfApi<SecurityDataType = unknown> {
    */
   getExportFileDownloadLinks = (
     data: GetExportFileDownloadLinksParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ExportFileDownloadLinks[], ErrorBody>({
       path: `/get-export-file-download-links`,

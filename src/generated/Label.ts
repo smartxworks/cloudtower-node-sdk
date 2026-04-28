@@ -81,7 +81,7 @@ export class LabelApi<SecurityDataType = unknown> {
    */
   addLabelsToResources = (
     data: AddLabelsToResourcesParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskLabel[], void | ErrorBody>({
       path: `/add-labels-to-resources`,
@@ -107,7 +107,7 @@ export class LabelApi<SecurityDataType = unknown> {
    */
   removeLabelsFromResources = (
     data: RemoveLabelsFromResourcesParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskLabel[], void | ErrorBody>({
       path: `/remove-labels-from-resources`,
@@ -176,7 +176,7 @@ export class LabelApi<SecurityDataType = unknown> {
    */
   getLabelsConnection = (
     data: GetLabelsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<LabelConnection, ErrorBody>({
       path: `/get-labels-connection`,

@@ -28,7 +28,7 @@ export class IscsiConnectionApi<SecurityDataType = unknown> {
    */
   getIscsiConnections = (
     data: GetIscsiConnectionsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiConnection[], ErrorBody>({
       path: `/get-iscsi-connections`,
@@ -53,7 +53,7 @@ export class IscsiConnectionApi<SecurityDataType = unknown> {
    */
   getIscsiConnectionsConnection = (
     data: GetIscsiConnectionsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiConnectionConnection, ErrorBody>({
       path: `/get-iscsi-connections-connection`,

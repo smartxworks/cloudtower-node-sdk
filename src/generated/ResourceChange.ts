@@ -32,7 +32,7 @@ export class ResourceChangeApi<SecurityDataType = unknown> {
       start_revision?: string;
       limit?: ResourceChangeLimit;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ResourceChangeResponse, ErrorBody>({
       path: `/resource-changes`,

@@ -28,7 +28,7 @@ export class BusinessHostGroupApi<SecurityDataType = unknown> {
    */
   getBusinessHostGroups = (
     data: GetBusinessHostGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BusinessHostGroup[], ErrorBody>({
       path: `/get-business-host-groups`,
@@ -53,7 +53,7 @@ export class BusinessHostGroupApi<SecurityDataType = unknown> {
    */
   getBusinessHostGroupsConnection = (
     data: GetBusinessHostGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<BusinessHostGroupConnection, ErrorBody>({
       path: `/get-business-host-groups-connection`,

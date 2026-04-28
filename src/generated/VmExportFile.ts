@@ -28,7 +28,7 @@ export class VmExportFileApi<SecurityDataType = unknown> {
    */
   getVmExportFiles = (
     data: GetVmExportFilesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmExportFile[], ErrorBody>({
       path: `/get-vm-export-files`,
@@ -53,7 +53,7 @@ export class VmExportFileApi<SecurityDataType = unknown> {
    */
   getVmExportFilesConnection = (
     data: GetVmExportFilesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmExportFileConnection, ErrorBody>({
       path: `/get-vm-export-files-connection`,

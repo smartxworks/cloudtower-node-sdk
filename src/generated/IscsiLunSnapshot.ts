@@ -32,7 +32,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    */
   createIscsiLunSnapshot = (
     data: IscsiLunSnapshotCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskIscsiLunSnapshot[], ErrorBody>({
       path: `/create-iscsi-lun-snapshot`,
@@ -57,7 +57,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    */
   deleteIscsiLunSnapshot = (
     data: IscsiLunSnapshotDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteIscsiLunSnapshot[], ErrorBody>({
       path: `/delete-iscsi-lun-snapshot`,
@@ -82,7 +82,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    */
   getIscsiLunSnapshots = (
     data: GetIscsiLunSnapshotsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiLunSnapshot[], ErrorBody>({
       path: `/get-iscsi-lun-snapshots`,
@@ -107,7 +107,7 @@ export class IscsiLunSnapshotApi<SecurityDataType = unknown> {
    */
   getIscsiLunSnapshotsConnection = (
     data: GetIscsiLunSnapshotsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<IscsiLunSnapshotConnection, ErrorBody>({
       path: `/get-iscsi-lun-snapshots-connection`,

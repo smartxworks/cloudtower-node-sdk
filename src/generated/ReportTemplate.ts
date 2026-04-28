@@ -35,7 +35,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   createReportTemplate = (
     data: ReportTemplateCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskReportTemplate[], ErrorBody>({
       path: `/create-report-template`,
@@ -60,7 +60,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   updateReportTemplate = (
     data: ReportTemplateUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskReportTemplate[], ErrorBody>({
       path: `/update-report-template`,
@@ -85,7 +85,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   generateFromReportTemplate = (
     data: ReporteTemplateGenerationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskReportTask[], ErrorBody>({
       path: `/generate-from-report-template`,
@@ -110,7 +110,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   deleteReportTemplate = (
     data: ReportTemplateDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteReportTemplate[], ErrorBody>({
       path: `/delete-report-template`,
@@ -135,7 +135,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   getReportTemplates = (
     data: GetReportTemplatesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReportTemplate[], ErrorBody>({
       path: `/get-report-templates`,
@@ -160,7 +160,7 @@ export class ReportTemplateApi<SecurityDataType = unknown> {
    */
   getReportTemplatesConnection = (
     data: GetReportTemplatesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ReportTemplateConnection, ErrorBody>({
       path: `/get-report-templates-connection`,

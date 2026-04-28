@@ -39,7 +39,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    */
   createVmVolume = (
     data: VmVolumeCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmVolume[], ErrorBody>({
       path: `/create-vm-volume`,
@@ -64,7 +64,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    */
   deleteVmVolumeFromVm = (
     data: VmVolumeDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVmVolume[], ErrorBody>({
       path: `/delete-vm-volume`,
@@ -90,7 +90,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    */
   rebuildVmVolume = (
     data: VmVolumeRebuildParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmVolume[], void | ErrorBody>({
       path: `/rebuild-vm-volume`,
@@ -116,7 +116,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    */
   rollbackVmVolume = (
     data: VmVolumeRollbackParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmVolume[], void | ErrorBody>({
       path: `/rollback-vm-volume`,
@@ -252,7 +252,7 @@ export class VmVolumeApi<SecurityDataType = unknown> {
    */
   getVmVolumesConnection = (
     data: GetVmVolumesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmVolumeConnection, ErrorBody>({
       path: `/get-vm-volumes-connection`,

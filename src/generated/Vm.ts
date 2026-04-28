@@ -103,7 +103,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   createVmFromTemplate = (
     data: VmCreateVmFromTemplateParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/create-vm-from-template`,
@@ -128,7 +128,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   createVmFromContentLibraryTemplate = (
     data: VmCreateVmFromContentLibraryTemplateParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/create-vm-from-content-library-template`,
@@ -153,7 +153,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   createVmFromContentLibraryTemplateBatch = (
     data: VmCreateVmFromContentLibraryTemplateBatchParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmArray, ErrorBody>({
       path: `/create-vm-from-content-library-template-batch`,
@@ -178,7 +178,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   convertVmTemplateToVm = (
     data: ConvertVmTemplateToVmParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/convert-vm-template-to-vm`,
@@ -313,7 +313,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   recoverVmFromRecycleBin = (
     data: VmOperateParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVm[], ErrorBody>({
       path: `/recover-vm-from-recycle`,
@@ -580,7 +580,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   setVmDiskResidentInCache = (
     data: VmSetVmDiskResidentInCacheParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/set-vm-disk-resident-in-cache`,
@@ -672,7 +672,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   ejectIsoFromVmCdRom = (
     data: VmEjectCdRomParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/eject-iso-from-vm-cd-rom`,
@@ -697,7 +697,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   toggleVmCdRomDisable = (
     data: VmToggleCdRomDisableParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/toggle-vm-cd-rom-disable`,
@@ -767,7 +767,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmNicBasicInfo = (
     data: VmUpdateNicBasicInfoParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-basic-info`,
@@ -793,7 +793,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmNicAdvanceInfo = (
     data: VmUpdateNicAdvanceInfoParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-advance-info`,
@@ -819,7 +819,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmNicQosOption = (
     data: VmUpdateNicQosOptionsParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-nic-qos-option`,
@@ -913,7 +913,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   removeVmNicByWhere = (
     data: VmRemoveNicByWhereParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/remove-vm-nic-by-where`,
@@ -960,7 +960,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   removeVmGpuDevice = (
     data: VmRemoveGpuDeviceParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/remove-vm-gpu-device`,
@@ -1030,7 +1030,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   migrateVmAcrossCluster = (
     data: VmMigrateAcrossClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/migrate-vm-across-cluster`,
@@ -1055,7 +1055,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   stopVmInCutoverMigration = (
     data: StopVmInCutoverMigrationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], ErrorBody>({
       path: `/stop-vm-in-cutover-migration`,
@@ -1080,7 +1080,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   abortMigrateVmAcrossCluster = (
     data: AbortMigrateVmAcrossClusterParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<Task[], ErrorBody>({
       path: `/abort-migrate-vm-across-cluster`,
@@ -1150,7 +1150,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmAdvancedOptions = (
     data: VmUpdateAdvancedOptionsParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-advanced-options`,
@@ -1176,7 +1176,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmHostOptions = (
     data: VmUpdateHostOptionsParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-host-options`,
@@ -1202,7 +1202,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   resetVmGuestOsPassword = (
     data: VmResetGuestOsPasswordParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/reset-vm-guest-os-password`,
@@ -1251,7 +1251,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmIoPolicy = (
     data: VmUpdateIoPolicyParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-io-policy`,
@@ -1366,7 +1366,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   updateVmNicVpcInfo = (
     data: VmUpdateVpcNicParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-vpc-nic`,
@@ -1413,7 +1413,7 @@ export class VmApi<SecurityDataType = unknown> {
    */
   getVmsConnection = (
     data: GetVmsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmConnection, ErrorBody>({
       path: `/get-vms-connection`,

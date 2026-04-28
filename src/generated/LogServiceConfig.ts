@@ -26,7 +26,7 @@ export class LogServiceConfigApi<SecurityDataType = unknown> {
    */
   getLogServiceConfigs = (
     data: GetLogServiceConfigsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<LogServiceConfig[], ErrorBody>({
       path: `/get-log-service-configs`,

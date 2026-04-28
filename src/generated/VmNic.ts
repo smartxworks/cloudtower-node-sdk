@@ -50,7 +50,7 @@ export class VmNicApi<SecurityDataType = unknown> {
    */
   getVmNicsConnection = (
     data: GetVmNicsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmNicConnection, ErrorBody>({
       path: `/get-vm-nics-connection`,

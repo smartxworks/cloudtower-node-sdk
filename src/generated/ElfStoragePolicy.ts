@@ -28,7 +28,7 @@ export class ElfStoragePolicyApi<SecurityDataType = unknown> {
    */
   getElfStoragePolicies = (
     data: GetElfStoragePoliciesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ElfStoragePolicy[], ErrorBody>({
       path: `/get-elf-storage-policies`,
@@ -53,7 +53,7 @@ export class ElfStoragePolicyApi<SecurityDataType = unknown> {
    */
   getElfStoragePoliciesConnection = (
     data: GetElfStoragePoliciesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ElfStoragePolicyConnection, ErrorBody>({
       path: `/get-elf-storage-policies-connection`,

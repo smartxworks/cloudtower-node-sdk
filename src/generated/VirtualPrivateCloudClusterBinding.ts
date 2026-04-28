@@ -28,7 +28,7 @@ export class VirtualPrivateCloudClusterBindingApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudClusterBindings = (
     data: GetVirtualPrivateCloudClusterBindingsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudClusterBinding[], ErrorBody>({
       path: `/get-virtual-private-cloud-cluster-bindings`,
@@ -53,7 +53,7 @@ export class VirtualPrivateCloudClusterBindingApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudClusterBindingsConnection = (
     data: GetVirtualPrivateCloudClusterBindingsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudClusterBindingConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-cluster-bindings-connection`,

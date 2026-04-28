@@ -32,7 +32,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    */
   createVmSnapshot = (
     data: VmSnapshotCreationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVmSnapshot[], ErrorBody>({
       path: `/create-vm-snapshot`,
@@ -57,7 +57,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    */
   deleteVmSnapshot = (
     data: VmSnapshotDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteVmSnapshot[], ErrorBody>({
       path: `/delete-vm-snapshot`,
@@ -82,7 +82,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    */
   getVmSnapshots = (
     data: GetVmSnapshotsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmSnapshot[], ErrorBody>({
       path: `/get-vm-snapshots`,
@@ -107,7 +107,7 @@ export class VmSnapshotApi<SecurityDataType = unknown> {
    */
   getVmSnapshotsConnection = (
     data: GetVmSnapshotsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VmSnapshotConnection, ErrorBody>({
       path: `/get-vm-snapshots-connection`,

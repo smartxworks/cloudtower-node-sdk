@@ -28,7 +28,7 @@ export class AlertRuleApi<SecurityDataType = unknown> {
    */
   getAlertRules = (
     data: GetAlertRulesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<AlertRule[], ErrorBody>({
       path: `/get-alert-rules`,
@@ -53,7 +53,7 @@ export class AlertRuleApi<SecurityDataType = unknown> {
    */
   getAlertRulesConnection = (
     data: GetAlertRulesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<AlertRuleConnection, ErrorBody>({
       path: `/get-alert-rules-connection`,

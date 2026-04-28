@@ -38,7 +38,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   updateGlobalRecycleBinSetting = (
     data: GlobalRecycleBinUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalSettings, ErrorBody>({
       path: `/update-global-recycle-bin-setting`,
@@ -63,7 +63,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   createClusterRecycleBinSetting = (
     data: ClusterRecycleBinCreationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterSettings[], ErrorBody>({
       path: `/create-cluster-recycle-bin-setting`,
@@ -88,7 +88,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   updateClusterRecycleBinSetting = (
     data: ClusterRecycleBinUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskClusterSettings[], ErrorBody>({
       path: `/update-cluster-recycle-bin-setting`,
@@ -113,7 +113,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   deleteClusterRecycleBinSetting = (
     data: ClusterRecycleBinDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteClusterRecycleBin[], ErrorBody>({
       path: `/delete-cluster-recycle-bin-setting`,
@@ -138,7 +138,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   updatePasswordSecurity = (
     data: UpdatePassrodSecurityParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalSettings, ErrorBody>({
       path: `/update-password-security`,
@@ -163,7 +163,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   updateAccessRestriction = (
     data: UpdateAccessRestrictionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalSettings, ErrorBody>({
       path: `/update-access-restriction`,
@@ -188,7 +188,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   updateSessionTimeout = (
     data: UpdateSessionTimeoutParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGlobalSettings, ErrorBody>({
       path: `/update-session-timeout`,
@@ -213,7 +213,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   getGlobalSettingses = (
     data: GetGlobalSettingsesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GlobalSettings[], ErrorBody>({
       path: `/get-global-settingses`,
@@ -238,7 +238,7 @@ export class GlobalSettingsApi<SecurityDataType = unknown> {
    */
   getGlobalSettingsesConnection = (
     data: GetGlobalSettingsesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GlobalSettingsConnection, ErrorBody>({
       path: `/get-global-settingses-connection`,

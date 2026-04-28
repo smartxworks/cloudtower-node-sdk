@@ -35,7 +35,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   createDatacenter = (
     data: DatacenterCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDatacenter[], ErrorBody>({
       path: `/create-datacenter`,
@@ -60,7 +60,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   updateDatacenter = (
     data: DatacenterUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDatacenter[], ErrorBody>({
       path: `/update-datacenter`,
@@ -85,7 +85,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   addClustersToDatacenter = (
     data: AddClustersToDatacenterParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDatacenter[], ErrorBody>({
       path: `/add-clusters-to-datacenter`,
@@ -110,7 +110,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   removeClustersFromDatacenter = (
     data: RemoveClustersFromDatacenterParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDatacenter[], ErrorBody>({
       path: `/remove-clusters-from-datacenter`,
@@ -135,7 +135,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   deleteDatacenter = (
     data: DatacenterDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskDeleteDatacenter[], ErrorBody>({
       path: `/delete-datacenter`,
@@ -160,7 +160,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   getDatacenters = (
     data: GetDatacentersRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<Datacenter[], ErrorBody>({
       path: `/get-datacenters`,
@@ -185,7 +185,7 @@ export class DatacenterApi<SecurityDataType = unknown> {
    */
   getDatacentersConnection = (
     data: GetDatacentersConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<DatacenterConnection, ErrorBody>({
       path: `/get-datacenters-connection`,

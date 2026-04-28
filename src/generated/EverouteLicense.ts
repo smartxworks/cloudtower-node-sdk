@@ -28,7 +28,7 @@ export class EverouteLicenseApi<SecurityDataType = unknown> {
    */
   getEverouteLicenses = (
     data: GetEverouteLicensesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EverouteLicense[], ErrorBody>({
       path: `/get-everoute-licenses`,
@@ -53,7 +53,7 @@ export class EverouteLicenseApi<SecurityDataType = unknown> {
    */
   getEverouteLicensesConnection = (
     data: GetEverouteLicensesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<EverouteLicenseConnection, ErrorBody>({
       path: `/get-everoute-licenses-connection`,

@@ -35,7 +35,7 @@ export class VdsApi<SecurityDataType = unknown> {
    */
   createVdsWithMigrateVlan = (
     data: VdsCreationWithMigrateVlanParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVds[], ErrorBody>({
       path: `/create-vds-with-migrate-vlan`,
@@ -60,7 +60,7 @@ export class VdsApi<SecurityDataType = unknown> {
    */
   createVdsWithAccessVlan = (
     data: VdsCreationWithMAccessVlanParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVds[], ErrorBody>({
       path: `/create-vds-with-access-vlan`,
@@ -173,7 +173,7 @@ export class VdsApi<SecurityDataType = unknown> {
    */
   getVdsesConnection = (
     data: GetVdsesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VdsConnection, ErrorBody>({
       path: `/get-vdses-connection`,

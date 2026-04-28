@@ -121,7 +121,7 @@ export class GraphApi<SecurityDataType = unknown> {
    */
   getGraphsConnection = (
     data: GetGraphsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GraphConnection, ErrorBody>({
       path: `/get-graphs-connection`,

@@ -8,7 +8,7 @@ import {
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class VirtualPrivateCloudExternalSubnetGroupApi<
-  SecurityDataType = unknown
+  SecurityDataType = unknown,
 > {
   http: HttpClient<SecurityDataType>;
 
@@ -30,7 +30,7 @@ export class VirtualPrivateCloudExternalSubnetGroupApi<
    */
   getVirtualPrivateCloudExternalSubnetGroups = (
     data: GetVirtualPrivateCloudExternalSubnetGroupsRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudExternalSubnetGroup[], ErrorBody>({
       path: `/get-virtual-private-cloud-external-subnet-groups`,
@@ -55,7 +55,7 @@ export class VirtualPrivateCloudExternalSubnetGroupApi<
    */
   getVirtualPrivateCloudExternalSubnetGroupsConnection = (
     data: GetVirtualPrivateCloudExternalSubnetGroupsConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       VirtualPrivateCloudExternalSubnetGroupConnection,

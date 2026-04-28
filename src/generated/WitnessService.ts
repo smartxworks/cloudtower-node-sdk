@@ -26,7 +26,7 @@ export class WitnessServiceApi<SecurityDataType = unknown> {
    */
   getWitnessServices = (
     data: GetWitnessServicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WitnessService[], ErrorBody>({
       path: `/get-witness-services`,

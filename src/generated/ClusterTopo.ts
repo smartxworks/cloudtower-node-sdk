@@ -28,7 +28,7 @@ export class ClusterTopoApi<SecurityDataType = unknown> {
    */
   getClusterTopoes = (
     data: GetClusterTopoesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterTopo[], ErrorBody>({
       path: `/get-cluster-topoes`,
@@ -53,7 +53,7 @@ export class ClusterTopoApi<SecurityDataType = unknown> {
    */
   getClusterTopoesConnection = (
     data: GetClusterTopoesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<ClusterTopoConnection, ErrorBody>({
       path: `/get-cluster-topoes-connection`,

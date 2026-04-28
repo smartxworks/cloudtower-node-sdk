@@ -79,7 +79,7 @@ export class VlanApi<SecurityDataType = unknown> {
    */
   updateManagementVlan = (
     data: ManagementVlanUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVlan[], ErrorBody>({
       path: `/update-management-vlan`,
@@ -104,7 +104,7 @@ export class VlanApi<SecurityDataType = unknown> {
    */
   updateMigrationVlan = (
     data: MigrationVlanUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVlan[], ErrorBody>({
       path: `/update-migration-vlan`,
@@ -173,7 +173,7 @@ export class VlanApi<SecurityDataType = unknown> {
    */
   getVlansConnection = (
     data: GetVlansConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VlanConnection, ErrorBody>({
       path: `/get-vlans-connection`,

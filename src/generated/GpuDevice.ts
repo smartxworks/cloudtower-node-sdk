@@ -34,7 +34,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   updateGpuDeviceUsage = (
     data: GpuDeviceUsageUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGpuDevice[], void | ErrorBody>({
       path: `/update-gpu-device-usage`,
@@ -60,7 +60,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   updateGpuDeviceDescription = (
     data: GpuDeviceDescriptionUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGpuDevice[], void | ErrorBody>({
       path: `/update-gpu-device-description`,
@@ -86,7 +86,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   switchGpuDeviceSriov = (
     data: GpuDeviceSriovSwitchParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskGpuDevice[], void | ErrorBody>({
       path: `/switch-gpu-device-sriov`,
@@ -112,7 +112,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   getDetailVmInfoByGpuDevices = (
     data: GetGpuDevicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GpuVmInfo[], void | ErrorBody>({
       path: `/get-detail-vm-info-by-gpu-devices`,
@@ -137,7 +137,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   getGpuDevices = (
     data: GetGpuDevicesRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GpuDevice[], ErrorBody>({
       path: `/get-gpu-devices`,
@@ -162,7 +162,7 @@ export class GpuDeviceApi<SecurityDataType = unknown> {
    */
   getGpuDevicesConnection = (
     data: GetGpuDevicesConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<GpuDeviceConnection, ErrorBody>({
       path: `/get-gpu-devices-connection`,

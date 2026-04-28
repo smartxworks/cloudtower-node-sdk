@@ -33,7 +33,7 @@ export class VirtualPrivateCloudRouterGatewayApi<SecurityDataType = unknown> {
    */
   createVirtualPrivateCloudRouterGateway = (
     data: VirtualPrivateCloudRouterGatewayCreationParams[],
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudRouterGateway[], ErrorBody>({
       path: `/create-virtual-private-cloud-router-gateway`,
@@ -58,7 +58,7 @@ export class VirtualPrivateCloudRouterGatewayApi<SecurityDataType = unknown> {
    */
   updateVirtualPrivateCloudRouterGateway = (
     data: VirtualPrivateCloudRouterGatewayUpdationParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<WithTaskVirtualPrivateCloudRouterGateway[], ErrorBody>({
       path: `/update-virtual-private-cloud-router-gateway`,
@@ -83,7 +83,7 @@ export class VirtualPrivateCloudRouterGatewayApi<SecurityDataType = unknown> {
    */
   deleteVirtualPrivateCloudRouterGateway = (
     data: VirtualPrivateCloudRouterGatewayDeletionParams,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<
       WithTaskDeleteVirtualPrivateCloudRouterGateway[],
@@ -111,7 +111,7 @@ export class VirtualPrivateCloudRouterGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudRouterGateways = (
     data: GetVirtualPrivateCloudRouterGatewaysRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudRouterGateway[], ErrorBody>({
       path: `/get-virtual-private-cloud-router-gateways`,
@@ -136,7 +136,7 @@ export class VirtualPrivateCloudRouterGatewayApi<SecurityDataType = unknown> {
    */
   getVirtualPrivateCloudRouterGatewaysConnection = (
     data: GetVirtualPrivateCloudRouterGatewaysConnectionRequestBody,
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.http.request<VirtualPrivateCloudRouterGatewayConnection, ErrorBody>({
       path: `/get-virtual-private-cloud-router-gateways-connection`,
