@@ -774,6 +774,20 @@ export interface ClusterWhereInput {
   /** @format double */
   overall_efficiency_not?: number | null;
   overall_efficiency_not_in?: number[] | null;
+  /** @format double */
+  overprovision_ratio?: number | null;
+  /** @format double */
+  overprovision_ratio_gt?: number | null;
+  /** @format double */
+  overprovision_ratio_gte?: number | null;
+  overprovision_ratio_in?: number[] | null;
+  /** @format double */
+  overprovision_ratio_lt?: number | null;
+  /** @format double */
+  overprovision_ratio_lte?: number | null;
+  /** @format double */
+  overprovision_ratio_not?: number | null;
+  overprovision_ratio_not_in?: number[] | null;
   /** @format int64 */
   perf_allocated_data_space?: number | null;
   /** @format int64 */
@@ -8313,6 +8327,7 @@ export enum ConfigurationMethod {
 export enum EncryptMethod {
   AES256CTR = "AES256_CTR",
   PLAIN_TEXT = "PLAIN_TEXT",
+  SM4CTR = "SM4_CTR",
 }
 
 export interface IscsiConnectionWhereInput {
@@ -11665,6 +11680,14 @@ export interface ReplicationTargetExecutionWhereInput {
   AND?: ReplicationTargetExecutionWhereInput[] | null;
   NOT?: ReplicationTargetExecutionWhereInput[] | null;
   OR?: ReplicationTargetExecutionWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
   creation?: ReplicationTargetExecutionCreation | null;
   creation_in?: ReplicationTargetExecutionCreation[] | null;
   creation_not?: ReplicationTargetExecutionCreation | null;
@@ -11743,6 +11766,14 @@ export interface ReplicationTargetExecutionWhereInput {
   type_in?: BackupExecutionType[] | null;
   type_not?: BackupExecutionType | null;
   type_not_in?: BackupExecutionType[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
 }
 
 export enum ReplicationTargetExecutionCreation {
@@ -20760,6 +20791,8 @@ export interface Cluster {
   nvmf_enabled?: boolean | null;
   /** @format double */
   overall_efficiency?: number | null;
+  /** @format double */
+  overprovision_ratio?: number | null;
   /** @format int64 */
   perf_allocated_data_space?: number | null;
   /** @format int64 */
@@ -28134,6 +28167,8 @@ export enum ClusterOrderByInput {
   NvmfEnabledDESC = "nvmf_enabled_DESC",
   OverallEfficiencyASC = "overall_efficiency_ASC",
   OverallEfficiencyDESC = "overall_efficiency_DESC",
+  OverprovisionRatioASC = "overprovision_ratio_ASC",
+  OverprovisionRatioDESC = "overprovision_ratio_DESC",
   PerfAllocatedDataSpaceASC = "perf_allocated_data_space_ASC",
   PerfAllocatedDataSpaceDESC = "perf_allocated_data_space_DESC",
   PerfFailureDataSpaceASC = "perf_failure_data_space_ASC",

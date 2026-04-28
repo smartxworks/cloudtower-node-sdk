@@ -23,7 +23,7 @@ const client = new CloudTowerClient(
   },
   {
     baseURL: "http://<path-to-tower>/v2/api",
-  }
+  },
 );
 ```
 
