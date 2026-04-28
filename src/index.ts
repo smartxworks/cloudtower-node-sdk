@@ -108,7 +108,6 @@ export * from "./generated/IscsiConnection";
 export * from "./generated/LogServiceConfig";
 export * from "./generated/PciDevice";
 export * from "./generated/PmemDimm";
-export * from "./generated/RegistryService";
 export * from "./generated/ReplicaVm";
 export * from "./generated/ReplicationService";
 export * from "./generated/ReportTask";
