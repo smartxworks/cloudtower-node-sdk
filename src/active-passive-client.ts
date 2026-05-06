@@ -7,7 +7,6 @@ import {
 } from "./generated/http-client";
 
 const DEFAULT_API_BASE_PATH = "/v2/api";
-const DEFAULT_PROBE_PATH = "/api/healthz";
 const DEFAULT_PROBE_TIMEOUT = 30_000;
 
 export enum ActivePassiveFailoverStrategy {
@@ -45,7 +44,6 @@ export interface ActivePassiveClientConfig
   > {
   endpoints: string[];
   basePath?: string;
-  probePath?: string;
   probeTimeout?: number;
   failoverStrategy?: ActivePassiveFailoverStrategy;
 }
@@ -55,7 +53,7 @@ type ActivePassiveEndpoint = {
   raw: string;
   origin: string;
   apiBaseURL: string;
-  probeURL: string;
+  probeClient: CloudTowerClient;
 };
 
 type SubmitResult<T> =
@@ -79,7 +77,6 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
   private readonly baseRequest: CloudTowerClient["request"];
   private readonly failoverStrategy: ActivePassiveFailoverStrategy;
   private readonly basePath: string;
-  private readonly probePath: string;
   private currentActiveEndpointKey = "";
   private discoverPromise?: Promise<ActivePassiveEndpoint>;
 
@@ -87,7 +84,6 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
     const {
       endpoints,
       basePath,
-      probePath,
       probeTimeout,
       failoverStrategy,
       ...axiosConfig
@@ -96,8 +92,13 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
     super(user, axiosConfig);
 
     this.basePath = basePath ?? DEFAULT_API_BASE_PATH;
-    this.probePath = probePath ?? DEFAULT_PROBE_PATH;
-    this.endpoints = createEndpoints(endpoints, this.basePath, this.probePath);
+    this.endpoints = createEndpoints(
+      endpoints,
+      this.basePath,
+      user,
+      axiosConfig,
+      probeTimeout ?? DEFAULT_PROBE_TIMEOUT,
+    );
     for (const endpoint of this.endpoints) {
       this.endpointByKey.set(endpoint.key, endpoint);
     }
@@ -106,12 +107,7 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
     this.baseRequest = this.request.bind(this);
     this.request = this.activePassiveRequest;
 
-    if (probeTimeout !== undefined) {
-      this.probeTimeout = probeTimeout;
-    }
   }
-
-  private probeTimeout = DEFAULT_PROBE_TIMEOUT;
 
   public currentActiveEndpoint(): string {
     return this.currentActiveEndpointKey;
@@ -119,10 +115,6 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
 
   public clearCurrentActiveEndpoint(): void {
     this.currentActiveEndpointKey = "";
-  }
-
-  public async probeActivePassive(endpoint: string): Promise<boolean> {
-    return this.probeEndpoint(createEndpoint(endpoint, this.basePath, this.probePath));
   }
 
   private activePassiveRequest = async <T = any, E = any>(
@@ -210,7 +202,7 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
 
     for (const endpoint of this.endpoints) {
       try {
-        if (await this.probeEndpoint(endpoint)) {
+        if (await endpoint.probeClient.probeActivePassive()) {
           activeEndpoints.push(endpoint);
         }
       } catch (error) {
@@ -236,19 +228,6 @@ export class ActivePassiveCloudTowerClient extends CloudTowerClient {
         .map((endpoint) => endpoint.raw)
         .join(", ")}`,
     );
-  }
-
-  private async probeEndpoint(endpoint: ActivePassiveEndpoint): Promise<boolean> {
-    const response = await this.instance.request({
-      method: "GET",
-      url: endpoint.probeURL,
-      baseURL: endpoint.origin,
-      timeout: this.probeTimeout,
-      maxRedirects: 0,
-      validateStatus: (status) => status === 200 || status === 307,
-    });
-
-    return response.status === 200;
   }
 
   private async submitToEndpoint<T = any, E = any>(
@@ -289,7 +268,12 @@ export class ActivePassiveClient extends ActivePassiveCloudTowerClient {}
 function createEndpoints(
   endpoints: string[],
   basePath: string,
-  probePath: string,
+  user: CloudTowerUser,
+  axiosConfig: Omit<
+    ApiConfig<{ username: string; password: string }>,
+    "baseURL" | "secure" | "securityWorker"
+  >,
+  probeTimeout: number,
 ): ActivePassiveEndpoint[] {
   if (!endpoints || endpoints.length === 0) {
     throw new ActivePassiveError(
@@ -301,7 +285,13 @@ function createEndpoints(
   const normalized: ActivePassiveEndpoint[] = [];
   const seen = new Set<string>();
   for (const rawEndpoint of endpoints) {
-    const endpoint = createEndpoint(rawEndpoint, basePath, probePath);
+    const endpoint = createEndpoint(
+      rawEndpoint,
+      basePath,
+      user,
+      axiosConfig,
+      probeTimeout,
+    );
     if (seen.has(endpoint.key)) {
       throw new ActivePassiveError(
         ActivePassiveErrorCode.DuplicateEndpoint,
@@ -318,7 +308,12 @@ function createEndpoints(
 function createEndpoint(
   endpoint: string,
   basePath: string,
-  probePath: string,
+  user: CloudTowerUser,
+  axiosConfig: Omit<
+    ApiConfig<{ username: string; password: string }>,
+    "baseURL" | "secure" | "securityWorker"
+  >,
+  probeTimeout: number,
 ): ActivePassiveEndpoint {
   const raw = endpoint.trim();
   if (!raw) {
@@ -336,7 +331,11 @@ function createEndpoint(
     raw,
     origin,
     apiBaseURL: `${origin}${basePath}`,
-    probeURL: probePath,
+    probeClient: new CloudTowerClient(user, {
+      ...axiosConfig,
+      baseURL: origin,
+      timeout: probeTimeout,
+    }),
   };
 }
 

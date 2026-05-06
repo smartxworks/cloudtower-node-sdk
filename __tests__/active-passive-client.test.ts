@@ -6,7 +6,7 @@ import {
   ActivePassiveFailoverStrategy,
 } from "../src/active-passive-client";
 import { UserSource } from "../src/generated/data-contracts";
-import { CloudTowerUser } from "../src/generated/http-client";
+import { CloudTowerClient, CloudTowerUser } from "../src/generated/http-client";
 import { VmApi } from "../src/generated/Vm";
 
 type EndpointName = "first" | "second";
@@ -27,6 +27,16 @@ const endpoints: Record<EndpointName, string> = {
 };
 
 describe("ActivePassiveClient", () => {
+  it("probes active-passive state from a single endpoint client", async () => {
+    const state = createState("second");
+    const first = createSingleEndpointClient(endpoints.first, state);
+    const second = createSingleEndpointClient(endpoints.second, state);
+
+    await expect(first.probeActivePassive()).resolves.toBe(false);
+    await expect(second.probeActivePassive()).resolves.toBe(true);
+    expect(state.probes).toEqual({ first: 1, second: 1 });
+  });
+
   it("discovers active endpoint, logs in, and reuses cached active endpoint", async () => {
     const state = createState("second");
     const { client, vmApi } = createClient(state);
@@ -143,6 +153,23 @@ function createState(activeEndpoint: EndpointName): TestState {
     getVms: { first: 0, second: 0 },
     beforeRedirects: [],
   };
+}
+
+function createSingleEndpointClient(
+  endpoint: string,
+  state: TestState,
+): CloudTowerClient {
+  return new CloudTowerClient(
+    {
+      username: "root",
+      password: "password",
+      source: UserSource.LOCAL,
+    },
+    {
+      baseURL: endpoint,
+      adapter: createAdapter(state),
+    },
+  );
 }
 
 function createClient(

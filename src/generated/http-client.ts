@@ -217,4 +217,16 @@ export class CloudTowerClient extends HttpClient<CloudTowerUser> {
     this["securityData"] = data;
     this.token = undefined;
   }
+
+  public async probeActivePassive(): Promise<boolean> {
+    const response = await this.instance.request({
+      method: "GET",
+      url: "/api/healthz",
+      baseURL: this.instance.defaults.baseURL,
+      maxRedirects: 0,
+      validateStatus: (status) => status === 200 || status === 307,
+    });
+
+    return response.status === 200;
+  }
 }
