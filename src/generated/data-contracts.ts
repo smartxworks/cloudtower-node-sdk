@@ -24925,6 +24925,234 @@ export interface ElfImageDeletionParams {
   where: ElfImageWhereInput;
 }
 
+export enum NetworkPolicyRuleAlgProtocol {
+  FTP = "FTP",
+  TFTP = "TFTP",
+}
+
+export enum NetworkPolicyRulePortProtocol {
+  ALG = "ALG",
+  ICMP = "ICMP",
+  IPIP = "IPIP",
+  TCP = "TCP",
+  UDP = "UDP",
+}
+
+export interface NestedNetworkPolicyRulePort {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol | null;
+  port?: string | null;
+  protocol: NetworkPolicyRulePortProtocol;
+}
+
+export interface NestedSecurityGroup {
+  id: string;
+  name: string;
+}
+
+export interface NestedNetworkPolicyRuleService {
+  id: string;
+  name: string;
+}
+
+export enum NetworkPolicyRuleType {
+  ALL = "ALL",
+  IP_BLOCK = "IP_BLOCK",
+  SECURITY_GROUP = "SECURITY_GROUP",
+  SELECTOR = "SELECTOR",
+}
+
+export interface NestedNetworkPolicyRule {
+  except_ip_block?: string[] | null;
+  ip_block?: string | null;
+  ports?: NestedNetworkPolicyRulePort[] | null;
+  security_group?: NestedSecurityGroup | null;
+  security_group_id?: string | null;
+  selector?: NestedLabel[] | null;
+  selector_ids?: string[] | null;
+  service_ids?: string[] | null;
+  services?: NestedNetworkPolicyRuleService[] | null;
+  type: NetworkPolicyRuleType;
+}
+
+export interface NestedSecurityPolicyStatistics {
+  count_reset_timestamp?: string | null;
+  count_update_timestamp?: string | null;
+  /** @format int32 */
+  match_allow_count?: number | null;
+  /** @format int32 */
+  match_default_allow_count?: number | null;
+  /** @format int32 */
+  match_default_drop_count?: number | null;
+  /** @format int32 */
+  match_drop_count?: number | null;
+  /** @format int32 */
+  match_whitelist_count?: number | null;
+  /** @format int32 */
+  total_count?: number | null;
+}
+
+export interface IsolationPolicy {
+  egress?: NestedNetworkPolicyRule[] | null;
+  everoute_cluster: NestedEverouteCluster;
+  id: string;
+  ingress?: NestedNetworkPolicyRule[] | null;
+  labels?: NestedLabel[] | null;
+  mode: IsolationMode;
+  statistics?: NestedSecurityPolicyStatistics | null;
+  vm: NestedVm;
+}
+
+export interface IPSecurityPolicy {
+  except_ip_block?: string[];
+  ip_block: string;
+}
+
+export interface SecurityGroupWhereInput {
+  vms_some?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  security_policies_some?: SecurityPolicyWhereInput | null;
+  security_policies_none?: SecurityPolicyWhereInput | null;
+  security_policies_every?: SecurityPolicyWhereInput | null;
+  name_starts_with?: string | null;
+  name_not_starts_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_ends_with?: string | null;
+  name_not_contains?: string | null;
+  name_not?: string | null;
+  name_lte?: string | null;
+  name_lt?: string | null;
+  name_in?: string[] | null;
+  name_gte?: string | null;
+  name_gt?: string | null;
+  name_ends_with?: string | null;
+  name_contains?: string | null;
+  name?: string | null;
+  member_type_not_in?: SecurityGroupMemberType[] | null;
+  member_type_not?: SecurityGroupMemberType | null;
+  member_type_in?: SecurityGroupMemberType[] | null;
+  member_type?: SecurityGroupMemberType | null;
+  isolation_policies_some?: IsolationPolicyWhereInput | null;
+  isolation_policies_none?: IsolationPolicyWhereInput | null;
+  isolation_policies_every?: IsolationPolicyWhereInput | null;
+  ips_starts_with?: string | null;
+  ips_not_starts_with?: string | null;
+  ips_not_in?: string[] | null;
+  ips_not_ends_with?: string | null;
+  ips_not_contains?: string | null;
+  ips_not?: string | null;
+  ips_lte?: string | null;
+  ips_lt?: string | null;
+  ips_in?: string[] | null;
+  ips_gte?: string | null;
+  ips_gt?: string | null;
+  ips_ends_with?: string | null;
+  ips_contains?: string | null;
+  ips?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_ends_with?: string | null;
+  id_not_contains?: string | null;
+  id_not?: string | null;
+  id_lte?: string | null;
+  id_lt?: string | null;
+  id_in?: string[] | null;
+  id_gte?: string | null;
+  id_gt?: string | null;
+  id_ends_with?: string | null;
+  id_contains?: string | null;
+  id?: string | null;
+  exclude_ips_starts_with?: string | null;
+  exclude_ips_not_starts_with?: string | null;
+  exclude_ips_not_in?: string[] | null;
+  exclude_ips_not_ends_with?: string | null;
+  exclude_ips_not_contains?: string | null;
+  exclude_ips_not?: string | null;
+  exclude_ips_lte?: string | null;
+  exclude_ips_lt?: string | null;
+  exclude_ips_in?: string[] | null;
+  exclude_ips_gte?: string | null;
+  exclude_ips_gt?: string | null;
+  exclude_ips_ends_with?: string | null;
+  exclude_ips_contains?: string | null;
+  exclude_ips?: string | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  description_starts_with?: string | null;
+  description_not_starts_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_ends_with?: string | null;
+  description_not_contains?: string | null;
+  description_not?: string | null;
+  description_lte?: string | null;
+  description_lt?: string | null;
+  description_in?: string[] | null;
+  description_gte?: string | null;
+  description_gt?: string | null;
+  description_ends_with?: string | null;
+  description_contains?: string | null;
+  description?: string | null;
+  OR?: SecurityGroupWhereInput[] | null;
+  NOT?: SecurityGroupWhereInput[] | null;
+  AND?: SecurityGroupWhereInput[] | null;
+}
+
+export enum SecurityGroupMemberType {
+  IP = "IP",
+  POD = "POD",
+  VM = "VM",
+}
+
+export interface SecurityPolicyIngressEgressInputTarget {
+  security_groups?: SecurityGroupWhereInput;
+  ips?: IPSecurityPolicy[];
+  label_groups?: LabelWhereInput[];
+}
+
+export interface NetworkPolicyRulePortInput {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol;
+  protocol: NetworkPolicyRulePortProtocol;
+  port?: string;
+}
+
+export enum SecurityPolicyFlowControlType {
+  ALL = "ALL",
+}
+
+export interface SecurityPolicyIngressEgressInput {
+  service_ids?: string[];
+  type?: SecurityPolicyFlowControlType;
+  ports?: NetworkPolicyRulePortInput[];
+  target?: SecurityPolicyIngressEgressInputTarget;
+}
+
+export interface IsolationPolicyCreateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  mode: IsolationMode;
+  vm_id: string;
+  everoute_cluster_id: string;
+}
+
+export interface IsolationPolicyUpdateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  mode?: IsolationMode;
+}
+
+export interface IsolationPolicyUpdateBody {
+  data: IsolationPolicyUpdateParams;
+  where: IsolationPolicyWhereInput;
+}
+
+export interface DeleteIsolationPolicy {
+  id: string;
+}
+
+export interface IsolationPolicyDeleteParams {
+  where: IsolationPolicyWhereInput;
+}
+
 export interface NestedNamespaceGroup {
   id: string;
   name: string;
@@ -25570,6 +25798,103 @@ export interface NamespaceGroupDeletionParams {
   where: NamespaceGroupWhereInput;
 }
 
+export interface NetworkPolicyRuleService {
+  description?: string | null;
+  id: string;
+  members: NestedNetworkPolicyRulePort[];
+  name: string;
+  preset: boolean;
+}
+
+export interface WithTaskNetworkPolicyRuleService {
+  task_id?: string | null;
+  data: NetworkPolicyRuleService;
+}
+
+export interface NetworkPolicyRuleServiceMemberParams {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol;
+  port?: string;
+  protocol: NetworkPolicyRulePortProtocol;
+}
+
+export interface NetworkPolicyRuleServiceCreationParams {
+  members: NetworkPolicyRuleServiceMemberParams[];
+  description?: string;
+  name: string;
+}
+
+export interface NetworkPolicyRuleServiceWhereInput {
+  AND?: NetworkPolicyRuleServiceWhereInput[] | null;
+  NOT?: NetworkPolicyRuleServiceWhereInput[] | null;
+  OR?: NetworkPolicyRuleServiceWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  preset?: boolean | null;
+  preset_not?: boolean | null;
+}
+
+export interface NetworkPolicyRuleServiceUpdationParams {
+  data: {
+    members?: NetworkPolicyRuleServiceMemberParams[];
+    description?: string;
+    name?: string;
+  };
+  where: NetworkPolicyRuleServiceWhereInput;
+}
+
+export interface DeleteNetworkPolicyRuleService {
+  id: string;
+}
+
+export interface WithTaskDeleteNetworkPolicyRuleService {
+  task_id?: string | null;
+  data: DeleteNetworkPolicyRuleService;
+}
+
+export interface NetworkPolicyRuleServiceDeletionParams {
+  where: NetworkPolicyRuleServiceWhereInput;
+}
+
 export interface NfsExport {
   cluster: NestedCluster;
   description: string;
@@ -25640,6 +25965,51 @@ export interface WithTaskDeleteNfsExport {
 
 export interface NfsExportDeletionParams {
   where: NfsExportWhereInput;
+}
+
+export interface NfsInode {
+  /** @format int64 */
+  assigned_size: number;
+  /** @format int64 */
+  downgraded_prioritized_space?: number | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  encrypt_method?: EncryptMethod | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  file: boolean;
+  id: string;
+  labels?: NestedLabel[] | null;
+  local_id: string;
+  local_updated_at: string;
+  name: string;
+  nfs_export: NestedNfsExport;
+  parent_id: string;
+  prioritized?: boolean | null;
+  resiliency_type?: ResiliencyType | null;
+  /** @format int64 */
+  shared_size: number;
+  /** @format int32 */
+  snapshot_num: number;
+  /** @format double */
+  unique_logical_size?: number | null;
+  /** @format int64 */
+  unique_size: number;
+}
+
+export interface WithTaskNfsInode {
+  task_id?: string | null;
+  data: NfsInode;
+}
+
+export interface NfsInodeUpdationParamsData {
+  prioritized: boolean;
+}
+
+export interface NfsInodeUpdationParams {
+  data: NfsInodeUpdationParamsData;
+  where: NfsInodeWhereInput;
 }
 
 export interface Nic {
@@ -25749,6 +26119,10 @@ export interface NodeTopUpdationParam {
 }
 
 export type NodeTopoUpdationParams = NodeTopUpdationParam[];
+
+export interface NtpServiceUrl {
+  ntp_service_url: string;
+}
 
 export interface NvmfNamespaceSnapshot {
   consistency_group_snapshot?: NestedConsistencyGroupSnapshot | null;
@@ -26374,6 +26748,255 @@ export interface ClusterRecycleBinDeletionParams {
   where: ClusterWhereInput;
 }
 
+export interface NestedExternalCloudTower {
+  id: string;
+  name: string;
+}
+
+export interface NestedReplicationNetworkConfigure {
+  gateway?: string | null;
+  ip: string;
+  subnet_mask?: string | null;
+}
+
+export interface NestedReplicationIPAddressMapping {
+  source: NestedReplicationNetworkConfigure;
+  target: NestedReplicationNetworkConfigure;
+}
+
+export interface NestedReplicationNetworkInformation {
+  cluster_local_id: string;
+  cluster_name: string;
+  network_ids?: string[] | null;
+  vds_name?: string | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  vlan_local_id: string;
+  vlan_mode_type: VlanModeType;
+  vlan_name: string;
+}
+
+export interface NestedReplicationPlanNetworkMapping {
+  source: NestedReplicationNetworkInformation;
+  target: NestedReplicationNetworkInformation;
+}
+
+export interface NestedReplicationObjectDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  object_local_id: string;
+  object_name?: string | null;
+  parent_object_local_id?: string | null;
+  parent_object_name?: string | null;
+  tower_deploy_id?: string | null;
+  zbs_volume_id?: string | null;
+}
+
+export interface NestedReplicaVm {
+  id: string;
+}
+
+export interface NestedReplicationPlanExecution {
+  id: string;
+}
+
+export interface NestedReplicationRestorePoint {
+  id: string;
+}
+
+export interface NestedReplicationTargetExecution {
+  id: string;
+}
+
+export interface NestedReplicationClusterDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  tower_deploy_id?: string | null;
+}
+
+export interface NestedReplicationService {
+  id: string;
+}
+
+export interface ReplicationPlan {
+  abort_window_unfinished?: boolean | null;
+  activation_timestamp?: string | null;
+  compression: boolean;
+  createdAt: string;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  description?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  enable_window: boolean;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  external_cloudtower?: NestedExternalCloudTower | null;
+  id: string;
+  inbound?: boolean | null;
+  /** @format int32 */
+  interval: number;
+  ip_mapping: NestedReplicationIPAddressMapping[];
+  iscsi_luns?: NestedIscsiLun[] | null;
+  keep_mac_address?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  last_execute_status: BackupPlanExecutionStatus;
+  last_execute_status_message?: string | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  last_executed_at?: string | null;
+  last_manual_execute_status: BackupPlanExecutionStatus;
+  last_manual_execute_status_message?: string | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  last_manual_executed_at?: string | null;
+  name: string;
+  network_mapping: NestedReplicationPlanNetworkMapping[];
+  next_execution_time?: string | null;
+  objects_descriptor: NestedReplicationObjectDescriptor[];
+  period: ReplicationPlanPeriod;
+  phase?: BackupPlanPhase | null;
+  replica_name_rule: ReplicaNameRule;
+  replica_name_setting?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  replica_vms?: NestedReplicaVm[] | null;
+  replication_plan_executions?: NestedReplicationPlanExecution[] | null;
+  replication_restore_points?: NestedReplicationRestorePoint[] | null;
+  replication_target_executions?: NestedReplicationTargetExecution[] | null;
+  resiliency_type?: ResiliencyType | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  status: BackupPlanStatus;
+  storage_policy: VmVolumeElfStoragePolicyType;
+  target_cluster?: NestedCluster | null;
+  target_cluster_descriptor: NestedReplicationClusterDescriptor;
+  target_replication_service: NestedReplicationService;
+  thin_provision?: boolean | null;
+  time_points: NestedBackupPlanTimePoint[];
+  type: ReplicationPlanType;
+  updatedAt: string;
+  vms?: NestedVm[] | null;
+  weekdays?: WeekdayTypeEnum[] | null;
+  window_end?: string | null;
+  window_start?: string | null;
+}
+
+export enum ReplicationPlanOrderByInput {
+  AbortWindowUnfinishedASC = "abort_window_unfinished_ASC",
+  AbortWindowUnfinishedDESC = "abort_window_unfinished_DESC",
+  ActivationTimestampASC = "activation_timestamp_ASC",
+  ActivationTimestampDESC = "activation_timestamp_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EcKASC = "ec_k_ASC",
+  EcKDESC = "ec_k_DESC",
+  EcMASC = "ec_m_ASC",
+  EcMDESC = "ec_m_DESC",
+  EnableWindowASC = "enable_window_ASC",
+  EnableWindowDESC = "enable_window_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InboundASC = "inbound_ASC",
+  InboundDESC = "inbound_DESC",
+  IntervalASC = "interval_ASC",
+  IntervalDESC = "interval_DESC",
+  IpMappingASC = "ip_mapping_ASC",
+  IpMappingDESC = "ip_mapping_DESC",
+  KeepMacAddressASC = "keep_mac_address_ASC",
+  KeepMacAddressDESC = "keep_mac_address_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
+  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
+  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
+  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
+  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
+  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
+  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
+  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
+  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
+  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
+  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
+  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
+  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
+  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
+  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NetworkMappingASC = "network_mapping_ASC",
+  NetworkMappingDESC = "network_mapping_DESC",
+  NextExecutionTimeASC = "next_execution_time_ASC",
+  NextExecutionTimeDESC = "next_execution_time_DESC",
+  ObjectsDescriptorASC = "objects_descriptor_ASC",
+  ObjectsDescriptorDESC = "objects_descriptor_DESC",
+  PeriodASC = "period_ASC",
+  PeriodDESC = "period_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  ReplicaNameRuleASC = "replica_name_rule_ASC",
+  ReplicaNameRuleDESC = "replica_name_rule_DESC",
+  ReplicaNameSettingASC = "replica_name_setting_ASC",
+  ReplicaNameSettingDESC = "replica_name_setting_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ResiliencyTypeASC = "resiliency_type_ASC",
+  ResiliencyTypeDESC = "resiliency_type_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StoragePolicyASC = "storage_policy_ASC",
+  StoragePolicyDESC = "storage_policy_DESC",
+  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
+  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TimePointsASC = "time_points_ASC",
+  TimePointsDESC = "time_points_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  WindowEndASC = "window_end_ASC",
+  WindowEndDESC = "window_end_DESC",
+  WindowStartASC = "window_start_ASC",
+  WindowStartDESC = "window_start_DESC",
+}
+
+export interface GetReplicationPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationPlanWhereInput | null;
+}
+
 export interface NestedExecutePlan {
   enabled: boolean;
   id: string;
@@ -26652,6 +27275,32 @@ export interface ReportTemplateDeletionParams {
   where: ReportTemplateWhereInput;
 }
 
+export interface ResourceChangeEvent {
+  prev_revision?: string;
+  created_at?: string;
+  new_value?: string;
+  old_value?: string;
+  resource_id?: string;
+  resource_type?: string;
+  action?: string;
+  revision: string;
+}
+
+export interface ResourceChangeResponse {
+  currentRevision: string;
+  compactRevision: string;
+  data: ResourceChangeEvent[];
+  error?: any;
+  ec: string;
+}
+
+/**
+ * @format int32
+ * @min 1
+ * @max 1000
+ */
+export type ResourceChangeLimit = number;
+
 export interface UserRoleNext {
   actions: string[];
   id: string;
@@ -26913,64 +27562,6 @@ export interface WithTaskDeleteSecurityGroup {
   data: DeleteSecurityGroup;
 }
 
-export interface SecurityGroupWhereInput {
-  AND?: SecurityGroupWhereInput[] | null;
-  NOT?: SecurityGroupWhereInput[] | null;
-  OR?: SecurityGroupWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  isolation_policies_every?: IsolationPolicyWhereInput | null;
-  isolation_policies_none?: IsolationPolicyWhereInput | null;
-  isolation_policies_some?: IsolationPolicyWhereInput | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  security_policies_every?: SecurityPolicyWhereInput | null;
-  security_policies_none?: SecurityPolicyWhereInput | null;
-  security_policies_some?: SecurityPolicyWhereInput | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
 export interface SecurityGroupDeleteParams {
   where: SecurityGroupWhereInput;
 }
@@ -26987,78 +27578,12 @@ export interface SecurityGroupUpdateBody {
   where: SecurityGroupWhereInput;
 }
 
-export interface NestedSecurityGroup {
-  id: string;
-  name: string;
-}
-
 export interface NestedSecurityPolicyApply {
   communicable: boolean;
   security_group?: NestedSecurityGroup | null;
   security_group_id?: string | null;
   selector: NestedLabel[];
   selector_ids: string[];
-}
-
-export enum NetworkPolicyRuleAlgProtocol {
-  FTP = "FTP",
-  TFTP = "TFTP",
-}
-
-export enum NetworkPolicyRulePortProtocol {
-  ALG = "ALG",
-  ICMP = "ICMP",
-  IPIP = "IPIP",
-  TCP = "TCP",
-  UDP = "UDP",
-}
-
-export interface NestedNetworkPolicyRulePort {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol | null;
-  port?: string | null;
-  protocol: NetworkPolicyRulePortProtocol;
-}
-
-export interface NestedNetworkPolicyRuleService {
-  id: string;
-  name: string;
-}
-
-export enum NetworkPolicyRuleType {
-  ALL = "ALL",
-  IP_BLOCK = "IP_BLOCK",
-  SECURITY_GROUP = "SECURITY_GROUP",
-  SELECTOR = "SELECTOR",
-}
-
-export interface NestedNetworkPolicyRule {
-  except_ip_block?: string[] | null;
-  ip_block?: string | null;
-  ports?: NestedNetworkPolicyRulePort[] | null;
-  security_group?: NestedSecurityGroup | null;
-  security_group_id?: string | null;
-  selector?: NestedLabel[] | null;
-  selector_ids?: string[] | null;
-  service_ids?: string[] | null;
-  services?: NestedNetworkPolicyRuleService[] | null;
-  type: NetworkPolicyRuleType;
-}
-
-export interface NestedSecurityPolicyStatistics {
-  count_reset_timestamp?: string | null;
-  count_update_timestamp?: string | null;
-  /** @format int32 */
-  match_allow_count?: number | null;
-  /** @format int32 */
-  match_default_allow_count?: number | null;
-  /** @format int32 */
-  match_default_drop_count?: number | null;
-  /** @format int32 */
-  match_drop_count?: number | null;
-  /** @format int32 */
-  match_whitelist_count?: number | null;
-  /** @format int32 */
-  total_count?: number | null;
 }
 
 export interface SecurityPolicy {
@@ -27087,34 +27612,6 @@ export interface SecurityPolicyApplyToInputTarget {
 export interface SecurityPolicyApplyToInput {
   communicable?: boolean;
   target: SecurityPolicyApplyToInputTarget;
-}
-
-export interface IPSecurityPolicy {
-  except_ip_block?: string[];
-  ip_block: string;
-}
-
-export interface SecurityPolicyIngressEgressInputTarget {
-  security_groups?: SecurityGroupWhereInput;
-  ips?: IPSecurityPolicy[];
-  label_groups?: LabelWhereInput[];
-}
-
-export interface NetworkPolicyRulePortInput {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol;
-  protocol: NetworkPolicyRulePortProtocol;
-  port?: string;
-}
-
-export enum SecurityPolicyFlowControlType {
-  ALL = "ALL",
-}
-
-export interface SecurityPolicyIngressEgressInput {
-  service_ids?: string[];
-  type?: SecurityPolicyFlowControlType;
-  ports?: NetworkPolicyRulePortInput[];
-  target?: SecurityPolicyIngressEgressInputTarget;
 }
 
 export interface SecurityPolicyCreateParams {
@@ -32014,465 +32511,6 @@ export interface UpdateVsphereEsxiAccountParamsData {
 
 export interface UpdateVsphereEsxiAccountParams {
   data: UpdateVsphereEsxiAccountParamsData[];
-}
-
-export interface IsolationPolicy {
-  egress?: NestedNetworkPolicyRule[] | null;
-  everoute_cluster: NestedEverouteCluster;
-  id: string;
-  ingress?: NestedNetworkPolicyRule[] | null;
-  labels?: NestedLabel[] | null;
-  mode: IsolationMode;
-  statistics?: NestedSecurityPolicyStatistics | null;
-  vm: NestedVm;
-}
-
-export interface IsolationPolicyCreateParams {
-  ingress?: SecurityPolicyIngressEgressInput[];
-  egress?: SecurityPolicyIngressEgressInput[];
-  mode: IsolationMode;
-  vm_id: string;
-  everoute_cluster_id: string;
-}
-
-export interface IsolationPolicyUpdateParams {
-  ingress?: SecurityPolicyIngressEgressInput[];
-  egress?: SecurityPolicyIngressEgressInput[];
-  mode?: IsolationMode;
-}
-
-export interface IsolationPolicyUpdateBody {
-  data: IsolationPolicyUpdateParams;
-  where: IsolationPolicyWhereInput;
-}
-
-export interface DeleteIsolationPolicy {
-  id: string;
-}
-
-export interface IsolationPolicyDeleteParams {
-  where: IsolationPolicyWhereInput;
-}
-
-export interface NetworkPolicyRuleService {
-  description?: string | null;
-  id: string;
-  members: NestedNetworkPolicyRulePort[];
-  name: string;
-  preset: boolean;
-}
-
-export interface WithTaskNetworkPolicyRuleService {
-  task_id?: string | null;
-  data: NetworkPolicyRuleService;
-}
-
-export interface NetworkPolicyRuleServiceMemberParams {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol;
-  port?: string;
-  protocol: NetworkPolicyRulePortProtocol;
-}
-
-export interface NetworkPolicyRuleServiceCreationParams {
-  members: NetworkPolicyRuleServiceMemberParams[];
-  description?: string;
-  name: string;
-}
-
-export interface NetworkPolicyRuleServiceWhereInput {
-  AND?: NetworkPolicyRuleServiceWhereInput[] | null;
-  NOT?: NetworkPolicyRuleServiceWhereInput[] | null;
-  OR?: NetworkPolicyRuleServiceWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  preset?: boolean | null;
-  preset_not?: boolean | null;
-}
-
-export interface NetworkPolicyRuleServiceUpdationParams {
-  data: {
-    members?: NetworkPolicyRuleServiceMemberParams[];
-    description?: string;
-    name?: string;
-  };
-  where: NetworkPolicyRuleServiceWhereInput;
-}
-
-export interface DeleteNetworkPolicyRuleService {
-  id: string;
-}
-
-export interface WithTaskDeleteNetworkPolicyRuleService {
-  task_id?: string | null;
-  data: DeleteNetworkPolicyRuleService;
-}
-
-export interface NetworkPolicyRuleServiceDeletionParams {
-  where: NetworkPolicyRuleServiceWhereInput;
-}
-
-export interface NtpServiceUrl {
-  ntp_service_url: string;
-}
-
-export interface ResourceChangeEvent {
-  prev_revision?: string;
-  created_at?: string;
-  new_value?: string;
-  old_value?: string;
-  resource_id?: string;
-  resource_type?: string;
-  action?: string;
-  revision: string;
-}
-
-export interface ResourceChangeResponse {
-  currentRevision: string;
-  compactRevision: string;
-  data: ResourceChangeEvent[];
-  error?: any;
-  ec: string;
-}
-
-/**
- * @format int32
- * @min 1
- * @max 1000
- */
-export type ResourceChangeLimit = number;
-
-export interface NfsInode {
-  /** @format int64 */
-  assigned_size: number;
-  /** @format int64 */
-  downgraded_prioritized_space?: number | null;
-  /** @format int32 */
-  ec_k?: number | null;
-  /** @format int32 */
-  ec_m?: number | null;
-  encrypt_method?: EncryptMethod | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  file: boolean;
-  id: string;
-  labels?: NestedLabel[] | null;
-  local_id: string;
-  local_updated_at: string;
-  name: string;
-  nfs_export: NestedNfsExport;
-  parent_id: string;
-  prioritized?: boolean | null;
-  resiliency_type?: ResiliencyType | null;
-  /** @format int64 */
-  shared_size: number;
-  /** @format int32 */
-  snapshot_num: number;
-  /** @format double */
-  unique_logical_size?: number | null;
-  /** @format int64 */
-  unique_size: number;
-}
-
-export interface WithTaskNfsInode {
-  task_id?: string | null;
-  data: NfsInode;
-}
-
-export interface NfsInodeUpdationParamsData {
-  prioritized: boolean;
-}
-
-export interface NfsInodeUpdationParams {
-  data: NfsInodeUpdationParamsData;
-  where: NfsInodeWhereInput;
-}
-
-export interface NestedExternalCloudTower {
-  id: string;
-  name: string;
-}
-
-export interface NestedReplicationNetworkConfigure {
-  gateway?: string | null;
-  ip: string;
-  subnet_mask?: string | null;
-}
-
-export interface NestedReplicationIPAddressMapping {
-  source: NestedReplicationNetworkConfigure;
-  target: NestedReplicationNetworkConfigure;
-}
-
-export interface NestedReplicationNetworkInformation {
-  cluster_local_id: string;
-  cluster_name: string;
-  network_ids?: string[] | null;
-  vds_name?: string | null;
-  /** @format int32 */
-  vlan_id?: number | null;
-  vlan_local_id: string;
-  vlan_mode_type: VlanModeType;
-  vlan_name: string;
-}
-
-export interface NestedReplicationPlanNetworkMapping {
-  source: NestedReplicationNetworkInformation;
-  target: NestedReplicationNetworkInformation;
-}
-
-export interface NestedReplicationObjectDescriptor {
-  cluster_local_id: string;
-  cluster_name?: string | null;
-  object_local_id: string;
-  object_name?: string | null;
-  parent_object_local_id?: string | null;
-  parent_object_name?: string | null;
-  tower_deploy_id?: string | null;
-  zbs_volume_id?: string | null;
-}
-
-export interface NestedReplicaVm {
-  id: string;
-}
-
-export interface NestedReplicationPlanExecution {
-  id: string;
-}
-
-export interface NestedReplicationRestorePoint {
-  id: string;
-}
-
-export interface NestedReplicationTargetExecution {
-  id: string;
-}
-
-export interface NestedReplicationClusterDescriptor {
-  cluster_local_id: string;
-  cluster_name?: string | null;
-  tower_deploy_id?: string | null;
-}
-
-export interface NestedReplicationService {
-  id: string;
-}
-
-export interface ReplicationPlan {
-  abort_window_unfinished?: boolean | null;
-  activation_timestamp?: string | null;
-  compression: boolean;
-  createdAt: string;
-  delete_strategy?: BackupPlanDeleteStrategy | null;
-  description?: string | null;
-  /** @format int32 */
-  ec_k?: number | null;
-  /** @format int32 */
-  ec_m?: number | null;
-  enable_window: boolean;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  external_cloudtower?: NestedExternalCloudTower | null;
-  id: string;
-  inbound?: boolean | null;
-  /** @format int32 */
-  interval: number;
-  ip_mapping: NestedReplicationIPAddressMapping[];
-  iscsi_luns?: NestedIscsiLun[] | null;
-  keep_mac_address?: boolean | null;
-  keep_policy?: BackupPlanKeepPolicy | null;
-  /** @format int32 */
-  keep_policy_value?: number | null;
-  last_execute_status: BackupPlanExecutionStatus;
-  last_execute_status_message?: string | null;
-  /** @format int32 */
-  last_execute_success_job_count?: number | null;
-  /** @format int32 */
-  last_execute_total_job_count?: number | null;
-  last_executed_at?: string | null;
-  last_manual_execute_status: BackupPlanExecutionStatus;
-  last_manual_execute_status_message?: string | null;
-  /** @format int32 */
-  last_manual_execute_success_job_count?: number | null;
-  /** @format int32 */
-  last_manual_execute_total_job_count?: number | null;
-  last_manual_executed_at?: string | null;
-  name: string;
-  network_mapping: NestedReplicationPlanNetworkMapping[];
-  next_execution_time?: string | null;
-  objects_descriptor: NestedReplicationObjectDescriptor[];
-  period: ReplicationPlanPeriod;
-  phase?: BackupPlanPhase | null;
-  replica_name_rule: ReplicaNameRule;
-  replica_name_setting?: string | null;
-  /** @format int32 */
-  replica_num?: number | null;
-  replica_vms?: NestedReplicaVm[] | null;
-  replication_plan_executions?: NestedReplicationPlanExecution[] | null;
-  replication_restore_points?: NestedReplicationRestorePoint[] | null;
-  replication_target_executions?: NestedReplicationTargetExecution[] | null;
-  resiliency_type?: ResiliencyType | null;
-  snapshot_consistent_type?: ConsistentType | null;
-  status: BackupPlanStatus;
-  storage_policy: VmVolumeElfStoragePolicyType;
-  target_cluster?: NestedCluster | null;
-  target_cluster_descriptor: NestedReplicationClusterDescriptor;
-  target_replication_service: NestedReplicationService;
-  thin_provision?: boolean | null;
-  time_points: NestedBackupPlanTimePoint[];
-  type: ReplicationPlanType;
-  updatedAt: string;
-  vms?: NestedVm[] | null;
-  weekdays?: WeekdayTypeEnum[] | null;
-  window_end?: string | null;
-  window_start?: string | null;
-}
-
-export enum ReplicationPlanOrderByInput {
-  AbortWindowUnfinishedASC = "abort_window_unfinished_ASC",
-  AbortWindowUnfinishedDESC = "abort_window_unfinished_DESC",
-  ActivationTimestampASC = "activation_timestamp_ASC",
-  ActivationTimestampDESC = "activation_timestamp_DESC",
-  CompressionASC = "compression_ASC",
-  CompressionDESC = "compression_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DeleteStrategyASC = "delete_strategy_ASC",
-  DeleteStrategyDESC = "delete_strategy_DESC",
-  DescriptionASC = "description_ASC",
-  DescriptionDESC = "description_DESC",
-  EcKASC = "ec_k_ASC",
-  EcKDESC = "ec_k_DESC",
-  EcMASC = "ec_m_ASC",
-  EcMDESC = "ec_m_DESC",
-  EnableWindowASC = "enable_window_ASC",
-  EnableWindowDESC = "enable_window_DESC",
-  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
-  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  InboundASC = "inbound_ASC",
-  InboundDESC = "inbound_DESC",
-  IntervalASC = "interval_ASC",
-  IntervalDESC = "interval_DESC",
-  IpMappingASC = "ip_mapping_ASC",
-  IpMappingDESC = "ip_mapping_DESC",
-  KeepMacAddressASC = "keep_mac_address_ASC",
-  KeepMacAddressDESC = "keep_mac_address_DESC",
-  KeepPolicyASC = "keep_policy_ASC",
-  KeepPolicyDESC = "keep_policy_DESC",
-  KeepPolicyValueASC = "keep_policy_value_ASC",
-  KeepPolicyValueDESC = "keep_policy_value_DESC",
-  LastExecuteStatusASC = "last_execute_status_ASC",
-  LastExecuteStatusDESC = "last_execute_status_DESC",
-  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
-  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
-  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
-  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
-  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
-  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
-  LastExecutedAtASC = "last_executed_at_ASC",
-  LastExecutedAtDESC = "last_executed_at_DESC",
-  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
-  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
-  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
-  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
-  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
-  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
-  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
-  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
-  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
-  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
-  NameASC = "name_ASC",
-  NameDESC = "name_DESC",
-  NetworkMappingASC = "network_mapping_ASC",
-  NetworkMappingDESC = "network_mapping_DESC",
-  NextExecutionTimeASC = "next_execution_time_ASC",
-  NextExecutionTimeDESC = "next_execution_time_DESC",
-  ObjectsDescriptorASC = "objects_descriptor_ASC",
-  ObjectsDescriptorDESC = "objects_descriptor_DESC",
-  PeriodASC = "period_ASC",
-  PeriodDESC = "period_DESC",
-  PhaseASC = "phase_ASC",
-  PhaseDESC = "phase_DESC",
-  ReplicaNameRuleASC = "replica_name_rule_ASC",
-  ReplicaNameRuleDESC = "replica_name_rule_DESC",
-  ReplicaNameSettingASC = "replica_name_setting_ASC",
-  ReplicaNameSettingDESC = "replica_name_setting_DESC",
-  ReplicaNumASC = "replica_num_ASC",
-  ReplicaNumDESC = "replica_num_DESC",
-  ResiliencyTypeASC = "resiliency_type_ASC",
-  ResiliencyTypeDESC = "resiliency_type_DESC",
-  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
-  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
-  StatusASC = "status_ASC",
-  StatusDESC = "status_DESC",
-  StoragePolicyASC = "storage_policy_ASC",
-  StoragePolicyDESC = "storage_policy_DESC",
-  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
-  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
-  ThinProvisionASC = "thin_provision_ASC",
-  ThinProvisionDESC = "thin_provision_DESC",
-  TimePointsASC = "time_points_ASC",
-  TimePointsDESC = "time_points_DESC",
-  TypeASC = "type_ASC",
-  TypeDESC = "type_DESC",
-  UpdatedAtASC = "updatedAt_ASC",
-  UpdatedAtDESC = "updatedAt_DESC",
-  WindowEndASC = "window_end_ASC",
-  WindowEndDESC = "window_end_DESC",
-  WindowStartASC = "window_start_ASC",
-  WindowStartDESC = "window_start_DESC",
-}
-
-export interface GetReplicationPlansRequestBody {
-  after?: string | null;
-  before?: string | null;
-  /** @format int32 */
-  first?: number | null;
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: ReplicationPlanOrderByInput | null;
-  /** @format int32 */
-  skip?: number | null;
-  where?: ReplicationPlanWhereInput | null;
 }
 
 export enum NotifierLanguageCode {

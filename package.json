@@ -1,11 +1,12 @@
 {
   "name": "cloudtower-node-sdk",
-  "version": "2.22.1",
+  "version": "2.23.1",
   "description": "CloudTower Node.js SDK in TypeScript",
   "main": "lib/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
     "build": "tsc -b .",
+    "test": "vitest run",
     "typings": "tsc -d --emitDeclarationOnly --declarationDir typings",
     "prepublish": "yarn build && yarn typings"
   },
@@ -28,6 +29,7 @@
     "spdx-license-ids": "^3.0.10"
   },
   "devDependencies": {
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "vitest": "^0.34.6"
   }
 }
