@@ -33,6 +33,13 @@ export type RequestParams = Omit<
   "body" | "method" | "query" | "path"
 >;
 
+export interface ApiBaseURLConfig {
+  rootURL: string;
+  apiBasePath: string;
+}
+
+export type ApiBaseURL = string | ApiBaseURLConfig;
+
 export interface ApiConfig<SecurityDataType = unknown> extends Omit<
   AxiosRequestConfig,
   "data" | "cancelToken"
@@ -42,7 +49,26 @@ export interface ApiConfig<SecurityDataType = unknown> extends Omit<
   ) => Promise<AxiosRequestConfig | void> | AxiosRequestConfig | void;
   secure?: boolean;
   format?: ResponseType;
+  probePath?: string;
 }
+
+export interface ApiConfigWithBaseURLConfig<
+  SecurityDataType = unknown,
+> extends Omit<ApiConfig<SecurityDataType>, "baseURL"> {
+  baseURL: ApiBaseURLConfig;
+}
+
+export type HttpClientConfig<SecurityDataType = unknown> =
+  | ApiConfig<SecurityDataType>
+  | ApiConfigWithBaseURLConfig<SecurityDataType>;
+
+type OmitSecurityConfig<T> = T extends unknown
+  ? Omit<T, "secure" | "securityWorker">
+  : never;
+
+export type CloudTowerClientConfig = OmitSecurityConfig<
+  HttpClientConfig<{ username: string; password: string }>
+>;
 
 export enum ContentType {
   Json = "application/json",
@@ -50,26 +76,42 @@ export enum ContentType {
   UrlEncoded = "application/x-www-form-urlencoded",
 }
 
+const DEFAULT_PROBE_PATH = "/api/healthz";
+
 export class HttpClient<SecurityDataType = unknown> {
   public instance: AxiosInstance;
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private secure?: boolean;
   private format?: ResponseType;
+  protected baseURLConfig: ApiBaseURLConfig;
+  protected probePath: string;
 
   constructor({
     securityWorker,
     secure,
     format,
+    probePath,
+    baseURL,
     ...axiosConfig
-  }: ApiConfig<SecurityDataType> = {}) {
+  }: HttpClientConfig<SecurityDataType> = {}) {
+    const baseURLConfig = resolveBaseURLConfig(baseURL);
+    const axiosBaseURL = joinURL(
+      baseURLConfig.rootURL,
+      baseURLConfig.apiBasePath,
+    );
+
     this.instance = axios.create({
       ...axiosConfig,
-      baseURL: axiosConfig.baseURL || "/v2/api",
+      baseURL: axiosBaseURL,
     });
     this.secure = secure;
     this.format = format;
     this.securityWorker = securityWorker;
+    this.baseURLConfig = baseURLConfig;
+    this.probePath = probePath
+      ? withLeadingSlash(probePath)
+      : DEFAULT_PROBE_PATH;
   }
 
   public setSecurityData(data: SecurityDataType | null): void {
@@ -173,13 +215,7 @@ export type CloudTowerUser = {
 };
 export class CloudTowerClient extends HttpClient<CloudTowerUser> {
   private token?: string;
-  constructor(
-    user: CloudTowerUser,
-    config: Omit<
-      ApiConfig<{ username: string; password: string }>,
-      "secure" | "securityWorker"
-    > = {},
-  ) {
+  constructor(user: CloudTowerUser, config: CloudTowerClientConfig = {}) {
     super({
       ...config,
       secure: true,
@@ -217,4 +253,62 @@ export class CloudTowerClient extends HttpClient<CloudTowerUser> {
     this["securityData"] = data;
     this.token = undefined;
   }
+
+  public async probeActivePassive(): Promise<boolean> {
+    const response = await this.instance.request({
+      method: "GET",
+      url: this.probePath,
+      baseURL: this.baseURLConfig.rootURL,
+      maxRedirects: 0,
+      validateStatus: (status) => status === 200 || status === 307,
+    });
+
+    return response.status === 200;
+  }
+}
+
+function resolveBaseURLConfig(
+  baseURL: ApiBaseURL | undefined,
+): ApiBaseURLConfig {
+  if (baseURL && typeof baseURL === "object") {
+    return {
+      rootURL: baseURL.rootURL,
+      apiBasePath: withLeadingSlash(baseURL.apiBasePath),
+    };
+  }
+
+  if (baseURL) {
+    try {
+      const url = new URL(baseURL);
+      return {
+        rootURL: url.origin,
+        apiBasePath: withLeadingSlash(url.pathname),
+      };
+    } catch {
+      return {
+        rootURL: "",
+        apiBasePath: withLeadingSlash(baseURL),
+      };
+    }
+  }
+
+  return {
+    rootURL: "",
+    apiBasePath: "/v2/api",
+  };
+}
+
+function withLeadingSlash(path: string): string {
+  return `/${path.replace(/^\/+/, "")}`;
+}
+
+function joinURL(rootURL: string, path: string): string {
+  if (!rootURL) {
+    return path;
+  }
+  if (path === "/") {
+    return rootURL;
+  }
+
+  return `${rootURL.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
 }

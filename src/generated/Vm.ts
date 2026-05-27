@@ -6,6 +6,8 @@ import {
   GetVmsRequestBody,
   GetVmVncInfoParams,
   InstallVmtoolsParams,
+  NvramDownloadResponse,
+  NvramParams,
   StopVmInCutoverMigrationParams,
   Task,
   Vm,
@@ -1370,6 +1372,50 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-vpc-nic`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name DownloadNvram
+   * @request POST:/download_nvram
+   * @secure
+   * @response `200` `NvramDownloadResponse`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  downloadNvram = (data: NvramParams, params: RequestParams = {}) =>
+    this.http.request<NvramDownloadResponse, ErrorBody>({
+      path: `/download_nvram`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name UploadNvram
+   * @request POST:/upload_nvram
+   * @secure
+   * @response `200` `string`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  uploadNvram = (data: NvramParams, params: RequestParams = {}) =>
+    this.http.request<string, ErrorBody>({
+      path: `/upload_nvram`,
       method: "POST",
       body: data,
       secure: true,

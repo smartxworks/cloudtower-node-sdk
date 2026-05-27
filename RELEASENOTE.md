@@ -1,5 +1,19 @@
 # RELEASE NOTE
 
+## release 日期 2026-05-27
+
+v2.23.0 release (tower version 4.9.0)
+
+### features
+
+- 增加 [ActivePassiveClient] 用于访问多管理 IP 主备部署的 CloudTower，支持 `AUTO_FAILOVER`、`MANUAL_FAILOVER` 和 `ALWAYS_PROBE` 三种故障切换策略
+- 增加 [SyncReplicationPlanApi] 用于同步复制计划的查询
+- [VmApi]: 新增 [downloadNvram] 和 [uploadNvram] API
+- [Host]: 新增字段 `total_logical_cpu_cores`
+- [Cluster]: 新增字段 `cap_snapshot_unique_size` 和 `cap_volume_unique_size`
+- [ReplicaVm]: 新增字段 `last_out_of_sync_at`、`last_out_of_sync_reason`、`last_synced_at`、`method`、`resource_version`、`sync_replication_object_status`、`sync_replication_plan` 和 `sync_replication_status`
+- [ReplicationService]: 新增关联字段 `sync_replication_plans`
+
 ## release 日期 2026-04-28
 
 v2.22.1 release (tower version 4.8.1)
