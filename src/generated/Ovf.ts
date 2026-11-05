@@ -35,6 +35,8 @@ export class OvfApi<SecurityDataType = unknown> {
       size?: string;
       size_unit?: string;
       upload_task_id?: string;
+      storage_cluster_id?: string;
+      datastore_id?: string;
     },
     params: RequestParams = {},
   ) =>
