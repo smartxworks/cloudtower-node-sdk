@@ -38,12 +38,13 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
     data: {
       /** @format binary */
       file: File;
-      clusters: string;
+      clusters?: string;
       name?: string;
       size?: string;
       size_unit?: string;
       description?: string;
       upload_task_id?: string;
+      datastores?: string;
     },
     params: RequestParams = {},
   ) =>
@@ -162,6 +163,7 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
    * @tags ContentLibraryImage
    * @name ImportContentLibraryImage
    * @request POST:/import-content-library-image
+   * @deprecated
    * @secure
    * @response `200` `UploadTask`
    * @response `400` `ErrorBody` Bad request
@@ -174,6 +176,31 @@ export class ContentLibraryImageApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<UploadTask, ErrorBody>({
       path: `/import-content-library-image`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags ContentLibraryImage
+   * @name ImportContentLibraryImageV2
+   * @request POST:/import-content-library-image-v2
+   * @secure
+   * @response `200` `(UploadTask)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  importContentLibraryImageV2 = (
+    data: ContentLibraryImageImportParams,
+    params: RequestParams = {},
+  ) =>
+    this.http.request<UploadTask[], ErrorBody>({
+      path: `/import-content-library-image-v2`,
       method: "POST",
       body: data,
       secure: true,

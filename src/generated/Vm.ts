@@ -53,6 +53,7 @@ import {
   VmUpdateNicQosOptionsParams,
   VmUpdateOwnerParams,
   VmUpdateParams,
+  VmUpdateSyncTimeOnResumeParams,
   VmUpdateVpcNicParams,
   VmVncInfo,
   WithTaskDeleteVm,
@@ -1156,6 +1157,31 @@ export class VmApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskVm[], void | ErrorBody>({
       path: `/update-vm-advanced-options`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Vm
+   * @name UpdateVmSyncTimeOnResume
+   * @request POST:/update-vm-sync-time-on-resume
+   * @secure
+   * @response `200` `(WithTaskVm)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  updateVmSyncTimeOnResume = (
+    data: VmUpdateSyncTimeOnResumeParams,
+    params: RequestParams = {},
+  ) =>
+    this.http.request<WithTaskVm[], ErrorBody>({
+      path: `/update-vm-sync-time-on-resume`,
       method: "POST",
       body: data,
       secure: true,

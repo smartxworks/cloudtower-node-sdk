@@ -44,7 +44,7 @@ export class V2EverouteLicenseApi<SecurityDataType = unknown> {
    *
    * @tags V2EverouteLicense
    * @name GetV2EverouteLicensesConnection
-   * @request POST:/get-v-2-everoute-licenses-connection
+   * @request POST:/get-v2-everoute-licenses-connection
    * @secure
    * @response `200` `V2EverouteLicenseConnection`
    * @response `400` `ErrorBody` Bad request
@@ -56,7 +56,7 @@ export class V2EverouteLicenseApi<SecurityDataType = unknown> {
     params: RequestParams = {},
   ) =>
     this.http.request<V2EverouteLicenseConnection, ErrorBody>({
-      path: `/get-v-2-everoute-licenses-connection`,
+      path: `/get-v2-everoute-licenses-connection`,
       method: "POST",
       body: data,
       secure: true,

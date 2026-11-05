@@ -122,28 +122,6 @@ export class LabelApi<SecurityDataType = unknown> {
    * No description
    *
    * @tags Label
-   * @name DeleteLabel
-   * @request POST:/delete-label
-   * @secure
-   * @response `200` `(WithTaskDeleteLabel)[]`
-   * @response `400` `ErrorBody` Bad request
-   * @response `404` `ErrorBody` Not found
-   * @response `500` `ErrorBody` Server error
-   */
-  deleteLabel = (data: LabelDeletionParams, params: RequestParams = {}) =>
-    this.http.request<WithTaskDeleteLabel[], ErrorBody>({
-      path: `/delete-label`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags Label
    * @name GetLabels
    * @request POST:/get-labels
    * @secure
@@ -155,6 +133,28 @@ export class LabelApi<SecurityDataType = unknown> {
   getLabels = (data: GetLabelsRequestBody, params: RequestParams = {}) =>
     this.http.request<Label[], ErrorBody>({
       path: `/get-labels`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Label
+   * @name DeleteLabel
+   * @request POST:/delete-label
+   * @secure
+   * @response `200` `(WithTaskDeleteLabel)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  deleteLabel = (data: LabelDeletionParams, params: RequestParams = {}) =>
+    this.http.request<WithTaskDeleteLabel[], ErrorBody>({
+      path: `/delete-label`,
       method: "POST",
       body: data,
       secure: true,

@@ -9,11 +9,13 @@ import {
   ClusterHaUpdationParams,
   ClusterLicenseUpdationParams,
   ClusterNetworkSettingUpdationParams,
+  ClusterNtpServicesInfo,
   ClusterPinInPerformanceInfo,
   ClusterStorageInfo,
   ClusterUpdationParams,
   ClusterVirtualizationUpdationParams,
   ErrorBody,
+  GetClusterNtpServicesRequestBody,
   GetClusterPinInPerformanceInfoRequestBody,
   GetClustersConnectionRequestBody,
   GetClustersRequestBody,
@@ -321,6 +323,31 @@ export class ClusterApi<SecurityDataType = unknown> {
   ) =>
     this.http.request<WithTaskClusterPinInPerformanceInfo[], ErrorBody>({
       path: `/disable-cluster-pin-in-performance`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags Cluster
+   * @name GetClusterNtpServices
+   * @request POST:/get-cluster-ntp-services
+   * @secure
+   * @response `200` `(ClusterNtpServicesInfo)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getClusterNtpServices = (
+    data: GetClusterNtpServicesRequestBody,
+    params: RequestParams = {},
+  ) =>
+    this.http.request<ClusterNtpServicesInfo[], ErrorBody>({
+      path: `/get-cluster-ntp-services`,
       method: "POST",
       body: data,
       secure: true,

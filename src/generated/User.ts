@@ -1,5 +1,7 @@
 import {
+  AuthConfig,
   ErrorBody,
+  GetAuthConfigsParams,
   GetUsersConnectionRequestBody,
   GetUsersRequestBody,
   LoginInput,
@@ -145,6 +147,26 @@ export class UserApi<SecurityDataType = unknown> {
       path: `/get-my-info`,
       method: "POST",
       secure: true,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags User
+   * @name GetAuthConfigs
+   * @request POST:/get-auth-configs
+   * @response `200` `(AuthConfig)[]`
+   * @response `400` `ErrorBody` Bad request
+   * @response `404` `ErrorBody` Not found
+   * @response `500` `ErrorBody` Server error
+   */
+  getAuthConfigs = (data?: GetAuthConfigsParams, params: RequestParams = {}) =>
+    this.http.request<AuthConfig[], ErrorBody>({
+      path: `/get-auth-configs`,
+      method: "POST",
+      body: data,
+      type: ContentType.Json,
       format: "json",
       ...params,
     });
