@@ -25109,47 +25109,6 @@ export interface VmStartParams {
   where: VmWhereInput;
 }
 
-export interface AddVmDiskVmVolumeParams {
-  /** Provisioning type when associated storage is a datastore. */
-  provision_policy?: VmVolumeProvisionPolicy;
-  resident_in_cache?: boolean;
-  elf_ec_storage_policy?: {
-    thin_provision?: boolean;
-    /** @format int32 */
-    ec_m?: number;
-    /** @format int32 */
-    ec_k?: number;
-  };
-  elf_replica_storage_policy?: VmVolumeElfStoragePolicyType;
-  /** @deprecated */
-  elf_storage_policy?: VmVolumeElfStoragePolicyType;
-  path?: string;
-  size_unit?: ByteUnit;
-  /** @format int64 */
-  size: number;
-  name: string;
-}
-
-export interface AddVmDiskMountNewCreateDisksParams {
-  /** Associated storage for a compute cluster. */
-  storage_config?: StorageConfig;
-  max_bandwidth_policy?: VmDiskIoRestrictType;
-  max_bandwidth_unit?: BPSUnit;
-  /** @format int64 */
-  max_bandwidth?: number;
-  max_iops_policy?: VmDiskIoRestrictType;
-  /** @format int64 */
-  max_iops?: number;
-  vm_volume: AddVmDiskVmVolumeParams;
-  /** @format int32 */
-  index?: number;
-  /** @format int32 */
-  key?: number;
-  bus: Bus;
-  /** @format int32 */
-  boot: number;
-}
-
 export interface VmAddDiskParams {
   data: {
     max_bandwidth_policy?: VmDiskIoRestrictType;
@@ -25162,7 +25121,7 @@ export interface VmAddDiskParams {
     io_policy?: VmDiskIoPolicy;
     vm_disks: {
       mount_disks?: MountDisksParams[];
-      mount_new_create_disks?: AddVmDiskMountNewCreateDisksParams[];
+      mount_new_create_disks?: MountNewCreateDisksParams[];
     };
   };
   where: VmWhereInput;
