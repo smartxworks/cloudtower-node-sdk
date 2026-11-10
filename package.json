@@ -29,7 +29,7 @@
     "spdx-license-ids": "^3.0.10"
   },
   "devDependencies": {
-    "typescript": "^4.4.2",
+    "typescript": "^5.9.3",
     "vitest": "^0.34.6"
   }
 }
