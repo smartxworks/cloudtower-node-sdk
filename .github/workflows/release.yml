@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v[0-9]*.[0-9]*.[0-9]*"
+      - "!v[0-9]*.[0-9]*.[0-9]*-*"
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest yarn
+      - run: npm install # FIXME: commit lockfile later
+      - name: Pack
+        id: pack
+        run: echo "tarball=$(npm pack)" >> "$GITHUB_OUTPUT"
+      - name: Publish to npm
+        run: npm publish "${{ steps.pack.outputs.tarball }}" --provenance --access public
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ github.ref_name }}" "${{ steps.pack.outputs.tarball }}" --title "${{ github.ref_name }}" --generate-notes
